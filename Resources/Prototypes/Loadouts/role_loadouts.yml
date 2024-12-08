@@ -93,7 +93,7 @@
   - GroupKMLGLoadoutEpolets
   - GroupKMLGLoadoutCapServ
   - GroupKMLGLoadoutCoat
-  - GroupKMLGLoadoutUniformServise 
+  - GroupKMLGLoadoutUniformServise
   - GroupCDCLoadoutServ
 
 - type: roleLoadout
@@ -133,7 +133,7 @@
   - GroupKMLGLoadoutEpolets
   - GroupKMLGLoadoutCapServ
   - GroupKMLGLoadoutCoat
-  - GroupKMLGLoadoutUniformServise 
+  - GroupKMLGLoadoutUniformServise
   - GroupCDCLoadoutServ
 
 - type: roleLoadout
