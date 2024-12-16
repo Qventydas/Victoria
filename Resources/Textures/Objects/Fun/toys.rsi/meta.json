@@ -21,6 +21,21 @@
       "directions": 4
     },
     {
+      "name": "plushie_lizard"
+    },
+    {
+      "name": "plushielizard-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "plushielizard-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "lizard-equipped-HELMET",
+      "directions": 4
+    },
+    {
       "name": "plushie_spacelizard"
     },
     {
@@ -86,12 +101,10 @@
       "name": "plushie_arachnid"
     },
     {
-      "name": "plushie_lizard"
-    },
-    {
       "name": "plushie_lizard_mirrored"
     },
     {
+<<<<<<< HEAD
       "name": "lizard-equipped-HELMET",
       "directions": 4
 	},
@@ -111,6 +124,8 @@
        "directions": 4
     },
     {
+=======
+>>>>>>> 881e4d3432 (Add an in-hand sprite for the lizard plushie (#32583))
       "name": "plushie_lamp"
     },
     {
