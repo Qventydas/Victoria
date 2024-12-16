@@ -3924,3 +3924,26 @@
   id: 7714
   time: '2024-12-16T15:25:06.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/32802
+- author: SlamBamActionman
+  changes:
+  - message: Added Holy damage to the Chaplain's bible, holy water and the gohei,
+      which can be exclusively dealt to spirits.
+    type: Add
+  id: 7715
+  time: '2024-12-16T15:33:32.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/32755
+- author: Vexerot
+  changes:
+  - message: Security Belts and Security Carriers now provide 10% reduced explosion
+      damage to contents.
+    type: Tweak
+  id: 7716
+  time: '2024-12-16T16:27:40.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/33253
+- author: goet
+  changes:
+  - message: Spaceshrooms can now be cooked on the electric grill.
+    type: Tweak
+  id: 7717
+  time: '2024-12-16T17:53:39.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/31872
