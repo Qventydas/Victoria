@@ -84834,7 +84834,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 35.542843,49.24018
       parent: 2
-- proto: DungeonMasterCircuitBoard
+- proto: GameMasterCircuitBoard
   entities:
   - uid: 582
     components:
@@ -124344,7 +124344,7 @@ entities:
       parent: 2
     - type: Paper
       content: >-
-        блять я нажрался в хламину... 
+        блять я нажрался в хламину...
 
 
 
@@ -124373,7 +124373,7 @@ entities:
 
         Откуда у меня Оппорозидон и как я узнал его рецепт?
 
-        Всё очень просто! 
+        Всё очень просто!
 
                   [head=2]ГЛУПЕНЬКИЙ ХОНК-ХОООНК!!![/head]
   - uid: 11385

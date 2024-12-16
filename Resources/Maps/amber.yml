@@ -61372,7 +61372,7 @@ entities:
     - type: Transform
       pos: 35.69605,1.7648865
       parent: 2
-- proto: DungeonMasterCircuitBoard
+- proto: GameMasterCircuitBoard
   entities:
   - uid: 16465
     components:
@@ -96122,7 +96122,7 @@ entities:
         [color=#ff0000][head=2]                    PARENT FORM: PRF07     [/head]
                          -- This document is tied to Child Forms:--         [/color]
                                                 [head=3]NotATrasen[/ head]
-        [color=#1b67a5]█▄ █ ▀█▀ [head=3]Author: Command Secretary[/head] █ ▀█     █    
+        [color=#1b67a5]█▄ █ ▀█▀ [head=3]Author: Command Secretary[/head] █ ▀█     █
 
         (* = A Required Field)
 
