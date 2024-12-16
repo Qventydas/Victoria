@@ -104,7 +104,6 @@
       "name": "plushie_lizard_mirrored"
     },
     {
-<<<<<<< HEAD
       "name": "lizard-equipped-HELMET",
       "directions": 4
 	},
@@ -124,8 +123,6 @@
        "directions": 4
     },
     {
-=======
->>>>>>> 881e4d3432 (Add an in-hand sprite for the lizard plushie (#32583))
       "name": "plushie_lamp"
     },
     {
