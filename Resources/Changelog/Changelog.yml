@@ -3992,3 +3992,11 @@
   id: 7723
   time: '2024-12-17T13:35:29.0000000+00:00'
   url: https://github.com/space-wizards/space-station-14/pull/33427
+- author: chromiumboy
+  changes:
+  - message: Holopads are now available, allowing you to communicate holographically
+      with the rest of the crew
+    type: Add
+  id: 7724
+  time: '2024-12-17T19:18:15.0000000+00:00'
+  url: https://github.com/space-wizards/space-station-14/pull/32711
