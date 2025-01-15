@@ -1306,8 +1306,28 @@
       - ClothingBackpack
       - ClothingBackpackSatchel
       # Victoria-Clothing-End
+      # Bedsheets
+      - BedsheetBlack
+      - BedsheetBlue
+      - BedsheetBrown
+      - BedsheetGreen
+      - BedsheetGrey
+      - BedsheetOrange
+      - BedsheetPurple
+      - BedsheetRed
+      - BedsheetWhite
+      - BedsheetYellow
+      - BedsheetClown
+      - BedsheetCosmos
+      - BedsheetIan
+      - BedsheetMedical
+      - BedsheetMime
+      - BedsheetNT
+      - BedsheetRainbow
+      - BedsheetBrigmedic
   - type: EmagLatheRecipes
     emagStaticRecipes:
+      # Clothing
       - ClothingHeadHatCentcomcap
       - ClothingHeadHatCentcom
       - ClothingUniformJumpsuitCentcomAgent
@@ -1330,6 +1350,8 @@
       - ClothingOuterWinterCentcom
       - ClothingOuterWinterSyndie
       - ClothingOuterWinterSyndieCap
+      # Bedsheets
+      - BedsheetSyndie
   - type: MaterialStorage
     whitelist:
       tags:
