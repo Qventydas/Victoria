@@ -78,6 +78,10 @@
     delay: 0
     zoom: 1.6 # same stats of 4x telescopic scope
     offset: 14
+  - type: CursorOffsetRequiresWield
+  - type: EyeCursorOffset
+    maxOffset: 3
+    pvsIncrease: 0.3
 
 - type: entity
   name: musket
