@@ -1,6 +1,6 @@
 # Spells
 spellbook-fireball-name = Огненный шар
-spellbook-fireball-desc = Пусть большинство членов экипажа взорвутся от ярости, когда увидят летящий в них огненный шар!
+spellbook-fireball-desc = Пусть большинство членов экипажа взорвутся от ярости, когда увидят летящий в них огненный шар! Улучшаемо.
 spellbook-blink-name = Прыжок
 spellbook-blink-desc = Не моргайте, иначе вы не заметите, как телепортируетесь.
 spellbook-voidapplause-name = Овации пустоты
@@ -15,7 +15,14 @@ spellbook-charge-name = Зарядка
 spellbook-charge-desc = Добавляет заряд вашей палочке!
 spellbook-ethereal-jaunt-name = Эфирная прогулка
 spellbook-ethereal-jaunt-description = Перейдите на Эфирный план чтобы ускользнуть от врагов!
-
+spellbook-mind-swap-name = Обмен разумом
+spellbook-mind-swap-description = Обменяйтесь телами с другим человеком!
+spellbook-smite-name = Кара
+spellbook-smite-desc = Кто-то вам не нравится? РАЗНЕСИТЕ его на куски! Требуются мантия и шляпа волшебника.
+spellbook-cluwne-name = Проклятие клувня
+spellbook-cluwne-desc = Когда вы ненавидите настолько, что Кары недостаточно. Требуются мантия и шляпа волшебника.
+spellbook-slip-name = Скользкий путь
+spellbook-slip-desc = Изучите древние техники уборщиков, дабы делать вашу цель скользкой. Требуются мантия и шляпа волшебника.
 # Equipment
 
 spellbook-wand-polymorph-door-name = Волшебная палочка входа
