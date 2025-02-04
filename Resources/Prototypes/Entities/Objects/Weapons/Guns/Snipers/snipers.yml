@@ -66,6 +66,14 @@
     sprite: Objects/Weapons/Guns/Snipers/heavy_sniper.rsi
   - type: Clothing
     sprite: Objects/Weapons/Guns/Snipers/heavy_sniper.rsi
+  - type: GunRequiresWield
+  - type: Gun
+    fireRate: 0.4
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/sniper.ogg
   - type: BallisticAmmoProvider
     whitelist:
       tags:
@@ -78,6 +86,9 @@
     delay: 0
     zoom: 1.6 # same stats of 4x telescopic scope
     offset: 14
+  - type: SpeedModifiedOnWield
+    walkModifier: 0.25
+    sprintModifier: 0.25
   - type: CursorOffsetRequiresWield
   - type: EyeCursorOffset
     maxOffset: 3

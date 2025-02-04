@@ -1478,6 +1478,8 @@
   id: HoundSniperRifle
   description: Относительно лёгкая и компактная снайперская винтовка Хаунд. Барабан всего на 3 патрона, но зато лучшая скорострельность на рынке.
   components:
+  - type: Gun
+    fireRate: 1
   - type: Item
     shape:
     - 0,0,3,1
@@ -1495,6 +1497,9 @@
   - type: EyeCursorOffset
     maxOffset: 2
     pvsIncrease: 0.2
+  - type: SpeedModifiedOnWield
+    walkModifier: 0.5
+    sprintModifier: 0.5
 #-----------Связь
 #Каналы
 - type: radioChannel
