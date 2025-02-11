@@ -33,9 +33,15 @@
   - GroupCDCLoadoutCom
 
 # Silicons
+#- type: roleLoadout
+#  id: JobBorg
+#  nameDataset: roleloadout doesn't support both so need to update that first.
+#  canCustomizeName: true
+
 - type: roleLoadout
   id: JobStationAi
   nameDataset: names_ai
+  canCustomizeName: true
 
 # Civilian
 - type: roleLoadout

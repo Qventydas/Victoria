@@ -3,6 +3,7 @@ using System;
 using Content.Server.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Content.Server.Database.Migrations.Sqlite
 {
     [DbContext(typeof(SqliteServerDbContext))]
-    partial class SqliteServerDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250211131517_LoadoutNames")]
+    partial class LoadoutNames
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.0");
@@ -27,6 +30,14 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Property<int?>("AdminRankId")
                         .HasColumnType("INTEGER")
                         .HasColumnName("admin_rank_id");
+
+                    b.Property<bool>("Deadminned")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("deadminned");
+
+                    b.Property<bool>("Suspended")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("suspended");
 
                     b.Property<string>("Title")
                         .HasColumnType("TEXT")
@@ -591,6 +602,35 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.ToTable("connection_log", (string)null);
                 });
 
+            modelBuilder.Entity("Content.Server.Database.IPIntelCache", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("ipintel_cache_id");
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("TEXT")
+                        .HasColumnName("address");
+
+                    b.Property<float>("Score")
+                        .HasColumnType("REAL")
+                        .HasColumnName("score");
+
+                    b.Property<DateTime>("Time")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("time");
+
+                    b.HasKey("Id")
+                        .HasName("PK_ipintel_cache");
+
+                    b.HasIndex("Address")
+                        .IsUnique();
+
+                    b.ToTable("ipintel_cache", (string)null);
+                });
+
             modelBuilder.Entity("Content.Server.Database.Job", b =>
                 {
                     b.Property<int>("Id")
@@ -816,13 +856,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .IsRequired()
                         .HasColumnType("TEXT")
                         .HasColumnName("species");
-
-                    // Corvax-TTS-Start
-                    b.Property<string>("Voice")
-                        .IsRequired()
-                        .HasColumnType("TEXT")
-                        .HasColumnName("voice");
-                    // Corvax-TTS-End
 
                     b.HasKey("Id")
                         .HasName("PK_profile");
@@ -1103,56 +1136,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                         .HasDatabaseName("IX_server_ban_hit_connection_id");
 
                     b.ToTable("server_ban_hit", (string)null);
-                });
-
-            modelBuilder.Entity("Content.Server.Database.ServerDbContext+SponsorDataRaw", b =>
-                {
-                    b.Property<Guid>("PlayerUserId")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("player_user_id");
-
-                    b.Property<string>("Color")
-                        .HasMaxLength(10)
-                        .HasColumnType("TEXT")
-                        .HasColumnName("color");
-
-                    b.Property<int>("ExtraCharSlots")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("extra_char_slots");
-
-                    b.Property<bool>("ServerPriorityJoin")
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("server_priority_join");
-
-                    b.HasKey("PlayerUserId")
-                        .HasName("PK_sponsors_list");
-
-                    b.ToTable("sponsors_list", (string)null);
-                });
-
-            modelBuilder.Entity("Content.Server.Database.ServerDbContext+SponsorPrototypeData", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER")
-                        .HasColumnName("sponsors_prototypes_id");
-
-                    b.Property<Guid>("PlayerUserId")
-                        .HasColumnType("TEXT")
-                        .HasColumnName("player_user_id");
-
-                    b.Property<string>("Prototype")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("TEXT")
-                        .HasColumnName("prototype");
-
-                    b.HasKey("Id")
-                        .HasName("PK_sponsors_prototypes");
-
-                    b.HasIndex("PlayerUserId");
-
-                    b.ToTable("sponsors_prototypes", (string)null);
                 });
 
             modelBuilder.Entity("Content.Server.Database.ServerRoleBan", b =>
@@ -1833,32 +1816,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Navigation("Connection");
                 });
 
-            modelBuilder.Entity("Content.Server.Database.ServerDbContext+SponsorDataRaw", b =>
-                {
-                    b.HasOne("Content.Server.Database.Player", "Player")
-                        .WithOne("SponsorData")
-                        .HasForeignKey("Content.Server.Database.ServerDbContext+SponsorDataRaw", "PlayerUserId")
-                        .HasPrincipalKey("Content.Server.Database.Player", "UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_sponsors_list_player_player_user_id");
-
-                    b.Navigation("Player");
-                });
-
-            modelBuilder.Entity("Content.Server.Database.ServerDbContext+SponsorPrototypeData", b =>
-                {
-                    b.HasOne("Content.Server.Database.Player", "Player")
-                        .WithMany("Prototypes")
-                        .HasForeignKey("PlayerUserId")
-                        .HasPrincipalKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired()
-                        .HasConstraintName("FK_sponsors_prototypes_player_player_id");
-
-                    b.Navigation("Player");
-                });
-
             modelBuilder.Entity("Content.Server.Database.ServerRoleBan", b =>
                 {
                     b.HasOne("Content.Server.Database.Player", "CreatedBy")
@@ -2027,10 +1984,6 @@ namespace Content.Server.Database.Migrations.Sqlite
                     b.Navigation("AdminWatchlistsReceived");
 
                     b.Navigation("JobWhitelists");
-
-                    b.Navigation("Prototypes");
-
-                    b.Navigation("SponsorData");
                 });
 
             modelBuilder.Entity("Content.Server.Database.Preference", b =>
