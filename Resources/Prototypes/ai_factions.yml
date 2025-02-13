@@ -7,6 +7,8 @@
     - PetsNT
     - Zombie
     - Revolutionary
+    - AllHostile
+    - Wizard
     - UmporBot
     - Umpor
     - Noocraty
@@ -29,6 +31,9 @@
   - Xeno
   - Zombie
   - Revolutionary
+  - Dragon
+  - AllHostile
+  - Wizard
   friendly:
   - UmporBot
   - Umpor
@@ -41,7 +46,8 @@
 - type: npcFaction
   id: Mouse
   hostile:
-    - PetsNT
+  - PetsNT
+  - AllHostile
 
 - type: npcFaction
   id: Passive
@@ -63,6 +69,8 @@
   - PetsNT
   - Zombie
   - Revolutionary
+  - AllHostile
+  - Wizard
   - UmporBot
   - Umpor
   - Noocraty
@@ -84,7 +92,10 @@
   id: Syndicate
   hostile:
   - NanoTrasen
+  - Dragon
   - SimpleHostile
+  - AllHostile
+  - Wizard
   - Xeno
   - PetsNT
   - Zombie
@@ -104,6 +115,7 @@
   - PetsNT
   - Zombie
   - Revolutionary
+  - Wizard
   - UmporBot
   - Umpor
   - Noocraty
@@ -152,6 +164,8 @@
   - Passive
   - PetsNT
   - Revolutionary
+  - AllHostile
+  - Wizard
   - UmporBot
   - Umpor
   - Noocraty
@@ -173,6 +187,8 @@
   - Zombie
   - SimpleHostile
   - Dragon
+  - AllHostile
+  - Wizard
   - UmporBot
   - Umpor
   - Noocraty
@@ -184,3 +200,32 @@
   - KMLG
   - Hound
   - CDC
+
+
+- type: npcFaction
+  id: AllHostile
+  hostile:
+  - NanoTrasen
+  - Dragon
+  - Mouse
+  - Passive
+  - PetsNT
+  - SimpleHostile
+  - SimpleNeutral
+  - Syndicate
+  - Xeno
+  - Zombie
+  - Revolutionary
+  - Wizard
+
+- type: npcFaction
+  id: Wizard
+  hostile:
+  - NanoTrasen
+  - Dragon
+  - SimpleHostile
+  - Syndicate
+  - Xeno
+  - Zombie
+  - Revolutionary
+  - AllHostile
