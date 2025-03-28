@@ -952,7 +952,7 @@
   id: ShortStretching
   parent: BaseStructure
   name: короткая растяжка
-  description: Опа! А что это тут у нас? Растяжечка... Железная маза простив слепошар!
+  description: Опа! А что это тут у нас? Растяжечка... Железная маза простив слепых и идиотов!
   components:
   - type: Clickable
   - type: InteractionOutline
@@ -1017,7 +1017,7 @@
   startNode: start
   targetNode: ShortStretching
   category: construction-category-structures
-  description: Растяжечка... Железная маза простив слепошар!
+  description: Растяжечка... Железная маза простив слепых и идиотов!
   icon:
     sprite: Victoria/Bomb/stretching.rsi
     state: small
