@@ -785,7 +785,7 @@
   - type: DamageContacts
     damage:
       types:
-        Piercing: 3
+        Piercing: 8
   - type: SpeedModifierContacts
     walkSpeedModifier: 0.15
     sprintSpeedModifier: 0.15
@@ -799,7 +799,7 @@
         - to: Wirefence
           completed:
             - !type:SnapToGrid
-              southRotation: true
+              southRotation: false
           steps:
             - material: WoodPlank
               amount: 1
@@ -881,7 +881,7 @@
   - type: DamageContacts
     damage:
       types:
-        Piercing: 1
+        Piercing: 4
   - type: StaminaDamageOnCollide
     damage: 20
   - type: SpeedModifierContacts
