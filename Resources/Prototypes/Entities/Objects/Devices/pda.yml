@@ -40,13 +40,13 @@
       insertSound: /Audio/Machines/id_insert.ogg
       whitelist:
         components:
-        - Stamp
+        - IdCard
     idStamp:
       ejectSound: /Audio/Machines/id_swipe.ogg
       insertSound: /Audio/Machines/id_insert.ogg
       whitelist:
         components:
-        - IdCard
+        - Stamp
   - type: Item
     size: Small
   - type: ContainerContainer
