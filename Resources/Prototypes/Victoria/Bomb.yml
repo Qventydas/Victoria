@@ -4,7 +4,7 @@
   parent: CableStack
   id: CableWireStack
   name: стальная проволока
-  description: Длинная сталь. Не путать с листами стали и металлическими стержнями. Длинная сталь, да-да, именно так!
+  description: Длинная сталь. Не путать с плоской сталью и палко-сталью. Длинная сталь, да-да, именно так!
   suffix: Full
   components:
   - type: Sprite
@@ -99,7 +99,7 @@
   startNode: start
   targetNode: SteelWire
   category: construction-category-materials
-  description: Длинная сталь. Не путать с листами стали и металлическими стержнями. Длинная сталь, да-да, именно так!
+  description: Длинная сталь. Не путать с плоской сталью и палко-сталью. Длинная сталь, да-да, именно так!
   icon: { sprite: Victoria/Bomb/coils.rsi, state: coilwire-20 }
   objectType: Item
 #---------------------лат-------------------------------
@@ -114,7 +114,7 @@
   parent: CableStack
   id: CordStack
   name: шнур
-  description: Хороший и прочный шнур. "Внимание, производитель не несёт ответсвенности за отсутвие табурета и мыла!"
+  description: Хороший и прочный шнур. Внимание, производитель не несёт ответсвенности за отсутвие табурета и мыла!
   suffix: Full
   components:
   - type: Sprite
