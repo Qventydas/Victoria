@@ -1,0 +1,83 @@
+# - Кто это?
+# - Это же космический пингивин!!!
+
+- type: entity
+  name: space penguin
+  parent: SimpleMobBase
+  id: MobSpacePenguin
+  description: Their lives are constant pain due to their inner-body knees.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: penguin
+      sprite: Victoria/Space-Penguin/space-penguin.rsi
+    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
+      state: glow
+      shader: unshaded
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.25
+        density: 100
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: penguin
+        BaseUnshaded: glow
+      Critical:
+        Base: dead
+      Dead:
+        Base: dead
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatPenguin
+      amount: 3
+  - type: MultiHandedItem
+  - type: Item
+    size: Ginormous
+    sprite: Victoria/Space-Penguin/space-penguin.rsi
+  - type: Temperature
+    heatDamageThreshold: 423
+    coldDamageThreshold: 0
+  - type: MovementAlwaysTouching
+  - type: PressureImmunity
+  - type: ProtectedFromStepTriggers
+  - type: Insulated
+  - type: InteractionPopup
+    successChance: 0.7
+    interactSuccessString: petting-success-bird
+    interactFailureString: petting-failure-generic
+    interactSuccessSpawn: EffectHearts
+    interactSuccessSound:
+      path: /Audio/Animals/penguin_squawk.ogg
+  - type: Tag
+    tags:
+    - VimPilot
+  - type: NpcFactionMember
+    factions:
+    - Passive
+  - type: Respirator
+    minSaturation: 5.0
+
+- type: entity
+  name: Penguin Spawner
+  id: SpawnMobSpacePenguin
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: penguin
+      sprite: Victoria/Space-Penguin/space-penguin.rsi
+  - type: ConditionalSpawner
+    prototypes:
+    - MobSpacePenguin
