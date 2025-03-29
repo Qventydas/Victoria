@@ -785,7 +785,7 @@
   - type: DamageContacts
     damage:
       types:
-        Piercing: 3
+        Piercing: 8
   - type: SpeedModifierContacts
     walkSpeedModifier: 0.15
     sprintSpeedModifier: 0.15
@@ -909,7 +909,7 @@
         - to: Stumble
           completed:
             - !type:SnapToGrid
-              southRotation: truesouthRotation: false
+              southRotation: true
           steps:
             - material: Wire
               amount: 3
