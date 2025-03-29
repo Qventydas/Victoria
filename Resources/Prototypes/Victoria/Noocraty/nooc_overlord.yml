@@ -2,7 +2,6 @@
   id: ActionNoocOfiRaiseArmy
   name: Призвать солдат
   description: Призывает ноократского солдата низкого класса под ваше командование
-  noSpawn: true
   components:
   - type: InstantAction
     useDelay: 4
@@ -15,7 +14,6 @@
   id: ActionNoocOfiOrderStay
   name: Стоять на месте
   description: Прикажите вашим бойцам остановиться и ждать
-  noSpawn: true
   components:
   - type: InstantAction
     useDelay: 1
@@ -34,7 +32,6 @@
   id: ActionNoocOfiOrderFollow
   name: Следовать
   description: Прикажите вашим бойцам идти за вами
-  noSpawn: true
   components:
   - type: InstantAction
     useDelay: 1
@@ -53,7 +50,6 @@
   id: ActionNoocOfiOrderCheeseEm
   name: Атаковать
   description: Прикажите вашим бойцам атаковать того, на кого вы укажите
-  noSpawn: true
   components:
   - type: InstantAction
     useDelay: 1
@@ -72,7 +68,6 @@
   id: ActionNoocOfiOrderLoose
   name: Вольно
   description: Отдайте команду "Вольно", тогда ваши бойцы начнут обыскивать территорию
-  noSpawn: true
   components:
   - type: InstantAction
     useDelay: 1

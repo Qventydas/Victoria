@@ -1,9 +1,6 @@
 #---------------------------------------страаааашная муть для поведения ВИ-----------------------
 - type: htnCompound
   id: MeleeAttackTargetCompoundBotUmpor
-  preconditions:
-    - !type:KeyExistsPrecondition
-      key: Target
   branches:
     # Move to melee range and hit them
     - tasks:
@@ -279,8 +276,8 @@
   components:
   - type: Advertise
     pack: SpeakingMobUmporBot
-    MinimumWait: 40
-    MaximumWait: 100
+    minimumWait: 40
+    maximumWait: 100
   - type: HTN
     rootTask:
       task: BotUmporStop
@@ -314,8 +311,8 @@
   components:
   - type: Advertise
     pack: SpeakingMobUmporBot
-    minWait: 40
-    maxWait: 100
+    minimumWait: 40
+    maximumWait: 100
   - type: HTN
     rootTask:
       task: BotUmporStop
@@ -354,7 +351,6 @@
     proto: UmporShellShotgun
     capacity: 7
     count: 7
-    spread: 15
   - type: Gun
     showExamineText: false
     fireRate: 2

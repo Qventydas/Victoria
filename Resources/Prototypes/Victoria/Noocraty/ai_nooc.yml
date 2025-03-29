@@ -1,9 +1,6 @@
 #---------------------------------------страаааашная муть для поведения ВИ-----------------------
 - type: htnCompound
   id: MeleeAttackTargetCompoundBotNooc
-  preconditions:
-    - !type:KeyExistsPrecondition
-      key: Target
   branches:
     # Move to melee range and hit them
     - tasks:
@@ -219,8 +216,8 @@
   components:
   - type: Advertise
     pack: SpeakingMobNoocBot
-    MinimumWait: 40
-    MaximumWait: 100
+    minimumWait: 40
+    maximumWait: 100
   - type: HTN
     rootTask:
       task: BotNoocStop
@@ -234,10 +231,11 @@
     rechargeCooldown: 1.6
     rechargeSound:
       path: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
-  - type: BasicEntityAmmoProvider
+  - type: HitscanBatteryAmmoProvider
     proto: NoocRedLaserGan
-    capacity: 30
-    count: 30
+  - type: Battery
+    maxCharge: 30
+    startingCharge: 30
   - type: Gun
     showExamineText: false
     fireRate: 4.5
@@ -254,8 +252,8 @@
   components:
   - type: Advertise
     pack: SpeakingMobNoocBot
-    minWait: 40
-    maxWait: 100
+    minimumWait: 40
+    maximumWait: 100
   - type: HTN
     rootTask:
       task: BotNoocStop
@@ -298,10 +296,11 @@
     rechargeCooldown: 2
     rechargeSound:
       path: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
-  - type: BasicEntityAmmoProvider
+  - type: HitscanBatteryAmmoProvider
     proto: NoocRedLaserPistol
-    capacity: 10
-    count: 10
+  - type: Battery
+    maxCharge: 10
+    startingCharge: 10
   - type: Gun
     showExamineText: false
     fireRate: 3.5
