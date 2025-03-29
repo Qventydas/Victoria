@@ -785,7 +785,7 @@
   - type: DamageContacts
     damage:
       types:
-        Piercing: 8
+        Piercing: 3
   - type: SpeedModifierContacts
     walkSpeedModifier: 0.15
     sprintSpeedModifier: 0.15
