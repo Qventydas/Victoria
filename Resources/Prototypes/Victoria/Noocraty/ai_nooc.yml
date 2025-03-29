@@ -317,8 +317,8 @@
   components:
   - type: Advertise
     pack: SpeakingMobNoocBot
-    minWait: 40
-    maxWait: 100
+    minimumWait: 40
+    maximumWait: 100
   - type: HTN
     rootTask:
       task: BotNoocStop
