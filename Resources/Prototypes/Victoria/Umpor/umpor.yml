@@ -1916,8 +1916,8 @@
       allowMovement: true
       allowSpeech: true
       makeSentient: true
-      name: name-of-UmporOfficerReady
-      description: description-of-UmporOfficerReady
+      name: name-of-UmporOfficerR
+      description: description-of-UmporOfficerR
     - type: GhostTakeoverAvailable
     - type: MobThresholds
       thresholds:
@@ -1982,8 +1982,8 @@
       allowMovement: true
       allowSpeech: true
       makeSentient: true
-      name: name-of-UmporSolderReady
-      description: description-of-UmporSolderReady
+      name: name-of-UmporSolderR
+      description: description-of-UmporSolderR
     - type: GhostTakeoverAvailable
     - type: MobThresholds
       thresholds:
@@ -2047,8 +2047,8 @@
       allowMovement: true
       allowSpeech: true
       makeSentient: true
-      name: name-of-UmporEngenerReady
-      description: description-of-UmporEngenerReady
+      name: name-of-UmporEngenerR
+      description: description-of-UmporEngenerR
     - type: GhostTakeoverAvailable
     - type: MobThresholds
       thresholds:
@@ -2112,8 +2112,8 @@
       allowMovement: true
       allowSpeech: true
       makeSentient: true
-      name: name-of-UmporEBilderReady
-      description: description-of-UmporEBilderReady
+      name: name-of-UmporEBilderR
+      description: description-of-UmporEBilderR
     - type: GhostTakeoverAvailable
     - type: MobThresholds
       thresholds:
@@ -2177,8 +2177,8 @@
       allowMovement: true
       allowSpeech: true
       makeSentient: true
-      name: name-of-UmporRadistReady
-      description: description-of-UmporRadistReady
+      name: name-of-UmporRadistR
+      description: description-of-UmporRadistR
     - type: GhostTakeoverAvailable
     - type: MobThresholds
       thresholds:
