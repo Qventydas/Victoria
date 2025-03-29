@@ -1,0 +1,796 @@
+#---------------------------------------страаааашная муть для поведения ВИ-----------------------
+- type: htnCompound
+  id: MeleeAttackTargetCompoundBotUmpor
+  preconditions:
+    - !type:KeyExistsPrecondition
+      key: Target
+  branches:
+    # Move to melee range and hit them
+    - tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:MoveToOperator
+            shutdownState: PlanFinished
+            pathfindInPlanning: true
+            removeKeyOnFinish: false
+            targetKey: TargetCoordinates
+            pathfindKey: TargetPathfind
+            rangeKey: MeleeRange
+        - !type:HTNPrimitiveTask
+          operator: !type:JukeOperator
+            jukeType: Away
+        - !type:HTNPrimitiveTask
+          operator: !type:MeleeOperator
+            targetKey: Target
+          preconditions:
+            - !type:KeyExistsPrecondition
+              key: Target
+            - !type:TargetInRangePrecondition
+              targetKey: Target
+              rangeKey: MeleeRange
+          services:
+            - !type:UtilityService
+              id: MeleeService
+              proto: NearbyMeleeTargets
+              key: Target
+        - !type:HTNPrimitiveTask
+          operator: !type:SpeakOperator
+            speech: Во славу Федерации!
+
+- type: htnCompound
+  id: MeleeCombatCompoundBotUmpor
+  branches:
+    # Pickup weapon if we don't have one.
+    - preconditions:
+       - !type:ActiveHandComponentPrecondition
+          components:
+          # Just serializer things
+          - type: MeleeWeapon
+            damage:
+              types:
+                Brute: 0
+          invert: true
+      tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:SpeakOperator
+            speech: Хватаю!
+        - !type:HTNCompoundTask
+          task: PickupMeleeCompoundFix
+    - tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:SpeakOperator
+            speech: Ну всё, в салат покрошу!
+        - !type:HTNPrimitiveTask
+          operator: !type:UtilityOperator
+            proto: NearbyMeleeTargets
+        - !type:HTNCompoundTask
+          task: MeleeAttackTargetCompoundBotUmpor
+#---------------------------------------Стрельба и убийство-------------------------
+- type: htnCompound
+  id: GunCombatCompoundBotUmpor
+  branches:
+    # Pick target, then move into range and shoot them.
+    - tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:UtilityOperator
+            proto: NearbyGunTargets
+        - !type:HTNPrimitiveTask
+          operator: !type:MoveToOperator
+            shutdownState: PlanFinished
+            pathfindInPlanning: true
+            removeKeyOnFinish: false
+            targetKey: TargetCoordinates
+            pathfindKey: TargetPathfind
+            stopOnLineOfSight: true
+            rangeKey: MeleeRange
+        - !type:HTNPrimitiveTask
+          operator: !type:JukeOperator
+            jukeType: AdjacentTile
+        - !type:HTNPrimitiveTask
+          operator: !type:SpeakOperator
+            speech: Свалить его!
+        - !type:HTNPrimitiveTask
+          preconditions:
+            - !type:KeyExistsPrecondition
+              key: Target
+          operator: !type:GunOperator
+            targetKey: Target
+          services:
+            - !type:UtilityService
+              id: RangedService
+              proto: NearbyGunTargets
+              key: Target
+        - !type:HTNPrimitiveTask
+          operator: !type:SpeakOperator
+            speech: Дёрнулся и затих!
+#---------------------------------------Взять-выкинуть ствол-------------------------
+- type: htnCompound
+  id: RangedCombatCompoundBotUmpor
+  branches:
+    - preconditions:
+        - !type:GunAmmoPrecondition
+          minPercent: 0.001
+      tasks:
+        - !type:HTNCompoundTask
+          task: GunCombatCompoundBotUmpor
+    -  preconditions:
+         - !type:ActiveHandComponentPrecondition
+           components:
+             - type: Gun
+           invert: true
+       tasks:
+         - !type:HTNCompoundTask
+           task: PickupGunCompound
+         - !type:HTNPrimitiveTask
+           operator: !type:SpeakOperator
+             speech: Там пушка!
+    - preconditions:
+        - !type:ActiveHandComponentPrecondition
+          components:
+            - type: Gun
+        - !type:GunAmmoPrecondition
+          maxPercent: 0.001
+      tasks:
+        - !type:HTNPrimitiveTask
+          preconditions:
+            - !type:ActiveHandEntityPrecondition
+          operator: !type:DropOperator
+        - !type:HTNPrimitiveTask
+          operator: !type:SpeakOperator
+            speech: Патроны на нуле!
+#---------------------------------------Вкалывать медицину-------------------------            
+- type: htnCompound
+  id: UmporInjectNearbyCompound
+  branches:
+    - tasks:
+        # TODO: Kill this shit
+        - !type:HTNPrimitiveTask
+          operator: !type:PickNearbyInjectableOperator
+            targetKey: InjectTarget
+            targetMoveKey: TargetCoordinates
+        - !type:HTNPrimitiveTask
+          operator: !type:SpeakOperator
+            speech: Стой! Сейчас вылечу!
+            hidden: true
+        - !type:HTNPrimitiveTask
+          operator: !type:MoveToOperator
+            pathfindInPlanning: false
+        - !type:HTNPrimitiveTask
+          operator: !type:SetFloatOperator
+            targetKey: IdleTime
+            amount: 3
+        - !type:HTNPrimitiveTask
+          operator: !type:WaitOperator
+            key: IdleTime
+          preconditions:
+            - !type:KeyExistsPrecondition
+              key: IdleTime
+        # TODO: Kill this
+        - !type:HTNPrimitiveTask
+          operator: !type:MedibotInjectOperator
+            targetKey: InjectTarget
+#---------------------------------------Всякие Фразочки-----------------------------------
+- type: localizedDataset
+  id: SpeakingMobUmporBot
+  values:
+    prefix: advertisement-bot-umpor-
+    count: 34  
+#--------------------------------------Сочетание правил ВИ-----------------------------------------
+#-----------------С ходить-бродить----------
+#------обыч-----------
+- type: htnCompound
+  id: BotUmpor
+  branches:
+    - tasks:
+        - !type:HTNCompoundTask
+          task: RangedCombatCompoundBotUmpor
+    - tasks:
+        - !type:HTNCompoundTask
+          task: MeleeCombatCompoundBotUmpor
+    - tasks:
+        - !type:HTNCompoundTask
+          task: IdleCompoundBot
+#------медик--------
+- type: htnCompound
+  id: BotUmporMed
+  branches:
+    - tasks:
+        - !type:HTNCompoundTask
+          task: UmporInjectNearbyCompound
+    - tasks:
+        - !type:HTNCompoundTask
+          task: RangedCombatCompoundBotUmpor
+    - tasks:
+        - !type:HTNCompoundTask
+          task: MeleeCombatCompoundBotUmpor
+    - tasks:
+        - !type:HTNCompoundTask
+          task: IdleCompoundBot
+#-----------------Без ходить-бродить----------
+#------обыч-----------          
+- type: htnCompound
+  id: BotUmporStop
+  branches:
+    - tasks:
+        - !type:HTNCompoundTask
+          task: RangedCombatCompoundBotUmpor
+    - tasks:
+        - !type:HTNCompoundTask
+          task: MeleeCombatCompoundBotUmpor
+#------медик--------          
+- type: htnCompound
+  id: BotUmporMedStop
+  branches:
+    - tasks:
+        - !type:HTNCompoundTask
+          task: UmporInjectNearbyCompound
+    - tasks:
+        - !type:HTNCompoundTask
+          task: RangedCombatCompoundBotUmpor
+    - tasks:
+        - !type:HTNCompoundTask
+          task: MeleeCombatCompoundBotUmpor
+#---------------------------------------Сами боты----------------------------------------
+#-------------------------------Солдат----------------------
+#-------------Без оружия бегающий---------------  
+- type: entity
+  name: Солдат Умпорец
+  suffix: Бот, Умпорский, безОруж, бег
+  parent: BaseMobHuman
+  id: MobUmpor
+  components:
+  - type: Advertise
+    minimumWait: 40
+    maximumWait: 100
+    prewarm: false
+    pack: SpeakingMobUmporBot
+  - type: Speech
+    speechSounds: Baritone
+  - type: Vocal
+    sounds:
+      Unsexed: MaleHuman
+  - type: AutoEmote
+    emotes: 
+    - Yawns
+    - Sneezes
+    - Coughs
+    - Whistles
+  - type: RandomMetadata
+    nameSegments:
+    - UmporName-s
+    - UmporNameTwo
+  - type: NpcFactionMember
+    factions:
+      - UmporBot
+  - type: Loadout
+    prototypes:
+      - UmporSolderGear
+  - type: InputMover
+  - type: MobMover
+  - type: HTN
+    rootTask:
+      task: BotUmpor
+  - type: NPCRetaliation
+    attackMemoryLength: 100
+#-------------Без оружия ждущий---------------  
+- type: entity
+  suffix: Бот, Умпорский, безОруж, стоп
+  parent: MobUmpor
+  id: MobUmporStop
+  components:
+  - type: Advertise
+    pack: SpeakingMobUmporBot
+    MinimumWait: 40
+    MaximumWait: 100
+  - type: HTN
+    rootTask:
+      task: BotUmporStop
+#-------------Вооружён бегающий---------------  
+- type: entity
+  suffix: Бот, Умпорский, Оруж, бег
+  parent: MobUmpor
+  id: MobUmporWeapon
+  components:
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 1.6
+    rechargeSound:
+      path: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+  - type: BasicEntityAmmoProvider
+    proto: UmporBulletLightRifle
+    capacity: 25
+    count: 25
+  - type: Gun
+    showExamineText: false
+    fireRate: 5
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
+#-------------Вооружён ждущий---------------  
+- type: entity
+  suffix: Бот, Умпорский, Оруж, стоп
+  parent: MobUmporWeapon
+  id: MobUmporWeaponStop
+  components:
+  - type: Advertise
+    pack: SpeakingMobUmporBot
+    minWait: 40
+    maxWait: 100
+  - type: HTN
+    rootTask:
+      task: BotUmporStop
+#-------------------------------Инженер----------------------
+#-------------Без оружия бегающий---------------
+- type: entity
+  name: Инженер Умпорец
+  suffix: Бот, Умпорский, безОруж, бег
+  parent: MobUmpor
+  id: MobUmporEng
+  components:
+  - type: Loadout
+    prototypes:
+      - UmporEngenerGear
+#-------------Без оружия ждущий--------------- 
+- type: entity
+  name: Инженер Умпорец
+  suffix: Бот, Умпорский, безОруж, стоп
+  parent: MobUmporStop
+  id: MobUmporEngStop
+  components:
+  - type: Loadout
+    prototypes:
+      - UmporEngenerGear
+#-------------Вооружён бегающий---------------  
+- type: entity
+  suffix: Бот, Умпорский, Оруж, бег
+  parent: MobUmporEng
+  id: MobUmporEngWeapon
+  components:
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 2
+    rechargeSound:
+      path: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+  - type: BasicEntityAmmoProvider
+    proto: UmporShellShotgun
+    capacity: 7
+    count: 7
+    spread: 15
+  - type: Gun
+    showExamineText: false
+    fireRate: 2
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/shotgun.ogg
+#-------------Вооружён ждущий--------------- 
+- type: entity
+  suffix: Бот, Умпорский, Оруж, стоп
+  parent: MobUmporEngWeapon
+  id: MobUmporEngWeaponStop
+  components:
+  - type: Advertise
+    pack: SpeakingMobUmporBot
+    minWait: 40
+    maxWait: 100
+  - type: HTN
+    rootTask:
+      task: BotUmporStop
+#-------------------------------Медик----------------------
+#-------------Без оружия бегающий---------------
+- type: entity
+  name: Медик Умпорец
+  suffix: Бот, Умпорский, безОруж, бег
+  parent: MobUmpor
+  id: MobUmporMed
+  components:
+  - type: Loadout
+    prototypes:
+      - UmporMedicGear
+  - type: Medibot
+    treatments:
+      Alive:
+        reagent: Tricordrazine
+        quantity: 20
+        minDamage: 30
+        maxDamage: 90
+      Critical:
+        reagent: Epinephrine
+        quantity: 10
+  - type: HTN
+    rootTask:
+      task: BotUmporMed
+#-------------Без оружия ждущий--------------- 
+- type: entity
+  name: Медик Умпорец
+  suffix: Бот, Умпорский, безОруж, стоп
+  parent: MobUmporStop
+  id: MobUmporMedStop
+  components:
+  - type: Loadout
+    prototypes:
+      - UmporMedicGear
+  - type: Medibot
+    treatments:
+      Alive:
+        reagent: Tricordrazine
+        quantity: 20
+        minDamage: 30
+        maxDamage: 90
+      Critical:
+        reagent: Epinephrine
+        quantity: 10
+  - type: HTN
+    rootTask:
+      task: BotUmporMedStop
+#-------------Вооружён бегающий---------------  
+- type: entity
+  suffix: Бот, Умпорский, Оруж, бег
+  parent: MobUmporMed
+  id: MobUmporMedWeapon
+  components:
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 6
+    rechargeSound:
+      path: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+  - type: BasicEntityAmmoProvider
+    proto: UmporBulletHeavyRifle
+    capacity: 12
+    count: 12
+  - type: Gun
+    showExamineText: false
+    fireRate: 0.75
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
+#-------------Вооружён ждущий--------------- 
+- type: entity
+  suffix: Бот, Умпорский, Оруж, стоп
+  parent: MobUmporMedWeapon
+  id: MobUmporMedWeaponStop
+  components:
+  - type: Advertise
+    pack: SpeakingMobUmporBot
+    minWait: 40
+    maxWait: 100
+  - type: HTN
+    rootTask:
+      task: BotUmporStop
+#-------------------------------Логист----------------------
+#-------------Без оружия бегающий---------------
+- type: entity
+  name: Логист Умпорец
+  suffix: Бот, Умпорский, безОруж, бег
+  parent: MobUmpor
+  id: MobUmporLog
+  components:
+  - type: Loadout
+    prototypes:
+      - UmporLogistGear
+#-------------Без оружия ждущий--------------- 
+- type: entity
+  name: Логист Умпорец
+  suffix: Бот, Умпорский, безОруж, стоп
+  parent: MobUmporStop
+  id: MobUmporLogStop
+  components:
+  - type: Loadout
+    prototypes:
+      - UmporLogistGear
+#-------------Вооружён бегающий---------------  
+- type: entity
+  suffix: Бот, Умпорский, Оруж, бег
+  parent: MobUmporLog
+  id: MobUmporLogWeapon
+  components:
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 2
+    rechargeSound:
+      path: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+  - type: BasicEntityAmmoProvider
+    proto: UmporBulletPistol
+    capacity: 9
+    count: 9
+  - type: Gun
+    showExamineText: false
+    fireRate: 3
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/pistol.ogg
+#-------------Вооружён ждущий--------------- 
+- type: entity
+  suffix: Бот, Умпорский, Оруж, стоп
+  parent: MobUmporLogWeapon
+  id: MobUmporLogWeaponStop
+  components:
+  - type: Advertise
+    pack: SpeakingMobUmporBot
+    minWait: 40
+    maxWait: 100
+  - type: HTN
+    rootTask:
+      task: BotUmporStop
+#-------------------------------Офицер----------------------
+#-------------Без оружия бегающий---------------
+- type: entity
+  name: Офицер Умпорец
+  suffix: Бот, Умпорский, безОруж, бег
+  parent: MobUmpor
+  id: MobUmporOfi
+  components:
+  - type: RandomMetadata
+    nameSegments:
+    - UmporName-o
+    - UmporNameTwo
+  - type: Loadout
+    prototypes:
+      - UmporOfficerGear
+#-------------Без оружия ждущий--------------- 
+- type: entity
+  name: Офицер Умпорец
+  suffix: Бот, Умпорский, безОруж, стоп
+  parent: MobUmporStop
+  id: MobUmporOfiStop
+  components:
+  - type: RandomMetadata
+    nameSegments:
+    - UmporName-o
+    - UmporNameTwo
+  - type: Loadout
+    prototypes:
+      - UmporOfficerGear
+#-------------Вооружён бегающий---------------  
+- type: entity
+  suffix: Бот, Умпорский, Оруж, бег
+  parent: MobUmporOfi
+  id: MobUmporOfiWeapon
+  components:
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 2
+    rechargeSound:
+      path: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+  - type: BasicEntityAmmoProvider
+    proto: UmporBulletPistol
+    capacity: 9
+    count: 9
+  - type: Gun
+    showExamineText: false
+    fireRate: 3
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/pistol.ogg
+#-------------Вооружён ждущий--------------- 
+- type: entity
+  suffix: Бот, Умпорский, Оруж, стоп
+  parent: MobUmporOfiWeapon
+  id: MobUmporOfiWeaponStop
+  components:
+  - type: Advertise
+    pack: SpeakingMobUmporBot
+    minWait: 40
+    maxWait: 100
+  - type: HTN
+    rootTask:
+      task: BotUmporStop
+#---------------------------------------Спавнеры ботов-------------------      
+#-------------------------------Солдат----------------------
+#-------------Без оружия бегающий---------------
+- type: entity
+  name: Спавнер бота Солдат Умпорец
+  suffix: Бот, Умпорский, безОруж, бег
+  id: SpawnMobUmpor
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - state: security_officer
+  - type: ConditionalSpawner
+    prototypes:
+    - MobUmpor
+#-------------Без оружия ждущий--------------- 
+- type: entity
+  parent: SpawnMobUmpor
+  id: SpawnMobUmporStop
+  suffix: Бот, Умпорский, безОруж, стоп
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobUmporStop
+#-------------Вооружён бегающий---------------  
+- type: entity
+  parent: SpawnMobUmpor
+  id: SpawnMobUmporWeapon
+  suffix: Бот, Умпорский, Оруж, бег
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobUmporWeapon
+#-------------Вооружён ждущий---------------  
+- type: entity
+  parent: SpawnMobUmpor
+  id: SpawnMobUmporWeaponStop
+  suffix: Бот, Умпорский, Оруж, стоп
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobUmporWeaponStop
+#-------------------------------Инженер----------------------
+#-------------Без оружия бегающий---------------
+- type: entity
+  name: Спавнер бота Инженер Умпорец
+  suffix: Бот, Умпорский, безОруж, бег
+  id: SpawnMobUmporEng
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - state: engineer
+  - type: ConditionalSpawner
+    prototypes:
+    - MobUmporEng
+#-------------Без оружия ждущий--------------- 
+- type: entity
+  parent: SpawnMobUmporEng
+  id: SpawnMobUmporEngStop
+  suffix: Бот, Умпорский, безОруж, стоп
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobUmporEngStop
+#-------------Вооружён бегающий---------------  
+- type: entity
+  parent: SpawnMobUmporEng
+  id: SpawnMobUmporEngWeapon
+  suffix: Бот, Умпорский, Оруж, бег
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobUmporEngWeapon
+#-------------Вооружён ждущий---------------  
+- type: entity
+  parent: SpawnMobUmporEng
+  id: SpawnMobUmporEngWeaponStop
+  suffix: Бот, Умпорский, Оруж, стоп
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobUmporEngWeaponStop
+#-------------------------------Медик----------------------
+#-------------Без оружия бегающий---------------
+- type: entity
+  name: Спавнер бота Медик Умпорец
+  suffix: Бот, Умпорский, безОруж, бег
+  id: SpawnMobUmporMed
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - state: doctor
+  - type: ConditionalSpawner
+    prototypes:
+    - MobUmporMed
+#-------------Без оружия ждущий--------------- 
+- type: entity
+  parent: SpawnMobUmporMed
+  id: SpawnMobUmporMedStop
+  suffix: Бот, Умпорский, безОруж, стоп
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobUmporMedStop
+#-------------Вооружён бегающий---------------  
+- type: entity
+  parent: SpawnMobUmporMed
+  id: SpawnMobUmporMedWeapon
+  suffix: Бот, Умпорский, Оруж, бег
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobUmporMedWeapon
+#-------------Вооружён ждущий---------------  
+- type: entity
+  parent: SpawnMobUmporMed
+  id: SpawnMobUmporMedWeaponStop
+  suffix: Бот, Умпорский, Оруж, стоп
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobUmporMedWeaponStop
+#-------------------------------Логист----------------------
+#-------------Без оружия бегающий---------------
+- type: entity
+  name: Спавнер бота Логист Умпорец
+  suffix: Бот, Умпорский, безОруж, бег
+  id: SpawnMobUmporLog
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - state: cargo_tech
+  - type: ConditionalSpawner
+    prototypes:
+    - MobUmporLog
+#-------------Без оружия ждущий--------------- 
+- type: entity
+  parent: SpawnMobUmporLog
+  id: SpawnMobUmporLogStop
+  suffix: Бот, Умпорский, безОруж, стоп
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobUmporLogStop
+#-------------Вооружён бегающий---------------  
+- type: entity
+  parent: SpawnMobUmporLog
+  id: SpawnMobUmporLogWeapon
+  suffix: Бот, Умпорский, Оруж, бег
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobUmporLogWeapon
+#-------------Вооружён ждущий---------------  
+- type: entity
+  parent: SpawnMobUmporLog
+  id: SpawnMobUmporLogWeaponStop
+  suffix: Бот, Умпорский, Оруж, стоп
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobUmporLogWeaponStop
+#-------------------------------Офицер----------------------
+#-------------Без оружия бегающий---------------
+- type: entity
+  name: Спавнер бота Офицер Умпорец
+  suffix: Бот, Умпорский, безОруж, бег
+  id: SpawnMobUmporOfi
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - state: warden
+  - type: ConditionalSpawner
+    prototypes:
+    - MobUmporOfi
+#-------------Без оружия ждущий--------------- 
+- type: entity
+  parent: SpawnMobUmporOfi
+  id: SpawnMobUmporOfiStop
+  suffix: Бот, Умпорский, безОруж, стоп
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobUmporOfiStop
+#-------------Вооружён бегающий---------------  
+- type: entity
+  parent: SpawnMobUmporOfi
+  id: SpawnMobUmporOfiWeapon
+  suffix: Бот, Умпорский, Оруж, бег
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobUmporOfiWeapon
+#-------------Вооружён ждущий---------------  
+- type: entity
+  parent: SpawnMobUmporOfi
+  id: SpawnMobUmporOfiWeaponStop
+  suffix: Бот, Умпорский, Оруж, стоп
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobUmporOfiWeaponStop

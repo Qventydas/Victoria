@@ -1,0 +1,369 @@
+#---------------------------------------страаааашная муть для поведения ВИ-----------------------
+- type: htnCompound
+  id: MeleeAttackTargetCompoundBotNooc
+  preconditions:
+    - !type:KeyExistsPrecondition
+      key: Target
+  branches:
+    # Move to melee range and hit them
+    - tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:MoveToOperator
+            shutdownState: PlanFinished
+            pathfindInPlanning: true
+            removeKeyOnFinish: false
+            targetKey: TargetCoordinates
+            pathfindKey: TargetPathfind
+            rangeKey: MeleeRange
+        - !type:HTNPrimitiveTask
+          operator: !type:JukeOperator
+            jukeType: Away
+        - !type:HTNPrimitiveTask
+          operator: !type:MeleeOperator
+            targetKey: Target
+          preconditions:
+            - !type:KeyExistsPrecondition
+              key: Target
+            - !type:TargetInRangePrecondition
+              targetKey: Target
+              rangeKey: MeleeRange
+          services:
+            - !type:UtilityService
+              id: MeleeService
+              proto: NearbyMeleeTargets
+              key: Target
+        - !type:HTNPrimitiveTask
+          operator: !type:SpeakOperator
+            speech: Во славу чистого разума!
+
+- type: htnCompound
+  id: MeleeCombatCompoundBotNooc
+  branches:
+    # Pickup weapon if we don't have one.
+    - preconditions:
+       - !type:ActiveHandComponentPrecondition
+          components:
+          # Just serializer things
+          - type: MeleeWeapon
+            damage:
+              types:
+                Brute: 0
+          invert: true
+      tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:SpeakOperator
+            speech: Беру!
+        - !type:HTNCompoundTask
+          task: PickupMeleeCompoundFix
+    - tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:SpeakOperator
+            speech: Ну держись у меня!
+        - !type:HTNPrimitiveTask
+          operator: !type:UtilityOperator
+            proto: NearbyMeleeTargets
+        - !type:HTNCompoundTask
+          task: MeleeAttackTargetCompoundBotNooc
+#---------------------------------------Стрельба и убийство-------------------------
+- type: htnCompound
+  id: GunCombatCompoundBotNooc
+  branches:
+    # Pick target, then move into range and shoot them.
+    - tasks:
+        - !type:HTNPrimitiveTask
+          operator: !type:UtilityOperator
+            proto: NearbyGunTargets
+        - !type:HTNPrimitiveTask
+          operator: !type:MoveToOperator
+            shutdownState: PlanFinished
+            pathfindInPlanning: true
+            removeKeyOnFinish: false
+            targetKey: TargetCoordinates
+            pathfindKey: TargetPathfind
+            stopOnLineOfSight: true
+            rangeKey: MeleeRange
+        - !type:HTNPrimitiveTask
+          operator: !type:JukeOperator
+            jukeType: AdjacentTile
+        - !type:HTNPrimitiveTask
+          operator: !type:SpeakOperator
+            speech: Застрелить!
+        - !type:HTNPrimitiveTask
+          preconditions:
+            - !type:KeyExistsPrecondition
+              key: Target
+          operator: !type:GunOperator
+            targetKey: Target
+          services:
+            - !type:UtilityService
+              id: RangedService
+              proto: NearbyGunTargets
+              key: Target
+        - !type:HTNPrimitiveTask
+          operator: !type:SpeakOperator
+            speech: Победа!
+#---------------------------------------Взять-выкинуть ствол-------------------------
+- type: htnCompound
+  id: RangedCombatCompoundBotNooc
+  branches:
+    - preconditions:
+        - !type:GunAmmoPrecondition
+          minPercent: 0.001
+      tasks:
+        - !type:HTNCompoundTask
+          task: GunCombatCompoundBotNooc
+    -  preconditions:
+         - !type:ActiveHandComponentPrecondition
+           components:
+             - type: Gun
+           invert: true
+       tasks:
+         - !type:HTNCompoundTask
+           task: PickupGunCompound
+         - !type:HTNPrimitiveTask
+           operator: !type:SpeakOperator
+             speech: Оружие!
+    - preconditions:
+        - !type:ActiveHandComponentPrecondition
+          components:
+            - type: Gun
+        - !type:GunAmmoPrecondition
+          maxPercent: 0.001
+      tasks:
+        - !type:HTNPrimitiveTask
+          preconditions:
+            - !type:ActiveHandEntityPrecondition
+          operator: !type:DropOperator
+        - !type:HTNPrimitiveTask
+          operator: !type:SpeakOperator
+            speech: Заряда нет!
+#---------------------------------------Всякие Фразочки-----------------------------------
+- type: localizedDataset
+  id: SpeakingMobNoocBot
+  values:
+    prefix: advertisement-bot-nooc-
+    count: 34  
+#--------------------------------------Сочетание правил ВИ-----------------------------------------
+#-----------------С ходить-бродить----------
+#------обыч-----------
+- type: htnCompound
+  id: BotNooc
+  branches:
+    - tasks:
+        - !type:HTNCompoundTask
+          task: RangedCombatCompoundBotNooc
+    - tasks:
+        - !type:HTNCompoundTask
+          task: MeleeCombatCompoundBotNooc
+    - tasks:
+        - !type:HTNCompoundTask
+          task: IdleCompoundBot
+#-----------------Без ходить-бродить----------
+#------обыч-----------          
+- type: htnCompound
+  id: BotNoocStop
+  branches:
+    - tasks:
+        - !type:HTNCompoundTask
+          task: RangedCombatCompoundBotNooc
+    - tasks:
+        - !type:HTNCompoundTask
+          task: MeleeCombatCompoundBotNooc
+#---------------------------------------Сами боты----------------------------------------
+#-------------------------------Солдат----------------------
+#-------------Без оружия бегающий---------------  
+- type: entity
+  name: Солдат Ноократ
+  suffix: Бот, Ноократский, безОруж, бег
+  parent: BaseMobHuman
+  id: MobNooc
+  components:
+  - type: Advertise
+    minimumWait: 40
+    maximumWait: 100
+    prewarm: false
+    pack: SpeakingMobNoocBot
+  - type: Speech
+    speechSounds: Baritone
+  - type: Vocal
+    sounds:
+      Unsexed: MaleHuman
+  - type: AutoEmote
+    emotes: 
+    - Yawns
+    - Sneezes
+    - Coughs
+    - Whistles
+  - type: RandomMetadata
+    nameSegments:
+    - NoocName-s
+    - NoocNameTwo
+  - type: NpcFactionMember
+    factions:
+      - NoocratyBot
+  - type: Loadout
+    prototypes:
+      - NoocNizGear
+  - type: InputMover
+  - type: MobMover
+  - type: HTN
+    rootTask:
+      task: BotNooc
+  - type: NPCRetaliation
+    attackMemoryLength: 100
+#-------------Без оружия ждущий---------------  
+- type: entity
+  suffix: Бот, Ноократский, безОруж, стоп
+  parent: MobNooc
+  id: MobNoocStop
+  components:
+  - type: Advertise
+    pack: SpeakingMobNoocBot
+    MinimumWait: 40
+    MaximumWait: 100
+  - type: HTN
+    rootTask:
+      task: BotNoocStop
+#-------------Вооружён бегающий---------------  
+- type: entity
+  suffix: Бот, Ноократский, Оруж, бег
+  parent: MobNooc
+  id: MobNoocWeapon
+  components:
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 1.6
+    rechargeSound:
+      path: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+  - type: BasicEntityAmmoProvider
+    proto: NoocRedLaserGan
+    capacity: 30
+    count: 30
+  - type: Gun
+    showExamineText: false
+    fireRate: 4.5
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
+#-------------Вооружён ждущий---------------  
+- type: entity
+  suffix: Бот, Ноократский, Оруж, стоп
+  parent: MobNoocWeapon
+  id: MobNoocWeaponStop
+  components:
+  - type: Advertise
+    pack: SpeakingMobNoocBot
+    minWait: 40
+    maxWait: 100
+  - type: HTN
+    rootTask:
+      task: BotNoocStop
+#-------------------------------Офицер----------------------
+#-------------Без оружия бегающий---------------
+- type: entity
+  name: Офицер Ноократ
+  suffix: Бот, Ноократский, безОруж, бег
+  parent: MobNooc
+  id: MobNoocOfi
+  components:
+  - type: RandomMetadata
+    nameSegments:
+    - NoocName-o
+    - NoocNameTwo
+  - type: Loadout
+    prototypes:
+      - NoocVisGear
+#-------------Без оружия ждущий--------------- 
+- type: entity
+  name: Офицер Ноократ
+  suffix: Бот, Ноократский, безОруж, стоп
+  parent: MobNoocStop
+  id: MobNoocOfiStop
+  components:
+  - type: RandomMetadata
+    nameSegments:
+    - NoocName-o
+    - NoocNameTwo
+  - type: Loadout
+    prototypes:
+      - NoocVisGear
+#-------------Вооружён бегающий---------------  
+- type: entity
+  suffix: Бот, Ноократский, Оруж, бег
+  parent: MobNoocOfi
+  id: MobNoocOfiWeapon
+  components:
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 2
+    rechargeSound:
+      path: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+  - type: BasicEntityAmmoProvider
+    proto: NoocRedLaserPistol
+    capacity: 10
+    count: 10
+  - type: Gun
+    showExamineText: false
+    fireRate: 3.5
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/pistol.ogg
+#-------------Вооружён ждущий--------------- 
+- type: entity
+  suffix: Бот, Ноократский, Оруж, стоп
+  parent: MobNoocOfiWeapon
+  id: MobNoocOfiWeaponStop
+  components:
+  - type: Advertise
+    pack: SpeakingMobNoocBot
+    minWait: 40
+    maxWait: 100
+  - type: HTN
+    rootTask:
+      task: BotNoocStop
+#---------------------------------------Спавнеры ботов-------------------      
+#-------------------------------Солдат----------------------
+#-------------Без оружия бегающий---------------
+- type: entity
+  name: Спавнер бота Солдат Ноократ
+  suffix: Бот, Ноократский, безОруж, бег
+  id: SpawnMobNooc
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+    - state: green
+    - state: security_officer
+  - type: ConditionalSpawner
+    prototypes:
+    - MobNooc
+#-------------Без оружия ждущий--------------- 
+- type: entity
+  parent: SpawnMobNooc
+  id: SpawnMobNoocStop
+  suffix: Бот, Ноократский, безОруж, стоп
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobNoocStop
+#-------------Вооружён бегающий---------------  
+- type: entity
+  parent: SpawnMobNooc
+  id: SpawnMobNoocWeapon
+  suffix: Бот, Ноократский, Оруж, бег
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobNoocWeapon
+#-------------Вооружён ждущий---------------  
+- type: entity
+  parent: SpawnMobNooc
+  id: SpawnMobNoocWeaponStop
+  suffix: Бот, Ноократский, Оруж, стоп
+  components:
+  - type: ConditionalSpawner
+    prototypes:
+    - MobNoocWeaponStop
