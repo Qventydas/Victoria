@@ -13,9 +13,6 @@
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: penguin
       sprite: Victoria/Space-Penguin/space-penguin.rsi
-    - map: [ "enum.DamageStateVisualLayers.BaseUnshaded" ]
-      state: glow
-      shader: unshaded
   - type: Physics
   - type: Fixtures
     fixtures:
@@ -32,7 +29,6 @@
     states:
       Alive:
         Base: penguin
-        BaseUnshaded: glow
       Critical:
         Base: dead
       Dead:
