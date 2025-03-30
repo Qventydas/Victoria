@@ -3987,3 +3987,14 @@
     interfaces:
       enum.StoreUiKey.Key:
         type: StoreBoundUserInterface
+#------------------------знамя------------------  
+- type: entity
+  id: NoocBannerStd
+  parent: BannerBase
+  name: Знамя Ноократии Эранта
+  suffix: Ноократия
+  description: Знамя символизирующее классовую систему, величие трёх наиболее почтаемых научных сфер и виденье пети к величию через идеи Эранта!
+  components:
+  - type: Sprite
+    sprite: Victoria/Noocraty/nooc_banner.rsi
+    state: banner_nooc_std 

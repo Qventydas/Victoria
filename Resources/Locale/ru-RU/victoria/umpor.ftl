@@ -1,4 +1,4 @@
-ent-UmporUniformSoldier = умпорская офицерская форма
+ent-UmporUniformSoldier = умпорская солдатская форма
     .suffix =  Умпорский
     .desc =  Стандартная удобная униформа пехотинца Умпорской Федерации
 ent-UmporUniformOficier = умпорская офицерская форма
