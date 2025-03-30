@@ -3312,8 +3312,8 @@
   parent: BannerBase
   name: Знамя Умпорской Федерации
   suffix: Умпорский
-  description: Знамя символизирующее классовую систему, величие трёх наиболее почтаемых научных сфер и виденье пети к величию через идеи Эранта!
+  description: Знамя символизирующее честный и продолжительный труд, которым занимаются все граждане Федерации, дабы обеспечить своей стране сытое и великое будущее!
   components:
   - type: Sprite
-    sprite: Victoria/Noocraty/nooc_banner.rsi
-    state: banner_nooc_std 
+    sprite: Victoria/Umpor/umpor_banner.rsi
+    state: banner_umpor_std 

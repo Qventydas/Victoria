@@ -3989,12 +3989,12 @@
         type: StoreBoundUserInterface
 #------------------------знамя------------------  
 - type: entity
-  id: UmporBannerStd
+  id: NoocBannerStd
   parent: BannerBase
-  name: Знамя Умпорской Федерации
-  suffix: Умпорский
-  description: Знамя символизирующее честный и продолжительный труд, которым занимаются все граждане Федерации, дабы обеспечить своей стране сытое и великое будущее!
+  name: Знамя Ноократии Эранта
+  suffix: Ноократия
+  description: Знамя символизирующее классовую систему, величие трёх наиболее почтаемых научных сфер и виденье пети к величию через идеи Эранта!
   components:
   - type: Sprite
-    sprite: Victoria/Umpor/umpor_banner.rsi
-    state: banner_umpor_std 
+    sprite: Victoria/Noocraty/nooc_banner.rsi
+    state: banner_nooc_std 
