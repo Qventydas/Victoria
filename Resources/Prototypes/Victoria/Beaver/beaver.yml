@@ -1,0 +1,69 @@
+# Саня, это бобёр!!!
+
+- type: entity
+  name: beaver
+  parent: SimpleMobBase
+  id: MobBeaver
+  description: Sanya, this is a beaver!
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: beaver
+      sprite: Victoria/beaver-remade/beaver.rsi
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.25
+        density: 10
+        mask:
+        - MobMask
+        layer:
+        - MobLayer
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: beaver
+      Critical:
+        Base: dead
+      Dead:
+        Base: dead
+  - type: Butcherable
+    spawned:
+    - id: FoodMeat
+      amount: 3
+  - type: InteractionPopup
+    successChance: 0.8
+    interactSuccessString: petting-success-soft-floofy
+    interactFailureString: petting-failure-generic
+    interactSuccessSpawn: EffectHearts
+  - type: Bloodstream
+    bloodMaxVolume: 50
+
+# Ящик с бобром
+
+- type: entity
+  id: CrateNPCBeaver
+  parent: CrateLivestock
+  name: beaver crate
+  description: A crate containing a single beaver.
+  components:
+  - type: StorageFill
+    contents:
+      - id: MobBeaver
+
+# Продукт в карго
+
+- type: cargoProduct
+  id: LivestockBeaver
+  icon:
+    sprite: Victoria/beaver-remade/beaver.rsi
+    state: beaver
+  product: CrateNPCBeaver
+  cost: 2100
+  category: cargoproduct-category-name-livestock
+  group: market
