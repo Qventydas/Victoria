@@ -1898,8 +1898,8 @@
       factions:
       - Umpor
     - type: GhostRole
-      name: name-of-UmporOfficerR
-      description: description-of-UmporOfficerR
+      name: Умпорский офицер
+      description: Вы смелый, умелый и геройский военный армии Умпорской Федерации. Вы прошли множество сражений и проявили лидерские качества. Командуйте своими людьми и защищайте интересы Федерации, где бы вы ни оказались.
     - type: GhostTakeoverAvailable
     - type: Loadout
       prototypes: [ UmporOfficerGear ]
@@ -1916,8 +1916,8 @@
       allowMovement: true
       allowSpeech: true
       makeSentient: true
-      name: name-of-UmporOfficerR
-      description: description-of-UmporOfficerR
+      name: Умпорский офицер
+      description: Вы смелый, умелый и геройский военный армии Умпорской Федерации. Вы прошли множество сражений и проявили лидерские качества. Командуйте своими людьми и защищайте интересы Федерации, где бы вы ни оказались.
     - type: GhostTakeoverAvailable
     - type: MobThresholds
       thresholds:
@@ -1934,7 +1934,7 @@
 # Код написал Crazzy_pingvin 
 
 - type: entity
-  name: name-of-UmporMobHumanOfficer
+  name: Умпорский офицер Спавнер
   id: UmporMobHumanOfficer
   suffix: GOST, Umpor
   components:
@@ -1964,8 +1964,8 @@
       factions:
       - Umpor
     - type: GhostRole
-      name: name-of-UmporSolderR
-      description: description-of-UmporSolderR
+      name: Умпорский солдат
+      description: Вы один из многих, да. Но вы основная боевая сила Умпорской Федерации и основная причина её побед. Будьте стойким, сильным и слушайтесь своего командира, а если его нет, то инженера отряда.
     - type: GhostTakeoverAvailable
     - type: Loadout
       prototypes: [ UmporSolderGear ]
@@ -1982,8 +1982,8 @@
       allowMovement: true
       allowSpeech: true
       makeSentient: true
-      name: name-of-UmporSolderR
-      description: description-of-UmporSolderR
+      name: Умпорский солдат
+      description: Вы один из многих, да. Но вы основная боевая сила Умпорской Федерации и основная причина её побед. Будьте стойким, сильным и слушайтесь своего командира, а если его нет, то инженера отряда.
     - type: GhostTakeoverAvailable
     - type: MobThresholds
       thresholds:
@@ -1999,7 +1999,7 @@
       - Umpor
   
 - type: entity
-  name: name-of-UmporMobHumanSolder
+  name: Умпорский солдат Спавнер
   id: UmporMobHumanSolder
   suffix: GOST, Umpor
   components:
@@ -2029,8 +2029,8 @@
       factions:
       - Umpor
     - type: GhostRole
-      name: name-of-UmporEngenerR
-      description: description-of-UmporEngenerR
+      name: Умпорский инженер
+      description: Вы может и не вполне систематически образованный, но умелый и находчивый армейский инженер. Чините оборужование, возводите фортификаци, будьте мастером на все руки. выполняйте приказы командира, а если тот погибнет, возьмите командование на себя.
     - type: GhostTakeoverAvailable
     - type: Loadout
       prototypes: [ UmporEngenerGear ]
@@ -2047,8 +2047,8 @@
       allowMovement: true
       allowSpeech: true
       makeSentient: true
-      name: name-of-UmporEngenerR
-      description: description-of-UmporEngenerR
+      name: Умпорский инженер
+      description: Вы может и не вполне систематически образованный, но умелый и находчивый армейский инженер. Чините оборужование, возводите фортификаци, будьте мастером на все руки. выполняйте приказы командира, а если тот погибнет, возьмите командование на себя.
     - type: GhostTakeoverAvailable
     - type: MobThresholds
       thresholds:
@@ -2064,7 +2064,7 @@
       - Umpor
   
 - type: entity
-  name: name-of-UmporMobHumanEngener
+  name: Умпорский инженер Спавнер
   id: UmporMobHumanEngener
   suffix: GOST, Умпорский
   components:
@@ -2094,8 +2094,8 @@
       factions:
       - Umpor
     - type: GhostRole
-      name: name-of-UmporBilderR
-      description: description-of-UmporBilderR
+      name: Умпорский инженер-строитель
+      description: Вы не идеально образованный, но умелый и находчивый фортификатор, или же инженер-строитель. Возводите фортификаци, будьте мастером на все руки. Выполняйте приказы командира, а если тот погибнет, возьмите командование на себя.
     - type: GhostTakeoverAvailable
     - type: Loadout
       prototypes: [ UmporBilderGear ]
@@ -2112,8 +2112,8 @@
       allowMovement: true
       allowSpeech: true
       makeSentient: true
-      name: name-of-UmporEBilderR
-      description: description-of-UmporEBilderR
+      name: Умпорский инженер-строитель
+      description: Вы не идеально образованный, но умелый и находчивый фортификатор, или же инженер-строитель. Возводите фортификаци, будьте мастером на все руки. Выполняйте приказы командира, а если тот погибнет, возьмите командование на себя.
     - type: GhostTakeoverAvailable
     - type: MobThresholds
       thresholds:
@@ -2129,7 +2129,7 @@
       - Umpor
   
 - type: entity
-  name: name-of-UmporMobHumanBilder
+  name: Умпорский инженер-строитель Спавнер
   id: UmporMobHumanBilder
   suffix: GOST, Umpor
   components:
@@ -2159,8 +2159,8 @@
       factions:
       - Umpor
     - type: GhostRole
-      name: name-of-UmporRadistR
-      description: description-of-UmporRadistR
+      name: Умпорский радист
+      description: Вы образованный инженер-радиотехник армии Умпорской Федерации. Обеспечивайте связь, помогайте с электрикой. Берегите свою радиостанцию больше, чем собственную жизнь, слушайтесь командира и помогите привести Федерацию к победе.
     - type: GhostTakeoverAvailable
     - type: Loadout
       prototypes: [ UmporRadistGear ]
@@ -2177,8 +2177,8 @@
       allowMovement: true
       allowSpeech: true
       makeSentient: true
-      name: name-of-UmporRadistR
-      description: description-of-UmporRadistR
+      name: Умпорский радист
+      description: Вы образованный инженер-радиотехник армии Умпорской Федерации. Обеспечивайте связь, помогайте с электрикой. Берегите свою радиостанцию больше, чем собственную жизнь, слушайтесь командира и помогите привести Федерацию к победе.
     - type: GhostTakeoverAvailable
     - type: MobThresholds
       thresholds:
@@ -2194,7 +2194,7 @@
       - Umpor
   
 - type: entity
-  name: name-of-UmporMobHumanRadist
+  name: Умпорский радист Спавнер
   id: UmporMobHumanRadist
   suffix: GOST, Umpor
   components:
@@ -2225,7 +2225,7 @@
       - Umpor
     - type: GhostRole
       name: Умпорский сапёр
-      description: Вы хитрый и опасный сапёр армии умпорской федерации. Оставляйте врагу сюрпризы, слушайтесь компандира. Сделайте свои укрепления неприступными.
+      description: Вы хитрый и опасный сапёр армии Умпорской Федерации. Оставляйте врагу сюрпризы, слушайтесь компандира. Сделайте свои укрепления неприступными.
     - type: GhostTakeoverAvailable
     - type: Loadout
       prototypes: [ UmporMinesweeperGear ]
@@ -2243,7 +2243,7 @@
       allowSpeech: true
       makeSentient: true
       name: Умпорский сапёр
-      description: Вы хитрый и опасный сапёр армии умпорской федерации. Оставляйте врагу сюрпризы, слушайтесь компандира. Сделайте свои укрепления неприступными.
+      description: Вы хитрый и опасный сапёр армии Умпорской Федерации. Оставляйте врагу сюрпризы, слушайтесь компандира. Сделайте свои укрепления неприступными.
     - type: GhostTakeoverAvailable
     - type: MobThresholds
       thresholds:
@@ -2289,8 +2289,8 @@
       factions:
       - Umpor
     - type: GhostRole
-      name: name-of-UmporMedicR
-      description: description-of-UmporMedicR
+      name: Умпорский медик
+      description: Вы умелый армейский медик Умпорской Федерации. Вы и санитар, и врач и химик мало-мальский. Спасите своих сослуживцев от ран. Возглавьте их в вопросах здоровья. напоминайте командиру, как будут лучше для отряда, но не нарушайте субординацию. Соладты, как дети. Верните их домой живыми.
     - type: GhostTakeoverAvailable
     - type: Loadout
       prototypes: [ UmporMedicGear ]
@@ -2307,8 +2307,8 @@
       allowMovement: true
       allowSpeech: true
       makeSentient: true
-      name: name-of-UmporMedicReady
-      description: description-of-UmporMedicReady
+      name: Умпорский медик
+      description: Вы умелый армейский медик Умпорской Федерации. Вы и санитар, и врач и химик мало-мальский. Спасите своих сослуживцев от ран. Возглавьте их в вопросах здоровья. напоминайте командиру, как будут лучше для отряда, но не нарушайте субординацию. Соладты, как дети. Верните их домой живыми.
     - type: GhostTakeoverAvailable
     - type: MobThresholds
       thresholds:
@@ -2324,7 +2324,7 @@
       - Umpor
   
 - type: entity
-  name: name-of-UmporMobHumanMedic
+  name: Умпорский медик Спавнер
   id: UmporMobHumanMedic
   suffix: GOST, Umpor
   components:
@@ -2354,8 +2354,8 @@
       factions:
       - Umpor
     - type: GhostRole
-      name: name-of-UmporLogistR
-      description: description-of-UmporLogistR
+      name: Умпорский логист
+      description: Вы логист, снабженец или дорожник армии Умпорской Федерации. Важа задача "родить" всё, что нужно отряду буквально из ничего. Добывайте еду, собирайте припасы, производите боезапас. Сделайте свой отряд лучшим.
     - type: GhostTakeoverAvailable
     - type: Loadout
       prototypes: [ UmporLogistGear ]
@@ -2372,8 +2372,8 @@
       allowMovement: true
       allowSpeech: true
       makeSentient: true
-      name: name-of-UmporLogistReady
-      description: description-of-UmporLogistReady
+      name: Умпорский логист
+      description: Вы логист, снабженец или дорожник армии Умпорской Федерации. Важа задача "родить" всё, что нужно отряду буквально из ничего. Добывайте еду, собирайте припасы, производите боезапас. Сделайте свой отряд лучшим.
     - type: GhostTakeoverAvailable
     - type: MobThresholds
       thresholds:
@@ -2389,7 +2389,7 @@
       - Umpor
   
 - type: entity
-  name: name-of-UmporMobHumanLogist
+  name: Умпорский логист Спавнер
   id: UmporMobHumanLogist
   suffix: GOST, Umpor
   components:
@@ -3306,3 +3306,14 @@
         settings: short
     - type: Loadout
       prototypes: [ UmporOfficerGear, UmporSolderGear, UmporMedicGear, UmporEngenerGear, UmporBilderGear, UmporRadistGear, UmporLogistGear, UmporMinesweeperGear]
+#------------------------знамя------------------  
+- type: entity
+  id: UmporBannerStd
+  parent: BannerBase
+  name: Знамя Умпорской Федерации
+  suffix: Умпорский
+  description: Знамя символизирующее классовую систему, величие трёх наиболее почтаемых научных сфер и виденье пети к величию через идеи Эранта!
+  components:
+  - type: Sprite
+    sprite: Victoria/Noocraty/nooc_banner.rsi
+    state: banner_nooc_std 

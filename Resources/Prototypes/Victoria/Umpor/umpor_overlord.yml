@@ -16,7 +16,7 @@
 
 - type: entity
   suffix: Бот, Умпорский, Овер(дракон)
-  parent: MobUmporWeapon
+  parent: MobUmporLogWeapon
   id: MobUmporWeaponOverD
   components:
     - type: HTN
