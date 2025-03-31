@@ -193,8 +193,8 @@
     - Whistles
   - type: RandomMetadata
     nameSegments:
-    - NoocName-s
-    - NoocNameTwo
+    - NoocName-niz
+    - NoocNameTwo-niz
   - type: NpcFactionMember
     factions:
       - NoocratyBot
@@ -267,8 +267,8 @@
   components:
   - type: RandomMetadata
     nameSegments:
-    - NoocName-o
-    - NoocNameTwo
+    - NoocName-vis
+    - NoocNameTwo-vis
   - type: Loadout
     prototypes:
       - NoocVisGear
@@ -281,8 +281,8 @@
   components:
   - type: RandomMetadata
     nameSegments:
-    - NoocName-o
-    - NoocNameTwo
+    - NoocName-vis
+    - NoocNameTwo-vis
   - type: Loadout
     prototypes:
       - NoocVisGear
