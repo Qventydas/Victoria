@@ -253,7 +253,7 @@
     maxAngle: 6
     angleIncrease: 1.5
     angleDecay: 6
-    selectedMode: FullAuto
+    selectedMode: Burst
     shotsPerBurst: 5
     burstCooldown: 0.2
     burstFireRate: 7
