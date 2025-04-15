@@ -125,3 +125,52 @@
       autoRecharge: true
       autoRechargeRate: 25
     - type: AmmoCounter
+
+- type: entity
+  name: C12 "Опиум"
+  id: WeaponLightMachineGunOpium
+  parent: [BaseWeaponLightMachineGun, BaseSyndicateContraband]
+  description: Довольно редкое и дорогое оружие, выпускаемое Viteztvi ограниченными партями для корпоративных и государственных заказчиков на основе L6 SAW. Ствол был удлинён и утолщён,добавлен дульный тормоз, а внутренняя автоматика полностью переработана на основе электромеханического автомата заряжания. Из-за большого нагрева и отдачи стреляет только очередями по 15 пуль.
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/LMGs/c12.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-3
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: Objects/Weapons/Guns/LMGs/l6.rsi
+  - type: GunWieldBonus
+    minAngle: -2
+    maxAngle: -2
+  - type: Gun
+    minAngle: 5
+    maxAngle: 8
+    angleIncrease: 4
+    angleDecay: 16
+    fireRate: 20
+    selectedMode: Burst
+    availableModes:
+      - Burst
+    burstCooldown: 1.1
+    burstFireRate: 27
+    shotsPerBurst: 15
+  - type: MagazineVisuals
+    magState: mag
+    steps: 4
+    zeroVisible: true
+  - type: Appearance
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: OpiumBox
+        insertSound: /Audio/Weapons/Guns/MagIn/batrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/batrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - OpiumBox
+  - type: UseDelay
+    delay: 0.2

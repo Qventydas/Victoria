@@ -149,3 +149,22 @@
     steps: 7
     zeroVisible: false
   - type: Appearance
+- type: entity
+  id: OpiumBox
+  name: "Барабан патронов для 'Опиум' (.30 rifle)"
+  parent: BaseMagazineLightRifle
+  components:
+  - type: Tag
+    tags:
+      - OpiumBox
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Ammunition/Magazine/LightRifle/opium_box.rsi
+  - type: BallisticAmmoProvider
+    proto: CartridgeLightRifle
+    capacity: 180
+  - type: Item
+  - type: MagazineVisuals
+    magState: mag
+    steps: 15
+    zeroVisible: false
+  - type: Appearance
