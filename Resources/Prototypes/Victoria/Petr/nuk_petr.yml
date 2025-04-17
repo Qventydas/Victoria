@@ -12,7 +12,6 @@
   parent:
   - BaseStation
   - BaseStationPetr
-  noSpawn: true
   components:
     - type: Transform
 

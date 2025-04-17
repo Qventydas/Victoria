@@ -233,9 +233,7 @@
       path: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
   - type: HitscanBatteryAmmoProvider
     proto: NoocRedLaserGan
-    shots: 30
     fireCost: 100
-    capasity: 30
   - type: Battery
     maxCharge: 3000
     startingCharge: 3000
