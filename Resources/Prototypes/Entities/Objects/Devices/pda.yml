@@ -41,7 +41,7 @@
       whitelist:
         components:
         - IdCard
-    idStamp:
+    stampSlot:
       ejectSound: /Audio/Machines/id_swipe.ogg
       insertSound: /Audio/Machines/id_insert.ogg
       whitelist:

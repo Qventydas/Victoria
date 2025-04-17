@@ -1710,6 +1710,16 @@
     damage:
       types:
         Piercing: 12
+        
+- type: entity
+  id: UmporPelletShotgunSpread
+  categories: [ HideSpawnMenu ]
+  parent: UmporPelletShotgun
+  components:
+  - type: ProjectileSpread
+    proto: UmporPelletShotgun
+    count: 6
+    spread: 15        
 #-----------------------картридж----------------------
 - type: Tag
   id: UmporShellShotgun
@@ -1726,10 +1736,7 @@
     - Cartridge
     - UmporShellShotgun
   - type: CartridgeAmmo
-    count: 6
-    spread: 15
-    soundEject:
-      collection: ShellEject
+    proto: UmporPelletShotgunSpread
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
     layers:
@@ -1747,8 +1754,6 @@
     layers:
       - state: base
         map: [ "enum.AmmoVisualLayers.Base" ]
-  - type: CartridgeAmmo
-    proto: UmporPelletShotgun
 #-----------------------сам дробовик----------------------  
 - type: entity
   name: name-of-UmporBaseWeaponShotgun
