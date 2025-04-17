@@ -211,6 +211,14 @@
   materials:
     Cloth: 120
 #-----------------------------------------улучшение гранаты---------------------------------
+- type: entity
+  parent: ExGrenade
+  id: ExGrenade1
+  suffix: 1
+  components:
+  - type: Stack
+    count: 1
+
 - type: stack
   id: ExGrenade
   name: разрывная граната
@@ -518,7 +526,7 @@
   result: ExplosiveMineBase
   completetime: 0.4
   materials:
-    Steel: 500
+    Steel: 50
     PlastidMaterial: 100
 #-----------------------------------------осколочная основа------------------------
 - type: entity
@@ -586,7 +594,7 @@
   result: FragmentationMineBase
   completetime: 0.4
   materials:
-    Steel: 1000
+    Steel: 100
     PlastidMaterial: 100
 #-----------------------------------------взрыватель-------------------------------
 - type: entity
@@ -664,7 +672,7 @@
   result: FuseMine
   completetime: 0.2
   materials:
-    Steel: 1000
+    Steel: 100
 #-----------------------------------------микробомба------------------------
 - type: entity
   name: микробомба

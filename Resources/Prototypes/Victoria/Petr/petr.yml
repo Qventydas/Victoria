@@ -479,7 +479,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 24
+        Piercing: 21
 #------------------------------------пистолет---------- 
 - type: entity
   id: PetrBulletPistol
@@ -491,7 +491,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 15
+        Piercing: 13
 #------------------------------------револьвер----------         
 - type: entity
   id: PetrBulletRevolver
@@ -503,7 +503,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 25 
+        Piercing: 17 
         Heat: 5
 #-------------------------------------картриджи---------------------------------------------------------------------------------
 #------------------------------------винтовка---------- 
@@ -1500,8 +1500,8 @@
   - type: StorageFill
     contents:
       - id: PetrHelmet
-      - id: ExGrenade
-      - id: ExGrenade
+      - id: ExGrenade1
+      - id: ExGrenade1
       - id: PetrSmokeGrenade
       - id: PetrSmokeGrenade
       - id: CordStack
@@ -3025,11 +3025,11 @@
 - type: entity
   parent: PetrBaseUplinkRadio
   id: PetrBaseUplinkRadio50TC
-  suffix: 50 TC, Петрищев
+  suffix: 40 TC, Петрищев
   components:
   - type: Store
     balance:
-      Telecrystal: 50
+      Telecrystal: 40
   - type: Tag
     tags:
     - NukeOpsUplink
