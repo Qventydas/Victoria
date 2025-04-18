@@ -1,0 +1,59 @@
+- type: startingGear
+  id: VisitingPsychologistGear
+  equipment:
+    shoes: ClothingShoesLeather
+    id: PsychologistPDA
+    ears: ClothingHeadsetMedical
+  storage:
+    back:
+    - RubberStampPsychologist
+
+- type: entity
+  name: Качующий психолог
+  id: VisitingPsychologist
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: Objects/Tools/appraisal-tool.rsi
+          state: icon
+    - type: RandomSpawner
+      prototypes:
+      - RandomPsychologist
+      chance: 1
+      
+- type: entity
+  id: RandomPsychologist
+  name: Качующий психолог
+  components:
+    - type: Sprite
+      sprite: Objects/Tools/appraisal-tool.rsi
+      state: icon
+    - type: RandomHumanoidSpawner
+      settings: VisitingPsychologist
+
+- type: randomHumanoidSettings
+  id: VisitingPsychologist
+  parent: EventHumanoid
+  components:
+    - type: GhostRole
+      name: Качующий психолог
+      description: Вы путешествует с подвижной клонирующей установкой и врачом-генетиком. Помогите клонируемым пережить первый шок. 
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: short
+    - type: Loadout
+      prototypes: [ PsychologistGear, VisitingPsychologistGear]
+      
+- type: preloadedGrid
+  id: ShuttleVisitGenetic
+  path: /Maps/Shuttles/ShuttleEvent/visit_shattle_genetik.yml
+  copies: 1
+
+- type: entity
+  parent: BaseUnknownShuttleRule
+  id: UnknownShuttleVisitGenetic
+  components:
+  - type: LoadMapRule
+    preloadedGrid: ShuttleVisitGenetic
