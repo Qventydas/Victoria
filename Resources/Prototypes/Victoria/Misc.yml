@@ -2,7 +2,7 @@
 - type: radioChannel
   id: SecurityReservRadio
   name: name-securityreservradio
-  keycode: 'ъ' 
+  keycode: 'рк' 
   frequency: 9876
   color: "#ff0000"
   longRange: false

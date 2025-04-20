@@ -971,7 +971,7 @@
 - type: radioChannel
   id: KMLGRadio
   name: name-of-KMLGRadio
-  keycode: 'г' 
+  keycode: 'кл' 
   frequency: 3456
   color: "#394e35"
   longRange: false

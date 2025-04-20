@@ -1015,7 +1015,7 @@
 - type: radioChannel
   id: VitzRadioPeh
   name: name-of-VitzRadioPeh
-  keycode: 'й' 
+  keycode: 'вп' 
   frequency: 8855
   color: "#FFFDD0"
   longRange: true
@@ -1023,7 +1023,7 @@
 - type: radioChannel
   id: VitzRadioFlot
   name: name-of-VitzRadioFlot
-  keycode: 'ю' 
+  keycode: 'пф' 
   frequency: 8856
   color: "#86821d"
   longRange: true
@@ -1031,7 +1031,7 @@
 - type: radioChannel
   id: VitzRadioComm
   name: name-of-VitzRadioComm
-  keycode: 'я' 
+  keycode: 'вк' 
   frequency: 8857
   color: "#b3ae4b"
   longRange: true

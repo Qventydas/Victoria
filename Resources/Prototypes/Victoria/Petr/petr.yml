@@ -1305,7 +1305,7 @@
 - type: radioChannel
   id: PetrRadio
   name: name-of-PetrRadio
-  keycode: 'вв' 
+  keycode: 'пт' 
   frequency: 1917
   color: "#d20000"
   longRange: true

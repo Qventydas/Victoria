@@ -2628,7 +2628,7 @@
 - type: radioChannel
   id: NoocRadio
   name: name-of-NoocRadio
-  keycode: 'э' 
+  keycode: 'нэ' 
   frequency: 1551
   color: "#44b69d"
   longRange: true

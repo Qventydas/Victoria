@@ -3089,7 +3089,7 @@
 - type: radioChannel
   id: SNKRadio
   name: name-of-SNKRadio
-  keycode: 's' 
+  keycode: 'нк' 
   frequency: 1527
   color: "#123ec1"
   longRange: false
