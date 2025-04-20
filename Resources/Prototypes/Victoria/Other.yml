@@ -1,13 +1,3 @@
-- type: startingGear
-  id: VisitingPsychologistGear
-  equipment:
-    shoes: ClothingShoesLeather
-    id: PsychologistPDA
-    ears: ClothingHeadsetMedical
-  storage:
-    back:
-    - RubberStampPsychologist
-
 - type: entity
   name: Качующий психолог
   id: VisitingPsychologist
@@ -44,7 +34,7 @@
       raffle:
         settings: short
     - type: Loadout
-      prototypes: [ PsychologistGear, VisitingPsychologistGear]
+      prototypes: [ PsychologistGear, VisitingPsychologist]
       
 - type: preloadedGrid
   id: ShuttleVisitGenetic
