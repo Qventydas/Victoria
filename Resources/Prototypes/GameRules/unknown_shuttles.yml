@@ -23,6 +23,7 @@
     - id: UnknownShuttleUmporLost
     - id: UnknownShuttleNoocLost
     - id: UnknownShuttleKMLGLost
+    - id: UnknownShuttleVisitGenetic
 
 - type: entityTable
   id: UnknownShuttlesFreelanceTable
