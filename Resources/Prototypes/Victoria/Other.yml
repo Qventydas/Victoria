@@ -34,7 +34,7 @@
       raffle:
         settings: short
     - type: Loadout
-      prototypes: [ PsychologistGear, VisitingPsychologist]
+      prototypes: [ PsychologistGear, VisitorPsychologist]
       
 - type: preloadedGrid
   id: ShuttleVisitGenetic
