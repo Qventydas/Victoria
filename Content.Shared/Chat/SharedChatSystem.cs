@@ -103,16 +103,16 @@ public abstract class SharedChatSystem : EntitySystem
         prefix = string.Empty;
         output = input;
 
-        // If the string is less than 2, then it's probably supposed to be an emote.
+        // If the string is less than 3, then it's probably supposed to be an emote.
         // No one is sending empty radio messages!
-        if (input.Length <= 2)
+        if (input.Length <= 3)
             return;
 
         if (!(input.StartsWith(RadioChannelPrefix) || input.StartsWith(RadioChannelAltPrefix)))
             return;
 
-        prefix = input[..2];
-        output = input[2..];
+        prefix = input[..3];
+        output = input[3..];
     }
 
     /// <summary>
