@@ -1427,7 +1427,7 @@
 - type: radioChannel
   id: UmporRadio
   name: name-of-UmporRadio
-  keycode: 'у' 
+  keycode: 'уф' 
   frequency: 1678
   color: "#666666"
   longRange: false

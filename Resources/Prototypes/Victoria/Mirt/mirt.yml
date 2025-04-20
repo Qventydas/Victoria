@@ -2464,7 +2464,7 @@
 - type: radioChannel
   id: MirtRadio
   name: name-of-MirtRadio
-  keycode: 'р' 
+  keycode: 'им' 
   frequency: 1939
   color: "#a73800"
   longRange: true
