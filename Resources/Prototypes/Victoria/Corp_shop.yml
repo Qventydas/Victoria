@@ -489,7 +489,7 @@
   id: CorpShopMachineMachineCircuitboard
   parent: BaseMachineCircuitboard
   name: плата консоли корпоративных поставок
-  description: Электронная плата, необходимая для работы системы корпоративного сотрудничества
+  description: Электронная плата, необходимая для работы системы корпоративного сотрудничества.
   components:
     - type: MachineBoard
       prototype: ComputerCorpShop
