@@ -1,0 +1,2757 @@
+#Насяльник! Я сделал!
+#1) КПК, ID-карту и чип в КПК с мониторингом экипажа.- ДА
+#2) Скафандр лёгкий, Скафандр тяжёлый.-ДА
+#3) Пальто с бронёй, бронежилет, сапоги с небольшим ускорением-ДА
+#4) Пистолет мощный и громкий-ДА
+#5) Пистолет тихий, но слабей-ДА
+#6) Винтовку мощную-ДА
+#7) ПП небольшой и скорострельный, но не слишком сильный-ДА
+#8) Канал связи и ключ шифрования-ДА
+#9) Бумажная форма с отчётом о выполнении цели-ДА
+#10) Бумажная форма в которую пишется цель на убийство-ДА
+#11) Чип лояльности Хунд, как валюта для апплинка и для консоли поставок-ДА
+#12) Апплинк с этим добром-ДА
+#---------------------------------------Одёжка и армор-
+#--------------------Форма-
+#Оперативник-
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: HoundUniformOper
+  name: форма оперативника Хаунд
+  suffix: Хаунд
+  description: Форма для боевого состава корпорации. Ркбашка, пояс и штаны, удобные для движения. И погон. Гончие не любят излишества.
+  components:
+  - type: Sprite
+    sprite: Victoria/Hound/Equipment/hnd_uniform_op.rsi
+  - type: Clothing
+    sprite: Victoria/Hound/Equipment/hnd_uniform_op.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.9
+        Caustic: 0.75
+#Командир-
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: HoundUniformCom
+  name: форма Командира Хаунд
+  suffix: Хаунд
+  description: Форма для низового командного состава корпорации. Можно легко отличить по оранжевым полосам на поясе и погоне.
+  components:
+  - type: Sprite
+    sprite: Victoria/Hound/Equipment/hnd_uniform_com.rsi
+  - type: Clothing
+    sprite: Victoria/Hound/Equipment/hnd_uniform_com.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Heat: 0.9
+        Caustic: 0.75
+#Работник-
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: HoundUniformWorker
+  name: форма работника Хаунд
+  suffix: Хаунд
+  description: Тёплый свитер, пояс и шорты. Форма для рабочих, сопровождающих оперативников- грузчиков и пилотов.
+  components:
+  - type: Sprite
+    sprite: Victoria/Hound/Equipment/hnd_uniform_w.rsi
+  - type: Clothing
+    sprite: Victoria/Hound/Equipment/hnd_uniform_w.rsi
+#Представитель
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: HoundUniformOfficial
+  name: форма представителя Хаунд
+  suffix: Хаунд
+  description: Официальный костюм, что используют высокопоставленные лица Хаунд, дабы не выглядеть как жутковатые головорезы.
+  components:
+  - type: Sprite
+    sprite: Victoria/Hound/Equipment/hnd_uniform_off.rsi
+  - type: Clothing
+    sprite: Victoria/Hound/Equipment/hnd_uniform_off.rsi
+#--------------------Броня-
+#Шлем опера
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: HoundHelmetOperator
+  name: шлем оперативника Хаунд
+  suffix: Хаунд
+  description: Неплохой скафандра шлемак от Хаунд. Лёгкий, неплохо защищает от колюще-режущих и тепловых травм. Правда после тупых ударов голова звенит ой-йой...Зато есть встроенный визор свой-чужой.
+  components:
+  - type: BreathMask
+  - type: PointLight
+    color: "#ffdbad"
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+  - type: Sprite
+    sprite: Victoria/Hound/Armor/hnd_helmet_op.rsi
+  - type: Clothing
+    sprite: Victoria/Hound/Armor/hnd_helmet_op.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Slash: 0.8
+        Piercing: 0.8
+        Heat: 0.8
+  - type: ShowJobIcons
+#Шлем командира
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: HoundHelmetCommandeer
+  name: шлем командира Хаунд
+  suffix: Хаунд
+  description: Как обычный шлем, только с амортизацией и некоторым радиооборудованием. А ещё в нём тепло.
+  components:
+  - type: BreathMask
+  - type: PointLight
+    color: "#ffdbad"
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+  - type: Sprite
+    sprite: Victoria/Hound/Armor/hnd_helmet_com.rsi
+  - type: Clothing
+    sprite: Victoria/Hound/Armor/hnd_helmet_com.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.75
+        Piercing: 0.8
+        Heat: 0.75
+  - type: ShowJobIcons
+#Шлем ЕВА
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: HoundHelmetEVA
+  name: шлем ЕВА-скафандра Хаунд
+  suffix: Хаунд
+  description: Как шлем обычного ЕВА скафандра, только чуток прочнее и удобнее.
+  components:
+  - type: BreathMask
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+  - type: Sprite
+    sprite: Victoria/Hound/Armor/hnd_helmet_eva.rsi
+  - type: Clothing
+    sprite: Victoria/Hound/Armor/hnd_helmet_eva.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.8
+  - type: ShowJobIcons
+#Броник
+- type: entity
+  parent: ClothingOuterBaseMedium
+  id: HoundArmorLight
+  name: Лёгкий бронежилет Хаунд
+  suffix: Хаунд
+  description: Лёгкий бронежилет корпорации Хаунд. Его используют или сопровождающие бойцов пилоты или совсем зелёные опера. По всем параметрам средний.
+  components:
+  - type: Sprite
+    sprite: Victoria/Hound/Armor/hnd_armor_light.rsi
+  - type: Clothing
+    sprite: Victoria/Hound/Armor/hnd_armor_light.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.6 
+        Heat: 0.65
+        Caustic: 0.6
+  - type: ExplosionResistance
+    damageCoefficient: 0.85
+#Каска
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: HoundHelmetLight
+  name: каска Хаунд
+  suffix: Хаунд
+  description: Простенькая каска. Используется небогатыми операми и рабочими.
+  components:
+  - type: Sprite
+    sprite: Victoria/Hound/Armor/hnd_helmet_light.rsi
+  - type: Clothing
+    sprite: Victoria/Hound/Armor/hnd_helmet_light.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.85
+        Heat: 0.85
+#Пальто
+- type: entity
+  parent: ClothingOuterBaseMedium
+  id: HoundArmorPalto
+  name: бронепальто Хаунд
+  suffix: Хаунд
+  description: Неприметное пальто с вшитыми внутрь бронеэлементами. Его используют оперативники на заданиях во враждебной среде.
+  components:
+  - type: Sprite
+    sprite: Victoria/Hound/Armor/hnd_armor_palto.rsi
+  - type: Clothing
+    sprite: Victoria/Hound/Armor/hnd_armor_palto.rsi
+  - type: Armor 
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.65
+        Piercing: 0.7
+        Heat: 0.6
+        Caustic: 0.6
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+#Бронескафандр тяжёлый
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: HoundArmorHeavy
+  name: бронескафандр Хаунд
+  suffix: Хаунд
+  description: Крайне надёжный бронескафандр, не сильно стесняющий движение за счёт экзоскелета. Хорошо защищает от всего, кроме тупого урона. Используется штурмовиками корпорации.
+  components:
+  - type: Sprite
+    sprite: Victoria/Hound/Armor/hnd_armor_heavy.rsi
+  - type: Clothing
+    sprite: Victoria/Hound/Armor/hnd_armor_heavy.rsi
+  - type: Armor 
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.5
+        Piercing: 0.5
+        Heat: 0.5
+        Radiation: 0.3
+        Caustic: 0.3
+  - type: ClothingSpeedModifier
+    sprintModifier: 1
+    walkModifier: 1
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: ToggleableClothing
+    clothingPrototype: HoundHelmetOperator
+#командирская версия
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: HoundArmorHeavyCom
+  name: командирский бронескафандр Хаунд
+  suffix: Хаунд
+  description: Как обычный, только с оранжевой краской и чуть более прочный.
+  components:
+  - type: Sprite
+    sprite: Victoria/Hound/Armor/hnd_armor_heavy_com.rsi
+  - type: Clothing
+    sprite: Victoria/Hound/Armor/hnd_armor_heavy_com.rsi
+  - type: Armor 
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.5
+        Piercing: 0.45
+        Heat: 0.4
+        Radiation: 0.3
+        Caustic: 0.3
+  - type: ClothingSpeedModifier
+    sprintModifier: 1
+    walkModifier: 1
+  - type: ExplosionResistance
+    damageCoefficient: 0.4
+  - type: ToggleableClothing
+    clothingPrototype: HoundHelmetCommandeer
+#Лёгкий скафандр(ЕВА)
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: HoundArmorEVA
+  name: скафандр Хаунд
+  suffix: Хаунд
+  description: Довольно дешёвый скафандр, не обеспечивающий серьёзной защиты. По сути перекрашеная и слегка модифицированная ЕВА.
+  components:
+  - type: Sprite
+    sprite: Victoria/Hound/Armor/hnd_armor_EVA.rsi
+  - type: Clothing
+    sprite: Victoria/Hound/Armor/hnd_armor_EVA.rsi
+  - type: Armor 
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.9
+        Piercing: 0.7
+        Heat: 0.7
+        Radiation: 0.4
+        Caustic: 0.4
+  - type: ClothingSpeedModifier
+    sprintModifier: 1.25
+    walkModifier: 1.25
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: ToggleableClothing
+    clothingPrototype: HoundHelmetEVA
+#--------------------Одёжка-
+#Сапоги-
+- type: entity
+  parent: ClothingShoesMilitaryBase
+  id: HoundBoots
+  name: сапоги Гончих
+  suffix: Хаунд
+  description: Лёгкие резинополимерные сапоги от Хаунд. Качественная амортизация позволяет бегать часами напролёт.
+  components:
+  - type: Sprite
+    sprite: Victoria\Hound\Equipment\hnd_boots.rsi
+  - type: Clothing
+    sprite: Victoria\Hound\Equipment\hnd_boots.rsi
+  - type: ClothingSpeedModifier
+    sprintModifier: 1.1
+    walkModifier: 1.1
+#Берет-
+- type: entity
+  parent: ClothingHeadBase
+  id: HoundOperBeret
+  name: берет командира Хаунд
+  suffix: Хаунд
+  description: Берет от Хаунд. Носит только командный состав, но и то редко, уж очень он хрупкий.
+  components:
+  - type: Sprite
+    sprite: Victoria\Hound\Equipment\hnd_beret.rsi
+  - type: Clothing
+    sprite: Victoria\Hound\Equipment\hnd_beret.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+#Кепочка-
+- type: entity
+  parent: ClothingHeadBase
+  id: HoundOperCap
+  name: кепка оперативника Хаунд
+  suffix: Хаунд
+  description: Прочная кепка, производимая Хаунд. Хорошо защищает от солнца, влаги, ветра и пыли. А ещё круто выглядит.
+  components:
+  - type: Sprite
+    sprite: Victoria\Hound\Equipment\hnd_soft.rsi
+  - type: Clothing
+    sprite: Victoria\Hound\Equipment\hnd_soft.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+#Рюкзак-
+- type: entity
+  parent: ClothingBackpack
+  id: HoundBackpack
+  name: рюкзак Хаунд
+  suffix: Хаунд
+  description: Нормальный рюкзак, способный вместить хорошее количество снаряжения. А ещё довольно лёгкий, хоть и немного неудобный.
+  components:
+  - type: Sprite
+    sprite: Victoria\Hound\Equipment\hnd_backpack.rsi
+  - type: Clothing
+    sprite: Victoria\Hound\Equipment\hnd_backpack.rsi
+  - type: Storage
+    grid: 
+    - 0,0,6,5
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+#Поясок
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: HoundBelt
+  name: пояс Хаунд
+  suffix: Хаунд
+  description: Этот пояс используют бойцы корпорации Хаунд для ношения амуниции, гранат и прочего боевого снаряжения
+  components:
+  - type: Sprite
+    sprite: Victoria/Hound/Equipment/hnd_belt.rsi
+  - type: Clothing
+    sprite: Victoria/Hound/Equipment/hnd_belt.rsi
+  - type: Storage
+    grid: 
+    - 0,0,6,3  
+    whitelist:
+      tags:
+        - CigPack
+        - Taser
+        - Powerdrill
+        - Wirecutter
+        - Crowbar
+        - Screwdriver
+        - Flashlight
+        - Wrench
+        - GeigerCounter
+        - Flare
+        - CableCoil
+        - CigPack
+        - Radio
+        - HolofanProjector
+        - Multitool
+        - AppraisalTool
+        - JawsOfLife
+        - GPS
+        - MagazinePistolHighCapacity
+        - CombatKnife
+        - Sidearm
+      components:
+        - Stunbaton
+        - FlashOnTrigger
+        - SmokeOnTrigger
+        - Flash
+        - Handcuff
+        - Ammo
+        - SprayPainter
+        - NetworkConfigurator
+        - RCD
+        - RCDAmmo
+        - Welder
+        - PowerCell
+        - Geiger
+        - TrayScanner
+        - GasAnalyzer
+        - Explosive
+        - EmpOnTrigger
+        - OnUseTimerTrigger
+
+  - type: Appearance
+
+#Перчатки-
+- type: entity
+  parent: ClothingHandsBase
+  id: HoundGloves
+  name: перчатки Хаунд
+  suffix: хаунд
+  description: Крепкие и качественные полимерные перчатки. Хорошо подходят для стрельбы и карабкивания, а металлические элементы защищают костяшки рук. А ещё ими легко выцарапать глаза.
+  components:
+  - type: Sprite
+    sprite: Victoria/Hound/Equipment/hnd_gloves.rsi
+  - type: Clothing
+    sprite: Victoria/Hound/Equipment/hnd_gloves.rsi
+  - type: Fiber
+    fiberMaterial: fibers-synthetic
+    fiberColor: fibers-black
+  - type: Insulated
+#Плащ
+- type: entity
+  parent: ClothingNeckBase
+  id: HoundCloak
+  name: Плащ ветерана Хаунд
+  suffix: Хаунд
+  description: Пожжёный, запыленный, много где прорезаный и пробитый, но всё ещё живой плащ кирпично-ржавого цвета, укрывающий своего владельца на очередной охоте.
+  components:
+  - type: Sprite
+    sprite: Victoria/Hound/Equipment/hnd_cloak.rsi
+#----------------------------------------Снаряга и приспособления-
+#Печати, формы и прочая хрень для производства мукулатуры-
+#---------------------------------Стандартная форма---------------------
+- type: entity
+  id: HoundPaperForm
+  name: документ Хаунд
+  suffix: Хаунд
+  parent: Paper
+  components:
+  - type: Paper
+    content: |
+      [color=#800000]░░░░░░█░░░█░░░░░░[/color]
+      [color=#800000]░░░░█████████░░░░[/color]      [head=3]Бланк документа[/head]
+      [color=#800000]░░░░██░███░██░░░░[/color]               [head=3]VITZ[/head]
+      [color=#800000]░░░░░███████░░░░░[/color]
+      [color=#800000]░░░░░░░███░░░░░░░[/color]
+      =============================================
+                          НАИМЕНОВАНИЕ ДОКУМЕНТА
+      =============================================
+      
+      Дата:
+      Составитель документа:
+      Должность составителя:
+      
+      ВЫСОКИЙ КЛАСС СЕКРЕТНОСТИ! ДОСТУП РАЗРЕШЁН ТОЛЬКО СОТРУДНИКАМ!
+      Полное содержание документа со всей необходимой информацией и описанием
+      
+      =============================================
+      
+                                  [italic]Место для печатей[/italic]
+
+#Форма на инфу по цели-
+- type: entity
+  id: HoundPaperFormKillOrder
+  name: цель Хаунд
+  suffix: Хаунд
+  parent: Paper
+  components:
+  - type: Paper
+    content: |
+      [color=#800000]░░░░░░█░░░█░░░░░░[/color]
+      [color=#800000]░░░░█████████░░░░[/color]      [head=3]Бланк документа[/head]
+      [color=#800000]░░░░██░███░██░░░░[/color]               [head=3]VITZ[/head]
+      [color=#800000]░░░░░███████░░░░░[/color]
+      [color=#800000]░░░░░░░███░░░░░░░[/color]
+      =============================================
+                          НАИМЕНОВАНИЕ ДОКУМЕНТА
+      =============================================
+      
+      Дата:
+      Составитель документа:
+      Должность составителя:
+      
+      
+      Данный документ предоставляет информацию о вашей следующей цели, Оператор.
+      
+      №1 Имя/Прозвище:
+      №2 Живой или мёртвой*
+      №3 ЕСЛИ мёртвой- необходимые доказадельства устранения:
+      №4 Местонахождение:
+      №5 Сроки выполнения: от XX XX XXXX до XX XX XXXX
+      №6 Выделенный личный состав:
+      №7 Выделенное снаряжение:
+      №8 Оценка опасности миссии: Низкая/Средняя/Высокая*
+      №9 Соблюдать скрытность? Да/Нет/На усмотрение*
+      №10 Дополнительная информация о цели:
+      
+      ВЫСОКИЙ КЛАСС СЕКРЕТНОСТИ! ДОСТУП РАЗРЕШЁН ТОЛЬКО СОТРУДНИКАМ!
+      *Оставить выбранный(ые) ответ(ы), остальное- стереть
+      =============================================
+      
+                                  [italic]Место для печатей[/italic]
+
+#Форма отчёта о цели-
+- type: entity
+  id: HoundPaperFormRKilleport
+  name: отчёт Хаунд
+  suffix: Хаунд
+  parent: Paper
+  components:
+  - type: Paper
+    content: |
+      [color=#800000]░░░░░░█░░░█░░░░░░[/color]
+      [color=#800000]░░░░█████████░░░░[/color]      [head=3]Бланк документа[/head]
+      [color=#800000]░░░░██░███░██░░░░[/color]               [head=3]VITZ[/head]
+      [color=#800000]░░░░░███████░░░░░[/color]
+      [color=#800000]░░░░░░░███░░░░░░░[/color]
+      =============================================
+                          НАИМЕНОВАНИЕ ДОКУМЕНТА
+      =============================================
+      
+      Дата:
+      Составитель документа:
+      Должность составителя:
+      
+      
+      Итоги выполнения цели:
+      Цель ликвидирована? Да/Нет*
+      В соответствии с пунктом условий №2? Да/Нет*
+      В соответствии с пунктом условий №3? Да/Нет*
+      В соответствии с пунктом условий №9? Да/Нет*
+      В соответствии с иными условиями, если оные были указаны? Да/Нет*
+      
+      Потери личного состава:
+      Потери снаряжения:
+      
+      Оценка качества предоставленных перед заданием данных:
+      Дополнительный комментарий:
+      
+      ВЫСОКИЙ КЛАСС СЕКРЕТНОСТИ! ДОСТУП РАЗРЕШЁН ТОЛЬКО СОТРУДНИКАМ!
+      *Оставить выбранный(ые) ответ(ы), остальное- стереть
+      =============================================
+      
+                                  [italic]Место для печатей[/italic]
+
+#-------------------------------------печать-----------------      
+- type: entity
+  name: печать корпорации The Hound
+  suffix: Хаунд
+  parent: RubberStampBaseAlt
+  id: HoundRubberStamp
+  description: Алая печать корпорации Хаунд.
+  components:
+  - type: Stamp
+    stampedName: Корпорация Хаунд
+    stampedColor: "#800000"
+    stampState: "paper_stamp-generic"
+  - type: Sprite
+    sprite: Victoria/Hound/Misc/hnd_stamp.rsi
+    state: stamp
+#Оборудование и прочее
+#Мачете
+- type: entity
+  name: Полимерное мачете
+  parent: [ BaseSword, BaseMajorContraband ]
+  id: HoundMachete
+  description: Крайне лёгкое и прочное лезвие, производимое Хаунд. Хорошо рубит пальцы, отрубает головы, а также расчищает растительность. В настоящем бою- так себе.
+  components:
+  - type: Tag
+    tags:
+    - Machete
+  - type: Sprite
+    sprite: Victoria/Hound/Weapons/machete.rsi
+  - type: MeleeWeapon
+    attackRate: 1.3
+    damage:
+      types:
+        Slash: 18
+    soundHit:
+        path: /Audio/Weapons/bladeslice.ogg
+  - type: Item
+    sprite: Victoria/Hound/Weapons/machete.rsi
+  - type: DisarmMalus
+#Монитор
+- type: entity
+  name: Монитор экипажа Хаунд
+  parent: HandheldCrewMonitor
+  id: HoundHandheldCrewMonitor
+  description: Крайне лёгкий переносной монитор Хаунд, предназначенный для наблюдения за передвижением членов отряда.
+  components:
+  - type: Item
+    shape: 
+    - 0,0,0,0
+  - type: Sprite
+    sprite: Victoria/Hound/Equipment/hnd_crew_monitor.rsi
+#---------------------------------------Пущьки!-\
+#Патроны...сука
+#К тяж пистолету, абстрактный и остальные
+- type: entity
+  id: BaseMagazineHeavyPistolHound
+  name: магазин 'Мопса' (.45 магнум)"
+  parent: BaseItem
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - MagazineMagnumPistol
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - HoundHeavyPistolMagazine
+    capacity: 4
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Victoria/Hound/Weapons/Ammunition/heavy_pistol_magazine.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: MagazineHeavyPistolHound
+  name: магазин для "Мопс" (.45 магнум)
+  suffix: Хаунд
+  parent: BaseMagazineHeavyPistolHound
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeMagnum
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Tag
+    tags:
+      - HoundHeavyPistolMagazine
+#К лёгкому, абстракт и обычный
+- type: entity
+  id: BaseMagazineLightPistolHound
+  name: магазин для "Бигль" (.25 безгильзовые)"
+  suffix: Хаунд
+  parent: BaseMagazineCaselessRifle
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - HoundLightPistolMagazine
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+        - CartridgeCaselessRifle
+    proto: CartridgeCaselessRifle
+    capacity: 14
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Victoria/Hound/Weapons/Ammunition/light_pistol_magazine.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 6
+    zeroVisible: false
+  - type: Appearance
+- type: entity
+  id: MagazineLightPistolHound
+  name: магазин для "Бигль" (.25 безгильзовые)"
+  suffix: Хаунд
+  parent: BaseMagazineLightPistolHound
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeCaselessRifle
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+#К ПП, абстракт и обычный
+- type: entity
+  id: BaseMagazineMakhnoRifle
+  name: магазин для "Махно" (.35 авто)
+  suffix: Хаунд
+  parent: [ BaseItem, BaseRestrictedContraband ]
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - MagazineLightRifleMakhno
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgePistol
+    proto: CartridgePistol
+    capacity: 22
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Victoria/Hound/Weapons/Ammunition/makhno_rifle_magazine.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: MagazineMakhnoRifle
+  name: магазин для "Махно" (.35 авто)
+  suffix: Хаунд
+  parent: BaseMagazineMakhnoRifle
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgePistol
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Tag
+    tags:
+      - HoundMakhnoRifleMagazine
+#К дробашу, абстракт и обычный
+- type: entity
+  id: BaseMagazineShotgunHound
+  name: магазин для "Лайка" (.50)
+  suffix: Хаунд
+  parent: BaseMagazineShotgun
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - MagazineShotgunHound
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - ShellShotgun
+    proto: ShellShotgun
+    capacity: 6
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Victoria/Hound/Weapons/Ammunition/shotgun_magazine.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: MagazineShotgunHound
+  name: магазин для "Лайка" (.50)
+  suffix: Хаунд
+  parent: BaseMagazineShotgunHound
+  components:
+  - type: BallisticAmmoProvider
+    proto: ShellShotgun
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Tag
+    tags:
+      - HoundMakhnoRifleMagazine
+#К пулемёту, абстракт и обычный
+- type: entity
+  id: BaseMagazineLMGHound
+  name: магазин для "Кер" (.30 винтовочные)
+  suffix: Хаунд
+  parent: [ BaseItem, BaseRestrictedContraband ]
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+      - HoundLMGMagazine
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CartridgeLightRifle
+    proto: CartridgeLightRifle
+    capacity: 56
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Victoria/Hound/Weapons/Ammunition/lmg_magazine.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: MagazineVisuals
+    magState: mag
+    steps: 8
+    zeroVisible: false
+  - type: Appearance
+
+- type: entity
+  id: MagazineLMGHound
+  name: магазин для "Кер" (.30 винтовочные)
+  suffix: Хаунд
+  parent: BaseMagazineLMGHound
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgePistol
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Tag
+    tags:
+      - HoundLMGMagazine
+#Сами ПУЩЩЬКИ!
+#Пистолет штурмовой
+- type: entity
+  name: пистолет "Мопс"
+  suffix: Хаунд
+  parent: BaseWeaponPistol
+  id: HoundHeavyPistol
+  description: Тяжёлый и скорострельный пистолет. Калибр мощный, да беда- только 5 патронов. Не промахнись. Дырки на стволе чтобы его при выстреле не разорвало нахуй.
+  components:
+  - type: Item
+    shape:
+    - 0,0,1,1
+  - type: Sprite
+    sprite: Victoria/Hound/Weapons/heavy_pistol.rsi
+    layers:
+     - state: base
+       map: ["enum.GunVisualLayers.Base"]
+     - state: mag-0
+       map: ["enum.GunVisualLayers.Mag"]
+  - type: Gun
+    fireRate: 3.5
+    ProjectileSpeed: 35
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/mk58.ogg 
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg      
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineHeavyPistolHound
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - HoundHeavyPistolMagazine
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeMagnum
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeMagnum
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 250
+  - type: Tag
+    tags:
+      - HoundHeavyPistol
+#Пистолет агентурный
+- type: entity
+  name: пистолет "Бигль"
+  suffix: Хаунд
+  parent: [ BaseWeaponPistol, BaseRestrictedContraband ]
+  id: HoundLightPistol
+  description: Довольно компактный и скорострельный пистолет с встроенным глушителем. Использует патроны .25 безгильзовые
+  components:
+  - type: Sprite
+    sprite: Victoria/Hound/Weapons/light_pistol.rsi 
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: Victoria/Hound/Weapons/light_pistol.rsi
+  - type: ChamberMagazineAmmoProvider
+    boltClosed: null
+  - type: Gun
+    fireRate: 6
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/silenced.ogg
+      params:
+        volume: -10
+    selectedMode: FullAuto
+    availableModes:
+    - SemiAuto
+    - Burst
+    - FullAuto
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineLightPistolHound
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - HoundLightPistolMagazine
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeCaselessRifle
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeCaselessRifle
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+#Дробовик
+- type: entity
+  name: Дробовик "Лайка"
+  parent: [BaseItem, BaseGunWieldable]
+  id: HoundShotgun
+  description: Довольно компактный и мощный дробовик, идеально подходящий для штурма помещений. Правда магазина редко хватает даже на половину.
+  components:
+  - type: Sprite
+    sprite: Victoria/Hound/Weapons/shotgun.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    size: Large
+    shape:
+    - 0,0,2,1
+  - type: Clothing
+    sprite: Victoria/Hound/Weapons/shotgun.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
+  - type: AmmoCounter
+  - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
+  - type: Gun
+    fireRate: 4
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot:
+      path: /Audio/Corvax/Weapons/Guns/Gunshots/shotgun_auto.ogg # Corvax-Guns
+    soundEmpty:
+      path: /Audio/Weapons/Guns/Empty/empty.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineShotgunHound
+        priority: 2
+        whitelist:
+          tags:
+          - MagazineShotgunHound
+        whitelistFailPopup: gun-magazine-whitelist-fail
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineAmmoProvider
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 500
+#ПП
+- type: entity
+  name: пистолет-пулемёт "Махно"
+  suffix: Хаунд
+  parent: [BaseWeaponSubMachineGun, BaseRestrictedContraband]
+  id: HoundSMG
+  description: Крайне эргономичный, лёгкий и скорострельный ПП за авторством Хаунд. Хорошо подходит для тактики "Ударил-отошёл", но плохо показывает себя в длительных боях. Собрана из частей нескольких других автоматов со всей галактики.
+  components:
+  - type: Sprite
+    sprite: Victoria/Hound/Weapons/makhno_rifle.rsi
+    shape:
+    - 0,0,2,1
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Gun
+    fireRate: 8
+    ProjectileSpeed: 32
+    maxAngle: 14
+    angleDecay: 14
+    angleIncrease: 2
+    selectedMode: FullAuto
+    availableModes:
+    - SemiAuto
+    - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineMakhnoRifle
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - HoundMakhnoRifleMagazine
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgePistol
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgePistol
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+#Пулемёт
+- type: entity
+  name: лёгкий пулемёт "Кер"
+  suffix: Хаунд
+  id: HoundLightMachineGun
+  parent: [BaseWeaponLightMachineGun]
+  description: Что-то среднее между пулемётом и штурмовой винтовкой. Магазин небольшой, точность неплохая, большая скорострельность и низкий вес.
+  components:
+  - type: Item
+    size: Huge
+    shape:
+    - 0,0,3,2
+  - type: Sprite
+    sprite: Victoria/Hound/Weapons/lmg.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-3
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Gun
+    fireRate: 10
+    ProjectileSpeed: 35
+    minAngle: 6
+    maxAngle: 20
+    angleDecay: 20
+    angleIncrease: 1
+    selectedMode: FullAuto
+    availableModes:
+    - SemiAuto
+    - FullAuto
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: MagazineLMGHound
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - HoundLMGMagazine
+      gun_chamber:
+        name: Chamber
+        startingItem: CartridgeLightRifle
+        priority: 1
+        whitelist:
+          tags:
+            - CartridgeLightRifle
+  - type: GunWieldBonus
+    minAngle: -5
+    maxAngle: -5
+  - type: MagazineVisuals
+    magState: mag
+    steps: 4
+    zeroVisible: true
+  - type: Appearance
+#Снапа
+- type: entity
+  name: Хаски
+  suffix: Хаунд
+  parent: [BaseWeaponSniper, BaseGunWieldable, BaseRestrictedContraband]
+  id: HoundSniperRifle
+  description: Относительно лёгкая и компактная снайперская винтовка Хаунд. Барабан всего на 3 патрона, но зато лучшая скорострельность на рынке.
+  components:
+  - type: Item
+    shape:
+    - 0,0,3,1
+  - type: Sprite
+    sprite: Victoria/Hound/Weapons/sniper_rifle.rsi
+  - type: Clothing
+    sprite: Victoria/Hound/Weapons/sniper_rifle.rsi
+  - type: BallisticAmmoProvider
+    whitelist:
+      tags:
+      - CartridgeAntiMateriel
+    capacity: 3
+    fireRate: 2
+    proto: CartridgeAntiMateriel
+#-----------Связь
+#Каналы
+- type: radioChannel
+  id: HoundRadio
+  name: Хаунд
+  keycode: 'х' 
+  frequency: 2477
+  color: "#800000"
+  longRange: true
+#Ключ обычный
+- type: entity
+  parent: BaseItem
+  id: HoundEncryptionKey
+  name: Ключ шифрования Хаунд
+  suffix: Хаунд
+  description: A small cypher chip for headsets.
+  components:
+  - type: EncryptionKey
+    channels:
+    - HoundRadio
+    defaultChannel: HoundRadio
+  - type: Item
+    sprite: Victoria/Hound/Comm/hnd_encryption_key.rsi
+  - type: Sprite
+    sprite: Victoria/Hound/Comm/hnd_encryption_key.rsi
+    layers:
+    - state: crypt_gray
+    - state: label_sold
+  - type: StealTarget
+    stealGroup: EncryptionKey
+#Гарнитура
+- type: entity
+  parent: ClothingHeadset
+  id: HoundHeadset
+  name: Гарнитура оперативника Хаунд
+  suffix: Хаунд
+  description: Эргономичная и компактная гарнитура с ключом шифрования Хаунд.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - HoundEncryptionKey
+  - type: Sprite
+    sprite: Victoria/Hound/Comm/hnd_garniture.rsi
+  - type: Clothing
+    sprite: Victoria/Hound/Comm/hnd_garniture.rsi
+#-----Доступы и шлюзы
+#Доступ для рабочих
+- type: accessLevel
+  id: HoundAccessWorker
+  name: access-hnd-Worker
+# Доступ для оперов
+- type: accessLevel
+  id: HoundAccessOper
+  name: access-hnd-oper
+# Доcтуп для коммандиров
+- type: accessLevel
+  id: HoundAccessCom
+  name: access-hnd-com
+#----Карты
+#-стандарт карты---------- 
+- type: entity
+  parent: Clothing
+  id: HoundIDCard
+  suffix: Хаунд
+  name: карта итендификации личности работника Хаунд
+  description: Данная карта служит в роли электронного пропуска на объектах корпорации Хаунд
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Victoria/Hound/Access/hnd_id_cards.rsi
+  - type: Clothing
+    slots:
+    - idcard
+    sprite: Victoria/Hound/Access/hnd_id_cards.rsi
+  - type: Item
+    size: Small
+    heldPrefix: default
+    storedRotation: -90
+  - type: Access
+  - type: IdCard
+  - type: StationRecordKeyStorage
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - WhitelistChameleon
+  - type: StealTarget
+    stealGroup: IDCard
+#Карта рабочего
+- type: entity
+  parent: HoundIDCard
+  id: HoundIDCardWorker
+  name: ID-карта работника Хаунд.
+  description: ID карта для небоевых работников Hound.
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: worker
+  - type: Access
+    tags:
+    - HoundAccessWorker
+    - External
+  - type: PresetIdCard
+    name: Рабочий Хаунд
+#Карта опера
+- type: entity
+  parent: HoundIDCard
+  id: HoundIDCardOper
+  name: ID карта оперативника Хаунд.
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: oper
+  - type: Access
+    tags:
+    - HoundAccessOper
+    - HoundAccessWorker
+    - External
+  - type: PresetIdCard
+    name: Оперативник Хаунд
+#Карта командира
+- type: entity
+  parent: HoundIDCard
+  id: HoundIDCardCommandeer
+  name: ID карта Командира Хаунд
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: com
+  - type: Access
+    tags:
+    - HoundAccessOper
+    - HoundAccessCom
+    - HoundAccessWorker
+    - External
+  - type: PresetIdCard
+    name: Командир Хаунд
+#БАЗА ПДА
+- type: entity
+  abstract: true
+  parent: BasePDA
+  id: HoundPDA
+  name: КПК корпорации Хаунд
+  description: Мелкий, быстрый, для любителей манёвренного боя.
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: Victoria/Hound/Access/hnd_pda.rsi
+    layers:
+    - map: [ "enum.PdaVisualLayers.Base" ]
+    - state: "light_overlay"
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      shader: "unshaded"
+      visible: false
+    - state: "id_overlay"
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+      shader: "unshaded"
+      visible: false
+  - type: Icon
+    sprite: Victoria/Viteztvi/Equipment/vitz_pda.rsi
+    state: pda
+#ПДА рабочего
+- type: entity
+  parent: HoundPDA
+  id: HoundPDAWorker
+  name: КПК работника Хаунд
+  suffix: Хаунд
+  description: Мелкий, быстрый, для любителей манёвренного боя. Правда вот этот для рабочих.
+  components:
+    - type: Pda
+      id: HoundIDCardWorker
+      state: pda
+#ПДА оперативника
+- type: entity
+  parent: HoundPDA
+  id: HoundPDAOp
+  name: КПК оперативника Хаунд
+  suffix: Хаунд
+  description: Мелкий, быстрый, для любителей манёвренного боя.
+  components:
+    - type: Pda
+      id: HoundIDCardOper
+      state: pda
+#ПДА командира
+- type: entity
+  parent: HoundPDA
+  id: HoundPDACommandeer
+  name: КПК командира Хаунд
+  suffix: Хаунд
+  description: Мелкий, быстрый, для любителей манёвренного боя. Тут должна быть карта командира.
+  components:
+    - type: Pda
+      id: HoundIDCardCommandeer
+      state: pda
+#Шлюзы
+#Шлюз оперов закрытый
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsHoundOpAccess
+  suffix: Хаунд, Оперативник, Locked
+  components:
+  - type: AccessReader
+    access: [["HoundAccessOper"], ["HoundAccessCom"]]
+
+- type: entity
+  parent: Airlock
+  id: HoundAirlockOpLocked
+  name: шлюз Хаунд
+  suffix: Хаунд, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsHoundOpAccess ]
+  - type: Sprite
+    sprite: Victoria/Hound/Airlocks/hnd_airlock_op.rsi
+#Шлюз работников закрытый
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsHoundWorkerAccess
+  suffix: Хаунд, Рабочий , Locked
+  components:
+  - type: AccessReader
+    access: [["HoundAccessWorker"], ["HoundAccessOper"]]
+
+- type: entity
+  parent: Airlock
+  id: HoundAirlockWorkerLocked
+  name: рабочий шлюз Хаунд
+  suffix: Хаунд, рабочий, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsHoundWorkerAccess ]
+  - type: Sprite
+    sprite: Victoria/Hound/Airlocks/hnd_airlock_worker.rsi
+#Шлюз Командования закрытый
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsHoundComAccess
+  suffix: Хаунд, Рабочий , Locked
+  components:
+  - type: AccessReader
+    access: [["HoundAccessCom"]]
+
+- type: entity
+  parent: Airlock
+  id: HoundAirlockComLocked
+  name: командный шлюз Хаунд
+  suffix: Хаунд, Командир, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsHoundComAccess ]
+  - type: Sprite
+    sprite: Victoria/Hound/Airlocks/hnd_airlock_com.rsi
+#------------------------------------стыковочный---------- 
+- type: entity
+  parent: AirlockExternalShuttleLocked
+  name: Стыковочный шлюз
+  id: HoundAirlockShuttleEasyPryLocked
+  suffix: Хаунд
+  description: Чтобы успешно прилепиться к космическим объектам.
+  components:
+  - type: PryUnpowered
+  - type: AccessReader
+    access: [["HoundAccessWorker"]]
+#------------------------------------------------------Наполненные рюкзаки и ящики
+#Наполненный пояс
+- type: entity
+  id: HoundBeltFilled
+  parent: HoundBelt
+  suffix: Filled, Хаунд
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponPistolMk58
+      - id: CombatKnife
+      - id: MagazinePistolHighCapacity
+      - id: MagazinePistolHighCapacity
+      - tag: Screwdriver
+      - tag: Multitool
+#Инженерный пояс
+- type: entity
+  id: HoundBeltFilledEngi
+  name: инженерный пояс Хаунд
+  parent: HoundBelt
+  suffix: Filled, Хаунд
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingEyesGlassesMeson
+      - id: Welder
+      - id: WeaponPistolMk58
+      - id: Wirecutter
+      - id: Screwdriver
+      - id: Wrench
+      - id: Multitool
+#Взрывной
+- type: entity
+  id: HoundBeltFilledExp
+  name: инженерный пояс Хаунд
+  parent: HoundBelt
+  suffix: Filled, Хаунд
+  components:
+  - type: StorageFill
+    contents:
+      - id: ExGrenade
+      - id: ExGrenade
+      - id: GrenadeShrapnel
+      - id: GrenadeShrapnel
+      - id: C4
+      - id: C4
+      - id: EmpGrenade
+#Новичок
+- type: entity
+  parent: HoundBackpack
+  id: HoundBackpackFilledNewbie
+  suffix: Хаунд, Новичок
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineHeavyPistolHound
+      - id: MagazineHeavyPistolHound
+      - id: HoundHeavyPistol
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+#Опер
+- type: entity
+  parent: HoundBackpack
+  id: HoundBackpackFilledOper
+  suffix: Хаунд, Опер
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineMakhnoRifle
+      - id: MagazineMakhnoRifle
+      - id: HoundSMG
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+      - id: NitrogenTankFilled
+      - id: HoundMachete
+#Командир
+- type: entity
+  parent: HoundBackpack
+  id: HoundBackpackFilledCom
+  suffix: Хаунд, Командир
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineMakhnoRifle
+      - id: MagazineMakhnoRifle
+      - id: HoundSMG
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: HandheldCrewMonitor
+      - id: HoundRubberStamp
+      - id: OxygenTankFilled
+      - id: HoundMachete
+#Аплинковые
+#Дешовый с пайком
+- type: entity
+  parent: HoundBackpack
+  id: HoundBackpackFilledEmpty
+  suffix: Хаунд, Пустой
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+      - id: NitrogenTankFilled
+#лёгкий пистолет
+- type: entity
+  parent: HoundBackpack
+  id: HoundBackpackFilledLightPistol
+  suffix: Хаунд, лёг. Пистолет
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineLightPistolHound
+      - id: MagazineLightPistolHound
+      - id: MagazineLightPistolHound
+      - id: HoundLightPistol
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+      - id: NitrogenTankFilled
+#-Тяжёлый пистолет
+- type: entity
+  parent: HoundBackpack
+  id: HoundBackpackFilledHeavyPistol
+  suffix: Хаунд, тяж. Пистолет
+  components:
+  - type: StorageFill
+    contents:
+      - id: MagazineHeavyPistolHound
+      - id: MagazineHeavyPistolHound
+      - id: MagazineHeavyPistolHound
+      - id: HoundHeavyPistol
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+      - id: NitrogenTankFilled
+#------------------------------------ПП--------------------- 
+- type: entity
+  parent: HoundBackpack
+  id: HoundBackpackFilledSMG
+  suffix: Хаунд, ПП
+  components:
+  - type: StorageFill
+    contents:
+      - id: HoundSMG
+      - id: MagazineMakhnoRifle
+      - id: MagazineMakhnoRifle
+      - id: MagazineMakhnoRifle
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+      - id: NitrogenTankFilled
+#дробовик
+- type: entity
+  parent: HoundBackpack
+  id: HoundBackpackFilleShotgun
+  suffix: Хаунд, Автомат
+  components:
+  - type: StorageFill
+    contents:
+      - id: HoundShotgun
+      - id: HoundMagazineShotgun
+      - id: HoundMagazineShotgun
+      - id: HoundMagazineShotgun
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+      - id: NitrogenTankFilled
+#пулемёт 
+- type: entity
+  parent: HoundBackpack
+  id: HoundBackpackFilledLMG
+  suffix: Хаунд, Пулемёт
+  components:
+  - type: StorageFill
+    contents:
+      - id: HoundLightMachineGun
+      - id: MagazineLMGHound
+      - id: MagazineLMGHound
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+      - id: NitrogenTankFilled
+#------------------------------------дробовик--------------------- 
+- type: entity
+  parent: HoundBackpack
+  id: HoundBackpackFilledShotgun
+  suffix: Хаунд, Дробовик
+  components:
+  - type: StorageFill
+    contents:
+      - id: HoundShotgun
+      - id: MagazineShotgunHound
+      - id: MagazineShotgunHound
+      - id: MagazineShotgunHound
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
+      - id: NitrogenTankFilled
+#-------------------------------Рюкзаки покупок------------
+#-------------------------------Ящики--------
+#БАЗА
+- type: entity
+  parent: CrateBaseSecure
+  id: HoundCrate
+  name: Ящик снаряжения Хаунд
+  suffix: Хаунд
+  components:
+  - type: Icon
+    sprite: Victoria/Hound/Misc/hnd_crates.rsi
+  - type: Sprite
+    sprite: Victoria/Hound/Misc/hnd_crates.rsi
+  - type: AccessReader
+    access: [["HoundAccessWorker"]]
+#Лёгкие пушки
+- type: entity
+  id: HoundCrateWeaponsLight
+  parent: HoundCrate
+  name: Ящик лёгкого оружия Хаунд
+  suffix: Хаунд
+  description: Лёгкие стволы корпорации Хаунд скрываются тут под замком
+  components:
+  - type: StorageFill
+    contents:
+      - id: HoundLightPistol      
+      - id: HoundLightPistol
+      - id: HoundHeavyPistol
+      - id: HoundHeavyPistol
+#Средние пушки
+- type: entity
+  id: HoundCrateWeaponsMiddle
+  parent: HoundCrate
+  name: ящик среднего оружия Хаунд
+  suffix: Хаунд
+  description: Обыкновенные стволы корпорации Хаунд скрываются тут под замком
+  components:
+  - type: StorageFill
+    contents:
+      - id: HoundSMG
+      - id: HoundSMG
+      - id: HoundShotgun
+#Тяжёлые пушки
+- type: entity
+  id: HoundCrateWeaponsHeavy
+  parent: HoundCrate
+  name: ящик тяжёлого оружия Хаунд
+  suffix: Хаунд
+  description: Тяжёлые стволы корпорации Хаунд скрываются тут под замком
+  components:
+  - type: StorageFill
+    contents:
+      - id: HoundLightMachineGun
+      - id: HoundLightMachineGun
+      - id: HoundSniperRifle
+#Взрывчатка
+- type: entity
+  id: HoundCrateExp
+  parent: HoundCrate
+  name: Ящик взрывчатки Хаунд
+  suffix: Хаунд
+  description: Куча взрывчатки корпорации Хаунд скрываются тут под замком
+  components:
+  - type: StorageFill
+    contents:
+      - id: ExGrenade
+      - id: ExGrenade
+      - id: ExGrenade
+      - id: ExGrenade
+      - id: ExGrenade
+      - id: ExGrenade
+      - id: GrenadeShrapnel
+      - id: GrenadeShrapnel
+      - id: TearGasGrenade
+      - id: TearGasGrenade
+      - id: SmokeGrenade
+      - id: SmokeGrenade
+      - id: EmpGrenade
+      - id: EmpGrenade
+
+
+#------------------------------------------------------Гиры
+#Новичок
+- type: startingGear
+  id: HoundNewbieGear
+  suffix: Хаунд, Новичок
+  equipment:
+    jumpsuit: HoundUniformOper
+    back: HoundBackpackFilledNewbie
+    shoes: HoundBoots
+    head: HoundHelmetLight
+    outerClothing: HoundArmorLight
+    id: HoundPDAOp
+    ears: HoundHeadset
+    belt: HoundBeltFilled
+    gloves: HoundGloves
+    pocket1: HoundPaperNewbie
+#Опер
+- type: startingGear
+  id: HoundOperGear
+  suffix: Хаунд, Опер
+  equipment:
+    jumpsuit: HoundUniformOper
+    back: HoundBackpackFilledOper
+    shoes: HoundBoots
+    head: HoundOperCap
+    outerClothing: HoundArmorHeavy
+    id: HoundPDAOp
+    ears: HoundHeadset
+    belt: HoundBeltFilled
+    gloves: HoundGloves
+    pocket1: HoundPaperOp
+#Командир
+- type: startingGear
+  id: HoundComGear
+  suffix: Хаунд, Командир
+  equipment:
+    jumpsuit: HoundUniformCom
+    back: HoundBackpackFilledCom
+    shoes: HoundBoots
+    head: HoundOperBeret
+    outerClothing: HoundArmorHeavyCom
+    id: HoundPDACommandeer
+    ears: HoundHeadset
+    belt: HoundBeltFilled
+    gloves: HoundGloves
+    pocket1: HoundPaperCom
+#Рабочий
+- type: startingGear
+  id: HoundWorkerGear
+  suffix: Хаунд, Работник
+  equipment:
+    jumpsuit: HoundUniformWorker
+    back: HoundBackpack
+    shoes: HoundBoots
+    head: HoundOperCap
+    id: HoundPDAWorker
+    ears: HoundHeadset
+    belt: HoundBeltFilledEngi
+    gloves: HoundGloves
+    pocket1: HoundPaperWorker
+#-----------------------------------------------------Спавнеры
+#-------------------------------------------Имена-------------------------------------
+#---------------------------------звания оперов----------
+- type: dataset
+  id: HoundName-op
+  values:
+  - Новобранец
+  - Рядовой
+#---------------------------------звания командиров----------
+- type: dataset
+  id: HoundName-com
+  values:
+  - Старшина
+#---------------------------------звания работников----------
+- type: dataset
+  id: HoundName-worker
+  values:
+  - Работник
+#---------------------------------Представитель----------
+- type: dataset
+  id: HoundName-off
+  values:
+  - Полковник
+  - Подполковник
+#---------------------------------фамилии----------
+- type: dataset
+  id: HoundNameTwo
+  values:
+  - Энгельс
+  - Фриц
+  - Топорин
+  - Пушкин
+  - Тачанкин
+  - Ружьин
+  - Ганзель
+  - Сворд
+  - Пикель
+  - Спир
+  - Мейс
+  - Палкат
+  - Мек
+  - Остеп
+  - Спуд
+  - Окс
+  - Швертен
+  - Акстер
+  - Койле
+#-------------------------------------хуй знает что это, но вот оно работает и ладно---------------------------
+#------------------------------------Новичок
+- type: randomHumanoidSettings
+  speciesBlacklist: 
+    - Diona
+    - Vox
+  id: HoundNewbie
+  randomizeName: false
+  components:
+    - type: GhostRole
+      name: Гост-роль новичка Хаунд
+      description: "Вы пока совсем зелёный боец рядового состава корпорации Хаунд. исполняйте приказы своего командира и сражайтесь на совесть, ибо чем лучше вы работаете, тем больше вам платят."
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ HoundNewbieGear ]
+    - type: RandomMetadata
+      nameSegments:
+      - HoundName-op
+      - HoundNameTwo
+    - type: NpcFactionMember
+      factions:
+      - Hound
+- type: randomHumanoidSettings
+  id: HoundNewbieReady
+  parent: HoundNewbie
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Новичок Хаунд
+      description: "Вы пока совсем зелёный боец рядового состава корпорации Хаунд. Исполняйте приказы своего командира и воюте на совесть, ибо чем лучше вы работаете, тем больше вам платят."
+    - type: GhostTakeoverAvailable
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        105: Critical
+        200: Dead
+    - type: Stamina
+      critThreshold: 110
+    - type: Loadout
+      prototypes: [ HoundNewbieGear ]
+    - type: NpcFactionMember
+      factions:
+      - Hound
+- type: entity
+  name: Спавнер новичка Хаунд
+  suffix: GOST, Хаунд
+  id: HoundMobHumanNewbie
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: security_cadet
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - HoundName-op
+    - HoundNameTwo
+  - type: RandomHumanoidSpawner
+    settings: HoundNewbie
+  - type: NpcFactionMember
+    factions:
+    - Hound
+#---------------------------------Оператвиник----------
+- type: randomHumanoidSettings
+  speciesBlacklist: 
+    - Diona
+    - Vox
+  id: HoundOp
+  randomizeName: false
+  components:
+    - type: GhostRole
+      name: Гост-роль оперативника Хаунд
+      description: "Вы боец рядового состава корпорации Хаунд. исполняйте приказы своего командира и воюте на совесть, ибо чем лучше вы работаете, тем больше вам платят."
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ HoundOperGear ]
+    - type: RandomMetadata
+      nameSegments:
+      - HoundName-op
+      - HoundNameTwo
+    - type: NpcFactionMember
+      factions:
+      - Hound
+
+- type: randomHumanoidSettings
+  id: HoundOpReady
+  parent: HoundOp
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Оперативник Хаунд
+      description: "Вы боец рядового состава корпорации Хаунд. Исполняйте приказы своего командира и воюте на совесть, ибо чем лучше вы работаете, тем больше вам платят."
+    - type: GhostTakeoverAvailable
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        110: Critical
+        205: Dead
+    - type: Stamina
+      critThreshold: 120
+    - type: Loadout
+      prototypes: [ HoundOperGear ]
+    - type: NpcFactionMember
+      factions:
+      - Hound
+  
+- type: entity
+  name: Спавнер оперативника Хаунд
+  suffix: GOST, Хаунд
+  id: HoundMobHumanOp
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: security_cadet
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - HoundName-op
+    - HoundNameTwo
+  - type: RandomHumanoidSpawner
+    settings: HoundOp
+  - type: NpcFactionMember
+    factions:
+    - Hound
+#Командир
+- type: randomHumanoidSettings
+  speciesBlacklist: 
+    - Diona
+    - Vox
+  id: HoundCom
+  randomizeName: false
+  components:
+    - type: GhostRole
+      name: гост-роль командира Хаунд
+      description: "Вы низовой командир Хаунд. Исполняйте приказы вышестоящего командования и сражайтесь на совесть, ибо чем лучше вы работаете, тем больше вам платят."
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ HoundComGear ]
+    - type: RandomMetadata
+      nameSegments:
+      - HoundName-com
+      - HoundNameTwo
+    - type: NpcFactionMember
+      factions:
+      - Hound
+
+- type: randomHumanoidSettings
+  id: HoundComReady
+  parent: HoundCom
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Оперативник Хаунд
+      description: "Вы низовой командир Хаунд. Исполняйте приказы вышестоящего командования и сражайтесь на совесть, ибо чем лучше вы работаете, тем больше вам платят."
+    - type: GhostTakeoverAvailable
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        115: Critical
+        210: Dead
+    - type: Stamina
+      critThreshold: 125
+    - type: Loadout
+      prototypes: [ HoundOperGear ]
+    - type: NpcFactionMember
+      factions:
+      - Hound
+  
+- type: entity
+  name: Спавнер командира Хаунд
+  suffix: GOST, Хаунд
+  id: HoundMobHumanCom
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: security_cadet
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - HoundName-com
+    - HoundNameTwo
+  - type: RandomHumanoidSpawner
+    settings: HoundCom
+  - type: NpcFactionMember
+    factions:
+    - Hound
+#Работник
+- type: randomHumanoidSettings
+  speciesBlacklist: 
+    - Diona
+    - Vox
+  id: HoundWorker
+  randomizeName: false
+  components:
+    - type: GhostRole
+      name: Гост-роль работника Хаунд
+      description: "Вы работник корпорации Хаунд. Слушайтесь вооружённых коллег, а то вас уволят, и не задавайте лишних вопросов."
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ HoundWorkerGear ]
+    - type: RandomMetadata
+      nameSegments:
+      - HoundName-worker
+      - HoundNameTwo
+    - type: NpcFactionMember
+      factions:
+      - Hound
+
+- type: randomHumanoidSettings
+  id: HoundWorkerReady
+  parent: HoundWorker
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Работник Хаунд
+      description: "Вы работник корпорации Хаунд. Слушайтесь вооружённых коллег, а то вас уволят, и не задавайте лишних вопросов."
+    - type: GhostTakeoverAvailable
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        100: Critical
+        200: Dead
+    - type: Stamina
+      critThreshold: 100
+    - type: Loadout
+      prototypes: [ HoundWorkerGear ]
+    - type: NpcFactionMember
+      factions:
+      - Hound
+  
+- type: entity
+  name: Спавнер работника Хаунд
+  suffix: GOST, Хаунд
+  id: HoundMobHumanWorker
+  components:
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: security_cadet
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - HoundName-worker
+    - HoundNameTwo
+  - type: RandomHumanoidSpawner
+    settings: HoundWorker
+  - type: NpcFactionMember
+    factions:
+    - Hound
+#----------------------------------------------Бумаги-
+#Оперативник
+- type: entity
+  categories: [ HideSpawnMenu ]
+  id: HoundPaperOp
+  name: Памятка оперативника Хаунд
+  suffix: Хаунд
+  parent: Paper
+  components:
+  - type: TimedDespawn
+    lifetime: 1200
+  - type: Paper
+    content: |
+      Форма: HND-ARM-OP-224
+      Кому: Оперативнику группы захвата №1122
+      Вы оперативник. Быстрый, лихой и хитрый чувак, не чурающийся подлости и жестокости, пока это не относится к своим.
+      Ваши навыки: Базовые навыки, владение оружием, разделка туш, готовка, разборка объектов и взлом шлюзов.
+      Руководство к отыгрышу: Не трусьте, не будьте тряпкой, но с жёсткостью не перебарщивайте. Слушайтесь своего командира, помогайте своим товарищам, особенно новичкам. Точно выполняйте условия контракта(Правда если написано взять цель живой, это всё ещё не значит, что цель должна быть целой). 
+      Краткий лор корпорации: Уже более 300 лет корпорация Хаунд предлагает всем желающим услуги найма малых боевых подразделений, но и занимается задержанием криминальных лиц за вознаграждение. The Hound- относительно небольшая компания, специализирующаяся на местных боевых действиях, в отличии ,например, от Viteztvi
+#Новичок
+- type: entity
+  categories: [ HideSpawnMenu ]
+  id: HoundPaperNewbie
+  name: Памятка оперативника-новичка Хаунд
+  suffix: Хаунд
+  parent: Paper
+  components:
+  - type: TimedDespawn
+    lifetime: 1200
+  - type: Paper
+    content: |
+      Форма: HND-ARM-NEW-224
+      Кому: Командиру группы захвата №1122
+      Вы оперативник, правда пока зелёный. Вам предстоить превратиться в опытного и умелого охотника на криминал, но пока что вы в одиночку переборите лишь дворовую гопоту.
+      Ваши навыки: Базовые навыки, владение оружием, разделка туш, готовка
+      Руководство к отыгрышу: Будьте аккуратными и смелыми. Слушайтесь старших товарищей и помогайте им. Точно выполняйте условия контракта. 
+      Краткий лор корпорации: Уже более 300 лет корпорация Хаунд предлагает всем желающим услуги найма малых боевых подразделений, но и занимается задержанием криминальных лиц за вознаграждение. The Hound- относительно небольшая компания, специализирующаяся на местных боевых действиях, в отличии ,например, от Viteztvi
+#Командир
+- type: entity
+  categories: [ HideSpawnMenu ]
+  id: HoundPaperCom
+  name: Памятка командира Хаунд
+  suffix: Хаунд
+  parent: Paper
+  components:
+  - type: TimedDespawn
+    lifetime: 1200
+  - type: Paper
+    content: |
+      Форма: HND-ARM-COM-224
+      Кому: Командиру группы захвата №1122
+      Вы командир. Хитрый, смекалистый и аккуратный начальник, который сделает всё ради выполнения задачи.
+      Ваши навыки: Базовые навыки, владение оружием, разделка туш, готовка, разборка объектов, взлом шлюзов и управление шаттлом.
+      Руководство к отыгрышу: Не трусьте, не будьте тряпкой, но с жёсткостью не перебарщивайте. Слушайтесь высшее начальство, командуйте подчинёнными. Точно выполняйте условия контракта(Правда если написано взять цель живой, это всё ещё не значит, что цель должна быть целой). 
+      Краткий лор корпорации: Уже более 300 лет корпорация Хаунд предлагает всем желающим услуги найма малых боевых подразделений, но и занимается задержанием криминальных лиц за вознаграждение. The Hound- относительно небольшая компания, специализирующаяся на местных боевых действиях, в отличии ,например, от Viteztvi
+#Работник
+- type: entity
+  categories: [ HideSpawnMenu ]
+  id: HoundPaperWorker
+  name: Памятка командира Хаунд
+  suffix: Хаунд
+  parent: Paper
+  components:
+  - type: TimedDespawn
+    lifetime: 1200
+  - type: Paper
+    content: |
+      Форма: HND-ARM-WRK-224
+      Кому: Работнику Хаунд
+      Вы простой трудяга-разнорабочй. Послушный, трудолюбивый и смекалистый. Слушайтесь своих вооружённых коллег и более опытных товарищей.
+      Ваши навыки: Базовые навыки, разделка туш, готовка, разборка объектов, управление шаттлом, медицина и строительство.
+      Руководство к отыгрышу: Не ленитесь, будьте компетентными(Неумёх в сопровождение к операм не берут), если работы на данный момент нет- отдыхайте! Играйте в карты с коллегами на подзатыльники, кушойте то,что приготовили в микроволновке и болтайте! Только не бухайте, вам ещё судно сторожить надо...
+      Краткий лор корпорации: Уже более 300 лет корпорация Хаунд предлагает всем желающим услуги найма малых боевых подразделений, но и занимается задержанием криминальных лиц за вознаграждение. The Hound- относительно небольшая компания, специализирующаяся на местных боевых действиях, в отличии ,например, от Viteztvi
+#-----------------------------------аплинк--------------------------------
+#-----------------категории в аплинке------------
+- type: storeCategory
+  id: HoundUplinkArmor
+  name: Броня
+  priority: 0
+
+- type: storeCategory
+  id: HoundUplinkWeaponry
+  name: Вооружение
+  priority: 1
+
+- type: storeCategory
+  id: HoundUplinkAmmo
+  name: Боезапас
+  priority: 2
+ 
+- type: storeCategory
+  id: HoundUplinkElectronic
+  name: Электроника
+  priority: 3 
+  
+- type: storeCategory
+  id: HoundUplinkSpec
+  name: Специалистам
+  priority: 4 
+  
+- type: storeCategory
+  id: HoundUplinkBack
+  name: Рюкзаки
+  priority: 5 
+  
+- type: storeCategory
+  id: HoundUplinkMed
+  name: Мед.средства
+  priority: 6 
+#-----------------листинг покупок------------
+#------категория броня----------
+#---бронь---
+
+
+- type: listing
+  id: HoundHelmetLight
+  name: Лёгкий шлем
+  description: Обыкновенная каска. Нужна если есть новичок, на скафандр которому тратиться жалко.
+  productEntity: HoundHelmetLight
+  cost:
+    HoundChip_currency: 2
+  categories:
+  - HoundUplinkArmor
+
+- type: listing
+  id: HoundArmorLight
+  name: Лёгкий бронежилет
+  description: Обыкновенный бронежилет. Дайте новичку, если на скафандр не хватает.
+  productEntity: HoundArmorLight
+  cost:
+    HoundChip_currency: 3
+  categories:
+  - HoundUplinkArmor
+- type: listing
+  id: Бронепальто
+  description: Бронированное пальто. Подойдёт для скрытого ношения брони.
+  productEntity: HoundArmorPalto
+  cost:
+    HoundChip_currency: 3
+  categories:
+  - HoundUplinkArmor
+#---скафы--- 
+- type: listing
+  id: HoundArmorEVA
+  name: ЕВА-Скафандр Хаунд
+  description: Не слишком прочный, но очень лёгкий скафандр. Купите если зелень каким-то образом взяли на задание в космосе.
+  productEntity: HoundArmorEVA
+  cost:
+    HoundChip_currency: 4
+  categories:
+  - HoundUplinkArmor
+  
+- type: listing
+  id: HoundArmorHeavy
+  name: Бронескафандр
+  description: Довольно прочный, но при этом не стесняющий движения скафандр, хорошо подходящий для погонь. Такой уже должен быть на вас, но возможно вы его уже где-то посеяли.
+  productEntity: HoundArmorHeavy
+  cost:
+    HoundChip_currency: 8
+  categories:
+  - HoundUplinkArmor
+#Шмот
+- type: listing
+  id: HoundClothingShoesBootsMag
+  name: Магнитные ботинки.
+  description: Магнитные ботинки, что помогут вам если вы шатаетесь где-то в космосе. Не пытайтесь приклеить их на холодильник.
+  productEntity: ClothingShoesBootsMag
+  cost:
+    HoundChip_currency: 2
+  categories:
+  - HoundUplinkArmor
+
+- type: listing
+  id: HoundCloak
+  name: Плащ ветерана
+  description: Плащ. бесполезно, но красиво. В некоторых кругах.
+  productEntity: HoundCloak
+  cost:
+    HoundChip_currency: 1
+  categories:
+  - HoundUplinkArmor
+#------категория вооружение----------
+- type: listing
+  id: HoundHeavyPistol
+  name: Пистолет "Мопс"
+  description: Довольно крупный и очень мощный пистолет Хаунд. Магазин малюсенький- Не промахнитесь! Для штурмовых заданий и любителей покороче и пожёстче. Использует .45 магнум.
+  productEntity: HoundHeavyPistol
+  cost:
+    HoundChip_currency: 4
+  categories:
+  - HoundUplinkWeaponry
+
+- type: listing
+  id: WeaponDisabler
+  name: Станнер
+  description: Увы, иногда цели надо брать живыми...
+  productEntity: WeaponDisabler
+  cost:
+    HoundChip_currency: 2
+  categories:
+  - HoundUplinkWeaponry
+
+- type: listing
+  id: HoundMachete
+  name: Мачете
+  description: Большой и страшный нож. Бить острым концом.
+  productEntity: HoundMachete
+  cost:
+    HoundChip_currency: 1
+  categories:
+  - HoundUplinkWeaponry
+
+- type: listing
+  id: HoundLightPistol
+  name: Пистолет "Бигль"
+  description: Крайне скорострельный и тихий пистолет для секретных миссий или тех, кто любит подольше и поплавнее. Использует .35 авто.
+  productEntity: HoundLightPistol
+  cost:
+    HoundChip_currency: 6
+  categories:
+  - HoundUplinkWeaponry
+
+- type: listing
+  id: HoundSMG
+  name: Пистолет-пулемёт "Махно"
+  description: Довольно мощный ПП. Из-за высокой скорострельности и малого магазина хорошо подходит для тактики ударил-в укрытие Использует патроны .35 авто
+  productEntity: HoundSMG
+  cost:
+    HoundChip_currency: 8
+  categories:
+  - HoundUplinkWeaponry
+
+- type: listing
+  id: HoundShotgun
+  name: Дробовик "Лайка"
+  description: Крайне мощный дробовик, идеальный для зачистки помещений. Кабы магазин был чуток побольше...
+  productEntity: HoundShotgun
+  cost:
+    HoundChip_currency: 6
+  categories:
+  - HoundUplinkWeaponry
+
+- type: listing
+  id: HoundSniperRifle
+  name: Снайперская винтовка "Хаски"
+  description: В текущих реалиях снайперские винтовки- фиговое оружие, так что её отдают почти за бесплатно.
+  productEntity: HoundSniperRifle
+  cost:
+    HoundChip_currency: 5
+  categories:
+  - HoundUplinkWeaponry
+- type: listing
+  id: HoundLightMachineGun
+  name: Лёгкий пулемёт "Кер"
+  description: Что-то среднее между автоматом и пулемётом. Стреляет больно и точно, но из-за маленького, по мерам пулемёта, магазина им долго не позажимаешь.
+  productEntity: HoundLightMachineGun
+  cost:
+    HoundChip_currency: 16
+  categories:
+  - HoundUplinkWeaponry
+#------категория боезапас----------
+#---магазины---
+- type: listing
+  id: MagazineHeavyPistolHound
+  name: Магазин к пистолету "Мопс"
+  description: 4 патрона к карманной пушке под названием "Мопс"
+  productEntity: MagazineHeavyPistolHound
+  cost:
+    HoundChip_currency: 1
+  categories:
+  - HoundUplinkAmmo
+
+- type: listing
+  id: MagazineLightPistolHound
+  name: Магазин к пистолету "Бигль"
+  description: 14 патронов к "Биглю"
+  productEntity: MagazineLightPistolHound
+  cost:
+    HoundChip_currency: 1
+  categories:
+  - HoundUplinkAmmo
+
+- type: listing
+  id: MagazineMakhnoRifle
+  name: Магазин к пистолету-пулемёту "Махно"
+  description: Питает скорострельный Пистолет-пулемёт 22-я патронами калибра .35 авто
+  productEntity: MagazineMakhnoRifle
+  cost:
+    HoundChip_currency: 2
+  categories:
+  - HoundUplinkAmmo
+- type: listing
+  id: MagazineShotgunHound
+  name: Магазин к дробовику "Лайка"
+  description: Питает скорострельный дробовик 6-ю патронами калибра .35 авто
+  productEntity: MagazineShotgunHound
+  cost:
+    HoundChip_currency: 2
+  categories:
+  - HoundUplinkAmmo
+- type: listing
+  id: MagazineLMGHound
+  name: Магазин к лёгкому пулемёту "Кер"
+  description: 56 пуль к лёгкому пулемёту.
+  productEntity: MagazineLMGHound
+  cost:
+    HoundChip_currency: 4
+  categories:
+  - HoundUplinkAmmo
+#---коробки---
+- type: listing
+  id: HoundBoxPistol
+  name: Коробка пистолетных патронов .35
+  description: Коробка на 60 патров .35 к пистолету-пулемёту "Махно"
+  productEntity: MagazineBoxPistol
+  cost:
+    HoundChip_currency: 2.5
+  categories:
+  - HoundUplinkAmmo
+
+- type: listing
+  id: HoundBoxPistolCaseless
+  name: Коробка пистолетных патронов .25 безгильзовых
+  description: Коробка на 60 патров .25 к пистолету "Бигль". Чёрт знает на кой вам столько патронов к дополнительному оружию, но ладно.
+  productEntity: MagazineBoxPistol
+  cost:
+    HoundChip_currency: 2
+  categories:
+  - HoundUplinkAmmo
+
+- type: listing
+  id: HoundBoxMagnum
+  name: Коробка .45 магнум.
+  description: Коробка на 12 патров .45 магнум к пистолету "Мопс".
+  productEntity: MagazineBoxMagnum
+  cost:
+    HoundChip_currency: 2
+  categories:
+  - HoundUplinkAmmo
+  
+- type: listing
+  id: HoundBoxAntiMateriel
+  name: Коробка .60
+  description: Коробка на 10 патронов .60 к снайперской винтовке "Хаски". Какой спрос на оружие, такая и цена.
+  productEntity: MagazineBoxAntiMateriel
+  cost:
+    HoundChip_currency: 2
+  categories:
+  - HoundUplinkAmmo
+#------категория электроника----------
+  
+- type: listing
+  id: HoundEncryptionKey
+  name: Ключ шифрования Хаунд
+  description: Используется для шифрования и дешифровки общего канал Хаунд. Такой уже есть у вас, но возможно вы его потеряли.
+  productEntity: HoundEncryptionKey
+  cost:
+    HoundChip_currency: 1
+  categories:
+  - HoundUplinkElectronic
+  
+- type: listing
+  id: HoundEmag
+  name: Криптографический секвенсор
+  description: Используется для дешифровки и перепрошивки систем доступа. Не спрашивайте почему легальная компания использует кустарно спаянную электронику.
+  productEntity: Emag
+  cost:
+    HoundChip_currency: 6
+  categories:
+  - HoundUplinkElectronic  
+
+
+#------категория специалистам----------
+#---вещички---
+#Печать
+- type: listing
+  id: HoundRubberStamp
+  name: Печать Хаунд
+  description: Отправьте угрозы своей добыче или свяжитесь с начальством.
+  productEntity: HoundRubberStamp
+  cost:
+    HoundChip_currency: 1
+  categories:
+  - HoundUplinkSpec
+#Пояс
+- type: listing
+  id: HoundBeltFilled
+  name: Пояс оперативника
+  description: Простой пояс с пистолетом, ножиком и парочкой магазинов.
+  productEntity: HoundBeltFilled
+  cost:
+    HoundChip_currency: 7
+  categories:
+  - HoundUplinkSpec
+#Инженерный
+- type: listing
+  id: HoundBeltFilledEngi
+  name: Пояс инженера.
+  description: Простой пояс с инструментами.
+  productEntity: HoundBeltFilledEngi
+  cost:
+    HoundChip_currency: 4
+  categories:
+  - HoundUplinkSpec
+
+- type: listing
+  id: HoundBeltFilledExp
+  name: Пояс подрывника.
+  description: Пояс с двумя разрывными гранатами, двумя осколочными гранатами, двумя С-4, и одной ЭМИ гранатой. БУМ!
+  productEntity: HoundBeltFilledExp
+  cost:
+    HoundChip_currency: 12
+  categories:
+  - HoundUplinkSpec
+
+- type: listing
+  id: HoundCrateWeaponsLight
+  name: Ящик пистолетов
+  description: Два "Бигля" и два "Мопса". Без дополнительных патронов.
+  productEntity: HoundCrateExp
+  cost:
+    HoundChip_currency: 12
+  categories:
+  - HoundUplinkSpec
+
+- type: listing
+  id: HoundCrateWeaponsMiddle
+  name: Ящик штурмового оружия
+  description: Два "Махно" и одна "Лайка". Без дополнительных патронов.
+  productEntity: HoundCrateWeaponsMiddle
+  cost:
+    HoundChip_currency: 18
+  categories:
+  - HoundUplinkSpec
+
+- type: listing
+  id: HoundCrateWeaponsHeavy
+  name: Ящик штурмового оружия
+  description: Два "Кера" и один "Хаски" на сдачу. Без дополнительных патронов.
+  productEntity: HoundCrateWeaponsHeavy
+  cost:
+    HoundChip_currency: 25
+  categories:
+  - HoundUplinkSpec
+- type: listing
+  id: HoundCrateExp
+  name: Ящик гранат и взрывчатки
+  description: Шесть обычных и три осколочной гранаты, две дымовой, две слезоточивой и две ЭМИ гранаты. И 4 С-4. Нахуй скрытность!
+  productEntity: HoundCrateExp
+  cost:
+    HoundChip_currency: 25
+  categories:
+  - HoundUplinkSpec
+- type: listing
+  id: HoundHandheldCrewMonitor
+  name: Монитор экипажа.
+  description: Эта штука позволит вам найти ваших товарищей на большом расстоянии. И понять что они померли, если не двигаются.
+  productEntity: HoundHandheldCrewMonitor
+  cost:
+    HoundChip_currency: 3
+  categories:
+  - HoundUplinkSpec
+#------категория рюкзаки----------
+- type: listing
+  id: HoundBackpackFilledEmpty
+  name: Боевой рюкзак с пайком
+  description: Базовое жизнеобеспечение
+  productEntity: HoundBackpackFilledEmpty
+  cost:
+    HoundChip_currency: 2
+  categories:
+  - HoundUplinkBack
+
+- type: listing
+  id: HoundBackpackFilledLightPistol
+  name: Боевой рюкзак с агентурынм пистолетом
+  description: Базовое жизнеобеспечение, пистолет "Бигль" и три магазина.
+  productEntity: HoundBackpackFilledLightPistol
+  cost:
+    HoundChip_currency: 12
+  categories:
+  - HoundUplinkBack
+
+- type: listing
+  id: HoundBackpackFilledHeavyPistol
+  name: Боевой рюкзак с штурмовым пистолетом
+  description: Базовое жизнеобеспечение, пистолет "Мопс" и три магазина.
+  productEntity: HoundBackpackFilledHeavyPistol
+  cost:
+    HoundChip_currency: 10
+  categories:
+  - HoundUplinkBack
+  
+- type: listing
+  id: HoundBackpackFilledSMG
+  name: Боевой рюкзак с пистолетом-пулемётом
+  description: Базовое жизнеобеспечение, пистолет-пулемёт и три магазина.
+  productEntity: HoundBackpackFilledSMG
+  cost:
+    HoundChip_currency: 16
+  categories:
+  - HoundUplinkBack  
+
+- type: listing
+  id: HoundBackpackFilledLMG
+  name: Боевой рюкзак с пулемётом
+  description: Базовое жизнеобеспечение, пулемёт и 2 магазина к нему.
+  productEntity: HoundBackpackFilledLMG
+  cost:
+    HoundChip_currency: 22
+  categories:
+  - HoundUplinkBack
+
+- type: listing
+  id: HoundBackpackFilledShotgun
+  name: Боевой рюкзак с дробовиком
+  description: Базовое жизнеобеспечение, дробовик и три магазина.
+  productEntity: HoundBackpackFilledShotgun
+  cost:
+    HoundChip_currency: 18
+  categories:
+  - HoundUplinkBack
+
+#------категория мед.средства
+- type: listing
+  id: HoundStimpack
+  name: Боевой стимулятор
+  description: Ускорься ещё больше! Но победи пока не наступили побочные эффекты
+  productEntity: Stimpack
+  cost:
+    HoundChip_currency: 3
+  categories:
+  - HoundUplinkMed
+  
+- type: listing
+  id: HoundEmergencyMedipen
+  name: Экстренный медипен
+  description: Какое средство экстренной помощи есть, такое и используем...
+  productEntity: EmergencyMedipen
+  cost:
+    HoundChip_currency: 3
+  categories:
+  - HoundUplinkMed
+  
+- type: listing
+  id: HoundBrutepack
+  name: Набор для лечения травм
+  description: Помогает от травм механического характера
+  productEntity: Brutepack
+  cost:
+    HoundChip_currency: 1
+  categories:
+  - HoundUplinkMed
+  
+- type: listing
+  id: HoundOintment
+  name: Лечебная мазь
+  description: Хороша от ожогов и переохлаждения
+  productEntity: Ointment
+  cost:
+    HoundChip_currency: 1
+  categories:
+  - HoundUplinkMed
+
+- type: listing
+  id: HoundCombatMedkit
+  name: Боевая аптечка
+  description: Медикаменты на все случаи боевой жизни. Не злоупотребляйте эфедрином.
+  productEntity: MedkitCombatFilled
+  cost:
+    HoundChip_currency: 8
+  categories:
+  - HoundUplinkMed
+- type: listing
+  id: HoundDefibrillatorCompact
+  name: Компактный дефибриллятор
+  description: Если вы умудрились потерять бойца, но не потерять его тушку, то тогда эта штука поможет вам!
+  productEntity: DefibrillatorCompact
+  cost:
+    HoundChip_currency: 10
+  categories:
+  - HoundUplinkMed
+# #-----------------пресет категорий в аплинке------------
+- type: entity
+  id: StorePresetHoundUplink
+  abstract: true
+  components:
+  - type: Store
+    name: Hound-Category
+    categories:
+    - HoundUplinkArmor
+    - HoundUplinkWeaponry
+    - HoundUplinkAmmo
+    - HoundUplinkElectronic
+    - HoundUplinkSpec
+    - HoundUplinkBack
+    - HoundUplinkMed
+    currencyWhitelist:
+    - HoundChip_currency
+    balance:
+      HoundChip_currency: 0
+#-----------------базовый аплинк------------
+- type: entity
+  parent: [ BaseItem, StorePresetHoundUplink ]
+  id: HoundBaseUplinkRadio
+  name: Аплинк Гончих
+  description: Такой же, как у синдиката, но с отдельным складом и товарами
+  suffix: Пустой, Хаунд
+  components:
+  - type: Sprite
+    sprite: Objects/Devices/communication.rsi
+    layers:
+    - state: old-radio
+  - type: Item
+    sprite: Objects/Devices/communication.rsi
+    heldPrefix: old-radio
+  - type: UserInterface
+    interfaces:
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
+  - type: Store
+    balance:
+      HoundChip_currency: 0
+#-----------------аплинки с бабками------------
+- type: entity
+  parent: HoundBaseUplinkRadio
+  id: HoundBaseUplinkRadio20TC
+  suffix: 20 TC, Хаунд
+  components:
+  - type: Store
+    balance:
+      HoundChip_currency: 20
+  - type: Tag
+    tags:
+    - NukeOpsUplink
+
+- type: entity
+  parent: HoundBaseUplinkRadio
+  id: HoundBaseUplinkRadio50TC
+  suffix: 50 TC, Хаунд
+  components:
+  - type: Store
+    balance:
+      HoundChip_currency: 50
+  - type: Tag
+    tags:
+    - NukeOpsUplink
