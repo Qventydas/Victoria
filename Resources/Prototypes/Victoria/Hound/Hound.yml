@@ -879,6 +879,9 @@
       - HoundLMGMagazine
 #Сами ПУЩЩЬКИ!
 #Пистолет штурмовой
+- type: Tag
+  id: HoundHeavyPistol
+
 - type: entity
   name: пистолет "Мопс"
   suffix: Хаунд
@@ -898,7 +901,6 @@
        map: ["enum.GunVisualLayers.Mag"]
   - type: Gun
     fireRate: 3.5
-    ProjectileSpeed: 35
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/mk58.ogg 
   - type: ChamberMagazineAmmoProvider
@@ -1184,13 +1186,12 @@
       tags:
       - CartridgeAntiMateriel
     capacity: 3
-    fireRate: 2
     proto: CartridgeAntiMateriel
 #-----------Связь
 #Каналы
 - type: radioChannel
   id: HoundRadio
-  name: Хаунд
+  name: HoundRadio
   keycode: 'хд' 
   frequency: 2477
   color: "#800000"
@@ -1468,8 +1469,8 @@
       - id: CombatKnife
       - id: MagazinePistolHighCapacity
       - id: MagazinePistolHighCapacity
-      - tag: Screwdriver
-      - tag: Multitool
+      - id: Screwdriver
+      - id: Multitool
 #Инженерный пояс
 - type: entity
   id: HoundBeltFilledEngi
@@ -1633,9 +1634,9 @@
   - type: StorageFill
     contents:
       - id: HoundShotgun
-      - id: HoundMagazineShotgun
-      - id: HoundMagazineShotgun
-      - id: HoundMagazineShotgun
+      - id: MagazineShotgunHound
+      - id: MagazineShotgunHound
+      - id: MagazineShotgunHound
       - id: ClothingMaskGas
       - id: FoodTinMRE
       - id: DrinkWaterBottleFull
@@ -1762,7 +1763,6 @@
 #Новичок
 - type: startingGear
   id: HoundNewbieGear
-  suffix: Хаунд, Новичок
   equipment:
     jumpsuit: HoundUniformOper
     back: HoundBackpackFilledNewbie
@@ -1777,7 +1777,6 @@
 #Опер
 - type: startingGear
   id: HoundOperGear
-  suffix: Хаунд, Опер
   equipment:
     jumpsuit: HoundUniformOper
     back: HoundBackpackFilledOper
@@ -1792,7 +1791,6 @@
 #Командир
 - type: startingGear
   id: HoundComGear
-  suffix: Хаунд, Командир
   equipment:
     jumpsuit: HoundUniformCom
     back: HoundBackpackFilledCom
@@ -1807,7 +1805,6 @@
 #Рабочий
 - type: startingGear
   id: HoundWorkerGear
-  suffix: Хаунд, Работник
   equipment:
     jumpsuit: HoundUniformWorker
     back: HoundBackpack
