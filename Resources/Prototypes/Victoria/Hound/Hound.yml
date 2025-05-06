@@ -304,9 +304,9 @@
   description: Лёгкие резинополимерные сапоги от Хаунд. Качественная амортизация позволяет бегать часами напролёт.
   components:
   - type: Sprite
-    sprite: Victoria\Hound\Equipment\hnd_boots.rsi
+    sprite: Victoria/Hound/Equipment/hnd_boots.rsi
   - type: Clothing
-    sprite: Victoria\Hound\Equipment\hnd_boots.rsi
+    sprite: Victoria/Hound/Equipment/hnd_boots.rsi
   - type: ClothingSpeedModifier
     sprintModifier: 1.1
     walkModifier: 1.1
@@ -319,9 +319,9 @@
   description: Берет от Хаунд. Носит только командный состав, но и то редко, уж очень он хрупкий.
   components:
   - type: Sprite
-    sprite: Victoria\Hound\Equipment\hnd_beret.rsi
+    sprite: Victoria/Hound/Equipment/hnd_beret.rsi
   - type: Clothing
-    sprite: Victoria\Hound\Equipment\hnd_beret.rsi
+    sprite: Victoria/Hound/Equipment/hnd_beret.rsi
   - type: Tag
     tags:
     - ClothMade
@@ -335,9 +335,9 @@
   description: Прочная кепка, производимая Хаунд. Хорошо защищает от солнца, влаги, ветра и пыли. А ещё круто выглядит.
   components:
   - type: Sprite
-    sprite: Victoria\Hound\Equipment\hnd_soft.rsi
+    sprite: Victoria/Hound/Equipment/hnd_soft.rsi
   - type: Clothing
-    sprite: Victoria\Hound\Equipment\hnd_soft.rsi
+    sprite: Victoria/Hound/Equipment/hnd_soft.rsi
   - type: Tag
     tags:
     - ClothMade
@@ -351,9 +351,9 @@
   description: Нормальный рюкзак, способный вместить хорошее количество снаряжения. А ещё довольно лёгкий, хоть и немного неудобный.
   components:
   - type: Sprite
-    sprite: Victoria\Hound\Equipment\hnd_backpack.rsi
+    sprite: Victoria/Hound/Equipment/hnd_backpack.rsi
   - type: Clothing
-    sprite: Victoria\Hound\Equipment\hnd_backpack.rsi
+    sprite: Victoria/Hound/Equipment/hnd_backpack.rsi
   - type: Storage
     grid: 
     - 0,0,6,5
@@ -612,7 +612,7 @@
     - 0,0,0,0
   - type: Sprite
     sprite: Victoria/Hound/Equipment/hnd_crew_monitor.rsi
-#---------------------------------------Пущьки!-\
+#---------------------------------------Пущьки!-/
 #Патроны...сука
 #К тяж пистолету, абстрактный и остальные
 - type: entity
