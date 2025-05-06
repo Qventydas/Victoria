@@ -615,6 +615,9 @@
 #---------------------------------------Пущьки!-/
 #Патроны...сука
 #К тяж пистолету, абстрактный и остальные
+- type: Tag
+  id: HoundHeavyPistolMagazine
+
 - type: entity
   id: BaseMagazineHeavyPistolHound
   name: магазин 'Мопса' (.45 магнум)"
@@ -664,6 +667,9 @@
     tags:
       - HoundHeavyPistolMagazine
 #К лёгкому, абстракт и обычный
+- type: Tag
+  id: HoundLightPistolMagazine
+
 - type: entity
   id: BaseMagazineLightPistolHound
   name: магазин для "Бигль" (.25 безгильзовые)"
@@ -707,6 +713,12 @@
     - state: base
       map: ["enum.GunVisualLayers.Base"]
 #К ПП, абстракт и обычный
+- type: Tag
+  id: MagazineLightRifleMakhno
+  
+- type: Tag
+  id: HoundMakhnoRifleMagazine
+
 - type: entity
   id: BaseMagazineMakhnoRifle
   name: магазин для "Махно" (.35 авто)
@@ -758,6 +770,9 @@
     tags:
       - HoundMakhnoRifleMagazine
 #К дробашу, абстракт и обычный
+- type: Tag
+  id: MagazineShotgunHound
+
 - type: entity
   id: BaseMagazineShotgunHound
   name: магазин для "Лайка" (.50)
@@ -809,6 +824,9 @@
     tags:
       - HoundMakhnoRifleMagazine
 #К пулемёту, абстракт и обычный
+- type: Tag
+  id: HoundLMGMagazine
+
 - type: entity
   id: BaseMagazineLMGHound
   name: магазин для "Кер" (.30 винтовочные)
