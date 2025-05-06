@@ -33,8 +33,14 @@ public sealed partial class AdminVerbSystem
     [ValidatePrototypeId<EntityPrototype>]
     private const string DefaultThiefRule = "Thief";
 
+    [ValidatePrototypeId<EntityPrototype>]
+    private const string DefaultHoundRule = "Hound";
+
     [ValidatePrototypeId<StartingGearPrototype>]
     private const string PirateGearId = "PirateGear";
+
+    [ValidatePrototypeId<StartingGearPrototype>]
+    private const string HoundGearId = "HoundGear";
 
     // All antag verbs have names so invokeverb works.
     private void AddAntagVerbs(GetVerbsEvent<Verb> args)
@@ -109,20 +115,20 @@ public sealed partial class AdminVerbSystem
         };
         args.Verbs.Add(nukeOp);
 
-        Verb pirate = new()
-        {
-            Text = Loc.GetString("admin-verb-text-make-pirate"),
-            Category = VerbCategory.Antag,
-            Icon = new SpriteSpecifier.Rsi(new("/Textures/Clothing/Head/Hats/pirate.rsi"), "icon"),
-            Act = () =>
-            {
-                // pirates just get an outfit because they don't really have logic associated with them
-                SetOutfitCommand.SetOutfit(args.Target, PirateGearId, EntityManager);
-            },
-            Impact = LogImpact.High,
-            Message = Loc.GetString("admin-verb-make-pirate"),
-        };
-        args.Verbs.Add(pirate);
+        // Verb pirate = new()
+        // {
+        // Text = Loc.GetString("admin-verb-text-make-pirate"),
+        // Category = VerbCategory.Antag,
+        // Icon = new SpriteSpecifier.Rsi(new("/Textures/Clothing/Head/Hats/pirate.rsi"), "icon"),
+        // Act = () =>
+        // {
+        // pirates just get an outfit because they don't really have logic associated with them
+        // SetOutfitCommand.SetOutfit(args.Target, PirateGearId, EntityManager);
+        // },
+        // Impact = LogImpact.High,
+        // Message = Loc.GetString("admin-verb-make-pirate"),
+        // };
+        // args.Verbs.Add(pirate);
 
         Verb headRev = new()
         {
@@ -151,5 +157,19 @@ public sealed partial class AdminVerbSystem
             Message = Loc.GetString("admin-verb-make-thief"),
         };
         args.Verbs.Add(thief);
+
+        Verb hound = new()
+        {
+            Text = Loc.GetString("admin-verb-text-make-hound"),
+            Category = VerbCategory.Antag,
+            Icon = new SpriteSpecifier.Rsi(new ResPath("/Textures/Victoria/Hound/Equipment/hnd_soft.rsi"), "icon"),
+            Act = () =>
+            {
+                _antag.ForceMakeAntag<HoundRuleComponent>(targetPlayer, DefaultHoundRule);
+            },
+            Impact = LogImpact.High,
+            Message = Loc.GetString("admin-verb-make-hound"),
+        };
+        args.Verbs.Add(hound);
     }
 }

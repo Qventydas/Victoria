@@ -9,6 +9,7 @@
     roles:
       mindRoles:
       - TraitorRole
+      - HoundRole
 
 - type: entity
   abstract: true

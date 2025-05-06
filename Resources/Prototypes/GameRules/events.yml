@@ -10,7 +10,7 @@
     - id: ClericalError
     - id: CockroachMigration
     - id: GasLeak
-    - id: GreytideVirus
+    # - id: GreytideVirus
     - id: IonStorm # its calm like 90% of the time smh
     - id: KudzuGrowth
     - id: MassHallucinations
@@ -78,7 +78,9 @@
       path: /Audio/Corvax/Announcements/flux.ogg # Corvax-Announcements
       params:
         volume: -4
-    weight: 8
+    weight: 6
+    reoccurrenceDelay: 40
+    earliestStart: 15
     duration: 35
   - type: AnomalySpawnRule
 
@@ -96,7 +98,9 @@
       path: /Audio/Corvax/Announcements/blusp_anomalies.ogg # Corvax-Announcements
       params:
         volume: -4
-    weight: 8
+    weight: 6
+    reoccurrenceDelay: 50
+    earliestStart: 10
     duration: 35
   - type: BluespaceArtifactRule
 
@@ -106,8 +110,8 @@
   components:
   - type: StationEvent
     weight: 2
-    reoccurrenceDelay: 5
-    earliestStart: 1
+    reoccurrenceDelay: 15
+    earliestStart: 5
     duration: 1
   - type: BluespaceLockerRule
 
@@ -116,7 +120,7 @@
   parent: BaseGameRule
   components:
   - type: StationEvent
-    weight: 7
+    weight: 6
     duration: 1
     minimumPlayers: 15
   - type: BreakerFlipRule
@@ -129,6 +133,8 @@
     startAnnouncement: station-event-bureaucratic-error-announcement
     minimumPlayers: 25
     weight: 3
+    reoccurrenceDelay: 40
+    earliestStart: 10
     duration: 1
   - type: BureaucraticErrorRule
     ignoredJobs:
@@ -141,8 +147,10 @@
   - type: StationEvent
     startAnnouncement: station-event-clerical-error-announcement
     minimumPlayers: 15
-    weight: 5
+    weight: 7
     duration: 1
+    reoccurrenceDelay: 45
+    earliestStart: 5
   - type: ClericalErrorRule
 
 - type: entity
@@ -152,6 +160,9 @@
   - type: StationEvent
     weight: 5
     duration: 1
+    reoccurrenceDelay: 60
+    earliestStart: 20
+    maxOccurrences: 2
     minimumPlayers: 10
   - type: RandomEntityStorageSpawnRule
     prototype: MobSkeletonCloset
@@ -161,9 +172,10 @@
   id: DragonSpawn
   components:
   - type: StationEvent
-    weight: 6.5
+    weight: 6
     earliestStart: 40
-    reoccurrenceDelay: 20
+    reoccurrenceDelay: 60
+    maxOccurrences: 1
     minimumPlayers: 20
     duration: null
   - type: SpaceSpawnRule
@@ -193,7 +205,8 @@
     weight: 6
     duration: null
     earliestStart: 30
-    reoccurrenceDelay: 20
+    reoccurrenceDelay: 60
+    maxOccurrences: 1
     minimumPlayers: 30
   - type: SpaceSpawnRule
   - type: AntagLoadProfileRule
@@ -239,9 +252,11 @@
   id: RevenantSpawn
   components:
   - type: StationEvent
-    weight: 7.5
+    weight: 7
     duration: 1
     earliestStart: 45
+    reoccurrenceDelay: 40
+    maxOccurrences: 2
     minimumPlayers: 20
   - type: RandomSpawnRule
     prototype: MobRevenant
@@ -281,7 +296,7 @@
   - type: StationEvent
     earliestStart: 15
     minimumPlayers: 15
-    weight: 9
+    weight: 10
     duration: 240
   - type: KudzuGrowthRule
 
@@ -299,6 +314,8 @@
         volume: -4
     duration: 60
     maxDuration: 120
+    earliestStart: 20
+    reoccurrenceDelay: 30
   - type: PowerGridCheckRule
 
 - type: entity
@@ -315,6 +332,8 @@
         volume: -4
     duration: 120
     maxDuration: 240
+    earliestStart: 25
+    reoccurrenceDelay: 35
   - type: SolarFlareRule
     onlyJamHeadsets: true
     affectedChannels:
@@ -356,6 +375,7 @@
     startAudio:
       path: /Audio/Announcements/attention.ogg
     earliestStart: 20
+    reoccurrenceDelay: 35
     minimumPlayers: 15
     weight: 4
     duration: 60
@@ -376,7 +396,8 @@
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
       path: /Audio/Announcements/attention.ogg
-    earliestStart: 20
+    earliestStart: 25
+    reoccurrenceDelay: 45
     minimumPlayers: 15
     weight: 4
     duration: 60
@@ -397,7 +418,8 @@
     startAnnouncement: station-event-vent-creatures-start-announcement
     startAudio:
       path: /Audio/Announcements/attention.ogg
-    earliestStart: 20
+    earliestStart: 30
+    reoccurrenceDelay: 30
     minimumPlayers: 15
     weight: 4
     duration: 60
@@ -429,6 +451,7 @@
   components:
   - type: StationEvent
     earliestStart: 90
+    maxOccurrences: 1
     minimumPlayers: 40
     weight: 1 # Zombies was happening basically every single survival round, so now it's super rare
     duration: 1
@@ -466,8 +489,10 @@
   id: LoneOpsSpawn
   components:
   - type: StationEvent
-    earliestStart: 35
-    weight: 4.5
+    earliestStart: 45
+    weight: 4
+    reoccurrenceDelay: 45
+    maxOccurrences: 1
     minimumPlayers: 20
     duration: 1
   - type: RuleGrids
@@ -529,7 +554,7 @@
   parent: BaseGameRule
   components:
   - type: StationEvent
-    weight: 7
+    weight: 9
     duration: 150
     maxDuration: 300
     reoccurrenceDelay: 30
@@ -555,29 +580,29 @@
   parent: BaseGameRule
   components:
   - type: StationEvent
-    earliestStart: 0
+    earliestStart: 5
+    reoccurrenceDelay: 35
     minimumPlayers: 20
-    maxOccurrences: 1 # this event has diminishing returns on interesting-ness, so we cap it
-    weight: 5
+    weight: 8
   - type: MobReplacementRule
 
-- type: entity
-  id: GreytideVirus
-  parent: BaseStationEventShortDelay
-  components:
-  - type: StationEvent
-    startAudio:
-      path: /Audio/Announcements/attention.ogg
-    weight: 5
-    minimumPlayers: 25
-    reoccurrenceDelay: 20
-  - type: GreytideVirusRule
-    accessGroups:
-    - Cargo
-    - Command
-    - Engineering
-    - Research
-    - Security
-    - Service
-    blacklist:
-    - External # don't space everything
+# - type: entity
+  # id: GreytideVirus
+  # parent: BaseStationEventShortDelay
+  # components:
+  # - type: StationEvent
+    # startAudio:
+      # path: /Audio/Announcements/attention.ogg
+    # weight: 5
+    # minimumPlayers: 25
+    # reoccurrenceDelay: 20
+  # - type: GreytideVirusRule
+    # accessGroups:
+    # - Cargo
+    # - Command
+    # - Engineering
+    # - Research
+    # - Security
+    # - Service
+    # blacklist:
+    # - External # don't space everything

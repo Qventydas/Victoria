@@ -1,0 +1,157 @@
+#-------------------------------Охранная грамота--------------------------
+- type: entity
+  id: HoundPaperSecurityCertificate
+  name: отчёт Хаунд
+  suffix: Хаунд
+  parent: Paper
+  components:
+  - type: Paper
+    content: |
+      [color=#800000]░░░░░░█░░░█░░░░░░[/color]
+      [color=#800000]░░░░█████████░░░░[/color]      [head=3]Бланк документа[/head]
+      [color=#800000]░░░░██░███░██░░░░[/color]               [head=3]VITZ[/head]
+      [color=#800000]░░░░░███████░░░░░[/color]
+      [color=#800000]░░░░░░░███░░░░░░░[/color]
+      =============================================
+                   Охранная грамота
+      =============================================
+      
+      Составитель документа: Алексий Гарднер
+      Должность составителя: Администратор компании Hound
+      
+      Данный документ свидетельствует о том, что предъявитель сей бумаги (имя агента) ликвидировал (имя цели) в соответсвии с распоряжением компании Hound, действующей в рамках юрисдикции ОПЗ, Ноократии Эранта, Великой Империи Нотда и Корпоративного Закона, а следовательно освобождается от ответсвенности за это действие, но не за какое иное преступление. Сотрудникам правоохранительных органов и служб безопасности компаний подчинённых вышеобозначеным государствам предписывается не вменять предъявителю данного документа наказание за ликвидацию вышеуказанной цели. 
+      =============================================
+      
+                                  [italic]Место для печатей[/italic]
+
+#----------------------------------Антаг-------------------------------------
+- type: antag
+  id: Hound
+  name: roles-antag-hound-name
+  antagonist: true
+  setPreference: true
+  objective: roles-antag-hound-objective
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 108000 # 30h # Corvax-RoleTime
+#----------------------------------Доп.гир антагу-------------------------------------
+- type: startingGear
+  id: HoundGear
+  storage:
+    back:
+    - HoundBaseUplinkRadio20TC
+    - HoundPaperSecurityCertificate
+    - HoundRubberStamp
+#----------------------------------Цель-------------------------------------
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: BaseHoundObjective
+  components:
+  - type: Objective
+    issuer: roles-antag-hound-objective
+  - type: RoleRequirement
+    roles:
+      mindRoles:
+      - HoundRole
+
+- type: entity
+  parent: [BaseHoundObjective, BaseKillObjective]
+  id: KillRandomPersonObjectiveHound
+  description: Do it however you like, just make sure they don't make it to centcomm.
+  components:
+  - type: Objective
+    difficulty: 1.75
+    unique: false
+  - type: TargetObjective
+    title: objective-condition-kill-person-title
+  - type: PickRandomPerson
+
+- type: entity
+  parent: [BaseHoundObjective, BaseKillObjective]
+  id: KillRandomHeadObjectiveHound
+  description: We need this head gone and you probably know why. Good luck, agent.
+  components:
+  - type: Objective
+    difficulty: 3.0
+    unique: true
+  - type: TargetObjective
+    title: objective-condition-kill-head-title
+  - type: PickRandomHead
+  - type: KillPersonCondition
+    requireDead: true
+    
+- type: weightedRandom
+  id: HoundObjectiveGroup_1
+  weights:
+    KillRandomPersonObjectiveHound: 1
+    KillRandomHeadObjectiveHound: 0.5
+    
+- type: weightedRandom
+  id: HoundObjectiveGroup_2
+  weights:
+    KillRandomPersonObjectiveHound: 1
+    KillRandomHeadObjectiveHound: 0.25
+    
+- type: weightedRandom
+  id: HoundObjectiveGroups
+  weights:
+    HoundObjectiveGroup_1: 1
+    HoundObjectiveGroup_2: 1
+#----------------------------------Майнд компонент-------------------------------------
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleHound
+  name: Hound Role
+  components:
+  - type: MindRole
+    antagPrototype: Hound
+    exclusiveAntag: true
+  - type: HoundRole
+#----------------------------------Режим-------------------------------------    
+- type: entity
+  id: Hound
+  parent: BaseGameRule
+  components:
+  - type: HoundRule
+  - type: AntagRandomObjectives
+    sets:
+    - groups: HoundObjectiveGroups
+    maxDifficulty: 3
+  - type: GameRule
+    minPlayers: 2
+    delay:
+      min: 20 #0
+      max: 30 #0
+  - type: AntagSelection
+    agentName: hound-round-end-agent-name
+    definitions:
+    - prefRoles: [ Hound ]
+      max: 1
+      playerRatio: 2 #10
+      blacklist:
+        components:
+        - AntagImmune
+      briefing:
+        text: hound-role-greeting-human
+        color: "#800000"
+        sound: "/Audio/Ambience/Antag/headrev_start.ogg"
+      startingGear: HoundGear
+      lateJoinAdditional: true
+      mindRoles:
+      - MindRoleHound
+#----------------------------------Гейм Пресет-------------------------------------        
+- type: gamePreset
+  id: Hound
+  alias:
+    - hound
+  name: Гончая Hound
+  description: Кто-то из вас не отмылся от былых кровавых грешков. Но агент компании Hound обязательно покарает кого надо...
+  showInVote: false
+  rules:
+    - Hound
+    - SubGamemodesRule
+    - BasicStationEventScheduler
+    - MeteorSwarmScheduler
+    - SpaceTrafficControlEventScheduler
+    - BasicRoundstartVariation
