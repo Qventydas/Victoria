@@ -12,6 +12,12 @@
     },
     {
       "name": "label_sold"
+    },
+    {
+      "name": "label_pil"
+    },
+    {
+      "name": "label_com"
     }
   ]
 }

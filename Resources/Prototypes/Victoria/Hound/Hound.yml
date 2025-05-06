@@ -2686,6 +2686,36 @@
     HoundChip_currency: 10
   categories:
   - HoundUplinkMed
+  
+- type: listing
+  id: HoundUplinkToxinePM1BeakerSmall
+  name: токсин ПМ-1
+  description: Природно-молекулярный токсин подтипа альфа. Усваивается очень долго и серьёзно травит жертву.
+  productEntity: ToxinePM1BeakerSmall
+  cost:
+    HoundChip_currency: 3
+  categories:
+  - HoundUplinkMed
+
+- type: listing
+  id: HoundUplinkToxineSM1BeakerSmall
+  name: токсин СМ-1
+  description: Синтетический-молекулярный токсин подтипа альфа. Усваивается не слишком быстро, но серьёзно травит жертву.
+  productEntity: ToxineSM1BeakerSmall
+  cost:
+    HoundChip_currency: 3
+  categories:
+  - HoundUplinkMed
+
+- type: listing
+  id: HoundUplinkToxineSA1BeakerSmall
+  name: токсин СА-1
+  description: Синтетический-атомарный токсин подтипа альфа. Усваивается достаточно быстро, но серьёзно травит жертву.
+  productEntity: ToxineSA1BeakerSmall
+  cost:
+    HoundChip_currency: 3
+  categories:
+  - HoundUplinkMed
 # #-----------------пресет категорий в аплинке------------
 - type: entity
   id: StorePresetHoundUplink
