@@ -275,9 +275,9 @@
   description: Довольно дешёвый скафандр, не обеспечивающий серьёзной защиты. По сути перекрашеная и слегка модифицированная ЕВА.
   components:
   - type: Sprite
-    sprite: Victoria/Hound/Armor/hnd_armor_EVA.rsi
+    sprite: Victoria/Hound/Armor/hnd_armor_eva.rsi
   - type: Clothing
-    sprite: Victoria/Hound/Armor/hnd_armor_EVA.rsi
+    sprite: Victoria/Hound/Armor/hnd_armor_eva.rsi
   - type: Armor 
     modifiers:
       coefficients:
