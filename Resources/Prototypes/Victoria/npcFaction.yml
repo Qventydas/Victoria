@@ -113,6 +113,7 @@
   - NoocratyBot
   - NanoTrasen
   - Petr
+  - Hound
   friendly:
   - SNKBot
   - SNK
@@ -129,6 +130,7 @@
   - NoocratyBot
   - NanoTrasen
   - Petr
+  - Hound
   friendly:
   - SNKBot
   - SNK
@@ -206,7 +208,25 @@
   - NanoTrasen
   - PetsNT
   - Vitz
+  - Hound
   friendly:
   - SNKBot
   - SNK
   - VitzBitMrHill
+#-----------------------------------------------Хаунд---------------------------------- 
+- type: npcFaction
+  id: Hound
+  hostile:
+  - SimpleHostile
+  - Xeno
+  - Zombie
+  - Dragon
+  friendly:
+  - VitzBitMrHill
+  - Noocraty
+  - NoocratyBot
+  - NanoTrasen
+  - PetsNT
+  - Vitz
+  - KMLG
+  - KMLGEnemy

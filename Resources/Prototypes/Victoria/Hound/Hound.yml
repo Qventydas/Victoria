@@ -998,7 +998,7 @@
   - type: AmmoCounter
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
-    fireRate: 4
+    fireRate: 3
     selectedMode: FullAuto
     availableModes:
     - FullAuto
@@ -1173,7 +1173,7 @@
 - type: radioChannel
   id: HoundRadio
   name: Хаунд
-  keycode: 'х' 
+  keycode: 'хд' 
   frequency: 2477
   color: "#800000"
   longRange: true
@@ -2304,7 +2304,7 @@
   description: Увы, иногда цели надо брать живыми...
   productEntity: WeaponDisabler
   cost:
-    HoundChip_currency: 2
+    HoundChip_currency: 3
   categories:
   - HoundUplinkWeaponry
 
@@ -2314,7 +2314,7 @@
   description: Большой и страшный нож. Бить острым концом.
   productEntity: HoundMachete
   cost:
-    HoundChip_currency: 1
+    HoundChip_currency: 2
   categories:
   - HoundUplinkWeaponry
 
@@ -2324,7 +2324,7 @@
   description: Крайне скорострельный и тихий пистолет для секретных миссий или тех, кто любит подольше и поплавнее. Использует .35 авто.
   productEntity: HoundLightPistol
   cost:
-    HoundChip_currency: 6
+    HoundChip_currency: 5
   categories:
   - HoundUplinkWeaponry
 
@@ -2344,7 +2344,7 @@
   description: Крайне мощный дробовик, идеальный для зачистки помещений. Кабы магазин был чуток побольше...
   productEntity: HoundShotgun
   cost:
-    HoundChip_currency: 6
+    HoundChip_currency: 8
   categories:
   - HoundUplinkWeaponry
 
@@ -2354,7 +2354,7 @@
   description: В текущих реалиях снайперские винтовки- фиговое оружие, так что её отдают почти за бесплатно.
   productEntity: HoundSniperRifle
   cost:
-    HoundChip_currency: 5
+    HoundChip_currency: 7
   categories:
   - HoundUplinkWeaponry
 - type: listing
@@ -2363,7 +2363,7 @@
   description: Что-то среднее между автоматом и пулемётом. Стреляет больно и точно, но из-за маленького, по мерам пулемёта, магазина им долго не позажимаешь.
   productEntity: HoundLightMachineGun
   cost:
-    HoundChip_currency: 16
+    HoundChip_currency: 17
   categories:
   - HoundUplinkWeaponry
 #------категория боезапас----------
@@ -2374,7 +2374,7 @@
   description: 4 патрона к карманной пушке под названием "Мопс"
   productEntity: MagazineHeavyPistolHound
   cost:
-    HoundChip_currency: 1
+    HoundChip_currency: 2
   categories:
   - HoundUplinkAmmo
 
@@ -2384,7 +2384,7 @@
   description: 14 патронов к "Биглю"
   productEntity: MagazineLightPistolHound
   cost:
-    HoundChip_currency: 1
+    HoundChip_currency: 2
   categories:
   - HoundUplinkAmmo
 
@@ -2422,7 +2422,7 @@
   description: Коробка на 60 патров .35 к пистолету-пулемёту "Махно"
   productEntity: MagazineBoxPistol
   cost:
-    HoundChip_currency: 2.5
+    HoundChip_currency: 5
   categories:
   - HoundUplinkAmmo
 
@@ -2432,7 +2432,7 @@
   description: Коробка на 60 патров .25 к пистолету "Бигль". Чёрт знает на кой вам столько патронов к дополнительному оружию, но ладно.
   productEntity: MagazineBoxPistol
   cost:
-    HoundChip_currency: 2
+    HoundChip_currency: 4
   categories:
   - HoundUplinkAmmo
 
@@ -2442,7 +2442,7 @@
   description: Коробка на 12 патров .45 магнум к пистолету "Мопс".
   productEntity: MagazineBoxMagnum
   cost:
-    HoundChip_currency: 2
+    HoundChip_currency: 4
   categories:
   - HoundUplinkAmmo
   
@@ -2452,11 +2452,10 @@
   description: Коробка на 10 патронов .60 к снайперской винтовке "Хаски". Какой спрос на оружие, такая и цена.
   productEntity: MagazineBoxAntiMateriel
   cost:
-    HoundChip_currency: 2
+    HoundChip_currency: 4
   categories:
   - HoundUplinkAmmo
 #------категория электроника----------
-  
 - type: listing
   id: HoundEncryptionKey
   name: Ключ шифрования Хаунд
@@ -2476,8 +2475,6 @@
     HoundChip_currency: 6
   categories:
   - HoundUplinkElectronic  
-
-
 #------категория специалистам----------
 #---вещички---
 #Печать
@@ -2503,21 +2500,21 @@
 #Инженерный
 - type: listing
   id: HoundBeltFilledEngi
-  name: Пояс инженера.
+  name: Пояс инженера
   description: Простой пояс с инструментами.
   productEntity: HoundBeltFilledEngi
   cost:
-    HoundChip_currency: 4
+    HoundChip_currency: 5
   categories:
   - HoundUplinkSpec
 
 - type: listing
   id: HoundBeltFilledExp
-  name: Пояс подрывника.
+  name: Пояс подрывника
   description: Пояс с двумя разрывными гранатами, двумя осколочными гранатами, двумя С-4, и одной ЭМИ гранатой. БУМ!
   productEntity: HoundBeltFilledExp
   cost:
-    HoundChip_currency: 12
+    HoundChip_currency: 20
   categories:
   - HoundUplinkSpec
 
@@ -2527,7 +2524,7 @@
   description: Два "Бигля" и два "Мопса". Без дополнительных патронов.
   productEntity: HoundCrateExp
   cost:
-    HoundChip_currency: 12
+    HoundChip_currency: 15
   categories:
   - HoundUplinkSpec
 
@@ -2537,7 +2534,7 @@
   description: Два "Махно" и одна "Лайка". Без дополнительных патронов.
   productEntity: HoundCrateWeaponsMiddle
   cost:
-    HoundChip_currency: 18
+    HoundChip_currency: 21
   categories:
   - HoundUplinkSpec
 
@@ -2556,16 +2553,17 @@
   description: Шесть обычных и три осколочной гранаты, две дымовой, две слезоточивой и две ЭМИ гранаты. И 4 С-4. Нахуй скрытность!
   productEntity: HoundCrateExp
   cost:
-    HoundChip_currency: 25
+    HoundChip_currency: 30
   categories:
   - HoundUplinkSpec
+
 - type: listing
   id: HoundHandheldCrewMonitor
   name: Монитор экипажа.
   description: Эта штука позволит вам найти ваших товарищей на большом расстоянии. И понять что они померли, если не двигаются.
   productEntity: HoundHandheldCrewMonitor
   cost:
-    HoundChip_currency: 3
+    HoundChip_currency: 4
   categories:
   - HoundUplinkSpec
 #------категория рюкзаки----------
@@ -2595,7 +2593,7 @@
   description: Базовое жизнеобеспечение, пистолет "Мопс" и три магазина.
   productEntity: HoundBackpackFilledHeavyPistol
   cost:
-    HoundChip_currency: 10
+    HoundChip_currency: 11
   categories:
   - HoundUplinkBack
   
@@ -2605,7 +2603,7 @@
   description: Базовое жизнеобеспечение, пистолет-пулемёт и три магазина.
   productEntity: HoundBackpackFilledSMG
   cost:
-    HoundChip_currency: 16
+    HoundChip_currency: 15
   categories:
   - HoundUplinkBack  
 
@@ -2615,7 +2613,7 @@
   description: Базовое жизнеобеспечение, пулемёт и 2 магазина к нему.
   productEntity: HoundBackpackFilledLMG
   cost:
-    HoundChip_currency: 22
+    HoundChip_currency: 24
   categories:
   - HoundUplinkBack
 
@@ -2625,7 +2623,7 @@
   description: Базовое жизнеобеспечение, дробовик и три магазина.
   productEntity: HoundBackpackFilledShotgun
   cost:
-    HoundChip_currency: 18
+    HoundChip_currency: 15
   categories:
   - HoundUplinkBack
 
