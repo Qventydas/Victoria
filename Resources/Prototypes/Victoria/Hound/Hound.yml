@@ -1130,7 +1130,6 @@
       map: ["enum.GunVisualLayers.Mag"]
   - type: Gun
     fireRate: 10
-    ProjectileSpeed: 35
     minAngle: 6
     maxAngle: 20
     angleDecay: 20
