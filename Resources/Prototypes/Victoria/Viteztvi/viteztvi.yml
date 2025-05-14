@@ -225,7 +225,7 @@
         Piercing: 0.85
 #------------------------------------патрульный броник----------     
 - type: entity
-  parent: ClothingOuterBaseMedium
+  parent: ClothingOuterArmorBasic
   id: VitzArmorBasic
   name: Лёгкий бронежилет Витезтви
   suffix: Витезтви
@@ -246,7 +246,7 @@
     damageCoefficient: 0.80
 #------------------------------------броник мистера Хилла----------     
 - type: entity
-  parent: ClothingOuterBaseMedium
+  parent: ClothingOuterArmorBasic
   id: VitzArmorMrHill
   name: Фирменный бронежилет Мистера или Мисс Хилл
   suffix: Витезтви

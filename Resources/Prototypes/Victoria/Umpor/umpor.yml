@@ -242,7 +242,7 @@
     - WhitelistChameleon
 #------------------------------------лёгкий броник----------     
 - type: entity
-  parent: ClothingOuterBaseMedium
+  parent: ClothingOuterArmorBasic
   id: UmporArmorBasic
   name: name-of-UmporArmorBasic
   suffix: Umpor

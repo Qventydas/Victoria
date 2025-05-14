@@ -414,6 +414,7 @@
   - type: Tag
     tags:
     - BombPart
+    - Plastid
   - type: SliceableFood
     count: 3
     slice: PicePlastid
@@ -616,6 +617,7 @@
   - type: Tag
     tags:
     - BombPart
+    - FuseMine
   - type: Construction
     graph: FuseMine
     node: FuseMine  
