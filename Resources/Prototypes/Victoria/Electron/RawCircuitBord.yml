@@ -557,8 +557,8 @@
     materialComposition:
       SiPlazCircuitBordMaterial: 1000
   - type: Tag
-      tags:
-        - SiPlazCircuitBord
+    tags:
+    - SiPlazCircuitBord
 #------------------Стак--------------------------
 - type: stack
   id: SiPlazCircuitBord
