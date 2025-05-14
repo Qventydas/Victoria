@@ -1,3 +1,4 @@
+#-------------------------------------------Кочующий шаттл с клонёркой-----------------------------------
 - type: entity
   name: Качующий психолог
   id: VisitingPsychologist
@@ -47,3 +48,134 @@
   components:
   - type: LoadMapRule
     preloadedGrid: ShuttleVisitGenetic
+#-------------------------------------------Лорный музон в автомат-----------------------------------
+- type: jukebox
+  id: Gimn_Imperia_Mirtana
+  name: Gimn_Imperia_Mirtana
+  path:
+    path: /Audio/Lore/Gimn_Imperia_Mirtana.ogg
+    
+- type: jukebox
+  id: Gimn_Nooc
+  name: Gimn_Nooc
+  path:
+    path: /Audio/Lore/Gimn_Nooc.ogg
+
+- type: jukebox
+  id: Gimn_OPZ
+  name: Gimn_OPZ
+  path:
+    path: /Audio/Lore/Gimn_OPZ.ogg
+
+- type: jukebox
+  id: Gimn_SNK_man
+  name: Gimn_SNK_man
+  path:
+    path: /Audio/Lore/Gimn_SNK_man.ogg
+
+- type: jukebox
+  id: Gimn_SNK_wom
+  name: Gimn_SNK_wom
+  path:
+    path: /Audio/Lore/Gimn_SNK_wom.ogg
+
+- type: jukebox
+  id: Gimn_Umpor
+  name: Gimn_Umpor
+  path:
+    path: /Audio/Lore/Gimn_Umpor.ogg
+
+- type: jukebox
+  id: Gimn_USSP
+  name: Gimn_USSP
+  path:
+    path: /Audio/Lore/Gimn_USSP.ogg
+
+- type: jukebox
+  id: Irinhol_star
+  name: Irinhol_star
+  path:
+    path: /Audio/Lore/Irinhol_star.ogg
+
+- type: jukebox
+  id: Petr_Chanson
+  name: Petr_Chanson
+  path:
+    path: /Audio/Lore/Petr_Chanson.ogg
+#-------------------------------------------Запросы в карго-----------------------------------
+- type: cargoBounty
+  id: FuseMine
+  reward: 5000
+  description: bounty-description-fusemine
+  entries:
+  - name: bounty-item-fusemine
+    amount: 10
+    whitelist:
+      components:
+      - FuseMine
+      
+- type: cargoBounty
+  id: Plastid
+  reward: 2000
+  description: bounty-description-plastid
+  entries:
+  - name: bounty-item-plastid
+    amount: 15
+    whitelist:
+      components:
+      - Plastid
+
+- type: cargoBounty
+  id: SiPlazCircuitBord
+  reward: 4000
+  description: bounty-description-siplazcircuitbord
+  entries:
+  - name: bounty-item-siplazcircuitbord
+    amount: 10
+    whitelist:
+      components:
+      - SiPlazCircuitBord
+
+- type: cargoBounty
+  id: Gethinax
+  reward: 3000
+  description: bounty-description-gethinax
+  entries:
+  - name: bounty-item-gethinax
+    amount: 1
+    whitelist:
+      components:
+      - Gethinax
+      
+- type: cargoBounty
+  id: SiCrystall
+  reward: 2000
+  description: bounty-description-sicrystall
+  entries:
+  - name: bounty-item-sicrystall
+    amount: 1
+    whitelist:
+      components:
+      - SiCrystall
+
+- type: cargoBounty
+  id: Telecrystal
+  reward: 6000
+  description: bounty-description-telecrystal
+  entries:
+  - name: bounty-item-telecrystal
+    amount: 3
+    whitelist:
+      components:
+      - Telecrystal
+      
+- type: cargoBounty
+  id: BSModule
+  reward: 6000
+  description: bounty-description-bsmodule
+  entries:
+  - name: bounty-item-bsmodule
+    amount: 4
+    whitelist:
+      components:
+      - BSModule

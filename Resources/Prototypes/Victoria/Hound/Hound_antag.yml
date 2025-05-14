@@ -119,10 +119,10 @@
     - groups: HoundObjectiveGroups
     maxDifficulty: 3
   - type: GameRule
-    minPlayers: 2
+    minPlayers: 5
     delay:
-      min: 20 #0
-      max: 30 #0
+      min: 120 #0
+      max: 180 #0
   - type: AntagSelection
     agentName: hound-round-end-agent-name
     definitions:
