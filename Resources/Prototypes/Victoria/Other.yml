@@ -103,6 +103,9 @@
   path:
     path: /Audio/Lore/Petr_Chanson.ogg
 #-------------------------------------------Запросы в карго-----------------------------------
+- type: Tag
+  id: FuseMine
+
 - type: cargoBounty
   id: FuseMine
   reward: 5000
@@ -111,8 +114,11 @@
   - name: bounty-item-fusemine
     amount: 10
     whitelist:
-      components:
+      tags:
       - FuseMine
+
+- type: Tag
+  id: Plastid
       
 - type: cargoBounty
   id: Plastid
@@ -122,8 +128,11 @@
   - name: bounty-item-plastid
     amount: 15
     whitelist:
-      components:
+      tags:
       - Plastid
+
+- type: Tag
+  id: SiPlazCircuitBord
 
 - type: cargoBounty
   id: SiPlazCircuitBord
@@ -133,8 +142,11 @@
   - name: bounty-item-siplazcircuitbord
     amount: 10
     whitelist:
-      components:
+      tags:
       - SiPlazCircuitBord
+
+- type: Tag
+  id: Gethinax
 
 - type: cargoBounty
   id: Gethinax
@@ -144,8 +156,11 @@
   - name: bounty-item-gethinax
     amount: 1
     whitelist:
-      components:
+      tags:
       - Gethinax
+
+- type: Tag
+  id: SiCrystall
       
 - type: cargoBounty
   id: SiCrystall
@@ -155,8 +170,11 @@
   - name: bounty-item-sicrystall
     amount: 1
     whitelist:
-      components:
+      tags:
       - SiCrystall
+
+- type: Tag
+  id: Telecrystal
 
 - type: cargoBounty
   id: Telecrystal
@@ -166,7 +184,7 @@
   - name: bounty-item-telecrystal
     amount: 3
     whitelist:
-      components:
+      tags:
       - Telecrystal
       
 - type: cargoBounty
@@ -177,5 +195,5 @@
   - name: bounty-item-bsmodule
     amount: 4
     whitelist:
-      components:
+      tags:
       - BSModule
