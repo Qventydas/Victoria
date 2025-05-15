@@ -351,7 +351,7 @@
     - 0,0,3,3
 #------------------------------------------бронежилет---------------------------------
 - type: entity
-  parent: ClothingOuterBaseMedium
+  parent: ClothingOuterArmorBasic
   id: KMLGArmor
   name: Бронежилет Космологистики
   suffix: KMLG

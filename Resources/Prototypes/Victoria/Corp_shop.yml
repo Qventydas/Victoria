@@ -353,6 +353,72 @@
   cash:
     1: GDChip
   canWithdraw: true 
+#--------------------------------------Хаунд---------------------------------
+- type: entity
+  parent: BaseItem
+  id: HoundChip
+  name: чип лояльности Хаунд
+  description: Не-е-е! Это не из чьей-то отрубленной головы! Это чип, подтверждающий лояльность корпорации Хаунд и гарант некоторых привелегий со стороны Ближнего Круга.
+  components:
+  - type: Cash
+  - type: Item
+    shape:
+    - 0,0,0,0
+    storedOffset: 0,-2
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      NTChip_material: 1
+  - type: Stack
+    stackType: NTChip_stack
+    count: 1
+  - type: Sprite
+    sprite: Victoria/Corp_chips/chips.rsi
+    state: hnd_chip
+  - type: Physics
+    bodyType: Dynamic
+  - type: Fixtures
+    fixtures:
+      fix1:
+        density: 30
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.35,-0.2,0.25,0.1"
+        mask:
+        - ItemMask
+  - type: Appearance
+  - type: Currency
+    price:
+      HoundChip_currency: 1
+
+- type: entity
+  parent: HoundChip
+  id: HoundChip2
+  suffix: х2
+  components:
+  - type: Stack
+    count: 2  
+  
+- type: material
+  id: HoundChip_material
+  name: чип лояльности Хаунд
+  stackEntity: SpaceCash
+  icon: { sprite: /Textures/Victoria/Corp_chips/chips.rsi, state: hnd_chip }
+  price: 5
+
+- type: stack
+  id: HoundChip_stack
+  name: чип лояльности Хаунд
+  icon: { sprite: /Textures/Victoria/Corp_chips/chips.rsi, state: hnd_chip }
+  spawn: NTChip
+  maxCount: 20
+  
+- type: currency
+  id: HoundChip_currency
+  displayName: Чип лояльности Хаунд
+  cash:
+    1: HoundChip
+  canWithdraw: true
 #------------------------------------------------------Ящик чипов лояльности----------------------
 #-------------------------------Ящик----------------------
 - type: entity
