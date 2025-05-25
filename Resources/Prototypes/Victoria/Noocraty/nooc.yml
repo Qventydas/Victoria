@@ -4264,6 +4264,9 @@
         startingItem: PowerCellHyper
 #Модули
 #БАЗА
+- type: Tag
+  id: BorgModuleNooc
+
 - type: entity
   id: BaseBorgModuleNooc
   parent: BaseBorgModule
