@@ -3,7 +3,7 @@
   id: ToxiKudzu
   name: Ядовитая Кудзу
   parent: Kudzu
-  description: Не пучи глаза! Оно растёт и уже с шипами!
+  description: Как кудзу, только сочится ядом из всех щелей!
   components:
     - type: MeleeSound
       soundGroups:
@@ -28,11 +28,20 @@
         food:
           reagents:
           - ReagentId: ToxinePM2
-            Quantity: 5
+            Quantity: 20
+    - type: SolutionInjectOnContact
+      transferAmount: 0.5
+      solution: food
     - type: DamageContacts
       damage:
         types:
           Piercing: 0.5
+    - type: SolutionRegeneration
+      solution: food
+      generated:
+        reagents:
+        - ReagentId: ToxinePM2
+          Quantity: 0.5
 #------------------------------------------------Ядовитый карп (СА3)------------------------------------
 - type: entity
   name: Ядовитый карп
@@ -51,6 +60,9 @@
         reagents:
         - ReagentId: ToxineSA1
           Quantity: 10
+  - type: SolutionInjectOnContact
+    transferAmount: 0.6
+    solution: melee
   - type: MeleeChemicalInjector
     solution: melee
   - type: MeleeWeapon
@@ -58,6 +70,12 @@
       types:
         Blunt: 4
         Slash: 4
+  - type: SolutionRegeneration
+    solution: melee
+    generated:
+      reagents:
+      - ReagentId: ToxineSA1
+        Quantity: 0.3
 #------------------------------------------------Ядовитый слайм (СМ2)------------------------------------
 - type: entity
   name: Ядовитый слайм
@@ -87,9 +105,18 @@
         melee:
           reagents:
           - ReagentId: ToxineSM2
-            Quantity: 10
+            Quantity: 15
     - type: MeleeChemicalInjector
       solution: melee
+    - type: SolutionInjectOnContact
+      transferAmount: 0.5
+      solution: melee
+    - type: SolutionRegeneration
+      solution: melee
+      generated:
+        reagents:
+        - ReagentId: ToxineSM2
+          Quantity: 0.5
 #------------------------------------------------Ядожижа жижеаномы------------------------------
 #----------------------------------(ПМ1)---------------------------
 - type: entity
@@ -101,6 +128,7 @@
   components:
   - type: Bloodstream
     bloodReagent: ToxinePM1
+    bloodRefreshAmount: 3
   - type: PointLight
     color: "#6300cf"
   - type: Sprite
@@ -113,6 +141,9 @@
   - type: MeleeChemicalInjector
     solution: bloodstream
     transferAmount: 3
+  - type: SolutionInjectOnContact
+    transferAmount: 0.5
+    solution: bloodstream
 #----------------------------------(ПМ2)---------------------------
 - type: entity
   id: ReagentSlimeToxinePM2
@@ -123,6 +154,7 @@
   components:
   - type: Bloodstream
     bloodReagent: ToxinePM2
+    bloodRefreshAmount: 3
   - type: PointLight
     color: "#6300cf"
   - type: Sprite
@@ -135,6 +167,10 @@
   - type: MeleeChemicalInjector
     solution: bloodstream
     transferAmount: 3
+  - type: SolutionInjectOnContact
+    transferAmount: 0.5
+    solution: bloodstream
+
 #----------------------------------(ПМ3)---------------------------
 - type: entity
   id: ReagentSlimeToxinePM3
@@ -145,6 +181,7 @@
   components:
   - type: Bloodstream
     bloodReagent: ToxinePM3
+    bloodRefreshAmount: 3
   - type: PointLight
     color: "#6300cf"
   - type: Sprite
@@ -157,6 +194,9 @@
   - type: MeleeChemicalInjector
     solution: bloodstream
     transferAmount: 3
+  - type: SolutionInjectOnContact
+    transferAmount: 0.5
+    solution: bloodstream
 #----------------------------------(СМ1)---------------------------
 - type: entity
   id: ReagentSlimeToxineSM1
@@ -167,6 +207,7 @@
   components:
   - type: Bloodstream
     bloodReagent: ToxineSM1
+    bloodRefreshAmount: 3
   - type: PointLight
     color: "#6300cf"
   - type: Sprite
@@ -179,6 +220,9 @@
   - type: MeleeChemicalInjector
     solution: bloodstream
     transferAmount: 3
+  - type: SolutionInjectOnContact
+    transferAmount: 0.5
+    solution: bloodstream
 #----------------------------------(СМ2)---------------------------
 - type: entity
   id: ReagentSlimeToxineSM2
@@ -189,6 +233,7 @@
   components:
   - type: Bloodstream
     bloodReagent: ToxineSM2
+    bloodRefreshAmount: 3
   - type: PointLight
     color: "#6300cf"
   - type: Sprite
@@ -201,6 +246,9 @@
   - type: MeleeChemicalInjector
     solution: bloodstream
     transferAmount: 3
+  - type: SolutionInjectOnContact
+    transferAmount: 0.5
+    solution: bloodstream
 #----------------------------------(СМ3)---------------------------
 - type: entity
   id: ReagentSlimeToxineSM3
@@ -211,6 +259,7 @@
   components:
   - type: Bloodstream
     bloodReagent: ToxineSM3
+    bloodRefreshAmount: 3
   - type: PointLight
     color: "#6300cf"
   - type: Sprite
@@ -223,6 +272,9 @@
   - type: MeleeChemicalInjector
     solution: bloodstream
     transferAmount: 3
+  - type: SolutionInjectOnContact
+    transferAmount: 0.5
+    solution: bloodstream
 #----------------------------------(СА1)---------------------------
 - type: entity
   id: ReagentSlimeToxineSA1
@@ -233,6 +285,7 @@
   components:
   - type: Bloodstream
     bloodReagent: ToxineSA1
+    bloodRefreshAmount: 3
   - type: PointLight
     color: "#6300cf"
   - type: Sprite
@@ -245,6 +298,9 @@
   - type: MeleeChemicalInjector
     solution: bloodstream
     transferAmount: 3
+  - type: SolutionInjectOnContact
+    transferAmount: 0.5
+    solution: bloodstream
 #----------------------------------(СА2)---------------------------
 - type: entity
   id: ReagentSlimeToxineSA2
@@ -255,6 +311,7 @@
   components:
   - type: Bloodstream
     bloodReagent: ToxineSA2
+    bloodRefreshAmount: 3
   - type: PointLight
     color: "#6300cf"
   - type: Sprite
@@ -267,6 +324,9 @@
   - type: MeleeChemicalInjector
     solution: bloodstream
     transferAmount: 3
+  - type: SolutionInjectOnContact
+    transferAmount: 0.5
+    solution: bloodstream
 #----------------------------------(СА3)---------------------------
 - type: entity
   id: ReagentSlimeToxineSA3
@@ -277,6 +337,7 @@
   components:
   - type: Bloodstream
     bloodReagent: ToxineSA3
+    bloodRefreshAmount: 3
   - type: PointLight
     color: "#6300cf"
   - type: Sprite
@@ -289,6 +350,9 @@
   - type: MeleeChemicalInjector
     solution: bloodstream
     transferAmount: 3
+  - type: SolutionInjectOnContact
+    transferAmount: 0.5
+    solution: bloodstream
 #------------------------------------------------Плевок токсианомы (СМ1)------------------------------------
 - type: entity
   id: ProjectileToxiAnome
@@ -340,9 +404,13 @@
         Base: dead
   - type: Bloodstream
     bloodReagent: ToxineSA1
+    bloodRefreshAmount: 2
   - type: MeleeChemicalInjector
     solution: bloodstream
     transferAmount: 5
+  - type: SolutionInjectOnContact
+    transferAmount: 0.5
+    solution: bloodstream
   - type: MeleeWeapon
     soundHit:
       path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg
@@ -373,9 +441,13 @@
         Base: dead
   - type: Bloodstream
     bloodReagent: ToxineSM2
+    bloodRefreshAmount: 8
   - type: MeleeChemicalInjector
     solution: bloodstream
     transferAmount: 15
+  - type: SolutionInjectOnContact
+    transferAmount: 3
+    solution: bloodstream
   - type: MeleeWeapon
     soundHit:
       path: /Audio/Weapons/Xeno/alien_claw_flesh3.ogg

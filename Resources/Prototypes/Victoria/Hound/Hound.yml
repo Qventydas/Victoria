@@ -2950,10 +2950,10 @@
   - HoundUplinkExp
 #С-4
 - type: listing
-  id: HoundC-4
+  id: HoundC4
   name: C-4
   description: Устрой сюрприз. Детонатор не в комплекте.
-  productEntity: C-4
+  productEntity: C4
   cost:
     HoundChip_currency: 3
   categories:

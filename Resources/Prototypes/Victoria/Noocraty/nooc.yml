@@ -4068,10 +4068,6 @@
       shader: unshaded
   - type: Item
     sprite: Victoria/Noocraty/Weapon/nooc_laser_rifle.rsi
-  # - type: MagazineVisuals
-    # magState: mag
-    # steps: 1
-    zeroVisible: true
   - type: Clothing
     sprite: Victoria/Noocraty/Weapon/nooc_laser_rifle.rsi
   - type: StaticPrice
@@ -4170,7 +4166,7 @@
   - type: IntrinsicRadioTransmitter
     channels:
     - Binary
-    - Noocraty
+    - NoocRadio
   - type: ActiveRadio
     channels:
     - NoocRadio
@@ -4268,6 +4264,9 @@
         startingItem: PowerCellHyper
 #Модули
 #БАЗА
+- type: Tag
+  id: BorgModuleNooc
+
 - type: entity
   id: BaseBorgModuleNooc
   parent: BaseBorgModule
@@ -4275,7 +4274,7 @@
   components:
   - type: Tag
     tags:
-    - BorgModuleNoocraty
+    - BorgModuleNooc
 #Модуль подснежника
 - type: entity
   id: BorgModuleNoocSnowdrop
