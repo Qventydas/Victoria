@@ -1,3 +1,4 @@
+# ----------------------------------------------------резервный ключ шифрования СБ----------------------------------------  
 # -----------------------------канал----------------------------------------  
 - type: radioChannel
   id: SecurityReservRadio
@@ -46,3 +47,26 @@
   - type: Sprite
     layers:
       - state: box_medical
+# ----------------------------------------------------часы капитана с консолью связи---------------------------------------- 
+- type: entity
+  id: WristwatchCaptain
+  parent: Wristwatch
+  name: Часы капитана
+  description: Электронные часы с интегрированным ПО консоли связи.
+  components:
+  - type: Sprite
+    sprite: Victoria/cap_watch.rsi
+    layers:
+    - state: wristwatch
+  - type: CommunicationsConsole
+    title: comms-console-announcement-title-station
+  - type: DeviceNetwork
+    transmitFrequencyId: ShuttleTimer
+  - type: ActivatableUI
+    key: enum.CommunicationsConsoleUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.CommunicationsConsoleUiKey.Key:
+        type: CommunicationsConsoleBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface

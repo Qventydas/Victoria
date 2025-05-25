@@ -224,7 +224,7 @@
     fiberColor: fibers-blue
 #------------------------------------лёгкий броник----------
 - type: entity
-  parent: ClothingOuterBaseMedium
+  parent: ClothingOuterArmorBasic
   id: NoocArmorBasic
   name: Ноократский бронежилет
   suffix: Ноократия

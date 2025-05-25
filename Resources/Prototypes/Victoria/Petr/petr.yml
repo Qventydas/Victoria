@@ -84,7 +84,7 @@
         Heat: 0.8
 #------------------------------------броник----------     
 - type: entity
-  parent: ClothingOuterBaseMedium
+  parent: ClothingOuterArmorBasic
   id: PetrArmorBasic
   name: Лёгкий бронежилет Петрищевцев
   suffix: Петрищев

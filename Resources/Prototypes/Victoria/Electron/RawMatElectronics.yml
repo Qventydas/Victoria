@@ -370,6 +370,7 @@
   - type: Tag
     tags:
     - RawMatElectronics
+    - Gethinax
 #------------------Стак--------------------------
 - type: stack
   id: Gethinax

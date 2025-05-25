@@ -1,0 +1,105 @@
+- type: entity
+  parent: GenericTank
+  id: SiliconTankFull
+  name: резервуар с сжижиным кремнием
+  suffix: Full
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: Silicon
+          Quantity: 500
+
+- type: entity
+  parent: GenericTank
+  id: CopperTankFull
+  name: резервуар с сжиженой медью
+  suffix: Full
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: Copper
+          Quantity: 500
+
+- type: entity
+  parent: GenericTank
+  id: CarbonTankFull
+  name: резервуар с сжиженым углеродом
+  suffix: Full
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: Carbon
+          Quantity: 500
+          
+- type: entity
+  parent: GenericTank
+  id: RadiumTankFull
+  name: резервуар с сжиженым радием
+  suffix: Full
+  components:
+  - type: PointLight
+    color: "#4fc200"
+    radius: 1.5
+  - type: RadiationSource
+    intensity: 1
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: Radium
+          Quantity: 500
+
+- type: entity
+  parent: GenericTank
+  id: PotassiumTankFull
+  name: резервуар с сжиженым Калием
+  suffix: Full
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: Potassium
+          Quantity: 500
+
+- type: entity
+  parent: GenericTank
+  id: SensitizerTankFull
+  name: резервуар с сенсебилизатором
+  suffix: Full
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      tank:
+        reagents:
+        - ReagentId: Sensitizer
+          Quantity: 500
+
+#------------------------------------------------------Случайный спавнер----------------------      
+- type: entity
+  parent: MarkerBase
+  id: RandomSpawnerTankFull
+  name: случайный резервуар с реагентом
+  components:
+  - type: Sprite
+    layers:
+      - state: red
+      - sprite: Structures/Storage/tanks.rsi
+        state: generictank-1
+  - type: RandomSpawner
+    offset: 0
+    prototypes:
+      - SiliconTankFull
+      - CopperTankFull
+      - CarbonTankFull
+      - RadiumTankFull
+      - PotassiumTankFull
+      - SensitizerTankFull
+      - WaterTankFull
+      - WeldingFuelTankFull

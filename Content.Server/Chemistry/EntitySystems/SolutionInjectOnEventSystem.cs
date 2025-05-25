@@ -9,6 +9,9 @@ using Content.Shared.Projectiles;
 using Content.Shared.Tag;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Collections;
+using Robust.Shared.Physics.Components;
+using Robust.Shared.Physics.Events;
+using Robust.Shared.Physics.Systems;
 
 namespace Content.Server.Chemistry.EntitySystems;
 
@@ -31,6 +34,7 @@ public sealed class SolutionInjectOnCollideSystem : EntitySystem
         SubscribeLocalEvent<SolutionInjectOnEmbedComponent, EmbedEvent>(HandleEmbed);
         SubscribeLocalEvent<MeleeChemicalInjectorComponent, MeleeHitEvent>(HandleMeleeHit);
         SubscribeLocalEvent<SolutionInjectWhileEmbeddedComponent, InjectOverTimeEvent>(OnInjectOverTime);
+        SubscribeLocalEvent<SolutionInjectOnContactComponent, StartCollideEvent>(HandleCollide);
     }
 
     private void HandleProjectileHit(Entity<SolutionInjectOnProjectileHitComponent> entity, ref ProjectileHitEvent args)
@@ -55,6 +59,11 @@ public sealed class SolutionInjectOnCollideSystem : EntitySystem
     {
         DoInjection((entity.Owner, entity.Comp), args.EmbeddedIntoUid);
     }
+    private void HandleCollide(Entity<SolutionInjectOnContactComponent> entity, ref StartCollideEvent args)
+    {
+        DoInjection((entity.Owner, entity.Comp), args.OtherEntity);
+    }
+
 
     private void DoInjection(Entity<BaseSolutionInjectOnEventComponent> injectorEntity, EntityUid target, EntityUid? source = null)
     {
