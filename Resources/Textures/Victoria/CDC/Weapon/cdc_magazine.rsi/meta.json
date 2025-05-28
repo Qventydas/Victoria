@@ -1,0 +1,38 @@
+{
+  "version": 1,
+  "license": "CC-BY-NC-SA-3.0",
+  "copyright": "Sprite created by crazzy_pingvin",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "base_auto"
+    },
+	{
+      "name": "base_pist"
+    },
+	{
+      "name": "base_rifle"
+    },
+	{
+      "name": "base_shot"
+    },
+	{
+      "name": "hot_auto"
+    },
+	{
+      "name": "hot_pist"
+    },
+	{
+      "name": "hot_rifle"
+    },
+	{
+      "name": "hot_shot"
+    },
+    {
+      "name": "mag-0"
+    }
+  ]
+}

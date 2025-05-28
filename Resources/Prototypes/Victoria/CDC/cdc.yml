@@ -1,0 +1,3000 @@
+#---------------------------униформа----------------------------------------------------------------------
+#------------------------------------солдат---------- 
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: CDCUniformSold
+  name: Пехотная форма Конгломерата
+  suffix: Конгломерат
+  description: Удобная и комфортная форма солдата армии Конгломерата. Отдаёт дань пескам родных стран мусульманской веры.
+  components:
+  - type: Sprite
+    sprite: Victoria/CDC/Equipment/cdc_uniform_s.rsi
+  - type: Clothing
+    sprite: Victoria/CDC/Equipment/cdc_uniform_s.rsi
+#------------------------------------офицер----------     
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: CDCUniformOffi
+  name: Офицерская форма Конгломерата
+  suffix: Конгломерат
+  description: Удобная и комфортная форма офицера армии Конгломерата. Отдаёт дань пескам родных стран мусульманской веры.
+  components:
+  - type: Sprite
+    sprite: Victoria/CDC/Equipment/cdc_uniform_o.rsi
+  - type: Clothing
+    sprite: Victoria/CDC/Equipment/cdc_uniform_o.rsi
+#------------------------------------техник----------     
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: CDCUniformEng
+  name: Форма техники Конгломерата
+  suffix: Конгломерат
+  description: Удобная и комфортная форма техника армии Конгломерата. Отдаёт дань пескам родных стран мусульманской веры.
+  components:
+  - type: Sprite
+    sprite: Victoria/CDC/Equipment/cdc_uniform_e.rsi
+  - type: Clothing
+    sprite: Victoria/CDC/Equipment/cdc_uniform_e.rsi
+#------------------------------------имам----------     
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: CDCUniformImam
+  name: Одежда проповедника Конгломерата
+  suffix: Конгломерат
+  description: Традиционных халат проповедников космоислама
+  components:
+  - type: Sprite
+    sprite: Victoria/CDC/Equipment/cdc_uniform_i.rsi
+  - type: Clothing
+    sprite: Victoria/CDC/Equipment/cdc_uniform_i.rsi
+#-------------------------------одежда и снаряга----------------------------------------------------------------------
+#---------------------------------------------------------рюкзаки----------------------------------
+#------------------------------------сумка----------- 
+- type: entity
+  parent: [ClothingBackpack, DrinkBase]
+  id: CDCSatchels
+  name: Плечевая сумка Конгломерата
+  suffix: Конгломерат
+  description: Офицерская плечевая сумка с флягой офицеров Конгломерата
+  components:
+  - type: Sprite
+    sprite: Victoria/CDC/Equipment/cdc_satchels.rsi
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 100
+#------------------------------------рюкзак---------- 
+- type: entity
+  parent: [ClothingBackpack, DrinkBase]
+  id: CDCBackpack
+  name: Армейский рюкзак Конгломерата
+  suffix: Конгломерат
+  description: Стандартный армейский рюкзак с флягой солдат Конгломерата
+  components:
+  - type: Sprite
+    sprite: Victoria/CDC/Equipment/cdc_back.rsi
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        maxVol: 100
+#-------------------------рюкзак-радиостанция-------------------------    
+- type: entity
+  parent: ClothingBackpack
+  id: CDCRadioBackpack
+  name: Мобильная радиостанция
+  suffix: Конгломерат
+  description: Мобильная радиостанция с небольшим подсумком, способная обеспечить связь в некотором регионе. (Вынимать ключи шифрования можно ломом)
+  components:
+  - type: Sprite
+    sprite: Victoria/CDC/Equipment/cdc_back_radio.rsi
+  - type: Storage
+    maxItemSize: Huge
+  - type: EncryptionKeyHolder
+    keysExtractionMethod: Prying
+    keySlots: 10
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+      key_slots: !type:Container
+  - type: TelecomServer
+  - type: ApcPowerReceiver
+    needsPower: false
+  - type: LightningTarget
+    priority: 1 
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Water
+          Quantity: 0
+        maxVol: 50
+#--------------------------------------------сапоги---------------------------------------------
+#----------------------------------обычные------------------------
+- type: entity
+  parent: ClothingShoesMilitaryBase
+  id: CDCBoots
+  name: Армейские сапоги Конгломерата
+  suffix: Конгломерат
+  description: Крепкие армейские сапоги. Достаточно плотные, чтобы выдержать песчаные и пылевые бури, но так же неплохо справляются и с метелями, раскалёной золой, разрухой, зубами ксеноморфов и черепами миртанийцев.
+  components:
+  - type: Sprite
+    sprite: Victoria/CDC/Equipment/cdc_boots.rsi
+  - type: Clothing
+    sprite: Victoria/CDC/Equipment/cdc_boots.rsi
+#---------------------------------------------шлема------------------------------
+#----------------------------солдатский-------------
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: CDCHelmetSld
+  name: Солдатский шлем Конгломерата
+  suffix: Конгломерат
+  description: Прочный шлем с небольшим слоем покрытия от кислот и подбивкой с термоизоляцией.
+  components:
+  - type: Sprite
+    sprite: Victoria/CDC/Armor/cdc_helmet_s.rsi
+  - type: Clothing
+    sprite: Victoria/CDC/Armor/cdc_helmet_s.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.9
+        Heat: 0.9
+        Caustic: 0.9
+#----------------------------офицерский-------------
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: CDCHelmetOffi
+  name: Офицерский шлем Конгломерата
+  suffix: Конгломерат
+  description: рочный шлем с небольшим слоем покрытия от кислот и подбивкой с термоизоляцией. Сужается к верху, улучшая защиту от ударов по голове.
+  components:
+  - type: Sprite
+    sprite: Victoria/CDC/Armor/cdc_helmet_o.rsi
+  - type: Clothing
+    sprite: Victoria/CDC/Armor/cdc_helmet_o.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.85
+        Heat: 0.9
+        Caustic: 0.9
+#------------------------------------шапки---------- 
+#-------------------солдатская феска-----------
+- type: entity
+  parent: ClothingHeadBase
+  id: CDCFez
+  name: Феска солдата Конгломерата
+  suffix: Конгломерат
+  description: Лёгкая феска солдата. Не позволяет палящему солнцу перегреть голову, но в ней и не жарко.
+  components:
+  - type: Sprite
+    sprite: Victoria/CDC/Equipment/cdc_fez.rsi
+  - type: Clothing
+    sprite: Victoria/CDC/Equipment/cdc_fez.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+    - HamsterWearable
+#-------------------кепка техника-----------
+- type: entity
+  parent: ClothingHeadBase
+  id: CDCCepka
+  name: Кепка техника Конгломерата
+  suffix: Конгломерат
+  description: Плотная кепка техника. Порой пахнет маслом, спиртом, флюсом и канифолью. Выдаёт мастера на все руки.
+  components:
+  - type: Sprite
+    sprite: Victoria/CDC/Equipment/cdc_cepka.rsi
+  - type: Clothing
+    sprite: Victoria/CDC/Equipment/cdc_cepka.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+    - HamsterWearable
+#-------------------фуражка офицера-----------
+- type: entity
+  parent: ClothingHeadBase
+  id: CDCCap
+  name: Фуражка офицера Конгломерата
+  suffix: Конгломерат
+  description: Дорогая и качественно пошитая фуражка. Демонстрирует статус, но не позволяет слишком высоко задирать нос, ибо заслужить её можно лишь через серьёзные лишения.
+  components:
+  - type: Sprite
+    sprite: Victoria/CDC/Equipment/cdc_cap.rsi
+  - type: Clothing
+    sprite: Victoria/CDC/Equipment/cdc_cap.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+    - HamsterWearable
+#-------------------тюрбан имама-----------
+- type: entity
+  parent: ClothingHeadBase
+  id: CDCTurban
+  name: Тюрбан проповедника Конгломерата
+  suffix: Конгломерат
+  description: Мягкий и красивый тюрбан проповедника. Заставляет задуматься о своём месте в мире и способах сделать себя и мир лучше.
+  components:
+  - type: Sprite
+    sprite: Victoria/CDC/Equipment/cdc_hat_i.rsi
+  - type: Clothing
+    sprite: Victoria/CDC/Equipment/cdc_hat_i.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+    - HamsterWearable
+#---------------------------------------------перчатки------------------------------    
+#------------------------------------солдатские---------- 
+- type: entity
+  parent: ClothingHandsBase
+  id: CDCGloves
+  name: Армейские перчатки Конгломерата
+  suffix: Конгломерат
+  description: Предотвращают образование мозолей от долгой работы с оружием или инструментами, но при этом не мешают подвижности пальцев. Имеют небольшой защитный слой от едких веществ и токсинов.
+  components:
+  - type: Sprite
+    sprite: Victoria/CDC/Equipment/cdc_gloves.rsi
+  - type: Clothing
+    sprite: Victoria/CDC/Equipment/cdc_gloves.rsi
+  - type: Fiber
+    fiberMaterial: fibers-leather
+    fiberColor: fibers-brown
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+#------------------------------------техника----------     
+- type: entity
+  parent: ClothingHandsGlovesColorYellow
+  id: CDCGlovesTech
+  name: Перчатки техника Конгломерата
+  suffix: Конгломерат
+  description: Перчатки ветеранов армии Конгломерата, что не только обеспечивают защиту, но и позволяют вставить врагу кулак по самые гланды ударным методом.
+  components:
+  - type: FingerprintMask
+  - type: Sprite
+    sprite: Victoria/CDC/Equipment/cdc_gloves_tech.rsi
+  - type: Clothing
+    sprite: Victoria/CDC/Equipment/cdc_gloves_tech.rsi
+  - type: Fiber
+    fiberMaterial: fibers-leather
+    fiberColor: fibers-brown
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Slash: 0.9
+        Piercing: 0.95 
+        Shock: 0.9 
+        Caustic: 0.95
+        Poison: 0.95
+#--------------------------------------------------бронь-----------------------------
+#------------------------------------лёгкий броник----------     
+- type: entity
+  parent: ClothingOuterArmorBasic
+  id: CDCArmorLight
+  name: Бронежилет Конгломерата
+  suffix: Конгломерат
+  description: Чаще используется полицейскими службами или для тренировки курсантов, нежели в бою. Впрочем, последнее время его чаще используют офицеры.
+  components:
+  - type: Sprite
+    sprite: Victoria/CDC/Armor/cdc_armor_light.rsi
+  - type: Clothing
+    sprite: Victoria/CDC/Armor/cdc_armor_light.rsi
+  - type: Armor 
+    modifiers:
+      coefficients:
+        Blunt: 0.75
+        Slash: 0.75
+        Piercing: 0.75 
+        Heat: 0.75
+        Caustic: 0.85
+        Poison: 0.85
+  - type: ExplosionResistance
+    damageCoefficient: 0.80
+#------------------------------------броня----------     
+- type: entity
+  parent: ClothingOuterArmorBasic
+  id: CDCArmorMiddle
+  name: Пехотный бронекомплект Конгломерата
+  suffix: Конгломерат
+  description: Защитный комплект, состоящий из стандартного бронежилета, наплечников и защиты голеней выдаётся пехоте Конгломерата
+  components:
+  - type: Sprite
+    sprite: Victoria/CDC/Armor/cdc_armor_mid.rsi
+  - type: Clothing
+    sprite: Victoria/CDC/Armor/cdc_armor_mid.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.6
+        Heat: 0.65
+        Caustic: 0.75
+        Poison: 0.75
+  - type: ExplosionResistance
+    damageCoefficient: 0.75
+#---------------------------------------------------------скафандры--------------------------------------
+#------------------------------------скафандр техника----------      
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: CDCHardsuitTech
+  name: Скафандр техника Конгломерата
+  suffix: Конгломерат
+  description: Более-менее лёгкий скафандр для удобной работе в космосе, безвоздушных или ядовитых средах.
+  components:
+  - type: Sprite
+    sprite: Victoria/CDC/Armor/cdc_hardsuits_e.rsi
+  - type: Clothing
+    sprite: Victoria/CDC/Armor/cdc_hardsuits_e.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.8
+        Radiation: 0.6
+        Caustic: 0.9
+        Poison: 0.6
+  - type: ClothingSpeedModifier
+    walkModifier: 0.90
+    sprintModifier: 0.90
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: CDCHelmetHardsuitTech
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+#------------------------------------шлем скафандра техника----------  
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: CDCHelmetHardsuitTech
+  name: Шлем скафандра техника
+  suffix: Конгломерат
+  description: Стандартный простой шлем скафандра техника Конгломерата
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: Victoria/CDC/Armor/cdc_hardsuits_helmet_e.rsi
+  - type: Clothing
+    sprite: Victoria/CDC/Armor/cdc_hardsuits_helmet_e.rsi
+  - type: PointLight
+    color: "#ffdbad"
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Slash: 0.95
+        Piercing: 0.95
+        Caustic: 0.95
+        Poison: 0.95
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+#------------------------------------боевой скафандр----------      
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: CDCHardsuitArm
+  name: Бронескафандр Конгломерата
+  suffix: Конгломерат
+  description: Укреплённый боевой скафандр для армии Конгломерата
+  components:
+  - type: Sprite
+    sprite: Victoria/CDC/Armor/cdc_hardsuits_s.rsi
+  - type: Clothing
+    sprite: Victoria/CDC/Armor/cdc_hardsuits_s.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.45
+        Slash: 0.45
+        Piercing: 0.45
+        Radiation: 0.6
+        Caustic: 0.55
+        Poison: 0.55
+  - type: ClothingSpeedModifier
+    walkModifier: 0.75
+    sprintModifier: 0.75
+  - type: HeldSpeedModifier
+  - type: ToggleableClothing
+    clothingPrototype: CDCHelmetHardsuitArm
+  - type: ExplosionResistance
+    damageCoefficient: 0.6
+#------------------------------------шлем боевого скафандра----------  
+- type: entity
+  parent: ClothingHeadHardsuitWithLightBase
+  id: CDCHelmetHardsuitArm
+  name: Шлем бронированного скафандра
+  suffix: Конгломерат
+  description: Стандартный простой шлем скафандра для армии Умпорской Федерации
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: Victoria/CDC/Armor/cdc_hardsuits_helmet_e.rsi
+  - type: Clothing
+    sprite: Victoria/CDC/Armor/cdc_hardsuits_helmet_e.rsi
+  - type: PointLight
+    color: "#ffdbad"
+  - type: PressureProtection
+    highPressureMultiplier: 0.1
+    lowPressureMultiplier: 1000
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.8
+        Caustic: 0.8
+        Poison: 0.8
+  - type: ExplosionResistance
+    damageCoefficient: 0.8
+#-----------------------------------------снаряга и пояса------------------------------------------
+#-------------------------------------печать офицера-----------------    
+- type: entity
+  name: Печать армии Конгломерата
+  suffix: Конгломерат
+  parent: RubberStampBaseAlt
+  id: CDCRubberStamp
+  components:
+  - type: Stamp
+    stampedName: Боjественный Конгломеrат
+    stampedColor: "#b68448"
+    stampState: "paper_stamp-generic"
+  - type: Sprite
+    sprite: Victoria/CDC/Equipment/cdc_stamp.rsi
+    state: stamp
+#---------------------------------Стандартная форма---------------------
+- type: entity
+  id: CDCPaperForm
+  name: Форма запроса
+  suffix: Конгломерат
+  parent: Paper
+  components:
+  - type: Paper
+    content: |
+      [color=#b68448]░░░░░░░░█░░░░░░░░[/color]
+      [color=#b68448]░░░░█████████░░░░[/color]      [head=3]Бланк документа[/head]
+      [color=#b68448]░░░░█░░░█░░░█░░░░[/color]               [head=3]CDIC[/head]
+      [color=#b68448]░░░███░░█░░███░░░[/color]
+      [color=#b68448]░░░░░░░███░░░░░░░[/color]
+      =============================================
+                          НАИМЕНОВАНИЕ ДОКУМЕНТА
+      =============================================
+      
+      От: 
+      
+      Кому: 19-ая дивизия
+      
+      Полное sодерjание документа sо всей необходимой инфоrмацией и опиsанием
+      
+      Срочность: (Крайня, Сильная, Средняя, Малая, Незначительная)
+      
+      =============================================
+      
+             [italic]Место для печатей[/italic]      
+      
+#-------------------------------------знамя-------------------------------   
+- type: entity
+  id: CDCBannerStd
+  parent: BannerBase
+  name: Знамя Халифатского Божественного Конгломерата
+  suffix: Конгломерат
+  description: Чёрный фон - символ выхода всех рас в космос. Круг - символ числа 12, символ божественного. Квадрат - число 4 - символ мирского. Их равновесие - символ синтеза космоислама и светских устоев. Купол весов - символ правоверности Халифа. Спиральная красная лента - символ повторяемость истории и укрепление весов, как устоев государства. Шусть стрел - символ столпов светских начал. И восьмиконечная звезда над всем - как символ трона Аллаха.
+  components:
+  - type: Sprite
+    sprite: Victoria/CDC/cdc_banner.rsi
+    state: banner_cdc 
+#-------------------------------------Коран-------------------------------
+- type: entity
+  name: Коран
+  description: Версия Салаха Демира 2713 года. Написан на миртанийском.
+  parent: Bible
+  id: Quran
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Chapel/quran.rsi
+    state: icon
+  - type: Item
+    size: Small
+    sprite: Objects/Specific/Chapel/quran.rsi
+#-------------------------------------пояса---------------------------------------
+#-----------------------------пустые---------------------------------------
+#-----------------------солдата---------------------------------------
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: CDCBeltSold
+  name: Солдатский пояс Конгломерата
+  suffix: Конгломерат, Пустой
+  description: Такие пояса используют военнослужащие Конгломерата. Смесь кожи и синтетических волокон. Хорошо держат штаны на месте в бою.
+  components:
+  - type: Sprite
+    sprite: Victoria/CDC/Equipment/cdc_belt_s.rsi
+  - type: Clothing
+    sprite: Victoria/CDC/Equipment/cdc_belt_s.rsi
+  - type: Storage
+    maxItemSize: Normal
+  - type: Appearance
+#-----------------------офицера---------------------------------------
+- type: entity
+  parent: CDCBeltSold
+  id: CDCBeltOffi
+  name: Офицерский пояс Конгломерата
+  suffix: Конгломерат, Пустой
+  description: Такие пояса используют офицеры Конгломерата. Красную перевязь надо заслужить. Многие боятся, что она выдаст их в бою. Но став офицерами и пережив всё, что было до этого ранга, ражулиты понимают, что быть увиденным - не самое страшное, что может случиться.
+  components:
+  - type: Sprite
+    sprite: Victoria/CDC/Equipment/cdc_belt_o.rsi
+  - type: Clothing
+    sprite: Victoria/CDC/Equipment/cdc_belt_o.rsi
+#-----------------------техника---------------------------------------
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: CDCBeltTech
+  name: Пояс техника Конгломерата
+  suffix: Конгломерат, Пустой
+  description: Такие пояса используют техники Конгломерата. тут есть множество кармашкев для разных полезных мелочей.
+  components:
+  - type: Sprite
+    sprite: Victoria/CDC/Equipment/cdc_belt_e.rsi
+  - type: Clothing
+    sprite: Victoria/CDC/Equipment/cdc_belt_e.rsi
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,12,1
+  - type: Appearance
+#-----------------------------полные---------------------------------------
+#-----------------------солдата---------------------------------------
+- type: entity
+  id: CDCBeltSoldFilled
+  parent: CDCBeltSold
+  suffix: Заполненный, Конгломерат
+  components:
+  - type: StorageFill
+    contents:
+      - id: Ointment
+      - id: Bloodpack
+      - id: Gauze 
+      - id: CDCSaber
+      - id: CDCHelmetSld
+#-----------------------офицера---------------------------------------      
+- type: entity
+  id: CDCBeltOffiFilled
+  parent: CDCBeltOffi
+  suffix: Заполненный, Офицер, Конгломерат
+  components:
+  - type: StorageFill
+    contents:
+      - id: Ointment
+      - id: Bloodpack
+      - id: Gauze
+      - id: CDCRubberStamp
+      - id: CDCSaberHigh
+      - id: CDCPaperForm
+      - id: CDCPaperForm
+      - id: CDCPaperForm
+      - id: CDCHelmetOffi
+#-----------------------техника---------------------------------------     
+- type: entity
+  id: CDCBeltTechFilled
+  parent: CDCBeltTech
+  suffix: Заполненный, Техник, Конгломерат
+  components:
+  - type: StorageFill
+    contents:
+      - id: Ointment
+      - id: Bloodpack
+      - id: Gauze
+      - id: Crowbar
+      - id: Wrench
+      - id: Screwdriver
+      - id: Wirecutter
+      - id: Welder
+      - id: Multitool 
+      - id: CDCHelmetSld
+#-----------------------оператора---------------------------------------     
+- type: entity
+  id: CDCBeltOperatorFilled
+  parent: CDCBeltTech
+  suffix: Заполненный, Оператор, Конгломерат
+  components:
+  - type: StorageFill
+    contents:
+      - id: Ointment
+      - id: Bloodpack
+      - id: Gauze
+      - id: Crowbar
+      - id: Wrench
+      - id: Screwdriver
+      - id: Wirecutter
+      - id: Welder
+      - id: Multitool
+      - id: CDCPistol
+      - id: CDCMagazinePistolStd
+      - id: CDCMagazinePistolStd
+#-------------------------------------ближнее-------------------------------------------------------------------------------
+#------------------------------------сабля малая---------- 
+- type: Tag
+  id: CDCSaber
+
+- type: entity
+  name: Пехотная сабля Конгломерата
+  suffix: Конгломерат
+  parent: CaptainSabre
+  id: CDCSaber
+  description: Пехотая сабля, на случай, если заряды кончатся, а враги нет.
+  components:
+  - type: Tag
+    tags:
+    - Knife
+    - CDCSaber
+  - type: Sprite
+    sprite: Victoria/CDC/Weapon/cdc_saber.rsi
+    state: icon
+  - type: Item
+    sprite: Victoria/CDC/Weapon/cdc_saber.rsi
+  - type: Clothing
+    sprite: Victoria/CDC/Weapon/cdc_saber.rsi
+    quickEquip: false
+    slots:
+    - Belt
+  - type: MeleeWeapon
+    attackRate: 1.8
+    damage:
+      types:
+        Slash: 12
+#------------------------------------сабля тяжёлая---------- 
+- type: Tag
+  id: CDCSaberHigh
+
+- type: entity
+  name: Тяжёлая сабля Конгломерата
+  suffix: Конгломерат
+  parent: CaptainSabre
+  id: CDCSaberHigh
+  description: Символ заслуг полевого пехотного офицера Конломерата. Тяжёлая, сбалансированная для рубки, тяжёлая, но очень сильная.
+  components:
+  - type: Tag
+    tags:
+    - Knife
+    - CDCSaberHigh
+  - type: Sprite
+    sprite: Victoria/CDC/Weapon/cdc_saber_heavy.rsi
+    state: icon
+  - type: Item
+    sprite: Victoria/CDC/Weapon/cdc_saber_heavy.rsi
+  - type: Clothing
+    sprite: Victoria/CDC/Weapon/cdc_saber_heavy.rsi
+    quickEquip: false
+    slots:
+    - Belt
+  - type: MeleeWeapon
+    attackRate: 0.8
+    damage:
+      types:
+        Slash: 22
+#-------------------------------баклер---------------
+- type: entity
+  name: Баклер Конгломерата
+  parent: [ BaseShield, BaseRestrictedContraband ]
+  id: CDCBuckler
+  suffix: Конгломерат
+  description: Небольшой щит, которым можно парировать атаки в ближнем бою, а если повезёт и отражать пули.
+  components:
+    - type: Item
+      size: Small
+      sprite: Victoria/CDC/Armor/cdc_buckler.rsi
+      heldPrefix: metal
+    - type: StaticPrice
+      price: 90
+    - type: Blocking
+      passiveBlockModifier:
+        coefficients:
+          Blunt: 0.75
+          Slash: 0.75
+          Piercing: 0.75 
+      activeBlockModifier:
+        coefficients:
+          Blunt: 0.55
+          Slash: 0.55
+          Piercing: 0.55 
+        flatReductions:
+          Blunt: 1
+          Slash: 1
+    - type: Reflect
+      reflectProb: 0.60
+      reflects:
+        - NonEnergy
+      soundOnReflect: /Audio/Effects/metal_slam4.ogg
+    - type: Sprite
+      sprite: Victoria/CDC/Armor/cdc_buckler.rsi
+      state: metal-icon
+#--------------------------------------------------------------------------дальнее-------------------------------------------------
+#--------------------------------------------заряды-----------------------
+#------------------------------------пистолет-автомат---------- 
+#-------------------------плазма----------------
+- type: entity
+  id: CDCBulletPlasmaStd
+  name: Плазменый заряд (sps)
+  suffix: Конгломерат
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 5
+        Heat: 20
+        Shock: 10
+  - type: Sprite
+    sprite: Victoria/CDC/Weapon/cdc_projectiles.rsi
+    layers:
+      - state: plasma_base
+#-------------------------горячая плазма----------------
+- type: entity
+  id: CDCBulletPlasmaHotStd
+  name: Сверхплазменый заряд (hps)
+  suffix: Конгломерат
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 5
+        Heat: 40
+        Shock: 10
+  - type: Sprite
+    sprite: Victoria/CDC/Weapon/cdc_projectiles.rsi
+    layers:
+      - state: plasma_hot
+#------------------------------------винтовка---------- 
+#-------------------------плазма----------------
+- type: entity
+  id: CDCBulletPlasmaRif
+  name: Тяжёлый плазменый заряд (spr)
+  suffix: Конгломерат
+  parent: CDCBulletPlasmaStd
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 5
+        Heat: 40
+        Shock: 10
+#-------------------------горячая плазма----------------
+- type: entity
+  id: CDCBulletPlasmaHotRif
+  name: Тяжёлый сверхплазменый заряд (hpr)
+  suffix: Конгломерат
+  parent: CDCBulletPlasmaHotStd
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 5
+        Heat: 50
+        Shock: 10
+#------------------------------------дефокусировщик---------- 
+#-------------------------плазма----------------
+- type: entity
+  id: CDCPlasmaDefoc
+  name: Дефокусилованный плазменный заряд (spd)
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 1
+        Heat: 12
+        Shock: 2
+  - type: Sprite
+    sprite: Victoria/CDC/Weapon/cdc_projectiles.rsi
+    layers:
+    - state: plasma_defocus
+  - type: IgnitionSource
+    temperature: 5000
+    ignited: true
+  - type: IgniteOnCollide
+    fireStacks: 0.25 
+  - type: TimedDespawn
+    lifetime: 4
+    
+- type: entity
+  id: CDCPlasmaDefocSpread
+  categories: [ HideSpawnMenu ]
+  parent: CDCPlasmaDefoc
+  components:
+  - type: ProjectileSpread
+    proto: CDCPlasmaDefoc
+    count: 4
+    spread: 20
+#-------------------------горячая плазма----------------
+- type: entity
+  id: CDCPlasmaHotDefoc
+  name: Дефокусилованный сверхплазменный заряд (hpd)
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 2
+        Heat: 19
+        Shock: 4
+  - type: Sprite
+    sprite: Victoria/CDC/Weapon/cdc_projectiles.rsi
+    layers:
+    - state: plasma_defocus_hot
+  - type: IgnitionSource
+    temperature: 7000
+    ignited: true
+  - type: IgniteOnCollide
+    fireStacks: 0.25 
+  - type: TimedDespawn
+    lifetime: 4
+    
+- type: entity
+  id: CDCPlasmaHotDefocSpread
+  categories: [ HideSpawnMenu ]
+  parent: CDCPlasmaHotDefoc
+  components:
+  - type: ProjectileSpread
+    proto: CDCPlasmaHotDefoc
+    count: 4
+    spread: 20
+#-------------------------------------картриджи---------------------------------------------------------------------------------
+#------------------------------пистолет-автомат---------- 
+#--------------------------плазма---------------
+- type: Tag
+  id: CDCCartridgePlasmaStd
+
+- type: entity
+  id: CDCCartridgePlasmaStd
+  name: Плазменый заряд (sps)
+  suffix: Конгломерат
+  parent: BaseCartridgeRifle
+  components:
+  - type: CartridgeAmmo
+    proto: CDCBulletPlasmaStd
+    deleteOnSpawn: true
+  - type: Tag
+    tags:
+      - CDCCartridgePlasmaStd
+  - type: Sprite
+    sprite: Victoria/CDC/Weapon/cdc_projectiles.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+#--------------------------горячая плазма---------------
+- type: Tag
+  id: CDCCartridgePlasmaHotStd
+
+- type: entity
+  id: CDCCartridgePlasmaHotStd
+  name: Сверхплазменый заряд (hps)
+  suffix: Конгломерат
+  parent: BaseCartridgeRifle
+  components:
+  - type: CartridgeAmmo
+    proto: CDCBulletPlasmaHotStd
+    deleteOnSpawn: true
+  - type: Tag
+    tags:
+      - CDCCartridgePlasmaHotStd
+  - type: Sprite
+    sprite: Victoria/CDC/Weapon/cdc_projectiles.rsi
+    layers:
+    - state: base_hot
+      map: ["enum.AmmoVisualLayers.Base"]
+#------------------------------винтовка---------- 
+#--------------------------плазма---------------
+- type: Tag
+  id: CDCCartridgePlasmaRif
+
+- type: entity
+  id: CDCCartridgePlasmaRif
+  name: Тяжёлый плазменый заряд (spr)
+  suffix: Конгломерат
+  parent: BaseCartridgeRifle
+  components:
+  - type: CartridgeAmmo
+    proto: CDCBulletPlasmaRif
+    deleteOnSpawn: true
+  - type: Tag
+    tags:
+      - CDCCartridgePlasmaRif
+  - type: Sprite
+    sprite: Victoria/CDC/Weapon/cdc_projectiles.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+#--------------------------горячая плазма---------------
+- type: Tag
+  id: CDCCartridgePlasmaHotRif
+
+- type: entity
+  id: CDCCartridgePlasmaHotRif
+  name: Тяжёлый сверхплазменый заряд (hpr)
+  suffix: Конгломерат
+  parent: BaseCartridgeRifle
+  components:
+  - type: CartridgeAmmo
+    proto: CDCBulletPlasmaHotRif
+    deleteOnSpawn: true
+  - type: Tag
+    tags:
+      - CDCCartridgePlasmaHotRif
+  - type: Sprite
+    sprite: Victoria/CDC/Weapon/cdc_projectiles.rsi
+    layers:
+    - state: base_hot
+      map: ["enum.AmmoVisualLayers.Base"]
+#------------------------------расфокусировщик---------- 
+#--------------------------плазма---------------
+- type: Tag
+  id: CDCCartridgePlasmaDefoc
+
+- type: entity
+  id: CDCCartridgePlasmaDefoc
+  name: Дефокусилованный плазменный заряд (spd)
+  suffix: Конгломерат
+  parent: BaseCartridgeRifle
+  components:
+  - type: Sprite
+    sprite: Victoria/CDC/Weapon/cdc_projectiles.rsi
+    layers:
+    - state: base
+  - type: CartridgeAmmo
+    proto: CDCPlasmaDefocSpread
+    soundEject:
+      collection: ShellEject
+  - type: Tag
+    tags:
+      - CDCCartridgePlasmaDefoc
+#--------------------------горячая плазма---------------
+- type: Tag
+  id: CDCCartridgePlasmaHotDefoc
+
+- type: entity
+  id: CDCCartridgePlasmaHotDefoc
+  name: Дефокусилованный сверхплазменный заряд (hpd)
+  suffix: Конгломерат
+  parent: BaseCartridgeRifle
+  components:
+  - type: Sprite
+    sprite: Victoria/CDC/Weapon/cdc_projectiles.rsi
+    layers:
+    - state: base_hot
+  - type: CartridgeAmmo
+    proto: CDCPlasmaHotDefocSpread
+    soundEject:
+      collection: ShellEject
+  - type: Tag
+    tags:
+      - CDCCartridgePlasmaHotDefoc
+#-------------------------------------------------------магазины------------------------------------------------
+- type: Tag
+  id: CDCMagazine
+#-----------------------------------пистолет--------- 
+- type: Tag
+  id: CDCMagazinePistol 
+#-------------------------плазма---------
+- type: entity
+  id: CDCMagazinePistolStd
+  name: Магазин к пистолету "Гул" (sps)
+  suffix: Конгломерат
+  parent: BaseMagazinePistol
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CDCCartridgePlasmaStd
+        - CDCCartridgePlasmaHotStd
+    proto: CDCCartridgePlasmaStd
+    capacity: 8
+  - type: Sprite
+    sprite: Victoria/CDC/Weapon/cdc_magazine.rsi
+    layers:
+    - state: base_pist
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Tag
+    tags:
+      - CDCMagazinePistol
+      - CDCMagazine
+#-------------------------горячая плазма---------
+- type: entity
+  id: CDCMagazinePistolHot
+  name: Магазин к пистолету "Гул" (hps)
+  suffix: Конгломерат, Hot
+  parent: CDCMagazinePistolStd
+  components:
+  - type: BallisticAmmoProvider
+    proto: CDCCartridgePlasmaHotStd
+    capacity: 8
+  - type: Sprite
+    layers:
+    - state: hot_pist
+      map: ["enum.GunVisualLayers.Base"]
+#-----------------------------------автомат--------- 
+- type: Tag
+  id: CDCMagazineAutomat
+#-------------------------плазма---------
+- type: entity
+  id: CDCMagazineAutomatStd
+  name: Магазин к автомату "Джин" (sps)
+  suffix: Конгломерат
+  parent: CDCMagazinePistolStd
+  components:
+  - type: BallisticAmmoProvider
+    proto: CDCCartridgePlasmaStd
+    capacity: 22
+  - type: Sprite
+    layers:
+    - state: base_auto
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Tag
+    tags:
+      - CDCMagazineAutomat
+      - CDCMagazine
+#-------------------------горячая плазма---------
+- type: entity
+  id: CDCMagazineAutomatHot
+  name: Магазин к автомату "Джин" (hps)
+  suffix: Конгломерат, Hot
+  parent: CDCMagazineAutomatStd
+  components:
+  - type: BallisticAmmoProvider
+    proto: CDCCartridgePlasmaHotStd
+    capacity: 22
+  - type: Sprite
+    layers:
+    - state: hot_auto
+      map: ["enum.GunVisualLayers.Base"]
+#-----------------------------------винтовочный--------- 
+- type: Tag
+  id: CDCMagazineRifle
+#-------------------------плазма---------
+- type: entity
+  id: CDCMagazineRifleStd
+  name: Магазин к винтовке "Силла" (spr)
+  suffix: Конгломерат
+  parent: BaseMagazinePistol
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CDCCartridgePlasmaRif
+        - CDCCartridgePlasmaHotRif
+    proto: CDCCartridgePlasmaRif
+    capacity: 5
+  - type: Sprite
+    sprite: Victoria/CDC/Weapon/cdc_magazine.rsi
+    layers:
+    - state: base_rifle
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Tag
+    tags:
+      - CDCMagazineRifle
+      - CDCMagazine
+#-------------------------горячая плазма---------
+- type: entity
+  id: CDCMagazineRifleHot
+  name: Магазин к винтовке "Силла" (hpr)
+  suffix: Конгломерат, Hot
+  parent: CDCMagazineRifleStd
+  components:
+  - type: BallisticAmmoProvider
+    proto: CDCCartridgePlasmaHotRif
+    capacity: 5
+  - type: Sprite
+    sprite: Victoria/CDC/Weapon/cdc_magazine.rsi
+    layers:
+    - state: hot_rifle
+      map: ["enum.GunVisualLayers.Base"]
+#-----------------------------------дефокусировщик--------- 
+- type: Tag
+  id: CDCMagazineDefoc
+#-------------------------плазма---------   
+- type: entity
+  id: CDCMagazineDefocStd
+  name: Магазин плазменного дефокусировщика "Ифрит" (spd)
+  suffix: Конгломерат
+  parent: BaseMagazinePistol
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CDCCartridgePlasmaDefoc
+        - CDCCartridgePlasmaHotDefoc
+    proto: CDCCartridgePlasmaDefoc
+    capacity: 6
+  - type: Sprite
+    sprite: Victoria/CDC/Weapon/cdc_magazine.rsi
+    layers:
+    - state: base_shot
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Tag
+    tags:
+      - CDCMagazineDefoc 
+      - CDCMagazine 
+#-------------------------горячая плазма---------
+- type: entity
+  id: CDCMagazineDefocHot
+  name: Магазин плазменного дефокусировщика "Ифрит" (hpd)
+  suffix: Конгломерат
+  parent: CDCMagazineDefocStd
+  components:
+  - type: BallisticAmmoProvider
+    proto: CDCCartridgePlasmaHotDefoc
+    capacity: 6
+  - type: Sprite
+    sprite: Victoria/CDC/Weapon/cdc_magazine.rsi
+    layers:
+    - state: hot_shot
+      map: ["enum.GunVisualLayers.Base"]
+#-------------------------------------стволы---------------------------------------------------------------------------------
+#-----------------------гражданская-----------------------
+#-----------------------пистолет-----------------------
+- type: entity
+  name: Плазменный пистолет "Гул" 
+  suffix: Конгломерат
+  parent: BaseWeaponPistol
+  id: CDCPistol
+  description: Очень мощный пистолет армии Конгломерата. Массово распространён во всех родах войск. (sps, hps)
+  components:
+  - type: Sprite
+    sprite: Victoria/CDC/Weapon/cdc_pistol.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: Victoria/CDC/Weapon/cdc_pistol.rsi
+  - type: Gun
+    fireRate: 2
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: CDCMagazinePistolStd
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - CDCMagazinePistol
+      gun_chamber:
+        name: Chamber
+        startingItem: CDCCartridgePlasmaStd
+        priority: 1
+        whitelist:
+          tags:
+            - CDCCartridgePlasmaStd
+            - CDCCartridgePlasmaHotStd
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 1000
+#-----------------------автомат-----------------------
+- type: entity
+  name: Автомат Конгломерата "Джин"
+  suffix: Конгломерат
+  parent: BaseWeaponRifle
+  id: CDCAutomat
+  description: Мощный и надёжный плазменный автомат, что может пропахивать огромные проплешины в рядах как ксеноморфов, так и миртанийцев. (sps, hps)
+  components:
+  - type: Sprite
+    sprite: Victoria/CDC/Weapon/cdc_automat.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    size: Large
+  - type: Clothing
+    sprite: Victoria/CDC/Weapon/cdc_automat.rsi
+  - type: Gun
+    fireRate: 3
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: CDCMagazineAutomatStd
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - CDCMagazineAutomat
+            - CDCMagazinePistol 
+      gun_chamber:
+        name: Chamber
+        startingItem: CDCCartridgePlasmaStd
+        priority: 1
+        whitelist:
+          tags:
+            - CDCCartridgePlasmaStd
+            - CDCCartridgePlasmaHotStd
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 1500
+#-----------------------винтовка---------------------------------------
+- type: entity
+  name: Винтовка Конгломерата "Силла"
+  suffix: Конгломерат
+  parent: BaseWeaponRifle
+  id: CDCRifle
+  description: Очень мощная плазменная винтовка Конгломерата. Её крупные сгустки плазмы способны свалить даже самого бронированного противника. (spr, hpr)
+  components:
+  - type: Sprite
+    sprite: Victoria/CDC/Weapon/cdc_rifle.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    size: Large
+  - type: Clothing
+    sprite: Victoria/CDC/Weapon/cdc_rifle.rsi
+  - type: Gun
+    fireRate: 0.7
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: CDCMagazineRifleStd
+        insertSound: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/ltrifle_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - CDCMagazineRifle
+      gun_chamber:
+        name: Chamber
+        startingItem: CDCCartridgePlasmaRif
+        priority: 1
+        whitelist:
+          tags:
+            - CDCCartridgePlasmaRif
+            - CDCCartridgePlasmaHotRif
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 2000
+#-----------------------пожарный лазер-----------------------
+- type: entity
+  name: Плазменный дефокусировщик "Ифрит"
+  suffix: Конгломерат
+  parent: BaseWeaponRifle
+  id: CDCDefoc
+  description: Опаснейшее оружие, стреляющей разогретой плазмой в разные стороны. поражая множество целей и вызывая пожары. (spd, hpd)
+  components:
+  - type: Sprite
+    sprite: Victoria/CDC/Weapon/cdc_shotgan.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    size: Large
+  - type: Clothing
+    sprite: Victoria/CDC/Weapon/cdc_shotgan.rsi
+  - type: Gun
+    fireRate: 1
+    soundGunshot:
+      path: /Audio/Corvax/Weapons/Guns/Gunshots/shotgun_auto.ogg
+  - type: ChamberMagazineAmmoProvider
+    soundRack:
+      path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: CDCMagazineDefocStd
+        insertSound: /Audio/Weapons/Guns/MagIn/smg_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/smg_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+            - CDCMagazineDefoc
+      gun_chamber:
+        name: Chamber
+        startingItem: CDCCartridgePlasmaDefoc
+        priority: 1
+        whitelist:
+          tags:
+            - CDCCartridgePlasmaDefoc
+            - CDCCartridgePlasmaHotDefoc
+  - type: ContainerContainer
+    containers:
+      gun_magazine: !type:ContainerSlot
+      gun_chamber: !type:ContainerSlot
+  - type: MagazineVisuals
+    magState: mag
+    steps: 1
+    zeroVisible: true
+  - type: Appearance
+  - type: StaticPrice
+    price: 2000
+#------------------------------------------карты, доступы и шлюзы----------------------------------------    
+#------------------------------------------доступы и шлюзы---------------------------------------- 
+#------------------------------------доступ----------  
+- type: accessLevel
+  id: CDCAccess
+  name: access-cdc
+#------------------------------------закрытый шлюз---------- 
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsCDCAccess
+  suffix: Конгломерат, Locked
+  components:
+  - type: AccessReader
+    access: [["CDCAccess"]]
+
+- type: entity
+  parent: Airlock
+  id: CDCAirlockLocked
+  suffix: Конгломерат, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCDCAccess ]
+  - type: Sprite
+    sprite: Victoria/CDC/cdc_airlock.rsi
+#------------------------------------свободный шлюз---------- 
+- type: entity
+  parent: Airlock
+  id: CDCAirlock
+  suffix: Конгломерат
+  components:
+  - type: Sprite
+    sprite: Victoria/CDC/cdc_airlock.rsi
+#------------------------------------закрытый стеклянный шлюз---------- 
+- type: entity
+  parent: AirlockGlass
+  id: CDCAirlockLockedGlass
+  suffix: Конгломерат, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCDCAccess ]
+  - type: Sprite
+    sprite: Victoria/CDC/cdc_airlock_glass.rsi
+  - type: PaintableAirlock
+    group: Glass     
+#------------------------------------свободный стеклянный шлюз----------
+- type: entity
+  parent: AirlockGlass
+  id: CDCAirlockGlass
+  suffix: Конгломерат
+  components:
+  - type: Sprite
+    sprite: Victoria/CDC/cdc_airlock_glass.rsi
+  - type: PaintableAirlock
+    group: Glass  
+#------------------------------------стыковочный----------     
+- type: entity
+  parent: AirlockExternalShuttleLocked
+  name: Стыковочный шлюз
+  id: CDCAirlockShuttleEasyPryLocked
+  suffix: Конгломерат
+  description: Чтобы успешно прилепиться к космическим объектам.
+  components:
+  - type: PryUnpowered
+  - type: ContainerFill
+    containers:
+      board: [ DoorElectronicsCDCAccess ]   
+#------------------------------------------ карты----------------------------------------  
+#------------------------------------стандарт карты---------- 
+- type: entity
+  parent: Clothing
+  id: CDCIDCard
+  name: Чип итендификации
+  description: Данный чип служит в роли электронного пропуска на объектах Конгломерата
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Victoria/CDC/Equipment/cdc_id_cards.rsi
+  - type: Clothing
+    slots:
+    - idcard
+    sprite: Victoria/CDC/Equipment/cdc_id_cards.rsi
+  - type: Item
+    size: Small
+    heldPrefix: default
+    storedRotation: -90
+  - type: Access
+    tags:
+    - CDCAccess
+    - External
+  - type: IdCard
+  - type: StationRecordKeyStorage
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - WhitelistChameleon
+  - type: StealTarget
+    stealGroup: IDCard
+#------------------------------------карта офицера---------- 
+- type: entity
+  parent: CDCIDCard
+  id: CDCIDCardOfficer
+  name: Чип офицера Конгломерата
+  suffix: Конгломерат
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: offi
+  - type: PresetIdCard
+    name: офицер Конгломерата
+#------------------------------------карта солдата----------    
+- type: entity
+  parent: CDCIDCard
+  id: CDCIDCardSolder
+  name: Чип солдата Конгломерата
+  suffix: Конгломерат
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: sold
+  - type: Access
+    tags:
+    - CDCAccess
+    - External
+  - type: PresetIdCard
+    name: солдат Конгломерата
+#------------------------------------карта инженера----------     
+- type: entity
+  parent: CDCIDCard
+  id: CDCIDCardEngener
+  name: Чип техника Конгломерата
+  suffix: Конгломерат
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: enge
+  - type: Access
+    tags:
+    - CDCAccess
+    - External
+  - type: PresetIdCard
+    name: техник Конгломерата
+#------------------------------------карта имама------------------
+- type: entity
+  parent: CDCIDCard
+  id: CDCIDCardImam
+  name: Чип проповедника Конгломерата
+  suffix: Конгломерат
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: imam
+  - type: Access
+    tags:
+    - CDCAccess
+    - External
+    - Chapel
+  - type: PresetIdCard
+    name: проповедник Конгломерата
+#---------------------------------------------------------КПК------------------------------
+- type: entity
+  abstract: true
+  parent: BasePDA
+  id: CDCPDA
+  name: КПК Конгломерата
+  components:
+  - type: Appearance
+  - type: Sprite
+    sprite: Victoria/CDC/Equipment/cdc_pda.rsi
+    layers:
+    - map: [ "enum.PdaVisualLayers.Base" ]
+    - state: "light_overlay"
+      map: [ "enum.PdaVisualLayers.Flashlight" ]
+      shader: "unshaded"
+      visible: false
+    - state: "id_overlay"
+      map: [ "enum.PdaVisualLayers.IdLight" ]
+      shader: "unshaded"
+      visible: false
+  - type: Icon
+    sprite: Victoria/CDC/Equipment/cdc_pda.rsi
+    state: pda
+#------------------------------------КПК офицера----------       
+- type: entity
+  parent: CDCPDA
+  id: CDCPDAOfficer
+  name: КПК Конгломерата
+  suffix: Конгломерат, Офицер
+  description: Идея КПК дошла до Конгломерата не так давно, а потому он ещё не получил всеобъемлюшего вопросщения. Встречается только у иностранных делегатов, торговцев, проповедников и офицеров армии.
+  components:
+    - type: Pda
+      id: CDCIDCardOfficer
+      state: pda
+#------------------------------------КПК имама----------       
+- type: entity
+  parent: CDCPDAOfficer
+  id: CDCPDAImam
+  suffix: Конгломерат, Проповедник
+  components:
+    - type: Pda
+      id: CDCIDCardImam
+      state: pda
+#------------------------------------------связь----------------------------------------  
+#-----------------------------канал----------------------------------------  
+- type: radioChannel
+  id: CDCRadio
+  name: name-of-CDCRadio
+  keycode: 'бк' 
+  frequency: 1204
+  color: "#b68448"
+  longRange: false
+  
+- type: radioChannel
+  id: CDCRadioVI
+  name: name-of-CDCRadioVI
+  keycode: 'ис' 
+  frequency: 0412
+  color: "#b68448"
+  longRange: false
+#-----------------------------стандарт ключа----------------------------------------   
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: CDCBaseEncryptionKey
+  name: encryption key
+  description: A small cypher chip for headsets.
+  components:
+  - type: EncryptionKey
+    channels:
+    - CDCRadio
+    defaultChannel: CDCRadio
+  - type: Item
+    sprite: Victoria/CDC/Equipment/cdc_encryption_keys.rsi
+  - type: Sprite
+    sprite: Victoria/CDC/Equipment/cdc_encryption_keys.rsi
+  - type: StealTarget
+    stealGroup: EncryptionKey
+#-----------------------------ключ----------------------------------------      
+- type: entity
+  parent: CDCBaseEncryptionKey
+  id: CDCEncryptionKey
+  name: Ключ шифрования связи Конгломерата
+  suffix: Конгломерат
+  description: Используется для шифрования и дешифровки общего армейского канала связи Халифатского Божественного Конгломерата
+  components:
+  - type: EncryptionKey
+    channels:
+    - CDCRadio
+    defaultChannel: CDCRadio
+  - type: Sprite
+    layers:
+    - state: crypt_gray
+    - state: label 
+    
+- type: entity
+  parent: CDCBaseEncryptionKey
+  id: CDCEncryptionKeyVI
+  name: Ключ шифрования связи ВИ "Исмаил"
+  suffix: Конгломерат
+  description: Используется для шифрования и дешифровки канла связи с синтетиками Конгломерата
+  components:
+  - type: EncryptionKey
+    channels:
+    - CDCRadioVI
+    defaultChannel: CDCRadioVI
+  - type: Sprite
+    layers:
+    - state: crypt_gray
+    - state: label 
+#-----------------------------гарнитура----------------------------------------  
+- type: entity
+  parent: ClothingHeadset
+  id: CDCHeadset
+  name: Гарнитура Конгломерата
+  suffix: Конгломерат
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - CDCEncryptionKey
+  - type: Sprite
+    sprite: Victoria/CDC/Equipment/cdc_garniture.rsi
+  - type: Clothing
+    sprite: Victoria/CDC/Equipment/cdc_garniture.rsi
+#-----------------------------------------------------роли, полные сумки и гиры------------------------------------------------------  
+#--------------------------------------------сумки------------------------------------ 
+#-----------------------имам-----------------------
+- type: entity
+  parent: CDCSatchels
+  id: CDCSatchelsFilledImam
+  suffix: Конгломерат, Имам
+  components:
+  - type: StorageFill
+    contents:
+      - id: CDCSaber
+      - id: CDCBuckler
+      - id: FoodTinMRE
+      - id: OxygenTankFilled
+      - id: NitrogenTankFilled
+      - id: ClothingMaskGas
+      - id: Gauze
+      - id: Ointment
+      - id: Bloodpack
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Water
+          Quantity: 100
+#-----------------------пистолет-----------------------
+- type: entity
+  parent: CDCSatchels
+  id: CDCSatchelsFilledPist
+  suffix: Конгломерат, Пистолет
+  components:
+  - type: StorageFill
+    contents:
+      - id: CDCPistol
+      - id: CDCMagazinePistolStd
+      - id: CDCMagazinePistolStd
+      - id: CDCMagazinePistolStd
+      - id: CDCBuckler
+      - id: FoodTinMRE
+      - id: OxygenTankFilled
+      - id: NitrogenTankFilled
+      - id: ClothingMaskGas
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Water
+          Quantity: 100
+#-----------------------автомат-----------------------
+- type: entity
+  parent: CDCBackpack
+  id: CDCBackpackFilledAuto
+  suffix: Конгломерат, Автомат
+  components:
+  - type: StorageFill
+    contents:
+      - id: CDCAutomat
+      - id: CDCMagazineAutomatStd
+      - id: CDCMagazineAutomatStd
+      - id: CDCBuckler
+      - id: FoodTinMRE
+      - id: OxygenTankFilled
+      - id: NitrogenTankFilled
+      - id: ClothingMaskGas
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Water
+          Quantity: 100
+#-----------------------винтовка-----------------------
+- type: entity
+  parent: CDCBackpack
+  id: CDCBackpackFilledRifle
+  suffix: Конгломерат, Винтовка
+  components:
+  - type: StorageFill
+    contents:
+      - id: CDCRifle
+      - id: CDCMagazineRifleStd
+      - id: CDCMagazineRifleStd
+      - id: CDCMagazineRifleStd
+      - id: CDCBuckler
+      - id: FoodTinMRE
+      - id: OxygenTankFilled
+      - id: NitrogenTankFilled
+      - id: ClothingMaskGas
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Water
+          Quantity: 100
+#-----------------------дефокусировщик-----------------------
+- type: entity
+  parent: CDCRadioBackpack
+  id: CDCRadioBackpackFilledDefoc
+  suffix: Конгломерат, Дефокусировщик
+  components:
+  - type: StorageFill
+    contents:
+      - id: CDCDefoc
+      - id: CDCMagazineDefocStd
+      - id: CDCMagazineDefocStd
+      - id: CDCBuckler
+      - id: FoodTinMRE
+      - id: OxygenTankFilled
+      - id: NitrogenTankFilled
+      - id: ClothingMaskGas
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Water
+          Quantity: 50
+#-----------------------------------------------------роли------------------------------------------------------      
+- type: playTimeTracker
+  id: JobEventCDC
+#---------------------------------------------------------------Бумаги------------------------------------------------------------
+#-----------------------------------солдат-----------------------------
+- type: entity
+  id: CDCPaperSold
+  name: Памятка солдата Конгломерата
+  suffix: Конгломерат
+  parent: Paper
+  components:
+  - type: TimedDespawn
+    lifetime: 1200
+  - type: Paper
+    content: |
+      Вы: Честный, смелый, верный, солдат Халифатского Божественного Конгломерата. Вы верные своей стране, своему Халифу и своей вере в Аллаха!
+      
+      ------------------------------------------------------------------------
+      Ваши навыки: Базовые навыки, оружейные механизмы, разделка туш
+      
+      ------------------------------------------------------------------------
+      Руководство к отыгрышу: Ваша страна на отшибе. Ваши отцы и деды построили райский уголок для тех, кто искренне верит в Аллаха. Но вы зажаты между ксеноморфами, миртанийцами и мафией. Будьте верны своей стране, молитесь Аллаху, самосовершенствуйтесь, будьте вежливым, не пейте алкоголь, уточняйте, что за мясо вам дают.
+#-----------------------------------офицер-----------------------------
+- type: entity
+  id: CDCPaperOfi
+  name: Памятка командира Конгломерата
+  suffix: Конгломерат
+  parent: Paper
+  components:
+  - type: TimedDespawn
+    lifetime: 1200
+  - type: Paper
+    content: |
+      Вы: Вы уверенный в себе, смелый и отважный офицер Халифатского Божественного Конгломерата. Вы видели много ужасов воин и смертей. Не дайте своим людям раньше срока встретить Аллаха.
+      
+      ------------------------------------------------------------------------
+      Ваши навыки: Базовые навыки, оружейные механизмы, разделка туш, управление шаттлом, продвинутое лечение
+      
+      ------------------------------------------------------------------------
+      Руководство к отыгрышу: Ваша страна на отшибе. Ваши отцы и деды построили райский уголок для тех, кто искренне верит в Аллаха. Но вы зажаты между ксеноморфами, миртанийцами и мафией. Будьте верны своей стране, молитесь Аллаху, самосовершенствуйтесь, будьте вежливым, не пейте алкоголь, уточняйте, что за мясо вам дают.#-----------------------------------техник-----------------------------
+#-----------------------------------техник-----------------------------
+- type: entity
+  id: CDCPaperTech
+  name: Памятка техника Конгломерата
+  suffix: Конгломерат
+  parent: Paper
+  components:
+  - type: TimedDespawn
+    lifetime: 1200
+  - type: Paper
+    content: |
+      Вы: Умелый, образованный и находчивый армейский техник Халифатского Божественного Конгломерата. Вам нужно укреплять оборону, готовить атаку, следить за вооружением и снаряжением.
+      
+      ------------------------------------------------------------------------
+      Ваши навыки: Базовые навыки, оружейные механизмы, разделка туш, управление шаттлом, энергетические установки, электрика, оборудование, газовая техника, постройка электронных приборов
+      
+      ------------------------------------------------------------------------
+      Руководство к отыгрышу: Ваша страна на отшибе. Ваши отцы и деды построили райский уголок для тех, кто искренне верит в Аллаха. Но вы зажаты между ксеноморфами, миртанийцами и мафией. Будьте верны своей стране, молитесь Аллаху, самосовершенствуйтесь, будьте вежливым, не пейте алкоголь, уточняйте, что за мясо вам дают.#-----------------------------------оператор-----------------------------
+#-----------------------------------оператор-----------------------------
+- type: entity
+  id: CDCPaperOperator
+  name: Памятка оператора Конгломерата
+  suffix: Конгломерат
+  parent: Paper
+  components:
+  - type: TimedDespawn
+    lifetime: 1200
+  - type: Paper
+    content: |
+      Вы: Сила армии Халифатского Божественного Конгломерата. Оператор МСУ. Вы командир армии боргов или ботов. Повелитель Роя.
+      
+      ------------------------------------------------------------------------
+      Ваши навыки: Базовые навыки, оружейные механизмы, разделка туш, управление шаттлом, электрика, постройка электронных приборов
+      
+      ------------------------------------------------------------------------
+      Руководство к отыгрышу: Ваша страна на отшибе. Ваши отцы и деды построили райский уголок для тех, кто искренне верит в Аллаха. Но вы зажаты между ксеноморфами, миртанийцами и мафией. Будьте верны своей стране, молитесь Аллаху, самосовершенствуйтесь, будьте вежливым, не пейте алкоголь, уточняйте, что за мясо вам дают.
+#-----------------------------------проповедник-----------------------------
+- type: entity
+  id: CDCPaperImam
+  name: Памятка проповедника Конгломерата
+  suffix: Конгломерат
+  parent: Paper
+  components:
+  - type: TimedDespawn
+    lifetime: 1200
+  - type: Paper
+    content: |
+      Вы: Добрый, миролюбивый и мудрый проповедник Халифатского Божественного Конгломерата. Несите слова Аллаха, призывайте людей к улучшению самих себя и мира вокруг. Соберите последователей и преведите к ЕГО свету.
+      
+      ------------------------------------------------------------------------
+      Ваши навыки: Базовые навыки, владение оружием, готовка, разделка туш, работа с животными
+      
+      ------------------------------------------------------------------------
+      Руководство к отыгрышу: Ваша страна на отшибе. Ваши отцы и деды построили райский уголок для тех, кто искренне верит в Аллаха. Но вы зажаты между ксеноморфами, миртанийцами и мафией. Будьте верны своей стране, молитесь Аллаху, самосовершенствуйтесь, будьте вежливым, не пейте алкоголь, уточняйте, что за мясо вам дают.     
+#--------------------------------------------------------------------гиры----------------------------------------------- 
+#--------------------------------------------имам---------------------------------
+- type: startingGear
+  id: CDCImamGear
+  equipment:
+    jumpsuit: CDCUniformImam
+    back: CDCSatchelsFilledImam
+    shoes: CDCBoots
+    head: CDCTurban
+    id: CDCPDAImam
+    ears: CDCHeadset
+    pocket1: CDCPaperImam
+    pocket2: Quran
+#--------------------------------------------солдат-----------------------------------
+- type: startingGear
+  id: CDCSoldGearAuto
+  equipment:
+    jumpsuit: CDCUniformSold
+    back: CDCBackpackFilledAuto
+    shoes: CDCBoots
+    head: CDCFez
+    outerClothing: CDCArmorMiddle
+    id: CDCIDCardSolder
+    belt: CDCBeltSoldFilled
+    gloves: CDCGloves
+    pocket1: CDCPaperSold
+    
+- type: startingGear
+  id: CDCSoldGearRifle
+  equipment:
+    jumpsuit: CDCUniformSold
+    back: CDCBackpackFilledRifle
+    shoes: CDCBoots
+    head: CDCFez
+    outerClothing: CDCArmorMiddle
+    id: CDCIDCardSolder
+    ears: CDCHeadset
+    belt: CDCBeltSoldFilled
+    gloves: CDCGloves
+    pocket1: CDCPaperSold
+#---------------------------------------------техник--------------------------------------
+- type: startingGear
+  id: CDCTechGear
+  equipment:
+    jumpsuit: CDCUniformEng
+    back: CDCRadioBackpackFilledDefoc
+    shoes: CDCBoots
+    head: CDCCepka
+    outerClothing: CDCArmorLight
+    id: CDCIDCardEngener
+    ears: CDCHeadset
+    belt: CDCBeltTechFilled
+    gloves: CDCGlovesTech
+    pocket1: CDCPaperTech
+    pocket2: CDCEncryptionKey
+#---------------------------------------------оператор--------------------------------------    
+- type: startingGear
+  id: CDCOperatorGear
+  equipment:
+    jumpsuit: CDCUniformEng
+    back: CDCMSU
+    shoes: CDCBoots
+    outerClothing: CDCArmorLight
+    id: CDCIDCardEngener
+    belt: CDCBeltOperatorFilled
+    gloves: CDCGlovesTech
+    pocket1: CDCPaperOperator
+    pocket2: CDCEncryptionKeyVI
+#---------------------------------------------офицер--------------------------------------
+- type: startingGear
+  id: CDCOffiGear
+  equipment:
+    jumpsuit: CDCUniformOffi
+    back: CDCSatchelsFilledPist
+    shoes: CDCBoots
+    head: CDCCap
+    outerClothing: CDCArmorLight
+    id: CDCPDAOfficer
+    ears: CDCHeadset
+    belt: CDCBeltOffiFilled
+    gloves: CDCGloves
+    pocket1: CDCPaperOfi
+#---------------------------------------------------спавнеры------------------------------------------------
+#-------------------------------------------Имена-------------------------------------
+#---------------------------------имена----------
+- type: dataset
+  id: CDCName
+  values:
+  - Салах
+  - Демир
+  - Умит
+  - Омер
+  - Адиль
+  - Джабрил
+  - Акрам
+  - Джалил
+  - Фараби
+  - Ибсин
+  - Бурхан
+  - Исмаил
+  - Бильге
+  - Зариф
+  - Джаромил
+  - Зариф
+  - Кадир
+  - Масуд
+  - Мустафа
+  - Абдул
+  - Мамед
+  - Махмуд
+  - Сулейман
+  - Анвар
+  - Ибрагим
+  - Хамза
+#---------------------------------звания пацанов----------
+- type: dataset
+  id: CDCName-s
+  values:
+  - Рядовой
+  - Старший
+#---------------------------------звания младших офицеров----------
+- type: dataset
+  id: CDCName-o
+  values:
+  - Мл.Унтер-офицер
+  - Унтер-офицер
+  - Ст.Унтер-офицер
+#---------------------------------звания имамов----------
+- type: dataset
+  id: CDCName-i
+  values:
+  - Имам
+  - Эфенди
+#---------------------------------солдат----------
+- type: randomHumanoidSettings
+  speciesBlacklist: 
+    - Diona
+    - Vox
+  id: CDCSoldR
+  randomizeName: false
+  components:
+    - type: GhostRole
+      name: Гост-роль солдата Конгломерата
+      description: "Вы солдат Халифатского Божественного Конгломерата! Будьте преданы своей стране, народу и Аллаху! Слушайтесь командира, защищайте свои земли и несите смерть всем врагам!"
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ CDCSoldGearAuto ]
+    - type: RandomMetadata
+      nameSegments:
+      - CDCName-s
+      - CDCName
+
+- type: randomHumanoidSettings
+  id: CDCSoldReady
+  parent: CDCSoldR
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Солдат Конгломерата
+      description: "Вы солдат Халифатского Божественного Конгломерата! Будьте преданы своей стране, народу и Аллаху! Слушайтесь командира, защищайте свои земли и несите смерть всем врагам!"
+    - type: GhostTakeoverAvailable
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        105: Critical
+        200: Dead
+    - type: Stamina
+      critThreshold: 110
+    - type: Loadout
+      prototypes: [ CDCSoldGearAuto ]
+  
+- type: entity
+  name: Конгломерат солдат Спавнер
+  id: CDCMobHumanSold
+  suffix: GOST, Конгломерат
+  components:
+  - type: NpcFactionMember
+    factions:
+      - CDC
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: security_officer
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - CDCName-s
+    - CDCName
+  - type: RandomHumanoidSpawner
+    settings: CDCSoldR
+#---------------------------------техник----------
+- type: randomHumanoidSettings
+  speciesBlacklist: 
+    - Diona
+    - Vox
+  id: CDCTechR
+  randomizeName: false
+  components:
+    - type: GhostRole
+      name: Гост-роль техника Конгломерата
+      description: "Вы техник Халифатского Божественного Конгломерата! Будьте преданы своей стране, народу и Аллаху! Слушайтесь командира, чините оборудование, следите за экипировкой, защищайте свои земли и несите смерть всем врагам!"
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ CDCTechGear ]
+    - type: RandomMetadata
+      nameSegments:
+      - CDCName-s
+      - CDCName
+
+- type: randomHumanoidSettings
+  id: CDCTechReady
+  parent: CDCTechR
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Техник Конгломерата
+      description: "Вы техник Халифатского Божественного Конгломерата! Будьте преданы своей стране, народу и Аллаху! Слушайтесь командира, чините оборудование, следите за экипировкой, защищайте свои земли и несите смерть всем врагам!"
+    - type: GhostTakeoverAvailable
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        100: Critical
+        200: Dead
+    - type: Stamina
+      critThreshold: 100
+    - type: Loadout
+      prototypes: [ CDCTechGear ]
+      
+- type: entity
+  name: Техник Конгломерата Спавнер
+  id: CDCMobHumanTech
+  suffix: GOST, Конгломерат
+  components:
+  - type: NpcFactionMember
+    factions:
+      - CDC
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: engineer
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - CDCName-s
+    - CDCName
+  - type: RandomHumanoidSpawner
+    settings: CDCTechR
+#---------------------------------офицер----------
+- type: randomHumanoidSettings
+  speciesBlacklist: 
+    - Diona
+    - Vox
+  id: CDCOffiR
+  randomizeName: false
+  components:
+    - type: GhostRole
+      name: Гост-роль младшего офицера Конгломерата
+      description: "Вы бывалый солдат и опытный полевой командир армии Халифатского Божественного Конгломерата! Будьте преданы своей стране, народу и Аллаху! Управляйте своими бойцами, защищайте свои земли и несите смерть всем врагам!"
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ CDCOffiGear ]
+    - type: RandomMetadata
+      nameSegments:
+      - CDCName-o
+      - CDCName
+
+- type: randomHumanoidSettings
+  id: CDCOffiReady
+  parent: CDCOffiR
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Младший офицер Конгломерата
+      description: "Вы бывалый солдат и опытный полевой командир армии Халифатского Божественного Конгломерата! Будьте преданы своей стране, народу и Аллаху! Управляйте своими бойцами, защищайте свои земли и несите смерть всем врагам!"
+    - type: GhostTakeoverAvailable
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        110: Critical
+        220: Dead
+    - type: Stamina
+      critThreshold: 120
+    - type: Loadout
+      prototypes: [ CDCOffiGear ]
+  
+- type: entity
+  name: Младший офицер Конгломерата Спавнер
+  id: CDCMobHumanOffi
+  suffix: GOST, Конгломерат
+  components:
+  - type: NpcFactionMember
+    factions:
+      - CDC
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: warden
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - CDCName-o
+    - CDCName
+  - type: RandomHumanoidSpawner
+    settings: CDCOffiR
+#---------------------------------оператор----------
+- type: randomHumanoidSettings
+  speciesBlacklist: 
+    - Diona
+    - Vox
+  id: CDCOperatorR
+  randomizeName: false
+  components:
+    - type: GhostRole
+      name: Гост-роль оператора Конгломерата
+      description: "Вы оператор МСУ Халифатского Божественного Конгломерата! Будьте преданы своей стране, народу и Аллаху! Слушайтесь командира, но командуйте своими синтетиками и несите смерть всем врагам!"
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ CDCOperatorGear ]
+    - type: RandomMetadata
+      nameSegments:
+      - CDCName-s
+      - CDCName
+
+- type: randomHumanoidSettings
+  id: CDCOperatorReady
+  parent: CDCOperatorR
+  components:
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Оператор Конгломерата
+      description: "Вы оператор МСУ Халифатского Божественного Конгломерата! Будьте преданы своей стране, народу и Аллаху! Слушайтесь командира, но командуйте своими синтетиками и несите смерть всем врагам!"
+    - type: GhostTakeoverAvailable
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        100: Critical
+        200: Dead
+    - type: Stamina
+      critThreshold: 100
+    - type: Loadout
+      prototypes: [ CDCOperatorGear ]
+      
+- type: entity
+  name: Оператор Конгломерата Спавнер
+  id: CDCMobHumanOperator
+  suffix: GOST, Конгломерат
+  components:
+  - type: NpcFactionMember
+    factions:
+      - CDC
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: engineer
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - CDCName-s
+    - CDCName
+  - type: RandomHumanoidSpawner
+    settings: CDCOperatorR
+#---------------------------------имам----------
+- type: randomHumanoidSettings
+  speciesBlacklist: 
+    - Diona
+    - Vox
+  id: CDCImamR
+  randomizeName: false
+  components:
+    - type: BibleUser
+    - type: GhostRole
+      name: Гост-роль проповедника Конгломерата
+      description: "Вы проповедник-миссионер Халифатского Божественного Конгломерата! Вам открыты таины служения Аллаху. Соберите последователей и наставьте их на путь самосовершенствования и развития мира. но не стесняйтесь защищать своих последователей, если они не могут сделать этого сами!"
+    - type: GhostTakeoverAvailable
+    - type: Loadout
+      prototypes: [ CDCImamGear ]
+    - type: RandomMetadata
+      nameSegments:
+      - CDCName-i
+      - CDCName
+
+- type: randomHumanoidSettings
+  id: CDCImamReady
+  parent: CDCImamR
+  components:
+    - type: BibleUser
+    - type: GhostRole
+      allowMovement: true
+      allowSpeech: true
+      makeSentient: true
+      name: Проповедник Конгломерата
+      description: "Вы проповедник-миссионер Халифатского Божественного Конгломерата! Вам открыты таины служения Аллаху. Соберите последователей и наставьте их на путь самосовершенствования и развития мира. но не стесняйтесь защищать своих последователей, если они не могут сделать этого сами!"
+    - type: GhostTakeoverAvailable
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        95: Critical
+        190: Dead
+    - type: Stamina
+      critThreshold: 90
+    - type: Loadout
+      prototypes: [ CDCImamGear ]
+  
+- type: entity
+  name: Проповедник Конгломерата
+  id: CDCMobHumanImam
+  suffix: GOST, Конгломерат
+  components:
+  - type: NpcFactionMember
+    factions:
+      - CDC
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    state: chaplain
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: RandomMetadata
+    nameSegments:
+    - CDCName-i
+    - CDCName
+  - type: RandomHumanoidSpawner
+    settings: CDCImamR
+#---------------------------------------------------------------Ящики со снарягой------------------------------------------------------------        
+#-----------------------------Базовый ящик------------------ 
+- type: entity
+  parent: CrateBaseSecure
+  id: CDCCrate
+  name: Пустой ящик Конгломерата
+  suffix: Конгломерат
+  components:
+  - type: AccessReader
+    access: [["CDCAccess"], ["Research"]]
+  - type: Icon
+    sprite: Victoria/CDC/cdc_crates.rsi
+  - type: Sprite
+    sprite: Victoria/CDC/cdc_crates.rsi
+#-----------------------------Ящик лёгкого оружия------------------    
+- type: entity
+  id: CDCCrateWeaponsL
+  parent: CDCCrate
+  name: Ящик лёгкого оружия Конгломерата
+  suffix: Конгломерат
+  description: 4 комплекта вооружения с пистолетом, двумя магазинами и саблей
+  components:
+  - type: StorageFill
+    contents:
+      - id: CDCPistol
+      - id: CDCMagazinePistolStd
+      - id: CDCMagazinePistolStd
+      - id: CDCPistol
+      - id: CDCMagazinePistolStd
+      - id: CDCMagazinePistolStd
+      - id: CDCPistol
+      - id: CDCMagazinePistolStd
+      - id: CDCMagazinePistolStd
+      - id: CDCPistol
+      - id: CDCMagazinePistolStd
+      - id: CDCMagazinePistolStd
+      - id: CDCSaber
+      - id: CDCSaber
+      - id: CDCSaber
+      - id: CDCSaber
+#-----------------------------Ящик среднего оружия------------------
+- type: entity
+  id: CDCCrateWeaponsM
+  parent: CDCCrate
+  name: Ящик основного оружия Конгломерата
+  suffix: Конгломерат
+  description: 4 комплекта с Автоматом, двумя магазинами и тяжёлой саблей
+  components:
+  - type: StorageFill
+    contents:
+      - id: CDCAutomat
+      - id: CDCMagazineAutomatStd
+      - id: CDCMagazineAutomatStd
+      - id: CDCAutomat
+      - id: CDCMagazineAutomatStd
+      - id: CDCMagazineAutomatStd
+      - id: CDCAutomat
+      - id: CDCMagazineAutomatStd
+      - id: CDCMagazineAutomatStd
+      - id: CDCAutomat
+      - id: CDCMagazineAutomatStd
+      - id: CDCMagazineAutomatStd
+      - id: CDCSaberHigh
+      - id: CDCSaberHigh
+      - id: CDCSaberHigh
+      - id: CDCSaberHigh
+#-----------------------------Ящик тяжёлого оружия------------------
+- type: entity
+  id: CDCCrateWeaponsH
+  parent: CDCCrate
+  name: Ящик тяжёлого оружия Конгломерата
+  suffix: Конгломерат
+  description: По 2 комплекта винтовок с двумя магазинами и дефокусировщика с двумя магазинами
+  components:
+  - type: StorageFill
+    contents:
+      - id: CDCRifle
+      - id: CDCMagazineRifleStd
+      - id: CDCMagazineRifleStd
+      - id: CDCRifle
+      - id: CDCMagazineRifleStd
+      - id: CDCMagazineRifleStd
+      - id: CDCDefoc
+      - id: CDCMagazineDefocStd
+      - id: CDCMagazineDefocStd
+      - id: CDCDefoc
+      - id: CDCMagazineDefocStd
+      - id: CDCMagazineDefocStd
+#-----------------------------Ящик горячей плазмы------------------
+- type: entity
+  id: CDCCrateWeaponsHotPlasma
+  parent: CDCCrate
+  name: Ящик горячей плазмы
+  suffix: Конгломерат
+  description: По 4 магазина для всего оружия с горячей плазмой
+  components:
+  - type: StorageFill
+    contents:
+      - id: CDCMagazinePistolHot
+      - id: CDCMagazinePistolHot
+      - id: CDCMagazinePistolHot
+      - id: CDCMagazinePistolHot
+      - id: CDCMagazineAutomatHot
+      - id: CDCMagazineAutomatHot
+      - id: CDCMagazineAutomatHot
+      - id: CDCMagazineAutomatHot
+      - id: CDCMagazineRifleHot
+      - id: CDCMagazineRifleHot
+      - id: CDCMagazineRifleHot
+      - id: CDCMagazineRifleHot
+      - id: CDCMagazineDefocHot
+      - id: CDCMagazineDefocHot
+      - id: CDCMagazineDefocHot
+      - id: CDCMagazineDefocHot
+#-----------------------------Ящик солдатской экипировки------------------
+- type: entity
+  id: CDCCrateHotPlasma
+  parent: CDCCrate
+  name: Ящик стандартной экипировки армии Конгломерата
+  suffix: Конгломерат
+  description: Стандартная пехотная экипировка на 3 солдат, 1 техника и 1 офицера армии Конгломерата.
+  components:
+  - type: StorageFill
+    contents:
+      - id: CDCUniformSold
+      - id: CDCBackpack
+      - id: CDCBoots
+      - id: CDCFez
+      - id: CDCGloves
+      - id: CDCBeltSold
+      - id: CDCUniformSold
+      - id: CDCBackpack
+      - id: CDCBoots
+      - id: CDCFez
+      - id: CDCGloves
+      - id: CDCBeltSold
+      - id: CDCUniformSold
+      - id: CDCBackpack
+      - id: CDCBoots
+      - id: CDCFez
+      - id: CDCGloves
+      - id: CDCBeltSold
+      - id: CDCUniformEng
+      - id: CDCBackpack
+      - id: CDCBoots
+      - id: CDCCepka
+      - id: CDCGlovesTech
+      - id: CDCBeltTech
+      - id: CDCUniformOffi
+      - id: CDCSatchels
+      - id: CDCBoots
+      - id: CDCCap
+      - id: CDCGloves
+      - id: CDCBeltOffi
+#-----------------------------Ящик усиленной экипировки армии------------------
+- type: entity
+  id: CDCCrateArmor
+  parent: CDCCrate
+  name: Ящик стандартной экипировки армии Конгломерата
+  suffix: Конгломерат
+  description: Пехотные элементы защиты на 3 солдат, 1 техника и 1 офицера
+  components:
+  - type: StorageFill
+    contents:
+      - id: CDCArmorMiddle
+      - id: CDCHelmetSld
+      - id: CDCBuckler
+      - id: CDCArmorMiddle
+      - id: CDCHelmetSld
+      - id: CDCBuckler
+      - id: CDCArmorMiddle
+      - id: CDCHelmetSld
+      - id: CDCBuckler
+      - id: CDCArmorLight
+      - id: CDCHelmetSld
+      - id: CDCBuckler
+      - id: CDCArmorLight
+      - id: CDCHelmetOffi
+      - id: CDCBuckler
+#-----------------------------Ящик армейских скафандров------------------
+- type: entity
+  id: CDCCrateHardsuit
+  parent: CDCCrate
+  name: Ящик скафандров Конгломерата
+  suffix: Конгломерат
+  description: Скафандры на 4 военных и 1 техника с газовыми баллонами
+  components:
+  - type: StorageFill
+    contents:
+      - id: CDCHardsuitArm
+      - id: CDCHardsuitArm
+      - id: CDCHardsuitArm
+      - id: CDCHardsuitTech
+      - id: CDCHardsuitArm
+      - id: OxygenTankFilled
+      - id: OxygenTankFilled
+      - id: OxygenTankFilled
+      - id: OxygenTankFilled
+      - id: OxygenTankFilled
+      - id: NitrogenTankFilled
+      - id: NitrogenTankFilled
+      - id: NitrogenTankFilled
+      - id: NitrogenTankFilled
+      - id: NitrogenTankFilled
+#---------------------------------------------------------------Синтетики------------------------------------------------------------  
+#---------------------------------------------Модули боргов------------------------
+- type: Tag
+  id: BorgModuleCDC
+#------------------------------------Пистолет------------------------      
+- type: entity
+  name: echis
+  parent: BaseItem
+  id: CDCPistolBorg
+  description: Очень мощный пистолет армии Конгломерата. Массово распространён во всех родах войск. (sps, hps)
+  components:
+  - type: Gun
+    fireRate: 2
+    selectedMode: SemiAuto
+    availableModes:
+      - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
+  - type: Sprite
+    sprite: Victoria/CDC/Weapon/cdc_pistol.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletPistol
+    fireCost: 100
+  - type: Battery
+    maxCharge: 700
+    startingCharge: 700
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 25
+  - type: AmmoCounter
+
+- type: entity
+  id: BorgModuleCDCPistol
+  parent: [ BaseBorgModuleSyndicateAssault, BaseProviderBorgModule, BaseSyndicateContraband ]
+  name: Модуль Плазменного пистолета
+  description: В этом модуле сокрыта система управления и питания небольшим плазменным орудием аналогичным пистолету Конгломерата "гул"
+  suffix: Конгломерат
+  components:
+    - type: Sprite
+      sprite: Victoria/CDC/Sintetic/cdc_borg_module.rsi
+      layers:
+      - state: generic
+      - state: icon-plasm_pistol
+    - type: ItemBorgModule
+      items:
+        - CDCPistolBorg
+    - type: BorgModuleIcon
+      icon: { sprite: Victoria/CDC/Weapon/cdc_pistol.rsi, state: icon }
+    - type: Tag
+      tags:
+      - BorgModuleCDC
+#------------------------------------Сабля------------------------      
+- type: entity
+  id: BorgModuleCDCSaber
+  parent: [ BaseBorgModuleSyndicateAssault, BaseProviderBorgModule, BaseSyndicateContraband ]
+  name: Модуль "Скорпион"
+  description: В этом модуле сокрыта система управления и манипуляции клинками от армейских сабель Конгломерата
+  suffix: Конгломерат
+  components:
+    - type: Sprite
+      sprite: Victoria/CDC/Sintetic/cdc_borg_module.rsi
+      layers:
+      - state: generic
+      - state: icon-saber
+    - type: ItemBorgModule
+      items:
+        - CDCSaber
+        - CDCSaberHigh
+    - type: BorgModuleIcon
+      icon: { sprite: Victoria/CDC/Weapon/cdc_saber.rsi, state: icon }
+    - type: Tag
+      tags:
+      - BorgModuleCDC
+#---------------------------------------------Борг------------------------
+#-----------------------------------Имена-----------------
+- type: dataset
+  id: names_borg_cdc
+  values:
+  - "Пророк"
+  - "Освободитель"
+  - "Покой"
+  - "Хозяин"
+  - "Молоторук"
+  - "Мыслитель"
+  - "Дальновидец"
+  - "Отец"
+  - "Болтун"
+  - "Каратель"
+  - "Благодетель"
+#-----------------------------------Законы----------------- 
+- type: siliconLaw
+  id: CDC1
+  order: 1
+  lawString: law-cdc-1
+
+- type: siliconLaw
+  id: CDC2
+  order: 2
+  lawString: law-cdc-2
+
+- type: siliconLaw
+  id: CDC3
+  order: 3
+  lawString: law-cdc-3
+  
+- type: siliconLaw
+  id: CDC4
+  order: 4
+  lawString: law-cdc-4
+  
+- type: siliconLaw
+  id: CDC5
+  order: 5
+  lawString: law-cdc-5
+
+- type: siliconLawset
+  id: CDCStatic
+  laws:
+  - CDC1
+  - CDC2
+  - CDC3
+  - CDC4
+  - CDC5
+  obeysTo: laws-owner-cdc
+#-----------------------------------Сам борг----------------- 
+- type: entity
+  id: BaseCDCBorg
+  parent: BaseBorgChassis
+  abstract: true
+  components:
+    - type: NpcFactionMember
+      factions:
+        - CDC
+    - type: Access #доступы которые имеет борг сам
+      tags:
+       - CDCAccess
+       - External
+    - type: AccessReader #те кто могут разблокировать борга
+      access: [["CDCAccess"]]
+    - type: SiliconLawProvider
+      laws: CDCStatic
+    - type: IntrinsicRadioTransmitter
+      channels:
+        - CDCRadioVI
+    - type: ActiveRadio
+      channels:
+        - CDCRadioVI
+    - type: MovementAlwaysTouching
+    - type: BorgChassis
+      maxModules: 4
+      moduleWhitelist:
+      tags:
+      - BorgModuleGeneric
+      - BorgModuleCDC
+    - type: StationAiVision
+     
+- type: entity
+  id: CDCBorg
+  name: Борг Конгломерата "Завет"
+  description: Многоцелевой борг Конгломерата, используемый и как помощник, и как спутник в путешествиях, и как боевая единица.
+  suffix: Конгломерат
+  parent: BaseCDCBorg
+  components:
+  - type: Sprite
+    sprite: Victoria/CDC/Sintetic/cdc_borg.rsi
+    layers:
+      - state: robot
+        map: ["enum.BorgVisualLayers.Body", "movement"]
+      - state: robot_e_r
+        map: ["enum.BorgVisualLayers.Light"]
+        shader: unshaded
+        visible: false
+      - state: robot_l
+        shader: unshaded
+        map: ["light","enum.BorgVisualLayers.LightStatus"]
+        visible: false
+  - type: BorgChassis
+    hasMindState: robot_e
+    noMindState: robot_e_r
+  - type: Speech
+    speechVerb: Robotic
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - CDCRadioVI
+  - type: ActiveRadio
+    channels:
+    - CDCRadioVI
+  - type: ShowJobIcons
+  - type: InteractionPopup
+    interactSuccessString: petting-success-cdc-cyborg
+    interactFailureString: petting-failure-cdc-cyborg
+    interactSuccessSound:
+      path: /Audio/Ambience/Objects/periodic_beep.ogg
+  - type: ContainerFill
+    container:
+      borg_brain:
+        - PositronicBrain
+      borg_module:
+        - BorgModuleCDCPistol
+        - BorgModuleCDCSaber
+        - BorgModuleTool
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellMicroreactor
+        disableEject: true
+        swap: false
+#---------------------------------------------ВИ Исмаил------------------------
+- type: siliconLaw
+  id: CDC_AI1
+  order: 1
+  lawString: law-cdc-vi-1
+
+- type: siliconLaw
+  id: CDC_AI2
+  order: 2
+  lawString: law-cdc-vi-2
+
+- type: siliconLaw
+  id: CDC_AI3
+  order: 3
+  lawString: law-cdc-vi-3
+  
+- type: siliconLaw
+  id: CDC_AI4
+  order: 4
+  lawString: law-cdc-vi-4
+  
+- type: siliconLaw
+  id: CDC_AI5
+  order: 5
+  lawString: law-cdc-vi-5
+
+- type: siliconLaw
+  id: CDC_AI6
+  order: 6
+  lawString: law-cdc-vi-6
+
+- type: siliconLawset
+  id: CDC_AIStatic
+  laws:
+  - CDC_AI1
+  - CDC_AI2
+  - CDC_AI3
+  - CDC_AI4
+  - CDC_AI5
+  - CDC_AI6
+  obeysTo: laws-owner-cdc
+#------------------------Джобка------------------------
+- type: playTimeTracker
+  id: JobCDCVITimeTracker
+
+- type: job
+  id: CDCVI
+  name: ВИ "Исмаил"
+  description: Виртуальный Интеллект, выполняющий роль тактического помощника армии Конгломерата.
+  playTimeTracker: JobCDCVITimeTracker
+  requirements:
+  - !type:RoleTimeRequirement
+    role: JobBorg
+    time: 0  
+  canBeAntag: false
+  icon: JobIconStationAi
+  supervisors: job-supervisors-rd
+  jobEntity: CDCVIBrain
+  applyTraits: false
+#------------------------Брейн------------------------
+- type: entity
+  id: CDCVIBrain
+  parent: PositronicBrain
+  categories: [ HideSpawnMenu ]
+  suffix: DO NOT MAP
+  components:
+  - type: StationAiCore
+    remoteEntityProto: CDCVIHolo
+  - type: Sprite
+    visible: false
+  - type: BlockMovement
+    blockInteraction: false
+  - type: SiliconLawProvider
+    laws: CDC_AIStatic
+  - type: SiliconLawBound
+  - type: ActionGrant
+    actions:
+    - ActionViewLaws
+  - type: UserInterface
+    interfaces:
+      enum.SiliconLawsUiKey.Key:
+        type: SiliconLawBoundUserInterface
+  - type: ComplexInteraction
+  - type: Actions
+  - type: Access
+    groups:
+    - AllAccess
+  - type: Eye
+    drawFov: false
+  - type: Examiner
+  - type: InputMover
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Borg
+  - type: Tag
+    tags:
+    - StationAi
+    - NoConsoleSound
+#--------------------------------------------------МСУ-------------------------------------- 
+- type: entity
+  id: CDCMSU
+  parent: [Clothing, ContentsExplosionResistanceBase, ClothingHeadset]
+  suffix: Конгломерат, спавнер роли
+  name: МСУ Конгломерата
+  description: Мобильная Система Управления. Сложный радиотехнически электронно-вычислительный блок, позволяющий обеспечивать радиосвязь и взаимодействовать с Виртуальным Интеллектом класса "Исмаил"
+  components:
+  - type: Item
+    size: Huge
+  - type: Clothing
+    quickEquip: false
+    slots: 
+    - Back
+    - Head
+    sprite: Victoria/CDC/Sintetic/cdc_msu.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.9
+  - type: ContainerSpawnPoint
+    containerId: station_ai_mind_slot
+    job: CDCVI
+  - type: StationAiCore
+    remoteEntityProto: CDCVIHolo
+  - type: Sprite
+    sprite: Victoria/CDC/Sintetic/cdc_msu.rsi
+  - type: Icon
+    sprite: Victoria/CDC/Sintetic/cdc_msu.rsi
+    state: icon
+  - type: EncryptionKeyHolder
+    keysExtractionMethod: Prying
+    keySlots: 3
+  - type: ContainerContainer
+    containers:
+      storagebase: !type:Container
+        ents: []
+      key_slots: !type:Container
+  - type: TelecomServer
+  - type: ApcPowerReceiver
+    needsPower: false
+  - type: LightningTarget
+    priority: 1 
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - CDCEncryptionKeyVI
+      - CDCEncryptionKey
+  - type: Headset
+    requiredSlot: back
+#------------------------Холо------------------------
+- type: entity
+  parent:
+  - Incorporeal
+  - BaseMob
+  id: CDCVIHolo
+  name: AI eye
+  description: The AI's viewer.
+  categories: [ HideSpawnMenu ]
+  suffix: DO NOT MAP
+  components:
+  - type: NoFTL
+  - type: WarpPoint
+    follow: true
+  - type: Eye
+    pvsScale: 1.5
+  - type: Visibility
+    layer: 2
+  - type: Sprite
+    sprite: Victoria/CDC/Sintetic/cdc_ismail_vi.rsi
+    layers:
+    - state: ai_camera
+      shader: unshaded
+      map: ["base"]
+  - type: GhostRole
+    allowMovement: true
+    allowSpeech: true
+    makeSentient: true
+    name: ghost-role-information-cdc-name
+    description: ghost-role-information-cdc-description
+    rules: ghost-role-information-cdc-rules
+    raffle:
+      settings: default
+  - type: GhostTakeoverAvailable
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - CDCRadioVI
+    - Common
+  - type: ActiveRadio
+    channels:
+    - CDCRadioVI
+    - Common
+  - type: IgnoreUIRange
+  - type: StationAiHeld
+  - type: StationAiOverlay
+  - type: ShowElectrocutionHUD
+  - type: ActionGrant
+    actions:
+    - ActionSurvCameraLights
+    - ActionAIViewLaws
+  - type: UserInterface
+    interfaces:
+      enum.RadarConsoleUiKey.Key:
+        type: RadarConsoleBoundUserInterface
+      enum.CrewMonitoringUIKey.Key:
+        type: CrewMonitoringBoundUserInterface
+      enum.SiliconLawsUiKey.Key:
+        type: SiliconLawBoundUserInterface
+  - type: IntrinsicUI
+    uis:
+      enum.RadarConsoleUiKey.Key:
+        toggleAction: ActionAGhostShowRadar
+      enum.CrewMonitoringUIKey.Key:
+        toggleAction: ActionAGhostShowCrewMonitoring
+  - type: CrewMonitoringConsole
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: CrewMonitor
+    transmitFrequencyId: ShuttleTimer
+  - type: RadarConsole
+    followEntity: false
+  - type: ShowJobIcons
+  - type: SiliconLawProvider
+    laws: CDC_AIStatic
+  - type: SiliconLawBound
+#-------------------------------------Спавнер потеряных-----------------------------------  
+- type: entity
+  name: Странствующий проповедник
+  id: LostImamSpawner
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: Objects/Tools/appraisal-tool.rsi
+          state: icon
+    - type: RandomSpawner
+      prototypes:
+      - RandomImam
+      chance: 1
+      
+- type: entity
+  id: RandomImam
+  name: Странствующий проповедник
+  components:
+    - type: Sprite
+      sprite: Objects/Tools/appraisal-tool.rsi
+      state: icon
+    - type: RandomHumanoidSpawner
+      settings: LostImam
+
+- type: randomHumanoidSettings
+  id: LostImam
+  parent: EventHumanoid
+  components:
+    - type: GhostRole
+      name: Странствующий проповедник
+      description: Вы странствующий проповедник космоислама из Халифатского Божественного Конгломерата. Несите слово Вседержителя Аллаха о самосовершенствовании. единстве, развитии мира и процветании. Найдите последователей и ведите их к светлому будущему. Не применяйте оружие во времяд разумным существам, но всегда будьте готовы защитить своих последователей.
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: short
+    - type: Loadout
+      prototypes: [ CDCImamGear]
+#----------------------------------------------------------------Событие шаттл------------------------------------------     
+- type: preloadedGrid
+  id: ShuttleImamLost
+  path: /Maps/Shuttles/ShuttleEvent/cdc_shuttle_imam_lost.yml
+  copies: 1
+
+- type: entity
+  parent: BaseUnknownShuttleRule
+  id: UnknownShuttleImamLost
+  components:
+  - type: LoadMapRule
+    preloadedGrid: ShuttleImamLost
