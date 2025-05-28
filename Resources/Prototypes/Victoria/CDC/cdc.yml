@@ -2516,10 +2516,11 @@
   id: BorgModuleCDC
 #------------------------------------Пистолет------------------------      
 - type: entity
-  name: echis
+  name: Плазменный пистолет "Гул"
   parent: BaseItem
   id: CDCPistolBorg
   description: Очень мощный пистолет армии Конгломерата. Массово распространён во всех родах войск. (sps, hps)
+  categories: [ HideSpawnMenu ]
   components:
   - type: Gun
     fireRate: 2
@@ -2878,8 +2879,8 @@
   - Incorporeal
   - BaseMob
   id: CDCVIHolo
-  name: AI eye
-  description: The AI's viewer.
+  name: ВИ "Исмаил"
+  description: Центральная точка сенсорной системы Виртуального интеллекта класса "Исмаил" Халифатского Божественного Конгломерата.
   categories: [ HideSpawnMenu ]
   suffix: DO NOT MAP
   components:
