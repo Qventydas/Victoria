@@ -2712,7 +2712,7 @@
     interactSuccessSound:
       path: /Audio/Ambience/Objects/periodic_beep.ogg
   - type: ContainerFill
-    container:
+    containers:
       borg_brain:
         - PositronicBrain
       borg_module:
