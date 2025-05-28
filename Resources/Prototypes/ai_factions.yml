@@ -17,6 +17,8 @@
     - SNK
     - Mirt
     - KMLG
+    - Hound
+    - CDC
 
 - type: npcFaction
   id: NanoTrasen
@@ -33,6 +35,7 @@
   - NoocratyBot
   - Vitz
   - KMLG
+  - Hound
 
 - type: npcFaction
   id: Mouse
@@ -69,6 +72,8 @@
   - SNK
   - Mirt
   - KMLG
+  - Hound
+  - CDC
 
 - type: npcFaction
   id: SimpleNeutral
@@ -85,6 +90,8 @@
   - Umpor
   - Vitz
   - KMLG
+  - Hound
+  - CDC
 
 - type: npcFaction
   id: Xeno
@@ -105,6 +112,8 @@
   - SNK
   - Mirt
   - KMLG
+  - Hound
+  - CDC
 
 - type: npcFaction
   id: Zombie
@@ -126,6 +135,8 @@
   - SNK
   - Mirt
   - KMLG
+  - Hound
+  - CDC
 
 - type: npcFaction
   id: Revolutionary
@@ -143,3 +154,5 @@
   - SNK
   - Mirt
   - KMLG
+  - Hound
+  - CDC

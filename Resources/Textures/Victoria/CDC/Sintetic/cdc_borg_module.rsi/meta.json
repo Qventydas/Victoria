@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "license": "CC0-1.0",
+  "copyright": "Sprite created by crazzy_pingvin",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "generic"
+    },
+    {
+      "name": "icon-plasm_pistol"
+    },
+    {
+      "name": "icon-saber"
+    }
+  ]
+}
