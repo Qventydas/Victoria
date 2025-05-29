@@ -15,7 +15,6 @@
         - to: apc
           steps:
             - component: ApcElectronics
-              amount: 1
               name: "APC electronics"
               doAfter: 2
               
@@ -23,7 +22,6 @@
           steps:
             - material: DeffectAPCElectronics
               amount: 1
-              name: "APC electronics"
             - tool: Screwing
               doAfter: 2
               
@@ -31,7 +29,6 @@
           steps:
             - material: ReliableAPCElectronics
               amount: 1
-              name: "APC electronics"
             - tool: Screwing
               doAfter: 2
               
@@ -39,7 +36,6 @@
           steps:
             - material: AdminAPCElectronics
               amount: 1
-              name: "APC electronics"
             - tool: Screwing
               doAfter: 2
               
