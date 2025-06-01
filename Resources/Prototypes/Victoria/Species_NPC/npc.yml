@@ -106,28 +106,6 @@
     rootTask:
       task: SimpleHumanoidHostileCompound
 
-# Ниан
-- type: entity
-  name: простой враждебный NPC
-  suffix: Ниан
-  parent: BaseMobMoth
-  id: SimpleMothHostile
-  components:
-  - type: RandomHumanoidAppearance
-    randomizeName: false
-  - type: RandomMetadata
-    nameSegments:
-    - names_moth_first_male
-    - names_last
-  - type: NpcFactionMember
-    factions:
-      - Syndicate
-  - type: InputMover
-  - type: MobMover
-  - type: HTN
-    rootTask:
-      task: SimpleHumanoidHostileCompound
-
 # Арахнид
 - type: entity
   name: простой враждебный NPC
