@@ -49,10 +49,13 @@
     sprite: Victoria/Cloth/linum.rsi
     state: produce
   - type: Extractable
-    grindableSolution:
-      reagents:
-      - ReagentId: Fiber
-        Quantity: 5
+    grindableSolutionName: cloth
+  - type: SolutionContainerManager
+    solutions:
+      cloth:
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 5
   - type: Material
   - type: PhysicalComposition
     materialComposition:
@@ -115,11 +118,6 @@
     - state: cloth_3
       map: ["base"]
   - type: Appearance
-  - type: Extractable
-    grindableSolution:
-      reagents:
-      - ReagentId: Fiber
-        Quantity: 5
   - type: Material
   - type: PhysicalComposition
     materialComposition:
@@ -194,11 +192,6 @@
     - state: leather_3
       map: ["base"]
   - type: Appearance
-  - type: Extractable
-    grindableSolution:
-      reagents:
-      - ReagentId: Fiber
-        Quantity: 5
   - type: Material
   - type: PhysicalComposition
     materialComposition:
@@ -266,11 +259,6 @@
     - state: cloth_3
       map: ["base"]
   - type: Appearance
-  - type: Extractable
-    grindableSolution:
-      reagents:
-      - ReagentId: Fiber
-        Quantity: 5
   - type: Material
   - type: PhysicalComposition
     materialComposition:
@@ -327,8 +315,8 @@
 #------------------Полимеризатор-------------------------
 - type: reagent
   id: Polymerizer
-  name: полимеризатор
-  desc: Реагент для создания эластана.
+  name: reagent-name-polymerizer
+  desc: reagent-desc-polymerizer
   physicalDesc: reagent-physical-desc-murky
   flavor: horrible
   color: "#002238"
@@ -404,11 +392,6 @@
     - state: cloth_3
       map: ["base"]
   - type: Appearance
-  - type: Extractable
-    grindableSolution:
-      reagents:
-      - ReagentId: Fiber
-        Quantity: 5
   - type: Material
   - type: PhysicalComposition
     materialComposition:
@@ -599,8 +582,8 @@
 #------------------Грязная-------------------------
 - type: reagent
   id: SheepWool
-  name: грязная овечья шерсть
-  desc: Непригодная для использования шерсть. Помойте её.
+  name: reagent-name-sheep-wool
+  desc: reagent-desc-sheep-wool
   physicalDesc: reagent-physical-desc-fibrous
   flavor: fiber
   color: "#828282"
@@ -634,11 +617,6 @@
     - state: wool_3
       map: ["base"]
   - type: Appearance
-  - type: Extractable
-    grindableSolution:
-      reagents:
-      - ReagentId: Fiber
-        Quantity: 5
   - type: Material
   - type: PhysicalComposition
     materialComposition:
@@ -720,11 +698,6 @@
     - state: leather_3
       map: ["base"]
   - type: Appearance
-  - type: Extractable
-    grindableSolution:
-      reagents:
-      - ReagentId: Fiber
-        Quantity: 5
   - type: Material
   - type: PhysicalComposition
     materialComposition:
@@ -792,11 +765,6 @@
     - state: cloth_3
       map: ["base"]
   - type: Appearance
-  - type: Extractable
-    grindableSolution:
-      reagents:
-      - ReagentId: Fiber
-        Quantity: 5
   - type: Material
   - type: PhysicalComposition
     materialComposition:
@@ -872,11 +840,6 @@
     - state: cloth_3
       map: ["base"]
   - type: Appearance
-  - type: Extractable
-    grindableSolution:
-      reagents:
-      - ReagentId: Fiber
-        Quantity: 5
   - type: Material
   - type: PhysicalComposition
     materialComposition:
@@ -952,11 +915,6 @@
     - state: leather_3
       map: ["base"]
   - type: Appearance
-  - type: Extractable
-    grindableSolution:
-      reagents:
-      - ReagentId: Fiber
-        Quantity: 5
   - type: Material
   - type: PhysicalComposition
     materialComposition:
@@ -1024,11 +982,6 @@
     - state: leather_3
       map: ["base"]
   - type: Appearance
-  - type: Extractable
-    grindableSolution:
-      reagents:
-      - ReagentId: Fiber
-        Quantity: 5
   - type: Material
   - type: PhysicalComposition
     materialComposition:
@@ -1077,8 +1030,8 @@
 #------------------Грязная-------------------------
 - type: reagent
   id: GoatWool
-  name: грязная козья шерсть
-  desc: Непригодная для использования шерсть. Помойте её.
+  name: reagent-name-goat-wool
+  desc: reagent-desc-sheep-wool
   physicalDesc: reagent-physical-desc-fibrous
   flavor: fiber
   color: "#cba36a"
@@ -1112,11 +1065,6 @@
     - state: wool_3
       map: ["base"]
   - type: Appearance
-  - type: Extractable
-    grindableSolution:
-      reagents:
-      - ReagentId: Fiber
-        Quantity: 5
   - type: Material
   - type: PhysicalComposition
     materialComposition:
@@ -1198,11 +1146,7 @@
     - state: leather_3
       map: ["base"]
   - type: Appearance
-  - type: Extractable
-    grindableSolution:
-      reagents:
-      - ReagentId: Fiber
-        Quantity: 5
+
   - type: Material
   - type: PhysicalComposition
     materialComposition:
