@@ -455,7 +455,7 @@
   id: CottonMaterial
   stackEntity: MaterialCotton1
   name: хлопок
-  icon: { sprite: Objects/Materials/materials.rsi/, state: cotton }
+  icon: { sprite: Objects/Materials/materials.rsi, state: cotton }
   price: 0.05
 
 - type: entity
