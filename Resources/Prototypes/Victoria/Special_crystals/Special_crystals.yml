@@ -355,6 +355,7 @@
   - type: Tag
     tags:
     - CrystalMaterial
+    - SiCrystall
 #------------------Стак--------------------------
 - type: stack
   id: SiCrystall
@@ -577,7 +578,7 @@
       state: bs_module
     - type: Tag
       tags:
-        - BSModule
+      - BSModule
     - type: Item
       size: Small
     - type: Stack

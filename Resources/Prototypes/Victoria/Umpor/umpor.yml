@@ -4,7 +4,7 @@
   parent: ClothingUniformSkirtBase
   id: UmporUniformSoldier
   name: name-of-UmporUniformSoldier
-  suffix: Umpor
+  suffix: Умпорский
   description: description-of-UmporUniformSoldier
   components:
   - type: Sprite
@@ -16,7 +16,7 @@
   parent: ClothingUniformSkirtBase
   id: UmporUniformOficier
   name: name-of-UmporUniformOficier
-  suffix: Umpor
+  suffix: Умпорский
   description: description-of-UmporUniformOficier
   components:
   - type: Sprite
@@ -28,7 +28,7 @@
   parent: ClothingUniformSkirtBase
   id: UmporUniformMedic
   name: name-of-UmporUniformMedic
-  suffix: Umpor
+  suffix: Умпорский
   description: description-of-UmporUniformMedic
   components:
   - type: Sprite
@@ -40,7 +40,7 @@
   parent: ClothingUniformSkirtBase
   id: UmporUniformEngineer
   name: name-of-UmporUniformEngineer
-  suffix: Umpor
+  suffix: Умпорский
   description: description-of-UmporUniformEngineer
   components:
   - type: Sprite
@@ -52,7 +52,7 @@
   parent: ClothingUniformSkirtBase
   id: UmporUniformLogist
   name: name-of-UmporUniformLogist
-  suffix: Umpor
+  suffix: Умпорский
   description: description-of-UmporUniformLogist
   components:
   - type: Sprite
@@ -64,7 +64,7 @@
   parent: ClothingUniformSkirtBase
   id: UmporUniformRadist
   name: name-of-UmporUniformRadist
-  suffix: Umpor
+  suffix: Умпорский
   description: description-of-UmporUniformRadist
   components:
   - type: Sprite
@@ -89,7 +89,7 @@
   parent: ClothingBackpack
   id: UmporBackpack
   name: name-of-UmporBackpack
-  suffix: Umpor
+  suffix: Умпорский
   description: description-of-UmporBackpack
   components:
   - type: Sprite
@@ -99,7 +99,7 @@
   parent: ClothingBackpack
   id: UmporRadioBackpack
   name: name-of-UmporRadioBackpack
-  suffix: Umpor
+  suffix: Умпорский
   description: description-of-UmporRadioBackpack
   components:
   - type: Sprite
@@ -126,7 +126,7 @@
   parent: ClothingBackpack
   id: UmporBackpackMine
   name: Импорский рюкзак сапёра
-  suffix: Umpor
+  suffix: Умпорский
   description: description-of-UmporBackpack
   components:
   - type: Sprite
@@ -139,7 +139,7 @@
   parent: ClothingShoesMilitaryBase
   id: UmporBoots
   name: name-of-UmporBoots
-  suffix: Umpor
+  suffix: Умпорский
   description: description-of-UmporBoots
   components:
   - type: Sprite
@@ -151,7 +151,7 @@
   parent: ClothingHeadHelmetBasic
   id: UmporHelmet
   name: name-of-UmporHelmet
-  suffix: Umpor
+  suffix: Умпорский
   description: description-of-UmporHelmet
   components:
   - type: Sprite
@@ -163,7 +163,7 @@
   parent: ClothingHeadBase
   id: UmporBeret
   name: name-of-UmporBeret
-  suffix: Umpor
+  suffix: Умпорский
   description: description-of-UmporBeret
   components:
   - type: Sprite
@@ -180,7 +180,7 @@
   parent: ClothingHeadBase
   id: UmporCap
   name: name-of-UmporCap
-  suffix: Umpor
+  suffix: Умпорский
   description: description-of-UmporCap
   components:
   - type: Sprite
@@ -197,7 +197,7 @@
   parent: ClothingHandsBase
   id: UmporGlovesFingerless
   name: name-of-UmporGlovesFingerless
-  suffix: Umpor
+  suffix: Умпорский
   description: description-of-UmporGlovesFingerless
   components:
   - type: Sprite
@@ -212,7 +212,7 @@
   parent: ClothingHandsGlovesColorYellow
   id: UmporInsulativeGloves
   name: name-of-UmporInsulativeGloves
-  suffix: Umpor
+  suffix: Умпорский
   description: description-of-UmporInsulativeGloves
   components:
   - type: FingerprintMask
@@ -228,7 +228,7 @@
   parent: ClothingHeadBase
   id: UmporCapP
   name: name-of-UmporCapP
-  suffix: Umpor
+  suffix: Умпорский
   description: description-of-UmporCapP
   components:
   - type: Sprite
@@ -242,10 +242,10 @@
     - WhitelistChameleon
 #------------------------------------лёгкий броник----------     
 - type: entity
-  parent: ClothingOuterBaseMedium
+  parent: ClothingOuterArmorBasic
   id: UmporArmorBasic
   name: name-of-UmporArmorBasic
-  suffix: Umpor
+  suffix: Умпорский
   description: description-of-UmporArmorBasic
   components:
   - type: Sprite
@@ -266,7 +266,7 @@
   parent: ClothingOuterBaseMedium
   id: UmporArmorMiddle
   name: name-of-UmporArmorMiddle
-  suffix: Umpor
+  suffix: Умпорский
   description: description-of-UmporArmorMiddl
   components:
   - type: Sprite
@@ -289,7 +289,7 @@
   parent: ClothingOuterHardsuitBase
   id: UmporHardsuit
   name: name-of-UmporHardsuit
-  suffix: Umpor
+  suffix: Умпорский
   description: description-of-UmporHardsuit
   components:
   - type: Sprite
@@ -385,7 +385,7 @@
 
 - type: entity
   name: name-of-UmporHatchet
-  suffix: Umpor
+  suffix: Умпорский
   parent: BaseItem
   id: UmporHatchet
   description: description-of-UmporHatchet
@@ -412,7 +412,7 @@
 
 - type: entity
   name: name-of-UmporSpade
-  suffix: Umpor
+  suffix: Умпорский
   parent: BaseItem
   id: UmporSpade
   description: description-of-UmporSpade
@@ -446,7 +446,7 @@
   parent: Clothing
   id: ClothingBackpackRCD
   name: name-of-ClothingBackpackRCD
-  suffix: Umpor
+  suffix: Умпорский
   description: description-of-ClothingBackpackRCD
   components:
   - type: Tag
@@ -471,7 +471,7 @@
   id: UmporRCD
   parent: BaseItem
   name: name-of-UmporRCD
-  suffix: Umpor
+  suffix: Умпорский
   description: description-of-UmporRCD
   components:
   - type: Sprite
@@ -521,7 +521,7 @@
   parent: ClothingBeltStorageBase
   id: UmporBeltEng
   name: name-of-UmporBeltEng
-  suffix: Umpor
+  suffix: Умпорский
   description: description-of-UmporBeltEng
   components:
   - type: Sprite
@@ -585,7 +585,7 @@
   parent: ClothingBeltStorageBase
   id: UmporeBeltAssault
   name: name-of-UmporeBeltAssault
-  suffix: Umpor
+  suffix: Умпорский
   description: description-of-UmporeBeltAssault
   components:
   - type: Sprite
@@ -611,7 +611,7 @@
   parent: ClothingBeltStorageBase
   id: UmporeBeltMed
   name: name-of-UmporeBeltMed
-  suffix: Umpor
+  suffix: Умпорский
   description: description-of-UmporeBeltMed
   components:
   - type: Sprite
@@ -642,7 +642,7 @@
 
 - type: entity
   name: name-of-UmpornKnife
-  suffix: Umpor
+  suffix: Умпорский
   parent: BaseKnife
   id: UmpornKnife
   description: description-of-UmpornKnife
@@ -662,7 +662,7 @@
 - type: entity
   id: UmporBulletHeavyRifle
   name: name-of-UmporBulletHeavyRifle
-  suffix: Umpor
+  suffix: Умпорский
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:
@@ -674,7 +674,7 @@
 - type: entity
   id: UmporBulletLightRifle
   name: name-of-UmporBulletLightRifle
-  suffix: Umpor
+  suffix: Умпорский
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:
@@ -702,7 +702,7 @@
 - type: entity
   id: UmporCartridgeHeavyRifle
   name: name-of-UmporCartridgeHeavyRifle
-  suffix: Umpor
+  suffix: Умпорский
   parent: BaseCartridgeRifle
   components:
   - type: CartridgeAmmo
@@ -717,7 +717,7 @@
 - type: entity
   id: UmporCartridgeLightRifle
   name: name-of-UmporCartridgeLightRifle
-  suffix: Umpor
+  suffix: Умпорский
   parent: BaseCartridgeRifle
   components:
   - type: CartridgeAmmo
@@ -732,7 +732,7 @@
 - type: entity
   id: UmporCartridgePistol
   name: name-of-UmporCartridgePistol
-  suffix: Umpor
+  suffix: Умпорский
   parent: BaseCartridgePistol
   components:
   - type: CartridgeAmmo
@@ -780,7 +780,7 @@
 - type: entity
   id: UmporMagazineHeavyRifle
   name: name-of-UmporMagazineHeavyRifle
-  suffix: Umpor
+  suffix: Умпорский
   parent: UmporBaseMagazineHeavyRifle
   components:
   - type: BallisticAmmoProvider
@@ -796,7 +796,7 @@
 - type: entity
   id: UmporBaseMagazineLightRifle
   name: name-of-UmporBaseMagazineLightRifle
-  suffix: Umpor
+  suffix: Умпорский
   parent: BaseItem
   abstract: true
   components:
@@ -831,7 +831,7 @@
 - type: entity
   id: UmporMagazineLightRifle
   name: name-of-UmporMagazineLightRifle
-  suffix: Umpor
+  suffix: Умпорский
   parent: UmporBaseMagazineLightRifle
   components:
   - type: BallisticAmmoProvider
@@ -882,7 +882,7 @@
 - type: entity
   id: UmporMagazinePistol
   name: name-of-UmporMagazinePistol
-  suffix: Umpor
+  suffix: Умпорский
   parent: UmporBaseMagazinePistol
   components:
   - type: BallisticAmmoProvider
@@ -898,7 +898,7 @@
 #------------------------------------винтовка---------- 
 - type: entity
   name: name-of-UmporHeavyRifle
-  suffix: Umpor
+  suffix: Умпорский
   parent: BaseWeaponRifle
   id: UmporHeavyRifle
   description: description-of-UmporHeavyRifle
@@ -953,7 +953,7 @@
 #------------------------------------автомат----------     
 - type: entity
   name: name-of-UmporLightRifle
-  suffix: Umpor
+  suffix: Умпорский
   parent: BaseWeaponRifle
   id: UmporLightRifle
   description: description-of-UmporLightRifle
@@ -1011,7 +1011,7 @@
 
 - type: entity
   name: name-of-UmporPistol
-  suffix: Umpor
+  suffix: Умпорский
   parent: BaseWeaponPistol
   id: UmporPistol
   description: description-of-UmporPistol
@@ -1092,7 +1092,7 @@
   parent: BaseUmporBox
   id: UmporBoxHeavyRifle
   name: name-of-mporBoxHeavyRifle
-  suffix: Umpor
+  suffix: Умпорский
   description: description-of-mporBoxHeavyRifle
   components:
   - type: BallisticAmmoProvider
@@ -1110,7 +1110,7 @@
   parent: BaseUmporBox
   id: UmporBoxLightRifle
   name: name-of-UmporBoxLightRifle
-  suffix: Umpor
+  suffix: Умпорский
   description: description-of-UmporBoxLightRifle
   components:
   - type: BallisticAmmoProvider
@@ -1128,7 +1128,7 @@
   parent: BaseUmporBox
   id: UmporBoxPistol
   name: name-of-UmporBoxPistol
-  suffix: Umpor
+  suffix: Умпорский
   description: description-of-UmporBoxPistol
   components:
   - type: BallisticAmmoProvider
@@ -1146,7 +1146,7 @@
   parent: BaseUmporBox
   id: UmporBoxShotgan
   name: name-of-UmporBoxShotgan
-  suffix: Umpor
+  suffix: Умпорский
   description: description-of-UmporBoxShotgan
   components:
   - type: BallisticAmmoProvider
@@ -1169,7 +1169,7 @@
 - type: entity
   parent: DoorElectronics
   id: DoorElectronicsUmporAccess
-  suffix: Umpor, Locked
+  suffix: Умпорский, Locked
   components:
   - type: AccessReader
     access: [["UmporAccess"]]
@@ -1177,7 +1177,7 @@
 - type: entity
   parent: Airlock
   id: UmporAirlockLocked
-  suffix: Umpor, Locked
+  suffix: Умпорский, Locked
   components:
   - type: ContainerFill
     containers:
@@ -1188,7 +1188,7 @@
 - type: entity
   parent: Airlock
   id: UmporAirlock
-  suffix: Umpor
+  suffix: Умпорский
   components:
   - type: Sprite
     sprite: Victoria/Umpor/umpor_airlock.rsi
@@ -1196,7 +1196,7 @@
 - type: entity
   parent: AirlockGlass
   id: UmporAirlockLockedGlass
-  suffix: Umpor, Locked
+  suffix: Умпорский, Locked
   components:
   - type: ContainerFill
     containers:
@@ -1209,7 +1209,7 @@
 - type: entity
   parent: AirlockGlass
   id: UmporAirlockGlass
-  suffix: Umpor
+  suffix: Умпорский
   components:
   - type: Sprite
     sprite: Victoria/Umpor/umpor_airlock_glass.rsi
@@ -1248,7 +1248,7 @@
   parent: UmporIDCard
   id: UmporIDCardOfficer
   name: name-of-UmporIDCardOfficer
-  suffix: Umpor
+  suffix: Умпорский
   components:
   - type: Sprite
     layers:
@@ -1265,7 +1265,7 @@
   parent: UmporIDCard
   id: UmporIDCardSolder
   name: name-of-UmporIDCardSolder
-  suffix: Umpor
+  suffix: Умпорский
   components:
   - type: Sprite
     layers:
@@ -1282,7 +1282,7 @@
   parent: UmporIDCard
   id: UmporIDCardMedic
   name: name-of-UmporIDCardMedic
-  suffix: Umpor
+  suffix: Умпорский
   components:
   - type: Sprite
     layers:
@@ -1299,7 +1299,7 @@
   parent: UmporIDCard
   id: UmporIDCardEngener
   name: name-of-UmporIDCardEngener
-  suffix: Umpor
+  suffix: Умпорский
   components:
   - type: Sprite
     layers:
@@ -1316,7 +1316,7 @@
   parent: UmporIDCard
   id: UmporIDCardLogist
   name: name-of-UmporIDCardLogist
-  suffix: Umpor
+  suffix: Умпорский
   components:
   - type: Sprite
     layers:
@@ -1357,7 +1357,7 @@
   parent: UmporPDA
   id: UmporPDASolder
   name: name-of-UmporPDASolder
-  suffix: Umpor
+  suffix: Умпорский
   description: description-of-UmporPDASolder
   components:
     - type: Pda
@@ -1371,7 +1371,7 @@
   parent: UmporPDA
   id: UmporPDAOfficer
   name: name-of-UmporPDAOfficer
-  suffix: Umpor
+  suffix: Умпорский
   description: description-of-UmporPDAOfficer
   components:
     - type: Pda
@@ -1385,7 +1385,7 @@
   parent: UmporPDA
   id: UmporPDAEngener
   name: name-of-UmporPDAEngener
-  suffix: Umpor
+  suffix: Умпорский
   description: description-of-UmporPDAEngener
   components:
     - type: Pda
@@ -1399,7 +1399,7 @@
   parent: UmporPDA
   id: UmporPDAMedic
   name: name-of-UmporPDAMedic
-  suffix: Umpor
+  suffix: Умпорский
   description: description-of-UmporPDAMedic
   components:
     - type: Pda
@@ -1413,7 +1413,7 @@
   parent: UmporPDA
   id: UmporPDALogist
   name: name-of-UmporPDALogist
-  suffix: Umpor
+  suffix: Умпорский
   description: description-of-UmporPDALogist
   components:
     - type: Pda
@@ -1427,7 +1427,7 @@
 - type: radioChannel
   id: UmporRadio
   name: name-of-UmporRadio
-  keycode: 'у' 
+  keycode: 'уф' 
   frequency: 1678
   color: "#666666"
   longRange: false
@@ -1454,7 +1454,7 @@
   parent: UmporBaseEncryptionKey
   id: UmporEncryptionKey
   name: name-of-UmporEncryptionKey
-  suffix: Umpor
+  suffix: Умпорский
   description: description-of-UmporEncryptionKey
   components:
   - type: EncryptionKey
@@ -1470,7 +1470,7 @@
   parent: ClothingHeadset
   id: UmporHeadset
   name: name-of-UmporHeadset
-  suffix: Umpor
+  suffix: Умпорский
   components:
   - type: ContainerFill
     containers:
@@ -1699,7 +1699,7 @@
 - type: entity
   id: UmporPelletShotgun
   name: name-of-UmporPelletShotgun
-  suffix: Umpor
+  suffix: Умпорский
   categories: [ HideSpawnMenu ]
   parent: BaseBullet
   components:
@@ -1710,6 +1710,16 @@
     damage:
       types:
         Piercing: 12
+        
+- type: entity
+  id: UmporPelletShotgunSpread
+  categories: [ HideSpawnMenu ]
+  parent: UmporPelletShotgun
+  components:
+  - type: ProjectileSpread
+    proto: UmporPelletShotgun
+    count: 6
+    spread: 15        
 #-----------------------картридж----------------------
 - type: Tag
   id: UmporShellShotgun
@@ -1717,7 +1727,7 @@
 - type: entity
   id: UmporBaseShellShotgun
   name: name-of-UmporBaseShellShotgun
-  suffix: Umpor
+  suffix: Умпорский
   parent: BaseCartridge
   abstract: true
   components:
@@ -1726,10 +1736,7 @@
     - Cartridge
     - UmporShellShotgun
   - type: CartridgeAmmo
-    count: 6
-    spread: 15
-    soundEject:
-      collection: ShellEject
+    proto: UmporPelletShotgunSpread
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Casings/shotgun_shell.rsi
     layers:
@@ -1747,8 +1754,6 @@
     layers:
       - state: base
         map: [ "enum.AmmoVisualLayers.Base" ]
-  - type: CartridgeAmmo
-    proto: UmporPelletShotgun
 #-----------------------сам дробовик----------------------  
 - type: entity
   name: name-of-UmporBaseWeaponShotgun
@@ -1793,7 +1798,7 @@
   
 - type: entity
   name: name-of-UmporShotgun
-  suffix: Umpor
+  suffix: Умпорский
   parent: UmporBaseWeaponShotgun
   id: UmporShotgun
   description: description-of-UmporShotgun
@@ -2030,7 +2035,7 @@
       - Umpor
     - type: GhostRole
       name: Умпорский инженер
-      description: Вы может и не вполне систематически образованный, но умелый и находчивый армейский инженер. Чините оборужование, возводите фортификаци, будьте мастером на все руки. выполняйте приказы командира, а если тот погибнет, возьмите командование на себя.
+      description: Вы может и не вполне систематически образованный, но умелый и находчивый армейский инженер. Чините оборудование, возводите фортификации, будьте мастером на все руки. Выполняйте приказы командира, а если тот погибнет, возьмите командование на себя.
     - type: GhostTakeoverAvailable
     - type: Loadout
       prototypes: [ UmporEngenerGear ]
@@ -2048,7 +2053,7 @@
       allowSpeech: true
       makeSentient: true
       name: Умпорский инженер
-      description: Вы может и не вполне систематически образованный, но умелый и находчивый армейский инженер. Чините оборужование, возводите фортификаци, будьте мастером на все руки. выполняйте приказы командира, а если тот погибнет, возьмите командование на себя.
+      description: Вы может и не вполне систематически образованный, но умелый и находчивый армейский инженер. Чините оборудование, возводите фортификации, будьте мастером на все руки. Выполняйте приказы командира, а если тот погибнет, возьмите командование на себя.
     - type: GhostTakeoverAvailable
     - type: MobThresholds
       thresholds:
@@ -2095,7 +2100,7 @@
       - Umpor
     - type: GhostRole
       name: Умпорский инженер-строитель
-      description: Вы не идеально образованный, но умелый и находчивый фортификатор, или же инженер-строитель. Возводите фортификаци, будьте мастером на все руки. Выполняйте приказы командира, а если тот погибнет, возьмите командование на себя.
+      description: Вы не идеально образованный, но умелый и находчивый фортификатор, или же инженер-строитель. Возводите фортификации, будьте мастером на все руки. Выполняйте приказы командира, а если тот погибнет, возьмите командование на себя.
     - type: GhostTakeoverAvailable
     - type: Loadout
       prototypes: [ UmporBilderGear ]
@@ -2113,7 +2118,7 @@
       allowSpeech: true
       makeSentient: true
       name: Умпорский инженер-строитель
-      description: Вы не идеально образованный, но умелый и находчивый фортификатор, или же инженер-строитель. Возводите фортификаци, будьте мастером на все руки. Выполняйте приказы командира, а если тот погибнет, возьмите командование на себя.
+      description: Вы не идеально образованный, но умелый и находчивый фортификатор, или же инженер-строитель. Возводите фортификации, будьте мастером на все руки. Выполняйте приказы командира, а если тот погибнет, возьмите командование на себя.
     - type: GhostTakeoverAvailable
     - type: MobThresholds
       thresholds:
@@ -2225,7 +2230,7 @@
       - Umpor
     - type: GhostRole
       name: Умпорский сапёр
-      description: Вы хитрый и опасный сапёр армии Умпорской Федерации. Оставляйте врагу сюрпризы, слушайтесь компандира. Сделайте свои укрепления неприступными.
+      description: Вы хитрый и опасный сапёр армии Умпорской Федерации. Оставляйте врагу сюрпризы, слушайтесь командира. Сделайте свои укрепления неприступными.
     - type: GhostTakeoverAvailable
     - type: Loadout
       prototypes: [ UmporMinesweeperGear ]
@@ -2243,7 +2248,7 @@
       allowSpeech: true
       makeSentient: true
       name: Умпорский сапёр
-      description: Вы хитрый и опасный сапёр армии Умпорской Федерации. Оставляйте врагу сюрпризы, слушайтесь компандира. Сделайте свои укрепления неприступными.
+      description: Вы хитрый и опасный сапёр армии Умпорской Федерации. Оставляйте врагу сюрпризы, слушайтесь командира. Сделайте свои укрепления неприступными.
     - type: GhostTakeoverAvailable
     - type: MobThresholds
       thresholds:
@@ -2290,7 +2295,7 @@
       - Umpor
     - type: GhostRole
       name: Умпорский медик
-      description: Вы умелый армейский медик Умпорской Федерации. Вы и санитар, и врач и химик мало-мальский. Спасите своих сослуживцев от ран. Возглавьте их в вопросах здоровья. напоминайте командиру, как будут лучше для отряда, но не нарушайте субординацию. Соладты, как дети. Верните их домой живыми.
+      description: Вы умелый армейский медик Умпорской Федерации. Вы и санитар, и врач и химик мало-мальский. Спасите своих сослуживцев от ран. Возглавьте их в вопросах здоровья. Напоминайте командиру, как будут лучше для отряда, но не нарушайте субординацию. Солдаты, как дети. Верните их домой живыми.
     - type: GhostTakeoverAvailable
     - type: Loadout
       prototypes: [ UmporMedicGear ]
@@ -2308,7 +2313,7 @@
       allowSpeech: true
       makeSentient: true
       name: Умпорский медик
-      description: Вы умелый армейский медик Умпорской Федерации. Вы и санитар, и врач и химик мало-мальский. Спасите своих сослуживцев от ран. Возглавьте их в вопросах здоровья. напоминайте командиру, как будут лучше для отряда, но не нарушайте субординацию. Соладты, как дети. Верните их домой живыми.
+      description: Вы умелый армейский медик Умпорской Федерации. Вы и санитар, и врач и химик мало-мальский. Спасите своих сослуживцев от ран. Возглавьте их в вопросах здоровья. Напоминайте командиру, как будут лучше для отряда, но не нарушайте субординацию. Солдаты, как дети. Верните их домой живыми.
     - type: GhostTakeoverAvailable
     - type: MobThresholds
       thresholds:
@@ -2427,7 +2432,7 @@
       
       Ваши навыки: Базовые навыки, владение оружием, управление шаттлом
       
-      Руководство к отыгрышу: У умпорцев упрощённый язык. Допускается писать просторечия или написание слов с ошибками, писать с диалектом или с говором. Все умпорцы трудолюбивы, военные очень преданы своей стране. Они бедны, но переносят это стоически. Среди них сильно укреплены узы боевого товарищества. Они недолюблювают учёных и особенно презирают всех граждан Ноократии Эранта.
+      Руководство к отыгрышу: У умпорцев упрощённый язык. Допускается писать просторечия или написание слов с ошибками, писать с диалектом или с говором. Все умпорцы трудолюбивы, военные очень преданы своей стране. Они бедны, но переносят это стоически. Среди них сильно укреплены узы боевого товарищества. Они недолюбливают учёных и особенно презирают всех граждан Ноократии Эранта.
       
       Краткий лор государства: Умпорская Федерация около трёхсот лет назад военным способом отделилась от Ноократии Эранта. Они считают, что Ноократия построена на угнетении бедных трудящихся, даже самых трудолюбивых, которым просто не повезло с природным талантом. Сами же упорцы восхваляют как раз достижения честного труда. За время своего существования Федерация пережила пару разрушительных войн с Ноократией Эранта, научный и образовательный регресс, бедность, разгул преступности и тяготы поствоенной разрухи. Тем не менее, народ умудряется жить даже в условиях полных неудач. На данный момент пик всеобщего спада пройден и начался государственный подъём. Этого удалось достичь за счёт трудолюбия граждан смены курса правительства, гуманитарной помощи от других государств, а также из-за привлечения капиталов крупных корпораций, вроде NanoTrasen, Vitezstvi, Hephaestus.
 #-----------------------------------Солдат-----------------------------
@@ -2448,7 +2453,7 @@
       
       Ваши навыки: Базовые навыки, Владение оружием
       
-      Руководство к отыгрышу: У умпорцев упрощённый язык. Допускается писать просторечия или написание слов с ошибками, писать с диалектом или с говором. Все умпорцы трудолюбивы, военные очень преданы своей стране. Они бедны, но переносят это стоически. Среди них сильно укреплены узы боевого товарищества. Они недолюблювают учёных и особенно презирают всех граждан Ноократии Эранта.
+      Руководство к отыгрышу: У умпорцев упрощённый язык. Допускается писать просторечия или написание слов с ошибками, писать с диалектом или с говором. Все умпорцы трудолюбивы, военные очень преданы своей стране. Они бедны, но переносят это стоически. Среди них сильно укреплены узы боевого товарищества. Они недолюбливают учёных и особенно презирают всех граждан Ноократии Эранта.
       
       Краткий лор государства: Умпорская Федерация около трёхсот лет назад военным способом отделилась от Ноократии Эранта. Они считают, что Ноократия построена на угнетении бедных трудящихся, даже самых трудолюбивых, которым просто не повезло с природным талантом. Сами же упорцы восхваляют как раз достижения честного труда. За время своего существования Федерация пережила пару разрушительных войн с Ноократией Эранта, научный и образовательный регресс, бедность, разгул преступности и тяготы поствоенной разрухи. Тем не менее, народ умудряется жить даже в условиях полных неудач. На данный момент пик всеобщего спада пройден и начался государственный подъём. Этого удалось достичь за счёт трудолюбия граждан смены курса правительства, гуманитарной помощи от других государств, а также из-за привлечения капиталов крупных корпораций, вроде NanoTrasen, Vitezstvi, Hephaestus.
 #-----------------------------------Инженер-----------------------------
@@ -2470,7 +2475,7 @@
       
       Ваши навыки: Базовые навыки, владение оружием, постройка сложных объектов, постройка приборов, робототехника, продвинутые генераторы, разборка сложных объектов, базовый атмос
       
-      Руководство к отыгрышу: У умпорцев упрощённый язык. Допускается писать просторечия или написание слов с ошибками, писать с диалектом или с говором. Все умпорцы трудолюбивы, военные очень преданы своей стране. Они бедны, но переносят это стоически. Среди них сильно укреплены узы боевого товарищества. Они недолюблювают учёных и особенно презирают всех граждан Ноократии Эранта. В случае гибели офицера, примите командование на себя.
+      Руководство к отыгрышу: У умпорцев упрощённый язык. Допускается писать просторечия или написание слов с ошибками, писать с диалектом или с говором. Все умпорцы трудолюбивы, военные очень преданы своей стране. Они бедны, но переносят это стоически. Среди них сильно укреплены узы боевого товарищества. Они недолюбливают учёных и особенно презирают всех граждан Ноократии Эранта. В случае гибели офицера, примите командование на себя.
       
       Краткий лор государства: Умпорская Федерация около трёхсот лет назад военным способом отделилась от Ноократии Эранта. Они считают, что Ноократия построена на угнетении бедных трудящихся, даже самых трудолюбивых, которым просто не повезло с природным талантом. Сами же упорцы восхваляют как раз достижения честного труда. За время своего существования Федерация пережила пару разрушительных войн с Ноократией Эранта, научный и образовательный регресс, бедность, разгул преступности и тяготы поствоенной разрухи. Тем не менее, народ умудряется жить даже в условиях полных неудач. На данный момент пик всеобщего спада пройден и начался государственный подъём. Этого удалось достичь за счёт трудолюбия граждан смены курса правительства, гуманитарной помощи от других государств, а также из-за привлечения капиталов крупных корпораций, вроде NanoTrasen, Vitezstvi, Hephaestus.
 #-----------------------------------Инженер-----------------------------
@@ -2492,7 +2497,7 @@
       
       Ваши навыки: Базовые навыки, владение оружием, постройка сложных объектов, постройка приборов, разборка сложных объектов
       
-      Руководство к отыгрышу: У умпорцев упрощённый язык. Допускается писать просторечия или написание слов с ошибками, писать с диалектом или с говором. Все умпорцы трудолюбивы, военные очень преданы своей стране. Они бедны, но переносят это стоически. Среди них сильно укреплены узы боевого товарищества. Они недолюблювают учёных и особенно презирают всех граждан Ноократии Эранта. В случае гибели офицера, примите командование на себя.
+      Руководство к отыгрышу: У умпорцев упрощённый язык. Допускается писать просторечия или написание слов с ошибками, писать с диалектом или с говором. Все умпорцы трудолюбивы, военные очень преданы своей стране. Они бедны, но переносят это стоически. Среди них сильно укреплены узы боевого товарищества. Они недолюбливают учёных и особенно презирают всех граждан Ноократии Эранта. В случае гибели офицера, примите командование на себя.
       
       Краткий лор государства: Умпорская Федерация около трёхсот лет назад военным способом отделилась от Ноократии Эранта. Они считают, что Ноократия построена на угнетении бедных трудящихся, даже самых трудолюбивых, которым просто не повезло с природным талантом. Сами же упорцы восхваляют как раз достижения честного труда. За время своего существования Федерация пережила пару разрушительных войн с Ноократией Эранта, научный и образовательный регресс, бедность, разгул преступности и тяготы поствоенной разрухи. Тем не менее, народ умудряется жить даже в условиях полных неудач. На данный момент пик всеобщего спада пройден и начался государственный подъём. Этого удалось достичь за счёт трудолюбия граждан смены курса правительства, гуманитарной помощи от других государств, а также из-за привлечения капиталов крупных корпораций, вроде NanoTrasen, Vitezstvi, Hephaestus.
 #-----------------------------------Инженер-строитель-----------------------------
@@ -2513,7 +2518,7 @@
       
       Ваши навыки: Базовые навыки, владение оружием, постройка сложных объектов, продвинутые генераторы, разборка сложных объектов, базовый атмос
       
-      Руководство к отыгрышу: У умпорцев упрощённый язык. Допускается писать просторечия или написание слов с ошибками, писать с диалектом или с говором. Все умпорцы трудолюбивы, военные очень преданы своей стране. Они бедны, но переносят это стоически. Среди них сильно укреплены узы боевого товарищества. Они недолюблювают учёных и особенно презирают всех граждан Ноократии Эранта.
+      Руководство к отыгрышу: У умпорцев упрощённый язык. Допускается писать просторечия или написание слов с ошибками, писать с диалектом или с говором. Все умпорцы трудолюбивы, военные очень преданы своей стране. Они бедны, но переносят это стоически. Среди них сильно укреплены узы боевого товарищества. Они недолюбливают учёных и особенно презирают всех граждан Ноократии Эранта.
       
       Краткий лор государства: Умпорская Федерация около трёхсот лет назад военным способом отделилась от Ноократии Эранта. Они считают, что Ноократия построена на угнетении бедных трудящихся, даже самых трудолюбивых, которым просто не повезло с природным талантом. Сами же упорцы восхваляют как раз достижения честного труда. За время своего существования Федерация пережила пару разрушительных войн с Ноократией Эранта, научный и образовательный регресс, бедность, разгул преступности и тяготы поствоенной разрухи. Тем не менее, народ умудряется жить даже в условиях полных неудач. На данный момент пик всеобщего спада пройден и начался государственный подъём. Этого удалось достичь за счёт трудолюбия граждан смены курса правительства, гуманитарной помощи от других государств, а также из-за привлечения капиталов крупных корпораций, NanoTrasen, Vitezstvi, Hephaestus.
 #-----------------------------------Радист-----------------------------
@@ -2535,7 +2540,7 @@
       
       Ваши навыки: Базовые навыки, владение оружием, постройка сложных объектов, постройка приборов, робототехника, разборка сложных объектов
       
-      Руководство к отыгрышу: У умпорцев упрощённый язык. Допускается писать просторечия или написание слов с ошибками, писать с диалектом или с говором. Все умпорцы трудолюбивы, военные очень преданы своей стране. Они бедны, но переносят это стоически. Среди них сильно укреплены узы боевого товарищества. Они недолюблювают учёных и особенно презирают всех граждан Ноократии Эранта.
+      Руководство к отыгрышу: У умпорцев упрощённый язык. Допускается писать просторечия или написание слов с ошибками, писать с диалектом или с говором. Все умпорцы трудолюбивы, военные очень преданы своей стране. Они бедны, но переносят это стоически. Среди них сильно укреплены узы боевого товарищества. Они недолюбливают учёных и особенно презирают всех граждан Ноократии Эранта.
       
       Краткий лор государства: Умпорская Федерация около трёхсот лет назад военным способом отделилась от Ноократии Эранта. Они считают, что Ноократия построена на угнетении бедных трудящихся, даже самых трудолюбивых, которым просто не повезло с природным талантом. Сами же упорцы восхваляют как раз достижения честного труда. За время своего существования Федерация пережила пару разрушительных войн с Ноократией Эранта, научный и образовательный регресс, бедность, разгул преступности и тяготы поствоенной разрухи. Тем не менее,, народ умудряется жить даже в условиях полных неудач. На данный момент пик всеобщего спада пройден и начался государственный подъём. Этого удалось достичь за счёт трудолюбия граждан смены курса правительства, гуманитарной помощи от других государств, а также из-за привлечения капиталов крупных корпораций, вроде NanoTrasen, Vitezstvi, Hephaestus.
 #-----------------------------------Медик-----------------------------
@@ -2555,9 +2560,9 @@
       
       Вы медик Умпроской Федерации. Ваша задача - защищать жизни своих товарищей от неминуемой смерти. Лечите, реанимируйте, убивайте врагов. Всё, чтобы спасти жизни.
       
-      Ваши навыки: Базовые навыки, владение оружием, базоваая химия, вирусология, медицинское оборудование, продвинутое лечение, хирургия
+      Ваши навыки: Базовые навыки, владение оружием, базовая химия, вирусология, медицинское оборудование, продвинутое лечение, хирургия
       
-      Руководство к отыгрышу: У умпорцев упрощённый язык. Допускается писать просторечия или написание слов с ошибками, писать с диалектом или с говором. Все умпорцы трудолюбивы, военные очень преданы своей стране. Они бедны, но переносят это стоически. Среди них сильно укреплены узы боевого товарищества. Они недолюблювают учёных и особенно презирают всех граждан Ноократии Эранта.
+      Руководство к отыгрышу: У умпорцев упрощённый язык. Допускается писать просторечия или написание слов с ошибками, писать с диалектом или с говором. Все умпорцы трудолюбивы, военные очень преданы своей стране. Они бедны, но переносят это стоически. Среди них сильно укреплены узы боевого товарищества. Они недолюбливают учёных и особенно презирают всех граждан Ноократии Эранта.
       
       Краткий лор государства: Умпорская Федерация около трёхсот лет назад военным способом отделилась от Ноократии Эранта. Они считают, что Ноократия построена на угнетении бедных трудящихся, даже самых трудолюбивых, которым просто не повезло с природным талантом. Сами же упорцы восхваляют как раз достижения честного труда. За время своего существования Федерация пережила пару разрушительных войн с Ноократией Эранта, научный и образовательный регресс, бедность, разгул преступности и тяготы поствоенной разрухи. Тем не менее,, народ умудряется жить даже в условиях полных неудач. На данный момент пик всеобщего спада пройден и начался государственный подъём. Этого удалось достичь за счёт трудолюбия граждан смены курса правительства, гуманитарной помощи от других государств, а также из-за привлечения капиталов крупных корпораций, вроде NanoTrasen, Vitezstvi, Hephaestus.
 #-----------------------------------Логист-----------------------------
@@ -2579,13 +2584,13 @@
       
       Ваши навыки: Базовые навыки, владение оружием, управление шаттлом, разборка сложных объектов, готовка, барное дело, разделка туш, продвинутая ботаника
       
-      Руководство к отыгрышу: У умпорцев упрощённый язык. Допускается писать просторечия или написание слов с ошибками, писать с диалектом или с говором. Все умпорцы трудолюбивы, военные очень преданы своей стране. Они бедны, но переносят это стоически. Среди них сильно укреплены узы боевого товарищества. Они недолюблювают учёных и особенно презирают всех граждан Ноократии Эранта.
+      Руководство к отыгрышу: У умпорцев упрощённый язык. Допускается писать просторечия или написание слов с ошибками, писать с диалектом или с говором. Все умпорцы трудолюбивы, военные очень преданы своей стране. Они бедны, но переносят это стоически. Среди них сильно укреплены узы боевого товарищества. Они недолюбливают учёных и особенно презирают всех граждан Ноократии Эранта.
       
       Краткий лор государства: Умпорская Федерация около трёхсот лет назад военным способом отделилась от Ноократии Эранта. Они считают, что Ноократия построена на угнетении бедных трудящихся, даже самых трудолюбивых, которым просто не повезло с природным талантом. Сами же упорцы восхваляют как раз достижения честного труда. За время своего существования Федерация пережила пару разрушительных войн с Ноократией Эранта, научный и образовательный регресс, бедность, разгул преступности и тяготы поствоенной разрухи. Тем не менее,, народ умудряется жить даже в условиях полных неудач. На данный момент пик всеобщего спада пройден и начался государственный подъём. Этого удалось достичь за счёт трудолюбия граждан смены курса правительства, гуманитарной помощи от других государств, а также из-за привлечения капиталов крупных корпораций, вроде NanoTrasen, Vitezstvi, Hephaestus.
 #---------------------------------------------------------------Печать------------------------------------------------------------      
 - type: entity
   name: name-of-UmporRubberStamp
-  suffix: Umpor
+  suffix: Умпорский
   parent: RubberStampBaseAlt
   id: UmporRubberStamp
   components:
@@ -2602,7 +2607,7 @@
   parent: CrateBaseSecure
   id: UmporCrate
   name: name-of-UmporCrate
-  suffix: Umpor
+  suffix: Умпорский
   components:
   - type: Icon
     sprite: Victoria/Umpor/umpor_crates.rsi
@@ -2615,7 +2620,7 @@
   id: UmporCrateWeapons
   parent: UmporCrate
   name: name-of-UmporCrateWeapons
-  suffix: Umpor
+  suffix: Умпорский
   description: description-of-UmporCrateWeapons
   components:
   - type: StorageFill
@@ -2643,7 +2648,7 @@
   id: UmporCrateWeaponsShotgan
   parent: UmporCrate
   name: name-of-UmporCrateWeaponsShotgan
-  suffix: Umpor
+  suffix: Умпорский
   description: description-of-UmporCrateWeaponsShotgan
   components:
   - type: StorageFill
@@ -2659,7 +2664,7 @@
   id: UmporCrateAmmo
   parent: UmporCrate
   name: name-of-UmporCrateAmmo
-  suffix: Umpor
+  suffix: Умпорский
   description: description-of-UmporCrateAmmo
   components:
   - type: StorageFill
@@ -2693,7 +2698,7 @@
   id: UmporCrateForm
   parent: UmporCrate
   name: name-of-UmporCrateForm
-  suffix: Umpor
+  suffix: Умпорский
   description: description-of-UmporCrateForm
   components:
   - type: StorageFill
@@ -3127,7 +3132,7 @@
   id: UmporTechFab
   parent: BaseLathe
   name: name-of-UmporTechFab
-  suffix: Umpor
+  suffix: Умпорский
   description: description-of-UmporTechFab
   components:
   - type: Sprite
@@ -3239,7 +3244,7 @@
 - type: entity
   id: UmporPaperForm
   name: name-of-UmporPaperForm
-  suffix: Umpor
+  suffix: Умпорский
   parent: Paper
   components:
   - type: Paper
@@ -3294,7 +3299,7 @@
   parent: EventHumanoid
   components:
     - type: GhostRole
-      name: Потрёпаный умпорец
+      name: Потрёпанный умпорец
       description: Ваш шаттл подбили в бою, навигация дала сбой и вас отшвырнуло в район НТ. Прилетите на станцию к своим партнёрам, попросите поучиться навыкам. 
       rules: ghost-role-information-nonantagonist-rules
       raffle:

@@ -22,7 +22,7 @@ public abstract class SharedChatSystem : EntitySystem
     public const char EmotesAltPrefix = '*';
     public const char AdminPrefix = ']';
     public const char WhisperPrefix = ',';
-    public const char DefaultChannelKey = 'р'; // Corvax-Localization
+    public const string DefaultChannelKey = "aa"; // Corvax-Localization
     // Corvax-TTS-Start: Moved from Server to Shared
     public const int VoiceRange = 10; // how far voice goes in world units
     public const int WhisperClearRange = 2; // how far whisper goes while still being understandable, in world units
@@ -43,7 +43,7 @@ public abstract class SharedChatSystem : EntitySystem
     /// <summary>
     /// Cache of the keycodes for faster lookup.
     /// </summary>
-    private FrozenDictionary<char, RadioChannelPrototype> _keyCodes = default!;
+    private FrozenDictionary<string, RadioChannelPrototype> _keyCodes = default!;
 
     public override void Initialize()
     {
@@ -103,19 +103,16 @@ public abstract class SharedChatSystem : EntitySystem
         prefix = string.Empty;
         output = input;
 
-        // If the string is less than 2, then it's probably supposed to be an emote.
+        // If the string is less than 3, then it's probably supposed to be an emote.
         // No one is sending empty radio messages!
-        if (input.Length <= 2)
+        if (input.Length <= 3)
             return;
 
         if (!(input.StartsWith(RadioChannelPrefix) || input.StartsWith(RadioChannelAltPrefix)))
             return;
 
-        if (!_keyCodes.TryGetValue(char.ToLower(input[1]), out _))
-            return;
-
-        prefix = input[..2];
-        output = input[2..];
+        prefix = input[..3];
+        output = input[3..];
     }
 
     /// <summary>
@@ -151,17 +148,8 @@ public abstract class SharedChatSystem : EntitySystem
         if (!(input.StartsWith(RadioChannelPrefix) || input.StartsWith(RadioChannelAltPrefix)))
             return false;
 
-        if (input.Length < 2 || char.IsWhiteSpace(input[1]))
-        {
-            output = SanitizeMessageCapital(input[1..].TrimStart());
-            if (!quiet)
-                _popup.PopupEntity(Loc.GetString("chat-manager-no-radio-key"), source, source);
-            return true;
-        }
-
-        var channelKey = input[1];
-        channelKey = char.ToLower(channelKey);
-        output = SanitizeMessageCapital(input[2..].TrimStart());
+        string channelKey = input[1..3];
+        output = SanitizeMessageCapital(input[3..].TrimStart());
 
         if (channelKey == DefaultChannelKey)
         {

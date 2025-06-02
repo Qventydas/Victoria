@@ -46,11 +46,11 @@
               amount: 1
               doAfter: 3
               
-        - to: wallPlumbumDirectional
-          steps:
-            - material: Plumbum
-              amount: 1
-              doAfter: 2
+        # - to: wallPlumbumDirectional
+          # steps:
+            # - material: Plumbum
+              # amount: 1
+              # doAfter: 2
 
     - node: windowDirectional
       entity: WindowDirectional

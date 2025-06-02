@@ -82,6 +82,7 @@
   - PetsNT
   - KMLG
   - Vitz
+  - CDC
   
 - type: npcFaction
   id: VitzBitMrHill
@@ -100,6 +101,7 @@
   - PetsNT
   - KMLG
   - Vitz
+  - CDC
 #-----------------------------------------------СНК----------------------------------
 - type: npcFaction
   id: SNKBot
@@ -113,9 +115,11 @@
   - NoocratyBot
   - NanoTrasen
   - Petr
+  - Hound
   friendly:
   - SNKBot
   - SNK
+  - CDC
   
 - type: npcFaction
   id: SNK
@@ -129,9 +133,11 @@
   - NoocratyBot
   - NanoTrasen
   - Petr
+  - Hound
   friendly:
   - SNKBot
   - SNK
+  - CDC
 #-----------------------------------------------Петрищевцы----------------------------------
 - type: npcFaction
   id: Petr
@@ -152,6 +158,7 @@
   - Vitz
   - Mirt
   - KMLG
+  - CDC
   friendly:
   - Revolutionary
   - Petr
@@ -166,6 +173,7 @@
   - Revolutionary
   - Dragon
   - Petr
+  - CDC
   friendly:
   - Noocraty
   - NoocratyBot
@@ -190,6 +198,7 @@
   - NanoTrasen
   - PetsNT
   - Vitz
+  - CDC
   
 - type: npcFaction
   id: KMLGEnemy
@@ -206,7 +215,41 @@
   - NanoTrasen
   - PetsNT
   - Vitz
+  - Hound
+  - CDC
   friendly:
   - SNKBot
   - SNK
   - VitzBitMrHill
+#-----------------------------------------------Хаунд---------------------------------- 
+- type: npcFaction
+  id: Hound
+  hostile:
+  - SimpleHostile
+  - Xeno
+  - Zombie
+  - Dragon
+  friendly:
+  - VitzBitMrHill
+  - Noocraty
+  - NoocratyBot
+  - NanoTrasen
+  - PetsNT
+  - Vitz
+  - KMLG
+  - KMLGEnemy
+#-----------------------------------------------Конгломерат---------------------------------- 
+- type: npcFaction
+  id: CDC
+  hostile:
+  - SimpleHostile
+  - Xeno
+  - Zombie
+  - Dragon
+  - Mirt
+  - Petr
+  friendly:
+  - VitzBitMrHill
+  - Vitz
+  - KMLG
+  - KMLGEnemy
