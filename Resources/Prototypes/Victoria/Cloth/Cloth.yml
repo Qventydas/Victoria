@@ -488,7 +488,7 @@
   - type: Transform
     noRot: false
   - type: Sprite
-    sprite: Structures/Machines/uniform_printer.rsi
+    sprite: Victoria/Cloth/clothlathe.rsi
     snapCardinals: false
     layers:
     - state: icon
@@ -612,7 +612,7 @@
         - !type:OrganType
           type: Moth
 #------------------Чистая-------------------------
-#------------------Сам-------------------------
+#------------------Сама-------------------------
 - type: entity
   parent: MaterialBase
   id: SheepWoolClean
@@ -1267,3 +1267,65 @@
   cost: 1100
   category: cargoproduct-category-name-livestock
   group: market
+
+#----------------------------------Новые рецепты для принтера униформы----------------------------------
+
+- type: latheRecipe
+  id: ClothingOuterCoatDetective
+  materials:
+    VelourMaterial: 300
+  result: ClothingOuterCoatDetective
+
+- type: latheRecipe
+  id: ClothingOuterCoatDetectiveLoadoutGrey
+  materials:
+    VelourMaterial: 300
+  result: ClothingOuterCoatDetectiveLoadoutGrey
+
+- type: latheRecipe
+  id: ClothingOuterCoatJensen
+  materials:
+    VelourMaterial: 300
+  result: ClothingOuterCoatJensen
+
+- type: latheRecipe
+  id: ClothingOuterCoatExpensive
+  materials:
+    SheepWoolCleanMaterial: 400
+  result: ClothingOuterCoatExpensive
+
+- type: latheRecipe
+  id: ClothingUniformJumpsuitTailor
+  materials:
+    CottonClothMaterial: 300
+  result: ClothingUniformJumpsuitTailor
+
+- type: latheRecipe
+  id: ClothingHeadHatBeaverHat
+  materials:
+    CottonPaperClothMaterial: 100
+  result: ClothingHeadHatBeaverHat
+
+- type: latheRecipe
+  id: ClothingShoesBootsWork
+  materials:
+    VelourMaterial: 100
+  result: ClothingShoesBootsWork
+
+- type: latheRecipe
+  id: ClothingShoesBootsLaceup
+  materials:
+    NubuckMaterial: 100
+  result: ClothingShoesBootsLaceup
+
+- type: latheRecipe
+  id: ClothingBackpack
+  materials:
+    ChamoisMaterial: 200
+  result: ClothingBackpack
+
+- type: latheRecipe
+  id: ClothingBackpackSatchel
+  materials:
+    СheprakMaterial: 200
+  result: ClothingBackpackSatchel
