@@ -47,6 +47,7 @@
   - type: Tag
     tags:
     - CrystalMaterial
+    - Telecrystal
         
 - type: entity
   parent: Telecrystal

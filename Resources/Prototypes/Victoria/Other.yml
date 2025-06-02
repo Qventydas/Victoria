@@ -1,0 +1,199 @@
+#-------------------------------------------Кочующий шаттл с клонёркой-----------------------------------
+- type: entity
+  name: Качующий психолог
+  id: VisitingPsychologist
+  parent: MarkerBase
+  components:
+    - type: Sprite
+      layers:
+        - state: red
+        - sprite: Objects/Tools/appraisal-tool.rsi
+          state: icon
+    - type: RandomSpawner
+      prototypes:
+      - RandomPsychologist
+      chance: 1
+      
+- type: entity
+  id: RandomPsychologist
+  name: Качующий психолог
+  components:
+    - type: Sprite
+      sprite: Objects/Tools/appraisal-tool.rsi
+      state: icon
+    - type: RandomHumanoidSpawner
+      settings: VisitingPsychologist
+
+- type: randomHumanoidSettings
+  id: VisitingPsychologist
+  parent: EventHumanoid
+  components:
+    - type: GhostRole
+      name: Качующий психолог
+      description: Вы путешествуете с подвижной клонирующей установкой и врачом-генетиком. Помогите клонируемым пережить первый шок. 
+      rules: ghost-role-information-nonantagonist-rules
+      raffle:
+        settings: short
+    - type: Loadout
+      prototypes: [ PsychologistGear, VisitorPsychologist]
+      
+- type: preloadedGrid
+  id: ShuttleVisitGenetic
+  path: /Maps/Shuttles/ShuttleEvent/visit_shattle_genetik.yml
+  copies: 1
+
+- type: entity
+  parent: BaseUnknownShuttleRule
+  id: UnknownShuttleVisitGenetic
+  components:
+  - type: LoadMapRule
+    preloadedGrid: ShuttleVisitGenetic
+#-------------------------------------------Лорный музон в автомат-----------------------------------
+- type: jukebox
+  id: Gimn_Imperia_Mirtana
+  name: Gimn_Imperia_Mirtana
+  path:
+    path: /Audio/Lore/Gimn_Imperia_Mirtana.ogg
+    
+- type: jukebox
+  id: Gimn_Nooc
+  name: Gimn_Nooc
+  path:
+    path: /Audio/Lore/Gimn_Nooc.ogg
+
+- type: jukebox
+  id: Gimn_OPZ
+  name: Gimn_OPZ
+  path:
+    path: /Audio/Lore/Gimn_OPZ.ogg
+
+- type: jukebox
+  id: Gimn_SNK_man
+  name: Gimn_SNK_man
+  path:
+    path: /Audio/Lore/Gimn_SNK_man.ogg
+
+- type: jukebox
+  id: Gimn_SNK_wom
+  name: Gimn_SNK_wom
+  path:
+    path: /Audio/Lore/Gimn_SNK_wom.ogg
+
+- type: jukebox
+  id: Gimn_Umpor
+  name: Gimn_Umpor
+  path:
+    path: /Audio/Lore/Gimn_Umpor.ogg
+
+- type: jukebox
+  id: Gimn_USSP
+  name: Gimn_USSP
+  path:
+    path: /Audio/Lore/Gimn_USSP.ogg
+
+- type: jukebox
+  id: Irinhol_star
+  name: Irinhol_star
+  path:
+    path: /Audio/Lore/Irinhol_star.ogg
+
+- type: jukebox
+  id: Petr_Chanson
+  name: Petr_Chanson
+  path:
+    path: /Audio/Lore/Petr_Chanson.ogg
+#-------------------------------------------Запросы в карго-----------------------------------
+- type: Tag
+  id: FuseMine
+
+- type: cargoBounty
+  id: FuseMine
+  reward: 5000
+  description: bounty-description-fusemine
+  entries:
+  - name: bounty-item-fusemine
+    amount: 10
+    whitelist:
+      tags:
+      - FuseMine
+
+- type: Tag
+  id: Plastid
+      
+- type: cargoBounty
+  id: Plastid
+  reward: 2000
+  description: bounty-description-plastid
+  entries:
+  - name: bounty-item-plastid
+    amount: 15
+    whitelist:
+      tags:
+      - Plastid
+
+- type: Tag
+  id: SiPlazCircuitBord
+
+- type: cargoBounty
+  id: SiPlazCircuitBord
+  reward: 4000
+  description: bounty-description-siplazcircuitbord
+  entries:
+  - name: bounty-item-siplazcircuitbord
+    amount: 10
+    whitelist:
+      tags:
+      - SiPlazCircuitBord
+
+- type: Tag
+  id: Gethinax
+
+- type: cargoBounty
+  id: Gethinax
+  reward: 3000
+  description: bounty-description-gethinax
+  entries:
+  - name: bounty-item-gethinax
+    amount: 1
+    whitelist:
+      tags:
+      - Gethinax
+
+- type: Tag
+  id: SiCrystall
+      
+- type: cargoBounty
+  id: SiCrystall
+  reward: 2000
+  description: bounty-description-sicrystall
+  entries:
+  - name: bounty-item-sicrystall
+    amount: 1
+    whitelist:
+      tags:
+      - SiCrystall
+
+- type: Tag
+  id: Telecrystal
+
+- type: cargoBounty
+  id: Telecrystal
+  reward: 6000
+  description: bounty-description-telecrystal
+  entries:
+  - name: bounty-item-telecrystal
+    amount: 3
+    whitelist:
+      tags:
+      - Telecrystal
+      
+- type: cargoBounty
+  id: BSModule
+  reward: 6000
+  description: bounty-description-bsmodule
+  entries:
+  - name: bounty-item-bsmodule
+    amount: 4
+    whitelist:
+      tags:
+      - BSModule

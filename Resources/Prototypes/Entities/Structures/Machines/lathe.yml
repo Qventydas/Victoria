@@ -451,6 +451,9 @@
     - VacuumMachineMachineCircuitboard
     - LithographMachineCircuitboard
     dynamicRecipes:
+      - ReliableSubstationMachineCircuitboard
+      - ReliableSMESMachineCircuitboard
+      - ReliableAPCElectronics
       - MachineCircuitboardCosmScanner
       - MachineCircuitboardCosmBeacon
       - MachineCircuitboardCosmAccum
