@@ -1094,6 +1094,18 @@
       - ClothingUniformJumpsuitRDClassical
       - ClothingUniformJumpskirtRDClassical
       # Corvax-Clothing-End
+      # Victoria-Clothing-Start
+      - ClothingOuterCoatDetective
+      - ClothingOuterCoatDetectiveLoadoutGrey
+      - ClothingUniformJumpsuitTailor
+      - ClothingHeadHatBeaverHat
+      - ClothingOuterCoatJensen
+      - ClothingOuterCoatExpensive
+      - ClothingShoesBootsWork
+      - ClothingShoesBootsLaceup
+      - ClothingBackpack
+      - ClothingBackpackSatchel
+      # Victoria-Clothing-End
   - type: EmagLatheRecipes
     emagStaticRecipes:
       - ClothingHeadHatCentcomcap
