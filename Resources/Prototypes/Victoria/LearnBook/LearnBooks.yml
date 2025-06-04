@@ -935,7 +935,7 @@
 - type: entity
   id: CrateServiceLearnBook
   parent: CrateBaseWeldable
-  name: ящик обучающих пособий
+  name: ящик обучающих книг
   description: Ящик, содержащий книги, которые могут Вас обучить чему-то новому.
   components:
     - type: StorageFill
