@@ -110,7 +110,7 @@
     mediumVoltageNode: output
   - type: RandomChangeTime
     time: 3960
-    prob: 0.45
+    prob: 0.2
     entity: DeffectSubstation
 
 # Compact Wall Substation Base

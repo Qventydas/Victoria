@@ -92,7 +92,7 @@
     - type: WiredNetworkConnection
     - type: RandomChangeTime
       time: 5280
-      prob: 0.4
+      prob: 0.15
       entity: DeffectSMES
 
 # SMES' in use
