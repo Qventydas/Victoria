@@ -54,6 +54,7 @@
             ServiceWorker: [ 0, 0 ]
             Psychologist: [ 0, 0 ]
             Borg: [ 0, 0 ]
+            Tailor: [ 1, 1 ]
             #teacher
             CargoTeacher: [ 0, 1 ]
             EngTeacher: [ 0, 1 ]
