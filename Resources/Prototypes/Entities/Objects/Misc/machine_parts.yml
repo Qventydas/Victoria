@@ -80,6 +80,7 @@
     - type: Stack
       stackType: IndustrialCapacitor
       count: 1
+      max: 10
 
 - type: stack
   id: IndustrialCapacitor
@@ -100,6 +101,7 @@
     - type: Stack
       stackType: IndustrialManipulator
       count: 1
+      max: 10
 
 - type: stack
   id: IndustrialManipulator
@@ -120,6 +122,7 @@
     - type: Stack
       stackType: IndustrialMatterBin
       stock: 1
+      max: 10
 
 - type: stack
   id: IndustrialMatterBin
