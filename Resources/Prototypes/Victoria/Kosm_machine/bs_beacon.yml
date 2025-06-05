@@ -4,7 +4,7 @@
 
 - type: stack
   id: MachineCircuitboardCosmBeaconStack
-  name: плата блюспейс маяка
+  name: блюспейс маяк (машинная плата)
   icon: { sprite: Objects/Misc/module.rsi, state: science }
   spawn: MachineCircuitboardCosmBeacon
   maxCount: 1
@@ -12,14 +12,14 @@
 - type: material
   id: MachineCircuitboardCosmBeaconMaterial
   stackEntity: MachineCircuitboardCosmBeacon
-  name: плата блюспейс маяка
+  name: блюспейс маяк (машинная плата)
   icon: { sprite: Objects/Misc/module.rsi, state: science }
   price: 1 
 
 - type: entity
   id: MachineCircuitboardCosmBeacon
   parent: CrystalOreBase
-  name: плата блюспейс маяка
+  name: блюспейс маяк (машинная плата)
   description: Электронная плата для системы управления космециевым маяком.
   suffix: Космециевая машина
   components:

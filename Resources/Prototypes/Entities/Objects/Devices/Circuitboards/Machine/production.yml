@@ -20,7 +20,7 @@
   - type: MachineBoard
     prototype: AutolatheHyperConvection
     stackRequirements:
-      MatterBin: 3
+      IndustrialMatterBin: 3
       Glass: 1
     tagRequirements:
       Igniter:
@@ -52,7 +52,7 @@
   - type: MachineBoard
     prototype: ProtolatheHyperConvection
     stackRequirements:
-      MatterBin: 2
+      IndustrialMatterBin: 2
     tagRequirements:
       GlassBeaker:
         amount: 2
@@ -153,7 +153,7 @@
   - type: MachineBoard
     prototype: CircuitImprinterHyperConvection
     stackRequirements:
-      MatterBin: 2
+      IndustrialMatterBin: 2
     tagRequirements:
       GlassBeaker:
         amount: 2
@@ -401,8 +401,8 @@
   - type: MachineBoard
     prototype: GasThermoMachineHellfireFreezer
     stackRequirements:
-      MatterBin: 2
-      Capacitor: 2
+      IndustrialMatterBin: 2
+      IndustrialCapacitor: 2
       Plasma: 1
   - type: Construction
     deconstructionTarget: null
@@ -420,8 +420,8 @@
   - type: MachineBoard
     prototype: GasThermoMachineHellfireHeater
     stackRequirements:
-      MatterBin: 2
-      Capacitor: 2
+      IndustrialMatterBin: 2
+      IndustrialCapacitor: 2
       Plasma: 1
   - type: Construction
     graph: ThermomachineBoard
@@ -738,7 +738,26 @@
   - type: MachineBoard
     prototype: TurboItemRecharger
     stackRequirements:
-      Capacitor: 2
+      IndustrialCapacitor: 2
+      CableMV: 5
+  - type: PhysicalComposition
+    materialComposition:
+      Steel: 30
+      Plastic: 30
+
+- type: entity
+  id: TurboBatteryRechargerCircuitboard
+  parent: BaseMachineCircuitboard
+  name: турбозарядник батарей (машинная плата)
+  description: Машинная печатная плата для турбозарядника батарей
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: charger_APC
+  - type: MachineBoard
+    prototype: TurboBatteryRecharger
+    stackRequirements:
+      IndustrialCapacitor: 2
       CableMV: 5
   - type: PhysicalComposition
     materialComposition:
@@ -994,20 +1013,9 @@
   - type: MachineBoard
     prototype: OreProcessorIndustrial
     stackRequirements:
-      MatterBin: 1
-      Manipulator: 3
+      IndustrialMatterBin: 1
+      IndustrialManipulator: 3
       Glass: 1
-
-- type: entity
-  id: SheetifierMachineCircuitboard
-  parent: BaseMachineCircuitboard
-  name: sheet-meister 2000 machine board
-  components:
-  - type: MachineBoard
-    prototype: Sheetifier
-    stackRequirements:
-      MatterBin: 1
-      Manipulator: 1
 
 - type: entity
   id: MicrowaveMachineCircuitboard
@@ -1050,7 +1058,7 @@
     - type: MachineBoard
       prototype: FatExtractor
       stackRequirements:
-        Manipulator: 1
+        IndustrialManipulator: 1
       componentRequirements:
         Utensil:
           amount: 1
@@ -1065,8 +1073,8 @@
   - type: MachineBoard
     prototype: MachineFlatpacker
     stackRequirements:
-      Manipulator: 2
-      MatterBin: 1
+      IndustrialManipulator: 2
+      IndustrialMatterBin: 1
       Steel: 1
       BSModuleStack: 1
 
@@ -1261,8 +1269,8 @@
   - type: MachineBoard
     prototype: ReagentGrinderIndustrial
     stackRequirements:
-      MatterBin: 1
-      Manipulator: 3
+      IndustrialMatterBin: 1
+      IndustrialManipulator: 3
       Glass: 1
 
 - type: entity

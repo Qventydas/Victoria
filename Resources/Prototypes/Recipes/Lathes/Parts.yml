@@ -8,6 +8,15 @@
     Steel: 300
     Plastic: 200
 
+- type: latheRecipe
+  abstract: true
+  id: IndustrialPartRecipe
+  category: Parts
+  completetime: 3
+  materials:
+    Steel: 400
+    Plastic: 300
+
 # Stackable part with no function
 - type: latheRecipe
   abstract: true
@@ -17,6 +26,16 @@
   materials:
     Steel: 50
     Plastic: 50
+
+- type: latheRecipe
+  abstract: true
+  parent: IndustrialPartRecipe
+  id: IndustrialStockPartRecipe
+  completetime: 2
+  materials:
+    Steel: 70
+    Plastic: 70
+    Gold: 50
 
 - type: latheRecipe
   parent: BaseStockPartRecipe
@@ -32,3 +51,18 @@
   parent: BaseStockPartRecipe
   id: MicroManipulatorStockPart
   result: MicroManipulatorStockPart
+
+- type: latheRecipe
+  parent: IndustrialStockPartRecipe
+  id: IndustrialCapacitorStockPart
+  result: IndustrialCapacitorStockPart
+
+- type: latheRecipe
+  parent: IndustrialStockPartRecipe
+  id: IndustrialManipulatorStockPart
+  result: IndustrialManipulatorStockPart
+
+- type: latheRecipe
+  parent: IndustrialStockPartRecipe
+  id: IndustrialMatterBinStockPart
+  result: IndustrialMatterBinStockPart

@@ -55,6 +55,9 @@
       "name": "capacitor"
     },
     {
+      "name": "industrial_capacitor"
+    },
+    {
       "name": "card_reader"
     },
     {
@@ -91,10 +94,16 @@
       "name": "matter_bin"
     },
     {
+      "name": "industrial_matter_bin"
+    },
+    {
       "name": "micro_laser"
     },
     {
       "name": "micro_mani"
+    },
+    {
+      "name": "industrial_mani"
     },
     {
       "name": "nano_mani"

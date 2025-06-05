@@ -296,7 +296,12 @@
 - type: latheRecipe
   parent: BaseRecipeFiberglass_2
   id: TurboItemRechargerCircuitboard
-  result: TurboItemRechargerCircuitboard  
+  result: TurboItemRechargerCircuitboard
+
+- type: latheRecipe
+  parent: BaseRecipeFiberglass_2
+  id: TurboBatteryRechargerCircuitboard
+  result: TurboBatteryRechargerCircuitboard 
   
 - type: latheRecipe
   parent: BaseRecipeFiberglass_1
@@ -686,11 +691,6 @@
   result: FlatpackerMachineCircuitboard
 
 - type: latheRecipe
-  parent: BaseRecipeFiberglass_7
-  id: SheetifierMachineCircuitboard
-  result: SheetifierMachineCircuitboard
-
-- type: latheRecipe
   parent: BaseRecipeFiberglass_4
   id: SurveillanceCameraRouterCircuitboard
   result: SurveillanceCameraRouterCircuitboard
@@ -875,3 +875,18 @@
   parent: BaseRecipeSiPlaz_1
   id: MachineCircuitboardCosmScanner
   result: MachineCircuitboardCosmScanner
+
+- type: latheRecipe
+  parent: BaseRecipePlazСeramics_2
+  id: SecurityTechFabCircuitboard
+  result: SecurityTechFabCircuitboard
+
+- type: latheRecipe
+  parent: BaseRecipePlazСeramics_2
+  id: AmmoTechFabCircuitboard
+  result: AmmoTechFabCircuitboard
+
+- type: latheRecipe
+  parent: BaseRecipeSapphire_3
+  id: MedicalTechFabCircuitboard
+  result: MedicalTechFabCircuitboard

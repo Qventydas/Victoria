@@ -154,6 +154,8 @@
   recipeUnlocks:
   - AdvMopItem
   - MegaSprayBottle
+  - TrashBagBlue
+  - BlueSpaceLightReplacer
 
 - type: technology
   id: HONKMech
