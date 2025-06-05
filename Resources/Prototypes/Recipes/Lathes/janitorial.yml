@@ -104,3 +104,21 @@
   materials:
     Steel: 250
     Glass: 1000
+
+- type: latheRecipe
+  id: TrashBagBlue
+  result: TrashBagBlue
+  completetime: 3
+  materials:
+    Steel: 1500
+    Silver: 250
+    Plasma: 1000
+
+- type: latheRecipe
+  id: BlueSpaceLightReplacer
+  result: BlueSpaceLightReplacer
+  completetime: 3
+  materials:
+    Steel: 500
+    Glass: 1000
+    Plasma: 500

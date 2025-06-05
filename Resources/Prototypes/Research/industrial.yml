@@ -14,6 +14,9 @@
   - MineralScannerEmpty
   - OreProcessorIndustrialMachineCircuitboard
   - ClothingMaskWeldingGas
+  - SeismicCharge
+  - Fulton
+  - FultonBeacon
 
 - type: technology
   id: SpaceScanning
@@ -41,6 +44,21 @@
   recipeUnlocks:
   - PowerCellHigh
   - TurboItemRechargerCircuitboard
+  - TurboBatteryRechargerCircuitboard
+
+- type: technology
+  id: IndustrialStockParts
+  name: Промышленные компоненты
+  icon:
+    sprite: Objects/Misc/stock_parts.rsi
+    state: industrial_capacitor
+  discipline: Industrial
+  tier: 1
+  cost: 7500
+  recipeUnlocks:
+    - IndustrialCapacitorStockPart
+    - IndustrialManipulatorStockPart
+    - IndustrialMatterBinStockPart
 
 - type: technology
   id: MechanicalCompression
@@ -67,7 +85,20 @@
   - AutolatheHyperConvectionMachineCircuitboard
   - ProtolatheHyperConvectionMachineCircuitboard
   - CircuitImprinterHyperConvectionMachineCircuitboard
-  - SheetifierMachineCircuitboard
+
+- type: technology
+  id: TechnicalFabricators
+  name: Технические фабрикаторы
+  icon: 
+    sprite: Structures/Machines/techfab.rsi
+    state: techfab_research_icon
+  discipline: Industrial
+  tier: 1
+  cost: 10000
+  recipeUnlocks:
+  - SecurityTechFabCircuitboard
+  - AmmoTechFabCircuitboard
+  - MedicalTechFabCircuitboard
 
 - type: technology
   id: PowerGeneration
@@ -197,6 +228,7 @@
   - ClothingBackpackHolding
   - ClothingBackpackSatchelHolding
   - ClothingBackpackDuffelHolding
+  - ClothingBeltBlueSpace
 
 - type: technology
   id: PortableFission

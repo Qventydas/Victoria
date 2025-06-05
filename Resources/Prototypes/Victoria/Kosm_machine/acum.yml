@@ -215,7 +215,7 @@
 - type: entity
   id: MachineCircuitboardCosmMachine
   parent: BaseMachineCircuitboard
-  name: плата базы космециевой машины
+  name: база космециевой машины (машинная плата)
   description: Электронная плата для системы управления космециевой машины.
   suffix: Космециевая машина
   components:
@@ -238,7 +238,7 @@
 
 - type: stack
   id: MachineCircuitboardCosmAccumStack
-  name: плата космециевого аккумулятора
+  name: космециевый аккумулятор (машинная плата)
   icon: { sprite: Objects/Misc/module.rsi, state: science }
   spawn: MachineCircuitboardCosmAccum
   maxCount: 1
@@ -246,14 +246,14 @@
 - type: material
   id: MachineCircuitboardCosmAccumMaterial
   stackEntity: MachineCircuitboardCosmAccum
-  name: плата космециевого аккумулятора
+  name: космециевый аккумулятор (машинная плата)
   icon: { sprite: Objects/Misc/module.rsi, state: science }
   price: 1 
 
 - type: entity
   id: MachineCircuitboardCosmAccum
   parent: CrystalOreBase
-  name: плата космециевого аккумулятора
+  name: космециевый аккумулятор (машинная плата)
   description: Электронная плата для системы управления космециевым аккумулятором.
   suffix: Космециевая машина
   components:
@@ -282,7 +282,7 @@
     state: acum
   discipline: Experimental
   tier: 1
-  cost: 7000
+  cost: 10000
   recipeUnlocks:
   - MachineCircuitboardCosmScanner
   - MachineCircuitboardCosmBeacon
