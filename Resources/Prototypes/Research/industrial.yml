@@ -48,7 +48,7 @@
 
 - type: technology
   id: IndustrialStockParts
-  name: Промышленные компоненты
+  name: research-technology-industrial-stock-parts
   icon:
     sprite: Objects/Misc/stock_parts.rsi
     state: industrial_capacitor
@@ -88,7 +88,7 @@
 
 - type: technology
   id: TechnicalFabricators
-  name: Технические фабрикаторы
+  name: research-technology-technical-fabricators
   icon: 
     sprite: Structures/Machines/techfab.rsi
     state: techfab_research_icon
