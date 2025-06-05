@@ -79,8 +79,6 @@
         - CapacitorStockPart
     - type: Stack
       stackType: IndustrialCapacitor
-      count: 1
-      max: 10
 
 - type: stack
   id: IndustrialCapacitor
@@ -100,8 +98,6 @@
       state: industrial_mani
     - type: Stack
       stackType: IndustrialManipulator
-      count: 1
-      max: 10
 
 - type: stack
   id: IndustrialManipulator
@@ -121,8 +117,6 @@
       state: industrial_matter_bin
     - type: Stack
       stackType: IndustrialMatterBin
-      stock: 1
-      max: 10
 
 - type: stack
   id: IndustrialMatterBin
