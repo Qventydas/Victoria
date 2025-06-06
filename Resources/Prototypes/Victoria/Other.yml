@@ -208,7 +208,6 @@
     whitelist:
       tags:
       - Mop
-
 - type: cargoBounty
   id: Pickaxe
   idPrefix: GF
