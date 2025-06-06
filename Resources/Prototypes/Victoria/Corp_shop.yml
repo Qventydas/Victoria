@@ -342,7 +342,7 @@
 
 - type: stack
   id: GDChip_stack
-  name: чипп лояльности ГасДеф
+  name: чип лояльности ГасДеф
   icon: { sprite: /Textures/Victoria/Corp_chips/chips.rsi, state: gd_chip }
   spawn: GDChip
   maxCount: 20
