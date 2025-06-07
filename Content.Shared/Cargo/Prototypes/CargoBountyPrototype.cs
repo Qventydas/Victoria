@@ -26,7 +26,7 @@ public sealed partial class CargoBountyPrototype : IPrototype
     /// Какие плюшки заспавнить при выполнении запроса?
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite), DataField("giftType", customTypeSerializer:typeof(PrototypeIdSerializer<StackPrototype>))]
-    public string GiftType = string.Empty;
+    public string GiftType = "Credit";
     /// <summary>
     /// Кол-во плюшек
     /// </summary>
@@ -36,7 +36,7 @@ public sealed partial class CargoBountyPrototype : IPrototype
     /// текст в лабеле в консоли
     /// </summary>
     [DataField("giftText",required: false)]
-    public string GiftText = "Credit";
+    public string GiftText = string.Empty;
     /// <summary>
     /// A description for flava purposes.
     /// </summary>
