@@ -36,7 +36,7 @@ public sealed partial class CargoBountyPrototype : IPrototype
     /// текст в лабеле в консоли
     /// </summary>
     [DataField("giftText",required: false)]
-    public string GiftText = string.Empty;
+    public string GiftText = "Credit";
     /// <summary>
     /// A description for flava purposes.
     /// </summary>
