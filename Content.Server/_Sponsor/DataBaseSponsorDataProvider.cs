@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using Content.Server.Database;
 using Content.SponsorImplementations.Server;
+using Content.SponsorImplementations.Shared;
 using Robust.Shared.Network;
 
 namespace Content.Server._Sponsor;

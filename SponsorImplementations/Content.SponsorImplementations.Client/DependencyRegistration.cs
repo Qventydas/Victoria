@@ -7,6 +7,8 @@ internal static class DependencyRegistration
 {
     public static void Register(IDependencyCollection dependencies)
     {
-        dependencies.Register<ISharedSponsorsManager, ClientSponsorManager>();
+        var clientSponsorManager = new ClientSponsorManager();
+        dependencies.RegisterInstance<ISharedSponsorsManager>(clientSponsorManager);
+        dependencies.RegisterInstance<ISponsorUpdateInvoker>(clientSponsorManager);
     }
 }

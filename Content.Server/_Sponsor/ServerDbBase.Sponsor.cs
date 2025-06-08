@@ -2,6 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Content.SponsorImplementations.Server;
+using Content.SponsorImplementations.Shared;
 using Microsoft.EntityFrameworkCore;
 using Robust.Shared.Network;
 
@@ -9,20 +10,20 @@ namespace Content.Server.Database;
 
 public partial interface IServerDbManager
 {
-    public Task<ISponsorData?> GetSponsorData(NetUserId netUserId, CancellationToken cancel = default);
-    public Task<List<ISponsorData>> GetSponsorData(CancellationToken cancel = default);
+    public Task<SponsorData?> GetSponsorData(NetUserId netUserId, CancellationToken cancel = default);
+    public Task<List<SponsorData>> GetSponsorData(CancellationToken cancel = default);
     public Task SetSponsordata(NetUserId netUserId, ISponsorData? sponsorData, CancellationToken cancel = default);
 }
 
 public partial class ServerDbManager
 {
-    public Task<ISponsorData?> GetSponsorData(NetUserId netUserId, CancellationToken cancel = default)
+    public Task<SponsorData?> GetSponsorData(NetUserId netUserId, CancellationToken cancel = default)
     {
         DbReadOpsMetric.Inc();
         return RunDbCommand(() => _db.GetSponsorData(netUserId, cancel));
     }
 
-    public Task<List<ISponsorData>> GetSponsorData(CancellationToken cancel = default)
+    public Task<List<SponsorData>> GetSponsorData(CancellationToken cancel = default)
     {
         DbReadOpsMetric.Inc();
         return RunDbCommand(() => _db.GetSponsorData(cancel));
@@ -37,7 +38,7 @@ public partial class ServerDbManager
 
 public partial class ServerDbBase
 {
-    public async Task<ISponsorData?> GetSponsorData(NetUserId netUserId, CancellationToken cancel = default)
+    public async Task<SponsorData?> GetSponsorData(NetUserId netUserId, CancellationToken cancel = default)
     {
         await using var db = await GetDb(cancel);
 
@@ -49,7 +50,7 @@ public partial class ServerDbBase
 
         return new SponsorData()
         {
-            Color = Color.FromHex(data.Color),
+            Color = ColorHelper.TryParse(data),
             Guid = netUserId,
             ExtraCharSlots = data.ExtraCharSlots,
             ServerPriorityJoin = data.ServerPriorityJoin,
@@ -60,15 +61,15 @@ public partial class ServerDbBase
         };
     }
 
-    public async Task<List<ISponsorData>> GetSponsorData(CancellationToken cancel = default)
+    public async Task<List<SponsorData>> GetSponsorData(CancellationToken cancel = default)
     {
         await using var db = await GetDb(cancel);
 
         var data = db.DbContext.SponsorsList;
 
-        return data.Select(sponsorDataRaw => (ISponsorData) new SponsorData()
+        return data.Select(sponsorDataRaw => new SponsorData()
         {
-            Color = Color.FromHex(sponsorDataRaw.Color, null),
+            Color = ColorHelper.TryParse(sponsorDataRaw),
             Guid = sponsorDataRaw.PlayerUserId,
             ExtraCharSlots = sponsorDataRaw.ExtraCharSlots,
             ServerPriorityJoin = sponsorDataRaw.ServerPriorityJoin,
@@ -117,5 +118,21 @@ public partial class ServerDbBase
         }));
 
         await db.DbContext.SaveChangesAsync(cancel);
+    }
+}
+
+
+public static class ColorHelper
+{
+    public static Color? TryParse(ServerDbContext.SponsorDataRaw data)
+    {
+        Color? trueColor = null;
+
+        if (data.Color != null && Color.TryParse(data.Color, out var parsedColor))
+        {
+            trueColor = parsedColor;
+        }
+
+        return trueColor;
     }
 }

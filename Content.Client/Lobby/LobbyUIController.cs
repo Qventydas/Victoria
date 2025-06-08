@@ -6,6 +6,7 @@ using Content.Client.Inventory;
 using Content.Client.Lobby.UI;
 using Content.Client.Players.PlayTimeTracking;
 using Content.Client.Station;
+using Content.Corvax.Interfaces.Shared;
 using Content.Shared.CCVar;
 using Content.Shared.Clothing;
 using Content.Shared.GameTicking;
@@ -49,6 +50,7 @@ public sealed partial class LobbyUIController : UIController, IOnStateEntered<Lo
     private CharacterSetupGui? _characterSetup;
     private HumanoidProfileEditor? _profileEditor;
     private CharacterSetupGuiSavePanel? _savePanel;
+    private ISharedSponsorsManager? _sponsors; // Sponsor think
 
     /// <summary>
     /// This is the characher preview panel in the chat. This should only update if their character updates.
@@ -266,6 +268,8 @@ public sealed partial class LobbyUIController : UIController, IOnStateEntered<Lo
             return (_characterSetup, _profileEditor);
         }
 
+        IoCManager.Instance!.TryResolveType(out _sponsors);
+
         _profileEditor = new HumanoidProfileEditor(
             _preferencesManager,
             _configurationManager,
@@ -276,7 +280,8 @@ public sealed partial class LobbyUIController : UIController, IOnStateEntered<Lo
             _prototypeManager,
             _resourceCache,
             _requirements,
-            _markings);
+            _markings,
+            _sponsors); //Sponsor think
 
         _profileEditor.OnOpenGuidebook += _guide.OpenHelp;
 

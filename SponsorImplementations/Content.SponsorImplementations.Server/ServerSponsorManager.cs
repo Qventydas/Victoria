@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using Content.Corvax.Interfaces.Shared;
+using Content.SponsorImplementations.Shared;
 using Content.SponsorImplementations.Shared.NetMessages;
 using Robust.Server.Player;
 using Robust.Shared.IoC;

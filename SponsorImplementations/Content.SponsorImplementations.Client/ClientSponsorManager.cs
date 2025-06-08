@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using Content.Corvax.Interfaces.Shared;
 using Content.SponsorImplementations.Shared.NetMessages;
+using Robust.Client.UserInterface;
 using Robust.Shared.IoC;
 using Robust.Shared.Log;
 using Robust.Shared.Maths;
@@ -8,9 +9,11 @@ using Robust.Shared.Network;
 
 namespace Content.SponsorImplementations.Client;
 
-internal sealed class ClientSponsorManager : ISharedSponsorsManager
+internal sealed class ClientSponsorManager : ISharedSponsorsManager, ISponsorUpdateInvoker
 {
     [Dependency] private readonly INetManager _netManager = default!;
+
+    public Action? OnSponsorInfoUpdated { get; set; }
 
     private List<string> _clientPrototypes = new();
     private ISawmill _logger = default!;
@@ -28,6 +31,8 @@ internal sealed class ClientSponsorManager : ISharedSponsorsManager
     {
         _logger.Info($"Received Sponsor Info. Count: {message.Prototypes.Count}");
         _clientPrototypes = message.Prototypes;
+
+        OnSponsorInfoUpdated?.Invoke();
     }
 
     public List<string> GetClientPrototypes()
@@ -54,4 +59,9 @@ internal sealed class ClientSponsorManager : ISharedSponsorsManager
     {
         throw new NotImplementedException();
     }
+}
+
+public interface ISponsorUpdateInvoker
+{
+    public Action? OnSponsorInfoUpdated {get; set;}
 }

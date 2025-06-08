@@ -5,18 +5,21 @@ using Content.Shared.Corvax.TTS;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Preferences.Loadouts;
+using Content.Shared.Traits;
 using Content.SponsorImplementations.Server;
+using Content.SponsorImplementations.Shared;
 using Robust.Server.Player;
 using Robust.Shared.Console;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server._Sponsor;
 
-[AdminCommand(AdminFlags.Admin)]
+[AdminCommand(AdminFlags.Host)]
 public sealed class AddSponsorCommand: IConsoleCommand
 {
     [Dependency] private readonly IPlayerManager _playerManager = default!;
-    [Dependency] private readonly ISponsorRecordProvider _sponsorRecordProvider = default!;
     [Dependency] private readonly IPlayerLocator _locator = default!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
     public string Command => "setsponsor";
     public string Description => "Adds sponsor to the server";
@@ -24,6 +27,13 @@ public sealed class AddSponsorCommand: IConsoleCommand
 
     public async void Execute(IConsoleShell shell, string arg, string[] args)
     {
+        if (IoCManager.Instance == null ||
+            !IoCManager.Instance.TryResolveType(out ISponsorRecordProvider? _sponsorRecordProvider))
+        {
+            shell.WriteError("ISponsorRecordProvider not found");
+            return;
+        }
+
         if (args.Length < 4)
         {
             shell.WriteLine(Help);
@@ -88,6 +98,12 @@ public sealed class AddSponsorCommand: IConsoleCommand
 
             while (argsQueue.TryDequeue(out result))
             {
+                if (_prototypeManager.TryIndex<SponsorGroupPrototype>(result, out var prototype))
+                {
+                    prototypes.AddRange(prototype.Prototypes);
+                    continue;
+                }
+
                 prototypes.Add(result);
             }
         }
@@ -149,21 +165,38 @@ public sealed class AddSponsorCommand: IConsoleCommand
 
     private static IEnumerable<CompletionOption> GetOptions()
     {
-        return
-        [
-            ..CompletionHelper.PrototypeIDs<SpeciesPrototype>(),
-            ..CompletionHelper.PrototypeIDs<LoadoutPrototype>(),
-            ..CompletionHelper.PrototypeIDs<MarkingPrototype>(),
-            ..CompletionHelper.PrototypeIDs<TTSVoicePrototype>(),
-        ];
+        return CompletionPrototypeFactory.Instance
+            .With<SponsorGroupPrototype>()
+            .With<SpeciesPrototype>()
+            .With<LoadoutPrototype>()
+            .With<MarkingPrototype>()
+            .With<TraitPrototype>()
+            .With<TTSVoicePrototype>()
+            .Build();
     }
 }
 
-[AdminCommand(AdminFlags.Admin)]
+public sealed class CompletionPrototypeFactory
+{
+    private readonly List<CompletionOption> _options = [];
+
+    public static CompletionPrototypeFactory Instance => new();
+    public CompletionPrototypeFactory With<T>() where T: class, IPrototype
+    {
+        _options.AddRange(CompletionHelper.PrototypeIDs<T>());
+        return this;
+    }
+
+    public IEnumerable<CompletionOption> Build()
+    {
+        return _options;
+    }
+}
+
+[AdminCommand(AdminFlags.Host)]
 public sealed class ClearSponsorCommand: IConsoleCommand
 {
     [Dependency] private readonly IPlayerManager _playerManager = default!;
-    [Dependency] private readonly ISponsorRecordProvider _sponsorRecordProvider = default!;
     [Dependency] private readonly IPlayerLocator _locator = default!;
 
     public string Command => "clearsponsor";
@@ -172,6 +205,13 @@ public sealed class ClearSponsorCommand: IConsoleCommand
 
     public async void Execute(IConsoleShell shell, string arg, string[] args)
     {
+        if (IoCManager.Instance == null ||
+            !IoCManager.Instance.TryResolveType(out ISponsorRecordProvider? _sponsorRecordProvider))
+        {
+            shell.WriteError("ISponsorRecordProvider not found");
+            return;
+        }
+
         if (args.Length < 1)
         {
             shell.WriteLine(Help);
@@ -197,6 +237,69 @@ public sealed class ClearSponsorCommand: IConsoleCommand
         {
             var options = _playerManager.Sessions.Select(c => c.Name).OrderBy(c => c).ToArray();
             return CompletionResult.FromHintOptions(options, "player ckey");
+        }
+
+        return CompletionResult.Empty;
+    }
+}
+
+
+[AdminCommand(AdminFlags.Host)]
+public sealed class SetSponsorGroupCommand: IConsoleCommand
+{
+    [Dependency] private readonly IPlayerManager _playerManager = default!;
+    [Dependency] private readonly IPlayerLocator _locator = default!;
+    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+
+    public string Command => "setsponsorgroup";
+    public string Description => "clear sponsor from the server";
+    public string Help => $"Usage: {Command} <target> <group>";
+
+    public async void Execute(IConsoleShell shell, string arg, string[] args)
+    {
+        if (IoCManager.Instance == null ||
+            !IoCManager.Instance.TryResolveType(out ISponsorRecordProvider? _sponsorRecordProvider))
+        {
+            shell.WriteError("ISponsorRecordProvider not found");
+            return;
+        }
+
+        if (args.Length < 2)
+        {
+            shell.WriteLine(Help);
+            return;
+        }
+
+        var located = await _locator.LookupIdByNameOrIdAsync(args[0]);
+
+        if (located == null)
+        {
+            shell.WriteError("Could not locate player");
+            return;
+        }
+
+        if (!_prototypeManager.TryIndex<SponsorGroupPrototype>(args[1], out var prototype))
+        {
+            shell.WriteError("Could not find prototype");
+            return;
+        }
+
+        await _sponsorRecordProvider.GetSponsorDataProvider<DataBaseSponsorDataProvider>()
+            .SetSponsorInfo(located.UserId, prototype);
+        _sponsorRecordProvider.SendSponsorDataToClient(located.UserId);
+    }
+
+    public CompletionResult GetCompletion(IConsoleShell shell, string[] args)
+    {
+        if (args.Length == 1)
+        {
+            var options = _playerManager.Sessions.Select(c => c.Name).OrderBy(c => c).ToArray();
+            return CompletionResult.FromHintOptions(options, "player ckey");
+        }
+
+        if (args.Length == 2)
+        {
+            return CompletionResult.FromHintOptions(CompletionHelper.PrototypeIDs<SponsorGroupPrototype>(), "group prototype");
         }
 
         return CompletionResult.Empty;
