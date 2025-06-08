@@ -13,7 +13,7 @@ internal sealed class ClientSponsorManager : ISharedSponsorsManager, ISponsorUpd
 {
     [Dependency] private readonly INetManager _netManager = default!;
 
-    public Action? OnSponsorInfoUpdated { get; set; }
+    public Action<List<string>>? OnSponsorInfoUpdated { get; set; }
 
     private List<string> _clientPrototypes = new();
     private ISawmill _logger = default!;
@@ -32,7 +32,7 @@ internal sealed class ClientSponsorManager : ISharedSponsorsManager, ISponsorUpd
         _logger.Info($"Received Sponsor Info. Count: {message.Prototypes.Count}");
         _clientPrototypes = message.Prototypes;
 
-        OnSponsorInfoUpdated?.Invoke();
+        OnSponsorInfoUpdated?.Invoke(message.Prototypes);
     }
 
     public List<string> GetClientPrototypes()
@@ -63,5 +63,5 @@ internal sealed class ClientSponsorManager : ISharedSponsorsManager, ISponsorUpd
 
 public interface ISponsorUpdateInvoker
 {
-    public Action? OnSponsorInfoUpdated {get; set;}
+    public Action<List<string>>? OnSponsorInfoUpdated {get; set;}
 }

@@ -17,6 +17,7 @@ using Content.Shared.Preferences;
 using Content.Shared.Preferences.Loadouts;
 using Content.Shared.Roles;
 using Content.Shared.Traits;
+using Content.SponsorImplementations.Client;
 using Robust.Client.Player;
 using Robust.Client.ResourceManagement;
 using Robust.Client.State;
@@ -67,9 +68,14 @@ public sealed partial class LobbyUIController : UIController, IOnStateEntered<Lo
     public override void Initialize()
     {
         base.Initialize();
+        IoCManager.Instance!.TryResolveType(out _sponsors);
+
         _prototypeManager.PrototypesReloaded += OnProtoReload;
         _preferencesManager.OnServerDataLoaded += PreferencesDataLoaded;
         _requirements.Updated += OnRequirementsUpdated;
+
+        if (_sponsors is ISponsorUpdateInvoker sponsorUpdateInvoker)
+            sponsorUpdateInvoker.OnSponsorInfoUpdated += OnSponsorInfoUpdated;
 
         _configurationManager.OnValueChanged(CCVars.FlavorText, args =>
         {
@@ -89,6 +95,28 @@ public sealed partial class LobbyUIController : UIController, IOnStateEntered<Lo
         }
 
         return null;
+    }
+
+    // SponsorThink edit
+    private void OnSponsorInfoUpdated(List<string> proto)
+    {
+        if (EditedProfile != null)
+        {
+            SaveProfile();
+        }
+        else
+        {
+            if(_preferencesManager.Preferences is null)
+                return;
+
+            _preferencesManager.Preferences.SelectedCharacter.EnsureValid(
+                _playerManager.LocalSession!,
+                IoCManager.Instance!,
+                proto.ToArray()
+                );
+
+            RefreshLobbyPreview();
+        }
     }
 
     private void OnRequirementsUpdated()
@@ -267,8 +295,6 @@ public sealed partial class LobbyUIController : UIController, IOnStateEntered<Lo
             _profileEditor.Visible = true;
             return (_characterSetup, _profileEditor);
         }
-
-        IoCManager.Instance!.TryResolveType(out _sponsors);
 
         _profileEditor = new HumanoidProfileEditor(
             _preferencesManager,
