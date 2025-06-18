@@ -605,6 +605,7 @@
   - type: Sprite
     sprite: Victoria/Hound/Misc/hnd_stamp.rsi
     state: stamp
+
 #Оборудование и прочее
 #Коробка
 - type: entity
@@ -676,9 +677,6 @@
     size: Tiny
     shape:
     - 0,0,1,0
-    # storedSprite:
-      # state: storage
-      # sprite: Victoria/Hound/Weapons/knife.rsi
   - type: DisarmMalus
     malus: 0.225
   - type: ThrowingAngle
@@ -699,6 +697,47 @@
     solution: melee
   - type: SolutionTransfer
     maxTransferAmount: 5
+#Кувалда
+- type: entity
+  name: Боевая кувалда
+  parent: Sledgehammer
+  id: HoundHammer
+  description: Крупная кувалда с титановой ручкой. Устоять на ногах после такой дуры будет нелегко.
+  components:
+  - type: Sprite
+    sprite: Victoria/Hound/Weapons/hammer.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: 135
+    swingLeft: true
+    attackRate: 0.8
+    damage:
+      types:
+        Blunt: 15
+        Structural: 15
+    soundHit:
+      collection: MetalThud
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 10
+        Structural: 35
+  - type: StaminaDamageOnHit
+    damage: 25
+  - type: Item
+    size: Ginormous
+  - type: Clothing
+    sprite: Victoria/Hound/Weapons/hammer.rsi
+    quickEquip: false
+    slots:
+    - back
+  - type: Tool
+    qualities:
+      - Prying
+  - type: Prying
+  - type: UseDelay
+    delay: 1
 #Монитор
 - type: entity
   name: Монитор экипажа Хаунд
@@ -2572,7 +2611,17 @@
   description: Довольно мощный ПП. Из-за высокой скорострельности и малого магазина хорошо подходит для тактики ударил-в укрытие Использует патроны .35 авто
   productEntity: HoundSMG
   cost:
-    HNDChip_currency: 10
+    HNDChip_currency: 15
+  categories:
+  - HoundUplinkWeaponry
+
+- type: listing
+  id: HoundHammer
+  name: Боевая кувалда
+  description: Высококачественная кувалда, хорошо подходящая для разрушения построек, ближнего боя и эффектных расправ! Не забудьте оставить автограф на ней этикеровщиком.
+  productEntity: HoundHammer
+  cost:
+    HNDChip_currency: 8
   categories:
   - HoundUplinkWeaponry
 
@@ -2582,7 +2631,7 @@
   description: Крайне мощный дробовик, идеальный для зачистки помещений. Кабы магазин был чуток побольше...
   productEntity: HoundShotgun
   cost:
-    HNDChip_currency: 10
+    HNDChip_currency: 14
   categories:
   - HoundUplinkWeaponry
 
@@ -2601,7 +2650,7 @@
   description: Что-то среднее между автоматом и пулемётом. Стреляет больно и точно, но из-за маленького, по мерам пулемёта, магазина им долго не позажимаешь.
   productEntity: HoundLightMachineGun
   cost:
-    HNDChip_currency: 17
+    HNDChip_currency: 25
   categories:
   - HoundUplinkWeaponry
 #------категория боезапас----------
@@ -2729,10 +2778,10 @@
 - type: listing
   id: HoundRubberStamp
   name: Печать Хаунд
-  description: Отправьте угрозы своей добыче или свяжитесь с начальством, если, конечно, можете.
+  description: Подтверждает легитимность документа на территории станции. Плата, фактически, идёт не за печать, а за обкашливание вопросиков с НТ и ОПЗ.
   productEntity: HoundRubberStamp
   cost:
-    HNDChip_currency: 1
+    HNDChip_currency: 3
   categories:
   - HoundUplinkSpec
 #Раскладной ящик
@@ -2745,6 +2794,8 @@
     HNDChip_currency: 3
   categories:
   - HoundUplinkSpec
+
+#-----------------------------------------------------------------------Наборы
 #Набор уборки
 - type: listing
   id: HoundBackpackFilledCleaning
@@ -2755,7 +2806,6 @@
     HNDChip_currency: 5
   categories:
   - HoundUplinkBack
-#Наборы
 #Пояс
 - type: listing
   id: HoundBeltFilled
@@ -2793,7 +2843,7 @@
   description: Два "Махно" и одна "Лайка". Без дополнительных патронов.
   productEntity: HoundCrateWeaponsMiddle
   cost:
-    HNDChip_currency: 21
+    HNDChip_currency: 30
   categories:
   - HoundUplinkSpec
 
@@ -2803,7 +2853,7 @@
   description: Два "Кера" и один "Хаски" на сдачу. Без дополнительных патронов.
   productEntity: HoundCrateWeaponsHeavy
   cost:
-    HNDChip_currency: 25
+    HNDChip_currency: 40
   categories:
   - HoundUplinkSpec
 
