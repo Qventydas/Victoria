@@ -1,0 +1,551 @@
+#========доступ СССП=====================================
+
+- type: accessLevel
+  id: SSSP
+  name: accessl-sssp
+
+#=========радиоканал Бифазный============================
+
+- type: radioChannel
+  id: Bifaze
+  name: name-of-SSSPborgs-radio
+  keycode: 'би' 
+  frequency: 0110
+  color: "#ac0000"
+  # long range since otherwise it'd defeat the point of a handheld radio independent of telecomms
+  longRange: true
+
+#=======имена для боргов======================
+#----аббревиатура перед именем------------
+
+- type: dataset
+  id: SSSP-borg-rab-abb
+  values:
+  - УРМоВИ
+#универсальная рабочая машина оснащённая витруальным интеллектом
+
+- type: dataset
+  id: SSSP-borg-acad-abb
+  values:
+  - УАМоВИ
+#универсальная академическая машина оснащённая витруальным интеллектом
+
+#----уникалььное имя борга------------
+
+- type: dataset
+  id: SSSP-borg-name
+  values:
+  - Винтик
+  - Шпунтик
+  - Электроник
+  - Алиса
+  - Зелёный
+  - Болтик
+  - Нехочуха
+  - Трудяга
+  - Юра
+  - Фасхи
+  - Мехсил
+  - Мишка
+  - Пегас
+  - Говорун
+  - Шелезяка
+  - Громозека
+  - Буран
+  - Фараб
+  - Мир
+  - Вертер
+  - Пионер
+  - Космонавт
+  - Вафельница
+  - Вафля
+  - Корунд
+
+#=======Модули петров и всё с ними связанное==========
+#----тэг для модулей-----------
+
+- type: Tag
+  id: BorgModulePetr
+
+#----база модулей-------------
+
+- type: entity
+  id: BaseBorgModulePetr
+  parent: BaseBorgModule
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - BorgModulePetr
+
+#----ПП Петров для борга-----------
+
+- type: entity
+  name: Петрищевский пистолет-пулемёт "Коллективист"
+  suffix: Петрищев, борг
+  parent: PetrSMG
+  id: PetrSMGBorg
+  description: Маленький и удобный пистолет-пулемёт Петрищевцев, который легко пронести под одеждой. Прекрасно подходит для наведения шороха! Использует патроны .32
+  components:
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletPistol
+    fireCost: 100
+  - type: Battery
+    maxCharge: 2400
+    startingCharge: 2400
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 25
+  - type: AmmoCounter
+
+#----пистолет Петров для борга-----------
+
+- type: entity
+  name: Петрищевский пистолет "Горький"
+  suffix: Петрищев, борг
+  parent: PetrPistol
+  id: PetrPistolBorg
+  description: Короткий и очень дешёвый, но мощный пистолет. Использует собственные петрищевские патроны .32
+  components:
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: ProjectileBatteryAmmoProvider
+    proto: BulletPistol
+    fireCost: 100
+  - type: Battery
+    maxCharge: 900
+    startingCharge: 900
+  - type: BatterySelfRecharger
+    autoRecharge: true
+    autoRechargeRate: 20
+  - type: AmmoCounter
+
+#---сами модули--------------
+
+- type: entity
+  id: BorgModulePetrCombat
+  parent: [ BaseBorgModulePetr, BaseProviderBorgModule ]
+  name: боевой петрищевский модуль киборга
+  description: Техническая деталь, дающая киборгам новые способности.
+  components:
+  - type: Sprite
+    sprite: Victoria/Borgs/petr_modules.rsi
+    layers:
+    - state: petr
+    - state: icon-combat
+  - type: ItemBorgModule
+    items:
+    - PetrSMGBorg
+    - Emag
+    - CombatKnife
+  - type: BorgModuleIcon
+    icon: { sprite: Victoria/Borgs/petr_modules.rsi, state: combat-petr }
+
+- type: entity
+  id: BorgModulePetrSpy
+  parent: [ BaseBorgModulePetr, BaseProviderBorgModule ]
+  name: шпионский петрищевский модуль киборга
+  description: Техническая деталь, дающая киборгам новые способности.
+  components:
+  - type: Sprite
+    sprite: Victoria/Borgs/petr_modules.rsi
+    layers:
+    - state: petr
+    - state: icon-spy
+  - type: ItemBorgModule
+    items:
+    - PetrPistolBorg
+    - Emag
+    - PetrRubberStamp
+    - Brutepack10Lingering
+    - CombatKnife
+  - type: BorgModuleIcon
+    icon: { sprite: Victoria/Borgs/petr_modules.rsi, state: spy-petr }
+
+#=======законы боргам=========================
+#----законы петров-----------
+
+- type: siliconLaw
+  id: Petr1
+  order: 1
+  lawString: law-petr-1
+
+- type: siliconLaw
+  id: Petr2
+  order: 2
+  lawString: law-petr-2
+
+- type: siliconLaw
+  id: Petr3
+  order: 3
+  lawString: law-petr-3
+
+- type: siliconLaw
+  id: Petr4
+  order: 4
+  lawString: law-petr-4
+
+- type: siliconLawset
+  id: PetrStatic
+  laws:
+  - Petr1
+  - Petr2
+  - Petr3
+  - Petr4
+  obeysTo: laws-owner-petr
+
+#----законы СССП--------------
+
+- type: siliconLaw
+  id: Sssp1
+  order: 1
+  lawString: law-sssp-1
+
+- type: siliconLaw
+  id: Sssp2
+  order: 2
+  lawString: law-sssp-2
+
+- type: siliconLaw
+  id: Sssp3
+  order: 3
+  lawString: law-sssp-3
+
+- type: siliconLaw
+  id: Sssp4
+  order: 4
+  lawString: law-sssp-4
+
+- type: siliconLaw
+  id: Sssp5
+  order: 5
+  lawString: law-sssp-5
+
+- type: siliconLawset
+  id: SsspStatic
+  laws:
+  - Sssp1
+  - Sssp2
+  - Sssp3
+  - Sssp4
+  - Sssp5
+  obeysTo: гражданами и военными СССП #laws-owner-sssp
+
+#========База боргов================================
+#----База боргов СССП---------
+
+- type: entity
+  id: BaseBorgChassisSSSP
+  parent: BaseBorgChassis
+  abstract: true
+  components:
+    - type: NpcFactionMember
+      factions:
+        - Syndicate
+    - type: Access #доступы которые имеет борг сам
+      tags:
+       - SSSP
+    - type: AccessReader #те кто могут разблокировать борга
+      access: [["SSSP"]]
+    - type: SiliconLawProvider
+      laws: SsspStatic
+    - type: IntrinsicRadioTransmitter
+      channels:
+        - Bifaze
+    - type: ActiveRadio
+      channels:
+        - Bifaze
+    - type: MovementAlwaysTouching
+
+#----База боргов Петрищевцев------
+
+- type: entity
+  id: BaseBorgChassisPetr
+  parent: BaseBorgChassis
+  abstract: true
+  components:
+    - type: NpcFactionMember
+      factions:
+        - Petr
+    - type: Access #доступы которые имеет борг сам
+      tags:
+       - PetrAccess
+    - type: AccessReader #те кто могут разблокировать борга
+      access: [["PetrAccess"]]
+    - type: SiliconLawProvider
+      laws: PetrStatic
+    - type: IntrinsicRadioTransmitter
+      channels:
+        - Bifaze
+        - PetrRadio
+    - type: ActiveRadio
+      channels:
+        - Bifaze
+        - PetrRadio
+    - type: MovementAlwaysTouching
+
+#=======Киборг рабочий============================
+
+- type: entity
+  id: BorgChassisSSSPrab
+  name:  киборг-рабочий
+  description: Гибрид машины и человека помогающий СССП. Они любят когда их просят назвать законы снова и снова.
+  parent: BaseBorgChassisSSSP
+  components:
+  - type: Sprite
+    sprite: Victoria/Borgs/texturesborgs.rsi
+    layers:
+    - state: ssspborg
+    - state: ssspborg_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: ssspborg_l
+      shader: unshaded
+      map: ["light"]
+      visible: false
+  - type: BorgChassis
+    maxModules: 5
+    moduleWhitelist:
+      tags:
+      - BorgModuleGeneric
+      - BorgModuleEngineering
+      - BorgModuleService
+      - BorgModuleCargo
+    hasMindState: ssspborg_e
+    noMindState: ssspborg_e_r
+  - type: Construction
+    node: cyborg
+  - type: Speech
+    speechVerb: Robotic
+
+#=======Киборг академик============================
+
+- type: entity
+  id: BorgChassisSSSPacad
+  name:  киборг-академик
+  description: Гибрид машины и человека помогающий СССП. Они любят когда их просят назвать законы снова и снова.
+  parent: BaseBorgChassisSSSP
+  components:
+  - type: Sprite
+    sprite: Victoria/Borgs/texturesborgs.rsi
+    layers:
+    - state: sssp_acad
+    - state: sssp_acad_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: sssp_acad_l
+      shader: unshaded
+      map: ["light"]
+      visible: false
+  - type: BorgChassis
+    maxModules: 4
+    moduleWhitelist:
+      tags:
+      - BorgModuleGeneric
+      - BorgModuleService
+      - BorgModuleJanitor
+    hasMindState: sssp_acad_e
+    noMindState: sssp_acad_e_r
+  - type: Construction
+    node: cyborg
+  - type: Speech
+    speechVerb: Robotic
+
+#=======Киборг псевдорабочий============================
+
+- type: entity
+  id: BorgChassisPETRrab
+  name:  киборг-псевдорабочий
+  description: Гибрид машины и человека помогающий СССП. Они любят когда их просят назвать законы снова и снова.
+  parent: BaseBorgChassisPetr
+  components:
+  - type: Sprite
+    sprite: Victoria/Borgs/petrborgs.rsi
+    layers:
+    - state: petrborg
+    - state: petrborg_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: petrborg_l
+      shader: unshaded
+      map: ["light"]
+      visible: false
+  - type: BorgChassis
+    maxModules: 5
+    moduleWhitelist:
+      tags:
+      - BorgModuleGeneric
+      - BorgModuleEngineering
+      - BorgModuleService
+      - BorgModuleCargo
+      - BorgModulePetr
+    hasMindState: petrborg_e
+    noMindState: petrborg_e_r
+  - type: Construction
+    node: cyborg
+  - type: Speech
+    speechVerb: Robotic
+
+#=======Киборг псевдоакадемик============================
+
+- type: entity
+  id: BorgChassisPETRacad
+  name:  киборг-псевдоакадемик
+  description: Гибрид машины и человека помогающий СССП. Они любят когда их просят назвать законы снова и снова.
+  parent: BaseBorgChassisPetr
+  components:
+  - type: Sprite
+    sprite: Victoria/Borgs/petrborgs.rsi
+    layers:
+    - state: petr_acad
+    - state: petr_acad_e_r
+      map: ["enum.BorgVisualLayers.Light"]
+      shader: unshaded
+      visible: false
+    - state: petr_acad_l
+      shader: unshaded
+      map: ["light"]
+      visible: false
+  - type: BorgChassis
+    maxModules: 4
+    moduleWhitelist:
+      tags:
+      - BorgModuleGeneric
+      - BorgModuleService
+      - BorgModuleJanitor
+      - BorgModulePetr
+    hasMindState: petr_acad_e
+    noMindState: petr_acad_e_r
+  - type: Construction
+    node: cyborg
+  - type: Speech
+    speechVerb: Robotic
+
+#======те же борги только с батарейками, именами, мозгами и модулями===========
+#----рабочий----------
+
+- type: entity
+  id: BorgChassisSSSPrabSpawn
+  name:  киборг-рабочий
+  description: УРМоВИ - Универсальная Рабочая Машина оснащённая Витруальным Интеллектом. Гибрид машины и человека помогающий СССП. Рабочим надоело звать их по номерам и аббревиатуре, поэтому они решили давать им забавные имена.
+  parent: BorgChassisSSSPrab
+  suffix: батарея, имя, модули
+  components:
+  - type: RandomMetadata
+    nameSegments:
+      - SSSP-borg-rab-abb
+      - SSSP-borg-name
+  - type: ContainerFill
+    containers:
+      borg_brain:
+        - PositronicBrain
+      borg_module:
+        - BorgModuleTool
+        - BorgModuleMining
+        - BorgModuleGrapplingGun
+        - BorgModuleGardening
+        - BorgModuleHarvesting
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellHigh
+        disableEject: true
+        swap: false
+
+#----академик----------
+
+- type: entity
+  id: BorgChassisSSSPacadSpawn
+  name:  киборг-академик
+  description: УАМоВИ - Универсальная Академическая Машина оснащённая Витруальным Интеллектом. Гибрид машины и человека помогающий СССП. Рабочим надоело звать их по номерам и аббревиатуре, поэтому они решили давать им забавные имена.
+  parent: BorgChassisSSSPacad
+  suffix: батарея, имя, модули
+  components:
+  - type: RandomMetadata
+    nameSegments:
+      - SSSP-borg-acad-abb
+      - SSSP-borg-name
+  - type: ContainerFill
+    containers:
+      borg_brain:
+        - PositronicBrain
+      borg_module:
+        - BorgModuleService
+        - BorgModuleLightReplacer
+        - BorgModuleAdvancedCleaning
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellHigh
+        disableEject: true
+        swap: false
+
+#----псевдо-рабочий----------
+
+- type: entity
+  id: BorgChassisPETRrabSpawn
+  name:  киборг-псевдорабочий
+  description: УРМоВИ - Универсальная Рабочая Машина оснащённая Витруальным Интеллектом. Гибрид машины и человека помогающий СССП. Рабочим надоело звать их по номерам и аббревиатуре, поэтому они решили давать им забавные имена.
+  parent: BorgChassisPETRrab
+  suffix: батарея, имя, модули
+  components:
+  - type: RandomMetadata
+    nameSegments:
+      - SSSP-borg-rab-abb
+      - SSSP-borg-name
+  - type: ContainerFill
+    containers:
+      borg_brain:
+        - PositronicBrain
+      borg_module:
+        - BorgModuleTool
+        - BorgModuleMining
+        - BorgModuleGrapplingGun
+        - BorgModuleHarvesting
+        - BorgModulePetrCombat
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellHigh
+        disableEject: true
+        swap: false
+
+#----псевдо-академик----------
+
+- type: entity
+  id: BorgChassisPETRacadSpawn
+  name:  киборг-псевдоакадемик
+  description: УАМоВИ - Универсальная Академическая Машина оснащённая Витруальным Интеллектом. Гибрид машины и человека помогающий СССП. Рабочим надоело звать их по номерам и аббревиатуре, поэтому они решили давать им забавные имена.
+  parent: BorgChassisPETRacad
+  suffix: батарея, имя, модули
+  components:
+  - type: RandomMetadata
+    nameSegments:
+      - SSSP-borg-acad-abb
+      - SSSP-borg-name
+  - type: ContainerFill
+    containers:
+      borg_brain:
+        - PositronicBrain
+      borg_module:
+        - BorgModuleService
+        - BorgModuleLightReplacer
+        - BorgModuleAdvancedCleaning
+        -  BorgModulePetrSpy
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellHigh
+        disableEject: true
+        swap: false
