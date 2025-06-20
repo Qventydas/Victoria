@@ -8,7 +8,10 @@
   },
   "states": [
     {
-      "name": "banner_umpor_std"
+      "name": "banner_ussp_flag"
+    },
+	{
+      "name": "banner_ussp_gerb"
     }
   ]
 }
