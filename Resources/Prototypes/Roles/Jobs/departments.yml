@@ -76,6 +76,7 @@
   - ERTSecurity
   - ERTEngineer
   - DeathSquad
+  - SSOfficer
   primary: false
   weight: 100
 
@@ -103,6 +104,7 @@
   - MedicalIntern
   - Psychologist
   - Paramedic
+  - Brigmedic
   - MedTeacher # Victoria-Job
 
 - type: department

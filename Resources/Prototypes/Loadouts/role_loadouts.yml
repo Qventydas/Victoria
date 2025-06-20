@@ -11,6 +11,9 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - GroupMirtLoadoutCap
+  - GroupNoocLoadoutCom
+  - GroupCDCLoadoutCom
 
 - type: roleLoadout
   id: JobHeadOfPersonnel
@@ -26,6 +29,8 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - GroupNoocLoadoutCom
+  - GroupCDCLoadoutCom
 
 # Silicons
 - type: roleLoadout
@@ -64,6 +69,13 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - GroupUmporLoadoutCapP
+  - GroupMirtLoadoutServ
+  - GroupKMLGLoadoutEpolets
+  - GroupKMLGLoadoutCapServ
+  - GroupKMLGLoadoutCoat
+  - GroupKMLGLoadoutUniformServise
+  - GroupCDCLoadoutServ
 
 - type: roleLoadout
   id: JobServiceWorker
@@ -76,6 +88,13 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - GroupUmporLoadoutCapP
+  - GroupMirtLoadoutServ
+  - GroupKMLGLoadoutEpolets
+  - GroupKMLGLoadoutCapServ
+  - GroupKMLGLoadoutCoat
+  - GroupKMLGLoadoutUniformServise 
+  - GroupCDCLoadoutServ
 
 - type: roleLoadout
   id: JobChef
@@ -91,6 +110,12 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - GroupUmporLoadoutChef
+  - GroupMirtLoadoutServ
+  - GroupKMLGLoadoutEpolets
+  - GroupKMLGLoadoutCapServ
+  - GroupKMLGLoadoutCoat
+  - GroupCDCLoadoutServ
 
 - type: roleLoadout
   id: JobLibrarian
@@ -103,6 +128,13 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - GroupUmporLoadoutCapP
+  - GroupMirtLoadoutServ
+  - GroupKMLGLoadoutEpolets
+  - GroupKMLGLoadoutCapServ
+  - GroupKMLGLoadoutCoat
+  - GroupKMLGLoadoutUniformServise 
+  - GroupCDCLoadoutServ
 
 - type: roleLoadout
   id: JobLawyer
@@ -116,6 +148,8 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - GroupNoocLoadoutCom
+  - GroupCDCLoadoutCom
 
 - type: roleLoadout
   id: JobChaplain
@@ -132,6 +166,12 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - GroupUmporLoadoutCapP
+  - GroupMirtLoadoutMonk
+  - GroupKMLGLoadoutEpolets
+  - GroupKMLGLoadoutCapServ
+  - GroupKMLGLoadoutCoat
+  - GroupCDCLoadoutCapil
 
 - type: roleLoadout
   id: JobJanitor
@@ -148,6 +188,12 @@
   - Trinkets
   - JanitorPlunger
   - GroupSpeciesBreathTool
+  - GroupUmporLoadoutCapP
+  - GroupMirtLoadoutServ
+  - GroupKMLGLoadoutEpolets
+  - GroupKMLGLoadoutCapServ
+  - GroupKMLGLoadoutCoat
+  - GroupCDCLoadoutServ
 
 - type: roleLoadout
   id: JobBotanist
@@ -162,6 +208,12 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - GroupUmporLoadoutBotan
+  - GroupMirtLoadoutServ
+  - GroupKMLGLoadoutEpolets
+  - GroupKMLGLoadoutCapServ
+  - GroupKMLGLoadoutCoat
+  - GroupCDCLoadoutServ
 
 - type: roleLoadout
   id: JobClown
@@ -176,6 +228,12 @@
   - Glasses
   - SurvivalClown
   - Trinkets
+  - GroupUmporLoadoutCapP
+  - GroupMirtLoadoutServ
+  - GroupKMLGLoadoutEpolets
+  - GroupKMLGLoadoutCapServ
+  - GroupKMLGLoadoutCoat
+  - GroupCDCLoadoutServ
 
 - type: roleLoadout
   id: JobMime
@@ -191,6 +249,12 @@
   - Glasses
   - SurvivalMime
   - Trinkets
+  - GroupUmporLoadoutCapP
+  - GroupMirtLoadoutServ
+  - GroupKMLGLoadoutEpolets
+  - GroupKMLGLoadoutCapServ
+  - GroupKMLGLoadoutCoat
+  - GroupCDCLoadoutServ
 
 - type: roleLoadout
   id: JobMusician
@@ -205,6 +269,12 @@
   - Trinkets
   - Instruments
   - GroupSpeciesBreathTool
+  - GroupUmporLoadoutCapP
+  - GroupMirtLoadoutServ
+  - GroupKMLGLoadoutEpolets
+  - GroupKMLGLoadoutCapServ
+  - GroupKMLGLoadoutCoat
+  - GroupCDCLoadoutServ
 
 # Cargo
 - type: roleLoadout
@@ -222,6 +292,13 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - GroupUmporLoadoutCap
+  - GroupMirtLoadoutCarg
+  - GroupNoocLoadoutCom
+  - GroupKMLGLoadoutCepka
+  - GroupKMLGLoadoutEpolets
+  - GroupCDCLoadoutCom
+  - GroupCDCLoadoutCargo
 
 - type: roleLoadout
   id: JobCargoTechnician
@@ -237,6 +314,11 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - GroupUmporLoadoutCapP
+  - GroupMirtLoadoutCarg
+  - GroupKMLGLoadoutCepka
+  - GroupKMLGLoadoutEpolets
+  - GroupCDCLoadoutCargo
 
 - type: roleLoadout
   id: JobSalvageSpecialist
@@ -250,6 +332,12 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - GroupUmporLoadoutSalv
+  - GroupMirtLoadoutCarg
+  - GroupSNKLoadoutShapka
+  - GroupSNKLoadoutCloak
+  - GroupKMLGLoadoutEpolets
+  - GroupCDCLoadoutCargo
 
 # Engineering
 - type: roleLoadout
@@ -266,6 +354,12 @@
   - SurvivalExtended
   - Trinkets
   - GroupSpeciesBreathTool
+  - GroupUmporLoadoutEng
+  - GroupMirtLoadoutEng
+  - GroupNoocLoadoutComEng
+  - GroupKMLGLoadoutEpolets
+  - GroupCDCLoadoutCom
+  - GroupNoocLoadoutEng
 
 - type: roleLoadout
   id: JobTechnicalAssistant
@@ -277,6 +371,10 @@
   - SurvivalExtended
   - Trinkets
   - GroupSpeciesBreathTool
+  - GroupUmporLoadoutCapP
+  - GroupMirtLoadoutServ
+  - GroupKMLGLoadoutEpolets
+  - GroupSNKLoadoutTech
 
 - type: roleLoadout
   id: JobStationEngineer
@@ -292,6 +390,11 @@
   - SurvivalExtended
   - Trinkets
   - GroupSpeciesBreathTool
+  - GroupUmporLoadoutEng
+  - GroupMirtLoadoutEng
+  - GroupKMLGLoadoutEpolets
+  - GroupSNKLoadoutEng
+  - GroupNoocLoadoutEng
 
 - type: roleLoadout
   id: JobAtmosphericTechnician
@@ -305,6 +408,11 @@
   - SurvivalExtended
   - Trinkets
   - GroupSpeciesBreathTool
+  - GroupUmporLoadoutEng
+  - GroupMirtLoadoutEng
+  - GroupKMLGLoadoutEpolets
+  - GroupSNKLoadoutAtmos
+  - GroupNoocLoadoutEng
 
 # Science
 - type: roleLoadout
@@ -323,6 +431,10 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - GroupNoocLoadoutComRnd
+  - GroupKMLGLoadoutEpolets
+  - GroupCDCLoadoutCom
+  - GroupCDCLoadoutRnD
 
 - type: roleLoadout
   id: JobScientist
@@ -341,6 +453,10 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - GroupNoocLoadoutRnD
+  - GroupKMLGLoadoutEpolets
+  - GroupSNKLoadoutEng
+  - GroupCDCLoadoutRnD
 
 - type: roleLoadout
   id: JobResearchAssistant
@@ -353,6 +469,10 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - GroupNoocLoadoutRnD
+  - GroupKMLGLoadoutEpolets
+  - GroupSNKLoadoutEng
+  - GroupCDCLoadoutRnD
 
 # Security
 - type: roleLoadout
@@ -370,6 +490,12 @@
   - Trinkets
   - SecurityStar
   - GroupSpeciesBreathToolSecurity
+  - GroupUmporLoadoutSec
+  - GroupMirtLoadoutServ
+  - GroupNoocLoadoutCom
+  - GroupNoocLoadoutSecWeapon
+  - GroupNoocLoadoutSecAmmo
+  - GroupCDCLoadoutCom
 
 - type: roleLoadout
   id: JobWarden
@@ -385,6 +511,11 @@
   - Trinkets
   - SecurityStar
   - GroupSpeciesBreathToolSecurity
+  - GroupUmporLoadoutSec
+  - GroupMirtLoadoutServ
+  - GroupNoocLoadoutSecWeapon
+  - GroupNoocLoadoutSecAmmo
+  - GroupCDCLoadoutSec
 
 - type: roleLoadout
   id: JobSecurityOfficer
@@ -401,6 +532,11 @@
   - Trinkets
   - SecurityStar
   - GroupSpeciesBreathToolSecurity
+  - GroupUmporLoadoutSec
+  - GroupMirtLoadoutServ
+  - GroupNoocLoadoutSecWeapon
+  - GroupNoocLoadoutSecAmmo
+  - GroupCDCLoadoutSec
 
 - type: roleLoadout
   id: JobDetective
@@ -417,6 +553,11 @@
   - Trinkets
   - SecurityStar
   - GroupSpeciesBreathToolSecurity
+  - GroupUmporLoadoutSec
+  - GroupMirtLoadoutServ
+  - GroupNoocLoadoutSecWeapon
+  - GroupNoocLoadoutSecAmmo
+  - GroupCDCLoadoutSec
 
 - type: roleLoadout
   id: JobSecurityCadet
@@ -427,6 +568,11 @@
   - SurvivalSecurity
   - Trinkets
   - GroupSpeciesBreathToolSecurity
+  - GroupUmporLoadoutChef
+  - GroupMirtLoadoutServ
+  - GroupNoocLoadoutSecWeapon
+  - GroupNoocLoadoutSecAmmo
+  - GroupCDCLoadoutSec
 
 # Medical
 - type: roleLoadout
@@ -446,6 +592,9 @@
   - SurvivalMedical
   - Trinkets
   - GroupSpeciesBreathToolMedical
+  - GroupUmporLoadoutMed
+  - GroupCDCLoadoutCom
+  - GroupKMLGLoadoutMed
 
 - type: roleLoadout
   id: JobMedicalDoctor
@@ -464,6 +613,8 @@
   - SurvivalMedical
   - Trinkets
   - GroupSpeciesBreathToolMedical
+  - GroupUmporLoadoutMed
+  - GroupKMLGLoadoutMed
 
 - type: roleLoadout
   id: JobMedicalIntern
@@ -476,6 +627,8 @@
   - SurvivalMedical
   - Trinkets
   - GroupSpeciesBreathToolMedical
+  - GroupUmporLoadoutMed
+  - GroupKMLGLoadoutMed
 
 - type: roleLoadout
   id: JobChemist
@@ -491,6 +644,8 @@
   - SurvivalMedical
   - Trinkets
   - GroupSpeciesBreathToolMedical
+  - GroupUmporLoadoutMed
+  - GroupKMLGLoadoutMed
 
 - type: roleLoadout
   id: JobParamedic
@@ -508,6 +663,8 @@
   - SurvivalMedical
   - Trinkets
   - GroupSpeciesBreathToolMedical
+  - GroupUmporLoadoutMed
+  - GroupKMLGLoadoutMed
 
 # Wildcards
 - type: roleLoadout
@@ -520,6 +677,12 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - GroupUmporLoadoutCapP
+  - GroupMirtLoadoutServ
+  - GroupKMLGLoadoutEpolets
+  - GroupKMLGLoadoutCapServ
+  - GroupKMLGLoadoutCoat
+  - GroupCDCLoadoutServ
 
 - type: roleLoadout
   id: JobReporter
@@ -532,6 +695,12 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - GroupUmporLoadoutCapP
+  - GroupMirtLoadoutServ
+  - GroupKMLGLoadoutEpolets
+  - GroupKMLGLoadoutCapServ
+  - GroupKMLGLoadoutCoat
+  - GroupCDCLoadoutServ
 
 - type: roleLoadout
   id: JobPsychologist
@@ -544,6 +713,12 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - GroupUmporLoadoutCapP
+  - GroupMirtLoadoutServ
+  - GroupKMLGLoadoutEpolets
+  - GroupKMLGLoadoutCapServ
+  - GroupKMLGLoadoutCoat
+  - GroupCDCLoadoutServ
 
 - type: roleLoadout
   id: JobBoxer
@@ -557,6 +732,8 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - GroupUmporLoadoutCapP
+  - GroupCDCLoadoutServ
 
 # These loadouts are used for non-crew spawns, like off-station antags and event mobs
 # They will be used without player configuration, thus they will only ever apply what is forced by MinLimit
