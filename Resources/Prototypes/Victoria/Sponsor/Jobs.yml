@@ -475,7 +475,7 @@
   - type: Item
     size: Normal
     sprite: Victoria/Sponsor/SeaShield/ss_shields.rsi
-    state: teleriot
+    heldPrefix: teleriot
   - type: StaticPrice
     price: 150
   - type: Blocking
@@ -733,7 +733,7 @@
   storage:
     back:
     - BoxSurvivalSecurity
-    - SSAssaultSet
+    - ToolboxSSHardsuits
     - ToolboxSSWeapons
     - SSHelmet
 #-----------------------------------иконочка-------------------------

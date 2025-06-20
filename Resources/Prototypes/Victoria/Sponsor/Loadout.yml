@@ -165,7 +165,7 @@
     
 - type: loadout
   id: KMLGUniformServise
-  quipment:
+  equipment:
     jumpsuit: KMLGUniformServise
     
 - type: loadoutGroup
