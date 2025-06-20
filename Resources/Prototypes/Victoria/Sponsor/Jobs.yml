@@ -773,7 +773,7 @@
   - External
   - Lawyer
   - Medical
-#-----------------------------------лодауты-------------------------
+#-----------------------------------спавн-поинт-------------------------
 - type: entity
   id: SpawnPointSSOfficer
   parent: SpawnPointJobBase
