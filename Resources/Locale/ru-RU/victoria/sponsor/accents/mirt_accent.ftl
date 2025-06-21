@@ -326,5 +326,5 @@ victoria-accent-mirt-words-163 = смотрителе
 victoria-accent-mirt-words-replace-163 = манипуле
 
 
-trait-accent-mirt-name = Умпорский акцент
+trait-accent-mirt-name = Миртанийский акцент
 trait-accent-mirt-desc = Какой-то немного рассистский.

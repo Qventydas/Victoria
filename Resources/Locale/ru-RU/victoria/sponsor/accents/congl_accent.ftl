@@ -338,5 +338,5 @@ victoria-accent-congl-word-169 = стариках
 victoria-accent-congl-replacement-169 = айдад
 
 
-trait-accent-congl-name = Умпорский акцент
+trait-accent-congl-name = Конгломератский акцент
 trait-accent-congl-desc = Со своими словечками и внезампными мудросятми.

@@ -1,0 +1,103 @@
+- type: sponsorGroup
+  id: SponsorGroupUmpor
+  color: "#7f7f7f"
+  extraCharSlots: 0
+  serverPriorityJoin: false
+  prototypes:
+  - UmporAccent
+  - UmpornKnife
+  - UmporSpade
+  - UmporHatchet
+  - UmporCapP
+  - UmporRCD
+  - UmporBeret
+  - UmporeBeltMed
+  - UmporCap
+  
+- type: sponsorGroup
+  id: SponsorGroupUssp
+  color: "#f60000"
+  extraCharSlots: 1
+  serverPriorityJoin: false
+  prototypes:
+  - UsspAccent
+  
+- type: sponsorGroup
+  id: SponsorGroupSNK
+  color: "#394e35"
+  extraCharSlots: 2
+  serverPriorityJoin: false
+  prototypes:
+  - KMLGCapP
+  - KMLGBandana
+  - KMLGEpolets10
+  - KMLGEpolets20
+  - KMLGEpolets30
+  - KMLGCoat
+  - KMLGCepka
+  - SNKShapkaStd
+  - SNKShapkaLes
+  - SNKShapkaZim
+  - SNKCloakLes
+  - SNKCloakPes
+  - SNKCloakZim
+  - KMLGUniformRepairman
+  - KMLGBelt
+  - KMLGBeret
+  - Hooligan
+  # - SSOfficer
+  
+- type: sponsorGroup
+  id: SponsorGroupMirt
+  color: "#a73800"
+  extraCharSlots: 3
+  serverPriorityJoin: true
+  prototypes:
+  - MirtAccent
+  - MirtnKnife
+  - MirtMaskGas
+  - MirtCloakOfInk
+  - MirtHelmetInk
+  - MirtGlassesRaz
+  - MirtCloakSP
+  - MirtnSword
+  
+- type: sponsorGroup
+  id: SponsorGroupCongl
+  color: "#b68448"
+  extraCharSlots: 4
+  serverPriorityJoin: true
+  prototypes:
+  - CDCUniformImam
+  - CDCTurban
+  - CDCFez
+  - Quran
+  - CDCCepka
+  - CDCBeltTech
+  - CDCBuckler
+  - CDCCap
+  - CDCGloves
+  - CDCGlovesTech
+  - CDCBeltOffi
+  
+- type: sponsorGroup
+  id: SponsorGroupNooc
+  color: "#00a2e9"
+  extraCharSlots: 5
+  serverPriorityJoin: true
+  prototypes:
+  - NoocAccent
+  - LaserPointer
+  - NoocPistol
+  - NoocPowerCellTwo
+  - NoocHardsuitField
+  - NoocCap
+  - NoocCloak
+  # - Brigmedic
+  
+# - type: sponsorGroup
+  # id: SponsorGroupOPZ
+  # color: "#9c6d33"
+  # extraCharSlots: 6
+  # serverPriorityJoin: true
+  # prototypes:
