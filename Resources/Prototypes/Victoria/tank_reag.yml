@@ -1,7 +1,7 @@
 - type: entity
   parent: GenericTank
   id: SiliconTankFull
-  name: резервуар с сжижиным кремнием
+  name: резервуар с сжиженным кремнием
   suffix: Full
   components:
   - type: SolutionContainerManager
@@ -14,7 +14,7 @@
 - type: entity
   parent: GenericTank
   id: CopperTankFull
-  name: резервуар с сжиженой медью
+  name: резервуар с сжиженной медью
   suffix: Full
   components:
   - type: SolutionContainerManager
@@ -27,7 +27,7 @@
 - type: entity
   parent: GenericTank
   id: CarbonTankFull
-  name: резервуар с сжиженым углеродом
+  name: резервуар с сжиженным углеродом
   suffix: Full
   components:
   - type: SolutionContainerManager
@@ -40,7 +40,7 @@
 - type: entity
   parent: GenericTank
   id: RadiumTankFull
-  name: резервуар с сжиженым радием
+  name: резервуар с сжиженным радием
   suffix: Full
   components:
   - type: PointLight
@@ -58,7 +58,7 @@
 - type: entity
   parent: GenericTank
   id: PotassiumTankFull
-  name: резервуар с сжиженым Калием
+  name: резервуар с сжиженным калием
   suffix: Full
   components:
   - type: SolutionContainerManager
@@ -71,7 +71,7 @@
 - type: entity
   parent: GenericTank
   id: SensitizerTankFull
-  name: резервуар с сенсебилизатором
+  name: резервуар с сенсибилизатором
   suffix: Full
   components:
   - type: SolutionContainerManager

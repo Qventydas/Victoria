@@ -5,10 +5,10 @@
 
 - type: entity
   id: DeffectCapacitorStockPart
-  name: Сгоревший конденсатор
+  name: сгоревший конденсатор
   parent: BaseStockPart
-  description: Раньше это был хороший прибор, способный накапливать заряд. Теперь это бесполезный сплав материалов.
-  suffix: Rating 1
+  description: Раньше это был хороший компонент. Теперь это бесполезный сплав материалов.
+  suffix: Сгоревший
   components:
     - type: Sprite
       sprite: Victoria/SystemsFail/fail_module.rsi
@@ -22,7 +22,7 @@
 
 - type: stack
   id: DeffectCapacitor
-  name: Сгоревший конденсатор
+  name: сгоревший конденсатор
   icon: { sprite: "Victoria/SystemsFail/fail_module.rsi", state: capacitor_fail }
   spawn: DeffectCapacitorStockPart
   maxCount: 10
@@ -30,9 +30,9 @@
 - type: entity
   parent: BaseItem
   id: DeffectCableApcStack
-  name: Сгоревший кабель
-  description: Кажется этот кабель "почувствовал запах Ампера".
-  suffix: Full
+  name: сгоревший кабель
+  description: Кажется, этот кабель "почувствовал запах Ампера". 
+  suffix: Full, Сгоревший
   components:
   - type: Tag
     tags:
@@ -86,8 +86,8 @@
 - type: entity
   id: DeffectSubstationMachineCircuitboard
   parent: BaseMachineCircuitboard
-  name: Сгоревшая плата
-  description: Кажется, в этой платы был маленький деффект. А может всему виной скачок напряжения. Аномалии... Может ионная буря?
+  name: сгоревшая машинная плата
+  description: Кажется, в этой плате был маленький деффект. А может всему виной скачок напряжения. Аномалии... Может, ионная буря?
   suffix: Подстанция
   components:
     - type: Sprite
@@ -136,8 +136,8 @@
 - type: entity
   id: DeffectSMESMachineCircuitboard
   parent: BaseMachineCircuitboard
-  name: Сгоревшая плата
-  description: Кажется, в этой платы был маленький деффект. А может всему виной скачок напряжения. Аномалии... Может ионная буря?
+  name: сгоревшая машинная плата
+  description: Кажется, в этой плате был маленький деффект. А может всему виной скачок напряжения. Аномалии... Может, ионная буря?
   suffix: СМЭС
   components:
     - type: Sprite
@@ -182,8 +182,8 @@
 - type: entity
   id: DeffectAPCElectronics
   parent: BaseElectronics
-  name: Сгоревшая плата
-  description: Кажется, в этой платы был маленький деффект. А может всему виной скачок напряжения. Аномалии... Может ионная буря?
+  name: сгоревшая машинная плата
+  description: Кажется, в этой плате был маленький деффект. А может всему виной скачок напряжения. Аномалии... Может, ионная буря?
   suffix: ЛКП
   components:
     - type: Sprite
@@ -251,13 +251,13 @@
 - type: entity
   id: ReliableSubstationMachineCircuitboard
   parent: BaseMachineCircuitboard
-  name: Плата подстанции повышенной надёжности
+  name: подстанция повышенной надёжности (машинная плата)
   description: Электронная плата для подстанции с компонентами для увеличения надёжности.
   components:
     - type: MachineBoard
       prototype: ReliableSubstation
       stackRequirements:
-        Capacitor: 2
+        IndustrialCapacitor: 2
         CableMV: 5
         CableHV: 5
         Cable: 5
@@ -284,14 +284,14 @@
     board: ReliableSubstationMachineCircuitboard
   - type: RandomChangeTime
     time: 7260
-    prob: 0.25
+    prob: 0.07
     entity: DeffectSubstation
 #-----------------------------------------------------------------Надёжный СМЭС-----------------------------
 #-------------------------------------------------Плата--------------------------------------
 - type: entity
   id: ReliableSMESMachineCircuitboard
   parent: BaseMachineCircuitboard
-  name: Плата СМЭС повышенной надёжности
+  name: СМЭС повышенной надёжности (машинная плата)
   description: Электронная плата для СМЭС с компонентами для увеличения надёжности.
   components:
     - type: Sprite
@@ -300,7 +300,7 @@
     - type: MachineBoard
       prototype: ReliableSMES
       stackRequirements:
-        Capacitor: 2
+        IndustrialCapacitor: 2
         CableHV: 10
         Cable: 5
       componentRequirements:
@@ -321,14 +321,14 @@
     board: ReliableSMESMachineCircuitboard
   - type: RandomChangeTime
     time: 7920
-    prob: 0.2
+    prob: 0.05
     entity: DeffectSMES
 #-----------------------------------------------------------------Надёжный ЛКП--------------------------------
 #-------------------------------------------------Плата--------------------------------------
 - type: entity
   id: ReliableAPCElectronics
   parent: BaseElectronics
-  name: Плата ЛКП повышенной надёжности
+  name: микросхема ЛКП повышенной надёжности
   description: Микросхема, используемая в создании ЛКП. Дополнена компонентами, повышающими надёжность.
   components:
     - type: Sprite
@@ -348,7 +348,7 @@
     
 - type: stack
   id: ReliableAPCElectronics
-  name: плата ЛКП повышенной надёжности
+  name: микросхема ЛКП повышенной надёжности
   icon: { sprite: Objects/Misc/module.rsi, state: charger_APC }
   spawn: ReliableAPCElectronics
   maxCount: 1
@@ -356,7 +356,7 @@
 - type: material
   id: ReliableAPCElectronics
   stackEntity: ReliableAPCElectronics
-  name: плата ЛКП повышенной надёжности
+  name: микросхема ЛКП повышенной надёжности
   icon: { sprite: Objects/Misc/module.rsi, state: charger_APC }
   price: 1 
 #-------------------------------------------------Машина--------------------------------------------
@@ -370,7 +370,7 @@
   - type: Clickable
   - type: RandomChangeTime
     time: 6600
-    prob: 0.35
+    prob: 0.10
     entity: DeffectBaseAPC
   - type: Construction
     graph: APC
@@ -410,7 +410,7 @@
 - type: entity
   id: AdminSubstationMachineCircuitboard
   parent: SubstationMachineCircuitboard
-  name: Плата подстанции сверхвысокой надёжности
+  name: подстанция сверхвысокой надёжности (машинная плата)
   description: Электронная плата для подстанции с компонентами для увеличения надёжности.
   suffix: Админ
   components:
@@ -430,12 +430,37 @@
     time: 99999
     prob: 0
     entity: DeffectSubstation
+#-----------------------------------------------------------------Надёжнный СМЭС-----------------------------
+#-------------------------------------------------Плата--------------------------------------
+- type: entity
+  id: AdminSMESMachineCircuitboard
+  parent: SMESMachineCircuitboard
+  name: СМЭС сверхвысокой надёжности (машинная плата)
+  description: Электронная плата для СМЭС с компонентами для увеличения надёжности.
+  suffix: Админ
+  components:
+  - type: MachineBoard
+    prototype: AdminSMES
+#-------------------------------------------------Машина--------------------------------------------
+- type: entity
+  parent: BaseSMES
+  id: AdminSMES
+  name: СМЭС
+  description: Сверхпроводящая Магнитная Энергонакопительная Станция (СМЭС) большой ёмкости.
+  suffix: Админ
+  components:
+  - type: Machine
+    board: AdminSMESMachineCircuitboard
+  - type: RandomChangeTime
+    time: 99999
+    prob: 0
+    entity: DeffectSubstation
 #-----------------------------------------------------------------Надёжный ЛКП--------------------------------
 #-------------------------------------------------Плата--------------------------------------
 - type: entity
   id: AdminAPCElectronics
   parent: BaseElectronics
-  name: Плата ЛКП сверхвысокой надёжности
+  name: микросхема ЛКП сверхвысокой надёжности
   description: Микросхема, используемая в создании ЛКП. Дополнена компонентами, повышающими надёжность.
   suffix: Админ
   components:
@@ -446,7 +471,7 @@
     
 - type: stack
   id: AdminAPCElectronics
-  name: плата ЛКП сверхвысокой надёжности
+  name: микросхема ЛКП сверхвысокой надёжности
   icon: { sprite: Objects/Misc/module.rsi, state: charger_APC }
   spawn: AdminAPCElectronics
   maxCount: 1
@@ -454,7 +479,7 @@
 - type: material
   id: AdminAPCElectronics
   stackEntity: AdminAPCElectronics
-  name: плата ЛКП сверхвысокой надёжности
+  name: микросхема ЛКП сверхвысокой надёжности
   icon: { sprite: Objects/Misc/module.rsi, state: charger_APC }
   price: 1 
 #-------------------------------------------------Машина--------------------------------------------

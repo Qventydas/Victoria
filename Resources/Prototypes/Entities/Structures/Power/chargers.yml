@@ -169,8 +169,8 @@
 - type: entity
   parent: BaseItemRecharger
   id: TurboItemRecharger
-  name: turbo recharger
-  description: An overclocked recharger that's been adapted with a global port.
+  name: турбозарядник энергооружия
+  description: Коллега по цеху турбозарядника батарей, способный заряжать с большой скоростю энергооружие.
   components:
   - type: Sprite
     sprite: Structures/Power/turbo_recharger.rsi
@@ -187,6 +187,28 @@
           - HitscanBatteryAmmoProvider
           - ProjectileBatteryAmmoProvider
           - Stunbaton
+        blacklist:
+          components:
+          - PowerCell
+
+- type: entity
+  parent: BaseItemRecharger
+  id: TurboBatteryRecharger
+  name: турбозарядник батарей
+  description: Коллега по цеху турбозарядника энергооружия, способный заряжать с большой скоростью батареи.
+  components:
+  - type: Sprite
+    sprite: Structures/Power/turbo_battery_recharger.rsi
+  - type: Machine
+    board: TurboBatteryRechargerCircuitboard
+  - type: Charger
+    chargeRate: 100
+  - type: ItemSlots
+    slots:
+      charger_slot:
+        ejectOnInteract: true
+        whitelist:
+          components:
           - PowerCell
         blacklist:
           tags:

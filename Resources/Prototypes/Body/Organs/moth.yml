@@ -8,6 +8,7 @@
       tags:
       - ClothMade
       - Paper
+      - NianFood
   - type: SolutionContainerManager
     solutions:
       stomach:

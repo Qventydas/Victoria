@@ -36,7 +36,7 @@
 #---проектор голобарьера---------
 - type: entity
   name: проектор голобарьера
-  description: Создаёт твёрдый но хрупкий барьер.
+  description: Создаёт твёрдый, но хрупкий барьер.
   parent: HoloprojectorSecurity
   id: HoloprojectorSecurityBorg
   suffix: Для боргов
@@ -116,7 +116,7 @@
   name: противопульный щит киборга
   parent: BaseShieldNotDistruct
   id: RiotBulletShieldNotDistruct
-  description: Более прочный щит в руках киборга , позволяющий ему эффективнее защищать назначенную цель.
+  description: Более прочный щит в руках киборга, позволяющий ему эффективнее защищать назначенную цель.
   suffix: Для боргов
   components:
     - type: Sprite
@@ -139,7 +139,7 @@
   name: слабый противопульный щит киборга
   parent: BaseShieldNotDistruct
   id: RiotBulletShieldDistruct
-  description: Щит в руках киборга , позволяющий ему защищать назначенную цель.
+  description: Щит в руках киборга, позволяющий ему защищать назначенную цель.
   suffix: Для боргов
   components:
     - type: Sprite

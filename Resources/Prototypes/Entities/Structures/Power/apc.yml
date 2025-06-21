@@ -145,7 +145,7 @@
     price: 500
   - type: RandomChangeTime
     time: 2640
-    prob: 0.5
+    prob: 0.25
     entity: DeffectBaseAPC
     
 

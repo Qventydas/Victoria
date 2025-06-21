@@ -30,3 +30,36 @@
     contents:
     - id: LightTube
       amount: 0
+
+- type: entity
+  parent: BaseItem
+  name: блюспейс лампозаменитель
+  id: BlueSpaceLightReplacer
+  description: Усовершенственное устройство для лёгкой замены сломанных лампочек.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Janitorial/bluespace_light_replacer.rsi
+    state: icon
+  - type: Item
+    sprite: Objects/Specific/Janitorial/bluespace_light_replacer.rsi
+  - type: LightReplacer
+    contents:
+    - id: LightTube
+      amount: 28
+    - id: LightBulb
+      amount: 25
+  - type: StaticPrice
+    price: 100
+  - type: ContainerContainer
+    containers:
+      light_replacer_storage: !type:Container
+
+- type: entity
+  parent: BlueSpaceLightReplacer
+  id: BlueSpaceLightReplacerEmpty
+  suffix: Пустой
+  components:
+  - type: LightReplacer
+    contents:
+    - id: LightTube
+      amount: 0

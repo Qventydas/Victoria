@@ -89,7 +89,7 @@
   id: Autolathe
   parent: BaseLatheLube
   name: autolathe
-  description: It produces basic items using metal and glass. Has the ability to process blueprints to print new recipes.
+  description: It produces basic items using metal and glass.
   components:
   - type: Sprite
     sprite: Structures/Machines/autolathe.rsi
@@ -187,9 +187,9 @@
       - ClothingHeadHatWelding
       - WetFloorSign
       - ClothingHeadHatCone
-      - FloorGreenCircuit
-      - FloorBlueCircuit
-      - FloorRedCircuit
+      - SheetPaper
+      - LargeBeaker
+      - Dropper
   - type: EmagLatheRecipes
     emagStaticRecipes:
       - BoxLethalshot
@@ -215,18 +215,10 @@
       - RiotShield
       - SpeedLoaderMagnum
       - SpeedLoaderMagnumEmpty
-  - type: BlueprintReceiver
-    whitelist:
-      tags:
-      - BlueprintAutolathe
   - type: ContainerContainer
     containers:
       machine_board: !type:Container
       machine_parts: !type:Container
-      blueprint: !type:Container
-  - type: EmptyOnMachineDeconstruct
-    containers:
-    - blueprint
 
 - type: entity
   id: AutolatheHyperConvection
@@ -275,8 +267,6 @@
     staticRecipes:
     - RecipeSteelWire
     - RecipeCord
-    - LargeBeaker
-    - Dropper
     - ClothingEyesGlassesChemical
     - BSModuleRecipe
     - RSModuleRecipe
@@ -339,13 +329,17 @@
       - ClothingBackpackDuffelHolding
       - WelderExperimental
       - JawsOfLife
-      - FauxTileAstroGrass
-      - FauxTileMowedAstroGrass
-      - FauxTileJungleAstroGrass
-      - FauxTileAstroIce
-      - FauxTileAstroSnow
       - OreBagOfHolding
       - DeviceQuantumSpinInverter
+      - IndustrialCapacitorStockPart
+      - IndustrialManipulatorStockPart
+      - IndustrialMatterBinStockPart
+      - SeismicCharge
+      - Fulton
+      - FultonBeacon
+      - ClothingBeltBlueSpace
+      - TrashBagBlue
+      - BlueSpaceLightReplacer
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - BoxBeanbag
@@ -479,13 +473,13 @@
       - SolarControlComputerCircuitboard
       - SolarTrackerElectronics
       - TurboItemRechargerCircuitboard
+      - TurboBatteryRechargerCircuitboard
       - PowerComputerCircuitboard
       - AutolatheHyperConvectionMachineCircuitboard
       - ProtolatheHyperConvectionMachineCircuitboard
       - CircuitImprinterHyperConvectionMachineCircuitboard
       - FatExtractorMachineCircuitboard
       - FlatpackerMachineCircuitboard
-      - SheetifierMachineCircuitboard
       - ShuttleConsoleCircuitboard
       - RadarConsoleCircuitboard
       - TechDiskComputerCircuitboard
@@ -526,6 +520,9 @@
       - ReagentGrinderIndustrialMachineCircuitboard
       - JukeboxCircuitBoard
       - SalvageExpeditionsComputerCircuitboard # Corvax-Cringe
+      - SecurityTechFabCircuitboard
+      - AmmoTechFabCircuitboard
+      - MedicalTechFabCircuitboard
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - ShuttleGunDusterCircuitboard
@@ -1276,37 +1273,6 @@
 
 - type: entity
   parent: BaseLathe
-  id: Sheetifier
-  name: sheet-meister 2000
-  description: A very sheety machine.
-  components:
-  - type: Sprite
-    sprite: Structures/Machines/sheetifier.rsi
-    layers:
-    - state: base_machine
-      map: ["enum.LatheVisualLayers.IsRunning"]
-    - state: buttons_on
-      shader: unshaded
-      map: ["enum.PowerDeviceVisualLayers.Powered"]
-  - type: Machine
-    board: SheetifierMachineCircuitboard
-  - type: MaterialStorage
-    dropOnDeconstruct: false #should drop ores instead of ingots/sheets
-    ignoreColor: true
-    canEjectStoredMaterials: false
-    whitelist:
-      tags:
-      - Raw
-      - Wooden
-  - type: Lathe
-    idleState: base_machine
-    runningState: base_machine_processing
-    staticRecipes:
-    - MaterialSheetMeat
-    - SheetPaper
-
-- type: entity
-  parent: BaseLathe
   id: CutterMachine
   name: cutter machine
   description: This is a cutter. It cuts. Add variety to your station floor with eye-pleasing patterns! Don't stick your fingers in.
@@ -1375,6 +1341,15 @@
       - FloorTileItemOldConcrete
       - FloorTileItemOldConcreteMono
       - FloorTileItemOldConcreteSmooth
+      - FloorGreenCircuit
+      - FloorBlueCircuit
+      - FloorRedCircuit
+    dynamicRecipes:
+      - FauxTileAstroGrass
+      - FauxTileMowedAstroGrass
+      - FauxTileJungleAstroGrass
+      - FauxTileAstroIce
+      - FauxTileAstroSnow
   - type: MaterialStorage
     whitelist:
       tags:

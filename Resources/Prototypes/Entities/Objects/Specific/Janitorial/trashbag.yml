@@ -51,6 +51,20 @@
     heldPrefix: blue
   - type: StorageFillVisualizer
     fillBaseName: blue-icon
+  - type: Storage
+    maxItemSize: Normal
+    grid:
+    - 0,0,19,9
+    quickInsert: true
+    areaInsert: true
+    storageOpenSound:
+      collection: trashBagRustle
+    storageInsertSound:
+      collection: trashBagRustle
+    whitelist:
+      tags:
+        - Cartridge
+        - Trash
 
 - type: entity
   name: spell of all-consuming cleanliness

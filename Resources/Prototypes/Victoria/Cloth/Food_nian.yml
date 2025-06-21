@@ -1,0 +1,428 @@
+#----------------------------------------------Восприятие-----------------------------------
+#------------------ПсевдоМолочное Эластан---------------------------
+- type: flavor
+  id: pseudomilk
+  flavorType: Base
+  description: flavor-pseudomilk
+#------------------ПсевдоОвощи Лён---------------------------
+- type: flavor
+  id: pseudovege
+  flavorType: Base
+  description: flavor-pseudovege
+#------------------ПсевдоМакароны Хлопок---------------------------
+- type: flavor
+  id: pseudopast
+  flavorType: Base
+  description: flavor-pseudopast
+#------------------ПсевдоХлебные ХБ---------------------------
+- type: flavor
+  id: pseudobread
+  flavorType: Base
+  description: flavor-pseudobread
+#------------------ПсевдоПряности Козья шерсть---------------------------
+- type: flavor
+  id: pseudospices
+  flavorType: Base
+  description: flavor-pseudospices
+#------------------ПсевдоМясное Овчина---------------------------
+- type: flavor
+  id: pseudomeat
+  flavorType: Base
+  description: flavor-pseudomeat
+#----------------------------------------------Блюда-----------------------------------
+#--------------------------------База-----------------------
+- type: Tag
+  id: NianFood
+
+- type: entity
+  parent: FoodInjectableBase
+  id: NianFoodBase
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: Victoria/food_nian.rsi
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 40
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 20
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,1,1
+  - type: Tag
+    tags:
+    - NianFood
+  - type: Food
+    requiresSpecialDigestion: true
+#--------------------------------Нианская паста-----------------------
+#------------------Вермишель с тевтелями----------------------
+- type: entity
+  name: Нианская "паста мясная"
+  parent: NianFoodBase
+  id: NianPastaMeatballs
+  description: Завитушки хлопка с шариками овечий шерсти.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - pseudopast
+      - pseudomeat
+  - type: Sprite
+    layers:
+    - state: plate
+    - state: pasta
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 30
+#------------------Вермишель с сыром--------------------------
+- type: entity
+  name: Нианская "паста сырная"
+  parent: NianPastaMeatballs
+  id: NianPastaCheese
+  description: Бантики хлопка с покрытием из эластана.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - pseudopast
+      - pseudomilk
+#------------------Удон с овощами-----------------------------
+- type: entity
+  name: Нианская "паста овощная"
+  parent: NianPastaMeatballs
+  id: NianPastaVegetable
+  description: Длинючки хлопка с кусочками льна.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - pseudopast
+      - pseudovege
+#--------------------------------Нианская выпечка---------------------
+#------------------Хлеб-------------------------------
+- type: entity
+  name: Нианский "хлеб"
+  parent: NianFoodBase
+  id: NianBread
+  description: Крупно нарезанная хлопчато-бумажная материя.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - pseudobread
+  - type: Sprite
+    layers:
+    - state: plate
+    - state: bread
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 25
+#------------------Овощная пицца----------------------
+- type: entity
+  name: Нианская "овощная пицца"
+  parent: NianBread
+  id: NianPizzaVegetable
+  description: Сшитый хлопчато-бумажный кусок с пришитыми частями льна и эластана.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - pseudobread
+      - pseudomilk
+      - pseudovege
+#------------------Мясная пицца-----------------------
+- type: entity
+  name: Нианская "мясная пицца"
+  parent: NianBread
+  id: NianPizzaMeat
+  description: Сшитый хлопчато-бумажный кусок с пришитыми частями эластана и овечей шерсти.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - pseudobread
+      - pseudomilk
+      - pseudomeat
+#--------------------------------Нианское мясное----------------------
+#------------------Стейк--------------------------------
+- type: entity
+  name: Нианский "стейк"
+  parent: NianFoodBase
+  id: NianSteak
+  description: Тёплая свалянная овечья и козья шерсть.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - pseudomeat
+      - pseudospices
+  - type: Sprite
+    layers:
+    - state: plate
+    - state: meat
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 35
+#------------------Стёйк с овощами----------------------
+- type: entity
+  name: Нианский "стейк с овощами"
+  parent: NianSteak
+  id: NianSteakVegetable
+  description: Тёплая плетёная овечья шерсть с прослойками льна.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - pseudomeat
+      - pseudovege
+#------------------Котлеты------------------------------
+- type: entity
+  name: Нианская "котлета"
+  parent: NianSteak
+  id: NianCutlets
+  description: Спресованная переплетёнка из овечей и козей шерсти с добавлением льтна и хлопчато-бумажного материала.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - pseudomeat
+      - pseudovege
+      - pseudobread
+      - pseudospices
+#--------------------------------Нианское молочное--------------------
+#------------------Творог------------------------------
+- type: entity
+  name: Нианский "творог"
+  parent: NianFoodBase
+  id: NianCurd
+  description: Рассыпчатый эластан.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - pseudomilk
+  - type: Sprite
+    layers:
+    - state: plate
+    - state: milk
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 20
+#------------------Тюря--------------------------------
+- type: entity
+  name: Нианская "тюря"
+  parent: NianCurd
+  id: NianMilkBread
+  description: Покрытие из эластана с вшитым хлопчато-бумажным материалом.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - pseudomilk
+      - pseudobread
+#------------------Сырные палочки----------------------
+- type: entity
+  name: Нианские "сырные палочки"
+  parent: NianCurd
+  id: NianCheeseSticks
+  description: Эластановые трубочки, обёрнутые хлопчато-бумажным материалом и козьей шерстью.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - pseudomilk
+      - pseudospices
+      - pseudobread
+#--------------------------------Нианские супы------------------------
+#------------------Овощной суп-----------------------
+- type: entity
+  name: Нианский "овощной суп"
+  parent: NianFoodBase
+  id: NianSoupVegetable
+  description: Мешанина льна и козьей шерсти.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - pseudovege
+      - pseudospices
+  - type: Sprite
+    layers:
+    - state: plate
+    - state: soup
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 40
+#------------------Мясной суп------------------------
+- type: entity
+  name: Нианский "мясной суп"
+  parent: NianSoupVegetable
+  id: NianSoupMiat
+  description: Мешанина льна, козьей и овечьей шерсти.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - pseudovege
+      - pseudospices
+      - pseudomeat
+#------------------Молочный суп----------------------
+- type: entity
+  name: Нианский "молочный суп"
+  parent: NianSoupVegetable
+  id: NianSoupMilk
+  description: Мешанина эластана и хлопка.
+  components:
+  - type: FlavorProfile
+    flavors:
+      - pseudomilk
+      - pseudopast
+#----------------------------------------------Рецепты-----------------------------------
+#--------------------------------Нианская паста-----------------------
+#------------------Вермишель с тевтелями----------------------
+- type: microwaveMealRecipe
+  id: RecipeNianPastaMeatballs
+  name: рецепт Нианская "паста мясная"
+  result: NianPastaMeatballs
+  time: 5
+  solids:
+    CottonCloth1: 2
+    SheepWoolClean1: 1
+#------------------Вермишель с сыром--------------------------
+- type: microwaveMealRecipe
+  id: RecipeNianPastaCheese
+  name: рецепт Нианская "паста сырная"
+  result: NianPastaCheese
+  time: 5
+  solids:
+    CottonCloth1: 2
+    ElastaneCloth1: 1
+#------------------Удон с овощами-----------------------------
+- type: microwaveMealRecipe
+  id: RecipeNianPastaVegetable
+  name: рецепт Нианская "паста овощная"
+  result: NianPastaVegetable
+  time: 5
+  solids:
+    CottonCloth1: 2
+    MaterialCloth1: 2
+#--------------------------------Нианская выпечка---------------------
+#------------------Хлеб-------------------------------
+- type: microwaveMealRecipe
+  id: RecipeNianBread
+  name: рецепт Нианский "хлеб"
+  result: NianBread
+  time: 10
+  solids:
+    CottonPaperCloth1: 2
+#------------------Овощная пицца----------------------
+- type: microwaveMealRecipe
+  id: RecipeNianPizzaVegetable
+  name: рецепт Нианская "овощная пицца"
+  result: NianPizzaVegetable
+  time: 10
+  solids:
+    CottonPaperCloth1: 3
+    MaterialCloth1: 2
+    ElastaneCloth1: 1
+#------------------Мясная пицца-----------------------
+- type: microwaveMealRecipe
+  id: RecipeNianPizzaMeat
+  name: рецепт Нианская "мясная пицца"
+  result: NianPizzaMeat
+  time: 10
+  solids:
+    CottonPaperCloth1: 3
+    SheepWoolClean1: 2
+    ElastaneCloth1: 1
+#--------------------------------Нианское мясное----------------------
+#------------------Стейк--------------------------------
+- type: microwaveMealRecipe
+  id: RecipeNianSteak
+  name: рецепт Нианский "стейк"
+  result: NianSteak
+  time: 15
+  solids:
+    SheepWoolClean1: 2
+    GoatWoolClean1: 1
+#------------------Стёйк с овощами----------------------
+- type: microwaveMealRecipe
+  id: RecipeNianSteakVegetable
+  name: рецепт Нианский "стейк с овощами"
+  result: NianSteakVegetable
+  time: 15
+  solids:
+    SheepWoolClean1: 2
+    MaterialCloth1: 2
+#------------------Котлеты------------------------------
+- type: microwaveMealRecipe
+  id: RecipeNianCutlets
+  name: рецепт Нианская "котлета"
+  result: NianCutlets
+  time: 15
+  solids:
+    SheepWoolClean1: 1
+    MaterialCloth1: 1
+    GoatWoolClean1: 1
+    CottonPaperCloth1: 1
+#--------------------------------Нианское молочное--------------------
+#------------------Творог------------------------------
+- type: microwaveMealRecipe
+  id: RecipeNianCurd
+  name: рецепт Нианский "творог"
+  result: NianCurd
+  time: 5
+  solids:
+    ElastaneCloth1: 2
+#------------------Тюря--------------------------------
+- type: microwaveMealRecipe
+  id: RecipeNianMilkBread
+  name: рецепт Нианская "тюря"
+  result: NianMilkBread
+  time: 5
+  solids:
+    ElastaneCloth1: 2
+    CottonPaperCloth1: 2
+#------------------Сырные палочки----------------------
+- type: microwaveMealRecipe
+  id: RecipeNianCheeseSticks
+  name: рецепт Нианские "сырные палочки"
+  result: NianCheeseSticks
+  time: 5
+  solids:
+    ElastaneCloth1: 2
+    CottonPaperCloth1: 1
+    GoatWoolClean1: 1
+#--------------------------------Нианские супы------------------------
+#------------------Овощной суп-----------------------
+- type: microwaveMealRecipe
+  id: RecipeNianSoupVegetable
+  name: рецепт Нианский "овощной суп"
+  result: NianSoupVegetable
+  time: 10
+  solids:
+    MaterialCloth1: 4
+    GoatWoolClean1: 2
+#------------------Мясной суп------------------------
+- type: microwaveMealRecipe
+  id: RecipeNianSoupMiat
+  name: рецепт Нианский "мясной суп"
+  result: NianSoupMiat
+  time: 10
+  solids:
+    MaterialCloth1: 2
+    GoatWoolClean1: 2
+    SheepWoolClean1: 2
+#------------------Молочный суп----------------------
+- type: microwaveMealRecipe
+  id: RecipeNianSoupMilk
+  name: рецепт Нианский "молочный суп"
+  result: NianSoupMilk
+  time: 10
+  solids:
+    ElastaneCloth1: 3
+    CottonCloth1: 2

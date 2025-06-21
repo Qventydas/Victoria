@@ -555,7 +555,7 @@
 
 - type: stack
   id: BSModuleStack
-  name: блюспейс-модуль
+  name: блюспейс модуль
   icon: { sprite: Victoria/Special_crystals/module.rsi, state: bs_module }
   spawn: BSModule
   maxCount: 6
@@ -563,13 +563,13 @@
 - type: material
   id: BSModuleMaterial
   stackEntity: BSModule
-  name: блюспейс-модуль
+  name: блюспейс модуль
   icon: { sprite: Victoria/Special_crystals/module.rsi, state: bs_module }
   price: 6
 
 - type: entity
   id: BSModule
-  name: блюспейс-модуль
+  name: блюспейс модуль
   parent: BaseStockPart
   description: Сложное энергетическо-вычислительное устройство, используемое для создания крупных машин, взаимодействующих с блюспейс-пространством.
   components:
@@ -590,7 +590,7 @@
 
 - type: stack
   id: RSModuleStack
-  name: редспейс-модуль
+  name: редспейс модуль
   icon: { sprite: Victoria/Special_crystals/module.rsi, state: rs_module }
   spawn: RSModule
   maxCount: 6
@@ -598,13 +598,13 @@
 - type: material
   id: RSModuleMaterial
   stackEntity: RSModule
-  name: редспейс-модуль
+  name: редспейс модуль
   icon: { sprite: Victoria/Special_crystals/module.rsi, state: rs_module }
   price: 6
 
 - type: entity
   id: RSModule
-  name: редспейс-модуль
+  name: редспейс модуль
   parent: BaseStockPart
   description: Сложное энергетическо-осциллирующее устройство, используемое для создания техники, взаимодействующей с редспейсом-пространством.
   components:
