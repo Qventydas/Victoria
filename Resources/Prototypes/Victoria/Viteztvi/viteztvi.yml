@@ -501,7 +501,6 @@
         - SmokeOnTrigger
         - Flash
         - Handcuff
-        - RangedMagazine
         - Ammo
         - SprayPainter
         - NetworkConfigurator

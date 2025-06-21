@@ -1,0 +1,609 @@
+#-----------------------------------------------------------умпорский---------------------
+#---------------------------------------------сервис-----------------------
+- type: loadout
+  id: UmpornKnife
+  storage:
+    back:
+    - UmpornKnife
+
+- type: loadout
+  id: UmporSpade
+  storage:
+    back:
+    - UmporSpade
+
+- type: loadout
+  id: UmporHatchet
+  storage:
+    back:
+    - UmporHatchet
+
+- type: loadout
+  id: UmporCapP
+  equipment:
+    head: UmporCapP
+
+- type: loadoutGroup
+  id: GroupUmporLoadoutCapP
+  name: loadout-group-umpor
+  maxLimit: 2
+  loadouts:
+  - UmporCapP
+
+- type: loadoutGroup
+  id: GroupUmporLoadoutChef
+  name: loadout-group-umpor
+  maxLimit: 2
+  loadouts:
+  - UmporCapP
+  - UmpornKnife
+  
+- type: loadoutGroup
+  id: GroupUmporLoadoutBotan
+  name: loadout-group-umpor
+  maxLimit: 3
+  loadouts:
+  - UmporCapP
+  - UmporHatchet
+  - UmporSpade
+#---------------------------------------------карго-----------------------
+- type: loadout
+  id: UmporHealthAnalyzerUnpowered
+  storage:
+    back:
+    - UmporHealthAnalyzerUnpowered
+    
+- type: loadoutGroup
+  id: GroupUmporLoadoutSalv
+  name: loadout-group-umpor
+  maxLimit: 2
+  loadouts:
+  - UmporHealthAnalyzerUnpowered
+  - UmpornKnife
+#---------------------------------------------инж-----------------------    
+- type: loadout
+  id: UmporRCD
+  equipment:
+    pocket1: UmporRCD
+    
+- type: loadoutGroup
+  id: GroupUmporLoadoutEng
+  name: loadout-group-umpor
+  maxLimit: 2
+  loadouts:
+  - UmporBeret
+  - UmporRCD
+#---------------------------------------------мед-----------------------     
+- type: loadout
+  id: UmporBeret
+  equipment:
+    head: UmporBeret
+    
+- type: loadout
+  id: UmporeBeltMed
+  equipment:
+    belt: UmporeBeltMed
+
+- type: loadoutGroup
+  id: GroupUmporLoadoutMed
+  name: loadout-group-umpor
+  maxLimit: 3
+  loadouts:
+  - UmporHealthAnalyzerUnpowered
+  - UmporBeret
+  - UmporeBeltMed
+#---------------------------------------------СБ-----------------------     
+- type: loadout
+  id: UmporCap
+  equipment:
+    head: UmporCap
+
+- type: loadoutGroup
+  id: GroupUmporLoadoutKnife
+  name: loadout-group-umpor
+  maxLimit: 1
+  loadouts:
+  - UmpornKnife
+    
+- type: loadoutGroup
+  id: GroupUmporLoadoutSec
+  name: loadout-group-umpor
+  maxLimit: 2
+  loadouts:
+  - UmporCap
+  - UmpornKnife
+  
+- type: loadoutGroup
+  id: GroupUmporLoadoutCap
+  name: loadout-group-umpor
+  maxLimit: 1
+  loadouts:
+  - UmporCap
+#-----------------------------------------------------------советский---------------------
+
+
+
+
+
+
+
+
+
+
+
+#-----------------------------------------------------------снк---------------------
+#---------------------------------------------сервис-----------------------
+- type: loadout
+  id: KMLGCapP
+  equipment:
+    head: KMLGCapP
+    
+- type: loadout
+  id: KMLGBandana
+  equipment:
+    head: KMLGBandana
+    
+- type: loadout
+  id: KMLGEpolets10
+  equipment:
+    neck: KMLGEpolets10
+    
+- type: loadout
+  id: KMLGEpolets20
+  equipment:
+    neck: KMLGEpolets20
+    
+- type: loadout
+  id: KMLGEpolets30
+  equipment:
+    neck: KMLGEpolets30
+    
+- type: loadout
+  id: KMLGCoat
+  equipment:
+    outerClothing: KMLGCoat
+    
+- type: loadout
+  id: KMLGUniformServise
+  equipment:
+    jumpsuit: KMLGUniformServise
+    
+- type: loadoutGroup
+  id: GroupKMLGLoadoutEpolets
+  name: loadout-group-snk-epolets
+  maxLimit: 1
+  loadouts:
+  - KMLGEpolets10
+  - KMLGEpolets20
+  - KMLGEpolets30
+  
+- type: loadoutGroup
+  id: GroupKMLGLoadoutCapServ
+  name: loadout-group-snk
+  maxLimit: 1
+  loadouts:
+  - KMLGCapP
+  - KMLGBandana
+  
+- type: loadoutGroup
+  id: GroupKMLGLoadoutCoat
+  name: loadout-group-snk
+  maxLimit: 1
+  loadouts:
+  - KMLGCoat
+  
+- type: loadoutGroup
+  id: GroupKMLGLoadoutUniformServise
+  name: loadout-group-snk
+  maxLimit: 1
+  loadouts:
+  - KMLGUniformServise
+#---------------------------------------------карго-----------------------
+- type: loadout
+  id: KMLGCepka
+  equipment:
+    head: KMLGCepka
+    
+- type: loadout
+  id: SNKShapkaStd
+  equipment:
+    head: SNKShapkaStd
+    
+- type: loadout
+  id: SNKShapkaLes
+  equipment:
+    head: SNKShapkaLes
+    
+- type: loadout
+  id: SNKShapkaZim
+  equipment:
+    head: SNKShapkaZim
+    
+- type: loadout
+  id: SNKCloakLes
+  equipment:
+    neck: SNKCloakLes
+    
+- type: loadout
+  id: SNKCloakPes
+  equipment:
+    neck: SNKCloakPes
+    
+- type: loadout
+  id: SNKCloakZim
+  equipment:
+    neck: SNKCloakZim
+    
+- type: loadoutGroup
+  id: GroupSNKLoadoutShapka
+  name: loadout-group-snk-shapka
+  maxLimit: 1
+  loadouts:
+  - SNKShapkaStd
+  - SNKShapkaLes
+  - SNKShapkaZim
+  
+- type: loadoutGroup
+  id: GroupSNKLoadoutCloak
+  name: loadout-group-snk-cloak
+  maxLimit: 1
+  loadouts:
+  - SNKCloakLes
+  - SNKCloakPes
+  - SNKCloakZim
+  
+- type: loadoutGroup
+  id: GroupKMLGLoadoutCepka
+  name: loadout-group-snk
+  maxLimit: 2
+  loadouts:
+  - KMLGCepka
+  - KMLGCoat
+#---------------------------------------------инж-----------------------
+- type: loadout
+  id: KMLGUniformRepairman
+  equipment:
+    jumpsuit: KMLGUniformRepairman
+    
+- type: loadout
+  id: KMLGBelt
+  equipment:
+    belt: KMLGBelt
+    
+- type: loadoutGroup
+  id: GroupSNKLoadoutTech
+  name: loadout-group-snk
+  maxLimit: 3
+  loadouts:
+  - KMLGUniformRepairman
+  - KMLGBelt
+  - KMLGCoat
+  
+- type: loadoutGroup
+  id: GroupSNKLoadoutEng
+  name: loadout-group-snk
+  maxLimit: 2
+  loadouts:
+  - KMLGBelt
+  - KMLGCoat
+  
+- type: loadoutGroup
+  id: GroupSNKLoadoutAtmos
+  name: loadout-group-snk
+  maxLimit: 3
+  loadouts:
+  - KMLGBelt
+  - KMLGCoat
+  - Hooligan
+#---------------------------------------------мед-----------------------
+- type: loadout
+  id: KMLGBeret
+  equipment:
+    head: KMLGBeret
+    
+- type: loadoutGroup
+  id: GroupKMLGLoadoutMed
+  name: loadout-group-snk
+  maxLimit: 2
+  loadouts:
+  - KMLGBeret
+  - KMLGCoat
+#-----------------------------------------------------------имперец---------------------
+#---------------------------------------------сервис-----------------------
+- type: loadout
+  id: MirtnKnife
+  storage:
+    back:
+    - MirtnKnife
+
+- type: loadout
+  id: MirtMaskGas
+  storage:
+    back:
+    - MirtMaskGas 
+
+- type: loadout
+  id: MirtCloakOfInk
+  equipment:
+    neck: MirtCloakOfInk 
+    
+- type: loadout
+  id: MirtHelmetInk
+  equipment:
+    head: MirtHelmetInk
+
+- type: loadoutGroup
+  id: GroupMirtLoadoutServ
+  name: loadout-group-mirt
+  maxLimit: 2
+  loadouts:
+  - MirtnKnife
+  - MirtMaskGas  
+  
+- type: loadoutGroup
+  id: GroupMirtLoadoutMonk
+  name: loadout-group-mirt
+  maxLimit: 4
+  loadouts:
+  - MirtnKnife
+  - MirtMaskGas
+  - MirtCloakOfInk
+  - MirtHelmetInk
+#---------------------------------------------карго-----------------------
+- type: loadout
+  id: MirtGlassesRaz
+  equipment:
+    eyes: MirtGlassesRaz
+
+- type: loadoutGroup
+  id: GroupMirtLoadoutCarg
+  name: loadout-group-mirt
+  maxLimit: 3
+  loadouts:
+  - MirtnKnife
+  - MirtMaskGas
+  - MirtGlassesRaz  
+#---------------------------------------------инж-----------------------  
+- type: loadout
+  id: MirtCloakSP
+  equipment:
+    neck: MirtCloakSP
+    
+- type: loadoutGroup
+  id: GroupMirtLoadoutEng
+  name: loadout-group-mirt
+  maxLimit: 3
+  loadouts:
+  - MirtnKnife
+  - MirtMaskGas
+  - MirtCloakSP
+#---------------------------------------------команд----------------------- 
+- type: loadout
+  id: MirtnSword
+  equipment:
+    belt: MirtnSword
+
+- type: loadoutGroup
+  id: GroupMirtLoadoutCap
+  name: loadout-group-mirt
+  maxLimit: 3
+  loadouts:
+  - MirtnKnife
+  - MirtMaskGas 
+  - MirtnSword
+#-----------------------------------------------------------ражулит---------------------
+#---------------------------------------------сервис-----------------------
+- type: loadout
+  id: CDCUniformImam
+  equipment:
+    jumpsuit: CDCUniformImam
+    
+- type: loadout
+  id: CDCTurban
+  equipment:
+    head: CDCTurban
+    
+- type: loadout
+  id: CDCFez
+  equipment:
+    head: CDCFez
+    
+- type: loadout
+  id: Quran
+  storage:
+    back:
+    - Quran
+
+- type: loadoutGroup
+  id: GroupCDCLoadoutCapil
+  name: loadout-group-congl
+  maxLimit: 3
+  loadouts:
+  - CDCUniformImam
+  - CDCTurban
+  - Quran
+  
+- type: loadoutGroup
+  id: GroupCDCLoadoutServ
+  name: loadout-group-congl
+  maxLimit: 1
+  loadouts:
+  - CDCFez
+#---------------------------------------------карго-----------------------
+- type: loadout
+  id: CDCCepka
+  equipment:
+    head: CDCCepka
+    
+- type: loadout
+  id: CDCBeltTech
+  equipment:
+    belt: CDCBeltTech
+
+- type: loadoutGroup
+  id: GroupCDCLoadoutCargo
+  name: loadout-group-congl
+  maxLimit: 2
+  loadouts:
+  - CDCBeltTech
+  - CDCCepka  
+#---------------------------------------------сб-----------------------
+- type: loadout
+  id: CDCBuckler
+  storage:
+    back:
+    - CDCBuckler
+
+- type: loadout
+  id: CDCCap
+  equipment:
+    head: CDCCap
+    
+- type: loadout
+  id: CDCGloves
+  equipment:
+    gloves: CDCGloves
+
+- type: loadoutGroup
+  id: GroupCDCLoadoutSec
+  name: loadout-group-congl
+  maxLimit: 3
+  loadouts:
+  - CDCCap
+  - CDCGloves 
+  - CDCBuckler
+#---------------------------------------------рнд-----------------------
+- type: loadout
+  id: CDCGlovesTech
+  equipment:
+    gloves: CDCGlovesTech
+
+- type: loadoutGroup
+  id: GroupCDCLoadoutRnD
+  name: loadout-group-congl
+  maxLimit: 2
+  loadouts:
+  - CDCFez
+  - CDCGlovesTech 
+#---------------------------------------------ком-----------------------
+- type: loadout
+  id: CDCBeltOffi
+  equipment:
+    belt: CDCBeltOffi
+
+- type: loadoutGroup
+  id: GroupCDCLoadoutCom
+  name: loadout-group-congl-com
+  maxLimit: 2
+  loadouts:
+  - CDCCap
+  - CDCBeltOffi
+#-----------------------------------------------------------ноократ---------------------
+#---------------------------------------------инж-----------------------
+- type: loadoutGroup
+  id: GroupNoocLoadoutEng
+  name: loadout-group-nooc
+  maxLimit: 1
+  loadouts:
+  - LaserPointer
+#---------------------------------------------сб-----------------------
+- type: loadout
+  id: NoocPistol
+  storage:
+    back:
+    - NoocPistol
+    
+- type: loadout
+  id: WeaponPistolMk58
+  storage:
+    back:
+    - WeaponPistolMk58
+    
+- type: loadoutGroup
+  id: GroupNoocLoadoutSecWeapon
+  name: loadout-group-nooc-w
+  maxLimit: 1
+  loadouts:
+  - NoocPistol
+  - WeaponPistolMk58
+  
+- type: loadout
+  id: NoocPowerCellTwo
+  storage:
+    back:
+    - NoocPowerCellTwo
+    
+- type: loadout
+  id: MagazinePistol
+  storage:
+    back:
+    - MagazinePistol
+
+- type: loadoutGroup
+  id: GroupNoocLoadoutSecAmmo
+  name: loadout-group-nooc-a
+  maxLimit: 1
+  loadouts:
+  - NoocPowerCellTwo
+  - NoocPowerCellTwo
+  - MagazinePistol
+  - MagazinePistol
+#---------------------------------------------рнд-----------------------
+- type: loadout
+  id: NoocHardsuitField
+  equipment:
+    outerClothing: NoocHardsuitField
+    
+- type: loadoutGroup
+  id: GroupNoocLoadoutRnD
+  name: loadout-group-nooc
+  maxLimit: 1
+  loadouts:
+  - NoocHardsuitField
+#---------------------------------------------команд-----------------------
+- type: loadout
+  id: NoocCap
+  equipment:
+    head: NoocCap
+    
+- type: loadout
+  id: NoocCloak
+  equipment:
+    neck:  NoocCloak
+
+- type: loadoutGroup
+  id: GroupNoocLoadoutCom
+  name: loadout-group-nooc
+  maxLimit: 2
+  loadouts:
+  - NoocCap
+  - NoocCloak  
+  
+- type: loadoutGroup
+  id: GroupNoocLoadoutComEng
+  name: loadout-group-nooc
+  maxLimit: 3
+  loadouts:
+  - NoocCap
+  - NoocCloak 
+  
+- type: loadoutGroup
+  id: GroupNoocLoadoutComRnd
+  name: loadout-group-nooc
+  maxLimit: 3
+  loadouts:
+  - NoocCap
+  - NoocCloak 
+  - NoocHardsuitField
+#-----------------------------------------------------------опз---------------------
+
+
+
+
+
+
+
+
+
+
+

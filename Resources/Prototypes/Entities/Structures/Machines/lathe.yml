@@ -1239,6 +1239,7 @@
         - MaterialDiamond
         - MeltingCooper
         - MeltingAluminium
+        - MeltingPlumbum
 
 - type: entity
   parent: OreProcessor
@@ -1270,6 +1271,7 @@
       - MaterialDiamond
       - MeltingCooper
       - MeltingAluminium
+      - MeltingPlumbum
 
 - type: entity
   parent: BaseLathe

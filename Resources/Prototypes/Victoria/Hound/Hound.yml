@@ -1655,7 +1655,6 @@
   components:
   - type: StorageFill
     contents:
-      - id: ClothingEyesGlassesMeson
       - id: Welder
       - id: WeaponPistolMk58
       - id: Wirecutter
