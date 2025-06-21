@@ -12,7 +12,7 @@ chat-emote-name-grumbles = неразборчиво ворчит в рацию
 chat-emote-name-looks = пристально оглядывает вещи вокруг
 #--------------------бот ремонтник космологистики--------------------
 chat-emote-name-sniffs = шмыгает носом
-chat-emote-name-wipes = вытирает маслянные руки о майку
+chat-emote-name-wipes = вытирает масленые руки о майку
 chat-emote-name-swearing = шёпотом материт инженеров
 chat-emote-name-twists = подкручивает механизм
 chat-emote-name-checks = проверяет технику
