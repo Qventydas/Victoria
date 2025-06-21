@@ -204,6 +204,7 @@
   description: trait-accent-umpor-desc
   category: SpeechTraits
   cost: 1
+  sponsorOnly: true
   components:
   - type: ReplacementAccent
     accent: umpor
@@ -409,11 +410,12 @@
     victoria-accent-ussp-word-196: victoria-accent-ussp-replacement-196
 
 - type: trait
-  id: UsppAccent
+  id: UsspAccent
   name: trait-accent-ussp-name
   description: trait-accent-ussp-desc
   category: SpeechTraits
   cost: 1
+  sponsorOnly: true
   components:
   - type: ReplacementAccent
     accent: ussp
@@ -615,6 +617,7 @@
   description: trait-accent-nooc-desc
   category: SpeechTraits
   cost: 1
+  sponsorOnly: true
   components:
   - type: ReplacementAccent
     accent: nooc
@@ -792,6 +795,7 @@
   description: trait-accent-mirt-desc
   category: SpeechTraits
   cost: 1
+  sponsorOnly: true
   components:
   - type: ReplacementAccent
     accent: mirt
@@ -975,6 +979,7 @@
   description: trait-accent-congl-desc
   category: SpeechTraits
   cost: 1
+  sponsorOnly: true
   components:
   - type: ReplacementAccent
     accent: congl

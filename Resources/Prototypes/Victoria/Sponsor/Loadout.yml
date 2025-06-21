@@ -2,24 +2,32 @@
 #---------------------------------------------сервис-----------------------
 - type: loadout
   id: UmpornKnife
+  effects:
+  - !type:SponsorLoadoutEffect
   storage:
     back:
     - UmpornKnife
 
 - type: loadout
   id: UmporSpade
+  effects:
+  - !type:SponsorLoadoutEffect
   storage:
     back:
     - UmporSpade
 
 - type: loadout
   id: UmporHatchet
+  effects:
+  - !type:SponsorLoadoutEffect
   storage:
     back:
     - UmporHatchet
 
 - type: loadout
   id: UmporCapP
+  effects:
+  - !type:SponsorLoadoutEffect
   equipment:
     head: UmporCapP
 
@@ -49,6 +57,8 @@
 #---------------------------------------------карго-----------------------
 - type: loadout
   id: UmporHealthAnalyzerUnpowered
+  effects:
+  - !type:SponsorLoadoutEffect
   storage:
     back:
     - UmporHealthAnalyzerUnpowered
@@ -63,6 +73,8 @@
 #---------------------------------------------инж-----------------------    
 - type: loadout
   id: UmporRCD
+  effects:
+  - !type:SponsorLoadoutEffect
   equipment:
     pocket1: UmporRCD
     
@@ -76,11 +88,15 @@
 #---------------------------------------------мед-----------------------     
 - type: loadout
   id: UmporBeret
+  effects:
+  - !type:SponsorLoadoutEffect
   equipment:
     head: UmporBeret
     
 - type: loadout
   id: UmporeBeltMed
+  effects:
+  - !type:SponsorLoadoutEffect
   equipment:
     belt: UmporeBeltMed
 
@@ -95,6 +111,8 @@
 #---------------------------------------------СБ-----------------------     
 - type: loadout
   id: UmporCap
+  effects:
+  - !type:SponsorLoadoutEffect
   equipment:
     head: UmporCap
 
@@ -135,36 +153,50 @@
 #---------------------------------------------сервис-----------------------
 - type: loadout
   id: KMLGCapP
+  effects:
+  - !type:SponsorLoadoutEffect
   equipment:
     head: KMLGCapP
     
 - type: loadout
   id: KMLGBandana
+  effects:
+  - !type:SponsorLoadoutEffect
   equipment:
     head: KMLGBandana
     
 - type: loadout
   id: KMLGEpolets10
+  effects:
+  - !type:SponsorLoadoutEffect
   equipment:
     neck: KMLGEpolets10
     
 - type: loadout
   id: KMLGEpolets20
+  effects:
+  - !type:SponsorLoadoutEffect
   equipment:
     neck: KMLGEpolets20
     
 - type: loadout
   id: KMLGEpolets30
+  effects:
+  - !type:SponsorLoadoutEffect
   equipment:
     neck: KMLGEpolets30
     
 - type: loadout
   id: KMLGCoat
+  effects:
+  - !type:SponsorLoadoutEffect
   equipment:
     outerClothing: KMLGCoat
     
 - type: loadout
   id: KMLGUniformServise
+  effects:
+  - !type:SponsorLoadoutEffect
   equipment:
     jumpsuit: KMLGUniformServise
     
@@ -201,36 +233,50 @@
 #---------------------------------------------карго-----------------------
 - type: loadout
   id: KMLGCepka
+  effects:
+  - !type:SponsorLoadoutEffect
   equipment:
     head: KMLGCepka
     
 - type: loadout
   id: SNKShapkaStd
+  effects:
+  - !type:SponsorLoadoutEffect
   equipment:
     head: SNKShapkaStd
     
 - type: loadout
   id: SNKShapkaLes
+  effects:
+  - !type:SponsorLoadoutEffect
   equipment:
     head: SNKShapkaLes
     
 - type: loadout
   id: SNKShapkaZim
+  effects:
+  - !type:SponsorLoadoutEffect
   equipment:
     head: SNKShapkaZim
     
 - type: loadout
   id: SNKCloakLes
+  effects:
+  - !type:SponsorLoadoutEffect
   equipment:
     neck: SNKCloakLes
     
 - type: loadout
   id: SNKCloakPes
+  effects:
+  - !type:SponsorLoadoutEffect
   equipment:
     neck: SNKCloakPes
     
 - type: loadout
   id: SNKCloakZim
+  effects:
+  - !type:SponsorLoadoutEffect
   equipment:
     neck: SNKCloakZim
     
@@ -262,11 +308,15 @@
 #---------------------------------------------инж-----------------------
 - type: loadout
   id: KMLGUniformRepairman
+  effects:
+  - !type:SponsorLoadoutEffect
   equipment:
     jumpsuit: KMLGUniformRepairman
     
 - type: loadout
   id: KMLGBelt
+  effects:
+  - !type:SponsorLoadoutEffect
   equipment:
     belt: KMLGBelt
     
@@ -298,6 +348,8 @@
 #---------------------------------------------мед-----------------------
 - type: loadout
   id: KMLGBeret
+  effects:
+  - !type:SponsorLoadoutEffect
   equipment:
     head: KMLGBeret
     
@@ -312,23 +364,31 @@
 #---------------------------------------------сервис-----------------------
 - type: loadout
   id: MirtnKnife
+  effects:
+  - !type:SponsorLoadoutEffect
   storage:
     back:
     - MirtnKnife
 
 - type: loadout
   id: MirtMaskGas
+  effects:
+  - !type:SponsorLoadoutEffect
   storage:
     back:
     - MirtMaskGas 
 
 - type: loadout
   id: MirtCloakOfInk
+  effects:
+  - !type:SponsorLoadoutEffect
   equipment:
     neck: MirtCloakOfInk 
     
 - type: loadout
   id: MirtHelmetInk
+  effects:
+  - !type:SponsorLoadoutEffect
   equipment:
     head: MirtHelmetInk
 
@@ -352,6 +412,8 @@
 #---------------------------------------------карго-----------------------
 - type: loadout
   id: MirtGlassesRaz
+  effects:
+  - !type:SponsorLoadoutEffect
   equipment:
     eyes: MirtGlassesRaz
 
@@ -366,6 +428,8 @@
 #---------------------------------------------инж-----------------------  
 - type: loadout
   id: MirtCloakSP
+  effects:
+  - !type:SponsorLoadoutEffect
   equipment:
     neck: MirtCloakSP
     
@@ -380,6 +444,8 @@
 #---------------------------------------------команд----------------------- 
 - type: loadout
   id: MirtnSword
+  effects:
+  - !type:SponsorLoadoutEffect
   equipment:
     belt: MirtnSword
 
@@ -395,21 +461,29 @@
 #---------------------------------------------сервис-----------------------
 - type: loadout
   id: CDCUniformImam
+  effects:
+  - !type:SponsorLoadoutEffect
   equipment:
     jumpsuit: CDCUniformImam
     
 - type: loadout
   id: CDCTurban
+  effects:
+  - !type:SponsorLoadoutEffect
   equipment:
     head: CDCTurban
     
 - type: loadout
   id: CDCFez
+  effects:
+  - !type:SponsorLoadoutEffect
   equipment:
     head: CDCFez
     
 - type: loadout
   id: Quran
+  effects:
+  - !type:SponsorLoadoutEffect
   storage:
     back:
     - Quran
@@ -432,11 +506,15 @@
 #---------------------------------------------карго-----------------------
 - type: loadout
   id: CDCCepka
+  effects:
+  - !type:SponsorLoadoutEffect
   equipment:
     head: CDCCepka
     
 - type: loadout
   id: CDCBeltTech
+  effects:
+  - !type:SponsorLoadoutEffect
   equipment:
     belt: CDCBeltTech
 
@@ -450,17 +528,23 @@
 #---------------------------------------------сб-----------------------
 - type: loadout
   id: CDCBuckler
+  effects:
+  - !type:SponsorLoadoutEffect
   storage:
     back:
     - CDCBuckler
 
 - type: loadout
   id: CDCCap
+  effects:
+  - !type:SponsorLoadoutEffect
   equipment:
     head: CDCCap
     
 - type: loadout
   id: CDCGloves
+  effects:
+  - !type:SponsorLoadoutEffect
   equipment:
     gloves: CDCGloves
 
@@ -475,6 +559,8 @@
 #---------------------------------------------рнд-----------------------
 - type: loadout
   id: CDCGlovesTech
+  effects:
+  - !type:SponsorLoadoutEffect
   equipment:
     gloves: CDCGlovesTech
 
@@ -488,6 +574,8 @@
 #---------------------------------------------ком-----------------------
 - type: loadout
   id: CDCBeltOffi
+  effects:
+  - !type:SponsorLoadoutEffect
   equipment:
     belt: CDCBeltOffi
 
@@ -509,6 +597,8 @@
 #---------------------------------------------сб-----------------------
 - type: loadout
   id: NoocPistol
+  effects:
+  - !type:SponsorLoadoutEffect
   storage:
     back:
     - NoocPistol
@@ -529,6 +619,8 @@
   
 - type: loadout
   id: NoocPowerCellTwo
+  effects:
+  - !type:SponsorLoadoutEffect
   storage:
     back:
     - NoocPowerCellTwo
@@ -551,6 +643,8 @@
 #---------------------------------------------рнд-----------------------
 - type: loadout
   id: NoocHardsuitField
+  effects:
+  - !type:SponsorLoadoutEffect
   equipment:
     outerClothing: NoocHardsuitField
     
@@ -563,11 +657,15 @@
 #---------------------------------------------команд-----------------------
 - type: loadout
   id: NoocCap
+  effects:
+  - !type:SponsorLoadoutEffect
   equipment:
     head: NoocCap
     
 - type: loadout
   id: NoocCloak
+  effects:
+  - !type:SponsorLoadoutEffect
   equipment:
     neck:  NoocCloak
 

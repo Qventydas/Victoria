@@ -939,6 +939,8 @@
   
 - type: loadout
   id: Hooligan
+  effects:
+  - !type:SponsorLoadoutEffect
   storage:
     back:
     - Hooligan
@@ -996,6 +998,8 @@
     
 - type: loadout
   id: LaserPointer
+  effects:
+  - !type:SponsorLoadoutEffect
   storage:
     back:
     - LaserPointer
