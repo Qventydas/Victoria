@@ -14,6 +14,7 @@
   - UmporBeret
   - UmporeBeltMed
   - UmporCap
+  - UmporHealthAnalyzerUnpowered
   
 - type: sponsorGroup
   id: SponsorGroupUssp
@@ -31,6 +32,7 @@
   - UmporBeret
   - UmporeBeltMed
   - UmporCap
+  - UmporHealthAnalyzerUnpowered
   # USSP
   - UsspAccent
   
@@ -50,6 +52,7 @@
   - UmporBeret
   - UmporeBeltMed
   - UmporCap
+  - UmporHealthAnalyzerUnpowered
   # USSP
   - UsspAccent
   #SNK-KMLG
@@ -88,6 +91,7 @@
   - UmporBeret
   - UmporeBeltMed
   - UmporCap
+  - UmporHealthAnalyzerUnpowered
   # USSP
   - UsspAccent
   #SNK-KMLG
@@ -135,6 +139,7 @@
   - UmporBeret
   - UmporeBeltMed
   - UmporCap
+  - UmporHealthAnalyzerUnpowered
   # USSP
   - UsspAccent
   #SNK-KMLG
@@ -166,6 +171,7 @@
   - MirtCloakSP
   - MirtnSword
   #Congl
+  - ConglAccent
   - CDCUniformImam
   - CDCTurban
   - CDCFez
@@ -194,6 +200,7 @@
   - UmporBeret
   - UmporeBeltMed
   - UmporCap
+  - UmporHealthAnalyzerUnpowered
   # USSP
   - UsspAccent
   #SNK-KMLG
@@ -225,6 +232,7 @@
   - MirtCloakSP
   - MirtnSword
   #Congl
+  - ConglAccent
   - CDCUniformImam
   - CDCTurban
   - CDCFez
@@ -262,6 +270,7 @@
   - UmporBeret
   - UmporeBeltMed
   - UmporCap
+  - UmporHealthAnalyzerUnpowered
   # USSP
   - UsspAccent
   #SNK-KMLG
@@ -293,6 +302,7 @@
   - MirtCloakSP
   - MirtnSword
   #Congl
+  - ConglAccent
   - CDCUniformImam
   - CDCTurban
   - CDCFez
