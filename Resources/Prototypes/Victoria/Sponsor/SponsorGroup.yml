@@ -4,6 +4,7 @@
   extraCharSlots: 0
   serverPriorityJoin: false
   prototypes:
+  #Umpor
   - UmporAccent
   - UmpornKnife
   - UmporSpade
@@ -20,6 +21,17 @@
   extraCharSlots: 1
   serverPriorityJoin: false
   prototypes:
+  #Umpor
+  - UmporAccent
+  - UmpornKnife
+  - UmporSpade
+  - UmporHatchet
+  - UmporCapP
+  - UmporRCD
+  - UmporBeret
+  - UmporeBeltMed
+  - UmporCap
+  # USSP
   - UsspAccent
   
 - type: sponsorGroup
@@ -28,6 +40,19 @@
   extraCharSlots: 2
   serverPriorityJoin: false
   prototypes:
+  #Umpor
+  - UmporAccent
+  - UmpornKnife
+  - UmporSpade
+  - UmporHatchet
+  - UmporCapP
+  - UmporRCD
+  - UmporBeret
+  - UmporeBeltMed
+  - UmporCap
+  # USSP
+  - UsspAccent
+  #SNK-KMLG
   - KMLGCapP
   - KMLGBandana
   - KMLGEpolets10
@@ -53,6 +78,38 @@
   extraCharSlots: 3
   serverPriorityJoin: true
   prototypes:
+  #Umpor
+  - UmporAccent
+  - UmpornKnife
+  - UmporSpade
+  - UmporHatchet
+  - UmporCapP
+  - UmporRCD
+  - UmporBeret
+  - UmporeBeltMed
+  - UmporCap
+  # USSP
+  - UsspAccent
+  #SNK-KMLG
+  - KMLGCapP
+  - KMLGBandana
+  - KMLGEpolets10
+  - KMLGEpolets20
+  - KMLGEpolets30
+  - KMLGCoat
+  - KMLGCepka
+  - SNKShapkaStd
+  - SNKShapkaLes
+  - SNKShapkaZim
+  - SNKCloakLes
+  - SNKCloakPes
+  - SNKCloakZim
+  - KMLGUniformRepairman
+  - KMLGBelt
+  - KMLGBeret
+  - Hooligan
+  # - SSOfficer
+  # Mirt
   - MirtAccent
   - MirtnKnife
   - MirtMaskGas
@@ -68,6 +125,47 @@
   extraCharSlots: 4
   serverPriorityJoin: true
   prototypes:
+  #Umpor
+  - UmporAccent
+  - UmpornKnife
+  - UmporSpade
+  - UmporHatchet
+  - UmporCapP
+  - UmporRCD
+  - UmporBeret
+  - UmporeBeltMed
+  - UmporCap
+  # USSP
+  - UsspAccent
+  #SNK-KMLG
+  - KMLGCapP
+  - KMLGBandana
+  - KMLGEpolets10
+  - KMLGEpolets20
+  - KMLGEpolets30
+  - KMLGCoat
+  - KMLGCepka
+  - SNKShapkaStd
+  - SNKShapkaLes
+  - SNKShapkaZim
+  - SNKCloakLes
+  - SNKCloakPes
+  - SNKCloakZim
+  - KMLGUniformRepairman
+  - KMLGBelt
+  - KMLGBeret
+  - Hooligan
+  # - SSOfficer
+  # Mirt
+  - MirtAccent
+  - MirtnKnife
+  - MirtMaskGas
+  - MirtCloakOfInk
+  - MirtHelmetInk
+  - MirtGlassesRaz
+  - MirtCloakSP
+  - MirtnSword
+  #Congl
   - CDCUniformImam
   - CDCTurban
   - CDCFez
@@ -86,6 +184,59 @@
   extraCharSlots: 5
   serverPriorityJoin: true
   prototypes:
+  #Umpor
+  - UmporAccent
+  - UmpornKnife
+  - UmporSpade
+  - UmporHatchet
+  - UmporCapP
+  - UmporRCD
+  - UmporBeret
+  - UmporeBeltMed
+  - UmporCap
+  # USSP
+  - UsspAccent
+  #SNK-KMLG
+  - KMLGCapP
+  - KMLGBandana
+  - KMLGEpolets10
+  - KMLGEpolets20
+  - KMLGEpolets30
+  - KMLGCoat
+  - KMLGCepka
+  - SNKShapkaStd
+  - SNKShapkaLes
+  - SNKShapkaZim
+  - SNKCloakLes
+  - SNKCloakPes
+  - SNKCloakZim
+  - KMLGUniformRepairman
+  - KMLGBelt
+  - KMLGBeret
+  - Hooligan
+  # - SSOfficer
+  # Mirt
+  - MirtAccent
+  - MirtnKnife
+  - MirtMaskGas
+  - MirtCloakOfInk
+  - MirtHelmetInk
+  - MirtGlassesRaz
+  - MirtCloakSP
+  - MirtnSword
+  #Congl
+  - CDCUniformImam
+  - CDCTurban
+  - CDCFez
+  - Quran
+  - CDCCepka
+  - CDCBeltTech
+  - CDCBuckler
+  - CDCCap
+  - CDCGloves
+  - CDCGlovesTech
+  - CDCBeltOffi
+  #Nooc
   - NoocAccent
   - LaserPointer
   - NoocPistol
@@ -95,9 +246,71 @@
   - NoocCloak
   # - Brigmedic
   
-# - type: sponsorGroup
-  # id: SponsorGroupOPZ
-  # color: "#9c6d33"
-  # extraCharSlots: 6
-  # serverPriorityJoin: true
-  # prototypes:
+- type: sponsorGroup
+  id: SponsorGroupOPZ
+  color: "#0018ba"
+  extraCharSlots: 6
+  serverPriorityJoin: true
+  prototypes:
+  #Umpor
+  - UmporAccent
+  - UmpornKnife
+  - UmporSpade
+  - UmporHatchet
+  - UmporCapP
+  - UmporRCD
+  - UmporBeret
+  - UmporeBeltMed
+  - UmporCap
+  # USSP
+  - UsspAccent
+  #SNK-KMLG
+  - KMLGCapP
+  - KMLGBandana
+  - KMLGEpolets10
+  - KMLGEpolets20
+  - KMLGEpolets30
+  - KMLGCoat
+  - KMLGCepka
+  - SNKShapkaStd
+  - SNKShapkaLes
+  - SNKShapkaZim
+  - SNKCloakLes
+  - SNKCloakPes
+  - SNKCloakZim
+  - KMLGUniformRepairman
+  - KMLGBelt
+  - KMLGBeret
+  - Hooligan
+  # - SSOfficer
+  # Mirt
+  - MirtAccent
+  - MirtnKnife
+  - MirtMaskGas
+  - MirtCloakOfInk
+  - MirtHelmetInk
+  - MirtGlassesRaz
+  - MirtCloakSP
+  - MirtnSword
+  #Congl
+  - CDCUniformImam
+  - CDCTurban
+  - CDCFez
+  - Quran
+  - CDCCepka
+  - CDCBeltTech
+  - CDCBuckler
+  - CDCCap
+  - CDCGloves
+  - CDCGlovesTech
+  - CDCBeltOffi
+  #Nooc
+  - NoocAccent
+  - LaserPointer
+  - NoocPistol
+  - NoocPowerCellTwo
+  - NoocHardsuitField
+  - NoocCap
+  - NoocCloak
+  # - Brigmedic
+  # OPZ
