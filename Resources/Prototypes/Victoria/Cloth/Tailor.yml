@@ -66,6 +66,13 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - GroupUmporLoadoutChef
+  - GroupKMLGLoadoutEpolets
+  - GroupKMLGLoadoutCapServ
+  - GroupKMLGLoadoutCoat
+  - GroupKMLGLoadoutUniformServise
+  - GroupMirtLoadoutServ
+  - GroupCDCLoadoutServ
 
 - type: loadoutGroup
   id: TailorJumpsuit
