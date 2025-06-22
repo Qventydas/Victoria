@@ -5,8 +5,6 @@ using Content.Server.Flash;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Mind;
 using Content.Server.Popups;
-using Content.Server.Revolutionary;
-using Content.Server.Revolutionary.Components;
 using Content.Server.Petr.Components;
 using Content.Server.Roles;
 using Content.Server.RoundEnd;
@@ -23,9 +21,6 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.NPC.Prototypes;
 using Content.Shared.NPC.Systems;
-using Content.Shared.Revolutionary.Components;
-using Content.Shared.Stunnable;
-using Content.Shared.Zombies;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Content.Shared.Cuffs.Components;
@@ -33,20 +28,13 @@ using Content.Shared.Cuffs.Components;
 namespace Content.Server.GameTicking.Rules;
 
 /// <summary>
-/// Where all the main stuff for Revolutionaries happens (Assigning Head Revs, Command on station, and checking for the game to end.)
+/// Система для петров. Усё.
 /// </summary>
 public sealed class PetrRuleSystem : GameRuleSystem<PetrRuleComponent>
 {
-     [Dependency] private readonly IAdminLogManager _adminLogManager = default!;
     [Dependency] private readonly AntagSelectionSystem _antag = default!;
     [Dependency] private readonly EmergencyShuttleSystem _emergencyShuttle = default!;
-    [Dependency] private readonly EuiManager _euiMan = default!;
-    [Dependency] private readonly MindSystem _mind = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
-    [Dependency] private readonly NpcFactionSystem _npcFaction = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly RoleSystem _role = default!;
-    [Dependency] private readonly SharedStunSystem _stun = default!;
     [Dependency] private readonly RoundEndSystem _roundEnd = default!;
     [Dependency] private readonly StationSystem _stationSystem = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
@@ -64,7 +52,6 @@ public sealed class PetrRuleSystem : GameRuleSystem<PetrRuleComponent>
 
     protected override void Started(EntityUid uid, PetrRuleComponent component, GameRuleComponent gameRule, GameRuleStartedEvent args)
     {
-        _adminLogManager.Add(LogType.Action, LogImpact.Low, $"Начало геймрула петров");
         base.Started(uid, component, gameRule, args);
         component.CommandCheck = _timing.CurTime + component.TimerWait;
     }
@@ -75,11 +62,8 @@ public sealed class PetrRuleSystem : GameRuleSystem<PetrRuleComponent>
         if (component.CommandCheck <= _timing.CurTime)
         {
             component.CommandCheck = _timing.CurTime + component.TimerWait;
-            _adminLogManager.Add(LogType.Action, LogImpact.Low, $"Тик прошёл, чекаем");
-            if (CheckCommandLose())
+            if (CheckCommandLose() || CheckPetrLose())
             {
-                _adminLogManager.Add(LogType.Action, LogImpact.Low, $"Конец!");
-                //_roundEnd.DoRoundEndBehavior(RoundEndBehavior.ShuttleCall, component.ShuttleCallTime);
                 _roundEnd.EndRound();
                 GameTicker.EndGameRule(uid, gameRule);
             }
@@ -93,25 +77,22 @@ public sealed class PetrRuleSystem : GameRuleSystem<PetrRuleComponent>
     {
         base.AppendRoundEndText(uid, component, gameRule, ref args);
 
-        var revsLost = CheckRevsLose();
+        var petrLost = CheckPetrLose();
         var commandLost = CheckCommandLose();
-        // This is (revsLost, commandsLost) concatted together
-        // (moony wrote this comment idk what it means)
-        var index = (commandLost ? 1 : 0) | (revsLost ? 2 : 0);
+        // Должно быть это взятие по индексу из структа outcomes. CommandLost- +1, petrLost- +2
+        var index = (commandLost ? 1 : 0) | (petrLost ? 2 : 0);
         args.AddLine(Loc.GetString(Outcomes[index]));
 
         var sessionData = _antag.GetAntagIdentifiers(uid);
-        args.AddLine(Loc.GetString("rev-headrev-count", ("initialCount", sessionData.Count)));
+        args.AddLine(Loc.GetString("petr-count", ("initialCount", sessionData.Count)));
         foreach (var (mind, data, name) in sessionData)
         {
             _role.MindHasRole<PetrRoleComponent>(mind, out var role);
 
-            args.AddLine(Loc.GetString("rev-headrev-name-user",
+            args.AddLine(Loc.GetString("petr-name-user",
                 ("name", name),
-                ("username", data.UserName),
-                ("count", 1)));
+                ("username", data.UserName)));
 
-            // TODO: someone suggested listing all alive? revs maybe implement at some point
         }
     }
 
@@ -119,16 +100,13 @@ public sealed class PetrRuleSystem : GameRuleSystem<PetrRuleComponent>
     {
         var ent = args.Mind.Comp.OwnedEntity;
         var head = HasComp<PetrOperativeComponent>(ent);
-        args.Append(Loc.GetString(head ? "head-rev-briefing" : "rev-briefing"));
-                _adminLogManager.Add(LogType.Action, LogImpact.Low, $"Брифинг у петра");
+        args.Append(Loc.GetString("petr-briefing"));
     }
 
     private void OnTargetMobStateChanged(EntityUid uid, PetrTargetComponent comp, MobStateChangedEvent ev)
     {
-        _adminLogManager.Add(LogType.Action, LogImpact.Low, $"Чекаем состояние цели!");
         if (ev.NewMobState == MobState.Dead || ev.NewMobState == MobState.Invalid)
             CheckCommandLose();
-            _adminLogManager.Add(LogType.Action, LogImpact.Low, $"Цель убита или обездвижена!");
     }
 
     /// <summary>
@@ -143,39 +121,29 @@ public sealed class PetrRuleSystem : GameRuleSystem<PetrRuleComponent>
         {
             commandList.Add(id);
         }
-    _adminLogManager.Add(LogType.Action, LogImpact.Low, $"Цели петров- \"{commandList}\" ");
-        return IsGroupDetainedOrDead(commandList, true, true);
+        return IsGroupDetainedOrDead(commandList, true, false);
     }
 
     private void OnPetrMobStateChanged(EntityUid uid, PetrOperativeComponent comp, MobStateChangedEvent ev)
     {
         if (ev.NewMobState == MobState.Dead || ev.NewMobState == MobState.Invalid)
-            CheckRevsLose();
+            CheckPetrLose();
     }
 
     /// <summary>
-    /// Checks if all the Head Revs are dead and if so will deconvert all regular revs.
+    /// Чекаем дохлые/закованные ли петры.
     /// </summary>
-    private bool CheckRevsLose()
+    private bool CheckPetrLose()
     {
         var stunTime = TimeSpan.FromSeconds(4);
-        var headRevList = new List<EntityUid>();
+        var petrList = new List<EntityUid>();
 
-        var headRevs = AllEntityQuery<PetrOperativeComponent, MobStateComponent>();
-        while (headRevs.MoveNext(out var uid, out _, out _))
+        var petr = AllEntityQuery<PetrOperativeComponent, MobStateComponent>();
+        while (petr.MoveNext(out var uid, out _, out _))
         {
-            headRevList.Add(uid);
+            petrList.Add(uid);
         }
-        _adminLogManager.Add(LogType.Action, LogImpact.Low, $"Петры- \"{headRevList}\" ");
-        // If no Head Revs are alive all normal Revs will lose their Rev status and rejoin Nanotrasen
-        // Cuffing Head Revs is not enough - they must be killed.
-        if (IsGroupDetainedOrDead(headRevList, false, false))
-        {
-            _adminLogManager.Add(LogType.Action, LogImpact.Low, $"Петров убили");
-            return true;
-        }
-
-        return false;
+        return IsGroupDetainedOrDead(petrList, false, true);
     }
 
     /// <summary>
@@ -220,13 +188,13 @@ public sealed class PetrRuleSystem : GameRuleSystem<PetrRuleComponent>
 
     private static readonly string[] Outcomes =
     {
-        // revs survived and heads survived... how
-        "rev-reverse-stalemate",
-        // revs won and heads died
-        "rev-won",
-        // revs lost and heads survived
-        "rev-lost",
-        // revs lost and heads died
-        "rev-stalemate"
+        // Никто не умер
+        "petr-reverse-stalemate",
+        // Петры победили
+        "petr-won",
+        // Петры проиграли
+        "petr-lost",
+        // Все умерли
+        "petr-stalemate"
     };
 }

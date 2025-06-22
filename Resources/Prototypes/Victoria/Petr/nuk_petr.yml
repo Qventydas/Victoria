@@ -199,7 +199,6 @@
       max: 1
       startingGear: NukPetrOffiGear
       components:
-      - type: Revolutionary
       - type: PetrOperative
       - type: RandomMetadata
         nameSegments:
@@ -216,7 +215,6 @@
       max: 2
       startingGear: NukPetrSpecGear
       components:
-      - type: Revolutionary
       - type: PetrOperative
       - type: RandomMetadata
         nameSegments:
@@ -233,7 +231,6 @@
       max: 3
       startingGear: NukPetrSoldGear
       components:
-      - type: Revolutionary
       - type: PetrOperative
       - type: RandomMetadata
         nameSegments:
