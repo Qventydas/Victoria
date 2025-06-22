@@ -155,9 +155,6 @@
 - type: cargoBounty
   id: Gethinax
   reward: 3000
-  giftType: SbChip_stack
-  giftAmount: 1
-  giftText: 1 чип Saibasan
   description: bounty-description-gethinax
   entries:
   - name: bounty-item-gethinax
@@ -172,6 +169,9 @@
 - type: cargoBounty
   id: SiCrystall
   reward: 2000
+  giftType: SbChip_stack
+  giftAmount: 1
+  giftText: 1 чип Saibasan
   description: bounty-description-sicrystall
   entries:
   - name: bounty-item-sicrystall
@@ -187,8 +187,8 @@
   id: Telecrystal
   reward: 6000
   giftType: NTChip_stack
-  giftAmount: 3
-  giftText: 3 чипа НТ
+  giftAmount: 1
+  giftText: чип НТ
   description: bounty-description-telecrystal
   entries:
   - name: bounty-item-telecrystal
@@ -212,9 +212,9 @@
   id: Pickaxe
   idPrefix: GF
   reward: 3501
-  giftType: GFChip_stack
-  giftAmount: 2
-  giftText: 2 чипа Гефеста
+  giftType: HNDChip_stack
+  giftAmount: 1
+  giftText: чип Хаунд
   description: bounty-description-pickaxe
   entries:
   - name: bounty-item-pickaxe
@@ -222,3 +222,50 @@
     whitelist:
       tags:
       - Pickaxe
+      
+- type: cargoBounty
+  id: ElastaneCloth
+  reward: 5000
+  description: bounty-description-elastane
+  entries:
+  - name: bounty-item-elastane
+    amount: 30
+    whitelist:
+      tags:
+      - ElastaneCloth
+      
+- type: cargoBounty
+  id: CottonPaperCloth
+  reward: 4500
+  giftType: GFChip_stack
+  giftAmount: 1
+  giftText: чип Гефест
+  description: bounty-description-cottonpaper
+  entries:
+  - name: bounty-item-cottonpaper
+    amount: 30
+    whitelist:
+      tags:
+      - CottonPaperCloth
+      
+- type: cargoBounty
+  id: SheepWoolClean
+  reward: 4000
+  description: bounty-description-sheepwoolclean
+  entries:
+  - name: bounty-item-sheepwoolclean
+    amount: 30
+    whitelist:
+      tags:
+      - SheepWoolClean
+      
+- type: cargoBounty
+  id: Kidskin
+  reward: 20000
+  description: bounty-description-kidskin
+  entries:
+  - name: bounty-item-kidskin
+    amount: 30
+    whitelist:
+      tags:
+      - Kidskin

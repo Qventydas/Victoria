@@ -4307,7 +4307,17 @@
       - id: SNKHardsuit
       - id: SNKHardsuit
       - id: SNKHardsuit
-
+#------------------------знамя------------------
+- type: entity
+  id: SNKBannerStd
+  parent: BannerBase
+  name: Знамя СНК
+  suffix: СНК
+  description: Знамя символизирующее свободу разных планет, но объединение под одном флагом против одного врага.
+  components:
+  - type: Sprite
+    sprite: Victoria/SNK/snk_banner.rsi
+    state: banner_snk_std
 
 
 

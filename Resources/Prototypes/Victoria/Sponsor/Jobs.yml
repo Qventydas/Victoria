@@ -1,0 +1,1005 @@
+#----------------------------------------------------Бригмедик-------------------------
+- type: playTimeTracker
+  id: JobBrigmedic
+#-----------------------------------роль-------------------------
+- type: job
+  id: Brigmedic
+  name: job-name-brigmedic
+  description: job-description-brigmedic
+  playTimeTracker: JobBrigmedic
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 36000 #10 hrs # Corvax-RoleTime
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 36000 #10 hrs # Corvax-RoleTime
+  startingGear: BrigmedicGear
+  icon: "JobIconBrigmedic"
+  supervisors: job-supervisors-cmo
+  access:
+  - Medical
+  - Maintenance
+  - Security
+  - Brig
+#-----------------------------------лодауты-------------------------
+- type: loadout
+  id: BrigmedicBackpack
+  equipment:
+    back: ClothingBackpackBrigmedic
+
+- type: loadout
+  id: BrigmedicSatchel
+  equipment:
+    back: ClothingBackpackSatchelBrigmedic
+
+- type: loadout
+  id: BrigmedicDuffel
+  equipment:
+    back: ClothingBackpackDuffelBrigmedic
+
+- type: loadoutGroup
+  id: BrigmedicBackpack
+  name: loadout-group-security-backpack
+  loadouts:
+  - BrigmedicBackpack
+  - BrigmedicSatchel
+  - BrigmedicDuffel
+
+- type: loadout
+  id: BrigmedicJumpsuit
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitBrigmedic
+
+- type: loadout
+  id: BrigmedicJumpskirt
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtBrigmedic
+
+- type: loadoutGroup
+  id: BrigmedicJumpsuit
+  name: loadout-group-security-jumpsuit
+  loadouts:
+  - BrigmedicJumpsuit
+  - BrigmedicJumpskirt
+  
+- type: loadout
+  id: BrigmedicBeretSecurity
+  equipment:
+    head: ClothingHeadHatBeretSecurityMedic
+
+- type: loadout
+  id: BrigmedicBeret
+  equipment:
+    head: ClothingHeadHatBeretBrigmedic
+
+- type: loadout
+  id: BrigmedicHelmet
+  equipment:
+    head: ClothingHeadHelmetSecurityMedic
+
+- type: loadoutGroup
+  id: BrigmedicBeret
+  name: loadout-group-security-head
+  loadouts:
+  - BrigmedicBeretSecurity
+  - BrigmedicBeret
+  - BrigmedicHelmet  
+
+- type: loadout
+  id: BrigmedicVestSecurityMedic
+  equipment:
+    outerClothing: ClothingOuterVestSecurityMedic
+
+- type: loadout
+  id: BrigmedicVestArmor
+  equipment:
+    outerClothing: ClothingOuterVestArmorMedSec
+
+- type: loadout
+  id: BrigmedicCoatLab
+  equipment:
+    outerClothing: ClothingOuterCoatLabSecurityMedic
+
+- type: loadout
+  id: BrigmedicCoatAMG
+  equipment:
+    outerClothing: ClothingOuterCoatAMG
+
+- type: loadoutGroup
+  id: BrigmedicCoat
+  name: loadout-group-security-head
+  loadouts:
+  - BrigmedicVestSecurityMedic
+  - BrigmedicVestArmor
+  - BrigmedicCoatLab 
+  - BrigmedicCoatAMG
+  
+- type: roleLoadout
+  id: JobBrigmedic
+  groups:
+  - Inventory 
+  - GroupTankHarness
+  - BrigmedicBackpack
+  - BrigmedicJumpsuit
+  - BrigmedicBeret
+  - BrigmedicCoat
+  - GroupUmporLoadoutMed
+  - GroupKMLGLoadoutMed
+  - GroupUmporLoadoutChef
+  - GroupMirtLoadoutServ
+  - GroupNoocLoadoutSecWeapon
+  - GroupNoocLoadoutSecAmmo
+  - GroupCDCLoadoutSec
+#----------------------------------------------------Синий щит-------------------------
+#-----------------------------------одежда-------------------------
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: SSUniformMen
+  name: униформа офицера "Синий щит"
+  suffix: Синий щит
+  description: Стандартная рабочая форма офицеров ведомства "Синий щит". От неё веет крутостью и уверенностью. Может быть она пуленепробиваемая?
+  components:
+  - type: Sprite
+    sprite: Victoria/Sponsor/SeaShield/ss_uniform.rsi
+  - type: Clothing
+    sprite: Victoria/Sponsor/SeaShield/ss_uniform.rsi
+    
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: SSUniformWom
+  name: униформа с юбкой офицера "Синий щит"
+  suffix: Синий щит
+  description: Стандартная рабочая форма офицеров ведомства "Синий щит". От неё веет крутостью и уверенностью. Может быть она пуленепробиваемая?
+  components:
+  - type: Sprite
+    sprite: Victoria/Sponsor/SeaShield/ss_uniform_skirt.rsi
+  - type: Clothing
+    sprite: Victoria/Sponsor/SeaShield/ss_uniform_skirt.rsi
+    
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: SSUniformPar
+  name: парадная униформа офицера "Синий щит"
+  suffix: Синий щит
+  description: Парадная рабочая форма офицеров ведомства "Синий щит". От неё веет крутостью и уверенностью. Идеально выглажена и чищена. Может быть она пуленепробиваемая?
+  components:
+  - type: Sprite
+    sprite: Victoria/Sponsor/SeaShield/ss_uniform_parad.rsi
+  - type: Clothing
+    sprite: Victoria/Sponsor/SeaShield/ss_uniform_parad.rsi
+#-----------------------------------сапоги-------------------------
+- type: entity
+  parent: ClothingShoesMilitaryBase
+  id: SSBoots
+  name: сапоги Синего щита
+  suffix: Синий щит
+  description: Удобные и крепкие сапоги, выдаваемые сотрудникам ведомства "Синий щит". Нельзя сказать, что они сильно отличаются от стандартных подкованых сапок СБ... Но ощущаются круче.
+  components:
+  - type: Sprite
+    sprite: Victoria/Sponsor/SeaShield/ss_boots.rsi
+  - type: Clothing
+    sprite: Victoria/Sponsor/SeaShield/ss_boots.rsi
+#------------------------------------шлем-------------------------
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: SSHelmet
+  name: Шлем Синего щита
+  suffix: Синий щит
+  description: Крепкий, но несколько не удобный армейский шлем Ноократии Эранта со встроенным простеньким визором для помощи в прицеливании
+  components:
+  - type: Sprite
+    sprite: Victoria/Sponsor/SeaShield/ss_helmet.rsi
+  - type: Clothing
+    sprite: Victoria/Sponsor/SeaShield/ss_helmet.rsi
+  - type: ShowJobIcons
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.85
+        Heat: 0.9
+#------------------------------------беретка----------
+- type: entity
+  parent: ClothingHeadBase
+  id: SSBeret
+  name: Берет Синего щита
+  suffix: Синий щит
+  description: Тёплый и мягкий берет офицера Синий щит. Пахнет крутостью и боевым куражом.
+  components:
+  - type: Sprite
+    sprite: Victoria/Sponsor/SeaShield/ss_beret.rsi
+  - type: Clothing
+    sprite: Victoria/Sponsor/SeaShield/ss_beret.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - HamsterWearable
+    - WhitelistChameleon
+#------------------------------------фуражка----------
+- type: entity
+  parent: ClothingHeadBase
+  id: SSCap
+  name: Фуражка Синего щита
+  suffix: Синий щит
+  description: Фуражка офицера Синий щит. От неё пахнет командным духом и пафосом.
+  components:
+  - type: Sprite
+    sprite: Victoria/Sponsor/SeaShield/ss_cap.rsi
+  - type: Clothing
+    sprite: Victoria/Sponsor/SeaShield/ss_cap.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - HamsterWearable
+    - WhitelistChameleon
+#------------------------------------кепка----------
+- type: entity
+  parent: ClothingHeadBase
+  id: SSKepka
+  name: Кепка Синего щита
+  suffix: Синий щит
+  description: Цепка офицера Синий щит. От неё доносится запах сдержанности и раздумий.
+  components:
+  - type: Sprite
+    sprite: Victoria/Sponsor/SeaShield/ss_secsoft.rsi
+  - type: Clothing
+    sprite: Victoria/Sponsor/SeaShield/ss_secsoft.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - HamsterWearable
+    - WhitelistChameleon
+#-----------------------------------сумка-------------------------
+- type: entity
+  parent: ClothingBackpackSatchelSecurity
+  id: SSSatchel
+  name: плечевая сумка Синего щита
+  suffix: Синий щит
+  description: Более вычурная и красивая сумка офицеров Службы Безопасности.
+  components:
+  - type: Sprite
+    sprite: Victoria/Sponsor/SeaShield/ss_satchel.rsi
+#-----------------------------------рюкзак-------------------------
+- type: entity
+  parent: ClothingBackpackSecurity
+  id: SSBackpack
+  name: рюкзак Синего щита
+  suffix: Синий щит
+  description: Более вычурный и красивый рюкзак офицеров Службы Безопасности.
+  components:
+  - type: Sprite
+    sprite: Victoria/Sponsor/SeaShield/ss_backpack.rsi
+#-----------------------------------баул-------------------------
+- type: entity
+  parent: ClothingBackpackDuffelSecurity
+  id: SSDuffel
+  name: баул Синего щита
+  suffix: Синий щит
+  description: Более вычурный и красивый баул офицеров Службы Безопасности.
+  components:
+  - type: Sprite
+    sprite: Victoria/Sponsor/SeaShield/ss_duffel.rsi
+#-----------------------------------очки-------------------------
+- type: entity
+  parent: ClothingEyesGlassesSecurity
+  id: SSGlass
+  name: защитные очки Синего щита
+  suffix: Синий щит
+  description: Как и у офицеров безопасности, но синие!
+  components:
+  - type: Sprite
+    sprite: Victoria/Sponsor/SeaShield/ss_glasses.rsi
+  - type: Clothing
+    sprite: Victoria/Sponsor/SeaShield/ss_glasses.rsi
+#-----------------------------------визор-------------------------    
+- type: entity
+  parent: ClothingEyesHudSecurity
+  id: SSHud
+  name: визор Синего щита
+  suffix: Синий щит
+  description: Визор, что показывает должности сотрудников, наличием импланта защиты разума и статус в реестре разыскиваемых.
+  components:
+  - type: Sprite
+    sprite: Victoria/Sponsor/SeaShield/ss_hud.rsi
+  - type: Clothing
+    sprite: Victoria/Sponsor/SeaShield/ss_hud.rsi
+#-----------------------------------бронь-------------------------
+- type: entity
+  parent: ClothingOuterArmorBasic
+  id: SSArmorBasic
+  name: бронежилет Синего щита
+  suffix: Синий щит
+  description: Лёгкий и удобный бронежилет используемый офицерами Синий щит. Чуть прочней стандартных бронежилетов СБ.
+  components:
+  - type: Sprite
+    sprite: Victoria/Sponsor/SeaShield/ss_armor.rsi
+  - type: Clothing
+    sprite: Victoria/Sponsor/SeaShield/ss_armor.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.6
+        Heat: 0.7
+  - type: ExplosionResistance
+    damageCoefficient: 0.75
+#-----------------------------------пояса-------------------------
+- type: entity
+  parent: ClothingBeltSecurity
+  id: SSBelt
+  name: пояс Синего щита
+  suffix: Синий щит
+  description: Точно тоже самое, что и пояс всех сотрудников СБ. Но дороже в четыре раза!
+  components:
+  - type: Sprite
+    sprite: Victoria/Sponsor/SeaShield/ss_belt.rsi
+  - type: Clothing
+    sprite: Victoria/Sponsor/SeaShield/ss_belt.rsi
+    
+- type: entity
+  id: SSBeltFilled
+  parent: SSBelt
+  suffix: Заполненный, Синий щит
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponDisabler
+      - id: Stunbaton
+      - id: Handcuffs
+      - id: HoloprojectorSecurity
+      - id: SpeedLoaderMagnum
+      - id: FlashlightSeclite
+#-----------------------------------РПС-------------------------
+- type: entity
+  parent: ClothingBeltSecurityWebbing
+  id: SSWebbing
+  name: РПС Синего щита
+  suffix: Синий щит
+  description: Точно тоже самое, что и РПС всех сотрудников СБ. Но дороже раза в два!
+  components:
+  - type: Sprite
+    sprite: Victoria/Sponsor/SeaShield/ss_rps.rsi
+  - type: Clothing
+    sprite: Victoria/Sponsor/SeaShield/ss_rps.rsi
+    
+- type: entity
+  id: SSWebbingFilled
+  parent: SSWebbing
+  suffix: Заполненный, Синий щит
+  components:
+  - type: StorageFill
+    contents:
+      - id: WeaponDisabler
+      - id: Stunbaton
+      - id: Handcuffs
+      - id: HoloprojectorSecurity
+      - id: SpeedLoaderMagnum
+      - id: FlashlightSeclite
+#-----------------------------------скаф бронированый-------------------------
+- type: entity
+  parent: ClothingOuterHardsuitSecurity
+  id: SSHardsuitArmor
+  name: бронированный скафандр офицера Синий щит
+  suffix: Синий щит
+  description: За основы был взят скафандр офицеров СБ. А затем его укрепили и перекрасили. Правда он стал тяжёлей.
+  components:
+  - type: Sprite
+    sprite: Victoria/Sponsor/SeaShield/ss_hardsuits_armor.rsi
+  - type: Clothing
+    sprite: Victoria/Sponsor/SeaShield/ss_hardsuits_armor.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Piercing: 0.45
+        Caustic: 0.6
+        Heat: 0.7
+  - type: ClothingSpeedModifier
+    walkModifier: 0.65
+    sprintModifier: 0.65
+#-----------------------------------скаф быстрый-------------------------
+- type: entity
+  parent: ClothingOuterHardsuitSecurity
+  id: SSHardsuitFast
+  name: облегчённый скафандр офицера Синий щит
+  suffix: Синий щит
+  description: Скафадр имеет очень слабую степень защиты, зато мощность батарей расходуется на поддержание работы опортно-двигательно аппарата, что ускоряет движение в скафандре.
+  components:
+  - type: Sprite
+    sprite: Victoria/Sponsor/SeaShield/ss_hardsuits_fast.rsi
+  - type: Clothing
+    sprite: Victoria/Sponsor/SeaShield/ss_hardsuits_fast.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Piercing: 0.85
+        Caustic: 0.85
+        Heat: 0.7
+  - type: ClothingSpeedModifier
+    walkModifier: 1.33
+    sprintModifier: 1.33
+#-----------------------------------щит-------------------------
+- type: entity
+  name: телескопический щит офицера "Синий щит"
+  parent: BaseShield
+  id: SSTelescopicShield
+  suffix: Синий щит
+  description: Больше слова "щит" Богу слова "щит"! ЩИИИИИИИИИТ!
+  components:
+    - type: StaticPrice
+      price: 150
+    - type: Blocking
+      passiveBlockModifier:
+        coefficients:
+          Blunt: 0.5
+          Slash: 0.5
+          Caustic: 0.7
+          Poison: 0.7
+          Piercing: 0.5 
+      activeBlockModifier:
+        coefficients:
+          Blunt: 0.25
+          Slash: 0.25
+          Caustic: 0.6
+          Poison: 0.6
+          Piercing: 0.25 
+        flatReductions:
+          Blunt: 1
+          Slash: 1
+          Piercing: 1
+          Heat: 1
+    - type: Sprite
+      sprite: Victoria/Sponsor/SeaShield/ss_shields.rsi
+      state: teleriot-on
+    - type: Item
+      sprite: Victoria/Sponsor/SeaShield/ss_shields.rsi
+      heldPrefix: teleriot-on
+    - type: SpawnItemsOnUse
+      items:
+      - id: SSTelescopicShieldSpawnFolded
+
+- type: entity
+  parent: BaseShield
+  id: SSTelescopicShieldSpawnFolded
+  suffix: сложеный, Синий щит
+  components:
+  - type: Sprite
+    sprite: Victoria/Sponsor/SeaShield/ss_shields.rsi
+    state: teleriot
+  - type: Item
+    size: Normal
+    sprite: Victoria/Sponsor/SeaShield/ss_shields.rsi
+    heldPrefix: teleriot
+  - type: StaticPrice
+    price: 150
+  - type: Blocking
+    passiveBlockModifier:
+      coefficients:
+        Blunt: 0.8
+        Slash: 0.8
+        Caustic: 0.9
+        Poison: 0.9
+        Piercing: 0.8 
+    activeBlockModifier:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.5
+        Caustic: 0.75
+        Poison: 0.75
+        Piercing: 0.5 
+      flatReductions:
+        Blunt: 1
+        Slash: 1
+        Piercing: 1
+        Heat: 1
+  - type: SpawnItemsOnUse
+    items:
+    - id: SSTelescopicShield
+#-----------------------------------лектер+-------------------------
+- type: entity
+  name: Лектер+
+  suffix: Синий щит
+  parent: WeaponRifleLecter
+  id: SSRifleLecter
+  description: Суровый армейский автомат лектер, которому улучшили скорость стрельбы. Использует винтовочные патроны .20.
+  components:
+  - type: Sprite
+    sprite: Victoria/Sponsor/SeaShield/ss_lecter.rsi
+    layers:
+      - state: base
+        map: ["enum.GunVisualLayers.Base"]
+      - state: mag-0
+        map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: Victoria/Sponsor/SeaShield/ss_lecter.rsi
+  - type: Gun
+    fireRate: 6
+    selectedMode: FullAuto
+    availableModes:
+      - FullAuto
+#-----------------------------------силовик+-------------------------
+- type: entity
+  name: Силовик+
+  parent: WeaponShotgunEnforcer
+  id: SSShotgunEnforcer
+  description: Отличный дробовик на службе НТ, которому ещё расширили хранилище патронов .50 ружейная дробь.
+  components:
+  - type: Sprite
+    sprite: Victoria/Sponsor/SeaShield/ss_enforcer.rsi
+  - type: Clothing
+    sprite: Victoria/Sponsor/SeaShield/ss_enforcer.rsi
+  - type: Item
+    sprite: Victoria/Sponsor/SeaShield/ss_enforcer_inhands_64x.rsi
+  - type: BallisticAmmoProvider
+    capacity: 9
+#-----------------------------------лазерный автомат-------------------------
+- type: entity
+  name: Лазерный автомат
+  parent: WeaponLaserCarbine
+  id: SSLaserAutomat
+  description: Эксперементальная модификация лазерного карабина, доступная далеко не каждому сотруднику Службы Безопасности.
+  components:
+  - type: Sprite
+    sprite: Victoria/Sponsor/SeaShield/ss_laser_gun.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-4
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: Clothing
+    sprite: Victoria/Sponsor/SeaShield/ss_laser_gun.rsi
+  - type: StaticPrice
+    price: 1000
+  - type: HitscanBatteryAmmoProvider
+    proto: RedLaser
+    fireCost: 25
+  - type: Gun
+    fireRate: 5
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+#-----------------------------------ID-карта--------------------
+- type: entity
+  parent: IDCardStandard
+  id: SSIDCard
+  name: ID-карта офицера "Синий щит"
+  description: Опасна в неверных руках. Велика в КПК самого офицера.
+  components:
+  - type: Sprite
+    sprite: Victoria/Sponsor/SeaShield/ss_id_cards.rsi
+    layers:
+    - state: default
+    - state: ss
+  - type: PresetIdCard
+    job: SSOfficer
+#-----------------------------------КПК--------------------
+- type: entity
+  parent: SecurityPDA
+  id: SSPDA
+  name: КПК "Синий щит"
+  description: Показывает суть величия и силы корпорации НТ.
+  components:
+  - type: Pda
+    id: SecurityIDCard
+    state: pda
+  - type: PdaBorderColor
+    borderColor: "#7C5D00"
+  - type: Sprite
+    sprite: Victoria/Sponsor/SeaShield/ss_pda.rsi
+  - type: Icon
+    sprite: Victoria/Sponsor/SeaShield/ss_pda.rsi
+    state: pda
+#-----------------------------------гарнитура--------------------
+- type: entity
+  parent: ClothingHeadsetAltSecurity
+  id: SSHeadset
+  name: гарнитура Синего щита
+  suffix: Синий щит
+  description: Всегда держит стража командования на связи и держит его в курсе событий в СБ.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeySecurity
+      - SecurityReservEncryptionKey
+      - EncryptionKeyCommand
+      - EncryptionKeyCommon
+  - type: Sprite
+    sprite: Victoria/Sponsor/SeaShield/ss_headsets.rsi
+  - type: Clothing
+    sprite: Victoria/Sponsor/SeaShield/ss_headsets.rsi
+#-----------------------------------набор экипировки-------------
+- type: thiefBackpackSet
+  id: SSAssaultSet
+  name: Штурмовой набор оснащения
+  description: Включает в себя светошумовые гранаты, дробовик Силовик+ и револьвер Матеба.
+  sprite:
+    sprite: Victoria/Sponsor/SeaShield/ss_enforcer.rsi
+    state: icon
+  content:
+  - GrenadeFlashBang
+  - GrenadeFlashBang
+  - SSShotgunEnforcer
+  - WeaponRevolverMateba
+
+- type: thiefBackpackSet
+  id: SSProtectedSet
+  name: Защитный набор оснащения
+  description: Включает в себя телескопический щит, автомат Лектер+ и револьвер Матеба.
+  sprite:
+    sprite: Victoria/Sponsor/SeaShield/ss_lecter.rsi
+    state: icon
+  content:
+  - SSTelescopicShieldSpawnFolded
+  - SSRifleLecter
+  - WeaponRevolverMateba
+  
+- type: thiefBackpackSet
+  id: SSParadeSet
+  name: Парадный набор оснащения
+  description: Включает в себя парадную форму, Лазерный карабин+ и револьвер Матеба.
+  sprite:
+    sprite: Victoria/Sponsor/SeaShield/ss_laser_gun.rsi
+    state: icon
+  content:
+  - SSUniformPar
+  - SSLaserAutomat
+  - WeaponRevolverMateba
+
+- type: entity
+  id: ToolboxSSWeapons
+  name: СВЭ-О офицера Синий щит
+  description: Система вызова экипировки и оснащения офицера ведомства "Синий щит"
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: Objects/Tools/Toolboxes/toolbox_blue.rsi
+    state: icon
+  - type: ThiefUndeterminedBackpack
+    maxSelectedSets: 1
+    possibleSets:
+    - SSAssaultSet
+    - SSProtectedSet
+    - SSParadeSet
+  - type: ActivatableUI
+    key: enum.ThiefBackpackUIKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.ThiefBackpackUIKey.Key:
+        type: ThiefBackpackBoundUserInterface
+#-----------------------------------набор скафандров-------------
+- type: thiefBackpackSet
+  id: SSArmorSet
+  name: Бронированный скафандровый набор
+  description: Включает в себя бронированный скафандр, джетпак и балоны с кислородом и азотом.
+  sprite:
+    sprite: Victoria/Sponsor/SeaShield/ss_hardsuits_armor.rsi
+    state: icon
+  content:
+  - SSHardsuitArmor
+  - JetpackSecurityFilled
+  - OxygenTankFilled
+  - NitrogenTankFilled
+  
+- type: thiefBackpackSet
+  id: SSFastSet
+  name: Облегчённый скафандровый набор
+  description: Включает в себя облегчённый скафандр, джетпак и балоны с кислородом и азотом.
+  sprite:
+    sprite: Victoria/Sponsor/SeaShield/ss_hardsuits_fast.rsi
+    state: icon
+  content:
+  - SSHardsuitFast
+  - JetpackSecurityFilled
+  - OxygenTankFilled
+  - NitrogenTankFilled
+  
+- type: entity
+  id: ToolboxSSHardsuits
+  name: СВЭ-С офицера Синий щит
+  description: Система вызова экипировки и скафандров офицера ведомства "Синий щит"
+  parent: BaseItem
+  components:
+  - type: Sprite
+    sprite: Objects/Tools/Toolboxes/toolbox_blue.rsi
+    state: icon
+  - type: ThiefUndeterminedBackpack
+    maxSelectedSets: 1
+    possibleSets:
+    - SSArmorSet
+    - SSFastSet
+  - type: ActivatableUI
+    key: enum.ThiefBackpackUIKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.ThiefBackpackUIKey.Key:
+        type: ThiefBackpackBoundUserInterface
+#-----------------------------------гир-------------------------
+- type: startingGear
+  id: SSOfficerGear
+  equipment:
+    shoes: SSBoots
+    outerClothing: SSArmorBasic
+    id: SSPDA
+    ears: SSHeadset
+    gloves: ClothingHandsGlovesColorBlack
+  storage:
+    back:
+    - BoxSurvivalSecurity
+    - ToolboxSSHardsuits
+    - ToolboxSSWeapons
+    - SSHelmet
+#-----------------------------------иконочка-------------------------
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconSS
+  icon:
+    sprite: /Textures/Victoria/Sponsor/SeaShield/ss_job_icons.rsi
+    state: ss
+  jobName: офицер "Синий щит"
+#-----------------------------------роль-------------------------
+- type: playTimeTracker
+  id: JobSSOfficer
+
+- type: job
+  id: SSOfficer
+  name: офицер "Синий щит"                               
+  description: Элитный офицер Службы Безопасности, занимающийся защитой капитана или выбранного Капитаном или ЦК главы.
+  playTimeTracker: JobSSOfficer
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 108000
+  startingGear: SSOfficerGear
+  icon: "JobIconSS"
+  supervisors: job-supervisors-captain
+  canBeAntag: false
+  access:
+  - Command
+  - Security
+  - Brig
+  - ResearchDirector
+  - HeadOfPersonnel
+  - ChiefEngineer
+  - ChiefMedicalOfficer
+  - Quartermaster
+  - External
+  - Lawyer
+  - Medical
+#-----------------------------------спавн-поинт-------------------------
+- type: entity
+  id: SpawnPointSSOfficer
+  parent: SpawnPointJobBase
+  name: Синий щит
+  suffix: Job Spawn, Синий щит
+  components:
+  - type: SpawnPoint
+    job_id: SSOfficer
+  - type: Sprite
+    layers:
+      - state: green
+      - state: ertleadereva
+#-----------------------------------лодауты-------------------------
+- type: loadout
+  id: SSBackpack
+  equipment:
+    back: SSBackpack
+
+- type: loadout
+  id: SSSatchel
+  equipment:
+    back: SSSatchel
+
+- type: loadout
+  id: SSDuffel
+  equipment:
+    back: SSDuffel
+
+- type: loadoutGroup
+  id: SSBackpack
+  name: loadout-group-ss-backpack
+  loadouts:
+  - SSBackpack
+  - SSSatchel
+  - SSDuffel
+
+- type: loadout
+  id: SSJumpsuit
+  equipment:
+    jumpsuit: SSUniformMen
+
+- type: loadout
+  id: SSJumpskirt
+  equipment:
+    jumpsuit: SSUniformWom
+
+- type: loadoutGroup
+  id: SSJumpsuit
+  name: loadout-group-ss-jumpsuit
+  loadouts:
+  - SSJumpsuit
+  - SSJumpskirt
+  
+- type: loadout
+  id: SSBeret
+  equipment:
+    head: SSBeret
+
+- type: loadout
+  id: SSCap
+  equipment:
+    head: SSCap
+
+- type: loadout
+  id: SSKepka
+  equipment:
+    head: SSKepka
+
+- type: loadoutGroup
+  id: SSBeret
+  name: loadout-group-ss-head
+  loadouts:
+  - SSCap
+  - SSBeret
+  - SSKepka 
+
+- type: loadout
+  id: SSBelt
+  equipment:
+    belt: SSBelt
+
+- type: loadout
+  id: SSWebbing
+  equipment:
+    belt: SSWebbing
+
+- type: loadoutGroup
+  id: SSBelt
+  name: loadout-group-ss-belt
+  loadouts:
+  - SSBelt
+  - SSWebbing
+  
+- type: loadout
+  id: SSGlass
+  equipment:
+    eyes: SSGlass
+
+- type: loadout
+  id: SSHud
+  equipment:
+    eyes: SSHud
+
+- type: loadoutGroup
+  id: SSGlass
+  name: loadout-group-ss-glass
+  loadouts:
+  - SSGlass
+  - SSHud
+
+- type: roleLoadout
+  id: JobSSOfficer
+  groups:
+  - Inventory 
+  - GroupTankHarness
+  - SSBackpack
+  - SSJumpsuit
+  - SSBeret
+  - SSBelt
+  - SSGlass
+  - GroupUmporLoadoutMed
+  - GroupKMLGLoadoutMed
+  - GroupUmporLoadoutChef
+  - GroupMirtLoadoutServ
+  - GroupCDCLoadoutSec
+#----------------------------------------------------Прочее-------------------------
+#-----------------------------------Хулиган-------------------------
+- type: entity
+  name: хулиган
+  parent: FireAxe
+  id: Hooligan
+  description: Любимец пожарных. Помогает вскрывать двери резать кабели, а случае чего и успокаивать неразумных.
+  components:
+  - type: Sprite
+    sprite: Victoria/Sponsor/hooligan.rsi
+  - type: Clothing
+    sprite: Victoria/Sponsor/hooligan.rsi
+  - type: StaticPrice
+    price: 50
+  - type: Tag
+    tags:
+    - Crowbar
+    - FireAxe
+  - type: Tool
+    qualities:
+      - Prying
+      - Cutting
+    useSound:
+      path: /Audio/Items/crowbar.ogg
+  - type: ToolTileCompatible
+  - type: Item
+    size: Large
+  - type: MeleeWeapon
+    wideAnimationRotation: 135
+    swingLeft: true
+    attackRate: 0.75
+    damage:
+      types:
+        Blunt: 2
+        Piercing: 8
+        Structural: 12
+  - type: Sharp
+  
+- type: loadout
+  id: Hooligan
+  effects:
+  - !type:SponsorLoadoutEffect
+  storage:
+    back:
+    - Hooligan
+#-----------------------------------Лазерная указка-----------------
+- type: hitscan
+  id: RedLaserPointer
+  damage:
+    types:
+      Heat: 0
+  muzzleFlash:
+    sprite: Victoria/Sponsor/projectiles.rsi
+    state: muzzle_laser
+  travelFlash:
+    sprite: Victoria/Sponsor/projectiles.rsi
+    state: beam
+  impactFlash:
+    sprite: Victoria/Sponsor/projectiles.rsi
+    state: impact_laser
+    
+- type: entity
+  name: лазерная указка
+  parent: BaseWeaponBatterySmall
+  id: LaserPointer
+  description: Приятное маленькое устройство, которым можно показать направление для похода на ...
+  components:
+  - type: Sprite
+    sprite: Victoria/Sponsor/laser_pointer.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-unshaded-4
+      map: ["enum.GunVisualLayers.MagUnshaded"]
+      shader: unshaded
+  - type: Clothing
+    sprite: Victoria/Sponsor/laser_pointer.rsi
+  - type: Gun
+    fireRate: 5
+    minAngle: 0
+    maxAngle: 0
+    angleIncrease: 0
+    angleDecay: 0
+    selectedMode: FullAuto
+    availableModes:
+    - FullAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/silenced.ogg
+      params:
+        volume: -50
+  - type: HitscanBatteryAmmoProvider
+    proto: RedLaserPointer
+    fireCost: 1
+  - type: Battery
+    maxCharge: 10000
+    startingCharge: 10000
+    
+- type: loadout
+  id: LaserPointer
+  effects:
+  - !type:SponsorLoadoutEffect
+  storage:
+    back:
+    - LaserPointer
