@@ -265,8 +265,6 @@
     unlitIdleState: unlit
     unlitRunningState: unlit-building
     staticRecipes:
-    - RecipeSteelWire
-    - RecipeCord
     - ClothingEyesGlassesChemical
     - BSModuleRecipe
     - RSModuleRecipe
@@ -295,7 +293,7 @@
       - AdvMopItem
       - WeaponSprayNozzle
       - ClothingBackpackWaterTank
-      - MegaSprayBottle
+      - BluespaceSprayBottle
       - TimerTrigger
       - ChemicalPayload
       - FlashPayload
@@ -444,6 +442,7 @@
     - SalvageMagnetMachineCircuitboard
     - VacuumMachineMachineCircuitboard
     - LithographMachineCircuitboard
+    - ClothLatheMachineCircuitboard
     dynamicRecipes:
       - ReliableSubstationMachineCircuitboard
       - ReliableSMESMachineCircuitboard
@@ -523,6 +522,9 @@
       - SecurityTechFabCircuitboard
       - AmmoTechFabCircuitboard
       - MedicalTechFabCircuitboard
+      - CargoTechFabCircuitboard
+      - EngineeringTechFabCircuitboard
+      - ServiceTechFabCircuitboard
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - ShuttleGunDusterCircuitboard
@@ -612,6 +614,10 @@
     - HamtrLLeg
     - HamtrRLeg
     - VimHarness
+    - BorgModuleHoloprojector
+    - BorgModulShildWeek
+    - BorgModuleDisabler
+    - BorgModulShild
   - type: MaterialStorage
     whitelist:
       tags:
@@ -916,6 +922,204 @@
     board: MedicalTechFabCircuitboard
   - type: StealTarget
     stealGroup: MedicalTechFabCircuitboard
+
+- type: entity
+  id: CargoTechFab
+  parent: BaseLatheLube
+  name: грузовой ТехФаб
+  description: Печатает снаряжение для отдела снабжения
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/techfab.rsi
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: cargo
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Machine
+    board: CargoTechFabCircuitboard
+  - type: Lathe
+    idleState: icon
+    runningState: icon
+    staticRecipes:
+      - Pickaxe
+      - OreBag
+      - Flare
+      - HandheldGPSBasic
+      - WeaponGrapplingGun
+      - WeaponProtoKineticAccelerator
+      - SurvivalKnife
+      - AppraisalTool
+    dynamicRecipes:
+      - FultonBeacon
+      - AdvancedMineralScannerEmpty
+      - SeismicCharge
+      - MineralScannerEmpty
+      - Fulton
+      - MiningDrill
+      - MiningDrillDiamond
+      - ClothingMaskWeldingGas
+      - OreBagOfHolding
+  - type: MaterialStorage
+    whitelist:
+      tags:
+        - Sheet
+        - RawMaterial
+        - Ingot
+        - CrystalMaterial
+
+- type: entity
+  id: EngineeringTechFab
+  parent: BaseLatheLube
+  name: инженерный ТехФаб
+  description: Печатает снаряжение для инженерного отдела.
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/techfab.rsi
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: engi
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Machine
+    board: EngineeringTechFabCircuitboard
+  - type: Lathe
+    idleState: icon
+    runningState: icon
+    staticRecipes:
+      - Crowbar
+      - Wrench
+      - Screwdriver
+      - Wirecutter
+      - Welder
+      - Multitool
+      - NetworkConfigurator
+      - ClothingHeadHatWelding
+      - ClothingHeadHatCone
+      - TRayScanner
+      - GeigerCounter
+      - GasAnalyzer
+      - RCD
+      - RCDAmmo
+      - CableStack
+      - CableMVStack
+      - CableHVStack
+      - SprayPainter
+      - ClothingBeltUtility
+      - ClothingShoesBootsMag
+    dynamicRecipes:
+      - ClothingBeltBlueSpace
+      - HolofanProjector
+      - JawsOfLife
+      - WelderExperimental
+      - PowerDrill
+  - type: MaterialStorage
+    whitelist:
+      tags:
+        - Sheet
+        - RawMaterial
+        - Ingot
+        - CrystalMaterial
+
+- type: entity
+  id: ServiceTechFab
+  parent: BaseLatheLube
+  name: сервисный ТехФаб
+  description: Печатает снаряжение для сервисного отдела. Похоже, некоторые рецепты недоступны. Может, что-то сможет их разблокировать?
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/techfab.rsi
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: service
+    - state: unlit
+      shader: unshaded
+      map: ["enum.PowerDeviceVisualLayers.Powered"]
+    - state: inserting
+      map: ["enum.MaterialStorageVisualLayers.Inserting"]
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: Machine
+    board: ServiceTechFabCircuitboard
+  - type: Lathe
+    idleState: icon
+    runningState: icon
+    staticRecipes:
+      - DrinkGlass
+      - DrinkShotGlass
+      - DrinkGlassCoupeShaped
+      - DrinkVacuumFlask
+      - DrinkFlaskBar
+      - DrinkShaker
+      - DrinkJigger
+      - DrinkIceBucket
+      - BarSpoon
+      - CustomDrinkJug
+      - ButchCleaver
+      - KitchenKnife
+      - RollingPin
+      - Spoon
+      - Fork
+      - SpoonPlastic
+      - ForkPlastic
+      - KnifePlastic
+      - PairedChopsticks
+      - FoodBowlBig
+      - FoodPlate
+      - FoodPlateSmall
+      - FoodPlateTin
+      - FoodPlateMuffinTin
+      - FoodKebabSkewer
+      - Plunger
+      - WetFloorSign
+      - Mousetrap
+      - LightReplacer
+      - TrashBag
+      - Holoprojector
+      - MopItem
+      - SprayBottle
+      - Bucket
+      - HydroponicsToolSpade
+      - HydroponicsToolMiniHoe
+      - PlantBag
+      - BikeHorn
+      - ClownRecorder
+      - LauncherCreamPie
+      - HydroponicsToolScythe
+      - HydroponicsToolHatchet
+    dynamicRecipes:
+      - TrashBagBlue
+      - BlueSpaceLightReplacer
+      - AdvMopItem
+      - ClothingBackpackWaterTank
+      - SynthesizerInstrument
+      - ClothingShoesBootsSpeed
+      - WeaponSprayNozzle
+      - BluespaceSprayBottle
+  - type: EmagLatheRecipes
+    emagStaticRecipes:
+      - CluwneHorn
+  - type: MaterialStorage
+    whitelist:
+      tags:
+        - Sheet
+        - RawMaterial
+        - Ingot
+        - CrystalMaterial
+        - Ore
 
 - type: entity
   parent: BaseLathe

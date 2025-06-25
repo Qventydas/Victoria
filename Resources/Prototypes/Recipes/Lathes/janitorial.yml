@@ -28,11 +28,12 @@
     Plastic: 100
 
 - type: latheRecipe
-  id: MegaSprayBottle
-  result: MegaSprayBottle
+  id: BluespaceSprayBottle
+  result: BluespaceSprayBottle
   completetime: 3
   materials:
     Plastic: 250
+    BSCrystalMaterial: 1000
 
 - type: latheRecipe
   id: SprayBottle
@@ -113,6 +114,7 @@
     Steel: 1500
     Silver: 250
     Plasma: 1000
+    BSCrystalMaterial: 1000
 
 - type: latheRecipe
   id: BlueSpaceLightReplacer
@@ -122,3 +124,4 @@
     Steel: 500
     Glass: 1000
     Plasma: 500
+    BSCrystalMaterial: 1000
