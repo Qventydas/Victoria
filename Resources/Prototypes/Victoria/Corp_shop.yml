@@ -614,7 +614,7 @@
 - type: entity
   parent: CrateCommandSecure
   id: CrateTransmutatorMachineCircuitboard
-  name: ящик с платой трансмутатора
+  name: ящик с машинной платой трансмутатора
   description: В этом ящике можно найти нечто весьма ценное для очень многих корпораций в галактике. Нечто, что NanoTrasen бережёт и охраняет от чужих пытливых умов.
   components:
   - type: StorageFill
@@ -986,7 +986,7 @@
   
 - type: listing
   id: CrateTransmutatorMachineCircuitboard
-  name: ящик с платой трансмутатора
+  name: ящик с машинной платой трансмутатора
   description: Плата управления трансмутатором, одна из самых значимых для превосходства NanoTrasen.
   productEntity: CrateTransmutatorMachineCircuitboard
   cost:

@@ -101,28 +101,37 @@
 - type: entity
   parent: CrystalOreBase
   id: Cooper
-  name: медь
+  name: медный слиток
   suffix: Электроника, Full
   components:
   - type: Stack
     stackType: Cooper
+    baseLayer: base
+    layerStates:
+    - copper
+    - copper_2
+    - copper_3
   - type: Sprite
     sprite: Victoria/Electron/contact_crystal.rsi
-    state: cooper
+    state: copper_3
+    layers:
+    - state: copper_3
+      map: ["base"]
   - type: Extractable
     grindableSolutionName: cooper
   - type: Material
   - type: PhysicalComposition
     materialComposition:
       CooperMaterial: 1000
+  - type: Appearance
   - type: Tag
     tags:
     - RawMatElectronics
 #------------------Стак--------------------------
 - type: stack
   id: Cooper
-  name: медь
-  icon: { sprite: Victoria/Electron/contact_crystal.rsi, state: cooper }
+  name: медный слиток
+  icon: { sprite: Victoria/Electron/contact_crystal.rsi, state: copper }
   spawn: Cooper1
   maxCount: 30
 #------------------Один кристалл--------------------------
@@ -138,8 +147,8 @@
 - type: material
   id: CooperMaterial
   stackEntity: Cooper1
-  name: медь
-  icon: { sprite: Victoria/Electron/contact_crystal.rsi, state: cooper }
+  name: медный слиток
+  icon: { sprite: Victoria/Electron/contact_crystal.rsi, state: copper }
   price: 0.1   
 #------------------Рецепт--------------------------
 - type: reaction
@@ -247,28 +256,37 @@
 - type: entity
   parent: CrystalOreBase
   id: Aluminium
-  name: алюминий
+  name: алюминиевый слиток
   suffix: Электроника, Full
   components:
   - type: Stack
     stackType: Aluminium
+    baseLayer: base
+    layerStates:
+    - aluminum
+    - aluminum_2
+    - aluminum_3
   - type: Sprite
     sprite: Victoria/Electron/contact_crystal.rsi
-    state: aluminium
+    state: aluminum_3
+    layers:
+    - state: aluminum_3
+      map: ["base"]
   - type: Extractable
     grindableSolutionName: aluminium
   - type: Material
   - type: PhysicalComposition
     materialComposition:
       AluminiumMaterial: 1000
+  - type: Appearance
   - type: Tag
     tags:
     - RawMatElectronics
 #------------------Стак--------------------------
 - type: stack
   id: Aluminium
-  name: алюминий
-  icon: { sprite: Victoria/Electron/contact_crystal.rsi, state: aluminium }
+  name: алюминиевый слиток
+  icon: { sprite: Victoria/Electron/contact_crystal.rsi, state: aluminum }
   spawn: Aluminium1
   maxCount: 30
 #------------------Один кристалл--------------------------
@@ -283,7 +301,7 @@
 - type: material
   id: AluminiumMaterial
   stackEntity: Aluminium1
-  name: алюминий
+  name: алюминиевый слиток
   icon: { sprite: Victoria/Electron/contact_crystal.rsi, state: aluminium }
   price: 0.1   
 #------------------Рецепт--------------------------
@@ -590,7 +608,7 @@
 - type: entity
   id: VacuumMachineMachineCircuitboard
   parent: BaseMachineCircuitboard
-  name: плата вакуумного станка
+  name: вакуумный станок (машинная плата)
   description: Электронная плата, необходимая для работы вакуумного станка
   components:
     - type: MachineBoard

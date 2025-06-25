@@ -35,6 +35,7 @@
   materials:
     Steel: 1000
     Glass: 500
+    BSCrystalMaterial: 1000
     # If they get spammed make it cost silver.
 
 - type: latheRecipe
@@ -66,3 +67,18 @@
     Plastic: 200
     Silver: 200
     Diamond: 100
+
+- type: latheRecipe
+  id: OreBag
+  result: OreBag
+  completetime: 3
+  materials:
+    Cloth: 1500
+
+- type: latheRecipe
+  id: SurvivalKnife
+  result: SurvivalKnife
+  completetime: 1
+  materials:
+    Steel: 500
+    Plastic: 250

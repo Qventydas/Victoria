@@ -51,8 +51,8 @@
 - type: entity
   id: WristwatchCaptain
   parent: Wristwatch
-  name: Часы капитана
-  description: Электронные часы с интегрированным ПО консоли связи.
+  name: часы капитана
+  description: Электронные часы с интегрированным программным обеспечением консоли связи.
   components:
   - type: Sprite
     sprite: Victoria/cap_watch.rsi

@@ -79,6 +79,15 @@
     SiСeramicsCircuitBordMaterial: 1000
     DigitalCircuitMaterial: 800
     PulseCircuitMaterial: 200
+#-----------------------------ТехФаб--------------------------------
+- type: latheRecipe
+  abstract: true
+  id: BaseRecipesSiCeramics_6
+  parent: BaseRecipeSiСeramics_2
+  materials:
+    SiСeramicsCircuitBordMaterial: 500
+    AnalogCircuitMaterial: 300
+    PulseCircuitMaterial: 200
 #--------------------------------Стеклотекстолитовые (Общие - сервис - зелёные)--------------------------
 #-----------------------------Маленькие------------------------------
 #---------------------Шлюзы---------------------------------
@@ -890,3 +899,23 @@
   parent: BaseRecipeSapphire_3
   id: MedicalTechFabCircuitboard
   result: MedicalTechFabCircuitboard
+
+- type: latheRecipe
+  parent: BaseRecipeGethinax_1
+  id: CargoTechFabCircuitboard
+  result: CargoTechFabCircuitboard
+
+- type: latheRecipe
+  parent: BaseRecipesSiCeramics_6
+  id: EngineeringTechFabCircuitboard
+  result: EngineeringTechFabCircuitboard
+
+- type: latheRecipe
+  parent: BaseRecipeFiberglass_3
+  id: ServiceTechFabCircuitboard
+  result: ServiceTechFabCircuitboard
+
+- type: latheRecipe
+  parent: BaseRecipeFiberglass_4
+  id: ClothLatheMachineCircuitboard
+  result: ClothLatheMachineCircuitboard
