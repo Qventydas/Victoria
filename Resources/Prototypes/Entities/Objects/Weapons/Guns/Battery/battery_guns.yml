@@ -235,6 +235,9 @@
   - type: HitscanBatteryAmmoProvider
     proto: RedLaser
     fireCost: 62.5
+  - type: Construction
+    graph: LaserCarbineSniper
+    node: LaserCarbine
 
 - type: entity
   name: pulse pistol
@@ -322,6 +325,9 @@
   - type: Battery
     maxCharge: 40000
     startingCharge: 40000
+  - type: Construction
+    graph: PulseRifleSniper
+    node: PulseRifle
 
 - type: entity
   name: laser cannon

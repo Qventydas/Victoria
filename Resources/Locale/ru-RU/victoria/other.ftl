@@ -51,3 +51,7 @@ borg-type-defender-transponder = киборг-защитник
 
 petting-success-defender-cyborg = Вы гладите { $target } по { POSS-ADJ($target) } следящей за корпоративным законом голове.
 petting-failure-defender-cyborg = Вы тянетесь погладить { $target }, но { $target } занимается защитой своей цели!
+
+entrenching-stop-digging = Вы прекратили копать.
+entrenching-begin-filling = Вы начали засыпать песок в мешки.
+entrenching-start-digging = Вы начали копать

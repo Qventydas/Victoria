@@ -2311,6 +2311,9 @@
     magState: mag
     steps: 1
     zeroVisible: false
+  - type: Construction
+    graph: SNKLaserCarbineSniper
+    node: SNKLaserCarbine
 #--------------------------------винтовка-радиация-----------------------------------
 - type: entity
   name: Радиационный карабинный излучатель "К.Дас"
@@ -2394,6 +2397,9 @@
   - type: Appearance
   - type: StaticPrice
     price: 500
+  - type: Construction
+    graph: SNKHeavyRifleSniper 
+    node: SNKHeavyRifle
 #--------------------------------пулемёт-тяжёлый-----------------------------------
 - type: Tag
   id: SNKHighLMG

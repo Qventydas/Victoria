@@ -1322,6 +1322,9 @@
   - type: Appearance
   - type: StaticPrice
     price: 2000
+  - type: Construction
+    graph: CDCRifleSniper 
+    node: CDCRifle
 #-----------------------пожарный лазер-----------------------
 - type: entity
   name: Плазменный дефокусировщик "Ифрит"

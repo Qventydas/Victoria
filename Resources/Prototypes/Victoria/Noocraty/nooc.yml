@@ -1184,6 +1184,9 @@
     sprite: Victoria/Noocraty/Weapon/nooc_laser_rifle.rsi
   - type: StaticPrice
     price: 500
+  - type: Construction
+    graph: NoocRifleSniper
+    node: NoocRifle
 #------------------------------------автомат----------
 - type: entity
   id: NoocPowerGan
