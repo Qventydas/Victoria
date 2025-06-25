@@ -748,7 +748,7 @@
           steps:
             - material: Steel
               amount: 1
-            - material: Wood
+            - material: WoodPlank
               amount: 1
    
     - node: Shovel
@@ -761,7 +761,7 @@
   startNode: start
   targetNode: Shovel
   category: construction-category-tools
-  description: Лопата. Просто лопата. Её можно копать.
+  description: Лопата. Просто лопата. Ей можно копать.
   icon: { sprite: Objects/Tools/shovel.rsi, state: icon }
   objectType: Item
 #---------------------------------------------песок----------------------------------------
@@ -773,7 +773,7 @@
   id: SandHandful
   name: Горсть песка
   description: Синие и высокоэнергетические. Весьма дорогие и очень важные.
-  suffix: Особые кристаллы, Full
+  suffix: Full
   components:
   - type: Stack
     stackType: SandHandful
