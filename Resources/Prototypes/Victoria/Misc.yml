@@ -276,7 +276,7 @@
       amount: 1
   - type: Construction
     graph: Sandbag
-    node: SandbagEmpty
+    node: SandbagEmptyLinum
 
 - type: entity
   parent: SandbagEmpty
@@ -610,7 +610,7 @@
         Piercing: 8
   - type: Construction
     graph: SandbagBarricade
-    node: SandBarricadeSyWi
+    node: SandBarricadeStWi
         
 - type: constructionGraph
   id: SandbagBarricade
