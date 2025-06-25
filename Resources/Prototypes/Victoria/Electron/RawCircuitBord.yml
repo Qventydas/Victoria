@@ -302,7 +302,7 @@
   id: AluminiumMaterial
   stackEntity: Aluminium1
   name: алюминиевый слиток
-  icon: { sprite: Victoria/Electron/contact_crystal.rsi, state: aluminium }
+  icon: { sprite: Victoria/Electron/contact_crystal.rsi, state: aluminum }
   price: 0.1   
 #------------------Рецепт--------------------------
 - type: reaction

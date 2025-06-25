@@ -16,7 +16,7 @@
 - type: latheRecipe
   id: ClothingBeltUtility
   result: ClothingBeltUtility
-  completerime: 2
+  completetime: 2
   materials:
     Cloth: 1000
 
