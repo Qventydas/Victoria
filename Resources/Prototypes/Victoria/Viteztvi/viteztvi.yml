@@ -2066,6 +2066,20 @@
       - id: VitzEncryptionKeyPil
       - id: VitzEncryptionKeyPil
       - id: VitzEncryptionKeyCom
+#-----------------------------Ящик оптики------------------ 
+- type: entity
+  id: VitzCrateOptic
+  parent: VitzCrate
+  name: Ящик вспомогательной оптики
+  suffix: Витезтви
+  description: Ящик с двумя биноклями и двумя оптическими приелами
+  components:
+  - type: StorageFill
+    contents:
+      - id: Binoculars
+      - id: Binoculars
+      - id: OpticalSight
+      - id: OpticalSight
 #-------------------------------------------------Радио призыва------------------ 
 - type: entity
   parent: ReinforcementRadio

@@ -1221,6 +1221,7 @@
       whitelist:
         tags:
           - Ore
+          - SandHandful
     - type: Lathe
       idleState: icon
       runningState: building
@@ -1240,6 +1241,8 @@
         - MeltingCooper
         - MeltingAluminium
         - MeltingPlumbum
+        - MeltingSiCrystallfromSand
+        - MeltingSheetGlassfromSand
 
 - type: entity
   parent: OreProcessor
@@ -1272,6 +1275,8 @@
       - MeltingCooper
       - MeltingAluminium
       - MeltingPlumbum
+      - MeltingSiCrystallfromSand
+      - MeltingSheetGlassfromSand
 
 - type: entity
   parent: BaseLathe

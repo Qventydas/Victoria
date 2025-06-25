@@ -437,6 +437,7 @@
         Piercing: 7
   - type: Item
     sprite: Victoria/Umpor/Weapon/umpor_spade.rsi
+  - type: EntrenchingTool
 #---------------------------------------------РСУ---------------------    
 #------------------------сумка-------------- 
 - type: Tag
@@ -950,6 +951,9 @@
   - type: Appearance
   - type: StaticPrice
     price: 500
+  - type: Construction
+    graph: UmporRifleSniper
+    node: UmporRifle
 #------------------------------------автомат----------     
 - type: entity
   name: name-of-UmporLightRifle

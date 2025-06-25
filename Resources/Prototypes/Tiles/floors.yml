@@ -1458,6 +1458,7 @@
   itemDrop: FloorTileItemGrass
   heatCapacity: 10000
   weather: true
+  canDig: true
 
 - type: tile
   id: FloorGrassJungle
@@ -1476,6 +1477,7 @@
   itemDrop: FloorTileItemGrassJungle
   heatCapacity: 10000
   weather: true
+  canDig: true
 
 - type: tile
   id: FloorGrassDark
@@ -1493,6 +1495,7 @@
     collection: FootstepGrass
   heatCapacity: 10000
   weather: true
+  canDig: true
 
 - type: tile
   id: FloorGrassLight
@@ -1510,6 +1513,7 @@
     collection: FootstepGrass
   heatCapacity: 10000
   weather: true
+  canDig: true
 
 - type: tile
   id: FloorDirt
@@ -1527,6 +1531,7 @@
     collection: FootstepAsteroid
   heatCapacity: 10000
   weather: true
+  canDig: true
 
 # Asteroid
 
@@ -1555,6 +1560,7 @@
     collection: FootstepAsteroid
   heatCapacity: 10000
   weather: true
+  canDig: true
 
 - type: tile
   id: FloorAsteroidSandDug
@@ -1566,6 +1572,7 @@
     collection: FootstepAsteroid
   heatCapacity: 10000
   weather: true
+  canDig: true
 
 - type: tile
   id: FloorAsteroidSandRed
@@ -1592,6 +1599,7 @@
     collection: FootstepAsteroid
   heatCapacity: 10000
   weather: true
+  canDig: true
 
 - type: tile
   id: FloorAsteroidTile
@@ -1632,6 +1640,7 @@
     collection: FootstepAsteroid
   heatCapacity: 10000
   weather: true
+  canDig: true
 
 - type: tile
   id: FloorAsteroidSandUnvariantized
@@ -1643,6 +1652,7 @@
     collection: FootstepAsteroid
   heatCapacity: 10000
   weather: true
+  canDig: true
 
 - type: tile
   id: FloorAsteroidIronsandUnvariantized
@@ -1654,6 +1664,7 @@
     collection: FootstepAsteroid
   heatCapacity: 10000
   weather: true
+  canDig: true
 
 # Caves
 - type: tile
@@ -1674,6 +1685,7 @@
   footstepSounds:
     collection: FootstepAsteroid
   heatCapacity: 10000
+  canDig: true
 
 - type: tile
   id: FloorCaveDrought
@@ -1694,6 +1706,7 @@
   footstepSounds:
     collection: FootstepAsteroid
   heatCapacity: 10000
+  canDig: true
 
 - type: tile
   id: FloorFlesh
@@ -1884,6 +1897,7 @@
     collection: FootstepGrass
   itemDrop: FloorTileItemAstroGrass
   heatCapacity: 10000
+  canDig: true
 
 - type: tile
   id: FloorMowedAstroGrass
@@ -1901,6 +1915,7 @@
   deconstructTools: [ Cutting ]
   itemDrop: FloorTileItemMowedAstroGrass
   weather: false # Corvax
+  canDig: true
 
 - type: tile
   id: FloorJungleAstroGrass
@@ -1911,6 +1926,7 @@
   deconstructTools: [ Cutting ]
   itemDrop: FloorTileItemJungleAstroGrass
   weather: false # Corvax
+  canDig: true
 
 # Ice
 - type: tile

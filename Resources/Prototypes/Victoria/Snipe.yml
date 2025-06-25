@@ -1,0 +1,649 @@
+#-----------------------------------------------------Действие прицеливания-----------------------------------
+- type: entity
+  id: ActionMarineBase
+  categories:
+  - HideSpawnMenu
+
+- type: entity
+  parent: ActionMarineBase
+  id: ActionToggleScope
+  name: Переключение оптики
+  description: Переключитесь на обзор через оптический прицел.
+  components:
+  - type: InstantAction
+    icon:
+      sprite: Victoria/Snipe/scope_action.rsi
+      state: sniperscope
+    event: !type:ToggleActionEvent
+    useDelay: 0.25
+#-----------------------------------------------------бинокль-----------------------------------
+- type: entity
+  parent: BaseItem
+  id: Binoculars
+  name: Бинокль
+  description: Высоко сижу, далеко гляжу!
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Victoria/Snipe/binoculars.rsi
+    state: binoculars
+  - type: Scope
+    useInHand: true
+    allowMovement: true
+    delay: 0
+    zoom: 1.6
+    offset: 14
+#-----------------------------------------------------Прицел-----------------------------------
+- type: entity
+  parent: BaseItem
+  id: OpticalSight
+  name: оптический прицел
+  description: Мечта любого мелкого пацана во дворе и пехотинца в окопе.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Victoria/Snipe/optical_sight.rsi
+    state: sight
+  - type: Scope
+    useInHand: true
+    allowMovement: true
+    delay: 0
+    zoom: 2.2
+    offset: 14
+  - type: Stack
+    stackType: OpticalSight
+    count: 1
+    
+- type: stack
+  id: OpticalSight
+  name: оптический прицел
+  icon: { sprite: /Textures/Victoria/Snipe/optical_sight.rsi, state: sight }
+  spawn: OpticalSight
+  maxCount: 1
+#-----------------------------------------------------Снайперская Мосинка-----------------------------------
+- type: entity
+  name: винтовка Кардашевв-Мосина снайперская
+  parent: WeaponSniperMosin
+  id: WeaponSniperMosinSniper
+  description: Таже Мосинка, но теперь более точная и с оптическим прицелом! Использует патроны .30 калибра.
+  components:
+  - type: Sprite
+    sprite: Victoria/Snipe/bolt_gun_wood.rsi
+  - type: Gun
+    minAngle: 0
+    maxAngle: 3
+    angleIncrease: 1
+    angleDecay: 0.5
+  - type: Scope
+    useInHand: true
+    allowMovement: true
+    delay: 0
+    zoom: 2.2
+    offset: 14
+  - type: Construction
+    graph: MosinSniper
+    node: MosinSniper
+    
+    
+- type: constructionGraph
+  id: MosinSniper
+  start: Mosin
+  graph:
+    - node: Mosin
+      entity: WeaponSniperMosin
+      edges:
+        - to: MosinSniper
+          steps:
+            - material: OpticalSight
+              amount: 1
+              doAfter: 2
+            - tool: Screwing
+              doAfter: 1 
+            
+
+    - node: MosinSniper
+      entity: WeaponSniperMosinSniper
+      edges:
+        - to: Mosin
+          completed:
+            - !type:AdminLog
+              message: "Прицел был отсоединён"
+            - !type:SpawnPrototype
+              prototype: OpticalSight
+              amount: 1
+            - !type:SpawnPrototype
+              prototype: WeaponSniperMosin
+              amount: 1
+            - !type:DeleteEntity
+          steps:
+            - tool: Screwing
+              doAfter: 1 
+#-----------------------------------------------------Снайперский Лазерный карабин-----------------------------------
+- type: entity
+  name: Лазерная винтовка Снайперская
+  parent: WeaponLaserCarbine
+  id: WeaponLaserCarbineSniper
+  description: Стандартный лазерный карабин Службы безопасности, но с присоединённым оптическим прицелом и улучшенной точностью стрельбы.
+  components:
+  - type: Sprite
+    sprite: Victoria/Snipe/laser_gun.rsi
+  - type: Gun
+    minAngle: 0
+    maxAngle: 3
+    angleIncrease: 1
+    angleDecay: 0.5
+  - type: Scope
+    useInHand: true
+    allowMovement: true
+    delay: 0
+    zoom: 2.2
+    offset: 14
+  - type: Construction
+    graph: LaserCarbineSniper
+    node: LaserCarbineSniper
+    
+    
+- type: constructionGraph
+  id: LaserCarbineSniper
+  start: LaserCarbine
+  graph:
+    - node: LaserCarbine
+      entity: WeaponLaserCarbine
+      edges:
+        - to: LaserCarbineSniper
+          steps:
+            - material: OpticalSight
+              amount: 1
+              doAfter: 2
+            - tool: Screwing
+              doAfter: 1 
+            
+
+    - node: LaserCarbineSniper
+      entity: WeaponLaserCarbineSniper
+      edges:
+        - to: LaserCarbine
+          completed:
+            - !type:AdminLog
+              message: "Прицел был отсоединён"
+            - !type:SpawnPrototype
+              prototype: OpticalSight
+              amount: 1
+            - !type:SpawnPrototype
+              prototype: WeaponLaserCarbine
+              amount: 1
+            - !type:DeleteEntity
+          steps:
+            - tool: Screwing
+              doAfter: 1 
+#-----------------------------------------------------Снайперская Импульсная пуха-----------------------------------
+- type: entity
+  name: импульсная винтовка Снайперская
+  parent: WeaponPulseRifle
+  id: WeaponPulseRifleSniper
+  description: Не такая известная модификация. Может быть потому что никому не удавалось расказать о встрече с её владельцем...
+  components:
+  - type: Sprite
+    sprite: Victoria/Snipe/pulse_rifle.rsi
+  - type: Gun
+    minAngle: 0
+    maxAngle: 3
+    angleIncrease: 1
+    angleDecay: 0.5
+  - type: Scope
+    useInHand: true
+    allowMovement: true
+    delay: 0
+    zoom: 2.2
+    offset: 14
+  - type: Construction
+    graph: PulseRifleSniper
+    node: PulseRifleSniper
+    
+    
+- type: constructionGraph
+  id: PulseRifleSniper
+  start: PulseRifle
+  graph:
+    - node: PulseRifle
+      entity: WeaponPulseRifle
+      edges:
+        - to: PulseRifleSniper
+          steps:
+            - material: OpticalSight
+              amount: 1
+              doAfter: 2
+            - tool: Screwing
+              doAfter: 1 
+            
+
+    - node: PulseRifleSniper
+      entity: WeaponPulseRifleSniper
+      edges:
+        - to: PulseRifle
+          completed:
+            - !type:AdminLog
+              message: "Прицел был отсоединён"
+            - !type:SpawnPrototype
+              prototype: OpticalSight
+              amount: 1
+            - !type:SpawnPrototype
+              prototype: WeaponPulseRifle
+              amount: 1
+            - !type:DeleteEntity
+          steps:
+            - tool: Screwing
+              doAfter: 1 
+#-----------------------------------------------------Снайперская Умпорская винтовка-----------------------------------
+- type: entity
+  name: умпорская винтовка "Окопник" Снайперская
+  suffix: Умпорский
+  parent: UmporHeavyRifle
+  id: UmporHeavyRifleSniper
+  description: Старая, надёжная и любимая многими умпорцами винтовка. А теперь и с оптическим прицелом!
+  components:
+  - type: Sprite
+    sprite: Victoria/Snipe/umpor_rifle.rsi
+  - type: Gun
+    minAngle: 0
+    maxAngle: 3
+    angleIncrease: 1
+    angleDecay: 0.5
+  - type: Scope
+    useInHand: true
+    allowMovement: true
+    delay: 0
+    zoom: 2.2
+    offset: 14
+  - type: Construction
+    graph: UmporRifleSniper
+    node: UmporRifleSniper
+
+
+- type: constructionGraph
+  id: UmporRifleSniper
+  start: UmporRifle
+  graph:
+    - node: UmporRifle
+      entity: UmporHeavyRifle
+      edges:
+        - to: UmporRifleSniper
+          steps:
+            - material: OpticalSight
+              amount: 1
+              doAfter: 2
+            - tool: Screwing
+              doAfter: 1 
+            
+
+    - node: UmporRifleSniper
+      entity: UmporHeavyRifleSniper
+      edges:
+        - to: UmporRifle
+          completed:
+            - !type:AdminLog
+              message: "Прицел был отсоединён"
+            - !type:SpawnPrototype
+              prototype: OpticalSight
+              amount: 1
+            - !type:SpawnPrototype
+              prototype: UmporHeavyRifle
+              amount: 1
+            - !type:DeleteEntity
+          steps:
+            - tool: Screwing
+              doAfter: 1 
+#-----------------------------------------------------Снайперская Ноократская винтовка-----------------------------------
+#--------------------------------------------Ноократская------------------
+- type: entity
+  name: Ноократская винтовка "Господин" Снайперская
+  suffix: Ноократия
+  parent: NoocRifle
+  id: NoocRifleSniper
+  description: Опасное и дальнобойное оружие Ноократии Эранта для ликвидации защитников важных точек обороны и убийства ключевых бойцов противника
+  components:
+  - type: Sprite
+    sprite: Victoria/Snipe/nooc_laser_rifle.rsi
+  - type: Gun
+    minAngle: 0
+    maxAngle: 3
+    angleIncrease: 1
+    angleDecay: 0.5
+  - type: Scope
+    useInHand: true
+    allowMovement: true
+    delay: 0
+    zoom: 2.2
+    offset: 14
+  - type: Construction
+    graph: NoocRifleSniper
+    node: NoocRifleSniper
+    
+    
+- type: constructionGraph
+  id: NoocRifleSniper
+  start: NoocRifle
+  graph:
+    - node: NoocRifle
+      entity: NoocRifle
+      edges:
+        - to: NoocRifleSniper
+          steps:
+            - material: OpticalSight
+              amount: 1
+              doAfter: 2
+            - tool: Screwing
+              doAfter: 1 
+            
+
+    - node: NoocRifleSniper
+      entity: NoocRifleSniper
+      edges:
+        - to: NoocRifle
+          completed:
+            - !type:AdminLog
+              message: "Прицел был отсоединён"
+            - !type:SpawnPrototype
+              prototype: OpticalSight
+              amount: 1
+            - !type:SpawnPrototype
+              prototype: NoocRifle
+              amount: 1
+            - !type:DeleteEntity
+          steps:
+            - tool: Screwing
+              doAfter: 1 
+#--------------------------------------------Миртанийская-----------------
+- type: entity
+  name: Ноократская винтовка "Господин" Снайперская
+  suffix: Миртан
+  parent: MirtNoocRifle
+  id: MirtNoocRifleSniper 
+  description: Опасное и дальнобойное оружие Ноократии Эранта для ликвидации защитников важных точек обороны и убийства ключевых бойцов противника
+  components:
+  - type: Sprite
+    sprite: Victoria/Snipe/mirt_nooc_laser_rifle.rsi
+  - type: Gun
+    minAngle: 0
+    maxAngle: 3
+    angleIncrease: 1
+    angleDecay: 0.5
+  - type: Scope
+    useInHand: true
+    allowMovement: true
+    delay: 0
+    zoom: 2.2
+    offset: 14
+  - type: Construction
+    graph: MirtNoocRifleSniper
+    node: MirtNoocRifleSniper  
+
+- type: constructionGraph
+  id: MirtNoocRifleSniper
+  start: MirtNoocRifle
+  graph:
+    - node: MirtNoocRifle
+      entity: MirtNoocRifle
+      edges:
+        - to: MirtNoocRifleSniper 
+          steps:
+            - material: OpticalSight
+              amount: 1
+              doAfter: 2
+            - tool: Screwing
+              doAfter: 1 
+            
+
+    - node: MirtNoocRifleSniper 
+      entity: MirtNoocRifleSniper
+      edges:
+        - to: MirtNoocRifle
+          completed:
+            - !type:AdminLog
+              message: "Прицел был отсоединён"
+            - !type:SpawnPrototype
+              prototype: OpticalSight
+              amount: 1
+            - !type:SpawnPrototype
+              prototype: MirtNoocRifle
+              amount: 1
+            - !type:DeleteEntity
+          steps:
+            - tool: Screwing
+              doAfter: 1    
+#-----------------------------------------------------Снайперская миртанийская винтовка-----------------------------------
+- type: entity
+  name: Блюспейс винтовка "Чаровница" Снайперская
+  suffix: Миртан
+  parent: MirtRifle
+  id: MirtRifleSniper
+  description: Блюспейс винтовка для лучших солдат Империи Миртана, что создана для быстрого устранения самых опасных противников. (lhc)
+  components:
+  - type: Sprite
+    sprite: Victoria/Snipe/mirt_rifle_bs.rsi
+  - type: Gun
+    minAngle: 0
+    maxAngle: 3
+    angleIncrease: 1
+    angleDecay: 0.5
+  - type: Scope
+    useInHand: true
+    allowMovement: true
+    delay: 0
+    zoom: 2.2
+    offset: 14
+  - type: Construction
+    graph: MirtRifleSniper
+    node: MirtRifleSniper  
+
+- type: constructionGraph
+  id: MirtRifleSniper
+  start: MirtRifle
+  graph:
+    - node: MirtRifle
+      entity: MirtRifle
+      edges:
+        - to: MirtRifleSniper
+          steps:
+            - material: OpticalSight
+              amount: 1
+              doAfter: 2
+            - tool: Screwing
+              doAfter: 1 
+            
+
+    - node: MirtRifleSniper
+      entity: MirtRifleSniper
+      edges:
+        - to: MirtRifle
+          completed:
+            - !type:AdminLog
+              message: "Прицел был отсоединён"
+            - !type:SpawnPrototype
+              prototype: OpticalSight
+              amount: 1
+            - !type:SpawnPrototype
+              prototype: MirtRifle
+              amount: 1
+            - !type:DeleteEntity
+          steps:
+            - tool: Screwing
+              doAfter: 1   
+#-----------------------------------------------------Снайперская лазерная винтовка СНК-----------------------------------
+- type: entity
+  name: Лазерный карабин "Котжи" Снайперский
+  suffix: СНК
+  parent: SNKLaserCarbine
+  id: SNKLaserCarbineSniper
+  description: Просто очень хорошее и качественное оружие. Надёжное и безотказное.
+  components:
+  - type: Sprite
+    sprite: Victoria/Snipe/snk_carabine_laser.rsi
+  - type: Gun
+    minAngle: 0
+    maxAngle: 3
+    angleIncrease: 1
+    angleDecay: 0.5
+  - type: Scope
+    useInHand: true
+    allowMovement: true
+    delay: 0
+    zoom: 2.2
+    offset: 14
+  - type: Construction
+    graph: SNKLaserCarbineSniper
+    node: SNKLaserCarbineSniper  
+
+- type: constructionGraph
+  id: SNKLaserCarbineSniper
+  start: SNKLaserCarbine
+  graph:
+    - node: SNKLaserCarbine
+      entity: SNKLaserCarbine
+      edges:
+        - to: SNKLaserCarbineSniper
+          steps:
+            - material: OpticalSight
+              amount: 1
+              doAfter: 2
+            - tool: Screwing
+              doAfter: 1 
+            
+
+    - node: SNKLaserCarbineSniper
+      entity: SNKLaserCarbineSniper
+      edges:
+        - to: SNKLaserCarbine
+          completed:
+            - !type:AdminLog
+              message: "Прицел был отсоединён"
+            - !type:SpawnPrototype
+              prototype: OpticalSight
+              amount: 1
+            - !type:SpawnPrototype
+              prototype: SNKLaserCarbine
+              amount: 1
+            - !type:DeleteEntity
+          steps:
+            - tool: Screwing
+              doAfter: 1   
+#-----------------------------------------------------Снайперская тяжёлая винтовка СНК-----------------------------------
+- type: entity
+  name: Винтовка СНК "Нитро" Снайперская
+  suffix: СНК
+  parent: SNKHeavyRifle
+  id: SNKHeavyRifleSniper 
+  description: Очень мощная винтовка СНК. Никогда не знаешь когда от неё прилетит, но когда прилетит будет очень-очень плохо. Использует патроны СНК .55
+  components:
+  - type: Sprite
+    sprite: Victoria/Snipe/snk_carabine_hig.rsi
+  - type: Gun
+    minAngle: 0
+    maxAngle: 3
+    angleIncrease: 1
+    angleDecay: 0.5
+  - type: Scope
+    useInHand: true
+    allowMovement: true
+    delay: 0
+    zoom: 2.2
+    offset: 14
+  - type: Construction
+    graph: SNKHeavyRifleSniper 
+    node: SNKHeavyRifleSniper   
+
+- type: constructionGraph
+  id: SNKHeavyRifleSniper 
+  start: SNKHeavyRifle
+  graph:
+    - node: SNKHeavyRifle
+      entity: SNKHeavyRifle
+      edges:
+        - to: SNKHeavyRifleSniper 
+          steps:
+            - material: OpticalSight
+              amount: 1
+              doAfter: 2
+            - tool: Screwing
+              doAfter: 1 
+            
+
+    - node: SNKHeavyRifleSniper 
+      entity: SNKHeavyRifleSniper 
+      edges:
+        - to: SNKHeavyRifle
+          completed:
+            - !type:AdminLog
+              message: "Прицел был отсоединён"
+            - !type:SpawnPrototype
+              prototype: OpticalSight
+              amount: 1
+            - !type:SpawnPrototype
+              prototype: SNKHeavyRifle
+              amount: 1
+            - !type:DeleteEntity
+          steps:
+            - tool: Screwing
+              doAfter: 1  
+#-----------------------------------------------------Снайперская винтовка конгломерата-----------------------------------
+- type: entity
+  name: Винтовка Конгломерата "Силла" Снайперская
+  suffix: Конгломерат
+  parent: CDCRifle
+  id: CDCRifleSniper
+  description: Очень мощная плазменная винтовка Конгломерата. Её крупные сгустки плазмы способны свалить даже самого бронированного противника. (spr, hpr)
+  components:
+  - type: Sprite
+    sprite: Victoria/Snipe/cdc_rifle.rsi
+  - type: Gun
+    minAngle: 0
+    maxAngle: 3
+    angleIncrease: 1
+    angleDecay: 0.5
+  - type: Scope
+    useInHand: true
+    allowMovement: true
+    delay: 0
+    zoom: 2.2
+    offset: 14
+  - type: Construction
+    graph: CDCRifleSniper 
+    node: CDCRifleSniper   
+
+- type: constructionGraph
+  id: CDCRifleSniper
+  start: CDCRifle
+  graph:
+    - node: CDCRifle
+      entity: CDCRifle
+      edges:
+        - to: CDCRifleSniper 
+          steps:
+            - material: OpticalSight
+              amount: 1
+              doAfter: 2
+            - tool: Screwing
+              doAfter: 1 
+            
+
+    - node: CDCRifleSniper 
+      entity: CDCRifleSniper 
+      edges:
+        - to: CDCRifle
+          completed:
+            - !type:AdminLog
+              message: "Прицел был отсоединён"
+            - !type:SpawnPrototype
+              prototype: OpticalSight
+              amount: 1
+            - !type:SpawnPrototype
+              prototype: CDCRifle
+              amount: 1
+            - !type:DeleteEntity
+          steps:
+            - tool: Screwing
+              doAfter: 1  
+
+
