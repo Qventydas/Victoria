@@ -1,4 +1,4 @@
-#-----------------------------------------------аванпост----------------------------- 
+#-----------------------------------------------аванпост-----------------------------
 - type: entity
   abstract: true
   id: BaseStationPetr
@@ -26,7 +26,7 @@
       components:
         - type: StationNameSetup
           mapNameTemplate: "Petr Outpost"
-#-------------------------------------Объявлялка войны-----------  
+#-------------------------------------Объявлялка войны-----------
 - type: entity
   parent: BaseItem
   id: PetrDeclarationOfWar
@@ -53,8 +53,8 @@
       message: Силы Красной пролетарской Вечной Революции сообщают, что идут в атаку на продажную корпорацию НаноТрейзени требуют от них выдать всех капиталистических акул и их прихвостней, что угнетают простых рабочих станции.
     - type: AccessReader
       access: [["PetrAccess"]]
-#-----------------------------------------------гиры-----------------------------  
-#------------------------------------боевик---------- 
+#-----------------------------------------------гиры-----------------------------
+#------------------------------------боевик----------
 - type: startingGear
   id: NukPetrSoldGear
   equipment:
@@ -64,8 +64,8 @@
     id: PetrPDASold
     ears: PetrHeadset
     pocket1: PetrPaperSold
-    pocket2: PetrBaseUplinkRadio50TC 
-#------------------------------------специалист-инженер---------- 
+    pocket2: PetrBaseUplinkRadio50TC
+#------------------------------------специалист-инженер----------
 - type: startingGear
   id: NukPetrSpecGear
   equipment:
@@ -75,8 +75,8 @@
     id: PetrPDASold
     ears: PetrHeadset
     pocket1: PetrPaperSpecEng
-    pocket2: PetrBaseUplinkRadio50TC 
-#------------------------------------командир----------  
+    pocket2: PetrBaseUplinkRadio50TC
+#------------------------------------командир----------
 - type: startingGear
   id: NukPetrOffiGear
   equipment:
@@ -87,10 +87,10 @@
     id: PetrPDAOffi
     ears: PetrHeadset
     pocket1: PetrPaperOffi
-    pocket2: PetrBaseUplinkRadio50TC 
+    pocket2: PetrBaseUplinkRadio50TC
   inhand:
-    - PetrDeclarationOfWar    
-#-----------------------------------------------антаги-----------------------------  
+    - PetrDeclarationOfWar
+#-----------------------------------------------антаги-----------------------------
 - type: antag
   id: NukPetr
   name: Боевик Петрищевец
@@ -99,7 +99,7 @@
   objective: Уничтожте всех глав, сотрудников безопасности и учёных НТ.
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 54000 
+    time: 54000
   - !type:DepartmentTimeRequirement
     department: Security
     time: 25200
@@ -112,13 +112,13 @@
   objective: Уничтожьте всех глав, сотрудников безопасности и учёных НТ, делая упор на технические средства.
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 61200  
+    time: 61200
   - !type:DepartmentTimeRequirement
     department: Security
-    time: 25200 
+    time: 25200
   - !type:DepartmentTimeRequirement
     department: Engineering
-    time: 36000 
+    time: 36000
 
 - type: antag
   id: NukPetrCommander
@@ -128,11 +128,11 @@
   objective: Руководите отрядом, дабы избавить пролетариев НТ от капиталистического гнёта их глав, сотрудников безопасности и учёных.
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 108000 
+    time: 108000
   - !type:DepartmentTimeRequirement
     department: Security
-    time: 54000 
-#-----------------------------------------------майнд Роли-----------------------------  
+    time: 54000
+#-----------------------------------------------майнд Роли-----------------------------
 - type: entity
   parent: BaseMindRoleAntag
   id: MindRoleNukPetr
@@ -141,9 +141,9 @@
   - type: MindRole
     exclusiveAntag: true
     antagPrototype: NukPetr
-  - type: RevolutionaryRole
-    convertedCount: 0
-  
+  - type: PetrRole
+  - type: PetrOperative
+
 - type: entity
   parent: MindRoleNukPetr
   id: MindRoleNukPetrSpec
@@ -152,7 +152,7 @@
   - type: MindRole
     exclusiveAntag: true
     antagPrototype: NukPetrSpec
-    
+
 - type: entity
   parent: MindRoleNukPetr
   id: MindRoleNukPetrCommander
@@ -161,7 +161,7 @@
   - type: MindRole
     exclusiveAntag: true
     antagPrototype: NukPetrCommander
-#-----------------------------------------------набор правил-----------------------------  
+#-----------------------------------------------набор правил-----------------------------
 - type: entity
   abstract: true
   parent: BaseGameRule
@@ -171,7 +171,7 @@
     nameSegments:
     - operationPrefix
     - operationSuffix
-  - type: RevolutionaryRule
+  - type: PetrRule
   - type: RuleGrids
   - type: AntagSelection
   - type: AntagLoadProfileRule
@@ -199,7 +199,7 @@
       max: 1
       startingGear: NukPetrOffiGear
       components:
-      - type: Revolutionary
+      - type: PetrOperative
       - type: RandomMetadata
         nameSegments:
         - PetrName-com
@@ -215,7 +215,7 @@
       max: 2
       startingGear: NukPetrSpecGear
       components:
-      - type: Revolutionary
+      - type: PetrOperative
       - type: RandomMetadata
         nameSegments:
         - PetrName-vet
@@ -231,7 +231,7 @@
       max: 3
       startingGear: NukPetrSoldGear
       components:
-      - type: Revolutionary
+      - type: PetrOperative
       - type: RandomMetadata
         nameSegments:
         - PetrName-tov
@@ -241,7 +241,7 @@
         - Petr
       mindRoles:
       - MindRoleNukPetrCommander
-#-----------------------------------------------режим-----------------------------  
+#-----------------------------------------------режим-----------------------------
 - type: gamePreset
   id: PetrRaid
   alias:

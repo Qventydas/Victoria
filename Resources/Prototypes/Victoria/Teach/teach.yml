@@ -538,6 +538,10 @@
   - Research
   - External
   - Maintenance
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: PetrTarget
 #-------------------------------------------Мед. консультант----------------------------
 #-------------------------Комбез--------------
 - type: entity
