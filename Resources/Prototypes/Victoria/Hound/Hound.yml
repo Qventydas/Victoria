@@ -789,6 +789,18 @@
         - 2.051379050 # 30% N2O
         # 2.051379050       total
       temperature: 293.15
+#Зажигалка-вспышка
+- type: entity
+  name: дешёвая зажигалка
+  parent: CheapLighter
+  description: Опасно дешёвая пластиковая зажигалка, не обожгите большой палец!
+  id: HoundFlashLighter
+  components:
+  - type: Flash
+  - type: LimitedCharges
+    maxCharges: 2
+    charges: 2
+    secret: true
 #Раскладной ящик
 - type: entity
   parent: [StructureWheeled, CrateBaseWeldable]
@@ -1810,6 +1822,25 @@
       - id: Bucket
       - id: SyringeBluespace
       - id: WelderMini
+#Набор бомбиста
+- type: entity
+  parent: HoundBackpack
+  id: HoundBackpackFilledBomber
+  suffix: Хаунд, бомбист
+  components:
+  - type: StorageFill
+    contents:
+      - id: SheetSteel
+      - id: CableApcStack
+      - id: ChemicalPayload
+      - id: TimerTrigger
+      - id: TimerTrigger
+      - id: SignalTrigger
+      - id: SignalTrigger
+      - id: VoiceTrigger
+      - id: VoiceTrigger
+      - id: RemoteSignallerAdvanced
+      - id: ProximitySensor
 #лёгкий пистолет
 - type: entity
   parent: HoundBackpack
@@ -2480,7 +2511,7 @@
 - type: listing
   id: HoundHelmetLight
   name: Лёгкий шлем
-  description: Обыкновенная каска. Нужна если есть новичок, на скафандр которому тратиться жалко.
+  description: Обыкновенная каска.
   productEntity: HoundHelmetLight
   cost:
     HNDChip_currency: 1
@@ -2490,7 +2521,7 @@
 - type: listing
   id: HoundArmorLight
   name: Лёгкий бронежилет
-  description: Обыкновенный бронежилет. Дайте новичку, если на скафандр не хватает.
+  description: Обыкновенный бронежилет. Возьмите, если не хватает на что-то получше.
   productEntity: HoundArmorLight
   cost:
     HNDChip_currency: 3
@@ -2508,7 +2539,7 @@
 - type: listing
   id: HoundArmorEVA
   name: ЕВА-Скафандр Хаунд
-  description: Не слишком прочный, но очень лёгкий скафандр. Купите если зелень каким-то образом взяли на задание в космосе. А ещё он очень удобный для движения.
+  description: Не слишком прочный, но очень лёгкий скафандр. А ещё он очень удобный для движения.
   productEntity: HoundArmorEVA
   cost:
     HNDChip_currency: 4
@@ -2621,7 +2652,7 @@
   description: Высококачественная кувалда, хорошо подходящая для разрушения построек, ближнего боя и эффектных расправ! Не забудьте оставить автограф на ней этикеровщиком.
   productEntity: HoundHammer
   cost:
-    HNDChip_currency: 8
+    HNDChip_currency: 10
   categories:
   - HoundUplinkWeaponry
 
@@ -2756,7 +2787,7 @@
 - type: listing
   id: HoundBruteforcer
   name: Брутфорсер
-  description: Электронная отмычка, перебирающая десятки тысяч вариантов пароля за считанные мгновения. Увы, современные шлюзы имеют защиту от старого доброго брутфорса, болтируясь при нём. Зато можно запереть жертву с собой или преградить путь СБшникам, клоуну или начальнику!
+  description: Электронная отмычка наоборот. Болтирует шлюз, а не открывает его. С ней можно запереть жертву с собой или преградить путь СБшникам, клоуну или начальнику!
   productEntity: HoundBruteforcer
   cost:
     HNDChip_currency: 4
@@ -2766,7 +2797,7 @@
 - type: listing
   id: HoundEmag
   name: Криптографический секвенсор
-  description: Используется для дешифровки и перепрошивки систем доступа. Не спрашивайте почему легальная компания использует кустарно спаянную электронику.
+  description: Используется для дешифровки и перепрошивки систем доступа. Не спрашивайте почему легальная компания использует примочки Синдиката.
   productEntity: Emag
   cost:
     HNDChip_currency: 6
@@ -2794,7 +2825,16 @@
     HNDChip_currency: 3
   categories:
   - HoundUplinkSpec
-
+#Зажигалка-вспышка
+- type: listing
+  id: HoundFlashLighter
+  name: Зажигалка-вспышка.
+  description: Обычная зажигалка с вмонтированной внутрь вспышкой. Теперь жертва не улизнёт.
+  productEntity: HoundFlashLighter
+  cost:
+    HNDChip_currency: 2
+  categories:
+  - HoundUplinkSpec
 #-----------------------------------------------------------------------Наборы
 #Набор уборки
 - type: listing
@@ -2804,6 +2844,16 @@
   productEntity: HoundBackpackFilledCleaning
   cost:
     HNDChip_currency: 5
+  categories:
+  - HoundUplinkBack
+#Набор бомбиста
+- type: listing
+  id: HoundBackpackFilledBomber
+  name: Набор бомбиста
+  description: Вы обожаете взрывчатку, но вам надоело прямолинейно кидать гранату в цель? Хочется чего-то более драматичного? В этом наборе вас ожидают все виды триггеров, датчик движения, передатчик сигналов, химический заряд и материалы для ваших шедевров! Взрывчатку найдёте сами.
+  productEntity: HoundBackpackFilledBomber
+  cost:
+    HNDChip_currency: 3
   categories:
   - HoundUplinkBack
 #Пояс
@@ -2849,14 +2899,14 @@
 
 - type: listing
   id: HoundCrateWeaponsHeavy
-  name: Ящик штурмового оружия
+  name: Ящик тяжёлого оружия
   description: Два "Кера" и один "Хаски" на сдачу. Без дополнительных патронов.
   productEntity: HoundCrateWeaponsHeavy
   cost:
     HNDChip_currency: 40
   categories:
   - HoundUplinkSpec
-
+#Монитор
 - type: listing
   id: HoundHandheldCrewMonitor
   name: Монитор экипажа.

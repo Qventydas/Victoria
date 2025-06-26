@@ -18,7 +18,7 @@ public abstract class SharedChargesSystem : EntitySystem
 
     protected virtual void OnExamine(EntityUid uid, LimitedChargesComponent comp, ExaminedEvent args)
     {
-        if (!args.IsInDetailsRange)
+        if (!args.IsInDetailsRange || comp.Secret)
             return;
 
         using (args.PushGroup(nameof(LimitedChargesComponent)))

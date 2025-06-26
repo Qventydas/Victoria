@@ -89,6 +89,7 @@
     - type: LimitedCharges
       maxCharges: 15
       charges: 15
+      secret: true
     - type: MeleeWeapon
       damage:
         types:
