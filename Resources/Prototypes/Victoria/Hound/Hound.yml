@@ -71,6 +71,7 @@
     sprite: Victoria/Hound/Equipment/hnd_uniform_off.rsi
   - type: Clothing
     sprite: Victoria/Hound/Equipment/hnd_uniform_off.rsi
+
 #--------------------Броня-
 #Шлем опера
 - type: entity
@@ -447,6 +448,27 @@
   components:
   - type: Sprite
     sprite: Victoria/Hound/Equipment/hnd_cloak.rsi
+#Костюм санитара
+#Колпак
+- type: entity
+  parent: ClothingHeadBase
+  id: HoundSanitarHat
+  name: Колпак санитара
+  suffix: Хаунд
+  description: Цилиндрическая шапка с красным крестом. Не гарант отсутствия проблем с носящей её кукухой.
+  components:
+  - type: Sprite
+    sprite: Victoria/Hound/Equipment/hnd_durka_hat.rsi
+  - type: Clothing
+    sprite: Victoria/Hound/Equipment/hnd_durka_hat.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+#Халат
+#Униформа
+#Ботинки
+#Коробка
 #----------------------------------------Снаряга и приспособления-
 #Печати, формы и прочая хрень для производства мукулатуры-
 #---------------------------------Стандартная форма---------------------
