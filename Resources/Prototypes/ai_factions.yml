@@ -19,6 +19,7 @@
     - KMLG
     - Hound
     - CDC
+    - DefenseStructure
 
 - type: npcFaction
   id: NanoTrasen
@@ -74,6 +75,7 @@
   - KMLG
   - Hound
   - CDC
+  - DefenseStructure
 
 - type: npcFaction
   id: SimpleNeutral
@@ -114,6 +116,7 @@
   - KMLG
   - Hound
   - CDC
+  - DefenseStructure
 
 - type: npcFaction
   id: Zombie
@@ -137,6 +140,7 @@
   - KMLG
   - Hound
   - CDC
+  - DefenseStructure
 
 - type: npcFaction
   id: Revolutionary
