@@ -253,3 +253,11 @@
   - Vitz
   - KMLG
   - KMLGEnemy
+#-----------------------------------------------Строения обороны---------------------------------- 
+- type: npcFaction
+  id: DefenseStructure
+  hostile:
+  - SimpleHostile
+  - Xeno
+  - Zombie
+  - Dragon
