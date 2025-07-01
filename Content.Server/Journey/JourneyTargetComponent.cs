@@ -3,7 +3,7 @@ namespace Content.Server.Journey
     [RegisterComponent]
     public sealed partial class JourneyTargetComponent : Component
     {
-        [DataField("prioryti")]
+        [DataField("priority")]
         public int Priority = 1;
 
         [DataField("ignoreGroups")]
