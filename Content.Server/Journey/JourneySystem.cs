@@ -51,12 +51,11 @@ public sealed class JourneySystem : EntitySystem
             var targets = EntityQueryEnumerator<JourneyTargetComponent>();
             JourneyTargetComponent fav_target = new JourneyTargetComponent();
 			fav_target.Priority = -999;
-            float prohodka = 1;
 
             while (targets.MoveNext(out var targ, out var comp_targ))
             {
                 _adminLog.Add(LogType.Action, LogImpact.Low, $"Цель-{ToPrettyString(targ)} с приоритетом(comp_targ.Priority)");
-                if (comp_targ.Priority > fav_target.Priority && (comp.JourneyGroup == comp_targ.JourneyGroup))
+                if (comp_targ.Priority > fav_target.Priority && (comp.JourneyGroup == comp_targ.JourneyGroup || comp_targ.IgnoreGroups))
                     fav_target = comp_targ;
             }
             _npc.SetBlackboard(uid, NPCBlackboard.FollowTarget, new EntityCoordinates(fav_target.Owner, Vector2.Zero));

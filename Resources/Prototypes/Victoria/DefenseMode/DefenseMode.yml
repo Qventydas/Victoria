@@ -58,9 +58,26 @@
   - type: JourneyTarget
 
 - type: entity
+  id: BannerObjectiveBeta
+  name: Знамя-знак Бета.
+  description: Cердце вашей базы и ядро вашей обороны. Не дайте врагу достичь его и уничтожить, иначе ваше командование сочтёт, что ваш отряд погиб.
+  parent: BannerObjective
+  components:
+  - type: JourneyTarget
+    journeyGroup: Beta
+- type: entity
   id: TestSubject
   name: Карп-путешественник
   parent: MobCarpDragon
   description: Карп, желающий войти в вашу базу.
   components:
   - type: Journey
+
+- type: entity
+  id: TestSubjectBeta
+  name: Карп-путешественник Бета
+  parent: MobCarpDragon
+  description: Карп, желающий войти в вашу базу.
+  components:
+  - type: Journey
+    journeyGroup: Beta
