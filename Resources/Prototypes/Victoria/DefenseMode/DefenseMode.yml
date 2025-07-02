@@ -24,7 +24,7 @@
       fix1:
         shape:
           !type:PhysShapeCircle
-          radius: 1.2
+          radius: 1.0
         density: 1000
         layer:
         - WallLayer
@@ -49,8 +49,10 @@
   - type: NpcFactionMember
     factions:
     - DefenseStructure
+  - type: MobState
   - type: Transform
     anchored: true
   - type: PointLight
     color: "#00f0fb"
     radius: 3
+  - type: JourneyTarget
