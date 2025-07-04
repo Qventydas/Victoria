@@ -19,7 +19,7 @@
   id: HoundUniformOper
   name: форма оперативника Хаунд
   suffix: Хаунд
-  description: Форма для боевого состава корпорации. Ркбашка, пояс и штаны, удобные для движения. И погон. Гончие не любят излишества.
+  description: Форма для боевого состава корпорации. Рубашка, пояс и штаны, удобные для движения. И погон. Гончие не любят излишества.
   components:
   - type: Sprite
     sprite: Victoria/Hound/Equipment/hnd_uniform_op.rsi
@@ -71,6 +71,7 @@
     sprite: Victoria/Hound/Equipment/hnd_uniform_off.rsi
   - type: Clothing
     sprite: Victoria/Hound/Equipment/hnd_uniform_off.rsi
+
 #--------------------Броня-
 #Шлем опера
 - type: entity
@@ -447,6 +448,34 @@
   components:
   - type: Sprite
     sprite: Victoria/Hound/Equipment/hnd_cloak.rsi
+#Колпак
+- type: entity
+  parent: ClothingHeadBase
+  id: HoundSanitarHat
+  name: Колпак санитара
+  suffix: Хаунд
+  description: Цилиндрическая шапка с красным крестом. Не гарант отсутствия проблем с носящей её кукухой.
+  components:
+  - type: Sprite
+    sprite: Victoria/Hound/Equipment/hnd_durka_hat.rsi
+  - type: Clothing
+    sprite: Victoria/Hound/Equipment/hnd_durka_hat.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+#Халат
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: HoundSanitarCoat
+  name: халат санитара
+  description: Белоснежный халат тех, кто отведёт вас в дурку, хотите вы того или нет.
+  components:
+  - type: Sprite
+    sprite: Victoria/Hound/Equipment/hnd_durka_coat.rsi
+  - type: Clothing
+    sprite: Victoria/Hound/Equipment/hnd_durka_coat.rsi
+#Коробка
 #----------------------------------------Снаряга и приспособления-
 #Печати, формы и прочая хрень для производства мукулатуры-
 #---------------------------------Стандартная форма---------------------
@@ -605,6 +634,33 @@
   - type: Sprite
     sprite: Victoria/Hound/Misc/hnd_stamp.rsi
     state: stamp
+#Визитка
+- type: entity
+  id: HoundBusinessCard
+  name: визитная карточка Хаунд
+  suffix: Хаунд
+  parent: Paper
+  description: Тускло-красная карточка с логотипом Хаунд. Сзади что-то написано.
+  components:
+    - type: Sprite
+      sprite: Objects/Misc/bureaucracy.rsi
+      layers:
+      - state: hound_card
+      - state: hound_card
+        map: ["enum.PaperVisualLayers.Writing"]
+        visible: false
+      - state: paper_stamp-generic
+        map: ["enum.PaperVisualLayers.Stamp"]
+        visible: false
+    - type: Paper
+      content: hound-business-card-base
+    - type: PaperVisuals
+      headerImagePath: "/Textures/Interface/Paper/paper_heading_hound_logo.svg.96dpi.png"
+      headerMargin: 0.0, 0.0, 0.0, 2.0
+      backgroundImagePath: "/Textures/Interface/Paper/paper_background_black.svg.96dpi.png"
+      backgroundPatchMargin: 16.0, 16.0, 16.0, 16.0
+      contentMargin: 4.0, 4.0, 4.0, 4.0
+      maxWritableArea: 300.0, 256.0
 #Оборудование и прочее
 #Коробка
 - type: entity
@@ -676,9 +732,6 @@
     size: Tiny
     shape:
     - 0,0,1,0
-    # storedSprite:
-      # state: storage
-      # sprite: Victoria/Hound/Weapons/knife.rsi
   - type: DisarmMalus
     malus: 0.225
   - type: ThrowingAngle
@@ -699,6 +752,47 @@
     solution: melee
   - type: SolutionTransfer
     maxTransferAmount: 5
+#Кувалда
+- type: entity
+  name: Боевая кувалда
+  parent: Sledgehammer
+  id: HoundHammer
+  description: Крупная кувалда с титановой ручкой. Устоять на ногах после такой дуры будет нелегко.
+  components:
+  - type: Sprite
+    sprite: Victoria/Hound/Weapons/hammer.rsi
+    state: icon
+  - type: MeleeWeapon
+    wideAnimationRotation: 135
+    swingLeft: true
+    attackRate: 0.8
+    damage:
+      types:
+        Blunt: 15
+        Structural: 15
+    soundHit:
+      collection: MetalThud
+  - type: Wieldable
+  - type: IncreaseDamageOnWield
+    damage:
+      types:
+        Blunt: 10
+        Structural: 35
+  - type: StaminaDamageOnHit
+    damage: 25
+  - type: Item
+    size: Ginormous
+  - type: Clothing
+    sprite: Victoria/Hound/Weapons/hammer.rsi
+    quickEquip: false
+    slots:
+    - back
+  - type: Tool
+    qualities:
+      - Prying
+  - type: Prying
+  - type: UseDelay
+    delay: 1
 #Монитор
 - type: entity
   name: Монитор экипажа Хаунд
@@ -711,9 +805,14 @@
     - 0,0,0,0
   - type: Sprite
     sprite: Victoria/Hound/Equipment/hnd_crew_monitor.rsi
+  - type: Contraband
+    severity: Major
+    allowedDepartments: null
+  - type: StaticPrice
+    price: 2000
 #Брутфорсер
 - type: entity
-  name: Электрическое устройство
+  name: электрическое устройство
   suffix: Хаунд, брутфорсер
   parent: BaseItem
   id: HoundBruteforcer
@@ -731,6 +830,7 @@
 - type: entity
   id: HoundPseudoOxygenTankFilled
   name: кислородный баллон
+  description: Стандартный цилиднрический газовый баллон для кислорода. Вмещает 5Л газа.
   parent: OxygenTank
   suffix: Filled
   components:
@@ -750,6 +850,19 @@
         - 2.051379050 # 30% N2O
         # 2.051379050       total
       temperature: 293.15
+#Зажигалка-вспышка
+- type: entity
+  name: дешёвая зажигалка
+  parent: CheapLighter
+  suffix: Хаунд, Вспышка
+  description: Опасно дешёвая пластиковая зажигалка, не обожгите большой палец!
+  id: HoundFlashLighter
+  components:
+  - type: Flash
+  - type: LimitedCharges
+    maxCharges: 2
+    charges: 2
+    secret: true
 #Раскладной ящик
 - type: entity
   parent: [StructureWheeled, CrateBaseWeldable]
@@ -762,11 +875,6 @@
     sprite: Victoria/Hound/Equipment/hnd_corpse_crate.rsi
   - type: Sprite
     sprite: Victoria/Hound/Equipment/hnd_corpse_crate.rsi
-  # - type: Construction
-    # graph: CratePlastic
-    # node: crateplastic
-    # containers:
-    # - entity_storage
   - type: StaticPrice
     price: 100
 #Раскладушка
@@ -796,7 +904,7 @@
   id: HoundHeavyPistolMagazine
 
 - type: entity
-  id: BaseMagazineHeavyPistolHound
+  id: HoundBaseMagazineHeavyPistol
   name: магазин 'Мопса' (.45 магнум)"
   parent: BaseItem
   abstract: true
@@ -829,13 +937,29 @@
   - type: Appearance
 
 - type: entity
-  id: MagazineHeavyPistolHound
+  id: HoundMagazineHeavyPistol
   name: магазин для "Мопс" (.45 магнум)
   suffix: Хаунд
-  parent: BaseMagazineHeavyPistolHound
+  parent: HoundBaseMagazineHeavyPistol
   components:
   - type: BallisticAmmoProvider
     proto: CartridgeMagnum
+  - type: Sprite
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+  - type: Tag
+    tags:
+      - HoundHeavyPistolMagazine
+#Бронебойка
+- type: entity
+  id: HoundMagazineHeavyPistolAP
+  name: магазин для "Мопс" (.45 магнум)
+  suffix: Хаунд
+  parent: HoundBaseMagazineHeavyPistol
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgeMagnumAP
   - type: Sprite
     layers:
     - state: base
@@ -1079,7 +1203,9 @@
   - type: Gun
     fireRate: 3.5
     soundGunshot:
-      path: /Audio/Weapons/Guns/Gunshots/mk58.ogg 
+      path: /Audio/Weapons/Guns/Gunshots/revolver.ogg
+      params:
+        volume: 1.8
   - type: ChamberMagazineAmmoProvider
     soundRack:
       path: /Audio/Weapons/Guns/Cock/ltrifle_cock.ogg      
@@ -1087,7 +1213,7 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineHeavyPistolHound
+        startingItem: HoundMagazineHeavyPistol
         insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
         priority: 2
@@ -1233,7 +1359,7 @@
   suffix: Хаунд
   parent: [BaseWeaponSubMachineGun, BaseRestrictedContraband]
   id: HoundSMG
-  description: Крайне эргономичный, лёгкий и скорострельный ПП за авторством Хаунд. Хорошо подходит для тактики "Ударил-отошёл", но плохо показывает себя в длительных боях. Собрана из частей нескольких других автоматов со всей галактики.
+  description: Крайне эргономичный, лёгкий и скорострельный ПП за авторством Хаунд. Хорошо подходит для тактики "Ударил-отошёл", но плохо показывает себя в длительных боях. Собран из частей нескольких других автоматов со всей галактики.
   components:
   - type: Sprite
     sprite: Victoria/Hound/Weapons/makhno_rifle.rsi
@@ -1685,8 +1811,8 @@
   components:
   - type: StorageFill
     contents:
-      - id: MagazineHeavyPistolHound
-      - id: MagazineHeavyPistolHound
+      - id: HoundMagazineHeavyPistol
+      - id: HoundMagazineHeavyPistol
       - id: HoundHeavyPistol
       - id: ClothingMaskGas
       - id: FoodTinMRE
@@ -1726,7 +1852,7 @@
       - id: FoodTinMRE
       - id: DrinkWaterBottleFull
       - id: Gauze
-      - id: HandheldCrewMonitor
+      - id: HoundHandheldCrewMonitor
       - id: HoundRubberStamp
       - id: OxygenTankFilled
       - id: HoundMachete
@@ -1744,6 +1870,19 @@
       - id: HoundBoots
       - id: HoundOperCap
       - id: HoundPaperAnecdote
+#Ящик с костюмом санитара
+- type: entity
+  parent: HoundBox
+  id: HoundBoxFilledSanitar
+  suffix: Хаунд, Одежда
+  components:
+  - type: StorageFill
+    contents:
+      - id: HoundSanitarCoat
+      - id: HoundSanitarHat
+      - id: ClothingNeckStethoscope
+      - id: ClothingHandsGlovesLatex
+      - id: ClothingMaskSterile
 #Дешовый с пайком
 - type: entity
   parent: HoundBackpack
@@ -1770,6 +1909,27 @@
       - id: Bucket
       - id: SyringeBluespace
       - id: WelderMini
+#Набор бомбиста
+- type: entity
+  parent: HoundBackpack
+  id: HoundBackpackFilledBomber
+  suffix: Хаунд, бомбист
+  components:
+  - type: StorageFill
+    contents:
+      - id: SheetSteel
+      - id: CableApcStack
+      - id: CordStack
+      - id: ChemicalPayload
+      - id: TimerTrigger
+      - id: TimerTrigger
+      - id: SignalTrigger
+      - id: SignalTrigger
+      - id: VoiceTrigger
+      - id: VoiceTrigger
+      - id: RemoteSignallerAdvanced
+      - id: NetworkConfigurator
+      - id: ProximitySensor
 #лёгкий пистолет
 - type: entity
   parent: HoundBackpack
@@ -1796,9 +1956,9 @@
   components:
   - type: StorageFill
     contents:
-      - id: MagazineHeavyPistolHound
-      - id: MagazineHeavyPistolHound
-      - id: MagazineHeavyPistolHound
+      - id: HoundMagazineHeavyPistol
+      - id: HoundMagazineHeavyPistol
+      - id: HoundMagazineHeavyPistol
       - id: HoundHeavyPistol
       - id: ClothingMaskGas
       - id: FoodTinMRE
@@ -2399,48 +2559,45 @@
   id: HoundUplinkArmor
   name: Броня
   priority: 0
-
 - type: storeCategory
   id: HoundUplinkWeaponry
   name: Вооружение
   priority: 1
-
 - type: storeCategory
   id: HoundUplinkAmmo
   name: Боезапас
   priority: 2
- 
 - type: storeCategory
   id: HoundUplinkElectronic
   name: Электроника
   priority: 3 
-  
 - type: storeCategory
   id: HoundUplinkSpec
   name: Специалистам
   priority: 4 
-
 - type: storeCategory
   id: HoundUplinkExp
   name: Взрывчатка
   priority: 5 
-
 - type: storeCategory
   id: HoundUplinkBack
   name: Рюкзаки
   priority: 6 
-  
 - type: storeCategory
   id: HoundUplinkMed
   name: Мед.средства
-  priority: 7 
+  priority: 7
+- type: storeCategory
+  id: HoundUplinkMisc
+  name: Безделушки
+  priority: 8 
 #-----------------листинг покупок------------
 #------категория броня----------
 #---бронь---
 - type: listing
   id: HoundHelmetLight
   name: Лёгкий шлем
-  description: Обыкновенная каска. Нужна если есть новичок, на скафандр которому тратиться жалко.
+  description: Обыкновенная каска.
   productEntity: HoundHelmetLight
   cost:
     HNDChip_currency: 1
@@ -2450,7 +2607,7 @@
 - type: listing
   id: HoundArmorLight
   name: Лёгкий бронежилет
-  description: Обыкновенный бронежилет. Дайте новичку, если на скафандр не хватает.
+  description: Обыкновенный бронежилет. Возьмите, если не хватает на что-то получше.
   productEntity: HoundArmorLight
   cost:
     HNDChip_currency: 3
@@ -2468,7 +2625,7 @@
 - type: listing
   id: HoundArmorEVA
   name: ЕВА-Скафандр Хаунд
-  description: Не слишком прочный, но очень лёгкий скафандр. Купите если зелень каким-то образом взяли на задание в космосе. А ещё он очень удобный для движения.
+  description: Не слишком прочный, но очень лёгкий скафандр. А ещё он очень удобный для движения.
   productEntity: HoundArmorEVA
   cost:
     HNDChip_currency: 4
@@ -2494,17 +2651,6 @@
     HNDChip_currency: 2
   categories:
   - HoundUplinkArmor
-
-- type: listing
-  id: HoundCloak
-  name: Плащ ветерана
-  description: Плащ. Бесполезно, но красиво. В некоторых кругах.
-  productEntity: HoundCloak
-  cost:
-    HNDChip_currency: 1
-  categories:
-  - HoundUplinkArmor
-
 - type: listing
   id: HoundClothingBoxClothes
   name: Униформа Хаунд.
@@ -2571,6 +2717,16 @@
   description: Довольно мощный ПП. Из-за высокой скорострельности и малого магазина хорошо подходит для тактики ударил-в укрытие Использует патроны .35 авто
   productEntity: HoundSMG
   cost:
+    HNDChip_currency: 15
+  categories:
+  - HoundUplinkWeaponry
+
+- type: listing
+  id: HoundHammer
+  name: Боевая кувалда
+  description: Высококачественная кувалда, хорошо подходящая для разрушения построек, ближнего боя и эффектных расправ! Не забудьте оставить автограф на ней этикеровщиком.
+  productEntity: HoundHammer
+  cost:
     HNDChip_currency: 10
   categories:
   - HoundUplinkWeaponry
@@ -2581,7 +2737,7 @@
   description: Крайне мощный дробовик, идеальный для зачистки помещений. Кабы магазин был чуток побольше...
   productEntity: HoundShotgun
   cost:
-    HNDChip_currency: 10
+    HNDChip_currency: 14
   categories:
   - HoundUplinkWeaponry
 
@@ -2600,18 +2756,28 @@
   description: Что-то среднее между автоматом и пулемётом. Стреляет больно и точно, но из-за маленького, по мерам пулемёта, магазина им долго не позажимаешь.
   productEntity: HoundLightMachineGun
   cost:
-    HNDChip_currency: 17
+    HNDChip_currency: 25
   categories:
   - HoundUplinkWeaponry
 #------категория боезапас----------
 #---магазины---
 - type: listing
-  id: MagazineHeavyPistolHound
+  id: HoundMagazineHeavyPistol
   name: Магазин к пистолету "Мопс"
   description: 4 патрона к карманной пушке под названием "Мопс"
-  productEntity: MagazineHeavyPistolHound
+  productEntity: HoundMagazineHeavyPistol
   cost:
-    HNDChip_currency: 2
+    HNDChip_currency: 1.5
+  categories:
+  - HoundUplinkAmmo
+
+- type: listing
+  id: HoundMagazineHeavyPistolAP
+  name: Бронебойный магазин к пистолету "Мопс"
+  description: 4 бронебойных патрона к "Мопсу", способных свалить с ног почти кого угодно.
+  productEntity: HoundMagazineHeavyPistolAP
+  cost:
+    HNDChip_currency: 3
   categories:
   - HoundUplinkAmmo
 
@@ -2679,7 +2845,7 @@
   description: Коробка на 12 патров .45 магнум к пистолету "Мопс".
   productEntity: MagazineBoxMagnum
   cost:
-    HNDChip_currency: 4
+    HNDChip_currency: 3
   categories:
   - HoundUplinkAmmo
   
@@ -2706,7 +2872,7 @@
 - type: listing
   id: HoundBruteforcer
   name: Брутфорсер
-  description: Электронная отмычка, перебирающая десятки тысяч вариантов пароля за считанные мгновения. Увы, современные шлюзы имеют защиту от старого доброго брутфорса, болтируясь при нём. Зато можно запереть жертву с собой или преградить путь СБшникам, клоуну или начальнику!
+  description: Электронная отмычка наоборот. Болтирует шлюз, а не открывает его. С ней можно запереть жертву с собой или преградить путь СБшникам, клоуну или начальнику!
   productEntity: HoundBruteforcer
   cost:
     HNDChip_currency: 4
@@ -2716,22 +2882,35 @@
 - type: listing
   id: HoundEmag
   name: Криптографический секвенсор
-  description: Используется для дешифровки и перепрошивки систем доступа. Не спрашивайте почему легальная компания использует кустарно спаянную электронику.
+  description: Используется для дешифровки и перепрошивки систем доступа. Не спрашивайте почему легальная компания использует примочки Синдиката.
   productEntity: Emag
   cost:
     HNDChip_currency: 6
   categories:
-  - HoundUplinkElectronic  
+  - HoundUplinkElectronic
+
+- type: listing
+  id: HoundJammer
+  name: Глушитель связи
+  description: Кустарное устройство, используемое для глушения связи в округе.
+  productEntity: RadioJammer
+  discountCategory: usualDiscounts
+  discountDownTo:
+    HNDChip_currency: 2
+  cost:
+    HNDChip_currency: 3
+  categories:
+  - HoundUplinkElectronic
 #------категория специалистам----------
 #---вещички---
 #Печать
 - type: listing
   id: HoundRubberStamp
   name: Печать Хаунд
-  description: Отправьте угрозы своей добыче или свяжитесь с начальством, если, конечно, можете.
+  description: Отправьте угрозы жертве. Связаться с начальством пока нельзя.
   productEntity: HoundRubberStamp
   cost:
-    HNDChip_currency: 1
+    HNDChip_currency: 2
   categories:
   - HoundUplinkSpec
 #Раскладной ящик
@@ -2744,6 +2923,17 @@
     HNDChip_currency: 3
   categories:
   - HoundUplinkSpec
+#Зажигалка-вспышка
+- type: listing
+  id: HoundFlashLighter
+  name: Зажигалка-вспышка.
+  description: Обычная зажигалка с вмонтированной внутрь вспышкой. Теперь жертва не улизнёт.
+  productEntity: HoundFlashLighter
+  cost:
+    HNDChip_currency: 2
+  categories:
+  - HoundUplinkSpec
+#-----------------------------------------------------------------------Наборы
 #Набор уборки
 - type: listing
   id: HoundBackpackFilledCleaning
@@ -2754,7 +2944,16 @@
     HNDChip_currency: 5
   categories:
   - HoundUplinkBack
-#Наборы
+#Набор бомбиста
+- type: listing
+  id: HoundBackpackFilledBomber
+  name: Набор бомбиста
+  description: Вы обожаете взрывчатку, но вам надоело прямолинейно кидать гранату в цель? Хочется чего-то более драматичного? В этом наборе вас ожидают все виды триггеров, датчик движения, передатчик сигналов, химический заряд и материалы для ваших шедевров! Взрывчатку найдёте сами.
+  productEntity: HoundBackpackFilledBomber
+  cost:
+    HNDChip_currency: 3
+  categories:
+  - HoundUplinkBack
 #Пояс
 - type: listing
   id: HoundBeltFilled
@@ -2784,7 +2983,7 @@
   cost:
     HNDChip_currency: 15
   categories:
-  - HoundUplinkSpec
+  - HoundUplinkWeaponry
 
 - type: listing
   id: HoundCrateWeaponsMiddle
@@ -2792,27 +2991,37 @@
   description: Два "Махно" и одна "Лайка". Без дополнительных патронов.
   productEntity: HoundCrateWeaponsMiddle
   cost:
-    HNDChip_currency: 21
+    HNDChip_currency: 30
   categories:
-  - HoundUplinkSpec
+  - HoundUplinkWeaponry
 
 - type: listing
   id: HoundCrateWeaponsHeavy
-  name: Ящик штурмового оружия
+  name: Ящик тяжёлого оружия
   description: Два "Кера" и один "Хаски" на сдачу. Без дополнительных патронов.
   productEntity: HoundCrateWeaponsHeavy
   cost:
-    HNDChip_currency: 25
+    HNDChip_currency: 40
   categories:
-  - HoundUplinkSpec
-
+  - HoundUplinkWeaponry
+#Монитор
 - type: listing
   id: HoundHandheldCrewMonitor
   name: Монитор экипажа.
   description: Ваш шанс найти жертву, не привлекая внимание СБшников и санитаров. В случае отсутствия соответствующего сервера на станции возврата средств не будет.
   productEntity: HoundHandheldCrewMonitor
   cost:
-    HNDChip_currency: 4
+    HNDChip_currency: 6
+  categories:
+  - HoundUplinkSpec
+#Жучок камер
+- type: listing
+  id: HoundHandheldCameraBug
+  name: Жучок камер
+  description: Возможность подглядывать за жертвой, пока она находится в поле зрения камер.
+  productEntity: CameraBug
+  cost:
+    HNDChip_currency: 3
   categories:
   - HoundUplinkSpec
 #Баллон с оксидом азота
@@ -2894,7 +3103,7 @@
   description: Обыкновенная граната на 300 урона. НЕ ОТРЫВАТЬ ЧЕКУ ЗУБАМИ!!!
   productEntity: ExGrenade
   cost:
-    HNDChip_currency: 3
+    HNDChip_currency: 4
   categories:
   - HoundUplinkExp
 #Светошумовая
@@ -2904,7 +3113,7 @@
   description: Светошумовая граната. Очки добудете сами.
   productEntity: GrenadeFlashBang
   cost:
-    HNDChip_currency: 2
+    HNDChip_currency: 1
   categories:
   - HoundUplinkExp
 #Осколочная
@@ -2914,7 +3123,7 @@
   description: Осколочная граната. Опасна обратно пропорционально расстоянию от вас.
   productEntity: GrenadeShrapnel
   cost:
-    HNDChip_currency: 4
+    HNDChip_currency: 3
   categories:
   - HoundUplinkExp
 #Дымовая
@@ -2924,7 +3133,7 @@
   description: Превратите помещение в обыкновенный толчок после рейда фанатов электронок.
   productEntity: SmokeGrenade
   cost:
-    HNDChip_currency: 3
+    HNDChip_currency: 1
   categories:
   - HoundUplinkExp
 #Слезоточивая
@@ -2934,7 +3143,7 @@
   description: Слезоточивая граната для избиения студентов с плакатами.
   productEntity: TearGasGrenade
   cost:
-    HNDChip_currency: 3
+    HNDChip_currency: 2
   categories:
   - HoundUplinkExp
 #Эми
@@ -2944,7 +3153,7 @@
   description: ЭМИ-граната. Что тут ещё сказать?
   productEntity: EmpGrenade
   cost:
-    HNDChip_currency: 4
+    HNDChip_currency: 3
   categories:
   - HoundUplinkExp
 #С-4
@@ -3066,6 +3275,38 @@
     HNDChip_currency: 3
   categories:
   - HoundUplinkMed
+#Категория безделушек
+- type: listing
+  id: HoundBoxFilledSanitar
+  name: Костюм санитара
+  description: Набор забавных шмоток из не менее забавного места- дурки.
+  icon: {sprite: Victoria/Hound/Equipment/hnd_durka_coat.rsi, state: icon}
+  productEntity: HoundBoxFilledSanitar
+  cost:
+    HNDChip_currency: 1
+  categories:
+  - HoundUplinkMisc
+#Плащ
+- type: listing
+  id: HoundCloak
+  name: Плащ ветерана
+  description: Плащ. Бесполезно, но красиво. В некоторых кругах.
+  productEntity: HoundCloak
+  cost:
+    HNDChip_currency: 1
+  categories:
+  - HoundUplinkMisc
+#Визитка
+- type: listing
+  id: HoundBusinessCard
+  name: Визитная карточка Хаунд
+  description: Небольшая карточка, которую можно показать вашему коллеге по охоте, использовать для запугивания жертвы или издевательства над СБ. Можно взять до 3 штук.
+  productEntity: HoundBusinessCard
+  categories:
+    - HoundUplinkMisc
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 3
 # #-----------------пресет категорий в аплинке------------
 - type: entity
   id: StorePresetHoundUplink
@@ -3082,6 +3323,7 @@
     - HoundUplinkSpec
     - HoundUplinkBack
     - HoundUplinkMed
+    - HoundUplinkMisc
     currencyWhitelist:
     - HNDChip_currency
     balance:
