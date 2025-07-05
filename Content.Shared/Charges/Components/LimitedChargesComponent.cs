@@ -21,4 +21,8 @@ public sealed partial class LimitedChargesComponent : Component
     [DataField("charges"), ViewVariables(VVAccess.ReadWrite)]
     [AutoNetworkedField]
     public int Charges = 3;
+
+    [DataField("secret"), ViewVariables(VVAccess.ReadWrite)]
+    [AutoNetworkedField]
+    public bool Secret = false;
 }
