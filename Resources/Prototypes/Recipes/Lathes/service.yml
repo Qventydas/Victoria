@@ -1,0 +1,131 @@
+- type: latheRecipe
+  id: DrinkVacuumFlask
+  result: DrinkVacuumFlask
+  completetime: 2
+  materials:
+    Steel: 400
+
+- type: latheRecipe
+  id: DrinkFlaskBar
+  result: DrinkFlaskBar
+  completetime: 2
+  materials:
+    Steel: 300
+
+- type: latheRecipe
+  id: DrinkShaker
+  result: DrinkShaker
+  completetime: 2
+  materials:
+    Steel: 500
+
+- type: latheRecipe
+  id: DrinkJigger
+  result: DrinkJigger
+  completetime: 1
+  materials:
+    Steel: 200
+
+- type: latheRecipe
+  id: DrinkIceBucket
+  result: DrinkIceBucket
+  completetime: 3
+  materials:
+    Steel: 700
+    RawPiceIce: 50
+
+- type: latheRecipe
+  id: BarSpoon
+  result: BarSpoon
+  completetime: 1
+  materials:
+    Steel: 100
+
+- type: latheRecipe
+  id: RollingPin
+  result: RollingPin
+  completetime: 2
+  materials:
+    Wood: 400
+
+- type: latheRecipe
+  id: Spoon
+  result: Spoon
+  completetime: 1
+  materials:
+    Steel: 90
+
+- type: latheRecipe
+  id: Fork
+  result: Fork
+  completetime: 1
+  materials:
+    Steel: 90
+
+- type: latheRecipe
+  id: SpoonPlastic
+  result: SpoonPlastic
+  completetime: 1
+  materials:
+    Plastic: 90
+
+- type: latheRecipe
+  id: ForkPlastic
+  result: ForkPlastic
+  completetime: 1
+  materials:
+    Plastic: 90
+
+- type: latheRecipe
+  id: KnifePlastic
+  result: KnifePlastic
+  completetime: 1
+  materials:
+    Plastic: 90
+
+- type: latheRecipe
+  id: PairedChopsticks
+  result: PairedChopsticks
+  completetime: 1
+  materials:
+    Wood: 100
+
+- type: latheRecipe
+  id: PlantBag
+  result: PlantBag
+  completetime: 3
+  materials:
+    Cloth: 1500
+
+- type: latheRecipe
+  id: BikeHorn
+  result: BikeHorn
+  completetime: 2
+  materials:
+    Steel: 200
+    Plastic: 100
+
+- type: latheRecipe
+  id: ClownRecorder
+  result: ClownRecorder
+  completetime: 2
+  materials:
+    Plastic: 400
+    Steel: 200
+
+- type: latheRecipe
+  id: LauncherCreamPie
+  result: LauncherCreamPie
+  completetime: 2
+  materials:
+    Plastic: 600
+    Steel: 300
+
+- type: latheRecipe
+  id: CluwneHorn
+  result: CluwneHorn
+  completetime: 2
+  materials:
+    Steel: 200
+    Plastic: 100
+    Bananium: 100
