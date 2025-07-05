@@ -157,4 +157,8 @@
       - PosterLegitSafetyMothHardhat
       - PosterLegitSafetyMothSSD
       - PosterLegitOppenhopper
+      #Квасово
+      - PosterLegitAddictions
+      - PosterLegitToxines
+      - PosterLegitContract
     chance: 1
