@@ -203,7 +203,7 @@
     factions:
     - XenoTunneller
   - type: Journey
-    JourneyGroup: Alpha
+    journeyGroup: Alpha
   - type: HTN
     rootTask:
       task: XenoCompoundDef
@@ -223,7 +223,7 @@
   id: MobXenoDefBeta
   components:
   - type: Journey
-    JourneyGroup: Beta
+    journeyGroup: Beta
         
 - type: entity
   suffix: Оборона, Гамма
@@ -231,7 +231,7 @@
   id: MobXenoDefGamma
   components:
   - type: Journey
-    JourneyGroup: Beaver
+    journeyGroup: Beaver
 
 - type: entity
   name: Преторианец
@@ -241,7 +241,7 @@
   id: MobXenoPraetorianDefAlfa
   components:
   - type: Journey
-    JourneyGroup: Alpha
+    journeyGroup: Alpha
   - type: HTN
     rootTask:
       task: XenoCompoundDef
@@ -261,7 +261,7 @@
   id: MobXenoPraetorianDefBeta
   components:
   - type: Journey
-    JourneyGroup: Beta
+    journeyGroup: Beta
         
 - type: entity
   suffix: Оборона, Гамма
@@ -269,7 +269,7 @@
   id: MobXenoPraetorianDefGamma
   components:
   - type: Journey
-    JourneyGroup: Beaver
+    journeyGroup: Beaver
 
 - type: entity
   name: Дрон
@@ -279,7 +279,7 @@
   id: MobXenoDroneDefAlfa
   components:
   - type: Journey
-    JourneyGroup: Alpha
+    journeyGroup: Alpha
   - type: HTN
     rootTask:
       task: XenoCompoundDef
@@ -299,7 +299,7 @@
   id: MobXenoDroneDefBeta
   components:
   - type: Journey
-    JourneyGroup: Beta
+    journeyGroup: Beta
         
 - type: entity
   suffix: Оборона, Гамма
@@ -307,7 +307,7 @@
   id: MobXenoDroneDefGamma
   components:
   - type: Journey
-    JourneyGroup: Beaver
+    journeyGroup: Beaver
 
 - type: entity
   name: Королева
@@ -320,7 +320,7 @@
     factions:
     - XenoTunneller
   - type: Journey
-    JourneyGroup: Alpha
+    journeyGroup: Alpha
   - type: HTN
     rootTask:
       task: XenoCompoundDef
@@ -340,7 +340,7 @@
   id: MobXenoQueenDefBeta
   components:
   - type: Journey
-    JourneyGroup: Beta
+    journeyGroup: Beta
         
 - type: entity
   suffix: Оборона, Гамма
@@ -348,7 +348,7 @@
   id: MobXenoQueenDefGamma
   components:
   - type: Journey
-    JourneyGroup: Beaver
+    journeyGroup: Beaver
 
 - type: entity
   name: Разрушитель
@@ -361,7 +361,7 @@
     factions:
     - XenoTunneller
   - type: Journey
-    JourneyGroup: Alpha
+    journeyGroup: Alpha
   - type: HTN
     rootTask:
       task: XenoCompoundDef
@@ -381,7 +381,7 @@
   id: MobXenoRavagerDefBeta
   components:
   - type: Journey
-    JourneyGroup: Beta
+    journeyGroup: Beta
         
 - type: entity
   suffix: Оборона, Гамма
@@ -389,7 +389,7 @@
   id: MobXenoRavagerDefGamma
   components:
   - type: Journey
-    JourneyGroup: Beaver
+    journeyGroup: Beaver
 
 - type: entity
   name: Бегун
@@ -399,7 +399,7 @@
   id: MobXenoRunnerDefAlfa
   components:
   - type: Journey
-    JourneyGroup: Alpha
+    journeyGroup: Alpha
   - type: HTN
     rootTask:
       task: XenoCompoundDef
@@ -419,7 +419,7 @@
   id: MobXenoRunnerDefBeta
   components:
   - type: Journey
-    JourneyGroup: Beta
+    journeyGroup: Beta
         
 - type: entity
   suffix: Оборона, Гамма
@@ -427,7 +427,7 @@
   id: MobXenoRunnerDefGamma
   components:
   - type: Journey
-    JourneyGroup: Beaver
+    journeyGroup: Beaver
 
 - type: entity
   name: Руни
@@ -440,7 +440,7 @@
     factions:
     - XenoTunneller
   - type: Journey
-    JourneyGroup: Alpha
+    journeyGroup: Alpha
   - type: HTN
     rootTask:
       task: XenoCompoundDef
@@ -460,7 +460,7 @@
   id: MobXenoRounyDefBeta
   components:
   - type: Journey
-    JourneyGroup: Beta
+    journeyGroup: Beta
         
 - type: entity
   suffix: Оборона, Гамма
@@ -468,7 +468,7 @@
   id: MobXenoRounyDefGamma
   components:
   - type: Journey
-    JourneyGroup: Beaver
+    journeyGroup: Beaver
 
 - type: entity
   name: Плевальщик
@@ -478,7 +478,7 @@
   id: MobXenoSpitterDefAlfa
   components:
   - type: Journey
-    JourneyGroup: Alpha
+    journeyGroup: Alpha
   - type: HTN
     rootTask:
       task: XenoCompoundDef
@@ -498,7 +498,7 @@
   id: MobXenoSpitterDefBeta
   components:
   - type: Journey
-    JourneyGroup: Beta
+    journeyGroup: Beta
         
 - type: entity
   suffix: Оборона, Гамма
@@ -506,7 +506,7 @@
   id: MobXenoSpitterDefGamma
   components:
   - type: Journey
-    JourneyGroup: Beaver
+    journeyGroup: Beaver
 #------------------------------------------Спавнеры ботов------------------------------   
 - type: entity
   name: Ксеноспавнер Бурильщика
