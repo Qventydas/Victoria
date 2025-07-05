@@ -181,7 +181,7 @@
   icon: "JobIconDefComander"
   supervisors: job-def-supervisors-centcom
   canBeAntag: false
-  access:
+  accessGroups:
   - AllAccess
   
 - type: job
@@ -203,7 +203,7 @@
   icon: "JobIconDefOfficer"
   supervisors: job-def-supervisors-commander
   canBeAntag: false
-  access:
+  accessGroups:
   - AllAccess
   
 - type: job
@@ -219,7 +219,7 @@
   icon: "JobIconDefOfficerDop"
   supervisors: job-def-supervisors-commander
   canBeAntag: false
-  access:
+  accessGroups:
   - AllAccess
   
 - type: job
@@ -235,7 +235,7 @@
   icon: "JobIconDefEngener"
   supervisors: job-def-supervisors-officer
   canBeAntag: false
-  access:
+  accessGroups:
   - AllAccess
   
 - type: job
@@ -251,7 +251,7 @@
   icon: "JobIconDefMedic"
   supervisors: job-def-supervisors-officer
   canBeAntag: false
-  access:
+  accessGroups:
   - AllAccess
   
 - type: job
@@ -267,7 +267,7 @@
   icon: "JobIconDefCargo"
   supervisors: job-def-supervisors-officer
   canBeAntag: false
-  access:
+  accessGroups:
   - AllAccess
   
 - type: job
@@ -283,7 +283,7 @@
   icon: "JobIconDefSpecialist"
   supervisors: job-def-supervisors-officer
   canBeAntag: false
-  access:
+  accessGroups:
   - AllAccess
   
 - type: job
@@ -299,7 +299,7 @@
   icon: "JobIconDefSpecialistDop"
   supervisors: job-def-supervisors-dop-officer
   canBeAntag: false
-  access:
+  accessGroups:
   - AllAccess
   
 - type: job
@@ -311,7 +311,7 @@
   icon: "JobIconDefSolder"
   supervisors: job-def-supervisors-officer
   canBeAntag: false
-  access:
+  accessGroups:
   - AllAccess
   
 - type: job
@@ -327,7 +327,7 @@
   icon: "JobIconDefSolderDop"
   supervisors: job-def-supervisors-dop-officer
   canBeAntag: false
-  access:
+  accessGroups:
   - AllAccess
 #-----------------------------------спавн-поинты-------------------------
 - type: entity

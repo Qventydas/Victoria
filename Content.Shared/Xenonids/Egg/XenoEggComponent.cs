@@ -32,8 +32,8 @@ public sealed partial class XenoEggComponent : Component
     [DataField, AutoNetworkedField]
     public string OpenedState = "egg_opened";
 
-    [DataField, AutoNetworkedField]
-    public EntProtoId Spawn = "CMXenoParasite";
+    //[DataField, AutoNetworkedField]
+    //public EntProtoId Spawn = "CMXenoParasite";
 
     [DataField, AutoNetworkedField]
     public EntityUid? Hive;

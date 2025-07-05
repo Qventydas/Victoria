@@ -1472,7 +1472,7 @@
   id: DefFloorTechMaint2
   name: tiles-techmaint2-floor
   sprite: /Textures/Tiles/steel_maint.png
-  bisSubfloor: true
+  isSubfloor: true
   indestructible: true
 
 - type: tile
