@@ -166,16 +166,16 @@
   playTimeTracker: JobDefComander
   requirements:
     - !type:RoleTimeRequirement
-      role: DefOfficer
+      role: JobDefOfficer
       time: 36000
     - !type:RoleTimeRequirement
-      role: DefEngener
+      role: JobDefEngener
       time: 18000
     - !type:RoleTimeRequirement
-      role: DefMedic
+      role: JobDefMedic
       time: 18000
     - !type:RoleTimeRequirement
-      role: DefCargo
+      role: JobDefCargo
       time: 18000
   startingGear: DefComanderGear #!!!!!!!!!!!!!!!!!!!!!!!
   icon: "JobIconDefComander"
@@ -191,13 +191,13 @@
   playTimeTracker: JobDefOfficer
   requirements:
     - !type:RoleTimeRequirement
-      role: DefCargo
+      role: JobDefCargo
       time: 3600
     - !type:RoleTimeRequirement
-      role: DefSpecialist
+      role: JobDefSpecialist
       time: 10800
     - !type:RoleTimeRequirement
-      role: DefSolder
+      role: JobDefSolder
       time: 25200
   startingGear: DefOfficerGear #!!!!!!!!!!!!!!!!!!!!!!!
   icon: "JobIconDefOfficer"
@@ -213,7 +213,7 @@
   playTimeTracker: JobDefOfficerDop
   requirements:
     - !type:RoleTimeRequirement
-      role: DefOfficerDop
+      role: JobDefOfficerDop
       time: 10800
   startingGear: DefOfficerDopGear #!!!!!!!!!!!!!!!!!!!!!!!
   icon: "JobIconDefOfficerDop"
@@ -229,7 +229,7 @@
   playTimeTracker: JobDefEngener
   requirements:
     - !type:RoleTimeRequirement
-      role: DefSolder
+      role: JobDefSolder
       time: 14400
   startingGear: DefEngenerGear #!!!!!!!!!!!!!!!!!!!!!!!
   icon: "JobIconDefEngener"
@@ -245,7 +245,7 @@
   playTimeTracker: JobDefMedic
   requirements:
     - !type:RoleTimeRequirement
-      role: DefSolder
+      role: JobDefSolder
       time: 14400
   startingGear: DefMedicGear #!!!!!!!!!!!!!!!!!!!!!!!
   icon: "JobIconDefMedic"
@@ -261,7 +261,7 @@
   playTimeTracker: JobDefCargo
   requirements:
     - !type:RoleTimeRequirement
-      role: DefSolder
+      role: JobDefSolder
       time: 3600
   startingGear: DefCargoGear #!!!!!!!!!!!!!!!!!!!!!!!
   icon: "JobIconDefCargo"
@@ -277,7 +277,7 @@
   playTimeTracker: JobDefSpecialist
   requirements:
     - !type:RoleTimeRequirement
-      role: DefSolder
+      role: JobDefSolder
       time: 18000
   startingGear: DefSpecialistGear #!!!!!!!!!!!!!!!!!!!!!!!
   icon: "JobIconDefSpecialist"
@@ -293,7 +293,7 @@
   playTimeTracker: JobDefSpecialistDop
   requirements:
     - !type:RoleTimeRequirement
-      role: DefSpecialist
+      role: JobDefSpecialist
       time: 10800
   startingGear: DefSpecialistDopGear #!!!!!!!!!!!!!!!!!!!!!!!
   icon: "JobIconDefSpecialistDop"
@@ -321,7 +321,7 @@
   playTimeTracker: JobDefSolderDop
   requirements:
     - !type:RoleTimeRequirement
-      role: DefSolder
+      role: JobDefSolder
       time: 10800
   startingGear: DefSolderDopGear #!!!!!!!!!!!!!!!!!!!!!!!
   icon: "JobIconDefSolderDop"
@@ -477,7 +477,7 @@
 - type: department
   id: Defense
   name: departament-defense
-  description: Защищайте Флаг-Маяк и не дайте врагам преодалеть ваши линии обороны.
+  description: departament-defense-desc
   color: "#334E6D"
   roles:
   - DefComander

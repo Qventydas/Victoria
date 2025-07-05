@@ -35,8 +35,8 @@
         hard: false
   #- type: XenoWeeds                      #!!!!!
   - type: Clickable
-  - type: EdgeSpreader
-    id: XenoWeeds
+  # - type: EdgeSpreader
+    # id: XenoWeeds
   - type: ActiveEdgeSpreader
   - type: Sprite
     sprite: Victoria/DefenseMode/xeno_weeds.rsi
