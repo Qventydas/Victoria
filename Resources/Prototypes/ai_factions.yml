@@ -19,7 +19,7 @@
     - KMLG
     - Hound
     - CDC
-    - DefenseStructure
+    - DefenseStructureBase
 
 - type: npcFaction
   id: NanoTrasen
@@ -75,7 +75,7 @@
   - KMLG
   - Hound
   - CDC
-  - DefenseStructure
+  - DefenseStructureBase
 
 - type: npcFaction
   id: SimpleNeutral
@@ -116,6 +116,30 @@
   - KMLG
   - Hound
   - CDC
+  - DefenseStructureBase
+
+- type: npcFaction
+  id: XenoTunneller
+  hostile:
+  - NanoTrasen
+  - Syndicate
+  - Passive
+  - PetsNT
+  - Zombie
+  - Revolutionary
+  - UmporBot
+  - Umpor
+  - Noocraty
+  - NoocratyBot
+  - Petr
+  - Vitz
+  - SNKBot
+  - SNK
+  - Mirt
+  - KMLG
+  - Hound
+  - CDC
+  - DefenseStructureBase
   - DefenseStructure
 
 - type: npcFaction
@@ -140,7 +164,7 @@
   - KMLG
   - Hound
   - CDC
-  - DefenseStructure
+  - DefenseStructureBase
 
 - type: npcFaction
   id: Revolutionary
