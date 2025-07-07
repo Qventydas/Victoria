@@ -116,6 +116,7 @@ public sealed partial class LobbyUIController : UIController, IOnStateEntered<Lo
                 );
 
             RefreshLobbyPreview();
+            RefreshProfileEditor();
         }
     }
 
