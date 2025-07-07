@@ -261,3 +261,11 @@
   - Xeno
   - Zombie
   - Dragon
+  
+- type: npcFaction
+  id: DefenseStructureBase
+  hostile:
+  - SimpleHostile
+  - Xeno
+  - Zombie
+  - Dragon

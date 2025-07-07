@@ -1,58 +1,492 @@
+#-----------------------------------иконочки-------------------------
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconDefComander
+  icon:
+    sprite: /Textures/Victoria/DefenseMode/job_icons.rsi
+    state: com
+  jobName: Командор
+  
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconDefOfficer
+  icon:
+    sprite: /Textures/Victoria/DefenseMode/job_icons.rsi
+    state: ofi
+  jobName: Офицер  
+  
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconDefOfficerDop
+  icon:
+    sprite: /Textures/Victoria/DefenseMode/job_icons.rsi
+    state: dofi
+  jobName: Офицер доп.отряда  
+  
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconDefEngener
+  icon:
+    sprite: /Textures/Victoria/DefenseMode/job_icons.rsi
+    state: eng
+  jobName: Инженер   
+  
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconDefMedic
+  icon:
+    sprite: /Textures/Victoria/DefenseMode/job_icons.rsi
+    state: med
+  jobName: Медик    
+
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconDefCargo
+  icon:
+    sprite: /Textures/Victoria/DefenseMode/job_icons.rsi
+    state: car
+  jobName: Снабженец
+  
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconDefSpecialist
+  icon:
+    sprite: /Textures/Victoria/DefenseMode/job_icons.rsi
+    state: spc
+  jobName: Специалист
+  
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconDefSpecialistDop
+  icon:
+    sprite: /Textures/Victoria/DefenseMode/job_icons.rsi
+    state: dspc
+  jobName: Специалист доп.отряда  
+  
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconDefSolder
+  icon:
+    sprite: /Textures/Victoria/DefenseMode/job_icons.rsi
+    state: sol
+  jobName: Солдат   
+  
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconDefSolderDop
+  icon:
+    sprite: /Textures/Victoria/DefenseMode/job_icons.rsi
+    state: dsol
+  jobName: Солдат доп.отряда  
+#-----------------------------------таймтрекеры-------------------------
+- type: playTimeTracker
+  id: JobDefComander
+  
+- type: playTimeTracker
+  id: JobDefOfficer
+
+- type: playTimeTracker
+  id: JobDefOfficerDop
+  
+- type: playTimeTracker
+  id: JobDefEngener
+  
+- type: playTimeTracker
+  id: JobDefMedic
+  
+- type: playTimeTracker
+  id: JobDefCargo
+
+- type: playTimeTracker
+  id: JobDefSpecialist
+  
+- type: playTimeTracker
+  id: JobDefSpecialistDop
+  
+- type: playTimeTracker
+  id: JobDefSolder
+  
+- type: playTimeTracker
+  id: JobDefSolderDop
+#-----------------------------------гиры-------------------------
+- type: startingGear
+  id: DefComanderGear
+  equipment:
+    shoes: SSBoots
+
+- type: startingGear
+  id: DefOfficerGear
+  equipment:
+    shoes: SSBoots
+
+- type: startingGear
+  id: DefOfficerDopGear
+  equipment:
+    shoes: SSBoots
+
+- type: startingGear
+  id: DefEngenerGear
+  equipment:
+    shoes: SSBoots
+    
+- type: startingGear
+  id: DefMedicGear
+  equipment:
+    shoes: SSBoots
+
+- type: startingGear
+  id: DefCargoGear
+  equipment:
+    shoes: SSBoots
+
+- type: startingGear
+  id: DefSpecialistGear
+  equipment:
+    shoes: SSBoots
+
+- type: startingGear
+  id: DefSpecialistDopGear
+  equipment:
+    shoes: SSBoots
+    
+- type: startingGear
+  id: DefSolderGear
+  equipment:
+    shoes: SSBoots
+
+- type: startingGear
+  id: DefSolderDopGear
+  equipment:
+    shoes: SSBoots
+#-----------------------------------роли-------------------------
+- type: job
+  id: DefComander
+  name: Командор
+  description: Старший офицер линии обороны. Лично ответсвенный за сохранность этого участка фронта.
+  playTimeTracker: JobDefComander
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobDefOfficer
+      time: 36000
+    - !type:RoleTimeRequirement
+      role: JobDefEngener
+      time: 18000
+    - !type:RoleTimeRequirement
+      role: JobDefMedic
+      time: 18000
+    - !type:RoleTimeRequirement
+      role: JobDefCargo
+      time: 18000
+  startingGear: DefComanderGear #!!!!!!!!!!!!!!!!!!!!!!!
+  icon: "JobIconDefComander"
+  supervisors: job-def-supervisors-centcom
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  
+- type: job
+  id: DefOfficer
+  name: Офицер
+  description: Командир того отряда, что укажет командор. В случае отсутсвия командора, тот, кто берёт на себя командование. Лидер, опытный боец, отец солдатам.
+  playTimeTracker: JobDefOfficer
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobDefCargo
+      time: 3600
+    - !type:RoleTimeRequirement
+      role: JobDefSpecialist
+      time: 10800
+    - !type:RoleTimeRequirement
+      role: JobDefSolder
+      time: 25200
+  startingGear: DefOfficerGear #!!!!!!!!!!!!!!!!!!!!!!!
+  icon: "JobIconDefOfficer"
+  supervisors: job-def-supervisors-commander
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  
+- type: job
+  id: DefOfficerDop
+  name: Офицер доп.отряда
+  description: Командир отдельного отряда. Выдающийся лидер, опытный боец, отец солдатам, способный в любой момент появиться в самом тяжёлом месте боя и переломить его исход в свою пользу.
+  playTimeTracker: JobDefOfficerDop
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobDefOfficerDop
+      time: 10800
+  startingGear: DefOfficerDopGear #!!!!!!!!!!!!!!!!!!!!!!!
+  icon: "JobIconDefOfficerDop"
+  supervisors: job-def-supervisors-commander
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  
+- type: job
+  id: DefEngener
+  name: Инженер
+  description: Мастер фортификации, ремонта и энергоснабжения. занимается обустройством обороны, укреплением позиций и обеспечением всего энергией.
+  playTimeTracker: JobDefEngener
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobDefSolder
+      time: 14400
+  startingGear: DefEngenerGear #!!!!!!!!!!!!!!!!!!!!!!!
+  icon: "JobIconDefEngener"
+  supervisors: job-def-supervisors-officer
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  
+- type: job
+  id: DefMedic
+  name: Медик
+  description: Полевой врач и хороший химик, что способен вытащить с того света раненых бойцов. Бесценный боец на любой линии обороны.
+  playTimeTracker: JobDefMedic
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobDefSolder
+      time: 14400
+  startingGear: DefMedicGear #!!!!!!!!!!!!!!!!!!!!!!!
+  icon: "JobIconDefMedic"
+  supervisors: job-def-supervisors-officer
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  
+- type: job
+  id: DefCargo
+  name: Снабженец
+  description: Кровеносный сосуд обороны. Боец, что накормит солдат, напоит солдат, поднесёт боеприпасы, взрывчатку, оружие, медикаменты, стройматериалы.
+  playTimeTracker: JobDefCargo
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobDefSolder
+      time: 3600
+  startingGear: DefCargoGear #!!!!!!!!!!!!!!!!!!!!!!!
+  icon: "JobIconDefCargo"
+  supervisors: job-def-supervisors-officer
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  
+- type: job
+  id: DefSpecialist
+  name: Специалист
+  description: Опытный боец, способный обращаться с более сложным боевым оснащением.
+  playTimeTracker: JobDefSpecialist
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobDefSolder
+      time: 18000
+  startingGear: DefSpecialistGear #!!!!!!!!!!!!!!!!!!!!!!!
+  icon: "JobIconDefSpecialist"
+  supervisors: job-def-supervisors-officer
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  
+- type: job
+  id: DefSpecialistDop
+  name: Специалист доп.отряда 
+  description: Опытный боец, способный умело обращаться с более сложным боевым оснащением. Может в любом месте боя показать любому врагу быструю дорогу на тот свет.
+  playTimeTracker: JobDefSpecialistDop
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobDefSpecialist
+      time: 10800
+  startingGear: DefSpecialistDopGear #!!!!!!!!!!!!!!!!!!!!!!!
+  icon: "JobIconDefSpecialistDop"
+  supervisors: job-def-supervisors-dop-officer
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  
+- type: job
+  id: DefSolder
+  name: Солдат
+  description: Основное мясо поле боя. Должен стрелять, выживать, слушать командира и не лезть куда не приказывают.
+  playTimeTracker: JobDefSolder
+  startingGear: DefSolderGear #!!!!!!!!!!!!!!!!!!!!!!!
+  icon: "JobIconDefSolder"
+  supervisors: job-def-supervisors-officer
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+  
+- type: job
+  id: DefSolderDop
+  name: Солдат доп.отряда 
+  description: Элитное мясо на поле боя. Умеет хорошо стрелять, долго выживать, отлично слушает командира и не лезет, куда не надо!
+  playTimeTracker: JobDefSolderDop
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobDefSolder
+      time: 10800
+  startingGear: DefSolderDopGear #!!!!!!!!!!!!!!!!!!!!!!!
+  icon: "JobIconDefSolderDop"
+  supervisors: job-def-supervisors-dop-officer
+  canBeAntag: false
+  accessGroups:
+  - AllAccess
+#-----------------------------------спавн-поинты-------------------------
 - type: entity
-  id: BannerObjective
-  name: Знамя-Маяк
-  description: Cердце вашей базы и ядро вашей обороны. Не дайте врагу достичь его и уничтожить, иначе ваше командование сочтёт, что ваш отряд погиб.
-  placement:
-    mode: SnapgridCenter
+  id: SpawnPointDefComander
+  parent: SpawnPointJobBase
+  name: Командор
+  suffix: Job Spawn, Оборона
   components:
-  - type: SpriteFade
-  - type: Clickable
+  - type: SpawnPoint
+    job_id: DefComander
   - type: Sprite
-    sprite: Victoria/DefenseMode/banner_objective.rsi
-    state: icon
-    noRot: true
-    drawdepth: Overdoors
-    offset: 0,1
+    sprite: Victoria/DefenseMode/jobs.rsi
     layers:
-      - state: banner_objective
-        visible: true
-        map: [ "enum.PowerDeviceVisualLayers.Powered" ]
-  - type: Physics
-    bodyType: Static
-  - type: Fixtures
-    fixtures:
-      fix1:
-        shape:
-          !type:PhysShapeCircle
-          radius: 1.0
-        density: 1000
-        layer:
-        - WallLayer
-  - type: Damageable
-    damageContainer: StructuralInorganic
-    damageModifierSet: FlimsyMetallic
-  - type: Destructible
-    thresholds:
-    - trigger:
-        !type:DamageTrigger
-        damage: 500
-      behaviors:
-      - !type:DoActsBehavior
-        acts: [ "Destruction" ]
-    - trigger:
-        !type:DamageTrigger
-        damage: 400
-      behaviors:
-      - !type:PlaySoundBehavior
-        sound:
-          collection: MetalBreak
-  - type: NpcFactionMember
-    factions:
-    - DefenseStructure
-  - type: MobState
-  - type: Transform
-    anchored: true
-  - type: PointLight
-    color: "#00f0fb"
-    radius: 3
-  - type: JourneyTarget
+      - state: green
+      - state: com
+      
+- type: entity
+  id: SpawnPointDefOfficer
+  parent: SpawnPointDefComander
+  name: Офицер
+  suffix: Job Spawn, Оборона
+  components:
+  - type: SpawnPoint
+    job_id: DefOfficer
+  - type: Sprite
+    layers:
+      - state: green
+      - state: ofi
+      
+- type: entity
+  id: SpawnPointDefOfficerDop
+  parent: SpawnPointDefComander
+  name: Офицер доп.отряда
+  suffix: Job Spawn, Оборона
+  components:
+  - type: SpawnPoint
+    job_id: DefOfficerDop
+  - type: Sprite
+    layers:
+      - state: green
+      - state: dofi
+      
+- type: entity
+  id: SpawnPointDefEngener
+  parent: SpawnPointDefComander
+  name: Инженер
+  suffix: Job Spawn, Оборона
+  components:
+  - type: SpawnPoint
+    job_id: DefEngener
+  - type: Sprite
+    layers:
+      - state: green
+      - state: eng
+      
+- type: entity
+  id: SpawnPointDefMedic
+  parent: SpawnPointDefComander
+  name: Медик
+  suffix: Job Spawn, Оборона
+  components:
+  - type: SpawnPoint
+    job_id: DefMedic
+  - type: Sprite
+    layers:
+      - state: green
+      - state: med
+      
+- type: entity
+  id: SpawnPointDefCargo
+  parent: SpawnPointDefComander
+  name: Снабженец
+  suffix: Job Spawn, Оборона
+  components:
+  - type: SpawnPoint
+    job_id: DefCargo
+  - type: Sprite
+    layers:
+      - state: green
+      - state: car
+      
+- type: entity
+  id: SpawnPointDefSpecialist
+  parent: SpawnPointDefComander
+  name: Специалист
+  suffix: Job Spawn, Оборона
+  components:
+  - type: SpawnPoint
+    job_id: DefSpecialist
+  - type: Sprite
+    layers:
+      - state: green
+      - state: spc
+      
+- type: entity
+  id: SpawnPointDefSpecialistDop
+  parent: SpawnPointDefComander
+  name: Специалист доп.отряда
+  suffix: Job Spawn, Оборона
+  components:
+  - type: SpawnPoint
+    job_id: DefSpecialistDop
+  - type: Sprite
+    layers:
+      - state: green
+      - state: dspc
+      
+- type: entity
+  id: SpawnPointDefSolder
+  parent: SpawnPointDefComander
+  name: Солдат
+  suffix: Job Spawn, Оборона
+  components:
+  - type: SpawnPoint
+    job_id: DefSolder
+  - type: Sprite
+    layers:
+      - state: green
+      - state: sol
+      
+- type: entity
+  id: SpawnPointDefSolderDop
+  parent: SpawnPointDefComander
+  name: Солдат доп.отряда
+  suffix: Job Spawn, Оборона
+  components:
+  - type: SpawnPoint
+    job_id: DefSolderDop
+  - type: Sprite
+    layers:
+      - state: green
+      - state: dsol
+#-----------------------------------Прото карт-------------------------
+- type: entity
+  id: StandardDefenseMap
+  parent:
+    - BaseStation
+    - BaseStationJobsSpawning
+    - BaseStationRecords
+    - BaseStationArrivals
+    - BaseStationGateway
+    - BaseStationEvacuation
+  categories: [ HideSpawnMenu ]
+  components:
+    - type: Transform
+#-----------------------------------Отдельное место ролям-------------------------    
+# - type: department
+  # id: Defense
+  # name: departament-defense
+  # description: departament-defense-desc
+  # color: "#334E6D"
+  # roles:
+  # - DefComander
+  # - DefOfficer
+  # - DefOfficerDop
+  # - DefEngener
+  # - DefMedic
+  # - DefCargo
+  # - DefSpecialist
+  # - DefSpecialistDop
+  # - DefSolder
+  # - DefSolderDop
