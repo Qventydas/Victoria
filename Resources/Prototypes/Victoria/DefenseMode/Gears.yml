@@ -146,7 +146,7 @@
     shoes: MirtBootsSteel
     head: MirtHelmetArm
     id: MirtIDCardSolder
-    belt: MirtBeltOffi
+    belt: MirtBelt
     gloves: MirtGlovesFingerless
     neck: MirtCloakOfCom
     pocket1: ProviderDefChip
@@ -163,7 +163,7 @@
     shoes: MirtBootsSteel
     head: MirtHelmetArm
     id: MirtIDCardSolder
-    belt: MirtBeltOffi
+    belt: MirtBelt
     gloves: MirtGlovesStrong
     neck: MirtCloakOf
   storage:

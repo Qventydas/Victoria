@@ -366,7 +366,7 @@
               amount: 1    
         - to: SandbagEmptySheepWool
           steps:
-            - material: ElastaneSheepWoolClean
+            - material: SheepWoolClean
               amount: 1  
     - node: SandbagEmptyLinum 
       entity: SandbagEmpty     

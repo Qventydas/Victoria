@@ -226,7 +226,6 @@
     - type: BallisticAmmoProvider
       proto: DefChip
       capacity: 60
-      count: 40
     - type: Sprite
       sprite: Victoria/DefenseMode/provider_defchip.rsi
       state: icon
