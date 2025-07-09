@@ -12,7 +12,6 @@
     ears: UmporHeadset
     belt: UmporeBeltAssault
     neck: UmporCloakOf
-    pocket1: ProviderDefChip
     pocket2: UmporRubberStamp
 #----------------------------------------------------Офицер--------------------------
 - type: startingGear
@@ -149,7 +148,6 @@
     belt: MirtBelt
     gloves: MirtGlovesFingerless
     neck: MirtCloakOfCom
-    pocket1: ProviderDefChip
     pocket2: MirtRubberStampArm
   storage:
     back:
@@ -296,7 +294,6 @@
     belt: CDCBeltOffiFilled
     gloves: CDCGloves
     neck: CDCCloakOf
-    pocket1: ProviderDefChip
     pocket2: CDCRubberStamp
 #----------------------------------------------------Офицер--------------------------
 - type: startingGear

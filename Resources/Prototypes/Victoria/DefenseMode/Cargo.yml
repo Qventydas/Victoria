@@ -203,11 +203,35 @@
     
 - type: entity
   parent: DefChip
+  id: DefChip20
+  suffix: х20
+  components:
+  - type: Stack
+    count: 20
+    
+- type: entity
+  parent: DefChip
+  id: DefChip30
+  suffix: х30
+  components:
+  - type: Stack
+    count: 30
+    
+- type: entity
+  parent: DefChip
   id: DefChip60
   suffix: х60
   components:
   - type: Stack
     count: 60
+    
+- type: entity
+  parent: DefChip
+  id: DefChip120
+  suffix: х120
+  components:
+  - type: Stack
+    count: 120
 
 - type: material
   id: DefChip_material
@@ -229,7 +253,8 @@
   cash:
     1: DefChip
   canWithdraw: true 
-#------------------------------------------------------Спавнер чипов----------------------   
+#------------------------------------------------------Спавнер чипов----------------------  
+#--------------------------------------------до 50 рыл----------------------  
 - type: storeCategory
   id: StoreDefChip
   name: "Сборщик чипов поставок"
@@ -248,7 +273,7 @@
   abstract: true
   components:
   - type: Store
-    name: Сборщик чипов поставок
+    name: preset-store-def-name
     categories:
     - StoreDefChip
     currencyWhitelist:
@@ -515,7 +540,294 @@
     - type: ActivatableUI
       key: enum.StoreUiKey.Key
     - type: Store
-      preset: PresetStoreDefChip
+      balance: 
+        DefChip_currency: 0
+#--------------------------------------------больше 50 рыл----------------------
+- type: storeCategory
+  id: StoreDefChipMore
+  name: "Сборщик чипов поставок"
+  priority: 0
+
+- type: storePreset
+  id: PresetStoreDefChipMore
+  storeName: Сборщик чипов поставок
+  categories:
+  - StoreDefChipMore
+  currencyWhitelist:
+  - DefChip_currency
+
+- type: entity
+  id: PresetStoreDefChipMore
+  abstract: true
+  components:
+  - type: Store
+    name: preset-store-def-name
+    categories:
+    - StoreDefChipMore
+    currencyWhitelist:
+    - DefChip_currency
+    balance:
+      DefChip_currency: 0
+
+- type: listing
+  id: DefChipMoreList0
+  name: Стартовая поставка
+  description: Стартовая поставка. 120 чипов.
+  productEntity: DefChip120
+  cost:
+    DefChip_currency: 0
+  categories:
+  - StoreDefChipMore
+  restockTime: 0
+  priority: 1
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  
+- type: listing
+  id: DefChipMoreList1
+  name: Первая поставка
+  description: Первая поставка. 10 чипов.
+  productEntity: DefChip20
+  cost:
+    DefChip_currency: 0
+  categories:
+  - StoreDefChipMore
+  restockTime: 600
+  priority: 2
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  
+- type: listing
+  id: DefChipMoreList2
+  name: Вторая поставка
+  description: Вторая поставка. 10 чипов.
+  productEntity: DefChip20
+  cost:
+    DefChip_currency: 0
+  categories:
+  - StoreDefChipMore
+  restockTime: 1200
+  priority: 3
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  
+- type: listing
+  id: DefChipMoreList3
+  name: Третья поставка
+  description: Третья поставка. 10 чипов.
+  productEntity: DefChip20
+  cost:
+    DefChip_currency: 0
+  categories:
+  - StoreDefChipMore
+  restockTime: 1800
+  priority: 4
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: DefChipMoreList4
+  name: Четвёртая поставка
+  description: Четвёртая поставка. 10 чипов.
+  productEntity: DefChip20
+  cost:
+    DefChip_currency: 0
+  categories:
+  - StoreDefChipMore
+  restockTime: 2400
+  priority: 5
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  
+- type: listing
+  id: DefChipMoreList5
+  name: Пятая поставка
+  description: Пятая поставка. 15 чипов.
+  productEntity: DefChip30
+  cost:
+    DefChip_currency: 0
+  categories:
+  - StoreDefChipMore
+  restockTime: 3000
+  priority: 6
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  
+- type: listing
+  id: DefChipMoreList6
+  name: Шестая поставка
+  description: Шестая поставка. 10 чипов.
+  productEntity: DefChip20
+  cost:
+    DefChip_currency: 0
+  categories:
+  - StoreDefChipMore
+  restockTime: 3600
+  priority: 7
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: DefChipMoreList7
+  name: Седьмая поставка
+  description: Седьмая поставка. 10 чипов.
+  productEntity: DefChip20
+  cost:
+    DefChip_currency: 0
+  categories:
+  - StoreDefChipMore
+  restockTime: 4200
+  priority: 8
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  
+- type: listing
+  id: DefChipMoreList8
+  name: Восьмая поставка
+  description: Восьмая поставка. 10 чипов.
+  productEntity: DefChip20
+  cost:
+    DefChip_currency: 0
+  categories:
+  - StoreDefChipMore
+  restockTime: 4800
+  priority: 9
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  
+- type: listing
+  id: DefChipMoreList9
+  name: Девятая поставка
+  description: Девятая поставка. 10 чипов.
+  productEntity: DefChip20
+  cost:
+    DefChip_currency: 0
+  categories:
+  - StoreDefChipMore
+  restockTime: 5400
+  priority: 10
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: DefChipMoreList10
+  name: Десятая поставка
+  description: Десятая поставка. 15 чипов.
+  productEntity: DefChip30
+  cost:
+    DefChip_currency: 0
+  categories:
+  - StoreDefChipMore
+  restockTime: 6000
+  priority: 11
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  
+- type: listing
+  id: DefChipMoreList11
+  name: Одиннадцатая поставка
+  description: Одиннадцатая поставка. 10 чипов.
+  productEntity: DefChip20
+  cost:
+    DefChip_currency: 0
+  categories:
+  - StoreDefChipMore
+  restockTime: 6600
+  priority: 12
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  
+- type: listing
+  id: DefChipMoreList12
+  name: Двенадцатая поставка
+  description: венадцатая поставка. 10 чипов.
+  productEntity: DefChip20
+  cost:
+    DefChip_currency: 0
+  categories:
+  - StoreDefChipMore
+  restockTime: 7200
+  priority: 13
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: DefChipMoreList13
+  name: Тринадцатая поставка
+  description: Тринадцатая поставка. 10 чипов.
+  productEntity: DefChip20
+  cost:
+    DefChip_currency: 0
+  categories:
+  - StoreDefChipMore
+  restockTime: 7800
+  priority: 14
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  
+- type: listing
+  id: DefChipMoreList14
+  name: Четырнадцатая поставка
+  description: Четырнадцатая поставка. 10 чипов.
+  productEntity: DefChip20
+  cost:
+    DefChip_currency: 0
+  categories:
+  - StoreDefChipMore
+  restockTime: 8400
+  priority: 15
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  
+- type: listing
+  id: DefChipMoreList15
+  name: Последняя поставка
+  description: Последняя поставка. 15 чипов.
+  productEntity: DefChip30
+  cost:
+    DefChip_currency: 0
+  categories:
+  - StoreDefChipMore
+  restockTime: 9000
+  priority: 16
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: entity
+  name: Сборщик чипов поставок
+  suffix: Оборона, Удвоенный
+  parent: [BaseItem, PresetStoreDefChipMore]
+  id: ProviderDefChipMore
+  description: Небольшое устройсво, получающее чипы поставок и выдающее по команде.
+  components:
+    - type: Item
+      size: Small
+    - type: Sprite
+      sprite: Victoria/DefenseMode/provider_defchip.rsi
+      state: icon
+    - type: UserInterface
+      interfaces:
+        enum.StoreUiKey.Key:
+          type: StoreBoundUserInterface
+    - type: ActivatableUI
+      key: enum.StoreUiKey.Key
+    - type: Store
       balance: 
         DefChip_currency: 0
 #------------------------------------------------------Пресет категорий в магазине------------
