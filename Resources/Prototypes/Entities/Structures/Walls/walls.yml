@@ -85,6 +85,10 @@
     base: brick
   - type: RadiationBlocker
     resistance: 1
+  - type: MobState
+  - type: NpcFactionMember
+    factions:
+    - DefenseStructure
 
 - type: entity
   parent: BaseWall
@@ -731,6 +735,10 @@
     base: riveted
   - type: StaticPrice
     price: 150
+  - type: MobState
+  - type: NpcFactionMember
+    factions:
+    - DefenseStructure
 
 - type: entity
   parent: BaseWall
@@ -894,6 +902,10 @@
   - type: Construction
     graph: Girder
     node: diagonalshuttleWall
+  - type: MobState
+  - type: NpcFactionMember
+    factions:
+    - DefenseStructure
 
 - type: entity
   parent: BaseWall
@@ -955,6 +967,10 @@
           5: { state: shuttle_construct-5, visible: true}
   - type: Reflect
     reflectProb: 1
+  - type: MobState
+  - type: NpcFactionMember
+    factions:
+    - DefenseStructure
 
 - type: entity
   parent: BaseWall
@@ -1000,6 +1016,10 @@
     base: state
   - type: Reflect
     reflectProb: 1
+  - type: MobState
+  - type: NpcFactionMember
+    factions:
+    - DefenseStructure
 
 - type: entity
   parent: BaseWall
@@ -1046,6 +1066,10 @@
   - type: IconSmooth
     key: walls
     base: solid
+  - type: MobState
+  - type: NpcFactionMember
+    factions:
+    - DefenseStructure
 
 - type: entity
   parent: WallShuttleDiagonal
@@ -1068,6 +1092,10 @@
   - type: Icon
     sprite: Structures/Walls/solid_diagonal.rsi
     state: state0
+  - type: MobState
+  - type: NpcFactionMember
+    factions:
+    - DefenseStructure
 
 - type: entity
   parent: WallSolid
@@ -1086,6 +1114,10 @@
   - type: IconSmooth
     key: walls
     base: solid
+  - type: MobState
+  - type: NpcFactionMember
+    factions:
+    - DefenseStructure
 
 - type: entity
   parent: BaseWall
@@ -1166,6 +1198,10 @@
     base: wood
   - type: RadiationBlocker
     resistance: 0.2
+  - type: MobState
+  - type: NpcFactionMember
+    factions:
+    - DefenseStructure
 
 - type: entity
   parent: BaseWall
@@ -1210,6 +1246,10 @@
   - type: Construction
     graph: WebStructures
     node: wall
+  - type: MobState
+  - type: NpcFactionMember
+    factions:
+    - DefenseStructure
 
 
 # Lavalend Walls
@@ -1268,6 +1308,10 @@
   - type: Appearance
   - type: RadiationBlocker
     resistance: 0.4
+  - type: MobState
+  - type: NpcFactionMember
+    factions:
+    - DefenseStructure
 
 - type: entity
   parent: WallShuttleDiagonal
@@ -1292,6 +1336,10 @@
     state: state0
   - type: RadiationBlocker
     resistance: 0.4
+  - type: MobState
+  - type: NpcFactionMember
+    factions:
+    - DefenseStructure
 
 
 # Vault Walls

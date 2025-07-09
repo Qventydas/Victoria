@@ -60,6 +60,7 @@
   - type: Material
   - type: Stack
     stackType: ExGrenade
+    count: 1
 
 - type: entity
   name: flashbang

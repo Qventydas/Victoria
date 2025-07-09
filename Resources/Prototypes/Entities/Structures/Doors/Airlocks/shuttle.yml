@@ -60,6 +60,10 @@
     node: airlock
   - type: StaticPrice
     price: 350
+  - type: MobState
+  - type: NpcFactionMember
+    factions:
+    - DefenseStructure
 
 - type: entity
   id: AirlockGlassShuttle

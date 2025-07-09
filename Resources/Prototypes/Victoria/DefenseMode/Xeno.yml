@@ -201,7 +201,7 @@
   components:
   - type: NpcFactionMember
     factions:
-    - XenoTunneller
+    - XenoTunnellerOnly
   - type: Journey
     journeyGroup: Alpha
   - type: HTN
@@ -216,6 +216,64 @@
         true
       NavSmash: !type:Bool
         true
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 6
+        Caustic: 9
+        Structural: 40 
+  - type: Bloodstream
+    bloodMaxVolume: 50 
+  - type: TimedDespawn
+    lifetime: 750
+  - type: RandomChangeTime
+    time: 30
+    prob: 1
+    entity: MobXenoDefAlfaAlter    
+
+- type: entity
+  name: Бурильщик
+  description: Обычно они приходят ночью. Обычно.
+  suffix: Оборона, Альфа, Альтернативный
+  parent: MobXeno
+  id: MobXenoDefAlfaAlter
+  components:
+  - type: Journey
+    journeyGroup: Alpha
+  - type: HTN
+    rootTask:
+      task: XenoCompoundDef
+    blackboard:
+      NavClimb: !type:Bool
+        true
+      NavInteract: !type:Bool
+        true
+      NavPry: !type:Bool
+        true
+      NavSmash: !type:Bool
+        true
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 6
+        Caustic: 9
+        Structural: 40 
+  - type: Bloodstream
+    bloodMaxVolume: 50 
+  - type: TimedDespawn
+    lifetime: 750
+  - type: RandomChangeTime
+    time: 30
+    prob: 1
+    entity: MobXenoDefAlfa 
 
 - type: entity
   suffix: Оборона, Бета
@@ -224,6 +282,22 @@
   components:
   - type: Journey
     journeyGroup: Beta
+  - type: RandomChangeTime
+    time: 30
+    prob: 1
+    entity: MobXenoDefBetaAlter
+    
+- type: entity
+  suffix: Оборона, Бета
+  parent: MobXenoDefAlfaAlter
+  id: MobXenoDefBetaAlter
+  components:
+  - type: Journey
+    journeyGroup: Beta
+  - type: RandomChangeTime
+    time: 30
+    prob: 1
+    entity: MobXenoDefBeta
         
 - type: entity
   suffix: Оборона, Гамма
@@ -232,6 +306,22 @@
   components:
   - type: Journey
     journeyGroup: Beaver
+  - type: RandomChangeTime
+    time: 30
+    prob: 1
+    entity: MobXenoDefGammaAlter
+    
+- type: entity
+  suffix: Оборона, Гамма
+  parent: MobXenoDefAlfaAlter
+  id: MobXenoDefGammaAlter
+  components:
+  - type: Journey
+    journeyGroup: Beaver
+  - type: RandomChangeTime
+    time: 30
+    prob: 1
+    entity: MobXenoDefGamma
 
 - type: entity
   name: Преторианец
@@ -254,6 +344,21 @@
         true
       NavSmash: !type:Bool
         true
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      250: Dead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 15
+        Blunt: 5
+        Piercing: 5
+        Poison: 5
+  - type: Bloodstream
+    bloodMaxVolume: 100
+  - type: TimedDespawn
+    lifetime: 750
 
 - type: entity
   suffix: Оборона, Бета
@@ -292,6 +397,21 @@
         true
       NavSmash: !type:Bool
         true
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      70: Dead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 7
+        Blunt: 1
+        Piercing: 1
+        Poison: 1
+  - type: Bloodstream
+    bloodMaxVolume: 50
+  - type: TimedDespawn
+    lifetime: 750
 
 - type: entity
   suffix: Оборона, Бета
@@ -333,6 +453,22 @@
         true
       NavSmash: !type:Bool
         true
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      700: Dead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 20
+        Blunt: 10
+        Piercing: 10
+        Poison: 20
+        Structural: 30
+  - type: Bloodstream
+    bloodMaxVolume: 150
+  - type: TimedDespawn
+    lifetime: 750
 
 - type: entity
   suffix: Оборона, Бета
@@ -374,6 +510,66 @@
         true
       NavSmash: !type:Bool
         true
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      250: Dead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 15
+        Piercing: 5
+        Caustic: 5
+        Structural: 70
+  - type: Bloodstream
+    bloodMaxVolume: 100  
+  - type: TimedDespawn
+    lifetime: 750 
+  - type: RandomChangeTime
+    time: 30
+    prob: 1
+    entity: MobXenoRavagerDefAlfaAlter    
+    
+- type: entity
+  name: Разрушитель
+  description: Обычно они приходят ночью. Обычно.
+  suffix: Оборона, Альфа, Альтернативный
+  parent: MobXenoRavager
+  id: MobXenoRavagerDefAlfaAlter
+  components:
+  - type: Journey
+    journeyGroup: Alpha
+  - type: HTN
+    rootTask:
+      task: XenoCompoundDef
+    blackboard:
+      NavClimb: !type:Bool
+        true
+      NavInteract: !type:Bool
+        true
+      NavPry: !type:Bool
+        true
+      NavSmash: !type:Bool
+        true
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      250: Dead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Blunt: 15
+        Piercing: 5
+        Caustic: 5
+        Structural: 70
+  - type: Bloodstream
+    bloodMaxVolume: 100  
+  - type: TimedDespawn
+    lifetime: 750
+  - type: RandomChangeTime
+    time: 30
+    prob: 1
+    entity: MobXenoRavagerDefAlfa    
 
 - type: entity
   suffix: Оборона, Бета
@@ -382,6 +578,22 @@
   components:
   - type: Journey
     journeyGroup: Beta
+  - type: RandomChangeTime
+    time: 30
+    prob: 1
+    entity: MobXenoRavagerDefBetaAlter
+
+- type: entity
+  suffix: Оборона, Бета, Альтернативный
+  parent: MobXenoRavagerDefAlfaAlter
+  id: MobXenoRavagerDefBetaAlter
+  components:
+  - type: Journey
+    journeyGroup: Beta
+  - type: RandomChangeTime
+    time: 30
+    prob: 1
+    entity: MobXenoRavagerDefBeta
         
 - type: entity
   suffix: Оборона, Гамма
@@ -390,6 +602,22 @@
   components:
   - type: Journey
     journeyGroup: Beaver
+  - type: RandomChangeTime
+    time: 30
+    prob: 1
+    entity: MobXenoRavagerDefGammaAlter
+    
+- type: entity
+  suffix: Оборона, Гамма, Альтернативный
+  parent: MobXenoRavagerDefAlfaAlter
+  id: MobXenoRavagerDefGammaAlter
+  components:
+  - type: Journey
+    journeyGroup: Beaver
+  - type: RandomChangeTime
+    time: 30
+    prob: 1
+    entity: MobXenoRavagerDefGamma
 
 - type: entity
   name: Бегун
@@ -412,29 +640,31 @@
         true
       NavSmash: !type:Bool
         true
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 3
+        Piercing: 2
+        Poison: 10
+  - type: Bloodstream
+    bloodMaxVolume: 50
+  - type: TimedDespawn
+    lifetime: 750
+  - type: RandomChangeTime
+    time: 30
+    prob: 1
+    entity: MobXenoRunnerDefAlfaAlter
 
 - type: entity
-  suffix: Оборона, Бета
-  parent: MobXenoRunnerDefAlfa
-  id: MobXenoRunnerDefBeta
-  components:
-  - type: Journey
-    journeyGroup: Beta
-        
-- type: entity
-  suffix: Оборона, Гамма
-  parent: MobXenoRunnerDefAlfa
-  id: MobXenoRunnerDefGamma
-  components:
-  - type: Journey
-    journeyGroup: Beaver
-
-- type: entity
-  name: Руни
+  name: Бегун
   description: Обычно они приходят ночью. Обычно.
-  suffix: Оборона, Альфа
-  parent: MobXenoRouny
-  id: MobXenoRounyDefAlfa
+  suffix: Оборона, Альфа, Альтернативный
+  parent: MobXenoRunner
+  id: MobXenoRunnerDefAlfaAlter
   components:
   - type: NpcFactionMember
     factions:
@@ -453,6 +683,108 @@
         true
       NavSmash: !type:Bool
         true
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Piercing: 5
+        Caustic: 10
+        Structural: 30 
+  - type: Bloodstream
+    bloodMaxVolume: 50
+  - type: TimedDespawn
+    lifetime: 750
+  - type: RandomChangeTime
+    time: 30
+    prob: 1
+    entity: MobXenoRunnerDefAlfa
+
+- type: entity
+  suffix: Оборона, Бета
+  parent: MobXenoRunnerDefAlfa
+  id: MobXenoRunnerDefBeta
+  components:
+  - type: Journey
+    journeyGroup: Beta
+  - type: RandomChangeTime
+    time: 30
+    prob: 1
+    entity: MobXenoRunnerDefBetaAlter
+    
+- type: entity
+  suffix: Оборона, Бета, Альтернативный
+  parent: MobXenoRunnerDefAlfaAlter
+  id: MobXenoRunnerDefBetaAlter
+  components:
+  - type: Journey
+    journeyGroup: Beta
+  - type: RandomChangeTime
+    time: 30
+    prob: 1
+    entity: MobXenoRunnerDefBeta
+        
+- type: entity
+  suffix: Оборона, Гамма
+  parent: MobXenoRunnerDefAlfa
+  id: MobXenoRunnerDefGamma
+  components:
+  - type: Journey
+    journeyGroup: Beaver
+  - type: RandomChangeTime
+    time: 30
+    prob: 1
+    entity: MobXenoRunnerDefGammaAlter
+    
+- type: entity
+  suffix: Оборона, Гамма, Альтернативный
+  parent: MobXenoRunnerDefAlfaAlter
+  id: MobXenoRunnerDefGammaAlter
+  components:
+  - type: Journey
+    journeyGroup: Beaver
+  - type: RandomChangeTime
+    time: 30
+    prob: 1
+    entity: MobXenoRunnerDefGamma
+
+- type: entity
+  name: Руни
+  description: Обычно они приходят ночью. Обычно.
+  suffix: Оборона, Альфа
+  parent: MobXenoRouny
+  id: MobXenoRounyDefAlfa
+  components:
+  - type: Journey
+    journeyGroup: Alpha
+  - type: HTN
+    rootTask:
+      task: XenoCompoundDef
+    blackboard:
+      NavClimb: !type:Bool
+        true
+      NavInteract: !type:Bool
+        true
+      NavPry: !type:Bool
+        true
+      NavSmash: !type:Bool
+        true
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      70: Dead
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 3
+        Piercing: 2
+        Poison: 10
+  - type: Bloodstream
+    bloodMaxVolume: 50
+  - type: TimedDespawn
+    lifetime: 750
 
 - type: entity
   suffix: Оборона, Бета
@@ -491,6 +823,18 @@
         true
       NavSmash: !type:Bool
         true
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      150: Dead
+  - type: BasicEntityAmmoProvider
+    proto: BulletAcidDef
+    capacity: 3
+    count: 3
+  - type: Bloodstream
+    bloodMaxVolume: 50
+  - type: TimedDespawn
+    lifetime: 750
 
 - type: entity
   suffix: Оборона, Бета
@@ -507,6 +851,15 @@
   components:
   - type: Journey
     journeyGroup: Beaver
+#------------------------------------------Плевок плевальщика------------------------------
+- type: entity
+  id: BulletAcidDef
+  parent: BulletAcid
+  components:
+    - type: Projectile
+      damage:
+        types:
+          Caustic: 15
 #------------------------------------------Спавнеры ботов------------------------------   
 - type: entity
   name: Ксеноспавнер Бурильщика
@@ -525,8 +878,8 @@
     - MobXenoDefAlfa
     chance: 1
     intervalSeconds: 60
-    minimumEntitiesSpawned: 2
-    maximumEntitiesSpawned: 4
+    minimumEntitiesSpawned: 3
+    maximumEntitiesSpawned: 6
     
 - type: entity
   suffix: Оборона, Бета
@@ -539,8 +892,8 @@
     - MobXenoDefBeta
     chance: 1
     intervalSeconds: 60
-    minimumEntitiesSpawned: 2
-    maximumEntitiesSpawned: 4
+    minimumEntitiesSpawned: 3
+    maximumEntitiesSpawned: 6
     
 - type: entity
   suffix: Оборона, Гамма
@@ -553,8 +906,8 @@
     - MobXenoDefGamma
     chance: 1
     intervalSeconds: 60
-    minimumEntitiesSpawned: 2
-    maximumEntitiesSpawned: 4
+    minimumEntitiesSpawned: 3
+    maximumEntitiesSpawned: 6
 
 - type: entity
   name: Ксеноспавнер Преторианца
@@ -573,8 +926,8 @@
     - MobXenoPraetorianDefAlfa
     chance: 1
     intervalSeconds: 60
-    minimumEntitiesSpawned: 2
-    maximumEntitiesSpawned: 4
+    minimumEntitiesSpawned: 1
+    maximumEntitiesSpawned: 3
     
 - type: entity
   suffix: Оборона, Бета
@@ -587,8 +940,8 @@
     - MobXenoPraetorianDefBeta
     chance: 1
     intervalSeconds: 60
-    minimumEntitiesSpawned: 2
-    maximumEntitiesSpawned: 4
+    minimumEntitiesSpawned: 1
+    maximumEntitiesSpawned: 3
     
 - type: entity
   suffix: Оборона, Гамма
@@ -601,8 +954,8 @@
     - MobXenoPraetorianDefGamma
     chance: 1
     intervalSeconds: 60
-    minimumEntitiesSpawned: 2
-    maximumEntitiesSpawned: 4
+    minimumEntitiesSpawned: 1
+    maximumEntitiesSpawned: 3
     
 - type: entity
   name: Ксеноспавнер Дрона
@@ -621,8 +974,8 @@
     - MobXenoDroneDefAlfa
     chance: 1
     intervalSeconds: 60
-    minimumEntitiesSpawned: 2
-    maximumEntitiesSpawned: 4
+    minimumEntitiesSpawned: 4
+    maximumEntitiesSpawned: 8
     
 - type: entity
   suffix: Оборона, Бета
@@ -635,8 +988,8 @@
     - MobXenoDroneDefBeta
     chance: 1
     intervalSeconds: 60
-    minimumEntitiesSpawned: 2
-    maximumEntitiesSpawned: 4
+    minimumEntitiesSpawned: 4
+    maximumEntitiesSpawned: 8
     
 - type: entity
   suffix: Оборона, Гамма
@@ -649,8 +1002,8 @@
     - MobXenoDroneDefGamma
     chance: 1
     intervalSeconds: 60
-    minimumEntitiesSpawned: 2
-    maximumEntitiesSpawned: 4
+    minimumEntitiesSpawned: 4
+    maximumEntitiesSpawned: 8
 
 - type: entity
   name: Ксеноспавнер Королевы
@@ -717,8 +1070,8 @@
     - MobXenoRavagerDefAlfa
     chance: 1
     intervalSeconds: 60
-    minimumEntitiesSpawned: 2
-    maximumEntitiesSpawned: 4
+    minimumEntitiesSpawned: 1
+    maximumEntitiesSpawned: 3
     
 - type: entity
   suffix: Оборона, Бета
@@ -731,8 +1084,8 @@
     - MobXenoRavagerDefBeta
     chance: 1
     intervalSeconds: 60
-    minimumEntitiesSpawned: 2
-    maximumEntitiesSpawned: 4
+    minimumEntitiesSpawned: 1
+    maximumEntitiesSpawned: 3
     
 - type: entity
   suffix: Оборона, Гамма
@@ -745,8 +1098,8 @@
     - MobXenoRavagerDefGamma
     chance: 1
     intervalSeconds: 60
-    minimumEntitiesSpawned: 2
-    maximumEntitiesSpawned: 4
+    minimumEntitiesSpawned: 1
+    maximumEntitiesSpawned: 3
 
 - type: entity
   name: Ксеноспавнер Бегуна
@@ -765,8 +1118,8 @@
     - MobXenoRunnerDefAlfa
     chance: 1
     intervalSeconds: 60
-    minimumEntitiesSpawned: 2
-    maximumEntitiesSpawned: 4
+    minimumEntitiesSpawned: 3
+    maximumEntitiesSpawned: 5
     
 - type: entity
   suffix: Оборона, Бета
@@ -779,8 +1132,8 @@
     - MobXenoRunnerDefBeta
     chance: 1
     intervalSeconds: 60
-    minimumEntitiesSpawned: 2
-    maximumEntitiesSpawned: 4
+    minimumEntitiesSpawned: 3
+    maximumEntitiesSpawned: 5
     
 - type: entity
   suffix: Оборона, Гамма
@@ -793,8 +1146,8 @@
     - MobXenoRunnerDefGamma
     chance: 1
     intervalSeconds: 60
-    minimumEntitiesSpawned: 2
-    maximumEntitiesSpawned: 4
+    minimumEntitiesSpawned: 3
+    maximumEntitiesSpawned: 5
 
 - type: entity
   name: Ксеноспавнер Руни
@@ -813,8 +1166,8 @@
     - MobXenoRounyDefAlfa
     chance: 1
     intervalSeconds: 60
-    minimumEntitiesSpawned: 2
-    maximumEntitiesSpawned: 4
+    minimumEntitiesSpawned: 3
+    maximumEntitiesSpawned: 5
     
 - type: entity
   suffix: Оборона, Бета
@@ -827,8 +1180,8 @@
     - MobXenoRounyDefBeta
     chance: 1
     intervalSeconds: 60
-    minimumEntitiesSpawned: 2
-    maximumEntitiesSpawned: 4
+    minimumEntitiesSpawned: 3
+    maximumEntitiesSpawned: 5
     
 - type: entity
   suffix: Оборона, Гамма
@@ -841,8 +1194,8 @@
     - MobXenoRounyDefGamma
     chance: 1
     intervalSeconds: 60
-    minimumEntitiesSpawned: 2
-    maximumEntitiesSpawned: 4
+    minimumEntitiesSpawned: 3
+    maximumEntitiesSpawned: 5
 
 - type: entity
   name: Ксеноспавнер Плевальщика
