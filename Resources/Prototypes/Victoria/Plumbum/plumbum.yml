@@ -210,6 +210,10 @@
     base: solid
   - type: RadiationBlocker
     resistance: 4
+  - type: MobState
+  - type: NpcFactionMember
+    factions:
+    - DefenseStructure
 #---------------------------Сборка-------------------------------------
 - type: construction
   name: Plumbum wall

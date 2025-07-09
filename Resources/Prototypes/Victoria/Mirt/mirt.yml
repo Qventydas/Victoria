@@ -47,6 +47,30 @@
     sprite: Victoria/Mirt/Equipment/mirt_uniform_r.rsi
   - type: Clothing
     sprite: Victoria/Mirt/Equipment/mirt_uniform_r.rsi
+#------------------------------------медик----------     
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: MirtUniformMed
+  name: Миртанская форма армейского медика
+  suffix: Миртан
+  description: Прочная и закрытая форма Миртанийского армейского медика
+  components:
+  - type: Sprite
+    sprite: Victoria/Mirt/Equipment/mirt_uniform_m.rsi
+  - type: Clothing
+    sprite: Victoria/Mirt/Equipment/mirt_uniform_m.rsi
+#------------------------------------тыловой боец----------     
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: MirtUniformRear
+  name: Миртанская форма тылового работника
+  suffix: Миртан
+  description: Прочная и закрытая форма тылового работника
+  components:
+  - type: Sprite
+    sprite: Victoria/Mirt/Equipment/mirt_uniform_t.rsi
+  - type: Clothing
+    sprite: Victoria/Mirt/Equipment/mirt_uniform_t.rsi
 #-------------------------------одежда и снаряга----------------------------------------------------------------------
 #---------------------------------------------------------рюкзаки----------------------------------
 #------------------------------------малый рюкзак---------- 
@@ -194,9 +218,9 @@
 - type: entity
   parent: ClothingHeadHelmetBasic
   id: MirtHelmetGr
-  name: Гражданский шлем
+  name: Лёгкий шлем
   suffix: Миртан
-  description: Простой гражданский шлем Империи Миртана. Слой стали и вера в Императора...
+  description: Простой гражданский и тыловой шлем Империи Миртана. Слой стали и вера в Императора...
   components:
   - type: Sprite
     sprite: Victoria/Mirt/Armor/mirt_helmet_gr.rsi
@@ -315,6 +339,21 @@
       coefficients:
         Caustic: 0.9
         Poison: 0.9
+#------------------------------------старше офицерский---------- 
+- type: entity
+  parent: ClothingNeckBase
+  id: MirtCloakOfCom
+  name: Миртанийский плащ старшего офицера
+  suffix: Миртан
+  description: Плащ, который носят заслуженные старшие офицеры Империи Миртана.
+  components:
+  - type: Sprite
+    sprite: Victoria/Mirt/Equipment/mirt_cloak_o_st.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.85
+        Poison: 0.85
 #------------------------------------специалиста---------- 
 - type: entity
   parent: ClothingNeckBase
@@ -335,6 +374,16 @@
   components:
   - type: Sprite
     sprite: Victoria/Mirt/Equipment/mirt_cloak_ink.rsi
+#------------------------------------специалиста-инквизитора---------- 
+- type: entity
+  parent: ClothingNeckBase
+  id: MirtCloakSPInk
+  name: Миртанийский плащ специалиста инквизиции
+  suffix: Миртан
+  description: Плащ, который носят военные специалисты из инквизиции Империи Миртана
+  components:
+  - type: Sprite
+    sprite: Victoria/Mirt/Equipment/mirt_cloak_sp_ink.rsi
 #------------------------------------офицерский-инквизиторский--------- 
 - type: entity
   parent: ClothingNeckBase
@@ -444,9 +493,9 @@
 - type: entity
   parent: ClothingOuterArmorBasic
   id: MirtArmorGr
-  name: Гражданский бронежилет
+  name: Лёгкий бронежилет
   suffix: Миртан
-  description: Лёгкий устаревший бронежилет, используемые ополченцами и гражданскими Империи Миртана
+  description: Лёгкий бронежилет, используемый ополченцами и гражданскими Империи Миртана, а так же военными штаба и тыла
   components:
   - type: Sprite
     sprite: Victoria/Mirt/Armor/mirt_armor_gr.rsi
@@ -2523,6 +2572,17 @@
 #-----------------------------------------------------роли, полные сумки и гиры------------------------------------------------------  
 #--------------------------------------------сумки------------------------------------ 
 #------------------------------------малые----------------------------------
+- type: entity
+  parent: MirtBackpackS
+  id: MirtBackpackSFilled
+  suffix: Миртан, Полный
+  components:
+  - type: StorageFill
+    contents:
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
 #-----------------------миртан-пистолет-----------------------
 - type: entity
   parent: MirtBackpackS
@@ -2588,6 +2648,17 @@
       - id: Gauze
       - id: OxygenTankFilled
 #------------------------------------средние----------------------------------
+- type: entity
+  parent: MirtBackpackM
+  id: MirtBackpackMFilled
+  suffix: Миртан, Полный
+  components:
+  - type: StorageFill
+    contents:
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
 #-----------------------миртан-гражданский-----------------------
 - type: entity
   parent: MirtBackpackM
@@ -2685,6 +2756,17 @@
       - id: Gauze
       - id: OxygenTankFilled
 #------------------------------------большие----------------------------------
+- type: entity
+  parent: MirtBackpackL
+  id: MirtBackpackLFilled
+  suffix: Миртан, Полный
+  components:
+  - type: StorageFill
+    contents:
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled
 #-----------------------миртан-пулемёт-----------------------
 - type: entity
   parent: MirtBackpackL
@@ -3637,7 +3719,7 @@
     access: [["MirtAccess"], ["NoocAccess"]]
   - type: StorageFill
     contents:
-      - id: MirtNoocGanCold
+      - id: MirtNoocPowerMG
       - id: NoocPowerCellFour
       - id: NoocPowerCellFour
       - id: NoocPowerCellFive

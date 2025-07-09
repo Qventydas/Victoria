@@ -146,6 +146,21 @@
     sprite: Victoria/Umpor/Equipment/umpor_boots.rsi
   - type: Clothing
     sprite: Victoria/Umpor/Equipment/umpor_boots.rsi
+#--------------------------------------------------плащ-------------------------------------- 
+- type: entity
+  parent: ClothingNeckBase
+  id: UmporCloakOf
+  name: Плащ старшего офицера Конгломерата
+  suffix: Конгломерат
+  description: Плащ, который носят старшие офицеры Умпорской Федерации на торжественные церемонии или для поддержки боевого духа солдат.
+  components:
+  - type: Sprite
+    sprite: Victoria/Umpor/Equipment/umpor_cloak.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.9
+        Poison: 0.9
 #------------------------------------шлем---------- 
 - type: entity
   parent: ClothingHeadHelmetBasic
@@ -1484,7 +1499,20 @@
     sprite: Victoria/Umpor/Equipment/umpor_garniture.rsi
   - type: Clothing
     sprite: Victoria/Umpor/Equipment/umpor_garniture.rsi
-#-----------------------------------------------------роли------------------------------------------------------      
+#-----------------------------------------------------роли------------------------------------------------------  
+- type: entity
+  parent: UmporBackpack
+  id: UmporBackpackFilled
+  suffix: Полный, Umpor
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled    
 #------------------------------------офицер---------- 
 - type: playTimeTracker
   id: JobEventUmporOfficer

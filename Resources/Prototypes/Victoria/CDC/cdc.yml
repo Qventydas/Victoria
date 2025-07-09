@@ -47,6 +47,42 @@
     sprite: Victoria/CDC/Equipment/cdc_uniform_i.rsi
   - type: Clothing
     sprite: Victoria/CDC/Equipment/cdc_uniform_i.rsi
+#------------------------------------медик----------     
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: CDCUniformMedic
+  name: Одежда медика Конгломерата
+  suffix: Конгломерат
+  description: Удобная и комфортная форма медика армии Конгломерата. Недолго ей быть белой.
+  components:
+  - type: Sprite
+    sprite: Victoria/CDC/Equipment/cdc_uniform_m.rsi
+  - type: Clothing
+    sprite: Victoria/CDC/Equipment/cdc_uniform_m.rsi
+#------------------------------------специалист----------     
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: CDCUniformSPC
+  name: Одежда специалиста Конгломерата
+  suffix: Конгломерат
+  description: Удобная и комфортная форма специалиста армии Конгломерата. Специалисты критикуют её за свой яркий рукав, что выдаёт их противнику.
+  components:
+  - type: Sprite
+    sprite: Victoria/CDC/Equipment/cdc_uniform_p.rsi
+  - type: Clothing
+    sprite: Victoria/CDC/Equipment/cdc_uniform_p.rsi
+#------------------------------------командор----------     
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: CDCUniformComander
+  name: Одежда командора Конгломерата
+  suffix: Конгломерат
+  description: Удобная и комфортная форма старшего офицера армии Конгломерата. Дорогая и расшитая золотом, но близкая к рядовой армии.
+  components:
+  - type: Sprite
+    sprite: Victoria/CDC/Equipment/cdc_uniform_c.rsi
+  - type: Clothing
+    sprite: Victoria/CDC/Equipment/cdc_uniform_c.rsi
 #-------------------------------одежда и снаряга----------------------------------------------------------------------
 #---------------------------------------------------------рюкзаки----------------------------------
 #------------------------------------сумка----------- 
@@ -109,6 +145,21 @@
         - ReagentId: Water
           Quantity: 0
         maxVol: 50
+#--------------------------------------------------плащ-------------------------------------- 
+- type: entity
+  parent: ClothingNeckBase
+  id: CDCCloakOf
+  name: Плащ офицера Конгломерата
+  suffix: Конгломерат
+  description: Плащ, который носят старшие офицеры Халифатского Божественного Конгломерата.
+  components:
+  - type: Sprite
+    sprite: Victoria/CDC/Equipment/cdc_cloak.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.9
+        Poison: 0.9
 #--------------------------------------------сапоги---------------------------------------------
 #----------------------------------обычные------------------------
 - type: entity
@@ -1154,7 +1205,6 @@
     - state: hot_shot
       map: ["enum.GunVisualLayers.Base"]
 #-------------------------------------стволы---------------------------------------------------------------------------------
-#-----------------------гражданская-----------------------
 #-----------------------пистолет-----------------------
 - type: entity
   name: Плазменный пистолет "Гул" 
@@ -1672,6 +1722,24 @@
     sprite: Victoria/CDC/Equipment/cdc_garniture.rsi
 #-----------------------------------------------------роли, полные сумки и гиры------------------------------------------------------  
 #--------------------------------------------сумки------------------------------------ 
+- type: entity
+  parent: CDCSatchels
+  id: CDCSatchelsFilled
+  suffix: Конгломерат, Полный
+  components:
+  - type: StorageFill
+    contents:
+      - id: FoodTinMRE
+      - id: OxygenTankFilled
+      - id: NitrogenTankFilled
+      - id: ClothingMaskGas
+      - id: Gauze
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Water
+          Quantity: 100
 #-----------------------имам-----------------------
 - type: entity
   parent: CDCSatchels
@@ -1708,6 +1776,24 @@
       - id: CDCMagazinePistolStd
       - id: CDCMagazinePistolStd
       - id: CDCBuckler
+      - id: FoodTinMRE
+      - id: OxygenTankFilled
+      - id: NitrogenTankFilled
+      - id: ClothingMaskGas
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: Water
+          Quantity: 100
+#-----------------------без оружия-----------------------
+- type: entity
+  parent: CDCBackpack
+  id: CDCBackpackFilled
+  suffix: Конгломерат, Полный
+  components:
+  - type: StorageFill
+    contents:
       - id: FoodTinMRE
       - id: OxygenTankFilled
       - id: NitrogenTankFilled

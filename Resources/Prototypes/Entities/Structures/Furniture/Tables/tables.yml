@@ -54,6 +54,10 @@
   - type: Construction
     graph: Table
     node: TableFrame
+  - type: MobState
+  - type: NpcFactionMember
+    factions:
+    - DefenseStructure
 
 - type: entity
   id: CounterWoodFrame
@@ -109,6 +113,10 @@
   - type: Construction
     graph: Table
     node: CounterWoodFrame
+  - type: MobState
+  - type: NpcFactionMember
+    factions:
+    - DefenseStructure
 
 - type: entity
   id: CounterMetalFrame
@@ -154,6 +162,10 @@
   - type: Construction
     graph: Table
     node: CounterMetalFrame
+  - type: MobState
+  - type: NpcFactionMember
+    factions:
+    - DefenseStructure
 
 - type: entity
   id: Table
@@ -195,6 +207,10 @@
   - type: Construction
     graph: Table
     node: Table
+  - type: MobState
+  - type: NpcFactionMember
+    factions:
+    - DefenseStructure
 
 - type: entity
   id: TableReinforced

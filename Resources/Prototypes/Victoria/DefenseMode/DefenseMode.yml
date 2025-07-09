@@ -467,7 +467,7 @@
     - BaseStation
     - BaseStationJobsSpawning
     - BaseStationRecords
-    - BaseStationArrivals
+    # - BaseStationArrivals
     - BaseStationGateway
     - BaseStationEvacuation
   categories: [ HideSpawnMenu ]
