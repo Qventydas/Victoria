@@ -474,19 +474,42 @@
   components:
     - type: Transform
 #-----------------------------------Отдельное место ролям-------------------------    
-# - type: department
-  # id: Defense
-  # name: departament-defense
-  # description: departament-defense-desc
-  # color: "#334E6D"
-  # roles:
-  # - DefComander
-  # - DefOfficer
-  # - DefOfficerDop
-  # - DefEngener
-  # - DefMedic
-  # - DefCargo
-  # - DefSpecialist
-  # - DefSpecialistDop
-  # - DefSolder
-  # - DefSolderDop
+- type: department
+  id: Defense
+  name: departament-defense
+  description: departament-defense-desc
+  color: "#334E6D"
+  roles:
+  - DefComander
+  - DefOfficer
+  - DefOfficerDop
+  - DefEngener
+  - DefMedic
+  - DefCargo
+  - DefSpecialist
+  - DefSpecialistDop
+  - DefSolder
+  - DefSolderDop
+#Геймрул
+- type: entity
+  id: Defense
+  parent: BaseGameRule
+  components:
+  - type: DefenseRule
+  - type: GameRule
+    minPlayers: 5
+#Пресет
+- type: gamePreset
+  id: Defense
+  alias:
+    - defense
+  name: Оборона
+  description: Толпы ксеноморфов прут в атаку! Берите пушки и защищайтесь!
+  supportedMaps: VictoriaDefenseMapPool
+  showInVote: false
+  rules:
+    - Defense
+    - SubGamemodesRule
+    - BasicStationEventScheduler
+    - SpaceTrafficControlEventScheduler
+    - BasicRoundstartVariation

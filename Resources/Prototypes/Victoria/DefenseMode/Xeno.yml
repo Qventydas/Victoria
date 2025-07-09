@@ -204,6 +204,7 @@
     - XenoTunneller
   - type: Journey
     journeyGroup: Alpha
+  - type: DefenseEnemy
   - type: HTN
     rootTask:
       task: XenoCompoundDef
@@ -216,6 +217,10 @@
         true
       NavSmash: !type:Bool
         true
+      FollowCloseRange: !type:Single
+        12
+      FollowRange: !type:Single
+        18
 
 - type: entity
   suffix: Оборона, Бета
@@ -224,7 +229,7 @@
   components:
   - type: Journey
     journeyGroup: Beta
-        
+
 - type: entity
   suffix: Оборона, Гамма
   parent: MobXenoDefAlfa
@@ -242,6 +247,7 @@
   components:
   - type: Journey
     journeyGroup: Alpha
+  - type: DefenseEnemy
   - type: HTN
     rootTask:
       task: XenoCompoundDef
@@ -254,6 +260,10 @@
         true
       NavSmash: !type:Bool
         true
+      FollowCloseRange: !type:Single
+        12
+      FollowRange: !type:Single
+        18
 
 - type: entity
   suffix: Оборона, Бета
@@ -262,7 +272,7 @@
   components:
   - type: Journey
     journeyGroup: Beta
-        
+
 - type: entity
   suffix: Оборона, Гамма
   parent: MobXenoPraetorianDefAlfa
@@ -280,6 +290,7 @@
   components:
   - type: Journey
     journeyGroup: Alpha
+  - type: DefenseEnemy
   - type: HTN
     rootTask:
       task: XenoCompoundDef
@@ -292,6 +303,10 @@
         true
       NavSmash: !type:Bool
         true
+      FollowCloseRange: !type:Single
+        12
+      FollowRange: !type:Single
+        18
 
 - type: entity
   suffix: Оборона, Бета
@@ -300,7 +315,7 @@
   components:
   - type: Journey
     journeyGroup: Beta
-        
+
 - type: entity
   suffix: Оборона, Гамма
   parent: MobXenoDroneDefAlfa
@@ -321,6 +336,8 @@
     - XenoTunneller
   - type: Journey
     journeyGroup: Alpha
+  - type: DefenseEnemy
+    boss: true
   - type: HTN
     rootTask:
       task: XenoCompoundDef
@@ -333,6 +350,10 @@
         true
       NavSmash: !type:Bool
         true
+      FollowCloseRange: !type:Single
+        10
+      FollowRange: !type:Single
+        16
 
 - type: entity
   suffix: Оборона, Бета
@@ -341,7 +362,7 @@
   components:
   - type: Journey
     journeyGroup: Beta
-        
+
 - type: entity
   suffix: Оборона, Гамма
   parent: MobXenoQueenDefAlfa
@@ -362,6 +383,7 @@
     - XenoTunneller
   - type: Journey
     journeyGroup: Alpha
+  - type: DefenseEnemy
   - type: HTN
     rootTask:
       task: XenoCompoundDef
@@ -374,6 +396,10 @@
         true
       NavSmash: !type:Bool
         true
+      FollowCloseRange: !type:Single
+        12
+      FollowRange: !type:Single
+        18
 
 - type: entity
   suffix: Оборона, Бета
@@ -382,7 +408,7 @@
   components:
   - type: Journey
     journeyGroup: Beta
-        
+
 - type: entity
   suffix: Оборона, Гамма
   parent: MobXenoRavagerDefAlfa
@@ -400,6 +426,7 @@
   components:
   - type: Journey
     journeyGroup: Alpha
+  - type: DefenseEnemy
   - type: HTN
     rootTask:
       task: XenoCompoundDef
@@ -412,7 +439,10 @@
         true
       NavSmash: !type:Bool
         true
-
+      FollowCloseRange: !type:Single
+        12
+      FollowRange: !type:Single
+        18
 - type: entity
   suffix: Оборона, Бета
   parent: MobXenoRunnerDefAlfa
@@ -420,7 +450,7 @@
   components:
   - type: Journey
     journeyGroup: Beta
-        
+
 - type: entity
   suffix: Оборона, Гамма
   parent: MobXenoRunnerDefAlfa
@@ -441,6 +471,7 @@
     - XenoTunneller
   - type: Journey
     journeyGroup: Alpha
+  - type: DefenseEnemy
   - type: HTN
     rootTask:
       task: XenoCompoundDef
@@ -453,6 +484,10 @@
         true
       NavSmash: !type:Bool
         true
+      FollowCloseRange: !type:Single
+        12
+      FollowRange: !type:Single
+        18
 
 - type: entity
   suffix: Оборона, Бета
@@ -461,7 +496,7 @@
   components:
   - type: Journey
     journeyGroup: Beta
-        
+
 - type: entity
   suffix: Оборона, Гамма
   parent: MobXenoRounyDefAlfa
@@ -479,6 +514,7 @@
   components:
   - type: Journey
     journeyGroup: Alpha
+  - type: DefenseEnemy
   - type: HTN
     rootTask:
       task: XenoCompoundDef
@@ -491,6 +527,10 @@
         true
       NavSmash: !type:Bool
         true
+      FollowCloseRange: !type:Single
+        12
+      FollowRange: !type:Single
+        18
 
 - type: entity
   suffix: Оборона, Бета
@@ -499,7 +539,7 @@
   components:
   - type: Journey
     journeyGroup: Beta
-        
+
 - type: entity
   suffix: Оборона, Гамма
   parent: MobXenoSpitterDefAlfa
@@ -507,7 +547,7 @@
   components:
   - type: Journey
     journeyGroup: Beaver
-#------------------------------------------Спавнеры ботов------------------------------   
+#------------------------------------------Спавнеры ботов------------------------------
 - type: entity
   name: Ксеноспавнер Бурильщика
   suffix: Оборона, Альфа
@@ -527,7 +567,7 @@
     intervalSeconds: 60
     minimumEntitiesSpawned: 2
     maximumEntitiesSpawned: 4
-    
+
 - type: entity
   suffix: Оборона, Бета
   id: SpawnMobXenoDefBeta
@@ -541,7 +581,7 @@
     intervalSeconds: 60
     minimumEntitiesSpawned: 2
     maximumEntitiesSpawned: 4
-    
+
 - type: entity
   suffix: Оборона, Гамма
   id: SpawnMobXenoDefGamma
@@ -575,7 +615,7 @@
     intervalSeconds: 60
     minimumEntitiesSpawned: 2
     maximumEntitiesSpawned: 4
-    
+
 - type: entity
   suffix: Оборона, Бета
   id: SpawnMobXenoPraetorianDefBeta
@@ -589,7 +629,7 @@
     intervalSeconds: 60
     minimumEntitiesSpawned: 2
     maximumEntitiesSpawned: 4
-    
+
 - type: entity
   suffix: Оборона, Гамма
   id: SpawnMobXenoPraetorianDefGamma
@@ -603,7 +643,7 @@
     intervalSeconds: 60
     minimumEntitiesSpawned: 2
     maximumEntitiesSpawned: 4
-    
+
 - type: entity
   name: Ксеноспавнер Дрона
   suffix: Оборона, Альфа
@@ -623,7 +663,7 @@
     intervalSeconds: 60
     minimumEntitiesSpawned: 2
     maximumEntitiesSpawned: 4
-    
+
 - type: entity
   suffix: Оборона, Бета
   id: SpawnMobXenoDroneDefBeta
@@ -637,7 +677,7 @@
     intervalSeconds: 60
     minimumEntitiesSpawned: 2
     maximumEntitiesSpawned: 4
-    
+
 - type: entity
   suffix: Оборона, Гамма
   id: SpawnMobXenoDroneDefGamma
@@ -671,7 +711,7 @@
     intervalSeconds: 60
     minimumEntitiesSpawned: 1
     maximumEntitiesSpawned: 1
-    
+
 - type: entity
   suffix: Оборона, Бета
   id: SpawnMobXenoQueenDefBeta
@@ -685,7 +725,7 @@
     intervalSeconds: 60
     minimumEntitiesSpawned: 1
     maximumEntitiesSpawned: 1
-    
+
 - type: entity
   suffix: Оборона, Гамма
   id: SpawnMobXenoQueenDefGamma
@@ -719,7 +759,7 @@
     intervalSeconds: 60
     minimumEntitiesSpawned: 2
     maximumEntitiesSpawned: 4
-    
+
 - type: entity
   suffix: Оборона, Бета
   id: SpawnMobXenoRavagerDefBeta
@@ -733,7 +773,7 @@
     intervalSeconds: 60
     minimumEntitiesSpawned: 2
     maximumEntitiesSpawned: 4
-    
+
 - type: entity
   suffix: Оборона, Гамма
   id: SpawnMobXenoRavagerDefGamma
@@ -767,7 +807,7 @@
     intervalSeconds: 60
     minimumEntitiesSpawned: 2
     maximumEntitiesSpawned: 4
-    
+
 - type: entity
   suffix: Оборона, Бета
   id: SpawnMobXenoRunnerDefBeta
@@ -781,7 +821,7 @@
     intervalSeconds: 60
     minimumEntitiesSpawned: 2
     maximumEntitiesSpawned: 4
-    
+
 - type: entity
   suffix: Оборона, Гамма
   id: SpawnMobXenoRunnerDefGamma
@@ -815,7 +855,7 @@
     intervalSeconds: 60
     minimumEntitiesSpawned: 2
     maximumEntitiesSpawned: 4
-    
+
 - type: entity
   suffix: Оборона, Бета
   id: SpawnMobXenoRounyDefBeta
@@ -829,7 +869,7 @@
     intervalSeconds: 60
     minimumEntitiesSpawned: 2
     maximumEntitiesSpawned: 4
-    
+
 - type: entity
   suffix: Оборона, Гамма
   id: SpawnMobXenoRounyDefGamma
@@ -863,7 +903,7 @@
     intervalSeconds: 60
     minimumEntitiesSpawned: 2
     maximumEntitiesSpawned: 4
-    
+
 - type: entity
   suffix: Оборона, Бета
   id: SpawnMobXenoSpitterDefBeta
@@ -877,7 +917,7 @@
     intervalSeconds: 60
     minimumEntitiesSpawned: 2
     maximumEntitiesSpawned: 4
-    
+
 - type: entity
   suffix: Оборона, Гамма
   id: SpawnMobXenoSpitterDefGamma

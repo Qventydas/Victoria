@@ -3870,6 +3870,10 @@
     graph: SandbagBarricade
     node: SandBarricade
   - type: MobState
+    thresholds:
+      0: Alive
+      1000: Critical
+      2000: Dead
   - type: NpcFactionMember
     factions:
     - DefenseStructure
