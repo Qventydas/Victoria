@@ -187,11 +187,27 @@
       
 - type: entity
   parent: DefChip
-  id: DefChip2
-  suffix: х2
+  id: DefChip10
+  suffix: х10
   components:
   - type: Stack
-    count: 2
+    count: 10
+    
+- type: entity
+  parent: DefChip
+  id: DefChip15
+  suffix: х15
+  components:
+  - type: Stack
+    count: 15
+    
+- type: entity
+  parent: DefChip
+  id: DefChip60
+  suffix: х60
+  components:
+  - type: Stack
+    count: 60
 
 - type: material
   id: DefChip_material
@@ -214,44 +230,294 @@
     1: DefChip
   canWithdraw: true 
 #------------------------------------------------------Спавнер чипов----------------------   
+- type: storeCategory
+  id: StoreDefChip
+  name: "Сборщик чипов поставок"
+  priority: 0
+
+- type: storePreset
+  id: PresetStoreDefChip
+  storeName: Сборщик чипов поставок
+  categories:
+  - StoreDefChip
+  currencyWhitelist:
+  - DefChip_currency
+
+- type: entity
+  id: PresetStoreDefChip
+  abstract: true
+  components:
+  - type: Store
+    name: Сборщик чипов поставок
+    categories:
+    - StoreDefChip
+    currencyWhitelist:
+    - DefChip_currency
+    balance:
+      DefChip_currency: 0
+
+- type: listing
+  id: DefChipList0
+  name: Стартовая поставка
+  description: Стартовая поставка. 60 чипов.
+  productEntity: DefChip60
+  cost:
+    DefChip_currency: 0
+  categories:
+  - StoreDefChip
+  restockTime: 0
+  priority: 1
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  
+- type: listing
+  id: DefChipList1
+  name: Первая поставка
+  description: Первая поставка. 10 чипов.
+  productEntity: DefChip10
+  cost:
+    DefChip_currency: 0
+  categories:
+  - StoreDefChip
+  restockTime: 600
+  priority: 2
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  
+- type: listing
+  id: DefChipList2
+  name: Вторая поставка
+  description: Вторая поставка. 10 чипов.
+  productEntity: DefChip10
+  cost:
+    DefChip_currency: 0
+  categories:
+  - StoreDefChip
+  restockTime: 1200
+  priority: 3
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  
+- type: listing
+  id: DefChipList3
+  name: Третья поставка
+  description: Третья поставка. 10 чипов.
+  productEntity: DefChip10
+  cost:
+    DefChip_currency: 0
+  categories:
+  - StoreDefChip
+  restockTime: 1800
+  priority: 4
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: DefChipList4
+  name: Четвёртая поставка
+  description: Четвёртая поставка. 10 чипов.
+  productEntity: DefChip10
+  cost:
+    DefChip_currency: 0
+  categories:
+  - StoreDefChip
+  restockTime: 2400
+  priority: 5
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  
+- type: listing
+  id: DefChipList5
+  name: Пятая поставка
+  description: Пятая поставка. 15 чипов.
+  productEntity: DefChip15
+  cost:
+    DefChip_currency: 0
+  categories:
+  - StoreDefChip
+  restockTime: 3000
+  priority: 6
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  
+- type: listing
+  id: DefChipList6
+  name: Шестая поставка
+  description: Шестая поставка. 10 чипов.
+  productEntity: DefChip10
+  cost:
+    DefChip_currency: 0
+  categories:
+  - StoreDefChip
+  restockTime: 3600
+  priority: 7
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: DefChipList7
+  name: Седьмая поставка
+  description: Седьмая поставка. 10 чипов.
+  productEntity: DefChip10
+  cost:
+    DefChip_currency: 0
+  categories:
+  - StoreDefChip
+  restockTime: 4200
+  priority: 8
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  
+- type: listing
+  id: DefChipList8
+  name: Восьмая поставка
+  description: Восьмая поставка. 10 чипов.
+  productEntity: DefChip10
+  cost:
+    DefChip_currency: 0
+  categories:
+  - StoreDefChip
+  restockTime: 4800
+  priority: 9
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  
+- type: listing
+  id: DefChipList9
+  name: Девятая поставка
+  description: Девятая поставка. 10 чипов.
+  productEntity: DefChip10
+  cost:
+    DefChip_currency: 0
+  categories:
+  - StoreDefChip
+  restockTime: 5400
+  priority: 10
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: DefChipList10
+  name: Десятая поставка
+  description: Десятая поставка. 15 чипов.
+  productEntity: DefChip15
+  cost:
+    DefChip_currency: 0
+  categories:
+  - StoreDefChip
+  restockTime: 6000
+  priority: 11
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  
+- type: listing
+  id: DefChipList11
+  name: Одиннадцатая поставка
+  description: Одиннадцатая поставка. 10 чипов.
+  productEntity: DefChip10
+  cost:
+    DefChip_currency: 0
+  categories:
+  - StoreDefChip
+  restockTime: 6600
+  priority: 12
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  
+- type: listing
+  id: DefChipList12
+  name: Двенадцатая поставка
+  description: венадцатая поставка. 10 чипов.
+  productEntity: DefChip10
+  cost:
+    DefChip_currency: 0
+  categories:
+  - StoreDefChip
+  restockTime: 7200
+  priority: 13
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
+  id: DefChipList13
+  name: Тринадцатая поставка
+  description: Тринадцатая поставка. 10 чипов.
+  productEntity: DefChip10
+  cost:
+    DefChip_currency: 0
+  categories:
+  - StoreDefChip
+  restockTime: 7800
+  priority: 14
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  
+- type: listing
+  id: DefChipList14
+  name: Четырнадцатая поставка
+  description: Четырнадцатая поставка. 10 чипов.
+  productEntity: DefChip10
+  cost:
+    DefChip_currency: 0
+  categories:
+  - StoreDefChip
+  restockTime: 8400
+  priority: 15
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+  
+- type: listing
+  id: DefChipList15
+  name: Последняя поставка
+  description: Последняя поставка. 15 чипов.
+  productEntity: DefChip15
+  cost:
+    DefChip_currency: 0
+  categories:
+  - StoreDefChip
+  restockTime: 9000
+  priority: 16
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
 - type: entity
   name: Сборщик чипов поставок
   suffix: Оборона
-  parent: NonAmmoProviderShotgunShell
+  parent: [BaseItem, PresetStoreDefChip]
   id: ProviderDefChip
   description: Небольшое устройсво, получающее чипы поставок и выдающее по команде.
   components:
     - type: Item
       size: Small
-    - type: BallisticAmmoProvider
-      proto: DefChip
-      capacity: 60
     - type: Sprite
       sprite: Victoria/DefenseMode/provider_defchip.rsi
       state: icon
-
-- type: entity
-  name: Сборщик чипов поставок
-  suffix: Оборона, Забавный, НЕ МАППИТЬ
-  parent: NonAmmoProviderShotgunShell
-  id: ProviderDefChipSmile
-  description: Небольшое устройсво, получающее чипы поставок и выдающее по команде.
-  components:
-    - type: Item
-      size: Small
-    # - type: BallisticAmmoProvider
-    - type: BasicEntityAmmoProvider
-      proto: DefChip
-      capacity: 60
-      count: 40
-    - type: RechargeBasicEntityAmmo
-      rechargeCooldown: 10
-      rechargeSound:
-        path: /Audio/Weapons/Guns/MagIn/ltrifle_magin.ogg
-    - type: Sprite
-      sprite: Victoria/DefenseMode/provider_defchip.rsi
-      state: icon
-    - type: Gun
+    - type: UserInterface
+      interfaces:
+        enum.StoreUiKey.Key:
+          type: StoreBoundUserInterface
+    - type: ActivatableUI
+      key: enum.StoreUiKey.Key
+    - type: Store
+      preset: PresetStoreDefChip
+      balance: 
+        DefChip_currency: 0
 #------------------------------------------------------Пресет категорий в магазине------------
 - type: storeCategory
   id: DefShopMaterials
@@ -497,8 +763,18 @@
 - type: listing
   id: CrateMaterialPlumbum
   name: Ящик листов свинца
-  description: Для создания противорадиационных убежищь и прочего.
+  description: Для создания противорадиационных убежищ и прочего.
   productEntity: CrateMaterialPlumbum
+  cost:
+    DefChip_currency: 1
+  categories:
+  - DefShopMaterials
+  
+- type: listing
+  id: CrateMaterialPlastic
+  name: Ящик листов пластика
+  description: Для создания различных предметов.
+  productEntity: CrateMaterialPlastic
   cost:
     DefChip_currency: 1
   categories:
@@ -1146,6 +1422,22 @@
       - id: CDCMagazinePistolHot
       
 - type: entity
+  id: CDCCrateWeaponsLLigAmmoDef
+  parent: CDCCrate
+  name: Ящик слабых пистолетных боеприпасов
+  suffix: Конгломерат, Оборона
+  description: Шесть слабоплазменных магазинов к плазменному пистолету Халифатского Божественного Конгомерата
+  components:
+  - type: StorageFill
+    contents:
+      - id: CDCMagazinePistolLig
+      - id: CDCMagazinePistolLig
+      - id: CDCMagazinePistolLig
+      - id: CDCMagazinePistolLig
+      - id: CDCMagazinePistolLig
+      - id: CDCMagazinePistolLig
+      
+- type: entity
   id: CDCCrateWeaponsMAmmoDef
   parent: CDCCrate
   name: Ящик стандартных боеприпасов основного оружия
@@ -1186,6 +1478,24 @@
       - id: CDCMagazineRifleHot
       
 - type: entity
+  id: CDCCrateWeaponsMLigAmmoDef
+  parent: CDCCrate
+  name: Ящик слабых боеприпасов основного оружия
+  suffix: Конгломерат, Оборона
+  description: По четыре слабоплазменных магазинов к плазменным винтовками автоматам Халифатского Божественного Конгомерата
+  components:
+  - type: StorageFill
+    contents:
+      - id: CDCMagazineAutomatLig
+      - id: CDCMagazineAutomatLig
+      - id: CDCMagazineAutomatLig
+      - id: CDCMagazineAutomatLig
+      - id: CDCMagazineRifleLig
+      - id: CDCMagazineRifleLig
+      - id: CDCMagazineRifleLig
+      - id: CDCMagazineRifleLig
+      
+- type: entity
   id: CDCCrateWeaponsHAmmoDef
   parent: CDCCrate
   name: Ящик стандартных боеприпасов дефокусировщика
@@ -1209,6 +1519,18 @@
     contents:
       - id: CDCMagazineDefocHot
       - id: CDCMagazineDefocHot
+      
+- type: entity
+  id: CDCCrateWeaponsHLigAmmoDef
+  parent: CDCCrate
+  name: Ящик слабых боеприпасов дефокусировщика
+  suffix: Конгломерат, Оборона
+  description: Два слабоплазменных магазина к плазменному дефокусировщику Халифатского Божественного Конгомерата
+  components:
+  - type: StorageFill
+    contents:
+      - id: CDCMagazineDefocLig
+      - id: CDCMagazineDefocLig
 #----------------Листинги------------
 - type: listing
   id: CDCCrateWeaponsLAmmoDef
@@ -1231,6 +1553,16 @@
   - DefShopAmmoCDC
   
 - type: listing
+  id: CDCCrateWeaponsLLigAmmoDef
+  name: Ящик слабых пистолетных боеприпасов
+  description: Шесть горячеплазменных магазинов к плазменному пистолету Халифатского Божественного Конгомерата
+  productEntity: CDCCrateWeaponsLLigAmmoDef
+  cost:
+    DefChip_currency: 3
+  categories:
+  - DefShopAmmoCDC
+  
+- type: listing
   id: CDCCrateWeaponsMAmmoDef
   name: Ящик стандартных боеприпасов основного оружия
   description: По шесть стандартных магазинов к плазменным винтовками автоматам Халифатского Божественного Конгомерата
@@ -1247,6 +1579,16 @@
   productEntity: CDCCrateWeaponsMHotAmmoDef
   cost:
     DefChip_currency: 5
+  categories:
+  - DefShopAmmoCDC
+  
+- type: listing
+  id: CDCCrateWeaponsMLigAmmoDef
+  name: Ящик слабых боеприпасов основного оружия
+  description: По четыре горячеплазменных магазинов к плазменным винтовками автоматам Халифатского Божественного Конгомерата
+  productEntity: CDCCrateWeaponsMLigAmmoDef
+  cost:
+    DefChip_currency: 3
   categories:
   - DefShopAmmoCDC
 
@@ -1267,6 +1609,16 @@
   productEntity: CDCCrateWeaponsHHotAmmoDef
   cost:
     DefChip_currency: 5
+  categories:
+  - DefShopAmmoCDC
+  
+- type: listing
+  id: CDCCrateWeaponsHLigAmmoDef
+  name: Ящик слабых боеприпасов дефокусировщика
+  description: Два горячеплазменных магазина к плазменному дефокусировщику Халифатского Божественного Конгомерата
+  productEntity: CDCCrateWeaponsHLigAmmoDef
+  cost:
+    DefChip_currency: 3
   categories:
   - DefShopAmmoCDC
 #------------------------------Советско-Петрищевская-------------

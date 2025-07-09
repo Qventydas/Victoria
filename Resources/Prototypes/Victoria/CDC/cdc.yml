@@ -813,6 +813,24 @@
     sprite: Victoria/CDC/Weapon/cdc_projectiles.rsi
     layers:
       - state: plasma_hot
+#-------------------------горячая плазма----------------
+- type: entity
+  id: CDCBulletPlasmaLigStd
+  name: Слабоплазменый заряд (lps)
+  suffix: Конгломерат
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 3
+        Heat: 10
+        Shock: 5
+  - type: Sprite
+    sprite: Victoria/CDC/Weapon/cdc_projectiles.rsi
+    layers:
+      - state: plasma_light
 #------------------------------------винтовка---------- 
 #-------------------------плазма----------------
 - type: entity
@@ -842,11 +860,25 @@
         Blunt: 5
         Heat: 50
         Shock: 10
+#-------------------------слабая плазма----------------
+- type: entity
+  id: CDCBulletPlasmaLigRif
+  name: Тяжёлый слабоплазменый заряд (lpr)
+  suffix: Конгломерат
+  parent: CDCBulletPlasmaLigStd
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 3
+        Heat: 20
+        Shock: 5
 #------------------------------------дефокусировщик---------- 
 #-------------------------плазма----------------
 - type: entity
   id: CDCPlasmaDefoc
-  name: Дефокусилованный плазменный заряд (spd)
+  name: Дефокусированный плазменный заряд (spd)
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:
@@ -880,7 +912,7 @@
 #-------------------------горячая плазма----------------
 - type: entity
   id: CDCPlasmaHotDefoc
-  name: Дефокусилованный сверхплазменный заряд (hpd)
+  name: Дефокусированный сверхплазменный заряд (hpd)
   parent: BaseBullet
   categories: [ HideSpawnMenu ]
   components:
@@ -909,6 +941,40 @@
   components:
   - type: ProjectileSpread
     proto: CDCPlasmaHotDefoc
+    count: 4
+    spread: 20  
+#-------------------------горячая плазма----------------
+- type: entity
+  id: CDCPlasmaLigDefoc
+  name: Дефокусированный слабоплазменный заряд (lpd)
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 1
+        Heat: 8
+        Shock: 1
+  - type: Sprite
+    sprite: Victoria/CDC/Weapon/cdc_projectiles.rsi
+    layers:
+    - state: plasma_defocus_light
+  - type: IgnitionSource
+    temperature: 7000
+    ignited: true
+  - type: IgniteOnCollide
+    fireStacks: 0.25 
+  - type: TimedDespawn
+    lifetime: 4
+    
+- type: entity
+  id: CDCPlasmaLigDefocSpread
+  categories: [ HideSpawnMenu ]
+  parent: CDCPlasmaLigDefoc
+  components:
+  - type: ProjectileSpread
+    proto: CDCPlasmaLigDefoc
     count: 4
     spread: 20
 #-------------------------------------картриджи---------------------------------------------------------------------------------
@@ -955,6 +1021,27 @@
     layers:
     - state: base_hot
       map: ["enum.AmmoVisualLayers.Base"]
+#--------------------------слабая плазма---------------
+- type: Tag
+  id: CDCCartridgePlasmaLigStd
+
+- type: entity
+  id: CDCCartridgePlasmaLigStd
+  name: Слабоплазменый заряд (lps)
+  suffix: Конгломерат
+  parent: BaseCartridgeRifle
+  components:
+  - type: CartridgeAmmo
+    proto: CDCBulletPlasmaLigStd
+    deleteOnSpawn: true
+  - type: Tag
+    tags:
+      - CDCCartridgePlasmaLigStd
+  - type: Sprite
+    sprite: Victoria/CDC/Weapon/cdc_projectiles.rsi
+    layers:
+    - state: base_light
+      map: ["enum.AmmoVisualLayers.Base"]
 #------------------------------винтовка---------- 
 #--------------------------плазма---------------
 - type: Tag
@@ -997,6 +1084,27 @@
     sprite: Victoria/CDC/Weapon/cdc_projectiles.rsi
     layers:
     - state: base_hot
+      map: ["enum.AmmoVisualLayers.Base"]
+#--------------------------слабая плазма---------------
+- type: Tag
+  id: CDCCartridgePlasmaLigRif
+
+- type: entity
+  id: CDCCartridgePlasmaLigRif
+  name: Тяжёлый слабоплазменый заряд (lpr)
+  suffix: Конгломерат
+  parent: BaseCartridgeRifle
+  components:
+  - type: CartridgeAmmo
+    proto: CDCBulletPlasmaLigRif
+    deleteOnSpawn: true
+  - type: Tag
+    tags:
+      - CDCCartridgePlasmaLigRif
+  - type: Sprite
+    sprite: Victoria/CDC/Weapon/cdc_projectiles.rsi
+    layers:
+    - state: base_light
       map: ["enum.AmmoVisualLayers.Base"]
 #------------------------------расфокусировщик---------- 
 #--------------------------плазма---------------
@@ -1041,6 +1149,27 @@
   - type: Tag
     tags:
       - CDCCartridgePlasmaHotDefoc
+#--------------------------слабая плазма---------------
+- type: Tag
+  id: CDCCartridgePlasmaLigDefoc
+
+- type: entity
+  id: CDCCartridgePlasmaLigDefoc
+  name: Дефокусилованный слабоплазменный заряд (hpd)
+  suffix: Конгломерат
+  parent: BaseCartridgeRifle
+  components:
+  - type: Sprite
+    sprite: Victoria/CDC/Weapon/cdc_projectiles.rsi
+    layers:
+    - state: base_light
+  - type: CartridgeAmmo
+    proto: CDCPlasmaLigDefocSpread
+    soundEject:
+      collection: ShellEject
+  - type: Tag
+    tags:
+      - CDCCartridgePlasmaLigDefoc
 #-------------------------------------------------------магазины------------------------------------------------
 - type: Tag
   id: CDCMagazine
@@ -1060,6 +1189,7 @@
       tags:
         - CDCCartridgePlasmaStd
         - CDCCartridgePlasmaHotStd
+        - CDCCartridgePlasmaLigStd
     proto: CDCCartridgePlasmaStd
     capacity: 8
   - type: Sprite
@@ -1084,6 +1214,20 @@
   - type: Sprite
     layers:
     - state: hot_pist
+      map: ["enum.GunVisualLayers.Base"]
+#-------------------------слабая плазма---------
+- type: entity
+  id: CDCMagazinePistolLig
+  name: Магазин к пистолету "Гул" (lps)
+  suffix: Конгломерат, Lig
+  parent: CDCMagazinePistolStd
+  components:
+  - type: BallisticAmmoProvider
+    proto: CDCCartridgePlasmaLigStd
+    capacity: 8
+  - type: Sprite
+    layers:
+    - state: light_pist
       map: ["enum.GunVisualLayers.Base"]
 #-----------------------------------автомат--------- 
 - type: Tag
@@ -1120,6 +1264,20 @@
     layers:
     - state: hot_auto
       map: ["enum.GunVisualLayers.Base"]
+#-------------------------слабая плазма---------
+- type: entity
+  id: CDCMagazineAutomatLig
+  name: Магазин к автомату "Джин" (lps)
+  suffix: Конгломерат, Lig
+  parent: CDCMagazineAutomatStd
+  components:
+  - type: BallisticAmmoProvider
+    proto: CDCCartridgePlasmaLigStd
+    capacity: 22
+  - type: Sprite
+    layers:
+    - state: light_auto
+      map: ["enum.GunVisualLayers.Base"]
 #-----------------------------------винтовочный--------- 
 - type: Tag
   id: CDCMagazineRifle
@@ -1136,8 +1294,9 @@
       tags:
         - CDCCartridgePlasmaRif
         - CDCCartridgePlasmaHotRif
+        - CDCCartridgePlasmaLigRif
     proto: CDCCartridgePlasmaRif
-    capacity: 5
+    capacity: 7
   - type: Sprite
     sprite: Victoria/CDC/Weapon/cdc_magazine.rsi
     layers:
@@ -1156,11 +1315,26 @@
   components:
   - type: BallisticAmmoProvider
     proto: CDCCartridgePlasmaHotRif
-    capacity: 5
+    capacity: 7
   - type: Sprite
     sprite: Victoria/CDC/Weapon/cdc_magazine.rsi
     layers:
     - state: hot_rifle
+      map: ["enum.GunVisualLayers.Base"]
+#-------------------------слабая плазма---------
+- type: entity
+  id: CDCMagazineRifleLig
+  name: Магазин к винтовке "Силла" (lpr)
+  suffix: Конгломерат, Lig
+  parent: CDCMagazineRifleStd
+  components:
+  - type: BallisticAmmoProvider
+    proto: CDCCartridgePlasmaLigRif
+    capacity: 7
+  - type: Sprite
+    sprite: Victoria/CDC/Weapon/cdc_magazine.rsi
+    layers:
+    - state: light_rifle
       map: ["enum.GunVisualLayers.Base"]
 #-----------------------------------дефокусировщик--------- 
 - type: Tag
@@ -1178,8 +1352,9 @@
       tags:
         - CDCCartridgePlasmaDefoc
         - CDCCartridgePlasmaHotDefoc
+        - CDCCartridgePlasmaLigDefoc
     proto: CDCCartridgePlasmaDefoc
-    capacity: 6
+    capacity: 10
   - type: Sprite
     sprite: Victoria/CDC/Weapon/cdc_magazine.rsi
     layers:
@@ -1198,11 +1373,26 @@
   components:
   - type: BallisticAmmoProvider
     proto: CDCCartridgePlasmaHotDefoc
-    capacity: 6
+    capacity: 10
   - type: Sprite
     sprite: Victoria/CDC/Weapon/cdc_magazine.rsi
     layers:
     - state: hot_shot
+      map: ["enum.GunVisualLayers.Base"]
+#-------------------------слабая плазма---------
+- type: entity
+  id: CDCMagazineDefocLig
+  name: Магазин плазменного дефокусировщика "Ифрит" (lpd)
+  suffix: Конгломерат
+  parent: CDCMagazineDefocStd
+  components:
+  - type: BallisticAmmoProvider
+    proto: CDCCartridgePlasmaLigDefoc
+    capacity: 10
+  - type: Sprite
+    sprite: Victoria/CDC/Weapon/cdc_magazine.rsi
+    layers:
+    - state: light_shot
       map: ["enum.GunVisualLayers.Base"]
 #-------------------------------------стволы---------------------------------------------------------------------------------
 #-----------------------пистолет-----------------------
@@ -1248,6 +1438,7 @@
           tags:
             - CDCCartridgePlasmaStd
             - CDCCartridgePlasmaHotStd
+            - CDCCartridgePlasmaLigStd
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
@@ -1305,6 +1496,7 @@
           tags:
             - CDCCartridgePlasmaStd
             - CDCCartridgePlasmaHotStd
+            - CDCCartridgePlasmaLigStd
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
@@ -1361,6 +1553,7 @@
           tags:
             - CDCCartridgePlasmaRif
             - CDCCartridgePlasmaHotRif
+            - CDCCartridgePlasmaLigRif
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
@@ -1420,6 +1613,7 @@
           tags:
             - CDCCartridgePlasmaDefoc
             - CDCCartridgePlasmaHotDefoc
+            - CDCCartridgePlasmaLigDefoc
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
@@ -1431,6 +1625,198 @@
   - type: Appearance
   - type: StaticPrice
     price: 2000
+#--------------------------------------------коробки с патронами------------------------------------
+#------------------------------базовая коробка----------------
+- type: entity
+  abstract: true
+  parent: BaseItem
+  id: BaseCDCBox
+  components:
+  - type: BallisticAmmoProvider
+    mayTransfer: true
+    whitelist:
+      tags:
+        - CDCCartridgePlasmaStd
+        - CDCCartridgePlasmaHotStd
+        - CDCCartridgePlasmaLigStd
+        - CDCCartridgePlasmaRif
+        - CDCCartridgePlasmaHotRif
+        - CDCCartridgePlasmaLigRif
+        - CDCCartridgePlasmaDefoc
+        - CDCCartridgePlasmaHotDefoc
+        - CDCCartridgePlasmaLigDefoc
+    proto: CDCCartridgeHeavyRifle
+    capacity: 100
+  - type: Item
+    size: Small
+  - type: ContainerContainer
+    containers:
+      ballistic-ammo: !type:Container
+  - type: Sprite
+    sprite: Victoria/Umpor/Weapon/umpor_box_ammo.rsi
+  - type: Appearance
+#------------------------------винтовочные----------------
+- type: entity
+  parent: BaseCDCBox
+  id: CDCBoxCartridgePlasmaRif
+  name: Коробка тяжёлых плазменных зарядов (spr)
+  suffix: Конгломерат
+  description: Тяжёлые патроны для винтовки "Силла" Конгломерата (spr)
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 35
+    proto: CDCCartridgePlasmaRif
+  - type: Sprite
+    layers:
+    - state: rifle
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+    zeroVisible: false
+    
+- type: entity
+  parent: BaseCDCBox
+  id: CDCBoxCartridgePlasmaHotRif
+  name: Коробка тяжёлых сверхплазменных зарядов (hpr)
+  suffix: Конгломерат
+  description: Тяжёлые горячие патроны для винтовки "Силла" Конгломерата (hpr)
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 35
+    proto: CDCCartridgePlasmaHotRif
+  - type: Sprite
+    layers:
+    - state: rifle
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+    zeroVisible: false
+    
+- type: entity
+  parent: BaseCDCBox
+  id: CDCBoxCartridgePlasmaLigRif
+  name: Коробка тяжёлых слабоплазменных зарядов (lpr)
+  suffix: Конгломерат
+  description: Тяжёлые слабые патроны для винтовки "Силла" Конгломерата (lpr)
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 35
+    proto: CDCCartridgePlasmaLigRif
+  - type: Sprite
+    layers:
+    - state: rifle
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+    zeroVisible: false
+#------------------------------автоматные----------------
+- type: entity
+  parent: BaseCDCBox
+  id: CDCBoxCartridgePlasmaStd
+  name: Коробка плазменных зардов (sps)
+  suffix: Конгломерат
+  description: Патроны для пистолета "Гул" и автомата "Джин" Конгломерата (sps)
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 64
+    proto: CDCCartridgePlasmaStd
+  - type: Sprite
+    layers:
+    - state: automat
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    zeroVisible: false
+    
+- type: entity
+  parent: BaseCDCBox
+  id: CDCBoxCartridgePlasmaHotStd
+  name: Коробка сверхплазменных зардов (hps)
+  suffix: Конгломерат
+  description: Горячие патроны для пистолета "Гул" и автомата "Джин" Конгломерата (hps)
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 64
+    proto: CDCCartridgePlasmaHotStd
+  - type: Sprite
+    layers:
+    - state: automat
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    zeroVisible: false
+    
+- type: entity
+  parent: BaseCDCBox
+  id: CDCBoxCartridgePlasmaLigStd
+  name: Коробка слабоплазменных зардов (lps)
+  suffix: Конгломерат
+  description: Слабые патроны для пистолета "Гул" и автомата "Джин" Конгломерата (lps)
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 64
+    proto: CDCCartridgePlasmaLigStd
+  - type: Sprite
+    layers:
+    - state: automat
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+    zeroVisible: false
+#------------------------------дефокусировщик----------------      
+- type: entity
+  parent: BaseCDCBox
+  id: CDCBoxCartridgePlasmaDefoc
+  name: Коробка дефокусированных плазменных зарядов (spd)
+  suffix: Конгломерат
+  description: Патроны для дефокусировщика "Ифрит" Конгломерата (spd)
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 40
+    proto: CDCCartridgePlasmaDefoc
+  - type: Sprite
+    layers:
+    - state: shotgan
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-2
+      map: ["enum.GunVisualLayers.Mag"]
+    zeroVisible: false
+    
+- type: entity
+  parent: BaseCDCBox
+  id: CDCBoxCartridgePlasmaHotDefoc
+  name: Коробка дефокусированных сверхплазменных зарядов (hpd)
+  suffix: Конгломерат
+  description: Горячие патроны для дефокусировщика "Ифрит" Конгломерата (hpd)
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 40
+    proto: CDCCartridgePlasmaHotDefoc
+  - type: Sprite
+    layers:
+    - state: shotgan
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-2
+      map: ["enum.GunVisualLayers.Mag"]
+    zeroVisible: false
+    
+- type: entity
+  parent: BaseCDCBox
+  id: CDCBoxCartridgePlasmaLigDefoc
+  name: Коробка дефокусированных слабоплазменных зарядов (hpd)
+  suffix: Конгломерат
+  description: Слабые патроны для дефокусировщика "Ифрит" Конгломерата (hpd)
+  components:
+  - type: BallisticAmmoProvider
+    capacity: 40
+    proto: CDCCartridgePlasmaLigDefoc
+  - type: Sprite
+    layers:
+    - state: shotgan
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-2
+      map: ["enum.GunVisualLayers.Mag"]
+    zeroVisible: false
 #------------------------------------------карты, доступы и шлюзы----------------------------------------    
 #------------------------------------------доступы и шлюзы---------------------------------------- 
 #------------------------------------доступ----------  
