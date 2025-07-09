@@ -229,7 +229,7 @@
   - type: Bloodstream
     bloodMaxVolume: 50 
   - type: TimedDespawn
-    lifetime: 1200
+    lifetime: 750
   - type: RandomChangeTime
     time: 30
     prob: 1
@@ -269,7 +269,7 @@
   - type: Bloodstream
     bloodMaxVolume: 50 
   - type: TimedDespawn
-    lifetime: 1200
+    lifetime: 750
   - type: RandomChangeTime
     time: 30
     prob: 1
@@ -358,7 +358,7 @@
   - type: Bloodstream
     bloodMaxVolume: 100
   - type: TimedDespawn
-    lifetime: 1200
+    lifetime: 750
 
 - type: entity
   suffix: Оборона, Бета
@@ -411,7 +411,7 @@
   - type: Bloodstream
     bloodMaxVolume: 50
   - type: TimedDespawn
-    lifetime: 1200
+    lifetime: 750
 
 - type: entity
   suffix: Оборона, Бета
@@ -468,7 +468,7 @@
   - type: Bloodstream
     bloodMaxVolume: 150
   - type: TimedDespawn
-    lifetime: 1200
+    lifetime: 750
 
 - type: entity
   suffix: Оборона, Бета
@@ -524,7 +524,7 @@
   - type: Bloodstream
     bloodMaxVolume: 100  
   - type: TimedDespawn
-    lifetime: 1200 
+    lifetime: 750 
   - type: RandomChangeTime
     time: 30
     prob: 1
@@ -565,7 +565,7 @@
   - type: Bloodstream
     bloodMaxVolume: 100  
   - type: TimedDespawn
-    lifetime: 1200
+    lifetime: 750
   - type: RandomChangeTime
     time: 30
     prob: 1
@@ -653,7 +653,7 @@
   - type: Bloodstream
     bloodMaxVolume: 50
   - type: TimedDespawn
-    lifetime: 1200
+    lifetime: 750
   - type: RandomChangeTime
     time: 30
     prob: 1
@@ -696,7 +696,7 @@
   - type: Bloodstream
     bloodMaxVolume: 50
   - type: TimedDespawn
-    lifetime: 1200
+    lifetime: 750
   - type: RandomChangeTime
     time: 30
     prob: 1
@@ -784,7 +784,7 @@
   - type: Bloodstream
     bloodMaxVolume: 50
   - type: TimedDespawn
-    lifetime: 1200
+    lifetime: 750
 
 - type: entity
   suffix: Оборона, Бета
@@ -834,7 +834,7 @@
   - type: Bloodstream
     bloodMaxVolume: 50
   - type: TimedDespawn
-    lifetime: 1200
+    lifetime: 750
 
 - type: entity
   suffix: Оборона, Бета
