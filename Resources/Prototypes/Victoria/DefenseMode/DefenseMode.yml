@@ -530,9 +530,10 @@
       =============================================
       
                                   [italic]Место для печатей[/italic]
-    stampedName: Умпорская Федерация
-    stampedColor: "#7f7f7f"
     stampState: "paper_stamp-generic"
+    stampedBy:
+      - stampedName: Умпорская Федерация
+        stampedColor: "#7f7f7f"
 #---------------------------Миртанийское------------------------
 - type: entity
   id: MirtPaperMapDesrtPlatform
@@ -572,9 +573,10 @@
       =============================================
       
              [italic]Место для печатей[/italic]
-    stampedName: Импеrия Миrтана
-    stampedColor: "#b15900"
     stampState: "paper_stamp-generic"
+    stampedBy:
+      - stampedName: Импеrия Миrтана
+        stampedColor: "#b15900"
 #---------------------------Конгломератское------------------------
 - type: entity
   id: CDCPaperMapDesrtPlatform
@@ -614,9 +616,10 @@
       =============================================
       
              [italic]Место для печатей[/italic]      
-    stampedName: Боjественный Конгломеrат
-    stampedColor: "#b68448"
     stampState: "paper_stamp-generic"
+    stampedBy:
+      - stampedName: Боjественный Конгломеrат
+        stampedColor: "#b68448"
 #---------------------------Советское------------------------
 
 #---------------------------Корпоративное------------------------
