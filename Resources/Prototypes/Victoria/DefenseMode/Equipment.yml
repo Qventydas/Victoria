@@ -57,7 +57,7 @@
 - type: thiefBackpackSet
   id: SetUmporSniperRifle
   name: Набор Снайпера
-  description: Включает в себя винтовку "Окопник", 4 магазина, бронежилет, оптический прицел, отвёртку и нож.
+  description: Включает в себя винтовку "Окопник", 4 магазина, бронежилет, оптический прицел, отвёртку, преобразователь патронов и нож.
   sprite:
     sprite: Victoria/Snipe/umpor_rifle.rsi
     state: icon
@@ -70,6 +70,7 @@
   - UmporArmorBasic
   - OpticalSight
   - Screwdriver
+  - DefСartridgeСonverter
   
 - type: thiefBackpackSet
   id: SetUmporShotgan
@@ -492,7 +493,7 @@
 - type: thiefBackpackSet
   id: SetMirtSniperRifle
   name: Набор Снайпера (блюспейс винтовка)
-  description: Включает в себя блюспейс винтовку "Чаровница", 4 магазина, лёгкий жилет, прицел, отвёртку и нож.
+  description: Включает в себя блюспейс винтовку "Чаровница", 4 магазина, лёгкий жилет, прицел, отвёртку, преобразователь патронов и нож.
   sprite:
     sprite: Victoria/Snipe/mirt_rifle_bs.rsi
     state: icon
@@ -506,6 +507,7 @@
   - MirtnKnife
   - OpticalSight
   - Screwdriver
+  - DefСartridgeСonverter
 
 - type: thiefBackpackSet
   id: SetMirtNoocSniperRifle
@@ -726,7 +728,7 @@
 - type: thiefBackpackSet
   id: SetCDCSniperRifle
   name: Набор Снайпера
-  description: Включает в себя винтовку "Силла", 3 магазина, бронежилет, прицел и отвёртку.
+  description: Включает в себя винтовку "Силла", 3 магазина, бронежилет, прицел, преобразователь патронов и отвёртку.
   sprite:
     sprite: Victoria/Snipe/cdc_rifle.rsi
     state: icon
@@ -738,6 +740,7 @@
   - CDCArmorLight
   - OpticalSight
   - Screwdriver
+  - DefСartridgeСonverter
   
 - type: thiefBackpackSet
   id: SetCDCDefoc
