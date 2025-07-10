@@ -865,3 +865,21 @@
 #------------------------------------------------------Советские----------------------
 
 #------------------------------------------------------Корпоративные----------------------
+
+#-------------------------------------------------------------------очки с иконками----------------------
+- type: entity
+  parent: ClothingEyesBase
+  id: DefGlass
+  name: защитные очки
+  suffix: Оборона
+  description: Защитные очки, защищающие от пыли и ветра, с встроенной тактической системой показа расположения сил.
+  components:
+  - type: Sprite
+    sprite: Victoria/DefenseMode/glasses_icon.rsi
+  - type: Clothing
+    sprite: Victoria/DefenseMode/glasses_icon.rsi
+  - type: ShowJobIcons
+  - type: EyeProtection
+    protectionTime: 3
+  - type: IdentityBlocker
+    coverage: EYES
