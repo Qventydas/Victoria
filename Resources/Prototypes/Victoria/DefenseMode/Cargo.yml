@@ -260,13 +260,7 @@
   name: "Сборщик чипов поставок"
   priority: 0
 
-- type: storePreset
-  id: PresetStoreDefChip
-  storeName: Сборщик чипов поставок
-  categories:
-  - StoreDefChip
-  currencyWhitelist:
-  - DefChip_currency
+
 
 - type: entity
   id: PresetStoreDefChip

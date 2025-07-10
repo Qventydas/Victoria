@@ -11,3 +11,4 @@ spent-lightbomb-name = сгоревшая световая шашка
 spent-lightbomb-desc = Похоже, эта световая шашка выгорела. Теперь это бесполезный мусор.
 
 preset-store-def-name = Сборщик чипов поставок
+preset-respawns-def-name = Пополнение

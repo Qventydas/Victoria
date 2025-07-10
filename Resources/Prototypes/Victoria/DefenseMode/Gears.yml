@@ -12,6 +12,7 @@
     ears: UmporHeadset
     belt: UmporeBeltAssault
     neck: UmporCloakOf
+    eyes: DefGlass
     pocket2: UmporRubberStamp
 #----------------------------------------------------Офицер--------------------------
 - type: startingGear
@@ -24,6 +25,7 @@
     outerClothing: UmporArmorBasic
     id: UmporPDAOfficer
     ears: UmporHeadset
+    eyes: DefGlass
     belt: UmporeBeltAssault
 #----------------------------------------------------Доп.Офицер--------------------------
 - type: startingGear
@@ -37,6 +39,7 @@
     id: UmporPDAOfficer
     ears: UmporHeadset
     belt: UmporeBeltAssaultFilled
+    eyes: DefGlass
 #----------------------------------------------------Специалист--------------------------
 - type: startingGear
   id: GearDefUmporSPC
@@ -49,6 +52,7 @@
     ears: UmporHeadset
     belt: UmporeBeltAssault
     gloves: UmporGlovesFingerless
+    eyes: DefGlass
   storage:
     back:
     - ToolboxUmporSPC
@@ -64,6 +68,7 @@
     ears: UmporHeadset
     belt: UmporeBeltAssaultFilled
     gloves: UmporGlovesFingerless
+    eyes: DefGlass
   storage:
     back:
     - ToolboxUmporDSPC
@@ -79,6 +84,7 @@
     ears: UmporHeadset
     belt: UmporeBeltAssault
     gloves: UmporGlovesFingerless
+    eyes: DefGlass
   storage:
     back:
     - ToolboxUmporSol
@@ -94,6 +100,7 @@
     ears: UmporHeadset
     belt: UmporeBeltAssaultFilled
     gloves: UmporGlovesFingerless
+    eyes: DefGlass
   storage:
     back:
     - ToolboxUmporSol
@@ -110,6 +117,7 @@
     ears: UmporHeadset
     belt: UmporBeltEngFilled
     gloves: UmporInsulativeGloves
+    eyes: DefGlass
 #----------------------------------------------------Медик--------------------------
 - type: startingGear
   id: GearDefUmporMed
@@ -122,6 +130,7 @@
     ears: UmporHeadset
     belt: UmporeBeltMedFilled
     gloves: UmporGlovesFingerless
+    eyes: DefGlass
 #----------------------------------------------------Снабженец--------------------------
 - type: startingGear
   id: GearDefUmporLog
@@ -134,6 +143,7 @@
     ears: UmporHeadset
     belt: UmporBeltEng
     gloves: UmporGlovesFingerless
+    eyes: DefGlass
     pocket1: DefChip
 #--------------------------------------------------------------------Миртанийские-----------------------------------------
 #----------------------------------------------------Командор--------------------------
@@ -148,6 +158,7 @@
     belt: MirtBelt
     gloves: MirtGlovesFingerless
     neck: MirtCloakOfCom
+    eyes: DefGlass
     pocket2: MirtRubberStampArm
   storage:
     back:
@@ -163,6 +174,7 @@
     id: MirtIDCardSolder
     belt: MirtBelt
     gloves: MirtGlovesStrong
+    eyes: DefGlass
     neck: MirtCloakOf
   storage:
     back:
@@ -178,6 +190,7 @@
     id: MirtIDCardSolder
     belt: MirtBelt
     gloves: MirtGlovesStrong
+    eyes: DefGlass
     neck: MirtCloakOfInk
     pocket2: MirtRubberStampInk
   storage:
@@ -194,6 +207,7 @@
     id: MirtIDCardSolder
     belt: MirtBelt
     gloves: MirtGlovesFingerless
+    eyes: DefGlass
     neck: MirtCloakSP
     pocket2: MirtProviderFlare
   storage:
@@ -210,6 +224,7 @@
     id: MirtIDCardSolder
     belt: MirtBelt
     gloves: MirtGlovesFingerless
+    eyes: DefGlass
     neck: MirtCloakSPInk
     pocket2: MirtProviderFlare
   storage:
@@ -226,6 +241,7 @@
     id: MirtIDCardSolder
     belt: MirtBelt
     gloves: MirtGlovesFingerless
+    eyes: DefGlass
   storage:
     back:
     - ToolboxMirtSol
@@ -240,6 +256,7 @@
     id: MirtIDCardSolder
     belt: MirtBelt
     gloves: MirtGlovesFingerless
+    eyes: DefGlass
     neck: MirtEpolets
   storage:
     back:
@@ -256,6 +273,7 @@
     id: MirtIDCardSolder
     belt: MirtBelt
     gloves: MirtGlovesFingerless
+    eyes: DefGlass
 #----------------------------------------------------Медик--------------------------
 - type: startingGear
   id: GearDefMirtMed
@@ -266,6 +284,7 @@
     id: MirtIDCardSolder
     belt: MirtBelt
     gloves: MirtGlovesFingerless
+    eyes: DefGlass
 #----------------------------------------------------Снабженец--------------------------
 - type: startingGear
   id: GearDefMirtLog
@@ -278,6 +297,7 @@
     id: MirtIDCardSolder
     belt: MirtBelt
     gloves: MirtGlovesFingerless
+    eyes: DefGlass
     pocket1: DefChip
 #--------------------------------------------------------------------Конгломератские-----------------------------------------
 #----------------------------------------------------Командор--------------------------
@@ -293,6 +313,7 @@
     ears: CDCHeadset
     belt: CDCBeltOffiFilled
     gloves: CDCGloves
+    eyes: DefGlass
     neck: CDCCloakOf
     pocket2: CDCRubberStamp
 #----------------------------------------------------Офицер--------------------------
@@ -308,6 +329,7 @@
     ears: CDCHeadset
     belt: CDCBeltOffiFilled
     gloves: CDCGloves
+    eyes: DefGlass
 #----------------------------------------------------Доп.Офицер--------------------------
 - type: startingGear
   id: GearDefCDCOfiD
@@ -321,6 +343,7 @@
     ears: CDCHeadset
     belt: CDCBeltOffiFilled
     gloves: CDCGloves
+    eyes: DefGlass
 #----------------------------------------------------Специалист--------------------------
 - type: startingGear
   id: GearDefCDCSPC
@@ -333,6 +356,7 @@
     id: CDCIDCardSolder
     belt: CDCBeltSold
     gloves: CDCGloves
+    eyes: DefGlass
     pocket1: CDCPaperSold
   storage:
     back:
@@ -349,6 +373,7 @@
     id: CDCIDCardSolder
     belt: CDCBeltSold
     gloves: CDCGlovesTech
+    eyes: DefGlass
     pocket1: CDCPaperSold
   storage:
     back:
@@ -364,6 +389,7 @@
     id: CDCIDCardSolder
     belt: CDCBeltSold
     gloves: CDCGloves
+    eyes: DefGlass
   storage:
     back:
     - ToolboxCDCSol
@@ -381,6 +407,7 @@
     ears: CDCHeadset
     belt: CDCBeltTech
     gloves: CDCGlovesTech
+    eyes: DefGlass
   storage:
     belt:
     - Crowbar
@@ -401,6 +428,7 @@
     ears: CDCHeadset
     belt: CDCBeltTech
     gloves: CDCGloves
+    eyes: DefGlass
   storage:
     belt:
     - Ointment
@@ -422,6 +450,7 @@
     ears: CDCHeadset
     belt: CDCBeltTech
     gloves: CDCGlovesTech
+    eyes: DefGlass
     pocket1: DefChip
 #--------------------------------------------------------------------Советские-----------------------------------------
 #----------------------------------------------------Командор--------------------------
