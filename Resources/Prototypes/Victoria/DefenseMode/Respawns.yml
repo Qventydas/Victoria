@@ -313,7 +313,7 @@
 
 - type: entity
   name: Миртанский инквизитор Спавнер
-  id: DefSpawnerMirtDSol
+  id: DefSpawnerMirtSolD
   suffix: Миртан, GHOST, Оборона
   parent: DefSpawnerMirtSol
   components:
@@ -847,14 +847,6 @@
   id: StoreRespawnsMap1Mirt
   name: "Сборщик пополнения"
   priority: 1
-
-- type: storePreset
-  id: PresetStoreRespawnsMap1Mirt
-  storeName: Пополнение
-  categories:
-  - StoreRespawnsMap1Mirt
-  currencyWhitelist:
-  - DefChipy
   
 - type: entity
   id: PresetStoreRespawnsMap1Mirt
@@ -1084,14 +1076,6 @@
   id: StoreRespawnsMap1CDC
   name: "Сборщик пополнения"
   priority: 1
-
-- type: storePreset
-  id: PresetStoreRespawnsMap1CDC
-  storeName: Пополнение
-  categories:
-  - StoreRespawnsMap1CDC
-  currencyWhitelist:
-  - DefChipy
   
 - type: entity
   id: PresetStoreRespawnsMap1CDC
