@@ -991,7 +991,6 @@
   description: Карманная машина, которая способна в автоматическом модифицировать винтовочные патроны, делая их более мощными. Но делает это весьма не быстро.
   components:
   - type: Appearance
-  - type: MaterialStorage
   - type: ActivatableUI
     key: enum.LatheUiKey.Key
   - type: ActivatableUIRequiresPower
@@ -1016,6 +1015,7 @@
       - CDCSniperCartridgePlasmaRif
       - CDCSniperCartridgePlasmaHotRif
       - CDCSniperCartridgePlasmaLigRif
+  - type: MaterialStorage
     whitelist:
       tags:
         - UmporCartridgeHeavyRifle
