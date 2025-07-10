@@ -66,8 +66,6 @@ entities:
         - 0
         - 0
         - 0
-    - type: Parallax
-      parallax: Water
   - uid: 2
     components:
     - type: MetaData
@@ -97,8 +95,6 @@ entities:
         - 0
         - 0
         - 0
-    - type: Parallax
-      parallax: Water
     - type: MapGrid
       chunks:
         0,0:
@@ -10692,10 +10688,10 @@ entities:
       parent: 2
 - proto: SpawnPointDefOfficer
   entities:
-  - uid: 4355
+  - uid: 4423
     components:
     - type: Transform
-      pos: 8.5,0.5
+      pos: 7.5,-5.5
       parent: 2
 - proto: SpawnPointDefSolder
   entities:
@@ -22565,6 +22561,81 @@ entities:
     components:
     - type: Transform
       pos: 89.88838,4.570902
+      parent: 2
+- proto: XenoEggAlfaMap1B2
+  entities:
+  - uid: 4426
+    components:
+    - type: Transform
+      pos: 81.5732,-9.551953
+      parent: 2
+- proto: XenoEggAlfaMap1Be1
+  entities:
+  - uid: 4355
+    components:
+    - type: Transform
+      pos: 87.5171,1.5593959
+      parent: 2
+  - uid: 4428
+    components:
+    - type: Transform
+      pos: 80.536476,13.440677
+      parent: 2
+- proto: XenoEggAlfaMap1Cor1
+  entities:
+  - uid: 4433
+    components:
+    - type: Transform
+      pos: 93.54032,0.4921292
+      parent: 2
+- proto: XenoEggAlfaMap1D1
+  entities:
+  - uid: 4424
+    components:
+    - type: Transform
+      pos: 87.53272,-0.5499791
+      parent: 2
+- proto: XenoEggAlfaMap1Pl1
+  entities:
+  - uid: 4427
+    components:
+    - type: Transform
+      pos: 88.569786,0.46576464
+      parent: 2
+- proto: XenoEggAlfaMap1Pr1
+  entities:
+  - uid: 4432
+    components:
+    - type: Transform
+      pos: 90.569275,-5.6011453
+      parent: 2
+- proto: XenoEggAlfaMap1Ru1
+  entities:
+  - uid: 4429
+    components:
+    - type: Transform
+      pos: 81.473976,11.471927
+      parent: 2
+- proto: XenoEggAlfaMap1Rz1
+  entities:
+  - uid: 4430
+    components:
+    - type: Transform
+      pos: 91.538025,6.4451513
+      parent: 2
+- proto: XenoEggBetaMap1Be2
+  entities:
+  - uid: 4431
+    components:
+    - type: Transform
+      pos: 88.5849,-5.6636453
+      parent: 2
+- proto: XenoEggBetaMap1D2
+  entities:
+  - uid: 4425
+    components:
+    - type: Transform
+      pos: 80.52647,-11.526002
       parent: 2
 - proto: XenoWeeds
   entities:

@@ -702,3 +702,324 @@
 #-------------------------------Рецепты-------------------------
 
 #-------------------------------Сам Фабрикатор------------------
+
+#-------------------------------------------------------------------Снайперская приблуда----------------------
+#--------------------------------------------------Материалы патронов-----------------
+- type: material
+  id: UmporCartridgeHeavyRifle
+  stackEntity: UmporCartridgeHeavyRifle
+  name: умпорский винтовочный патрон
+  icon: { sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi, state: base }
+  price: 0.1  
+
+- type: material
+  id: MirtCartridgeHeavy
+  stackEntity: MirtCartridgeHeavy
+  name: миртанийский винтовочный патрон
+  icon: { sprite: Victoria/Mirt/Weapon/mirt_projectiles.rsi, state: tip }
+  price: 0.2  
+  
+- type: material
+  id: CDCCartridgePlasmaRif
+  stackEntity: CDCCartridgePlasmaRif
+  name: конгломератский плазменный винтовочный патрон
+  icon: { sprite: Victoria/CDC/Weapon/cdc_projectiles.rsi, state: base }
+  price: 0.2  
+  
+- type: material
+  id: CDCCartridgePlasmaHotRif
+  stackEntity: CDCCartridgePlasmaHotRif
+  name: конгломератский горячеплазменный винтовочный патрон
+  icon: { sprite: Victoria/CDC/Weapon/cdc_projectiles.rsi, state: base_hot }
+  price: 0.3  
+  
+- type: material
+  id: CDCCartridgePlasmaLigRif
+  stackEntity: CDCCartridgePlasmaLigRif
+  name: конгломератский слабоплазменный винтовочный патрон
+  icon: { sprite: Victoria/CDC/Weapon/cdc_projectiles.rsi, state: base_light }
+  price: 0.1  
+#-------------------------------------------------------------------Снайперская приблуда----------------------
+#--------------------------------------------------Материалы патронов-----------------
+- type: material
+  id: UmporSniperCartridgeHeavyRifle
+  stackEntity: UmporSniperCartridgeHeavyRifle
+  name: умпорский винтовочный патрон
+  icon: { sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi, state: base }
+  price: 0.1  
+
+- type: material
+  id: MirtSniperCartridgeHeavy
+  stackEntity: MirtSniperCartridgeHeavy
+  name: миртанийский винтовочный патрон
+  icon: { sprite: Victoria/Mirt/Weapon/mirt_projectiles.rsi, state: tip }
+  price: 0.2  
+  
+- type: material
+  id: CDCSniperCartridgePlasmaRif
+  stackEntity: CDCSniperCartridgePlasmaRif
+  name: конгломератский плазменный винтовочный патрон
+  icon: { sprite: Victoria/CDC/Weapon/cdc_projectiles.rsi, state: base }
+  price: 0.2  
+  
+- type: material
+  id: CDCSniperCartridgePlasmaHotRif
+  stackEntity: CDCSniperCartridgePlasmaHotRif
+  name: конгломератский горячеплазменный винтовочный патрон
+  icon: { sprite: Victoria/CDC/Weapon/cdc_projectiles.rsi, state: base_hot }
+  price: 0.3  
+  
+- type: material
+  id: CDCSniperCartridgePlasmaLigRif
+  stackEntity: CDCSniperCartridgePlasmaLigRif
+  name: конгломератский слабоплазменный винтовочный патрон
+  icon: { sprite: Victoria/CDC/Weapon/cdc_projectiles.rsi, state: base_light }
+  price: 0.1  
+#--------------------------------------------------Снайперские патроны-----------------
+#--------------------------------------пули--------------------------
+- type: entity
+  id: UmporSniperBulletHeavyRifle
+  name: снайперская тяжёлая винтовочная пуля (.30 rifle)
+  suffix: Умпорский, Снайпер
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 70
+        
+- type: entity
+  id: MirtSniperBulletHeavy
+  name: снайперский тяжёлый заряд (hhc)
+  suffix: Миртан, Снайпер
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 80
+  - type: Sprite
+    sprite: Victoria/Mirt/Weapon/mirt_projectiles.rsi
+    layers:
+      - state: tip
+  - type: StaminaDamageOnCollide
+    damage: 7 
+
+- type: entity
+  id: CDCSniperBulletPlasmaRif
+  name: снайперский тяжёлый плазменый заряд (spr)
+  suffix: Конгломерат, Снайпер
+  parent: CDCBulletPlasmaStd
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 10
+        Heat: 70
+        Shock: 15
+
+- type: entity
+  id: CDCSniperBulletPlasmaHotRif
+  name: снайперский тяжёлый сверхплазменый заряд (hpr)
+  suffix: Конгломерат, Снайпер
+  parent: CDCBulletPlasmaHotStd
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 10
+        Heat: 100
+        Shock: 15
+
+- type: entity
+  id: CDCSniperBulletPlasmaLigRif
+  name: снайперский тяжёлый слабоплазменый заряд (lpr)
+  suffix: Конгломерат, Снайпер
+  parent: CDCBulletPlasmaLigStd
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 5
+        Heat: 40
+        Shock: 10    
+#--------------------------------------картриджи------------------------
+- type: Tag
+  id: UmporSniperCartridgeHeavyRifle
+
+- type: entity
+  id: UmporSniperCartridgeHeavyRifle
+  name: снайперская тяжёлая винтовочная пуля (.30 rifle)
+  suffix: Умпорский
+  parent: BaseCartridgeRifle
+  components:
+  - type: CartridgeAmmo
+    proto: UmporSniperBulletHeavyRifle
+  - type: Tag
+    tags:
+      - UmporSniperCartridgeHeavyRifle
+
+- type: Tag
+  id: MirtSniperCartridgeHeavy
+
+- type: entity
+  id: MirtSniperCartridgeHeavy
+  name: снайперский тяжёлый заряд (hhc)
+  suffix: Миртан
+  parent: BaseCartridgeRifle
+  components:
+  - type: CartridgeAmmo
+    proto: MirtSniperBulletHeavy
+    deleteOnSpawn: true
+  - type: Tag
+    tags:
+      - MirtSniperCartridgeHeavy
+
+- type: Tag
+  id: CDCSniperCartridgePlasmaRif
+
+- type: entity
+  id: CDCSniperCartridgePlasmaRif
+  name: снайперский тяжёлый плазменый заряд (spr)
+  suffix: Конгломерат
+  parent: BaseCartridgeRifle
+  components:
+  - type: CartridgeAmmo
+    proto: CDCSniperBulletPlasmaRif
+    deleteOnSpawn: true
+  - type: Tag
+    tags:
+      - CDCSniperCartridgePlasmaRif
+  - type: Sprite
+    sprite: Victoria/CDC/Weapon/cdc_projectiles.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+
+- type: Tag
+  id: CDCSniperCartridgePlasmaHotRif
+
+- type: entity
+  id: CDCSniperCartridgePlasmaHotRif
+  name: снайперский тяжёлый сверхплазменый заряд (hpr)
+  suffix: Конгломерат
+  parent: BaseCartridgeRifle
+  components:
+  - type: CartridgeAmmo
+    proto: CDCSniperBulletPlasmaHotRif
+    deleteOnSpawn: true
+  - type: Tag
+    tags:
+      - CDCSniperCartridgePlasmaHotRif
+  - type: Sprite
+    sprite: Victoria/CDC/Weapon/cdc_projectiles.rsi
+    layers:
+    - state: base_hot
+      map: ["enum.AmmoVisualLayers.Base"]
+
+- type: Tag
+  id: CDCSniperCartridgePlasmaLigRif
+
+- type: entity
+  id: CDCSniperCartridgePlasmaLigRif
+  name: снайперский тяжёлый слабоплазменый заряд (lpr)
+  suffix: Конгломерат
+  parent: BaseCartridgeRifle
+  components:
+  - type: CartridgeAmmo
+    proto: CDCSniperBulletPlasmaLigRif
+    deleteOnSpawn: true
+  - type: Tag
+    tags:
+      - CDCSniperCartridgePlasmaLigRif
+  - type: Sprite
+    sprite: Victoria/CDC/Weapon/cdc_projectiles.rsi
+    layers:
+    - state: base_light
+      map: ["enum.AmmoVisualLayers.Base"]
+#--------------------------------------------------Рецепты патронов-----------------
+- type: latheRecipe
+  id: UmporSniperCartridgeHeavyRifle
+  result: UmporSniperCartridgeHeavyRifle
+  category: Ammo
+  completetime: 40
+  materials:
+    UmporCartridgeHeavyRifle: 1 
+    
+- type: latheRecipe
+  id: MirtSniperCartridgeHeavy
+  result: MirtSniperCartridgeHeavy
+  category: Ammo
+  completetime: 40
+  materials:
+    MirtCartridgeHeavy: 1 
+    
+- type: latheRecipe
+  id: CDCSniperCartridgePlasmaRif
+  result: CDCSniperCartridgePlasmaRif
+  category: Ammo
+  completetime: 50
+  materials:
+    CDCCartridgePlasmaRif: 1 
+    
+- type: latheRecipe
+  id: CDCSniperCartridgePlasmaHotRif
+  result: CDCSniperCartridgePlasmaHotRif
+  category: Ammo
+  completetime: 60
+  materials:
+    CDCCartridgePlasmaHotRif: 1 
+    
+- type: latheRecipe
+  id: CDCSniperCartridgePlasmaLigRif
+  result: CDCSniperCartridgePlasmaLigRif
+  category: Ammo
+  completetime: 40
+  materials:
+    CDCCartridgePlasmaLigRif: 1 
+#--------------------------------------------------Преобразователь патронов-----------------
+- type: entity
+  id: DefСartridgeСonverter
+  parent: BaseItem
+  name: Преобразоователь патронов
+  suffix: Снайпер, Оборона
+  description: Карманная машина, которая способна в автоматическом модифицировать винтовочные патроны, делая их более мощными. Но делает это весьма не быстро.
+  components:
+  - type: Appearance
+  - type: ActivatableUI
+    key: enum.LatheUiKey.Key
+  - type: ActivatableUIRequiresPower
+  - type: UserInterface
+    interfaces:
+      enum.LatheUiKey.Key:
+        type: LatheBoundUserInterface
+      enum.ResearchClientUiKey.Key:
+        type: ResearchClientBoundUserInterface
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Victoria/DefenseMode/cartridge_converter.rsi
+    layers:
+    - state: icon
+  - type: Lathe
+    idleState: icon
+    runningState: icon
+    staticRecipes:
+      - UmporSniperCartridgeHeavyRifle
+      - MirtSniperCartridgeHeavy
+      - CDCSniperCartridgePlasmaRif
+      - CDCSniperCartridgePlasmaHotRif
+      - CDCSniperCartridgePlasmaLigRif
+  - type: MaterialStorage
+    whitelist:
+      tags:
+        - UmporCartridgeHeavyRifle
+        - MirtCartridgeHeavy
+        - CDCCartridgePlasmaRif
+        - CDCCartridgePlasmaHotRif
+        - CDCCartridgePlasmaLigRif

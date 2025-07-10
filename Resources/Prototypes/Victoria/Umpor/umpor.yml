@@ -726,6 +726,10 @@
   - type: Tag
     tags:
       - UmporCartridgeHeavyRifle
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      UmporCartridgeHeavyRifle: 1
 #------------------------------------автомат---------- 
 - type: Tag
   id: UmporCartridgeLightRifle
@@ -772,6 +776,7 @@
     whitelist:
       tags:
         - UmporCartridgeHeavyRifle
+        - UmporSniperCartridgeHeavyRifle
     proto: UmporCartridgeHeavyRifle
     capacity: 12
   - type: Item
@@ -955,6 +960,7 @@
         whitelist:
           tags:
             - UmporCartridgeHeavyRifle
+            - UmporSniperCartridgeHeavyRifle
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot

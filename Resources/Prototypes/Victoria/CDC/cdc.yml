@@ -1064,6 +1064,10 @@
     layers:
     - state: base
       map: ["enum.AmmoVisualLayers.Base"]
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      CDCCartridgePlasmaRif: 1
 #--------------------------горячая плазма---------------
 - type: Tag
   id: CDCCartridgePlasmaHotRif
@@ -1085,6 +1089,10 @@
     layers:
     - state: base_hot
       map: ["enum.AmmoVisualLayers.Base"]
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      CDCCartridgePlasmaHotRif: 1
 #--------------------------слабая плазма---------------
 - type: Tag
   id: CDCCartridgePlasmaLigRif
@@ -1106,6 +1114,10 @@
     layers:
     - state: base_light
       map: ["enum.AmmoVisualLayers.Base"]
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      CDCCartridgePlasmaLigRif: 1
 #------------------------------расфокусировщик---------- 
 #--------------------------плазма---------------
 - type: Tag
@@ -1295,6 +1307,9 @@
         - CDCCartridgePlasmaRif
         - CDCCartridgePlasmaHotRif
         - CDCCartridgePlasmaLigRif
+        - CDCSniperCartridgePlasmaRif
+        - CDCSniperCartridgePlasmaHotRif
+        - CDCSniperCartridgePlasmaLigRif
     proto: CDCCartridgePlasmaRif
     capacity: 7
   - type: Sprite
@@ -1554,6 +1569,9 @@
             - CDCCartridgePlasmaRif
             - CDCCartridgePlasmaHotRif
             - CDCCartridgePlasmaLigRif
+            - CDCSniperCartridgePlasmaRif
+            - CDCSniperCartridgePlasmaHotRif
+            - CDCSniperCartridgePlasmaLigRif
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot

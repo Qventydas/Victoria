@@ -1255,6 +1255,10 @@
   - type: Tag
     tags:
       - MirtCartridgeHeavy
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      MirtCartridgeHeavy: 1
 #------------------------------------пп-пулемёт---------- 
 - type: Tag
   id: MirtCartridgeLight
@@ -1332,6 +1336,7 @@
     whitelist:
       tags:
         - MirtCartridgeHeavy
+        - MirtSniperCartridgeHeavy
     proto: MirtCartridgeHeavy
     capacity: 13
   - type: Sprite
@@ -1836,6 +1841,7 @@
         whitelist:
           tags:
             - MirtCartridgeHeavy
+            - MirtSniperCartridgeHeavy
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
