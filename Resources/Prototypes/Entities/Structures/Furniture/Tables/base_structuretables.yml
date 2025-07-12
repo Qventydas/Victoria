@@ -36,6 +36,10 @@
   - type: FootstepModifier
     footstepSoundCollection:
       collection: FootstepHull
+  - type: MobState
+  - type: NpcFactionMember
+    factions:
+    - DefenseStructure
 
 - type: entity
   id: CounterBase
@@ -54,3 +58,7 @@
         - TableMask
         layer:
         - TableLayer
+  - type: MobState
+  - type: NpcFactionMember
+    factions:
+    - DefenseStructure
