@@ -156,6 +156,10 @@
   - type: StaticPrice
     price: 150
   - type: PryUnpowered
+  - type: MobState
+  - type: NpcFactionMember
+    factions:
+    - DefenseStructure
 
 - type: entity
   id: BaseSecureWindoor

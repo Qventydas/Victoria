@@ -232,19 +232,19 @@
   parent: WallRockDef5Min
   id: WallRockDef15Min
   name: камень
-  suffix: Неразрушаемый, 15 минут
+  suffix: Неразрушаемый, 10 минут
   components:
   - type: TimedDespawn
-    lifetime: 900
+    lifetime: 600
     
 - type: entity
   parent: WallRockDef5Min
   id: WallRockDef40Min
   name: камень
-  suffix: Неразрушаемый, 40 минут
+  suffix: Неразрушаемый, 20 минут
   components:
   - type: TimedDespawn
-    lifetime: 2400
+    lifetime: 1200
 #------------------------------------------------------------Тайлы------------------------------------------------------------------  
 - type: tile
   id: DefPlating

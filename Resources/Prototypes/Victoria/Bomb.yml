@@ -799,6 +799,10 @@
   - type: SpeedModifierContacts
     walkSpeedModifier: 0.15
     sprintSpeedModifier: 0.15
+  - type: MobState
+  - type: NpcFactionMember
+    factions:
+    - DefenseStructure
 #-------------------------------сборка------------------------------------
 - type: constructionGraph
   id: Wirefence

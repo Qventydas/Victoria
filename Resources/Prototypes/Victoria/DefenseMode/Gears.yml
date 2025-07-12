@@ -1,0 +1,495 @@
+#--------------------------------------------------------------------Умпорские-----------------------------------------
+#----------------------------------------------------Командор--------------------------
+- type: startingGear
+  id: GearDefUmporCom
+  equipment:
+    jumpsuit: UmporUniformOficier
+    back: UmporBackpackFilledPistol
+    shoes: UmporBoots
+    head: UmporCap
+    outerClothing: UmporArmorBasic
+    id: UmporPDAOfficer
+    ears: UmporHeadset
+    belt: UmporeBeltAssault
+    neck: UmporCloakOf
+    eyes: DefGlass
+    pocket2: UmporRubberStamp
+#----------------------------------------------------Офицер--------------------------
+- type: startingGear
+  id: GearDefUmporOfi
+  equipment:
+    jumpsuit: UmporUniformOficier
+    back: UmporBackpackFilledPistol
+    shoes: UmporBoots
+    head: UmporCap
+    outerClothing: UmporArmorBasic
+    id: UmporPDAOfficer
+    ears: UmporHeadset
+    eyes: DefGlass
+    belt: UmporeBeltAssault
+#----------------------------------------------------Доп.Офицер--------------------------
+- type: startingGear
+  id: GearDefUmporOfiD
+  equipment:
+    jumpsuit: UmporUniformOficier
+    back: UmporBackpackFilledPistol
+    shoes: UmporBoots
+    head: UmporHelmet
+    outerClothing: UmporArmorMiddle
+    id: UmporPDAOfficer
+    ears: UmporHeadset
+    belt: UmporeBeltAssaultFilled
+    eyes: DefGlass
+#----------------------------------------------------Специалист--------------------------
+- type: startingGear
+  id: GearDefUmporSPC
+  equipment:
+    jumpsuit: UmporUniformSoldier
+    back: UmporBackpackFilled
+    shoes: UmporBoots
+    head: UmporHelmet
+    id: UmporPDASolder
+    ears: UmporHeadset
+    belt: UmporeBeltAssault
+    gloves: UmporGlovesFingerless
+    eyes: DefGlass
+  storage:
+    back:
+    - ToolboxUmporSPC
+#----------------------------------------------------Доп.Специалист--------------------------
+- type: startingGear
+  id: GearDefUmporSPCD
+  equipment:
+    jumpsuit: UmporUniformSoldier
+    back: UmporBackpackFilled
+    shoes: UmporBoots
+    head: UmporHelmet
+    id: UmporPDASolder
+    ears: UmporHeadset
+    belt: UmporeBeltAssaultFilled
+    gloves: UmporGlovesFingerless
+    eyes: DefGlass
+  storage:
+    back:
+    - ToolboxUmporDSPC
+#----------------------------------------------------Солдат--------------------------
+- type: startingGear
+  id: GearDefUmporSol
+  equipment:
+    jumpsuit: UmporUniformSoldier
+    back: UmporBackpackFilled
+    shoes: UmporBoots
+    head: UmporHelmet
+    id: UmporPDASolder
+    ears: UmporHeadset
+    belt: UmporeBeltAssault
+    gloves: UmporGlovesFingerless
+    eyes: DefGlass
+  storage:
+    back:
+    - ToolboxUmporSol
+#----------------------------------------------------Доп.Солдат--------------------------
+- type: startingGear
+  id: GearDefUmporSolD
+  equipment:
+    jumpsuit: UmporUniformSoldier
+    back: UmporBackpackFilled
+    shoes: UmporBoots
+    head: UmporHelmet
+    id: UmporPDASolder
+    ears: UmporHeadset
+    belt: UmporeBeltAssaultFilled
+    gloves: UmporGlovesFingerless
+    eyes: DefGlass
+  storage:
+    back:
+    - ToolboxUmporSol
+#----------------------------------------------------Инженер--------------------------
+- type: startingGear
+  id: GearDefUmporEng
+  equipment:
+    jumpsuit: UmporUniformEngineer
+    back: UmporBackpackFilled
+    shoes: UmporBoots
+    head: UmporBeret
+    outerClothing: UmporArmorMiddle
+    id: UmporPDAEngener
+    ears: UmporHeadset
+    belt: UmporBeltEngFilled
+    gloves: UmporInsulativeGloves
+    eyes: DefGlass
+#----------------------------------------------------Медик--------------------------
+- type: startingGear
+  id: GearDefUmporMed
+  equipment:
+    jumpsuit: UmporUniformMedic
+    back: UmporBackpackFilled
+    shoes: UmporBoots
+    head: UmporBeret
+    id: UmporPDAMedic
+    ears: UmporHeadset
+    belt: UmporeBeltMedFilled
+    gloves: UmporGlovesFingerless
+    eyes: DefGlass
+#----------------------------------------------------Снабженец--------------------------
+- type: startingGear
+  id: GearDefUmporLog
+  equipment:
+    jumpsuit: UmporUniformLogist
+    back: UmporBackpackFilled
+    shoes: UmporBoots
+    head: UmporCapP
+    id: UmporPDALogist
+    ears: UmporHeadset
+    belt: UmporBeltEng
+    gloves: UmporGlovesFingerless
+    eyes: DefGlass
+    pocket1: DefChip
+#--------------------------------------------------------------------Миртанийские-----------------------------------------
+#----------------------------------------------------Командор--------------------------
+- type: startingGear
+  id: GearDefMirtCom
+  equipment:
+    jumpsuit: MirtUniformOffi
+    back: MirtBackpackSFilled
+    shoes: MirtBootsSteel
+    head: MirtHelmetArm
+    id: MirtIDCardSolder
+    belt: MirtBelt
+    gloves: MirtGlovesFingerless
+    neck: MirtCloakOfCom
+    eyes: DefGlass
+    pocket2: MirtRubberStampArm
+  storage:
+    back:
+    - ToolboxMirtCom
+#----------------------------------------------------Офицер--------------------------
+- type: startingGear
+  id: GearDefMirtOfi
+  equipment:
+    jumpsuit: MirtUniformOffi
+    back: MirtBackpackSFilled
+    shoes: MirtBootsSteel
+    head: MirtHelmetArm
+    id: MirtIDCardSolder
+    belt: MirtBelt
+    gloves: MirtGlovesStrong
+    eyes: DefGlass
+    neck: MirtCloakOf
+  storage:
+    back:
+    - ToolboxMirtOfi
+#----------------------------------------------------Доп.Офицер--------------------------
+- type: startingGear
+  id: GearDefMirtOfiD
+  equipment:
+    jumpsuit: MirtUniformOffi
+    back: MirtBackpackSFilled
+    shoes: MirtBoots
+    head: MirtHelmetInk
+    id: MirtIDCardSolder
+    belt: MirtBelt
+    gloves: MirtGlovesStrong
+    eyes: DefGlass
+    neck: MirtCloakOfInk
+    pocket2: MirtRubberStampInk
+  storage:
+    back:
+    - ToolboxMirtDOfi
+#----------------------------------------------------Специалист--------------------------
+- type: startingGear
+  id: GearDefMirtSPC
+  equipment:
+    jumpsuit: MirtUniformTg
+    back: MirtBackpackLFilled
+    shoes: MirtBootsSteel
+    head: MirtHelmetArm
+    id: MirtIDCardSolder
+    belt: MirtBelt
+    gloves: MirtGlovesFingerless
+    eyes: DefGlass
+    neck: MirtCloakSP
+    pocket2: MirtProviderFlare
+  storage:
+    back:
+    - ToolboxMirtSPC
+#----------------------------------------------------Доп.Специалист--------------------------
+- type: startingGear
+  id: GearDefMirtSPCD
+  equipment:
+    jumpsuit: MirtUniformTg
+    back: MirtBackpackLFilled
+    shoes: MirtBootsSteel
+    head: MirtHelmetInk
+    id: MirtIDCardSolder
+    belt: MirtBelt
+    gloves: MirtGlovesFingerless
+    eyes: DefGlass
+    neck: MirtCloakSPInk
+    pocket2: MirtProviderFlare
+  storage:
+    back:
+    - ToolboxMirtDSPC
+#----------------------------------------------------Солдат--------------------------
+- type: startingGear
+  id: GearDefMirtSol
+  equipment:
+    jumpsuit: MirtUniformSold
+    back: MirtBackpackMFilled
+    shoes: MirtBootsSteel
+    head: MirtHelmetArm
+    id: MirtIDCardSolder
+    belt: MirtBelt
+    gloves: MirtGlovesFingerless
+    eyes: DefGlass
+  storage:
+    back:
+    - ToolboxMirtSol
+#----------------------------------------------------Доп.Солдат--------------------------
+- type: startingGear
+  id: GearDefMirtSolD
+  equipment:
+    jumpsuit: MirtUniformSold
+    back: MirtBackpackMFilled
+    shoes: MirtBoots
+    head: MirtHelmetInk
+    id: MirtIDCardSolder
+    belt: MirtBelt
+    gloves: MirtGlovesFingerless
+    eyes: DefGlass
+    neck: MirtEpolets
+  storage:
+    back:
+    - ToolboxMirtDSol
+#----------------------------------------------------Инженер--------------------------
+- type: startingGear
+  id: GearDefMirtEng
+  equipment:
+    jumpsuit: MirtUniformRear
+    back: MirtBackpackMFilled
+    shoes: MirtBoots
+    head: MirtHelmetGr
+    outerClothing: MirtArmorGr
+    id: MirtIDCardSolder
+    belt: MirtBelt
+    gloves: MirtGlovesFingerless
+    eyes: DefGlass
+#----------------------------------------------------Медик--------------------------
+- type: startingGear
+  id: GearDefMirtMed
+  equipment:
+    jumpsuit: MirtUniformMed
+    back: MirtBackpackMFilled
+    shoes: MirtBoots
+    id: MirtIDCardSolder
+    belt: MirtBelt
+    gloves: MirtGlovesFingerless
+    eyes: DefGlass
+#----------------------------------------------------Снабженец--------------------------
+- type: startingGear
+  id: GearDefMirtLog
+  equipment:
+    jumpsuit: MirtUniformRear
+    back: MirtBackpackLFilled
+    shoes: MirtBoots
+    head: MirtHelmetGr
+    outerClothing: MirtArmorGr
+    id: MirtIDCardSolder
+    belt: MirtBelt
+    gloves: MirtGlovesFingerless
+    eyes: DefGlass
+    pocket1: DefChip
+#--------------------------------------------------------------------Конгломератские-----------------------------------------
+#----------------------------------------------------Командор--------------------------
+- type: startingGear
+  id: GearDefCDCCom
+  equipment:
+    jumpsuit: CDCUniformComander
+    back: CDCSatchelsFilledPist
+    shoes: CDCBoots
+    head: CDCCap
+    outerClothing: CDCArmorLight
+    id: CDCPDAOfficer
+    ears: CDCHeadset
+    belt: CDCBeltOffiFilled
+    gloves: CDCGloves
+    eyes: DefGlass
+    neck: CDCCloakOf
+    pocket2: CDCRubberStamp
+#----------------------------------------------------Офицер--------------------------
+- type: startingGear
+  id: GearDefCDCOfi
+  equipment:
+    jumpsuit: CDCUniformOffi
+    back: CDCSatchelsFilledPist
+    shoes: CDCBoots
+    head: CDCHelmetOffi
+    outerClothing: CDCArmorMiddle
+    id: CDCPDAOfficer
+    ears: CDCHeadset
+    belt: CDCBeltOffiFilled
+    gloves: CDCGloves
+    eyes: DefGlass
+#----------------------------------------------------Доп.Офицер--------------------------
+- type: startingGear
+  id: GearDefCDCOfiD
+  equipment:
+    jumpsuit: CDCUniformOffi
+    back: CDCSatchelsFilledPist
+    shoes: CDCBoots
+    head: CDCCap
+    outerClothing: CDCHardsuitArm
+    id: CDCPDAOfficer
+    ears: CDCHeadset
+    belt: CDCBeltOffiFilled
+    gloves: CDCGloves
+    eyes: DefGlass
+#----------------------------------------------------Специалист--------------------------
+- type: startingGear
+  id: GearDefCDCSPC
+  equipment:
+    jumpsuit: CDCUniformSPC
+    back: CDCBackpackFilled
+    shoes: CDCBoots
+    head: CDCHelmetSld
+    outerClothing: CDCArmorMiddle
+    id: CDCIDCardSolder
+    belt: CDCBeltSold
+    gloves: CDCGloves
+    eyes: DefGlass
+    pocket1: CDCPaperSold
+  storage:
+    back:
+    - ToolboxCDCSPC
+#----------------------------------------------------Доп.Специалист--------------------------
+- type: startingGear
+  id: GearDefCDCSPCD
+  equipment:
+    jumpsuit: CDCUniformSPC
+    back: CDCBackpackFilled
+    shoes: CDCBoots
+    head: CDCHelmetSld
+    outerClothing: CDCHardsuitArm
+    id: CDCIDCardSolder
+    belt: CDCBeltSold
+    gloves: CDCGlovesTech
+    eyes: DefGlass
+    pocket1: CDCPaperSold
+  storage:
+    back:
+    - ToolboxCDCDSPC
+#----------------------------------------------------Солдат--------------------------
+- type: startingGear
+  id: GearDefCDCSol
+  equipment:
+    jumpsuit: CDCUniformSold
+    back: CDCBackpackFilled
+    shoes: CDCBoots
+    head: CDCHelmetSld
+    id: CDCIDCardSolder
+    belt: CDCBeltSold
+    gloves: CDCGloves
+    eyes: DefGlass
+  storage:
+    back:
+    - ToolboxCDCSol
+#----------------------------------------------------Доп.Солдат--------------------------
+
+#----------------------------------------------------Инженер--------------------------
+- type: startingGear
+  id: GearDefCDCEng
+  equipment:
+    jumpsuit: CDCUniformEng
+    back: CDCBackpackFilled
+    shoes: CDCBoots
+    head: CDCCepka
+    id: CDCIDCardEngener
+    ears: CDCHeadset
+    belt: CDCBeltTech
+    gloves: CDCGlovesTech
+    eyes: DefGlass
+  storage:
+    belt:
+    - Crowbar
+    - Wrench
+    - Screwdriver
+    - Wirecutter
+    - Welder 
+#----------------------------------------------------Медик--------------------------
+- type: startingGear
+  id: GearDefCDCMed
+  equipment:
+    jumpsuit: CDCUniformMedic
+    back: CDCSatchelsFilled
+    shoes: CDCBoots
+    head: CDCFez
+    outerClothing: CDCArmorLight
+    id: CDCIDCardEngener
+    ears: CDCHeadset
+    belt: CDCBeltTech
+    gloves: CDCGloves
+    eyes: DefGlass
+  storage:
+    belt:
+    - Ointment
+    - Ointment
+    - Bloodpack
+    - Bloodpack
+    - Gauze
+    - Gauze
+#----------------------------------------------------Снабженец--------------------------
+- type: startingGear
+  id: GearDefCDCLog
+  equipment:
+    jumpsuit: CDCUniformEng
+    back: CDCBackpackFilled
+    shoes: CDCBoots
+    head: CDCCepka
+    outerClothing: CDCHardsuitTech
+    id: CDCIDCardEngener
+    ears: CDCHeadset
+    belt: CDCBeltTech
+    gloves: CDCGlovesTech
+    eyes: DefGlass
+    pocket1: DefChip
+#--------------------------------------------------------------------Советские-----------------------------------------
+#----------------------------------------------------Командор--------------------------
+
+#----------------------------------------------------Офицер--------------------------
+
+#----------------------------------------------------Доп.Офицер--------------------------
+
+#----------------------------------------------------Специалист--------------------------
+
+#----------------------------------------------------Доп.Специалист--------------------------
+
+#----------------------------------------------------Солдат--------------------------
+
+#----------------------------------------------------Доп.Солдат--------------------------
+
+#----------------------------------------------------Инженер--------------------------
+
+#----------------------------------------------------Медик--------------------------
+
+#----------------------------------------------------Снабженец--------------------------
+
+#--------------------------------------------------------------------Корпоративные-----------------------------------------
+#----------------------------------------------------Командор--------------------------
+
+#----------------------------------------------------Офицер--------------------------
+
+#----------------------------------------------------Доп.Офицер--------------------------
+
+#----------------------------------------------------Специалист--------------------------
+
+#----------------------------------------------------Доп.Специалист--------------------------
+
+#----------------------------------------------------Солдат--------------------------
+
+#----------------------------------------------------Доп.Солдат--------------------------
+
+#----------------------------------------------------Инженер--------------------------
+
+#----------------------------------------------------Медик--------------------------
+
+#----------------------------------------------------Снабженец--------------------------
