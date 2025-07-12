@@ -4036,6 +4036,7 @@
     graph: SandbagBarricade
     node: SandBarricade
   - type: MobState
+  - type: MobThresholds
     thresholds:
       0: Alive
       1000: Critical
