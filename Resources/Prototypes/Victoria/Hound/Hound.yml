@@ -757,7 +757,7 @@
   name: Боевая кувалда
   parent: Sledgehammer
   id: HoundHammer
-  description: Крупная кувалда с титановой ручкой. Устоять на ногах после такой дуры будет нелегко.
+  description: Крупная кувалда с титановой ручкой. Устоять на ногах после удара такой дуры будет нелегко.
   components:
   - type: Sprite
     sprite: Victoria/Hound/Weapons/hammer.rsi
@@ -897,6 +897,34 @@
     - id: HoundCorpseCrate
     sound:
       path: /Audio/Effects/unwrap.ogg
+#Гаррота
+- type: entity
+  parent: [ BaseItem, BaseMajorContraband ]
+  id: HoundGarrote
+  name: стекловолоконная гаррота
+  suffix: Хаунд
+  description: Длинный синтетический шнур с ручками на конце. Выглядит жутко...
+  components:
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,2,1
+  - type: MultiHandedItem
+  - type: Icon
+    sprite: Victoria/Hound/Equipment/hnd_garrote.rsi
+    state: base
+  - type: Sprite
+    sprite: Victoria/Hound/Equipment/hnd_garrote.rsi
+    state: base
+  - type: Garotte
+    speedModifier: 1.3
+    duration: 4
+    damage:
+      types:
+        Blunt: 0.5
+        Asphyxiation: 12.5
+    setSound: /Audio/Items/bow_pull.ogg
+    chokeSound: /Audio/Effects/Gasp/gasp_male1.ogg
 #---------------------------------------Пущьки!-/
 #Патроны...сука
 #К тяж пистолету, абстрактный и остальные
@@ -2902,6 +2930,16 @@
     HNDChip_currency: 3
   categories:
   - HoundUplinkElectronic
+#Зажигалка-вспышка
+- type: listing
+  id: HoundFlashLighter
+  name: Зажигалка-вспышка.
+  description: Обычная зажигалка с вмонтированной внутрь вспышкой. Теперь жертва не улизнёт.
+  productEntity: HoundFlashLighter
+  cost:
+    HNDChip_currency: 2
+  categories:
+  - HoundUplinkElectronic
 #------категория специалистам----------
 #---вещички---
 #Печать
@@ -2924,14 +2962,14 @@
     HNDChip_currency: 3
   categories:
   - HoundUplinkSpec
-#Зажигалка-вспышка
+#гаррота
 - type: listing
-  id: HoundFlashLighter
-  name: Зажигалка-вспышка.
-  description: Обычная зажигалка с вмонтированной внутрь вспышкой. Теперь жертва не улизнёт.
-  productEntity: HoundFlashLighter
+  id: HoundGarrote
+  name: Стекловолоконная удавка
+  description: Первоклассная игрушка для тихого устранения целей. С удавкой на шее цель не сможет ни сбежать, ни завопить о помощи. Не забывайте о том, что не-гуманоидов, дион и слаймолюдов придушить не получится.
+  productEntity: HoundGarrote
   cost:
-    HNDChip_currency: 2
+    HNDChip_currency: 4
   categories:
   - HoundUplinkSpec
 #-----------------------------------------------------------------------Наборы
