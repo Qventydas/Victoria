@@ -1,29 +1,11 @@
 using Content.Server.Administration.Logs;
-using Content.Server.Antag;
-using Content.Server.EUI;
-using Content.Server.Flash;
 using Content.Server.GameTicking.Rules.Components;
-using Content.Server.Mind;
-using Content.Server.Popups;
-using Content.Server.Petr.Components;
-using Content.Server.Roles;
 using Content.Server.RoundEnd;
-using Content.Server.Shuttles.Systems;
-using Content.Server.Station.Systems;
+using Content.Server.Defense;
 using Content.Shared.Database;
 using Content.Shared.GameTicking.Components;
-using Content.Shared.Humanoid;
-using Content.Shared.IdentityManagement;
-using Content.Shared.Mind.Components;
-using Content.Shared.Mindshield.Components;
 using Content.Shared.Mobs;
-using Content.Shared.Mobs.Components;
-using Content.Shared.Mobs.Systems;
-using Content.Shared.NPC.Prototypes;
-using Content.Shared.NPC.Systems;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
-using Content.Shared.Cuffs.Components;
 using Content.Shared.Destructible;
 
 namespace Content.Server.GameTicking.Rules;
@@ -33,12 +15,8 @@ namespace Content.Server.GameTicking.Rules;
 /// </summary>
 public sealed class DefenseRuleSystem : GameRuleSystem<DefenseRuleComponent>
 {
-    [Dependency] private readonly AntagSelectionSystem _antag = default!;
     [Dependency] private readonly IAdminLogManager _adminLog = default!;
-    [Dependency] private readonly EmergencyShuttleSystem _emergencyShuttle = default!;
-    [Dependency] private readonly RoleSystem _role = default!;
     [Dependency] private readonly RoundEndSystem _roundEnd = default!;
-    [Dependency] private readonly StationSystem _stationSystem = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
 
     private int _startDefenseNodes = 0;
@@ -105,7 +83,7 @@ public sealed class DefenseRuleSystem : GameRuleSystem<DefenseRuleComponent>
     private void OnTargetDestroyed(EntityUid uid, DefenseTargetComponent comp, DestructionEventArgs args)
     {
         _defenseNodes -= 1;
-        _adminLog.Add(LogType.Action, LogImpact.Extreme, $"Мы проебали узел обороны! Осталось {_defenseNodes}");
+        _adminLog.Add(LogType.Action, LogImpact.Extreme, $"Защита потеряла узел обороны! Осталось {_defenseNodes}");
         if (comp.Flag)
             _end = true;
     }

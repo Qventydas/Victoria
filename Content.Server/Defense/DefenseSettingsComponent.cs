@@ -1,7 +1,7 @@
-namespace Content.Server.Petr.Components;
+namespace Content.Server.Defense;
 
 /// <summary>
-/// Given to heads at round start. Used for assigning traitors to kill heads and for revs to check if the heads died or not.
+/// Настрйоки режима. Ставить под флаг, настраивать под каждую карту.
 /// </summary>
 [RegisterComponent]
 public sealed partial class DefenseSettingsComponent : Component

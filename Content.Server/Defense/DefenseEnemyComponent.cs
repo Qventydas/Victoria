@@ -1,4 +1,4 @@
-namespace Content.Server.Petr.Components;
+namespace Content.Server.Defense;
 
 /// <summary>
 /// Босс качалки/режима. Его смерть вызывает конец раунда

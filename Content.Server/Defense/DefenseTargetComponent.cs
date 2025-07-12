@@ -1,8 +1,8 @@
-namespace Content.Server.Petr.Components;
+namespace Content.Server.Defense;
 
 /// <summary>
-/// Given to heads at round start. Used for assigning traitors to kill heads and for revs to check if the heads died or not.
-/// </summary>
+/// Цель ксеноморфов
+/// <summary>
 [RegisterComponent]
 public sealed partial class DefenseTargetComponent : Component
 {
