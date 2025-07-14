@@ -826,6 +826,20 @@
     state: icon
   - type: Bruteforcer
     sound: /Audio/Victoria/bruteforce_sound.ogg
+#Специя с бритвином
+- type: entity
+  name: электрическое устройство
+  suffix: Хаунд, брутфорсер
+  parent: BaseItem
+  id: HoundSpice
+  description: Кусок пластика с кучей разъёмов и кнопок. Вы без понятия, что это.
+  components:
+  - type: Item
+    shape: 
+    - 0,0,1,1
+  - type: Sprite
+    sprite: Victoria/Hound/Equipment/hnd_bruteforcer.rsi
+    state: icon
 #Псевдо-баллон
 - type: entity
   id: HoundPseudoOxygenTankFilled
@@ -2617,9 +2631,13 @@
   name: Мед.средства
   priority: 7
 - type: storeCategory
+  id: HoundUplinkJob
+  name: Работа
+  priority: 8
+- type: storeCategory
   id: HoundUplinkMisc
   name: Безделушки
-  priority: 8 
+  priority: 9
 #-----------------листинг покупок------------
 #------категория броня----------
 #---бронь---
@@ -3346,6 +3364,26 @@
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 3
+# Работка
+- type: listing
+  id: HoundSpice
+  name: Чертовски острая приправа
+  description: Небольшой пакетик с бритвином, который можно добавить в любую пищу. 
+  discountCategory: usualDiscounts
+  discountDownTo:
+    HNDChip_currency: 1
+  productEntity: HoundSpice
+  cost:
+    HNDChip_currency: 2
+  categories:
+  - HoundUplinkJob
+  conditions:
+  - !type:BuyerJobCondition
+    whitelist:
+    - Chef
+    - Botanist
+    - ServiceWorker
+    - Barmen
 # #-----------------пресет категорий в аплинке------------
 - type: entity
   id: StorePresetHoundUplink
@@ -3362,6 +3400,7 @@
     - HoundUplinkSpec
     - HoundUplinkBack
     - HoundUplinkMed
+    - HoundUplinkJob
     - HoundUplinkMisc
     currencyWhitelist:
     - HNDChip_currency
