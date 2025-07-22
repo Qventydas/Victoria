@@ -826,20 +826,178 @@
     state: icon
   - type: Bruteforcer
     sound: /Audio/Victoria/bruteforce_sound.ogg
+  - type: HiddenDescription
+    entries:
+    - label: hidden-desc-bruteforcer-hound
+      whitelistMind:
+        mindRoles:
+        - HoundRole
+    - label: hidden-desc-bruteforcer-syndicate
+      whitelistMind:
+        mindRoles:
+        - TraitorRole
+        - NukeopsRole
+    - label: hidden-desc-bruteforcer-research
+      jobRequired:
+        - ResearchAssistant
+        - ResearchDirector
+        - Scientist
+        - SciTeacher
+        - Borg
 #Специя с бритвином
 - type: entity
-  name: электрическое устройство
-  suffix: Хаунд, брутфорсер
-  parent: BaseItem
+  parent: BaseFoodCondimentPacket
   id: HoundSpice
-  description: Кусок пластика с кучей разъёмов и кнопок. Вы без понятия, что это.
+  name: острая приправа
+  description: Пакетик с ОЧЕНЬ острой приправой. Берегите язык! И остальной ЖКТ.
   components:
-  - type: Item
-    shape: 
-    - 0,0,1,1
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Razorium
+          Quantity: 10
+  - type: Icon
+    state: packet-pepper
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: packet-solid-
+#Бронебойный ножик
+- type: entity
+  name: кухонный нож
+  parent: BaseKnife
+  id: HoundKitchenKnife
+  description: Универсальный поварской нож изготовленный Asters Merchant Guild. Гарантированно будет оставаться острым долгие годы.
+  components:
+  - type: MeleeWeapon
+    resistanceBypass: true
+    attackRate: 1.75
+  - type: HiddenDescription
+    entries:
+    - label: hidden-desc-houndknife-hound
+      whitelistMind:
+        mindRoles:
+        - HoundRole
+    - label: hidden-desc-houndknife-syndicate
+      whitelistMind:
+        mindRoles:
+        - TraitorRole
+        - NukeopsRole
+    - label: hidden-desc-houndknife-chef
+      jobRequired:
+        - Chef
+#200%-ый спирт
+- type: entity
+  parent: [DrinkBottleVisualsAll, DrinkBottleGlassBaseFull]
+  id: HoundAlcohol200
+  name: бутыль
+  description: Не вызывающая доверия бутылка без этикеток и знаков. С горлышка до тошноты сильно разит спиртом.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: SuperEthanol
+          Quantity: 100
   - type: Sprite
-    sprite: Victoria/Hound/Equipment/hnd_bruteforcer.rsi
-    state: icon
+    sprite: Victoria/Hound/Misc/superethanol_bottle.rsi
+  - type: Sealable
+#Лже-аптечка и лже-медикаменты
+- type: entity
+  id: HoundPseudoMedkitFilled
+  name: аптечка первой помощи
+  description: Это экстренная аптечка для серьёзных бо-бо.
+  suffix: лже-лекарства
+  parent: Medkit
+  components:
+  - type: StorageFill
+    contents:
+      - id: HoundPseudoBrutepack
+      - id: HoundPseudoOintment
+      - id: HoundPseudoGauze
+- type: entity
+  name: мазь
+  description: Используется для лечения этих неприятных ожогов. Менее эффективна при кислотных ожогах.
+  parent: Ointment
+  id: HoundPseudoOintment
+  suffix: лже-мазь
+  components:
+  - type: Healing
+    damage:
+      types:
+        Heat: 5
+        Caustic: 10
+  - type: HiddenDescription
+    entries:
+    - label: hidden-desc-pseudo-ointment-medical
+      jobRequired:
+        - Chemist
+        - Paramedic
+        - MedicalDoctor
+        - MedicalIntern
+        - ChiefMedicalOfficer
+        - MedTeacher
+    - label: hidden-desc-pseudo-ointment-hound
+      whitelistMind:
+        mindRoles:
+        - HoundRole
+- type: entity
+  name: набор для ушибов
+  description: Терапевтический набор гелей и пластырей, предназначенных для лечения ушибов.
+  parent: Brutepack
+  id: HoundPseudoBrutepack
+  suffix: Лже-набор от ушибов
+  components:
+  - type: Healing
+    damageContainers:
+      - Biological
+    damage:
+      groups:
+        Brute: 15 # 5 for each type in the group
+  - type: HiddenDescription
+    entries:
+    - label: hidden-desc-pseudo-brutepack-medical
+      jobRequired:
+        - Chemist
+        - Paramedic
+        - MedicalDoctor
+        - MedicalIntern
+        - ChiefMedicalOfficer
+        - MedTeacher
+    - label: hidden-desc-pseudo-brutepack-hound
+      whitelistMind:
+        mindRoles:
+        - HoundRole
+- type: entity
+  name: марлевый бинт
+  description: Несколько стерильных марлевых полосок для оборачивания кровоточащих культей.
+  parent: Gauze
+  id: HoundPseudoGauze
+  suffix: Лже-бинт
+  components:
+  - type: Healing
+    damageContainers:
+      - Biological
+    damage:
+      types:
+        Slash: 5
+        Piercing: 5
+    bloodlossModifier: 15
+  - type: HiddenDescription
+    entries:
+    - label: hidden-desc-pseudo-gauze-medical
+      jobRequired:
+        - Chemist
+        - Paramedic
+        - MedicalDoctor
+        - MedicalIntern
+        - ChiefMedicalOfficer
+        - MedTeacher
+    - label: hidden-desc-pseudo-gauze-hound
+      whitelistMind:
+        mindRoles:
+        - HoundRole
 #Псевдо-баллон
 - type: entity
   id: HoundPseudoOxygenTankFilled
@@ -3371,10 +3529,10 @@
   description: Небольшой пакетик с бритвином, который можно добавить в любую пищу. 
   discountCategory: usualDiscounts
   discountDownTo:
-    HNDChip_currency: 1
+    HNDChip_currency: 0.5
   productEntity: HoundSpice
   cost:
-    HNDChip_currency: 2
+    HNDChip_currency: 1
   categories:
   - HoundUplinkJob
   conditions:
@@ -3383,7 +3541,57 @@
     - Chef
     - Botanist
     - ServiceWorker
-    - Barmen
+    - Bartender
+#200% бухло
+- type: listing
+  id: HoundAlcohol200
+  name: 200%-ый алкоголь
+  description: Убойное бухло, пьянящее в 2 раза сильнее чистого спирта. На вкус походит на водку. Жертва врятри сможет ясно мыслить уже после стакана.
+  productEntity: HoundAlcohol200
+  cost:
+    HNDChip_currency: 1.5
+  categories:
+  - HoundUplinkJob
+  conditions:
+  - !type:BuyerJobCondition
+    whitelist:
+    - Bartender
+#Ножик-хуёжик
+- type: listing
+  id: HoundKitchenKnife
+  name: Чертовски острый нож
+  suffix: Хаунд, приправа
+  description: Лезвие, похожее на кухонный нож, но способное разить противника через любую броню. 
+  discountCategory: rareDiscounts
+  discountDownTo:
+    HNDChip_currency: 3
+  productEntity: HoundKitchenKnife
+  cost:
+    HNDChip_currency: 4
+  categories:
+  - HoundUplinkJob
+  conditions:
+  - !type:BuyerJobCondition
+    whitelist:
+    - Chef
+    - ServiceWorker
+#HoundPseudoMedkitFilled
+- type: listing
+  id: HoundPseudoMedkitFilled
+  name: Лже-лекарства
+  description: Обычные медикаменты, но есть нюанс- они не лечат, а калечат, а бинт ещё и открывает кровотечение.
+  productEntity: HoundPseudoMedkitFilled
+  cost:
+    HNDChip_currency: 4
+  categories:
+  - HoundUplinkJob
+  conditions:
+  - !type:BuyerJobCondition
+    whitelist:
+    - Chemist
+    - Paramedic
+    - MedicalIntern
+    - MedicalDoctor
 # #-----------------пресет категорий в аплинке------------
 - type: entity
   id: StorePresetHoundUplink

@@ -420,7 +420,7 @@
   id: SciTeacherUniform
   name: комбинезон доцента
   suffix: Наставники
-  description: Крепкая и очень красивая. Привлекает к себе дамочек и заставляет бояться кадетов
+  description: Удобный и красивый. Если, конечно, его не разорвёт в клочья какой-нибудь артефакт.
   components:
   - type: Sprite
     sprite: Victoria/Teach/uniform_scientist_teacher.rsi
