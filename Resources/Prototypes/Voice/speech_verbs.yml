@@ -164,3 +164,11 @@
   - chat-speech-verb-electricity-1
   - chat-speech-verb-electricity-2
   - chat-speech-verb-electricity-3
+
+- type: speechVerb
+  id: Goat
+  name: chat-speech-verb-name-goat
+  speechVerbStrings:
+  - chat-speech-verb-goat-1
+  - chat-speech-verb-goat-2
+  - chat-speech-verb-goat-3
