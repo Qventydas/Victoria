@@ -28,7 +28,7 @@ public sealed class DefenseRuleSystem : GameRuleSystem<DefenseRuleComponent>
         base.Initialize();
         SubscribeLocalEvent<DefenseTargetComponent, DestructionEventArgs>(OnTargetDestroyed);
 
-        SubscribeLocalEvent<DefenseEnemyComponent, MobStateChangedEvent>(OnBossDeath);
+        SubscribeLocalEvent<DefenseEnemyComponent, MobStateChangedEvent>(OnEnemyDeath);
 
         //SubscribeLocalEvent<PetrRoleComponent, GetBriefingEvent>(OnGetBriefing);
 
@@ -68,26 +68,20 @@ public sealed class DefenseRuleSystem : GameRuleSystem<DefenseRuleComponent>
     {
         base.AppendRoundEndText(uid, component, gameRule, ref args);
         args.AddLine($"Осталось {_defenseNodes} узлов из {_startDefenseNodes}.");
+        args.AddLine(Loc.GetString(DetermineOutcomes()));
         args.AddLine($"Было уничтожено {_enemyKilled} ксеносов.");
         _end = false;
         _enemyKilled = 0;
-    }
 
-    /*         private void OnGetBriefing(EntityUid uid, PetrRoleComponent comp, ref GetBriefingEvent args)
-            {
-                var ent = args.Mind.Comp.OwnedEntity;
-                var head = HasComp<PetrOperativeComponent>(ent);
-                args.Append(Loc.GetString("petr-briefing"));
-            }
-         */
+    }
     private void OnTargetDestroyed(EntityUid uid, DefenseTargetComponent comp, DestructionEventArgs args)
     {
         _defenseNodes -= 1;
-        _adminLog.Add(LogType.Action, LogImpact.Extreme, $"Защита потеряла узел обороны! Осталось {_defenseNodes}");
+        _adminLog.Add(LogType.Action, LogImpact.Extreme, $"Защита потеряла узел обороны! Осталось {_defenseNodes} из {_startDefenseNodes}");
         if (comp.Flag)
             _end = true;
     }
-    private void OnBossDeath(EntityUid uid, DefenseEnemyComponent comp, MobStateChangedEvent ev)
+    private void OnEnemyDeath(EntityUid uid, DefenseEnemyComponent comp, MobStateChangedEvent ev)
     {
         if (ev.NewMobState == MobState.Dead || ev.NewMobState == MobState.Critical)
         {
@@ -95,11 +89,27 @@ public sealed class DefenseRuleSystem : GameRuleSystem<DefenseRuleComponent>
             if (comp.Boss)
                 _end = true;
         }
-
-
     }
+    private string DetermineOutcomes()
+    {
+        if (_defenseNodes == 0)
+            return Outcomes[0];
+        if (_defenseNodes == 1)
+            return Outcomes[1];
+        float percent = _defenseNodes / _startDefenseNodes;
+        if (percent <= 0.25)
+            return Outcomes[2];
+        if (percent <= 0.5)
+            return Outcomes[3];
+        if (percent <= 0.75)
+            return Outcomes[4];
+        else
+            return Outcomes[5];
+    }
+
+
     private static readonly string[] Outcomes =
-{
+    {
         //Потеряно всё
         "def-remain-nothing",
         // Остался только флаг
@@ -108,7 +118,7 @@ public sealed class DefenseRuleSystem : GameRuleSystem<DefenseRuleComponent>
         "def-remain-25",
         //Осталась половина
         "def-remain-50",
-        //Потеряно 3 четверти
+        //Потеряна четверть
         "def-remain-75",
         //Ничего не потеряно
         "def-remain-100",
