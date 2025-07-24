@@ -21,11 +21,11 @@
   components:
   - type: Sprite
     sprite: Victoria/Teach/mantle_teacher.rsi
-#-------------------------Доступ--------------    
+#-------------------------Доступ--------------
 - type: accessLevel
   id: Teacher
   name: accessl-teacher
-#-----закрытый шлюз---------- 
+#-----закрытый шлюз----------
 - type: entity
   parent: DoorElectronics
   id: DoorElectronicsTeacherAccess
@@ -46,7 +46,7 @@
       board: [ DoorElectronicsTeacherAccess ]
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/cargo.rsi
-#-----закрытый стеклянный шлюз---------- 
+#-----закрытый стеклянный шлюз----------
 - type: entity
   parent: AirlockGlass
   id: AirlockCargoTeatcherLockedGlass
@@ -60,7 +60,7 @@
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/cargo.rsi
   - type: PaintableAirlock
-    group: Glass  
+    group: Glass
 #-------------------------ID карта--------------
 - type: entity
   parent: CargoIDCard
@@ -89,6 +89,11 @@
     - type: Pda
       id: CargoTeacherIDCard
       state: pda-cargoteacher
+    - type: Appearance
+      appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+       !type:String
+       pda-qm
     - type: Icon
       sprite: Victoria/Teach/pda_teacher.rsi
       state: pda-cargoteacher
@@ -102,11 +107,11 @@
     head: ClothingHeadHatCargosoft
     id: PDACargoTeacher
     ears: ClothingHeadsetCargo
-    neck: MantelTeacher  
+    neck: MantelTeacher
 #-------------------------Трекер и иконка--------------
 - type: playTimeTracker
   id: JobCargoTeacher
-  
+
 - type: jobIcon
   parent: JobIcon
   id: JobIconCargoTeacher
@@ -150,7 +155,7 @@
   - type: Clothing
     sprite: Victoria/Teach/uniform_engineering_teacher.rsi
 #-------------------------Шлюз--------------
-#-----закрытый шлюз---------- 
+#-----закрытый шлюз----------
 - type: entity
   parent: Airlock
   id: AirlockEngTeatcherLocked
@@ -163,7 +168,7 @@
       board: [ DoorElectronicsTeacherAccess ]
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/engineering.rsi
-#-----закрытый стеклянный шлюз---------- 
+#-----закрытый стеклянный шлюз----------
 - type: entity
   parent: AirlockGlass
   id: AirlockEngTeatcherLockedGlass
@@ -177,7 +182,7 @@
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/engineering.rsi
   - type: PaintableAirlock
-    group: Glass 
+    group: Glass
 #-------------------------ID карта--------------
 - type: entity
   parent: CargoIDCard
@@ -203,6 +208,14 @@
   components:
     - type: Sprite
       sprite: Victoria/Teach/pda_teacher.rsi
+    - type: Appearance
+      appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+       !type:String
+       pda-seniorengineer
+    - type: PdaBorderColor
+      borderColor: "#949137"
+      accentVColor: "#CD6900"
     - type: Pda
       id: EngTeacherIDCard
       state: pda-engteacher
@@ -235,12 +248,12 @@
     head: EngTeacherBeret
     id: PDAEngTeacher
     ears: ClothingHeadsetEngineering
-    neck: MantelTeacher  
+    neck: MantelTeacher
     belt: ClothingBeltUtilityEngineering
 #-------------------------Трекер и иконка--------------
 - type: playTimeTracker
   id: JobEngTeacher
-  
+
 - type: jobIcon
   parent: JobIcon
   id: JobIconEngTeacher
@@ -284,7 +297,7 @@
   - type: Clothing
     sprite: Victoria/Teach/uniform_security_teacher.rsi
 #-------------------------Шлюз--------------
-#-----закрытый шлюз---------- 
+#-----закрытый шлюз----------
 - type: entity
   parent: Airlock
   id: AirlockSecTeatcherLocked
@@ -297,7 +310,7 @@
       board: [ DoorElectronicsTeacherAccess ]
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/security.rsi
-#-----закрытый стеклянный шлюз---------- 
+#-----закрытый стеклянный шлюз----------
 - type: entity
   parent: AirlockGlass
   id: AirlockSecTeatcherLockedGlass
@@ -311,7 +324,7 @@
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/security.rsi
   - type: PaintableAirlock
-    group: Glass 
+    group: Glass
 #-------------------------ID карта--------------
 - type: entity
   parent: CargoIDCard
@@ -340,6 +353,14 @@
     - type: Pda
       id: SecTeacherIDCard
       state: pda-secteacher
+    - type: Appearance
+      appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+       !type:String
+       pda-seniorofficer
+    - type: PdaBorderColor
+      borderColor: "#A32D26"
+      accentVColor: "#DFDFDF"
     - type: Icon
       sprite: Victoria/Teach/pda_teacher.rsi
       state: pda-secteacher
@@ -369,14 +390,14 @@
     head: SecTeacherCap
     id: PDASecTeacher
     ears: ClothingHeadsetSecurity
-    neck: MantelTeacher  
+    neck: MantelTeacher
     belt: ClothingBeltSecurityFilled
     outerClothing: ClothingOuterArmorBasic
     eyes: ClothingEyesGlassesSecurity
 #-------------------------Трекер и иконка--------------
 - type: playTimeTracker
   id: JobSecTeacher
-  
+
 - type: jobIcon
   parent: JobIcon
   id: JobIconSecTeacher
@@ -427,7 +448,7 @@
   - type: Clothing
     sprite: Victoria/Teach/uniform_scientist_teacher.rsi
 #-------------------------Шлюз--------------
-#-----закрытый шлюз---------- 
+#-----закрытый шлюз----------
 - type: entity
   parent: Airlock
   id: AirlockSciTeatcherLocked
@@ -440,7 +461,7 @@
       board: [ DoorElectronicsTeacherAccess ]
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/science.rsi
-#-----закрытый стеклянный шлюз---------- 
+#-----закрытый стеклянный шлюз----------
 - type: entity
   parent: AirlockGlass
   id: AirlockSciTeatcherLockedGlass
@@ -483,6 +504,15 @@
     - type: Pda
       id: SciTeacherIDCard
       state: pda-scienceteacher
+    - type: Appearance
+      appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+       !type:String
+       pda-seniorresearcher
+    - type: PdaBorderColor
+      borderColor: "#d7d7d0"
+      accentHColor: "#8900c9"
+      accentVColor: "#8900c9"
     - type: Icon
       sprite: Victoria/Teach/pda_teacher.rsi
       state: pda-scienceteacher
@@ -506,13 +536,13 @@
     back: ClothingBackpackScience
     shoes: ClothingShoesColorBlack
     id: PDASciTeacher
-    neck: MantelTeacher  
+    neck: MantelTeacher
     outerClothing: ClothingOuterCoatLabTeacher
     ears: ClothingHeadsetScience
 #-------------------------Трекер и иконка--------------
 - type: playTimeTracker
   id: JobSciTeacher
-  
+
 - type: jobIcon
   parent: JobIcon
   id: JobIconSciTeacher
@@ -555,7 +585,7 @@
     sprite: Victoria/Teach/uniform_medical_teacher.rsi
   - type: Clothing
     sprite: Victoria/Teach/uniform_medical_teacher.rsi
-#-----закрытый шлюз---------- 
+#-----закрытый шлюз----------
 - type: entity
   parent: Airlock
   id: AirlockMedTeatcherLocked
@@ -568,7 +598,7 @@
       board: [ DoorElectronicsTeacherAccess ]
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/medical.rsi
-#-----закрытый стеклянный шлюз---------- 
+#-----закрытый стеклянный шлюз----------
 - type: entity
   parent: AirlockGlass
   id: AirlockMedTeatcherLockedGlass
@@ -611,6 +641,15 @@
     - type: Pda
       id: MedTeacherIDCard
       state: pda-scienceteacher
+    - type: Appearance
+      appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+       !type:String
+       pda-seniorphysician
+    - type: PdaBorderColor
+      borderColor: "#d7d7d0"
+      accentHColor: "#447987"
+      accentVColor: "#B34200"
     - type: Icon
       sprite: Victoria/Teach/pda_teacher.rsi
       state: pda-scienceteacher
@@ -622,14 +661,14 @@
     back: ClothingBackpackMedical
     shoes: ClothingShoesColorBlack
     id: PDAMedTeacher
-    neck: MantelTeacher  
+    neck: MantelTeacher
     outerClothing: ClothingOuterCoatLabTeacher
     belt: ClothingBeltMedicalFilled
     ears: ClothingHeadsetMedical
 #-------------------------Трекер и иконка--------------
 - type: playTimeTracker
   id: JobMedTeacher
-  
+
 - type: jobIcon
   parent: JobIcon
   id: JobIconMedTeacher
@@ -649,7 +688,7 @@
       time: 18000
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 43200 
+      time: 43200
   startingGear: MedTeacherGear
   icon: "JobIconMedTeacher"
   supervisors: job-supervisors-cmo
@@ -672,7 +711,7 @@
     layers:
       - state: green
       - state: qm
-#-------------------------Ведущий инженер--------------     
+#-------------------------Ведущий инженер--------------
 - type: entity
   id: SpawnPointEngTeacher
   parent: SpawnPointJobBase
@@ -721,7 +760,7 @@
       - state: green
       - state: geneticist
 #-------------------------------------------Шлюзы----------------------------
-#------------------------------------закрытый шлюз---------- 
+#------------------------------------закрытый шлюз----------
 - type: entity
   parent: Airlock
   id: AirlockTeacherLocked
@@ -732,7 +771,7 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsTeacherAccess ]
-#------------------------------------Закрытый стеклянный шлюз---------- 
+#------------------------------------Закрытый стеклянный шлюз----------
 - type: entity
   parent: AirlockGlass
   id: AirlockTeacherGlassLocked
@@ -742,4 +781,4 @@
   components:
   - type: ContainerFill
     containers:
-      board: [ DoorElectronicsTeacherAccess ]  
+      board: [ DoorElectronicsTeacherAccess ]

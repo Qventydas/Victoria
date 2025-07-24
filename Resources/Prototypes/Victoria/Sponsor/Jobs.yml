@@ -62,7 +62,7 @@
   loadouts:
   - BrigmedicJumpsuit
   - BrigmedicJumpskirt
-  
+
 - type: loadout
   id: BrigmedicBeretSecurity
   equipment:
@@ -84,7 +84,7 @@
   loadouts:
   - BrigmedicBeretSecurity
   - BrigmedicBeret
-  - BrigmedicHelmet  
+  - BrigmedicHelmet
 
 - type: loadout
   id: BrigmedicVestSecurityMedic
@@ -112,13 +112,13 @@
   loadouts:
   - BrigmedicVestSecurityMedic
   - BrigmedicVestArmor
-  - BrigmedicCoatLab 
+  - BrigmedicCoatLab
   - BrigmedicCoatAMG
-  
+
 - type: roleLoadout
   id: JobBrigmedic
   groups:
-  - Inventory 
+  - Inventory
   - GroupTankHarness
   - BrigmedicBackpack
   - BrigmedicJumpsuit
@@ -144,7 +144,7 @@
     sprite: Victoria/Sponsor/SeaShield/ss_uniform.rsi
   - type: Clothing
     sprite: Victoria/Sponsor/SeaShield/ss_uniform.rsi
-    
+
 - type: entity
   parent: ClothingUniformSkirtBase
   id: SSUniformWom
@@ -156,7 +156,7 @@
     sprite: Victoria/Sponsor/SeaShield/ss_uniform_skirt.rsi
   - type: Clothing
     sprite: Victoria/Sponsor/SeaShield/ss_uniform_skirt.rsi
-    
+
 - type: entity
   parent: ClothingUniformSkirtBase
   id: SSUniformPar
@@ -293,7 +293,7 @@
     sprite: Victoria/Sponsor/SeaShield/ss_glasses.rsi
   - type: Clothing
     sprite: Victoria/Sponsor/SeaShield/ss_glasses.rsi
-#-----------------------------------визор-------------------------    
+#-----------------------------------визор-------------------------
 - type: entity
   parent: ClothingEyesHudSecurity
   id: SSHud
@@ -338,7 +338,7 @@
     sprite: Victoria/Sponsor/SeaShield/ss_belt.rsi
   - type: Clothing
     sprite: Victoria/Sponsor/SeaShield/ss_belt.rsi
-    
+
 - type: entity
   id: SSBeltFilled
   parent: SSBelt
@@ -364,7 +364,7 @@
     sprite: Victoria/Sponsor/SeaShield/ss_rps.rsi
   - type: Clothing
     sprite: Victoria/Sponsor/SeaShield/ss_rps.rsi
-    
+
 - type: entity
   id: SSWebbingFilled
   parent: SSWebbing
@@ -441,14 +441,14 @@
           Slash: 0.5
           Caustic: 0.7
           Poison: 0.7
-          Piercing: 0.5 
+          Piercing: 0.5
       activeBlockModifier:
         coefficients:
           Blunt: 0.25
           Slash: 0.25
           Caustic: 0.6
           Poison: 0.6
-          Piercing: 0.25 
+          Piercing: 0.25
         flatReductions:
           Blunt: 1
           Slash: 1
@@ -485,14 +485,14 @@
         Slash: 0.8
         Caustic: 0.9
         Poison: 0.9
-        Piercing: 0.8 
+        Piercing: 0.8
     activeBlockModifier:
       coefficients:
         Blunt: 0.5
         Slash: 0.5
         Caustic: 0.75
         Poison: 0.75
-        Piercing: 0.5 
+        Piercing: 0.5
       flatReductions:
         Blunt: 1
         Slash: 1
@@ -581,11 +581,17 @@
     job: SSOfficer
 #-----------------------------------КПК--------------------
 - type: entity
-  parent: SecurityPDA
+  parent: BasePDA
   id: SSPDA
   name: КПК "Синий щит"
   description: Показывает суть величия и силы корпорации НТ.
   components:
+  - type: CartridgeLoader
+    preinstalled:
+    - CrewManifestCartridge
+    - NotekeeperCartridge
+    - NewsReaderCartridge
+    - WantedListCartridge
   - type: Pda
     id: SSIDCard
     state: pda
@@ -640,7 +646,7 @@
   - SSTelescopicShieldSpawnFolded
   - SSRifleLecter
   - WeaponRevolverMateba
-  
+
 - type: thiefBackpackSet
   id: SSParadeSet
   name: Парадный набор оснащения
@@ -687,7 +693,7 @@
   - JetpackSecurityFilled
   - OxygenTankFilled
   - NitrogenTankFilled
-  
+
 - type: thiefBackpackSet
   id: SSFastSet
   name: Облегчённый скафандровый набор
@@ -700,7 +706,7 @@
   - JetpackSecurityFilled
   - OxygenTankFilled
   - NitrogenTankFilled
-  
+
 - type: entity
   id: ToolboxSSHardsuits
   name: СВЭ-С офицера Синий щит
@@ -750,7 +756,7 @@
 
 - type: job
   id: SSOfficer
-  name: офицер "Синий щит"                               
+  name: офицер "Синий щит"
   description: Элитный офицер Службы Безопасности, занимающийся защитой капитана или выбранного Капитаном или ЦК главы.
   playTimeTracker: JobSSOfficer
   requirements:
@@ -829,7 +835,7 @@
   loadouts:
   - SSJumpsuit
   - SSJumpskirt
-  
+
 - type: loadout
   id: SSBeret
   equipment:
@@ -851,7 +857,7 @@
   loadouts:
   - SSCap
   - SSBeret
-  - SSKepka 
+  - SSKepka
 
 - type: loadout
   id: SSBelt
@@ -869,7 +875,7 @@
   loadouts:
   - SSBelt
   - SSWebbing
-  
+
 - type: loadout
   id: SSGlass
   equipment:
@@ -890,7 +896,7 @@
 - type: roleLoadout
   id: JobSSOfficer
   groups:
-  - Inventory 
+  - Inventory
   - GroupTankHarness
   - SSBackpack
   - SSJumpsuit
@@ -939,7 +945,7 @@
         Piercing: 8
         Structural: 12
   - type: Sharp
-  
+
 - type: loadout
   id: Hooligan
   effects:
@@ -962,7 +968,7 @@
   impactFlash:
     sprite: Victoria/Sponsor/projectiles.rsi
     state: impact_laser
-    
+
 - type: entity
   name: лазерная указка
   parent: BaseWeaponBatterySmall
@@ -998,7 +1004,7 @@
   - type: Battery
     maxCharge: 10000
     startingCharge: 10000
-    
+
 - type: loadout
   id: LaserPointer
   effects:

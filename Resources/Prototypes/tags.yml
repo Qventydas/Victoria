@@ -1331,6 +1331,12 @@
   id: Window
 
 - type: Tag
+  id: WhitelistChameleonIdCard
+
+- type: Tag
+  id: WhitelistChameleonPDA
+
+- type: Tag
   id: Wine
 
 - type: Tag
