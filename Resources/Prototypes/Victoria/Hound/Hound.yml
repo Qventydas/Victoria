@@ -1411,14 +1411,13 @@
     magState: mag
     steps: 1
     zeroVisible: true
-  - type: Appearance
 #Пулемёт
 - type: entity
   name: лёгкий пулемёт "Кер"
   suffix: Хаунд
   id: HoundLightMachineGun
   parent: [BaseWeaponLightMachineGun]
-  description: Что-то среднее между пулемётом и штурмовой винтовкой. Магазин небольшой, точность неплохая, большая скорострельность и низкий вес.
+  description: Что-то среднее между настоящим пулемётом и штурмовой винтовкой. Магазин небольшой, точность неплохая, большая скорострельность и низкий вес.
   components:
   - type: Item
     size: Huge
@@ -1467,6 +1466,10 @@
     steps: 4
     zeroVisible: true
   - type: Appearance
+  - type: CursorOffsetRequiresWield
+  - type: EyeCursorOffset
+    maxOffset: 1
+    pvsIncrease: 0.2
 #Снапа
 - type: entity
   name: Хаски
@@ -1488,6 +1491,10 @@
       - CartridgeAntiMateriel
     capacity: 3
     proto: CartridgeAntiMateriel
+  - type: CursorOffsetRequiresWield
+  - type: EyeCursorOffset
+    maxOffset: 2
+    pvsIncrease: 0.2
 #-----------Связь
 #Каналы
 - type: radioChannel
