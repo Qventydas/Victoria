@@ -29184,7 +29184,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingMaskSexyMime
+- proto: ClothingMaskBlushingMime
   entities:
   - uid: 4482
     components:

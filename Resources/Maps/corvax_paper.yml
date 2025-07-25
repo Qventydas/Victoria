@@ -74889,7 +74889,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingMaskSexyClown
+- proto: ClothingMaskBlushingClown
   entities:
   - uid: 21378
     components:
@@ -74898,7 +74898,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingMaskSexyMime
+- proto: ClothingMaskBlushingMime
   entities:
   - uid: 9389
     components:
@@ -124344,7 +124344,7 @@ entities:
       parent: 2
     - type: Paper
       content: >-
-        блять я нажрался в хламину... 
+        блять я нажрался в хламину...
 
 
 
@@ -124373,7 +124373,7 @@ entities:
 
         Откуда у меня Оппорозидон и как я узнал его рецепт?
 
-        Всё очень просто! 
+        Всё очень просто!
 
                   [head=2]ГЛУПЕНЬКИЙ ХОНК-ХОООНК!!![/head]
   - uid: 11385

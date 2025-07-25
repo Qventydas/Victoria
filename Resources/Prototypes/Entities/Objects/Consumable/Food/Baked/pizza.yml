@@ -544,6 +544,9 @@
           Quantity: 2
         - ReagentId: Vitamin
           Quantity: 1
+  - type: RadiationSource
+    intensity: 0.1
+    slope: 3
 # Tastes like stale crust, rancid cheese, mushroom.
 
 - type: entity
@@ -616,7 +619,9 @@
           Quantity: 0.5
         - ReagentId: Uranium
           Quantity: 2
-
+  - type: RadiationSource
+    intensity: 0.1
+    slope: 3
 # Tastes like crust, tomato, cheese, radiation.
 
 - type: entity

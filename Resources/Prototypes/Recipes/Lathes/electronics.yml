@@ -825,12 +825,6 @@
   completetime: 12
 
 - type: latheRecipe
-  parent: BaseRecipeFiberglass_2
-  id: StationAnchorCircuitboard
-  result: StationAnchorCircuitboard
-  completetime: 8
-
-- type: latheRecipe
   parent: BaseRecipeFiberglass_5
   id: ReagentGrinderIndustrialMachineCircuitboard
   result: ReagentGrinderIndustrialMachineCircuitboard

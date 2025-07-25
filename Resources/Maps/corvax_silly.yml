@@ -19513,7 +19513,7 @@ entities:
     - type: Transform
       pos: -17.358358,-0.3427291
       parent: 2
-- proto: ClothingMaskSexyMime
+- proto: ClothingMaskBlushingMime
   entities:
   - uid: 1820
     components:
