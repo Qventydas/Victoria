@@ -247,7 +247,9 @@
 
 - type: entity
   id: FakeMindShieldImplanter
-  suffix: fake mindshield
+  name: имплантер синдиката
+  description: Компактный одноразовый шприц, специально предназначенный для введения подкожных имплантов.
+  suffix: лже-майншилд
   parent: BaseImplantOnlyImplanterSyndi
   components:
   - type: Implanter
