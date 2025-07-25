@@ -1,6 +1,8 @@
 using Content.Shared.Emag.Systems;
 using Content.Shared.Tag;
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Robust.Shared.Serialization;
 
@@ -16,5 +18,19 @@ public sealed partial class EmagComponent : Component
     /// </summary>
     [DataField("emagImmuneTag", customTypeSerializer: typeof(PrototypeIdSerializer<TagPrototype>)), ViewVariables(VVAccess.ReadWrite)]
     [AutoNetworkedField]
-    public string EmagImmuneTag = "EmagImmune";
+    public ProtoId<TagPrototype> EmagImmuneTag = "EmagImmune";
+
+    /// <summary>
+    /// What type of emag effect this device will do
+    /// </summary>
+    [DataField]
+    [AutoNetworkedField]
+    public EmagType EmagType = EmagType.Interaction;
+
+    /// <summary>
+    /// What sound should the emag play when used
+    /// </summary>
+    [DataField]
+    [AutoNetworkedField]
+    public SoundSpecifier EmagSound = new SoundCollectionSpecifier("sparks");
 }

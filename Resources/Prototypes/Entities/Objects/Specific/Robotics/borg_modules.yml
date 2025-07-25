@@ -595,6 +595,7 @@
       items:
       - Crowbar
       - Emag
+      - AccessBreaker
       - PinpointerSyndicateNuclear
 # Corvax-HiddenDesc-Start
     - type: HiddenDescription

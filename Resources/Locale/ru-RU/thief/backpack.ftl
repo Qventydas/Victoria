@@ -32,8 +32,8 @@ thief-backpack-category-chemistry-description =
 thief-backpack-category-syndie-name = Набор Синдиката
 thief-backpack-category-syndie-description =
     Побрякушки из забытого прошлого или украденные у нерадивого агента?
-    Вы нашли кое-какую связь. Виски, эхо...
-    В комплект входят: Емаг, сигареты Interdyne,
+    У вас есть некоторые связи. Виски, эхо...
+    В комплект входят: Емаг, дизраптор аутентификации, сигареты Interdyne,
     кодовое слово Синдиката, зажигалка, глушитель связи,
     и несколько странных красных кристаллов.
 thief-backpack-category-sleeper-name = Набор сони

@@ -245,6 +245,9 @@ public sealed class AccessOverriderSystem : SharedAccessOverriderSystem
             $"{ToPrettyString(player):player} has modified {ToPrettyString(component.TargetAccessReaderId):entity} with the following allowed access level holders: [{string.Join(", ", addedTags.Union(removedTags))}] [{string.Join(", ", newAccessList)}]");
 
         accessReader.AccessLists = ConvertAccessListToHashSet(newAccessList);
+        var ev = new OnAccessOverriderAccessUpdatedEvent(player);
+        RaiseLocalEvent(component.TargetAccessReaderId, ref ev);
+
         Dirty(component.TargetAccessReaderId, accessReader);
     }
 
