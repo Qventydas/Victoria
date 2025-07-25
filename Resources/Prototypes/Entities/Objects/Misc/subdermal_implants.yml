@@ -144,7 +144,7 @@
 - type: entity
   parent: BaseSubdermalImplant
   id: RadioImplant
-  name: radio implant
+  name: радио имплант
   description: This implant grants access to the Syndicate channel without a headset.
   categories: [ HideSpawnMenu ]
   components:
@@ -352,7 +352,7 @@
 - type: entity
   parent: BaseSubdermalImplant
   id: RadioImplantCentcomm
-  name: radio implant
+  name: радио имплант
   description: This implant grants access to the Centcomm channel without a headset. Only authorized for Centcomm employees.
   categories: [ HideSpawnMenu ]
   components:
