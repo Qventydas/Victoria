@@ -16,7 +16,7 @@ public sealed partial class EmagComponent : Component
     /// <summary>
     /// The tag that marks an entity as immune to emags
     /// </summary>
-    [DataField("emagImmuneTag", customTypeSerializer: typeof(PrototypeIdSerializer<TagPrototype>)), ViewVariables(VVAccess.ReadWrite)]
+    [DataField]
     [AutoNetworkedField]
     public ProtoId<TagPrototype> EmagImmuneTag = "EmagImmune";
 

@@ -2885,10 +2885,20 @@
   description: Используется для дешифровки и перепрошивки систем доступа. Не спрашивайте почему легальная компания использует примочки Синдиката.
   productEntity: Emag
   cost:
-    HNDChip_currency: 6
+    HNDChip_currency: 3
   categories:
   - HoundUplinkElectronic
 
+- type: listing
+  id: HoundAccessBreaker
+  name: Дизраптор аутентификации.
+  description: Наши охотнички недавно накрыли пару синдикатских гадюшников и готовы отдать трофейные приблуды за некоторую "благодарность". Как емаг, только открывает шлюзы и замки.
+  productEntity: AccessBreaker
+  cost:
+    HNDChip_currency: 5
+  categories:
+  - HoundUplinkElectronic
+  
 - type: listing
   id: HoundJammer
   name: Глушитель связи
