@@ -23,6 +23,8 @@ spellbook-cluwne-name = Проклятие клувня
 spellbook-cluwne-desc = Когда вы ненавидите настолько, что Кары недостаточно. Требуются мантия и шляпа волшебника.
 spellbook-slip-name = Скользкий путь
 spellbook-slip-desc = Изучите древние техники уборщиков, дабы делать вашу цель скользкой. Требуются мантия и шляпа волшебника.
+spellbook-item-recall-name = Вызов предмета
+spellbook-item-recall-description = Отметьте предмет, который вы держите, и призовите его обратно в любое время щелчком пальца!
 # Equipment
 
 spellbook-wand-polymorph-door-name = Волшебная палочка входа
