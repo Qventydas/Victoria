@@ -2429,7 +2429,7 @@
         Burn: -0.07
 
 - type: entity
-  parent: MobSpiderBase
+  parent: MobGiantSpider
   id: MobSpiderAngryBase
   abstract: true
   components:
