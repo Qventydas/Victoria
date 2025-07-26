@@ -89,6 +89,12 @@
     count: 6
 
 - type: localizedDataset
+  id: SmiteAds
+  values:
+    prefix: advertisement-smite-
+    count: 8
+
+- type: localizedDataset
   id: CuraDrobeAds
   values:
     prefix: advertisement-curadrobe-

@@ -1,0 +1,12 @@
+advertisement-smite-1 = ХЫДЫЩЬ! Забань свою жажду!
+advertisement-smite-2 = Потусторонний удар лайма и газировки!
+advertisement-smite-3 = Больше миллиона напитков продано!
+advertisement-smite-4 = ХЫДЫЩЬ! Кидайте 2д8 на ВКУС.
+advertisement-smite-5 = ХЫДЫЩЬ! Разберёмся с бумажками!
+advertisement-smite-6 = Кидайте д20 на БОГАТСТВО.
+advertisement-smite-7 = ХЫДЫЩЬ! Молотом по голове вы не получите.
+advertisement-smite-8 = Время лимон-лайма!
+thankyou-smite-1 = Хыдыщь делает круто!
+thankyou-smite-2 = Вы ОПРЕДЕЛЁННО хотели лимон-лайм!
+thankyou-smite-3 = Оффис не узнает, что их ударило.
+thankyou-smite-4 = Уничтожь свою жажду.

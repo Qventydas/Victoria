@@ -47,6 +47,12 @@
     count: 8
 
 - type: localizedDataset
+  id: SmiteGoodbyes
+  values:
+    prefix: thankyou-smite-
+    count: 4
+
+- type: localizedDataset
   id: DonutGoodbyes
   values:
     prefix: thankyou-donut-
