@@ -146,6 +146,9 @@ namespace Content.Shared.Roles
         /// </summary>
         [DataField]
         public List<ProtoId<GuideEntryPrototype>>? Guides;
+
+        // Sponsor think
+        [DataField] public bool SponsorOnly = false;
     }
 
     /// <summary>
