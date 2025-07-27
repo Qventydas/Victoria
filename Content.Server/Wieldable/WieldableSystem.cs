@@ -23,12 +23,14 @@ public sealed class WieldableSystem : SharedWieldableSystem
 
     private void OnEyeOffsetUnwielded(Entity<CursorOffsetRequiresWieldComponent> entity, ref ItemUnwieldedEvent args)
     {
-        _eye.UpdatePvsScale(args.User);
+        if(args.User != null)
+            _eye.UpdatePvsScale(args.User.Value);
     }
 
     private void OnEyeOffsetWielded(Entity<CursorOffsetRequiresWieldComponent> entity, ref ItemWieldedEvent args)
     {
-        _eye.UpdatePvsScale(args.User);
+        if(args.User != null)
+            _eye.UpdatePvsScale(args.User.Value);
     }
 
     private void OnGetEyePvsScale(Entity<CursorOffsetRequiresWieldComponent> entity,

@@ -1467,6 +1467,10 @@
     steps: 4
     zeroVisible: true
   - type: Appearance
+  - type: CursorOffsetRequiresWield
+  - type: EyeCursorOffset
+    maxOffset: 1
+    pvsIncrease: 0.1
 #Снапа
 - type: entity
   name: Хаски
@@ -1488,6 +1492,10 @@
       - CartridgeAntiMateriel
     capacity: 3
     proto: CartridgeAntiMateriel
+  - type: CursorOffsetRequiresWield
+  - type: EyeCursorOffset
+    maxOffset: 2
+    pvsIncrease: 0.2
 #-----------Связь
 #Каналы
 - type: radioChannel
