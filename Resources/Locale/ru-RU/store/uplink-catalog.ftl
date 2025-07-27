@@ -137,6 +137,8 @@ uplink-death-acidifier-implant-name = Имплантер Посмертный р
 uplink-death-acidifier-implant-desc = Полностью растворяет пользователя и его снаряжение при ручной активации или гибели носителя.
 uplink-micro-bomb-implanter-name = Имплантер Микробомба
 uplink-micro-bomb-implanter-desc = Взрывается при ручной активации или гибели носителя этого импланта. Уничтожает тело пользователя со всем снаряжением.
+uplink-radio-implanter-name = Радио имплантер
+uplink-radio-implanter-desc = Имплантирует радиоканал Синдиката, позволяя общаться без гарнитуры.
 # Bundles
 uplink-observation-kit-name = Набор наблюдателя
 uplink-observation-kit-desc = В комплект входят консольная плата монитора камер наблюдения, и охранный визор, замаскированный под солнцезащитные очки.
