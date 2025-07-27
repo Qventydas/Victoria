@@ -137,6 +137,8 @@
       - HandheldGPSBasic
       - TRayScanner
       - AirTank
+      - DoubleEmergencyOxygenTank
+      - DoubleEmergencyNitrogenTank
       - GasAnalyzer
       - UtilityBelt
       - Pickaxe
