@@ -450,8 +450,6 @@
   - type: Construction
     graph: GasBinary
     node: radiator
-  - type: AtmosMonitoringConsoleDevice
-    navMapBlip: Thermoregulator
 
 - type: entity
   parent: HeatExchanger

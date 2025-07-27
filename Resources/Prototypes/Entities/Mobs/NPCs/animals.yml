@@ -2429,7 +2429,7 @@
         Burn: -0.07
 
 - type: entity
-  parent: MobSpiderBase
+  parent: MobGiantSpider
   id: MobSpiderAngryBase
   abstract: true
   components:
@@ -2458,10 +2458,13 @@
   id: MobGiantSpiderAngry
   suffix: Angry
   components:
+  - type: NpcFactionMember
+    factions:
+      - Xeno
 
 - type: entity
   name: clown spider
-  parent: MobGiantSpiderAngry
+  parent: MobSpiderAngryBase
   id: MobClownSpider
   description: Combines the two most terrifying things in existence, spiders and clowns.
   components:
