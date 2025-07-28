@@ -2989,55 +2989,42 @@
     - External
   - type: PresetIdCard
     name: техник СНК
-#------------------------------------стандарт КПК---------- 
-- type: entity
-  abstract: true
-  parent: BasePDA
-  id: SNKPDA
-  name: КПК СНК
-  components:
-  - type: Appearance
-  - type: Sprite
-    sprite: Victoria/SNK/Equipment/snk_pda.rsi
-    layers:
-    - map: [ "enum.PdaVisualLayers.Base" ]
-    - state: "light_overlay"
-      map: [ "enum.PdaVisualLayers.Flashlight" ]
-      shader: "unshaded"
-      visible: false
-    - state: "id_overlay"
-      map: [ "enum.PdaVisualLayers.IdLight" ]
-      shader: "unshaded"
-      visible: false
-  - type: Icon
-    sprite: Victoria/SNK/Equipment/snk_pda.rsi
-    state: pda_s
 #------------------------------------КПК солдата----------    
 - type: entity
-  parent: SNKPDA
+  parent: BasePDA
   id: SNKPDASold
   suffix: СНК, рядовой
   description: Простенький крепкий КПК для базовых нужд солдата СНК.
   components:
+    - type: Sprite
+      sprite: Victoria/SNK/Equipment/snk_pda.rsi
     - type: Pda
       id: SNKIDCardSold
-      state: pda_s
     - type: Icon
       sprite: Victoria/SNK/Equipment/snk_pda.rsi
       state: pda_s
+    - type: Appearance
+      appearanceDataInit:
+       enum.PdaVisuals.PdaType:
+         !type:String
+         pda_s
+    - type: PdaBorderColor
+      borderColor: "#5b71be"
+      accentHColor: "##478851"
 #------------------------------------КПК командир----------       
 - type: entity
-  parent: SNKPDA
+  parent: BasePDA
   id: SNKPDAOffi
   suffix: СНК, командир
   description: Высокотехнологичный офицерский КПК СНК со сканером мониторинга экипажа.
   components:
     - type: Pda
       id: SNKIDCardOffi
-      state: pda_o 
+    - type: Sprite
+      sprite: Victoria/SNK/Equipment/snk_pda.rsi
     - type: Icon
       sprite: Victoria/SNK/Equipment/snk_pda.rsi
-      state: pda_o      
+      state: pda_o
     - type: ActivatableUI
       key: enum.CrewMonitoringUIKey.Key
     - type: UserInterface
@@ -3050,36 +3037,75 @@
       receiveFrequencyId: CrewMonitor
     - type: WirelessNetworkConnection
       range: 500
+    - type: Appearance
+      appearanceDataInit:
+       enum.PdaVisuals.PdaType:
+         !type:String
+         pda_o
+    - type: PdaBorderColor
+      borderColor: "#5b71be"
+      accentHColor: "##478851"
 #------------------------------------КПК медика----------    
+# - type: entity
+  # parent: BasePDA
+  # id: SNKPDAMed
+  # suffix: СНК, медик
+  # description: Продвинутый КПК медиков СНК со сканером здоровья.
+  # components:
+    # - type: Pda
+      # id: SNKIDCardMed
+    # - type: Sprite
+      # sprite: Victoria/SNK/Equipment/snk_pda.rsi
+    # - type: Icon
+      # sprite: Victoria/SNK/Equipment/snk_pda.rsi
+      # state: pda_m
+    # - type: HealthAnalyzer
+      # scanDelay: 1
+      # scanningEndSound:
+        # path: "/Audio/Items/Medical/healthscanner.ogg"
+    # - type: Appearance
+      # appearanceDataInit:
+      # enum.PdaVisuals.PdaType:
+         # !type:String
+         # pda_m
+    # - type: PdaBorderColor
+      # borderColor: "#5b71be"
+      # accentHColor: "##478851"
 - type: entity
-  parent: SNKPDA
+  parent: BasePDA
   id: SNKPDAMed
   suffix: СНК, медик
   description: Продвинутый КПК медиков СНК со сканером здоровья.
   components:
+    - type: Sprite
+      sprite: Victoria/SNK/Equipment/snk_pda.rsi
     - type: Pda
       id: SNKIDCardMed
-      state: pda_m
     - type: Icon
       sprite: Victoria/SNK/Equipment/snk_pda.rsi
       state: pda_m
-    - type: HealthAnalyzer
-      scanDelay: 1
-      scanningEndSound:
-        path: "/Audio/Items/Medical/healthscanner.ogg"
+    - type: Appearance
+      appearanceDataInit:
+       enum.PdaVisuals.PdaType:
+         !type:String
+         pda_m
+    - type: PdaBorderColor
+      borderColor: "#5b71be"
+      accentHColor: "##478851"
 #------------------------------------КПК инженера----------       
 - type: entity
-  parent: SNKPDA
+  parent: BasePDA
   id: SNKPDAEng
   suffix: СНК, инженер
   description: Улучшенный КПК инженеров СНК с анализатором состава воздуха типа "электронный нос".
   components:
     - type: Pda
       id: SNKIDCardEng
-      state: pda_e
+    - type: Sprite
+      sprite: Victoria/SNK/Equipment/snk_pda.rsi
     - type: Icon
       sprite: Victoria/SNK/Equipment/snk_pda.rsi
-      state: pda_e      
+      state: pda_e
     - type: GasAnalyzer
     - type: ActivatableUI
       inHandsOnly: true
@@ -3090,6 +3116,14 @@
       interfaces:
         enum.GasAnalyzerUiKey.Key:
           type: GasAnalyzerBoundUserInterface
+    - type: Appearance
+      appearanceDataInit:
+       enum.PdaVisuals.PdaType:
+         !type:String
+         pda_e
+    - type: PdaBorderColor
+      borderColor: "#5b71be"
+      accentHColor: "##478851"
 #------------------------------------------связь----------------------------------------  
 #-----------------------------канал----------------------------------------  
 - type: radioChannel

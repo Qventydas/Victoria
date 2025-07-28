@@ -91,6 +91,11 @@
     - type: Icon
       sprite: Victoria/Teach/pda_teacher.rsi
       state: pda-cargoteacher
+    - type: Appearance
+      appearanceDataInit:
+       enum.PdaVisuals.PdaType:
+         !type:String
+         pda-cargoteacher
     - type: PdaBorderColor
       borderColor: "#e39751"
 #-------------------------Гир--------------
@@ -352,7 +357,7 @@
       state: pda-secteacher
     - type: Appearance
       appearanceDataInit:
-      enum.PdaVisuals.PdaType:
+       enum.PdaVisuals.PdaType:
          !type:String
          pda-secteacher
     - type: PdaBorderColor
@@ -637,7 +642,7 @@
       appearanceDataInit:
        enum.PdaVisuals.PdaType:
          !type:String
-         pda-scienceteacher
+         pda-medteacher
     - type: PdaBorderColor
       borderColor: "#d7d7d0"
       accentHColor: "#447987"
