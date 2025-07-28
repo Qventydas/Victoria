@@ -207,6 +207,7 @@ flavor-complex-dr-gibb = как халатность
 flavor-complex-ginger-soda = как имбирь
 flavor-complex-grape-soda = как виноградная газировка
 flavor-complex-lemon-lime-soda = как лимонно-лаймовая газировка
+flavor-complex-lemon-lime-cranberry-soda = как Рождество
 flavor-complex-pwr-game-soda = как гейминг
 flavor-complex-root-beer-soda = как рутбир
 flavor-complex-citrus-soda = как цитрусовая газировка
