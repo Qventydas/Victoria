@@ -1,5 +1,4 @@
 using System.Linq;
-using Content.Shared.Camera;
 using Content.Shared.Examine;
 using Content.Shared.Hands;
 using Content.Shared.Hands.Components;
@@ -8,7 +7,6 @@ using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory.VirtualItem;
 using Content.Shared.Item;
-using Content.Shared.Movement.Components;
 using Content.Shared.Popups;
 using Content.Shared.Timing;
 using Content.Shared.Verbs;
@@ -25,7 +23,7 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared.Wieldable;
 
-public abstract class SharedWieldableSystem : EntitySystem
+public sealed class WieldableSystem : EntitySystem
 {
     [Dependency] private readonly SharedVirtualItemSystem _virtualItemSystem = default!;
     [Dependency] private readonly SharedHandsSystem _handsSystem = default!;
