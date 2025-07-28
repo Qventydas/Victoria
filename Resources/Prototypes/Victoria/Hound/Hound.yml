@@ -1648,8 +1648,8 @@
   - type: Icon
     sprite: Victoria/Viteztvi/Equipment/vitz_pda.rsi
     state: pda
-    - type: PdaBorderColor
-      borderColor: "#800000"
+  - type: PdaBorderColor
+    borderColor: "#800000"
 #ПДА рабочего
 - type: entity
   parent: HoundPDA
