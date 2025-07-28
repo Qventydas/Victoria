@@ -318,7 +318,7 @@
       - AdvMopItem
       - WeaponSprayNozzle
       - ClothingBackpackWaterTank
-      - BluespaceSprayBottle
+      - MegaSprayBottle
       - TimerTrigger
       - ChemicalPayload
       - FlashPayload
@@ -1129,7 +1129,7 @@
       - SynthesizerInstrument
       - ClothingShoesBootsSpeed
       - WeaponSprayNozzle
-      - BluespaceSprayBottle
+      - MegaSprayBottle
   - type: EmagLatheRecipes
     emagStaticRecipes:
       - CluwneHorn

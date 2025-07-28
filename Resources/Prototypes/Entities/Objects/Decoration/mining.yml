@@ -169,6 +169,10 @@
           Log:
             min: 2
             max: 5
+  - type: MobState
+  - type: NpcFactionMember
+    factions:
+    - DefenseStructure
 
 - type: entity
   id: WoodenSupportWallBroken

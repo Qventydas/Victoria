@@ -92,6 +92,10 @@
   - type: StaticPrice
     price: 100
   - type: BlockWeather
+  - type: MobState
+  - type: NpcFactionMember
+    factions:
+    - DefenseStructure
 
 - type: entity
   parent: Window

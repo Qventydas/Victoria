@@ -116,6 +116,10 @@
       enabled: false
       castShadows: false
     - type: NavMapDoor
+    - type: MobState
+    - type: NpcFactionMember
+      factions:
+      - DefenseStructure
 
 - type: entity
   id: Firelock

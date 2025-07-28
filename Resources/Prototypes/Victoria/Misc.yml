@@ -364,6 +364,10 @@
           steps:
             - material: ElastaneCloth
               amount: 1    
+        - to: SandbagEmptySheepWool
+          steps:
+            - material: SheepWoolClean
+              amount: 1  
     - node: SandbagEmptyLinum 
       entity: SandbagEmpty     
     - node: SandbagEmptyCotton
@@ -371,6 +375,8 @@
     - node: SandbagEmptyCottonPaper
       entity: SandbagEmpty
     - node: SandbagEmptyElastane
+      entity: SandbagEmpty
+    - node: SandbagEmptySheepWool
       entity: SandbagEmpty
       
 - type: construction
@@ -412,6 +418,17 @@
   graph: Sandbag
   startNode: start
   targetNode: SandbagEmptyElastane
+  category: construction-category-materials
+  description: Мешок, который можно будет наполнить чем-то сыпучим.
+  icon: { sprite: Victoria/sandbags.rsi, state: sandbag_pile }
+  objectType: Item
+  
+- type: construction
+  name: sandbag empty
+  id: SandbagEmptySheepWool
+  graph: Sandbag
+  startNode: start
+  targetNode: SandbagEmptySheepWool
   category: construction-category-materials
   description: Мешок, который можно будет наполнить чем-то сыпучим.
   icon: { sprite: Victoria/sandbags.rsi, state: sandbag_pile }
