@@ -1,16 +1,3 @@
-#Насяльник! Я сделал!
-#1) КПК, ID-карту и чип в КПК с мониторингом экипажа.- ДА
-#2) Скафандр лёгкий, Скафандр тяжёлый.-ДА
-#3) Пальто с бронёй, бронежилет, сапоги с небольшим ускорением-ДА
-#4) Пистолет мощный и громкий-ДА
-#5) Пистолет тихий, но слабей-ДА
-#6) Винтовку мощную-ДА
-#7) ПП небольшой и скорострельный, но не слишком сильный-ДА
-#8) Канал связи и ключ шифрования-ДА
-#9) Бумажная форма с отчётом о выполнении цели-ДА
-#10) Бумажная форма в которую пишется цель на убийство-ДА
-#11) Чип лояльности Хунд, как валюта для апплинка и для консоли поставок-ДА
-#12) Апплинк с этим добром-ДА
 #---------------------------------------Одёжка и армор-
 #--------------------Форма-
 #Оперативник-
@@ -1641,6 +1628,7 @@
     sprite: Victoria/Hound/Access/hnd_pda.rsi
     layers:
     - map: [ "enum.PdaVisualLayers.Base" ]
+      state: "pda"
     - state: "light_overlay"
       map: [ "enum.PdaVisualLayers.Flashlight" ]
       shader: "unshaded"
@@ -1652,6 +1640,8 @@
   - type: Icon
     sprite: Victoria/Viteztvi/Equipment/vitz_pda.rsi
     state: pda
+  - type: PdaBorderColor
+    borderColor: "#800000"
 #ПДА рабочего
 - type: entity
   parent: HoundPDA
@@ -1662,7 +1652,11 @@
   components:
     - type: Pda
       id: HoundIDCardWorker
-      state: pda
+    - type: Appearance
+      appearanceDataInit:
+       enum.PdaVisuals.PdaType:
+         !type:String
+         pda
 #ПДА оперативника
 - type: entity
   parent: HoundPDA
@@ -1673,7 +1667,11 @@
   components:
     - type: Pda
       id: HoundIDCardOper
-      state: pda
+    - type: Appearance
+      appearanceDataInit:
+       enum.PdaVisuals.PdaType:
+         !type:String
+         pda
 #ПДА командира
 - type: entity
   parent: HoundPDA
@@ -1684,7 +1682,11 @@
   components:
     - type: Pda
       id: HoundIDCardCommandeer
-      state: pda
+    - type: Appearance
+      appearanceDataInit:
+       enum.PdaVisuals.PdaType:
+         !type:String
+         pda
 #Шлюзы
 #Шлюз оперов закрытый
 - type: entity

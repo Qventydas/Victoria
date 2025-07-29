@@ -588,7 +588,6 @@
   components:
   - type: Pda
     id: SSIDCard
-    state: pda
   - type: PdaBorderColor
     borderColor: "#7C5D00"
   - type: Sprite

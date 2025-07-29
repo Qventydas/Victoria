@@ -1366,6 +1366,7 @@
     sprite: Victoria/Umpor/Equipment/umpor_pda.rsi
     layers:
     - map: [ "enum.PdaVisualLayers.Base" ]
+      state: "pda"
     - state: "light_overlay"
       map: [ "enum.PdaVisualLayers.Flashlight" ]
       shader: "unshaded"
@@ -1387,7 +1388,11 @@
   components:
     - type: Pda
       id: UmporIDCardSolder
-      state: pda
+    - type: Appearance
+      appearanceDataInit:
+       enum.PdaVisuals.PdaType:
+         !type:String
+         pda
     - type: Icon
       sprite: Victoria/Umpor/Equipment/umpor_pda.rsi
       state: pda
@@ -1401,7 +1406,11 @@
   components:
     - type: Pda
       id: UmporIDCardOfficer
-      state: pda
+    - type: Appearance
+      appearanceDataInit:
+       enum.PdaVisuals.PdaType:
+         !type:String
+         pda
     - type: Icon
       sprite: Victoria/Umpor/Equipment/umpor_pda.rsi
       state: pda
@@ -1415,7 +1424,11 @@
   components:
     - type: Pda
       id: UmporIDCardEngener
-      state: pda
+    - type: Appearance
+      appearanceDataInit:
+       enum.PdaVisuals.PdaType:
+         !type:String
+         pda
     - type: Icon
       sprite: Victoria/Umpor/Equipment/umpor_pda.rsi
       state: pda
@@ -1429,7 +1442,11 @@
   components:
     - type: Pda
       id: UmporIDCardMedic
-      state: pda
+    - type: Appearance
+      appearanceDataInit:
+       enum.PdaVisuals.PdaType:
+         !type:String
+         pda
     - type: Icon
       sprite: Victoria/Umpor/Equipment/umpor_pda.rsi
       state: pda
@@ -1443,7 +1460,11 @@
   components:
     - type: Pda
       id: UmporIDCardLogist
-      state: pda
+    - type: Appearance
+      appearanceDataInit:
+       enum.PdaVisuals.PdaType:
+         !type:String
+         pda
     - type: Icon
       sprite: Victoria/Umpor/Equipment/umpor_pda.rsi
       state: pda

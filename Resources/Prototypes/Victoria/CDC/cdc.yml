@@ -2011,6 +2011,7 @@
     sprite: Victoria/CDC/Equipment/cdc_pda.rsi
     layers:
     - map: [ "enum.PdaVisualLayers.Base" ]
+      state: "pda"
     - state: "light_overlay"
       map: [ "enum.PdaVisualLayers.Flashlight" ]
       shader: "unshaded"
@@ -2032,7 +2033,11 @@
   components:
     - type: Pda
       id: CDCIDCardOfficer
-      state: pda
+    - type: Appearance
+      appearanceDataInit:
+       enum.PdaVisuals.PdaType:
+         !type:String
+         pda
 #------------------------------------КПК имама----------       
 - type: entity
   parent: CDCPDAOfficer
@@ -2041,7 +2046,11 @@
   components:
     - type: Pda
       id: CDCIDCardImam
-      state: pda
+    - type: Appearance
+      appearanceDataInit:
+       enum.PdaVisuals.PdaType:
+         !type:String
+         pda
 #------------------------------------------связь----------------------------------------  
 #-----------------------------канал----------------------------------------  
 - type: radioChannel
