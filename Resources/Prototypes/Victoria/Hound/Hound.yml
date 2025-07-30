@@ -866,13 +866,13 @@
 #Бронебойный ножик
 - type: entity
   name: кухонный нож
-  parent: BaseKnife
+  parent: KitchenKnife
   id: HoundKitchenKnife
   description: Универсальный поварской нож изготовленный Asters Merchant Guild. Гарантированно будет оставаться острым долгие годы.
   components:
   - type: MeleeWeapon
     resistanceBypass: true
-    attackRate: 1.75
+    attackRate: 2
   - type: HiddenDescription
     entries:
     - label: hidden-desc-houndknife-hound
@@ -3564,10 +3564,10 @@
   description: Лезвие, похожее на кухонный нож, но способное разить противника через любую броню. 
   discountCategory: rareDiscounts
   discountDownTo:
-    HNDChip_currency: 3
+    HNDChip_currency: 5
   productEntity: HoundKitchenKnife
   cost:
-    HNDChip_currency: 4
+    HNDChip_currency: 6
   categories:
   - HoundUplinkJob
   conditions:

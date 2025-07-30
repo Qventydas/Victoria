@@ -8,8 +8,7 @@ namespace Content.Shared.Garotte;
 public sealed partial class GarotteComponent : Component
 {
     /// <summary>
-    /// Modifier on the prying time.
-    /// Lower values result in more time.
+    /// Скорость накидывания/сжатия удавки. Чем больше- тем короче.
     /// </summary>
     [DataField("speedModifier")]
     public float SpeedModifier = 1.0f;
@@ -24,15 +23,14 @@ public sealed partial class GarotteComponent : Component
     public DamageSpecifier Damage = default!;
 
     /// <summary>
-    /// The duration of the stun.
+    /// Длительность стана и немоты
     /// </summary>
     [DataField("duration")]
     public TimeSpan Duration = TimeSpan.FromSeconds(3);
 }
 
 /// <summary>
-/// Raised directed on an entity before prying it.
-/// Cancel to stop the entity from being pried open.
+/// бефор ивент для гарроты
 /// </summary>
 [ByRefEvent]
 public record struct BeforeGarotteEvent(EntityUid User, bool PryPowered, bool StrongPry)

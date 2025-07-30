@@ -18,12 +18,13 @@ namespace Content.Shared.Garotte;
 /// <summary>
 ///     Verb for violently murdering cuffed creatures.
 /// </summary>
-public class SharedGarotteSystem : EntitySystem
+public sealed partial class SharedGarotteSystem : EntitySystem
 {
     [Dependency] private readonly DamageableSystem _damage = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
     [Dependency] private readonly ISharedAdminLogManager _adminLog = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
+    [Dependency] private readonly SharedTransformSystem _transformSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly StatusEffectsSystem _statusEffect = default!;
@@ -67,7 +68,7 @@ public class SharedGarotteSystem : EntitySystem
 
 
         StartSet(target, user, tool, comp.SpeedModifier, out id);
-        _audio.PlayPredicted(comp.SetSound, target,user);
+        _audio.PlayPredicted(comp.SetSound, target, user);
         return true;
     }
     private bool StartSet(EntityUid target, EntityUid user, EntityUid? tool, float toolModifier, [NotNullWhen(true)] out DoAfterId? id)
@@ -76,19 +77,33 @@ public class SharedGarotteSystem : EntitySystem
         RaiseLocalEvent(target);
         double baseTime = 1.8;
         double time = baseTime / toolModifier;
+
         if (TryComp<StunnedComponent>(target, out var _))
         {
             time = time / 1.4;
             _popup.PopupPredicted(Loc.GetString("garrote-set-stunned", ("user", Identity.Name(user, EntityManager)), ("target", Identity.Name(target, EntityManager))), target, user, PopupType.SmallCaution);
         }
         else
+        {
             _popup.PopupPredicted(Loc.GetString("garrote-set-normal", ("user", Identity.Name(user, EntityManager)), ("target", Identity.Name(target, EntityManager))), target, user, PopupType.SmallCaution);
+            //Проверка на поворот спиной
+            Angle targ_rot = _transformSystem.GetWorldRotation(target);
+            Angle user_rot = _transformSystem.GetWorldRotation(user);
+            double diff = Math.Abs(targ_rot.Theta - user_rot.Theta);
+            if (diff < -Math.PI) diff += 2 * Math.PI;
+            if (diff > Math.PI) diff -= 2 * Math.PI;
+            if (Math.Abs(diff) < 1.27)
+                time = time / 1.4;
+        }
+
+
 
         var doAfterArgs = new DoAfterArgs(EntityManager, user, TimeSpan.FromSeconds(time), new GarotteDoAfterEvent(), target, target, tool)
         {
             BreakOnDamage = true,
             BreakOnMove = true,
             NeedHand = tool != user,
+            MovementThreshold = 0.2f
         };
 
         if (tool != user && tool != null)
