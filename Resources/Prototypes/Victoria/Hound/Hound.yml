@@ -1633,10 +1633,10 @@
       map: ["enum.GunVisualLayers.Mag"]
   - type: Gun
     fireRate: 10
-    minAngle: 6
-    maxAngle: 20
+    minAngle: 15
+    maxAngle: 33
     angleDecay: 20
-    angleIncrease: 1
+    angleIncrease: 3
     selectedMode: FullAuto
     availableModes:
     - SemiAuto
@@ -1660,8 +1660,8 @@
           tags:
             - CartridgeLightRifle
   - type: GunWieldBonus
-    minAngle: -5
-    maxAngle: -5
+    minAngle: -11
+    maxAngle: -11
   - type: MagazineVisuals
     magState: mag
     steps: 4
