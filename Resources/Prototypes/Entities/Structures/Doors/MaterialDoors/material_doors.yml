@@ -60,6 +60,10 @@
     mode: NoSprite
   - type: Occluder
   - type: BlockWeather
+  - type: MobState
+  - type: NpcFactionMember
+    factions:
+    - DefenseStructure
 
 - type: entity
   parent: BaseMaterialDoor

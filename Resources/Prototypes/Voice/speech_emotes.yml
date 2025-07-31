@@ -427,6 +427,13 @@
   chatMessages: [издаёт вех!]
 
 - type: emote
+  id: Hew
+  name: chat-emote-name-hew
+  category: Vocal
+  icon: Interface/Emotes/hew.png
+  chatMessages: [издаёт хев!]
+
+- type: emote
   id: Chirp
   name: chat-emote-name-chirp
   category: Vocal

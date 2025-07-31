@@ -8,7 +8,28 @@
   },
   "states": [
     {
-      "name": "wristwatch"
+      "name": "cap"
+    },
+	{
+      "name": "hop"
+    },
+	{
+      "name": "hos"
+    },
+	{
+      "name": "avd"
+    },
+	{
+      "name": "qm"
+    },
+	{
+      "name": "rd"
+    },
+	{
+      "name": "smo"
+    },
+	{
+      "name": "se"
     },
     {
       "name": "inhand-right",

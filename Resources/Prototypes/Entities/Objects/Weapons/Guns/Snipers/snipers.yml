@@ -46,6 +46,15 @@
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Snipers/bolt_gun_wood.rsi
+  - type: Construction
+    graph: MosinSniper
+    node: Mosin
+  - type: AltFireMelee
+  - type: MeleeWeapon
+    attackRate: 1
+    damage:
+      types:
+        Piercing: 7
 
 - type: entity
   name: Hristov
@@ -63,6 +72,12 @@
       - CartridgeAntiMateriel
     capacity: 5
     proto: CartridgeAntiMateriel
+  - type: Scope
+    useInHand: true
+    allowMovement: true
+    delay: 0
+    zoom: 1.6 # same stats of 4x telescopic scope
+    offset: 14
 
 - type: entity
   name: musket

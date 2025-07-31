@@ -127,6 +127,20 @@
   recipeUnlocks:
   - ClothingBackpackElectropack
 
+- type: technology
+  id: RoboticProtection
+  name: research-technology-robotic-protection
+  icon:
+    sprite: Mobs/Silicon/chassis.rsi
+    state: defender
+  discipline: Arsenal
+  tier: 1
+  cost: 7500
+  recipeUnlocks: 
+  - BorgModuleHoloprojector
+  - BorgModulShildWeek
+  - BorgModuleDisabler
+
 # Tier 2
 
 - type: technology
@@ -174,6 +188,18 @@
   - ShuttleGunFriendshipCircuitboard
   technologyPrerequisites:
   - SalvageWeapons
+
+- type: technology
+  id: AdvancedRoboticProtection
+  name: research-technology-advanced-robotic-protection
+  icon:
+    sprite: Victoria/Borgs/module.rsi
+    state: icon-technology-advanced-robotic-protection
+  discipline: Arsenal
+  tier: 2
+  cost: 5000
+  recipeUnlocks:
+  - BorgModulShild
 
 # Tier 3
 

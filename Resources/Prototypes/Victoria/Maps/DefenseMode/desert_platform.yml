@@ -1,0 +1,26 @@
+- type: gameMap
+  id: VictoriaDesertPlatform
+  mapName: 'Desert Platform'
+  mapPath: /Maps/map_def_1.yml
+  minPlayers: 2
+  maxPlayers: 15
+  stations:
+    VictoriaDesertPlatform:
+      stationProto: StandardDefenseMap
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Пластформа в пустыне {1}'
+        - type: StationEmergencyShuttle
+          emergencyShuttlePath: /Maps/Shuttles/shuttle_def_emergency.yml
+        - type: StationJobs
+          availableJobs:
+            DefComander: [ 1, 1 ]
+            DefOfficer: [ 1, 1 ]
+            DefOfficerDop: [ 0, 0 ]
+            DefEngener: [ 2, 2 ]
+            DefMedic: [ 2, 2 ]
+            DefCargo: [ 2, 2 ]
+            DefSpecialist: [ 2, 2 ]
+            DefSpecialistDop: [ 0, 0 ]
+            DefSolder: [ -1, -1 ]
+            DefSolderDop: [ 1, 1 ]

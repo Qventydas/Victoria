@@ -17,6 +17,7 @@ chat-emote-name-gasp = Задыхаться
 chat-emote-name-deathgasp = Предсмертный хрип
 chat-emote-name-buzz = Жужжать
 chat-emote-name-weh = Вехать
+chat-emote-name-hew = Хевать
 chat-emote-name-chirp = Чирикать
 chat-emote-name-beep = Бип
 chat-emote-name-chime = Дзынь

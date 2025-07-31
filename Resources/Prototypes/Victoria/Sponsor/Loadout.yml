@@ -34,13 +34,15 @@
 - type: loadoutGroup
   id: GroupUmporLoadoutCapP
   name: loadout-group-umpor
-  maxLimit: 2
+  minLimit: 0
+  maxLimit: 1
   loadouts:
   - UmporCapP
 
 - type: loadoutGroup
   id: GroupUmporLoadoutChef
   name: loadout-group-umpor
+  minLimit: 0
   maxLimit: 2
   loadouts:
   - UmporCapP
@@ -49,6 +51,7 @@
 - type: loadoutGroup
   id: GroupUmporLoadoutBotan
   name: loadout-group-umpor
+  minLimit: 0
   maxLimit: 3
   loadouts:
   - UmporCapP
@@ -66,6 +69,7 @@
 - type: loadoutGroup
   id: GroupUmporLoadoutSalv
   name: loadout-group-umpor
+  minLimit: 0
   maxLimit: 2
   loadouts:
   - UmporHealthAnalyzerUnpowered
@@ -81,6 +85,7 @@
 - type: loadoutGroup
   id: GroupUmporLoadoutEng
   name: loadout-group-umpor
+  minLimit: 0
   maxLimit: 2
   loadouts:
   - UmporBeret
@@ -103,6 +108,7 @@
 - type: loadoutGroup
   id: GroupUmporLoadoutMed
   name: loadout-group-umpor
+  minLimit: 0
   maxLimit: 3
   loadouts:
   - UmporHealthAnalyzerUnpowered
@@ -119,6 +125,7 @@
 - type: loadoutGroup
   id: GroupUmporLoadoutKnife
   name: loadout-group-umpor
+  minLimit: 0
   maxLimit: 1
   loadouts:
   - UmpornKnife
@@ -126,6 +133,7 @@
 - type: loadoutGroup
   id: GroupUmporLoadoutSec
   name: loadout-group-umpor
+  minLimit: 0
   maxLimit: 2
   loadouts:
   - UmporCap
@@ -134,6 +142,7 @@
 - type: loadoutGroup
   id: GroupUmporLoadoutCap
   name: loadout-group-umpor
+  minLimit: 0
   maxLimit: 1
   loadouts:
   - UmporCap
@@ -203,6 +212,7 @@
 - type: loadoutGroup
   id: GroupKMLGLoadoutEpolets
   name: loadout-group-snk-epolets
+  minLimit: 0
   maxLimit: 1
   loadouts:
   - KMLGEpolets10
@@ -212,6 +222,7 @@
 - type: loadoutGroup
   id: GroupKMLGLoadoutCapServ
   name: loadout-group-snk
+  minLimit: 0
   maxLimit: 1
   loadouts:
   - KMLGCapP
@@ -220,6 +231,7 @@
 - type: loadoutGroup
   id: GroupKMLGLoadoutCoat
   name: loadout-group-snk
+  minLimit: 0
   maxLimit: 1
   loadouts:
   - KMLGCoat
@@ -283,6 +295,7 @@
 - type: loadoutGroup
   id: GroupSNKLoadoutShapka
   name: loadout-group-snk-shapka
+  minLimit: 0
   maxLimit: 1
   loadouts:
   - SNKShapkaStd
@@ -292,6 +305,7 @@
 - type: loadoutGroup
   id: GroupSNKLoadoutCloak
   name: loadout-group-snk-cloak
+  minLimit: 0
   maxLimit: 1
   loadouts:
   - SNKCloakLes
@@ -301,6 +315,7 @@
 - type: loadoutGroup
   id: GroupKMLGLoadoutCepka
   name: loadout-group-snk
+  minLimit: 0
   maxLimit: 2
   loadouts:
   - KMLGCepka
@@ -323,6 +338,7 @@
 - type: loadoutGroup
   id: GroupSNKLoadoutTech
   name: loadout-group-snk
+  minLimit: 0
   maxLimit: 3
   loadouts:
   - KMLGUniformRepairman
@@ -332,6 +348,7 @@
 - type: loadoutGroup
   id: GroupSNKLoadoutEng
   name: loadout-group-snk
+  minLimit: 0
   maxLimit: 2
   loadouts:
   - KMLGBelt
@@ -340,6 +357,7 @@
 - type: loadoutGroup
   id: GroupSNKLoadoutAtmos
   name: loadout-group-snk
+  minLimit: 0
   maxLimit: 3
   loadouts:
   - KMLGBelt
@@ -356,6 +374,7 @@
 - type: loadoutGroup
   id: GroupKMLGLoadoutMed
   name: loadout-group-snk
+  minLimit: 0
   maxLimit: 2
   loadouts:
   - KMLGBeret
@@ -395,6 +414,7 @@
 - type: loadoutGroup
   id: GroupMirtLoadoutServ
   name: loadout-group-mirt
+  minLimit: 0
   maxLimit: 2
   loadouts:
   - MirtnKnife
@@ -403,6 +423,7 @@
 - type: loadoutGroup
   id: GroupMirtLoadoutMonk
   name: loadout-group-mirt
+  minLimit: 0
   maxLimit: 4
   loadouts:
   - MirtnKnife
@@ -420,6 +441,7 @@
 - type: loadoutGroup
   id: GroupMirtLoadoutCarg
   name: loadout-group-mirt
+  minLimit: 0
   maxLimit: 3
   loadouts:
   - MirtnKnife
@@ -436,6 +458,7 @@
 - type: loadoutGroup
   id: GroupMirtLoadoutEng
   name: loadout-group-mirt
+  minLimit: 0
   maxLimit: 3
   loadouts:
   - MirtnKnife
@@ -452,6 +475,7 @@
 - type: loadoutGroup
   id: GroupMirtLoadoutCap
   name: loadout-group-mirt
+  minLimit: 0
   maxLimit: 3
   loadouts:
   - MirtnKnife
@@ -491,6 +515,7 @@
 - type: loadoutGroup
   id: GroupCDCLoadoutCapil
   name: loadout-group-congl
+  minLimit: 0
   maxLimit: 3
   loadouts:
   - CDCUniformImam
@@ -500,6 +525,7 @@
 - type: loadoutGroup
   id: GroupCDCLoadoutServ
   name: loadout-group-congl
+  minLimit: 0
   maxLimit: 1
   loadouts:
   - CDCFez
@@ -521,6 +547,7 @@
 - type: loadoutGroup
   id: GroupCDCLoadoutCargo
   name: loadout-group-congl
+  minLimit: 0
   maxLimit: 2
   loadouts:
   - CDCBeltTech
@@ -551,6 +578,7 @@
 - type: loadoutGroup
   id: GroupCDCLoadoutSec
   name: loadout-group-congl
+  minLimit: 0
   maxLimit: 3
   loadouts:
   - CDCCap
@@ -567,6 +595,7 @@
 - type: loadoutGroup
   id: GroupCDCLoadoutRnD
   name: loadout-group-congl
+  minLimit: 0
   maxLimit: 2
   loadouts:
   - CDCFez
@@ -582,6 +611,7 @@
 - type: loadoutGroup
   id: GroupCDCLoadoutCom
   name: loadout-group-congl-com
+  minLimit: 0
   maxLimit: 2
   loadouts:
   - CDCCap
@@ -591,6 +621,7 @@
 - type: loadoutGroup
   id: GroupNoocLoadoutEng
   name: loadout-group-nooc
+  minLimit: 0
   maxLimit: 1
   loadouts:
   - LaserPointer
@@ -612,6 +643,7 @@
 - type: loadoutGroup
   id: GroupNoocLoadoutSecWeapon
   name: loadout-group-nooc-w
+  minLimit: 0
   maxLimit: 1
   loadouts:
   - NoocPistol
@@ -634,6 +666,7 @@
 - type: loadoutGroup
   id: GroupNoocLoadoutSecAmmo
   name: loadout-group-nooc-a
+  minLimit: 0
   maxLimit: 1
   loadouts:
   - NoocPowerCellTwo
@@ -651,6 +684,7 @@
 - type: loadoutGroup
   id: GroupNoocLoadoutRnD
   name: loadout-group-nooc
+  minLimit: 0
   maxLimit: 1
   loadouts:
   - NoocHardsuitField
@@ -672,6 +706,7 @@
 - type: loadoutGroup
   id: GroupNoocLoadoutCom
   name: loadout-group-nooc
+  minLimit: 0
   maxLimit: 2
   loadouts:
   - NoocCap
@@ -680,7 +715,8 @@
 - type: loadoutGroup
   id: GroupNoocLoadoutComEng
   name: loadout-group-nooc
-  maxLimit: 3
+  minLimit: 0
+  maxLimit: 2
   loadouts:
   - NoocCap
   - NoocCloak 
@@ -688,6 +724,7 @@
 - type: loadoutGroup
   id: GroupNoocLoadoutComRnd
   name: loadout-group-nooc
+  minLimit: 0
   maxLimit: 3
   loadouts:
   - NoocCap

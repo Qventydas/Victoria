@@ -480,6 +480,10 @@
   - type: StaticPrice
     price: 25
   - type: Shovel
+  - type: EntrenchingTool
+  - type: Construction
+    graph: Shovel
+    node: Shovel
 
 - type: entity
   parent: BaseItem

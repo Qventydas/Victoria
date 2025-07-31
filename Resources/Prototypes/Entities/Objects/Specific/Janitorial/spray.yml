@@ -35,7 +35,7 @@
   - type: UseDelay
   - type: Spray
     transferAmount: 10
-    sprayVelocity: 2
+    sprayVelocity: 3
     spraySound:
       path: /Audio/Effects/spray2.ogg
   - type: TrashOnSolutionEmpty
@@ -44,24 +44,26 @@
     solution: spray
 
 - type: entity
-  name: mega spray bottle
+  name: блюспейс распылитель
   id: MegaSprayBottle
   parent: SprayBottle
   suffix: Empty
-  description: A huge spray bottle, capable of unrivaled janitorial power.
+  description: Улучшенный распылитель, что имеет больше вместительность и больше дальность поражения.
   components:
   - type: Sprite
-    sprite: Objects/Specific/Janitorial/janitorial.rsi
-    state: cleaner_large
+    sprite: Objects/Specific/Janitorial/bluespace_spray.rsi
+    state: bluespace_cleaner
+  - type: Item
+    sprite: Objects/Specific/Janitorial/bluespace_spray.rsi
   - type: SolutionContainerManager
     solutions:
       spray:
-        maxVol: 250
+        maxVol: 1000
   - type: Spray
     transferAmount: 15
     sprayedPrototype: BigVapor
-    sprayVelocity: 3
-    sprayDistance: 4.5
+    sprayVelocity: 6
+    sprayDistance: 9
     spraySound:
       path: /Audio/Effects/spray2.ogg
 

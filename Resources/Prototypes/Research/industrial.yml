@@ -99,6 +99,9 @@
   - SecurityTechFabCircuitboard
   - AmmoTechFabCircuitboard
   - MedicalTechFabCircuitboard
+  - CargoTechFabCircuitboard
+  - EngineeringTechFabCircuitboard
+  - ServiceTechFabCircuitboard
 
 - type: technology
   id: PowerGeneration

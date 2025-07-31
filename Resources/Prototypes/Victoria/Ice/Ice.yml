@@ -100,7 +100,7 @@
 - type: entity
   parent: CrystalOreBase
   id: PiceIce
-  name: Чистый лёд
+  name: чистый лёд
   suffix: Полный
   description: Холодный, но такой красивый...
   components:
@@ -133,7 +133,7 @@
 #------------Стак--------------------------
 - type: stack
   id: PiceIce
-  name: Чистый лёд
+  name: чистый лёд
   icon: { sprite: Victoria/ice.rsi, state: clean }
   spawn: PiceIce1
   maxCount: 30
@@ -149,7 +149,7 @@
 - type: material
   id: RawPiceIce
   stackEntity: PiceIce1
-  name: Чистый лёд
+  name: чистый лёд
   icon: { sprite: Victoria/ice.rsi, state: clean }
   price: 0.1 
 #--------------руда--------------------------
@@ -162,7 +162,7 @@
 - type: entity
   parent: CrystalOreBase
   id: PiceIceDirty
-  name: Грязный лёд
+  name: грязный лёд
   suffix: Полный
   description: Холодный и с явной грязюкой...
   components:
@@ -197,7 +197,7 @@
 #--------------Стак--------------------------
 - type: stack
   id: PiceIceDirty
-  name: Грязный лёд
+  name: грязный лёд
   icon: { sprite: Victoria/ice.rsi, state: dirty }
   spawn: PiceIceDirty1
   maxCount: 30
@@ -213,7 +213,7 @@
 - type: material
   id: RawPiceIceDirty
   stackEntity: PiceIceDirty1
-  name: Грязный лёд
+  name: грязный лёд
   icon: { sprite: Victoria/ice.rsi, state: dirty }
   price: 0.1 
 #--------------руда--------------------------

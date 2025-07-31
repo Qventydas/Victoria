@@ -6,8 +6,8 @@
 - type: entity
   parent: CrystalOreBase
   id: DigitalCircuit
-  name: цифровые компоненты
-  description: Маленький чёрный квадратный "жук" с металлическими ножками, который может УПРАВЛЯТЬ МИРОМ!
+  name: цифровой компонент
+  description: Работает только с нулями и единицами, как и мы в жизни - боится неопределённости.
   suffix: Электроника, Full
   components:
   - type: Stack
@@ -27,7 +27,7 @@
 #------------------Стак--------------------------
 - type: stack
   id: DigitalCircuit
-  name: цифровые компоненты
+  name: цифровой компонент
   icon: { sprite: Victoria/Electron/components_circuit.rsi, state: digital }
   spawn: DigitalCircuit1
   maxCount: 30
@@ -43,7 +43,7 @@
 - type: material
   id: DigitalCircuitMaterial
   stackEntity: DigitalCircuit1
-  name: цифровые компоненты
+  name: цифровой компонент
   icon: { sprite: Victoria/Electron/components_circuit.rsi, state: digital }
   price: 0.05    
 #------------------Рецепт--------------------------
@@ -60,8 +60,8 @@
 - type: entity
   parent: DigitalCircuit
   id: AnalogCircuit
-  name: аналоговые компоненты
-  description: Маленький чёрный квадратный "жук" с металлическими ножками, который может УПРАВЛЯТЬ МИРОМ!
+  name: аналоговый компонент
+  description: Как дедушка электроники - всё понимает плавно, но если перегрузить – возмущается и косит
   suffix: Электроника, Full
   components:
   - type: Stack
@@ -76,7 +76,7 @@
 #------------------Стак--------------------------
 - type: stack
   id: AnalogCircuit
-  name: аналоговые компоненты
+  name: аналоговый компонент
   icon: { sprite: Victoria/Electron/components_circuit.rsi, state: analog }
   spawn: AnalogCircuit1
   maxCount: 30
@@ -92,7 +92,7 @@
 - type: material
   id: AnalogCircuitMaterial
   stackEntity: AnalogCircuit1
-  name: аналоговые компоненты
+  name: аналоговый компонент
   icon: { sprite: Victoria/Electron/components_circuit.rsi, state: analog }
   price: 0.05    
 #------------------Рецепт--------------------------
@@ -108,8 +108,8 @@
 - type: entity
   parent: DigitalCircuit
   id: PulseCircuit
-  name: импульсные компоненты
-  description: Маленький чёрный квадратный "жук" с металлическими ножками, который может УПРАВЛЯТЬ МИРОМ!
+  name: импульсный компонент
+  description: Включается-выключается так быстро, что сам уже не уверен, работает или нет.
   suffix: Электроника, Full
   components:
   - type: Stack
@@ -124,7 +124,7 @@
 #------------------Стак--------------------------
 - type: stack
   id: PulseCircuit
-  name: импульсные компоненты
+  name: импульсный компонент
   icon: { sprite: Victoria/Electron/components_circuit.rsi, state: pulse }
   spawn: PulseCircuit1
   maxCount: 30
@@ -140,7 +140,7 @@
 - type: material
   id: PulseCircuitMaterial
   stackEntity: PulseCircuit1
-  name: импульсные компоненты
+  name: импульсный компонент
   icon: { sprite: Victoria/Electron/components_circuit.rsi, state: pulse }
   price: 0.05    
 #------------------Рецепт--------------------------
@@ -157,8 +157,8 @@
 - type: entity
   parent: DigitalCircuit
   id: PowerCircuit
-  name: силовые компоненты
-  description: Маленький чёрный квадратный "жук" с металлическими ножками, который может УПРАВЛЯТЬ МИРОМ!
+  name: силовой компонент
+  description: Берёт на себя всю мощь, но при перегрузке может устроить фейерверк.
   suffix: Электроника, Full
   components:
   - type: Stack
@@ -173,7 +173,7 @@
 #------------------Стак--------------------------
 - type: stack
   id: PowerCircuit
-  name: силовые компоненты
+  name: силовой компонент
   icon: { sprite: Victoria/Electron/components_circuit.rsi, state: power }
   spawn: PowerCircuit1
   maxCount: 30
@@ -189,7 +189,7 @@
 - type: material
   id: PowerCircuitMaterial
   stackEntity: PowerCircuit1
-  name: силовые компоненты
+  name: силовой компонент
   icon: { sprite: Victoria/Electron/components_circuit.rsi, state: power }
   price: 0.05    
 #------------------Рецепт--------------------------
@@ -205,8 +205,8 @@
 - type: entity
   parent: DigitalCircuit
   id: ProgrammableCircuit
-  name: ПЛИС компоненты
-  description: Маленький чёрный квадратный "жук" с металлическими ножками, который может УПРАВЛЯТЬ МИРОМ!
+  name: ПЛИС компонент
+  description: Может сделать всё - кроме того, чтобы с первого раза заработать так, как ты задумал.
   suffix: Электроника, Full
   components:
   - type: Stack
@@ -221,7 +221,7 @@
 #------------------Стак--------------------------
 - type: stack
   id: ProgrammableCircuit
-  name: ПЛИС компоненты
+  name: ПЛИС компонент
   icon: { sprite: Victoria/Electron/components_circuit.rsi, state: programmable }
   spawn: ProgrammableCircuit1
   maxCount: 30
@@ -237,7 +237,7 @@
 - type: material
   id: ProgrammableCircuitMaterial
   stackEntity: ProgrammableCircuit1
-  name: ПЛИС компоненты
+  name: ПЛИС компонент
   icon: { sprite: Victoria/Electron/components_circuit.rsi, state: programmable }
   price: 0.05    
 #------------------Рецепт--------------------------
@@ -254,8 +254,8 @@
 - type: entity
   parent: DigitalCircuit
   id: MicrowaveCircuit
-  name: СВЧ компоненты
-  description: Здоровая металлическая... фигня... нужна для микроволновки.
+  name: СВЧ компонент
+  description: Когда работает нормально - это наука, когда нет - магия с копчёными дорожками.
   suffix: Электроника, Full
   components:
   - type: Stack
@@ -270,7 +270,7 @@
 #------------------Стак--------------------------
 - type: stack
   id: MicrowaveCircuit
-  name: СВЧ компоненты
+  name: СВЧ компонент
   icon: { sprite: Victoria/Electron/components_circuit.rsi, state: microwave }
   spawn: MicrowaveCircuit1
   maxCount: 30
@@ -286,7 +286,7 @@
 - type: material
   id: MicrowaveCircuitMaterial
   stackEntity: MicrowaveCircuit1
-  name: СВЧ компоненты
+  name: СВЧ компонент
   icon: { sprite: Victoria/Electron/components_circuit.rsi, state: microwave }
   price: 0.05    
 #------------------Рецепт--------------------------
@@ -303,8 +303,8 @@
 - type: entity
   parent: DigitalCircuit
   id: DiscreteCircuit
-  name: дискретные компоненты
-  description: Маленький чёрный квадратный "жук" с металлическими ножками, который может УПРАВЛЯТЬ МИРОМ!
+  name: дискретный компонент
+  description: Самый простой парень на плате. Если видишь белый дым, то он либо сгорел, либо избрали Папу Римского.
   suffix: Электроника, Full
   components:
   - type: Stack
@@ -319,7 +319,7 @@
 #------------------Стак--------------------------
 - type: stack
   id: DiscreteCircuit
-  name: дискретные компоненты
+  name: дискретный компонент
   icon: { sprite: Victoria/Electron/components_circuit.rsi, state: discrete }
   spawn: DiscreteCircuit1
   maxCount: 30
@@ -335,7 +335,7 @@
 - type: material
   id: DiscreteCircuitMaterial
   stackEntity: DiscreteCircuit1
-  name: дискретные компоненты
+  name: дискретный компонент
   icon: { sprite: Victoria/Electron/components_circuit.rsi, state: discrete }
   price: 0.05    
 #------------------Рецепт--------------------------
@@ -350,7 +350,7 @@
 - type: entity
   id: LithographMachineCircuitboard
   parent: BaseMachineCircuitboard
-  name: плата литографа
+  name: литограф (машинная плата)
   description: Электронная плата, необходимая для работы литографа
   components:
     - type: MachineBoard

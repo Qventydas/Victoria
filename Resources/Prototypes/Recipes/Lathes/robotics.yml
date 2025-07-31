@@ -195,3 +195,25 @@
   parent: BaseBorgModuleRecipe
   id: BorgModuleHarvesting
   result: BorgModuleHarvesting
+
+# Security
+
+- type: latheRecipe
+  parent: BaseBorgModuleRecipe
+  id: BorgModuleHoloprojector
+  result: BorgModuleHoloprojector
+
+- type: latheRecipe
+  parent: BaseBorgModuleRecipe
+  id: BorgModulShildWeek
+  result: BorgModulShildWeek
+
+- type: latheRecipe
+  parent: BaseBorgModuleRecipe
+  id: BorgModuleDisabler
+  result: BorgModuleDisabler
+
+- type: latheRecipe
+  parent: BaseGoldBorgModuleRecipe
+  id: BorgModulShild
+  result: BorgModulShild

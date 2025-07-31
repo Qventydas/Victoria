@@ -497,7 +497,7 @@
 - type: entity
   id: ClothLatheMachineCircuitboard
   parent: BaseMachineCircuitboard
-  name: портфаб (машинная плата)
+  name: ПортФаб (машинная плата)
   components:
   - type: MachineBoard
     prototype: ClothLathe
@@ -508,8 +508,8 @@
 - type: entity
   parent: BaseLathe
   id: ClothLathe
-  name: портфаб
-  description: Шитьё одежды стало гораздо проще с портфабом! Возможно даже слишком...
+  name: ПортФаб
+  description: Шитьё одежды стало гораздо проще с ПортФабом! Возможно, даже слишком...
   components:
   - type: Transform
     noRot: false

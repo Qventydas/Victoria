@@ -587,8 +587,7 @@
   description: Показывает суть величия и силы корпорации НТ.
   components:
   - type: Pda
-    id: SecurityIDCard
-    state: pda
+    id: SSIDCard
   - type: PdaBorderColor
     borderColor: "#7C5D00"
   - type: Sprite
@@ -759,7 +758,7 @@
       time: 108000
   startingGear: SSOfficerGear
   icon: "JobIconSS"
-  supervisors: job-supervisors-captain
+  supervisors: job-supervisors-centcom
   canBeAntag: false
   access:
   - Command
@@ -773,6 +772,9 @@
   - External
   - Lawyer
   - Medical
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
 #-----------------------------------спавн-поинт-------------------------
 - type: entity
   id: SpawnPointSSOfficer
@@ -853,12 +855,12 @@
 - type: loadout
   id: SSBelt
   equipment:
-    belt: SSBelt
+    belt: SSBeltFilled
 
 - type: loadout
   id: SSWebbing
   equipment:
-    belt: SSWebbing
+    belt: SSWebbingFilled
 
 - type: loadoutGroup
   id: SSBelt
