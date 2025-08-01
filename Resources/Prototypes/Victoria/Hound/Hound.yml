@@ -148,47 +148,6 @@
         Piercing: 0.9
         Heat: 0.8
   - type: ShowJobIcons
-#Броник
-- type: entity
-  parent: ClothingOuterBaseMedium
-  id: HoundArmorLight
-  name: Лёгкий бронежилет Хаунд
-  suffix: Хаунд
-  description: Лёгкий бронежилет корпорации Хаунд. Его используют или сопровождающие бойцов пилоты или совсем зелёные опера. По всем параметрам средний.
-  components:
-  - type: Sprite
-    sprite: Victoria/Hound/Armor/hnd_armor_light.rsi
-  - type: Clothing
-    sprite: Victoria/Hound/Armor/hnd_armor_light.rsi
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.7
-        Slash: 0.7
-        Piercing: 0.6 
-        Heat: 0.65
-        Caustic: 0.6
-  - type: ExplosionResistance
-    damageCoefficient: 0.85
-#Каска
-- type: entity
-  parent: ClothingHeadHelmetBasic
-  id: HoundHelmetLight
-  name: каска Хаунд
-  suffix: Хаунд
-  description: Простенькая каска. Используется небогатыми операми и рабочими.
-  components:
-  - type: Sprite
-    sprite: Victoria/Hound/Armor/hnd_helmet_light.rsi
-  - type: Clothing
-    sprite: Victoria/Hound/Armor/hnd_helmet_light.rsi
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.85
-        Slash: 0.85
-        Piercing: 0.85
-        Heat: 0.85
 #Пальто
 - type: entity
   parent: ClothingOuterBaseMedium
@@ -2286,8 +2245,8 @@
     jumpsuit: HoundUniformOper
     back: HoundBackpackFilledNewbie
     shoes: HoundBoots
-    head: HoundHelmetLight
-    outerClothing: HoundArmorLight
+    head: ClothingHeadHelmetMerc
+    outerClothing: ClothingOuterVestWebMerc
     id: HoundPDAOp
     ears: HoundHeadset
     belt: HoundBeltFilled
@@ -2759,20 +2718,13 @@
 #------категория броня----------
 #---бронь---
 - type: listing
-  id: HoundHelmetLight
-  name: Лёгкий шлем
-  description: Обыкновенная каска.
-  productEntity: HoundHelmetLight
-  cost:
+  id: HoundUplinkClothingOuterVestWeb
+  name: uplink-clothing-outer-vest-web-name
+  description: uplink-clothing-outer-vest-web-desc
+  productEntity: ClothingOuterVestWeb
+  discountCategory: usualDiscounts
+  discountDownTo:
     HNDChip_currency: 1
-  categories:
-  - HoundUplinkArmor
-
-- type: listing
-  id: HoundArmorLight
-  name: Лёгкий бронежилет
-  description: Обыкновенный бронежилет. Возьмите, если не хватает на что-то получше.
-  productEntity: HoundArmorLight
   cost:
     HNDChip_currency: 3
   categories:
@@ -2821,7 +2773,7 @@
   description: Униформа, изолированные перчатки, удобные ботинки, а также фирменные кепка и анекдот! Не забудьте избавиться от ненужных вещиц и коробки.
   productEntity: HoundBoxFilledClothes
   cost:
-    HNDChip_currency: 3
+    HNDChip_currency: 1.5
   categories:
   - HoundUplinkArmor
 #------категория вооружение----------
@@ -2831,7 +2783,7 @@
   description: Довольно крупный и очень мощный пистолет Хаунд. Магазин малюсенький- Не промахнитесь! Для штурмовых заданий и любителей покороче и пожёстче. Использует .45 магнум.
   productEntity: HoundHeavyPistol
   cost:
-    HNDChip_currency: 5
+    HNDChip_currency: 4
   categories:
   - HoundUplinkWeaponry
 
@@ -2868,7 +2820,7 @@
 - type: listing
   id: HoundLightPistol
   name: Пистолет "Бигль"
-  description: Крайне скорострельный и тихий пистолет для секретных миссий или тех, кто любит подольше и поплавнее. Использует .35 авто.
+  description: Крайне скорострельный и тихий, но не очень точный, пистолет для секретных миссий или тех, кто любит подольше и поплавнее. Использует .35 авто.
   productEntity: HoundLightPistol
   cost:
     HNDChip_currency: 6
@@ -3519,7 +3471,6 @@
 - type: listing
   id: HoundKitchenKnife
   name: Чертовски острый нож
-  suffix: Хаунд, приправа
   description: Лезвие, похожее на кухонный нож, но способное разить противника через любую броню. 
   discountCategory: rareDiscounts
   discountDownTo:
