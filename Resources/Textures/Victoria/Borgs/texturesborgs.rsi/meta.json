@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from tgstation at https://github.com/tgstation/tgstation/commit/faf6db214927874c19b8fa8585d26b5d40de1acc",
+  "states": [
+    {
+      "name": "ssspborg",
+      "directions": 4
+    },
+    {
+      "name": "ssspborg_e",
+      "directions": 4
+    },
+    {
+      "name": "ssspborg_e_r",
+      "directions": 4
+    },
+    {
+      "name": "ssspborg_l",
+      "directions": 4
+    },
+    {
+      "name": "sssp_acad",
+      "directions": 4
+    },
+    {
+      "name": "sssp_acad_e",
+      "directions": 4
+    },
+    {
+      "name": "sssp_acad_e_r",
+      "directions": 4
+    },
+    {
+      "name": "sssp_acad_l",
+      "directions": 4
+    }
+
+  ]
+}

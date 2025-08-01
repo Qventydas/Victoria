@@ -87,6 +87,10 @@
             True: { visible: True }
             False: { visible: False }
     - type: AnimationPlayer
+    - type: MobState
+    - type: NpcFactionMember
+      factions:
+      - DefenseStructure
 
 - type: entity
   id: ClockworkGrille

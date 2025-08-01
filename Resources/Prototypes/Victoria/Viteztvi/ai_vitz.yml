@@ -151,6 +151,11 @@
   id: VitzMrHillShopAmmo
   name: Боезапас
   priority: 2
+  
+- type: storeCategory
+  id: VitzMrHillShopMisc
+  name: Разное
+  priority: 3
 #-----------------листинг покупок------------
 #------категория личный состав----------
 - type: listing
@@ -232,6 +237,26 @@
     VitzChip_currency: 2
   categories:
   - VitzMrHillShopAmmo
+#------категория разное----------
+- type: listing
+  id: VitzCrateOptic
+  name: Ящик вспомогательной оптики
+  description: Ящик с двумя биноклями и двумя оптическими приелами
+  productEntity: VitzCrateOptic
+  cost:
+    VitzChip_currency: 2
+  categories:
+  - VitzMrHillShopMisc
+  
+- type: listing
+  id: VitzIDCardEfreitor
+  name: ID-карта Витезтви
+  description: Карта облегчающая доступ к остальным покупкам.
+  productEntity: VitzIDCardEfreitor
+  cost:
+    VitzChip_currency: 1
+  categories:
+  - VitzMrHillShopMisc
 #-----------------пресет категорий в магазе------------
 - type: entity
   id: StorePresetVitzMrHillShop
@@ -243,6 +268,7 @@
     - VitzMrHillShopSolders
     - VitzMrHillShopWeaponry
     - VitzMrHillShopAmmo
+    - VitzMrHillShopMisc
     currencyWhitelist:
     - VitzChip_currency
     balance:

@@ -501,7 +501,6 @@
         - SmokeOnTrigger
         - Flash
         - Handcuff
-        - RangedMagazine
         - Ammo
         - SprayPainter
         - NetworkConfigurator
@@ -950,7 +949,11 @@
   components:
     - type: Pda
       id: VitzIDCardEfreitor
-      state: pda
+    - type: Appearance
+      appearanceDataInit:
+       enum.PdaVisuals.PdaType:
+         !type:String
+         pda
     - type: Icon
       sprite: Victoria/Viteztvi/Equipment/vitz_pda.rsi
       state: pda
@@ -964,7 +967,11 @@
   components:
     - type: Pda
       id: VitzIDCardPilot
-      state: pda
+    - type: Appearance
+      appearanceDataInit:
+       enum.PdaVisuals.PdaType:
+         !type:String
+         pda
     - type: Icon
       sprite: Victoria/Viteztvi/Equipment/vitz_pda.rsi
       state: pda
@@ -978,7 +985,11 @@
   components:
     - type: Pda
       id: VitzIDCardStarshina
-      state: pda
+    - type: Appearance
+      appearanceDataInit:
+       enum.PdaVisuals.PdaType:
+         !type:String
+         pda
     - type: Icon
       sprite: Victoria/Viteztvi/Equipment/vitz_pda.rsi
       state: pda
@@ -992,7 +1003,11 @@
   components:
     - type: Pda
       id: VitzIDCardZvenievoi
-      state: pda
+    - type: Appearance
+      appearanceDataInit:
+       enum.PdaVisuals.PdaType:
+         !type:String
+         pda
     - type: Icon
       sprite: Victoria/Viteztvi/Equipment/vitz_pda.rsi
       state: pda
@@ -1006,7 +1021,11 @@
   components:
     - type: Pda
       id: VitzIDCardMrHill
-      state: pda
+    - type: Appearance
+      appearanceDataInit:
+       enum.PdaVisuals.PdaType:
+         !type:String
+         pda
     - type: Icon
       sprite: Victoria/Viteztvi/Equipment/vitz_pda.rsi
       state: pda            
@@ -2067,6 +2086,20 @@
       - id: VitzEncryptionKeyPil
       - id: VitzEncryptionKeyPil
       - id: VitzEncryptionKeyCom
+#-----------------------------Ящик оптики------------------ 
+- type: entity
+  id: VitzCrateOptic
+  parent: VitzCrate
+  name: Ящик вспомогательной оптики
+  suffix: Витезтви
+  description: Ящик с двумя биноклями и двумя оптическими приелами
+  components:
+  - type: StorageFill
+    contents:
+      - id: Binoculars
+      - id: Binoculars
+      - id: OpticalSight
+      - id: OpticalSight
 #-------------------------------------------------Радио призыва------------------ 
 - type: entity
   parent: ReinforcementRadio

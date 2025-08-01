@@ -173,6 +173,7 @@
     Steel: 1500
     Silver: 250
     Plasma: 1000
+    BSCrystalMaterial: 1000
 
 - type: latheRecipe
   id: OreBagOfHolding

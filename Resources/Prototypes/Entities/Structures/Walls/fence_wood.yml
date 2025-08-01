@@ -46,6 +46,10 @@
   - type: Climbable
     delay: 5.0
   - type: Appearance
+  - type: MobState
+  - type: NpcFactionMember
+    factions:
+    - DefenseStructure
 
 - type: entity
   parent: BaseFenceWood

@@ -146,6 +146,21 @@
     sprite: Victoria/Umpor/Equipment/umpor_boots.rsi
   - type: Clothing
     sprite: Victoria/Umpor/Equipment/umpor_boots.rsi
+#--------------------------------------------------плащ-------------------------------------- 
+- type: entity
+  parent: ClothingNeckBase
+  id: UmporCloakOf
+  name: Плащ старшего офицера Федерации
+  suffix: Конгломерат
+  description: Плащ, который носят старшие офицеры Умпорской Федерации на торжественные церемонии или для поддержки боевого духа солдат.
+  components:
+  - type: Sprite
+    sprite: Victoria/Umpor/Equipment/umpor_cloak.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Caustic: 0.9
+        Poison: 0.9
 #------------------------------------шлем---------- 
 - type: entity
   parent: ClothingHeadHelmetBasic
@@ -437,6 +452,7 @@
         Piercing: 7
   - type: Item
     sprite: Victoria/Umpor/Weapon/umpor_spade.rsi
+  - type: EntrenchingTool
 #---------------------------------------------РСУ---------------------    
 #------------------------сумка-------------- 
 - type: Tag
@@ -710,6 +726,10 @@
   - type: Tag
     tags:
       - UmporCartridgeHeavyRifle
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      UmporCartridgeHeavyRifle: 1
 #------------------------------------автомат---------- 
 - type: Tag
   id: UmporCartridgeLightRifle
@@ -756,6 +776,7 @@
     whitelist:
       tags:
         - UmporCartridgeHeavyRifle
+        - UmporSniperCartridgeHeavyRifle
     proto: UmporCartridgeHeavyRifle
     capacity: 12
   - type: Item
@@ -939,6 +960,7 @@
         whitelist:
           tags:
             - UmporCartridgeHeavyRifle
+            - UmporSniperCartridgeHeavyRifle
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
@@ -950,6 +972,9 @@
   - type: Appearance
   - type: StaticPrice
     price: 500
+  - type: Construction
+    graph: UmporRifleSniper
+    node: UmporRifle
 #------------------------------------автомат----------     
 - type: entity
   name: name-of-UmporLightRifle
@@ -1341,6 +1366,7 @@
     sprite: Victoria/Umpor/Equipment/umpor_pda.rsi
     layers:
     - map: [ "enum.PdaVisualLayers.Base" ]
+      state: "pda"
     - state: "light_overlay"
       map: [ "enum.PdaVisualLayers.Flashlight" ]
       shader: "unshaded"
@@ -1362,7 +1388,11 @@
   components:
     - type: Pda
       id: UmporIDCardSolder
-      state: pda
+    - type: Appearance
+      appearanceDataInit:
+       enum.PdaVisuals.PdaType:
+         !type:String
+         pda
     - type: Icon
       sprite: Victoria/Umpor/Equipment/umpor_pda.rsi
       state: pda
@@ -1376,7 +1406,11 @@
   components:
     - type: Pda
       id: UmporIDCardOfficer
-      state: pda
+    - type: Appearance
+      appearanceDataInit:
+       enum.PdaVisuals.PdaType:
+         !type:String
+         pda
     - type: Icon
       sprite: Victoria/Umpor/Equipment/umpor_pda.rsi
       state: pda
@@ -1390,7 +1424,11 @@
   components:
     - type: Pda
       id: UmporIDCardEngener
-      state: pda
+    - type: Appearance
+      appearanceDataInit:
+       enum.PdaVisuals.PdaType:
+         !type:String
+         pda
     - type: Icon
       sprite: Victoria/Umpor/Equipment/umpor_pda.rsi
       state: pda
@@ -1404,7 +1442,11 @@
   components:
     - type: Pda
       id: UmporIDCardMedic
-      state: pda
+    - type: Appearance
+      appearanceDataInit:
+       enum.PdaVisuals.PdaType:
+         !type:String
+         pda
     - type: Icon
       sprite: Victoria/Umpor/Equipment/umpor_pda.rsi
       state: pda
@@ -1418,7 +1460,11 @@
   components:
     - type: Pda
       id: UmporIDCardLogist
-      state: pda
+    - type: Appearance
+      appearanceDataInit:
+       enum.PdaVisuals.PdaType:
+         !type:String
+         pda
     - type: Icon
       sprite: Victoria/Umpor/Equipment/umpor_pda.rsi
       state: pda
@@ -1480,7 +1526,20 @@
     sprite: Victoria/Umpor/Equipment/umpor_garniture.rsi
   - type: Clothing
     sprite: Victoria/Umpor/Equipment/umpor_garniture.rsi
-#-----------------------------------------------------роли------------------------------------------------------      
+#-----------------------------------------------------роли------------------------------------------------------  
+- type: entity
+  parent: UmporBackpack
+  id: UmporBackpackFilled
+  suffix: Полный, Umpor
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingMaskGas
+      - id: FoodTinMRE
+      - id: FoodTinMRE
+      - id: DrinkWaterBottleFull
+      - id: Gauze
+      - id: OxygenTankFilled    
 #------------------------------------офицер---------- 
 - type: playTimeTracker
   id: JobEventUmporOfficer

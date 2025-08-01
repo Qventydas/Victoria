@@ -8,10 +8,22 @@
     "copyright": "Sprite created by crazzy_pingvin",
     "states": [
         {
-            "name": "aluminium"
+            "name": "aluminum"
         },
-		{
-            "name": "cooper"
+        {
+          "name": "aluminum_2"
+        },
+        {
+          "name": "aluminum_3"
+        },
+		    {
+            "name": "copper"
+        },
+        {
+          "name": "copper_2"
+        },
+        {
+          "name": "copper_3"
         },
 		{
 		  "name": "inhand-left",

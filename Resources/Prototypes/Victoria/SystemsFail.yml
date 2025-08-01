@@ -257,7 +257,7 @@
     - type: MachineBoard
       prototype: ReliableSubstation
       stackRequirements:
-        IndustrialCapacitor: 2
+        Capacitor: 2
         CableMV: 5
         CableHV: 5
         Cable: 5
@@ -300,7 +300,7 @@
     - type: MachineBoard
       prototype: ReliableSMES
       stackRequirements:
-        IndustrialCapacitor: 2
+        Capacitor: 2
         CableHV: 10
         Cable: 5
       componentRequirements:
@@ -430,6 +430,8 @@
     time: 99999
     prob: 0
     entity: DeffectSubstation
+  - type: Battery
+    startingCharge: 2500000
 #-----------------------------------------------------------------Надёжнный СМЭС-----------------------------
 #-------------------------------------------------Плата--------------------------------------
 - type: entity
@@ -455,6 +457,8 @@
     time: 99999
     prob: 0
     entity: DeffectSubstation
+  - type: Battery
+    startingCharge: 8000000
 #-----------------------------------------------------------------Надёжный ЛКП--------------------------------
 #-------------------------------------------------Плата--------------------------------------
 - type: entity
@@ -497,3 +501,5 @@
   - type: Construction
     graph: APC
     node: adminapc
+  - type: Battery
+    startingCharge: 50000

@@ -15,7 +15,10 @@
   access:
   - Research
   - Maintenance
-
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: PetrTarget
 - type: startingGear
   id: ResearchAssistantGear
   equipment:
