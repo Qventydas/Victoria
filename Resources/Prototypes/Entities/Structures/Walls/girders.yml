@@ -54,6 +54,10 @@
           collection: MetalBreak
   - type: StaticPrice
     price: 30
+  - type: MobState
+  - type: NpcFactionMember
+    factions:
+    - DefenseStructure
 
 - type: entity
   id: ReinforcedGirder

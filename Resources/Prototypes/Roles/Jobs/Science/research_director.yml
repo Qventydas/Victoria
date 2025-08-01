@@ -27,6 +27,7 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+      - type: PetrTarget
 
 - type: startingGear
   id: ResearchDirectorGear

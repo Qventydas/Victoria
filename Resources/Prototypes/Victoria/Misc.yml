@@ -47,17 +47,18 @@
   - type: Sprite
     layers:
       - state: box_medical
-# ----------------------------------------------------часы капитана с консолью связи---------------------------------------- 
+#----------------------------------------------------------------часы глав ----------------------------------------------------
+#----------------------------------------------------часы капитана с консолью связи---------------------------------------- 
 - type: entity
   id: WristwatchCaptain
   parent: Wristwatch
-  name: Часы капитана
-  description: Электронные часы с интегрированным ПО консоли связи.
+  name: часы капитана
+  description: Электронные часы с интегрированным программным обеспечением консоли связи.
   components:
   - type: Sprite
     sprite: Victoria/cap_watch.rsi
     layers:
-    - state: wristwatch
+    - state: cap
   - type: CommunicationsConsole
     title: comms-console-announcement-title-station
   - type: DeviceNetwork
@@ -70,3 +71,812 @@
         type: CommunicationsConsoleBoundUserInterface
       enum.WiresUiKey.Key:
         type: WiresBoundUserInterface
+#----------------------------------------------------часы ГП с консолью станционного учёта----------------------------------------
+- type: entity
+  id: WristwatchHop
+  parent: Wristwatch
+  name: часы главы персонала
+  description: Электронные часы с интегрированным программным обеспечением станционного учёта.
+  components:
+  - type: Sprite
+    sprite: Victoria/cap_watch.rsi
+    layers:
+    - state: hop
+  - type: GeneralStationRecordConsole
+  - type: UserInterface
+    interfaces:
+        enum.GeneralStationRecordConsoleKey.Key:
+          type: GeneralStationRecordConsoleBoundUserInterface
+        enum.WiresUiKey.Key:
+          type: WiresBoundUserInterface
+  - type: ActivatableUI
+    key: enum.GeneralStationRecordConsoleKey.Key
+#----------------------------------------------------часы ГВ с монитором экипажа----------------------------------------
+- type: entity
+  id: WristwatchSmo
+  parent: Wristwatch
+  name: часы главного врача
+  description: Электронные часы с интегрированным программным обеспечением мониторинга экипажа.
+  components:
+  - type: Sprite
+    sprite: Victoria/cap_watch.rsi
+    layers:
+    - state: smo
+  - type: ActivatableUI
+    key: enum.CrewMonitoringUIKey.Key
+  - type: UserInterface
+    interfaces:
+        enum.CrewMonitoringUIKey.Key:
+          type: CrewMonitoringBoundUserInterface
+        enum.WiresUiKey.Key:
+          type: WiresBoundUserInterface
+  - type: CrewMonitoringConsole
+  - type: DeviceNetwork
+    deviceNetId: Wireless
+    receiveFrequencyId: CrewMonitor
+#----------------------------------------------------часы НР с консолью исследований----------------------------------------
+- type: entity
+  id: WristwatchRd
+  parent: Wristwatch
+  name: часы научного руководителя
+  description: Электронные часы с интегрированным программным обеспечением консоли исследований.
+  components:
+  - type: Sprite
+    sprite: Victoria/cap_watch.rsi
+    layers:
+    - state: rd
+  - type: ResearchClient
+  - type: ResearchConsole
+  - type: ActiveRadio
+    channels:
+    - Science
+  - type: TechnologyDatabase
+  - type: ActivatableUI
+    key: enum.ResearchConsoleUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.ResearchConsoleUiKey.Key:
+        type: ResearchConsoleBoundUserInterface
+      enum.ResearchClientUiKey.Key:
+        type: ResearchClientBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
+  - type: AccessReader
+    access: [["Research"]]
+#----------------------------------------------------часы ГСБ с консолью камер----------------------------------------
+- type: entity
+  id: WristwatchHos
+  parent: Wristwatch
+  name: часы главы службы безопасности
+  description: Электронные часы с интегрированным программным обеспечением монитора камер.
+  components:
+  - type: Sprite
+    sprite: Victoria/cap_watch.rsi
+    layers:
+    - state: hop
+  - type: DeviceNetwork
+    deviceNetId: Wired
+    receiveFrequencyId: SurveillanceCamera
+    transmitFrequencyId: SurveillanceCamera
+  - type: WiredNetworkConnection
+  - type: SurveillanceCameraMonitor
+  - type: ActivatableUI
+    key: enum.SurveillanceCameraMonitorUiKey.Key
+  - type: ActivatableUIRequiresVision
+  - type: UserInterface
+    interfaces:
+        enum.SurveillanceCameraMonitorUiKey.Key:
+          type: SurveillanceCameraMonitorBoundUserInterface
+        enum.WiresUiKey.Key:
+          type: WiresBoundUserInterface
+#----------------------------------------------------часы КМ с консолью запросов----------------------------------------
+- type: entity
+  id: WristwatchQm
+  parent: Wristwatch
+  name: часы квартирмейстера
+  description: Электронные часы с интегрированным программным обеспечением консоли запросов.
+  components:
+  - type: Sprite
+    sprite: Victoria/cap_watch.rsi
+    layers:
+    - state: qm
+  - type: AccessReader
+    access: [["Quartermaster"]]
+  - type: CargoBountyConsole
+  - type: ActivatableUI
+    key: enum.CargoConsoleUiKey.Bounty
+  - type: UserInterface
+    interfaces:
+      enum.CargoConsoleUiKey.Bounty:
+        type: CargoBountyConsoleBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
+#----------------------------------------------------часы СИ с консолью контроля питания----------------------------------------
+- type: entity
+  id: WristwatchSe
+  parent: Wristwatch
+  name: часы старшено инженера
+  description: Электронные часы с интегрированным программным обеспечением консоли контроля питания.
+  components:
+  - type: Sprite
+    sprite: Victoria/cap_watch.rsi
+    layers:
+    - state: se
+  - type: PowerMonitoringConsole
+  - type: PowerMonitoringCableNetworks
+  - type: ActivatableUI
+    singleUser: true
+    key: enum.PowerMonitoringConsoleUiKey.Key
+  - type: UserInterface
+    interfaces:
+      enum.PowerMonitoringConsoleUiKey.Key:
+        type: PowerMonitoringConsoleBoundUserInterface
+      enum.WiresUiKey.Key:
+        type: WiresBoundUserInterface
+#----------------------------------------------------часы АВД с факсом----------------------------------------
+# - type: entity
+  # id: WristwatchAvd
+  # parent: Wristwatch
+  # name: Часы АВД
+  # description: Электронные часы с интегрированным и минимизированным факсом и системой дальней связи.
+  # components:
+  # - type: Sprite
+    # sprite: Victoria/cap_watch.rsi
+    # layers:
+    # - state: avd
+  # - type: ActivatableUI
+    # key: enum.FaxUiKey.Key
+  # - type: UserInterface
+    # interfaces:
+      # enum.FaxUiKey.Key:
+        # type: FaxBoundUi
+  # - type: FaxMachine
+    # paperSlot:
+      # insertSound: /Audio/Machines/scanning.ogg
+      # ejectSound: /Audio/Machines/tray_eject.ogg
+      # whitelist:
+        # components:
+          # - FaxableObject
+    # name: "Часы АВД"
+    # receiveStationGoal: true
+  # - type: ItemSlots
+  # - type: ContainerContainer
+    # containers:
+      # Paper: !type:ContainerSlot
+  # - type: DeviceNetwork
+    # deviceNetId: Wireless
+    # receiveFrequencyId: Fax
+    # transmitFrequencyId: Fax
+  # - type: RequireProjectileTarget
+  # - type: StationAiWhitelist
+          
+#Нихрена не вышло. Оно не хочет копировать и отправлять. Бумагу принимает, а достать нельзя.
+#-----------------------------------------------------------------мешки с песком----------------------------------------
+- type: entity
+  parent: BaseItem
+  id: SandbagEmpty
+  name: пустые мешки
+  description: В него можно засыпать песок.
+  components:
+  - type: Item
+    size: Small
+  - type: Sprite
+    sprite: Victoria/sandbags.rsi
+    layers:
+    - state: sandbag_pile
+    - map: [ "acided" ]
+  - type: EmptySandbag
+  - type: Stack
+    stackType: SandbagEmpty
+    count: 1
+  - type: Butcherable
+    butcheringType: Knife
+    spawned:
+    - id: MaterialCloth1
+      amount: 1
+  - type: Construction
+    graph: Sandbag
+    node: SandbagEmptyLinum
+
+- type: entity
+  parent: SandbagEmpty
+  id: SandbagEmpty50
+  suffix: "50"
+  components:
+  - type: Stack
+    stackType: SandbagEmpty
+    count: 50
+
+- type: stack
+  id: SandbagEmpty
+  name: пустые мешки
+  spawn: SandbagEmpty
+  maxCount: 50
+  
+- type: entity
+  parent: BaseItem
+  id: SandbagFull
+  name: мешки с песком
+  description: На такой "подушке" поспать смогли бы лишь древние египтяне, но из них получатся отличные брустверы.
+  components:
+  - type: Item
+    size: Large
+  - type: Sprite
+    sprite: Victoria/sandbags.rsi
+    layers:
+    - state: sandbag_stack
+    - map: [ "acided" ]
+  - type: FullSandbag
+  - type: Stack
+    stackType: SandbagFull
+    count: 1
+  - type: Construction
+    graph: SandbagFull
+    node: SandbagFull
+
+- type: entity
+  parent: SandbagFull
+  id: SandbagFull50
+  suffix: "50"
+  components:
+  - type: Stack
+    stackType: SandbagFull
+    count: 50
+    
+- type: stack
+  id: SandbagFull
+  name: мешки с песком
+  spawn: SandbagFull
+  maxCount: 50
+  
+- type: soundCollection
+  id: EntrenchingRustle
+  files:
+  - /Audio/Victoria/Entrenching/rustle1.ogg
+  - /Audio/Victoria/Entrenching/rustle2.ogg
+  - /Audio/Victoria/Entrenching/rustle3.ogg
+  - /Audio/Victoria/Entrenching/rustle4.ogg
+  
+- type: soundCollection
+  id: EntrenchingThud
+  files:
+  - /Audio/Victoria/Entrenching/thud.ogg
+#---------------------------------------------рецепты мешков----------------------------------------
+- type: constructionGraph
+  id: Sandbag
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: SandbagEmptyLinum 
+          steps:
+            - material: Cloth
+              amount: 1
+        - to: SandbagEmptyCotton
+          steps:
+            - material: CottonCloth
+              amount: 1
+        - to: SandbagEmptyCottonPaper
+          steps:
+            - material: CottonPaperCloth
+              amount: 1
+        - to: SandbagEmptyElastane
+          steps:
+            - material: ElastaneCloth
+              amount: 1    
+        - to: SandbagEmptySheepWool
+          steps:
+            - material: SheepWoolClean
+              amount: 1  
+    - node: SandbagEmptyLinum 
+      entity: SandbagEmpty     
+    - node: SandbagEmptyCotton
+      entity: SandbagEmpty    
+    - node: SandbagEmptyCottonPaper
+      entity: SandbagEmpty
+    - node: SandbagEmptyElastane
+      entity: SandbagEmpty
+    - node: SandbagEmptySheepWool
+      entity: SandbagEmpty
+      
+- type: construction
+  name: sandbag empty
+  id: SandbagLinum
+  graph: Sandbag
+  startNode: start
+  targetNode: SandbagEmptyLinum 
+  category: construction-category-materials
+  description: Мешок, который можно будет наполнить чем-то сыпучим.
+  icon: { sprite: Victoria/sandbags.rsi, state: sandbag_pile }
+  objectType: Item
+  
+- type: construction
+  name: sandbag empty
+  id: SandbagCotton
+  graph: Sandbag
+  startNode: start
+  targetNode: SandbagEmptyCotton
+  category: construction-category-materials
+  description: Мешок, который можно будет наполнить чем-то сыпучим.
+  icon: { sprite: Victoria/sandbags.rsi, state: sandbag_pile }
+  objectType: Item
+  
+- type: construction
+  name: sandbag empty
+  id: SandbagCottonPaper
+  graph: Sandbag
+  startNode: start
+  targetNode: SandbagEmptyCottonPaper
+  category: construction-category-materials
+  description: Мешок, который можно будет наполнить чем-то сыпучим.
+  icon: { sprite: Victoria/sandbags.rsi, state: sandbag_pile }
+  objectType: Item
+  
+- type: construction
+  name: sandbag empty
+  id: SandbagElastane
+  graph: Sandbag
+  startNode: start
+  targetNode: SandbagEmptyElastane
+  category: construction-category-materials
+  description: Мешок, который можно будет наполнить чем-то сыпучим.
+  icon: { sprite: Victoria/sandbags.rsi, state: sandbag_pile }
+  objectType: Item
+  
+- type: construction
+  name: sandbag empty
+  id: SandbagEmptySheepWool
+  graph: Sandbag
+  startNode: start
+  targetNode: SandbagEmptySheepWool
+  category: construction-category-materials
+  description: Мешок, который можно будет наполнить чем-то сыпучим.
+  icon: { sprite: Victoria/sandbags.rsi, state: sandbag_pile }
+  objectType: Item
+#---------------------------------------------рецепты мешка с песком----------------------------------------  
+- type: constructionGraph
+  id: SandbagFull
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: SandbagFull 
+          steps:
+            - material: SandbagEmpty
+              amount: 1
+            - material: SandHandful
+              amount: 4
+   
+    - node: SandbagFull
+      entity: SandbagFull    
+
+- type: construction
+  name: sandbag full
+  id: SandbagFull
+  graph: SandbagFull
+  startNode: start
+  targetNode: SandbagFull
+  category: construction-category-materials
+  description: Наполнение мешков песком.
+  icon: { sprite: Victoria/sandbags.rsi, state: sandbag_stack }
+  objectType: Item
+#-----------------ящик мешков и карготовар--------------------------------   
+- type: entity
+  id: CrateSandbagEmpty
+  parent: CrateGenericSteel
+  name: Ящик с мешкам
+  description: Ящик с сотней плотных мешков
+  components:
+    - type: StorageFill
+      contents:
+      - id: SandbagEmpty50
+      - id: SandbagEmpty50
+
+- type: cargoProduct
+  id: CrateSandbagEmpty
+  name: Ящик с мешкам
+  description: Ящик с сотней плотных мешков
+  icon:
+    sprite: Victoria/sandbags.rsi
+    state: sandbag_pile
+  product: CrateSandbagEmpty
+  cost: 1200
+  category: cargoproduct-category-name-materials
+  group: market
+#---------------------------------------------баррикады----------------------------------------  
+- type: entity
+  id: SandBarricadeWo
+  parent: SandBarricade
+  name: Бруствер из мешков
+  suffix: Доски
+  description: Быстроссоружаемая баррикада из мешков с песком. Укреплена досками, что может выгадать ценное время.
+  components:
+  - type: Sprite
+    layers:
+    - state: sandbag_wo
+  - type: Icon
+    state: sandbag_wo
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 250
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 200
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SandbagEmpty:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Construction
+    graph: SandbagBarricade
+    node: SandBarricadeWo
+        
+- type: entity
+  id: SandBarricadeSt
+  parent: SandBarricade
+  name: Бруствер из мешков
+  suffix: Сталь
+  description: Быстроссоружаемая баррикада из мешков с песком. Укреплена стальными листами. Внушает некую уверенность.
+  components:
+  - type: Sprite
+    layers:
+    - state: sandbag_st
+  - type: Icon
+    state: sandbag_st
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 400
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+    - trigger:
+        !type:DamageTrigger
+        damage: 350
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          SandbagEmpty:
+            min: 1
+            max: 2
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Construction
+    graph: SandbagBarricade
+    node: SandBarricadeSt
+        
+- type: entity
+  id: SandBarricadeWi
+  parent: SandBarricade
+  name: Бруствер из мешков
+  suffix: Проволока
+  description: Быстроссоружаемая баррикада из мешков с песком. На неё намотана колючая проволока. Кусается...
+  components:
+  - type: Sprite
+    layers:
+    - state: sandbag_wi
+  - type: Icon
+    state: sandbag_wi
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.35
+    sprintSpeedModifier: 0.35
+  - type: DamageContacts
+    damage:
+      types:
+        Piercing: 8
+  - type: Construction
+    graph: SandbagBarricade
+    node: SandBarricadeWi
+        
+- type: entity
+  id: SandBarricadeWoWi
+  parent: SandBarricadeWo
+  name: Бруствер из мешков
+  suffix: Доски и Проволока
+  description: Быстроссоружаемая баррикада из мешков с песком. Укреплена досками, что может выгадать ценное время. И на неё намотана колючая проволока. Кусается...
+  components:
+  - type: Sprite
+    layers:
+    - state: sandbag_wowi
+  - type: Icon
+    state: sandbag_wowi
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.35
+    sprintSpeedModifier: 0.35
+  - type: DamageContacts
+    damage:
+      types:
+        Piercing: 8
+  - type: Construction
+    graph: SandbagBarricade
+    node: SandBarricadeWoWi
+        
+- type: entity
+  id: SandBarricadeStWi
+  parent: SandBarricadeSt
+  name: Бруствер из мешков
+  suffix: Сталь и Проволока
+  description: Быстроссоружаемая баррикада из мешков с песком. Укреплена стальными листами. Внушает некую уверенность. И на неё намотана колючая проволока. Кусается...
+  components:
+  - type: Sprite
+    layers:
+    - state: sandbag_stwi
+  - type: Icon
+    state: sandbag_stwi
+  - type: SpeedModifierContacts
+    walkSpeedModifier: 0.35
+    sprintSpeedModifier: 0.35
+  - type: DamageContacts
+    damage:
+      types:
+        Piercing: 8
+  - type: Construction
+    graph: SandbagBarricade
+    node: SandBarricadeStWi
+        
+- type: constructionGraph
+  id: SandbagBarricade
+  start: SandBarricade
+  graph:
+    - node: SandBarricade
+      entity: SandBarricade
+      edges:
+        - to: SandBarricadeWo
+          steps:
+            - material: WoodPlank
+              amount: 2
+            - tool: Screwing
+              doAfter: 0.5
+        - to: SandBarricadeSt
+          steps:
+            - material: Steel
+              amount: 2
+            - tool: Welding
+              doAfter: 0.5
+        - to: SandBarricadeWi
+          steps:
+            - material: Wire
+              amount: 2
+            - tool: Screwing
+              doAfter: 0.5
+        - to: DeleteBarricade
+          completed:
+            - !type:SpawnPrototype
+              prototype: SandbagFull
+              amount: 5
+            - !type:DeleteEntity
+          steps:
+            - tool: Prying
+              doAfter: 2
+              
+    - node: SandBarricadeWo
+      entity: SandBarricadeWo
+      edges:
+        - to: SandBarricadeWoWi
+          steps:
+            - material: Wire
+              amount: 2
+            - tool: Screwing
+              doAfter: 0.5
+        - to: SandBarricade
+          completed:
+            - !type:SpawnPrototype
+              prototype: MaterialWoodPlank1
+              amount: 1
+          steps:
+            - tool: Prying
+              doAfter: 1
+              
+    - node: SandBarricadeWi
+      entity: SandBarricadeWi
+      edges:
+        - to: SandBarricadeWoWi
+          steps:
+            - material: WoodPlank
+              amount: 2
+            - tool: Screwing
+              doAfter: 0.5
+        - to: SandBarricadeStWi
+          steps:
+            - material: Steel
+              amount: 2
+            - tool: Welding
+              doAfter: 0.5
+        - to: SandBarricade
+          completed:
+            - !type:SpawnPrototype
+              prototype: CableWireStack1
+              amount: 1
+          steps:
+            - tool: Cutting
+              doAfter: 1 
+
+    - node: SandBarricadeSt
+      entity: SandBarricadeSt
+      edges:
+        - to: SandBarricadeStWi
+          steps:
+            - material: Wire
+              amount: 2
+            - tool: Screwing
+              doAfter: 0.5
+        - to: SandBarricade
+          completed:
+            - !type:SpawnPrototype
+              prototype: SheetSteel1
+              amount: 2
+          steps:
+            - tool: Welding
+              doAfter: 1 
+
+    - node: SandBarricadeStWi
+      entity: SandBarricadeStWi
+      edges:
+        - to: SandBarricadeSt
+          completed:
+            - !type:SpawnPrototype
+              prototype: CableWireStack1
+              amount: 1
+          steps:
+            - tool: Cutting
+              doAfter: 1
+
+    - node: SandBarricadeWoWi
+      entity: SandBarricadeWoWi
+      edges:
+        - to: SandBarricadeWo
+          completed:
+            - !type:SpawnPrototype
+              prototype: CableWireStack1
+              amount: 1
+          steps:
+            - tool: Cutting
+              doAfter: 1
+
+    - node: DeleteBarricade              
+              
+#Screwing - Отвёртка
+#Cutting - Кусачки
+#Prying - Лом
+#Welding - Сварка
+#---------------------------------------------крафт лопаты----------------------------------------
+- type: constructionGraph
+  id: Shovel
+  start: start
+  graph:
+    - node: start
+      edges:
+        - to: Shovel 
+          steps:
+            - material: Steel
+              amount: 1
+            - material: WoodPlank
+              amount: 1
+   
+    - node: Shovel
+      entity: Shovel    
+
+- type: construction
+  name: shovel
+  id: Shovel
+  graph: Shovel
+  startNode: start
+  targetNode: Shovel
+  category: construction-category-tools
+  description: Лопата. Просто лопата. Ей можно копать.
+  icon: { sprite: Objects/Tools/shovel.rsi, state: icon }
+  objectType: Item
+#---------------------------------------------песок----------------------------------------
+- type: Tag
+  id: SandHandful
+
+- type: entity
+  parent: CrystalOreBase
+  id: SandHandful
+  name: горсть песка
+  description: Можно насыпать в мешки и строить из них баррикады или переплавлять в стекло.
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: SandHandful
+    count: 100
+  - type: Sprite
+    sprite: Victoria/sandbags.rsi
+    state: sand
+  - type: Extractable
+    grindableSolutionName: sanddirty
+  - type: Material
+  - type: PhysicalComposition
+    materialComposition:
+      SandHandful: 100
+  - type: Tag
+    tags:
+    - SandHandful
+  - type: SolutionContainerManager
+    solutions:
+      sanddirty:
+        reagents:
+        - ReagentId: Silicon
+          Quantity: 1
+        - ReagentId: Oxygen
+          Quantity: 2
+        - ReagentId: Dirty
+          Quantity: 7
+#------------------Стак--------------------------
+- type: stack
+  id: SandHandful
+  name: горсть песка
+  icon: { sprite: Victoria/sandbags.rsi, state: sand }
+  spawn: SandHandful1
+  maxCount: 100
+#------------------Одна--------------------------
+- type: entity
+  parent: SandHandful
+  id: SandHandful1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+#-----------------Материал--------------------------------
+- type: material
+  id: SandHandful
+  stackEntity: SandHandful1
+  name: песок
+  icon: { sprite: Victoria/sandbags.rsi, state: sand }
+  price: 0
+#-----------------Переплавка в кремний--------------------------------  
+- type: latheRecipe
+  id: MeltingSiCrystallfromSand
+  result: SiCrystall1
+  completetime: 4
+  materials:
+    SandHandful: 1000
+    Coal: 30 
+#-----------------Переплавка в стекло--------------------------------
+- type: latheRecipe
+  id: MeltingSheetGlassfromSand
+  result: SheetGlass1
+  completetime: 2
+  materials:
+    SandHandful: 300
+    Coal: 30
+#-----------------ящик песка и карготовар--------------------------------   
+- type: entity
+  id: CrateSandHandful
+  parent: CrateGenericSteel
+  name: Ящик с песком
+  description: Ящик с обычным песком. Грязным. Непросеяным. 
+  components:
+    - type: StorageFill
+      contents:
+      - id: SandHandful
+      - id: SandHandful
+      - id: SandHandful
+      - id: SandHandful
+
+- type: cargoProduct
+  id: CrateSandHandful
+  name: Ящик с песком
+  description: Ящик с обычным песком. Грязным. Непросеяным. 
+  icon:
+    sprite: Victoria/sandbags.rsi
+    state: sand
+  product: CrateSandHandful
+  cost: 500
+  category: cargoproduct-category-name-materials
+  group: market

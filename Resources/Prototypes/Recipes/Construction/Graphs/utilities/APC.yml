@@ -70,7 +70,7 @@
         - to: apcFrame
           completed:
             - !type:GivePrototype
-              prototype: DeffectSMESMachineCircuitboard
+              prototype: DeffectAPCElectronics
               amount: 1
           conditions:
             - !type:WirePanel

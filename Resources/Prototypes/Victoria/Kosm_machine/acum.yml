@@ -282,7 +282,7 @@
     state: acum
   discipline: Experimental
   tier: 1
-  cost: 10000
+  cost: 7500
   recipeUnlocks:
   - MachineCircuitboardCosmScanner
   - MachineCircuitboardCosmBeacon

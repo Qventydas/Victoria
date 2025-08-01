@@ -1,6 +1,9 @@
 - type: cargoBounty
   id: BountyArtifact
   reward: 2500
+  giftType: NTChip_stack
+  giftAmount: 1
+  giftText: чип НТ
   description: bounty-description-artifact
   entries:
   - name: bounty-item-artifact
@@ -24,9 +27,6 @@
 - type: cargoBounty
   id: BountyBrain
   reward: 12500
-  giftType: NTChip_stack
-  giftAmount: 3
-  giftText: 3 чипа НТ
   description: bounty-description-brain
   entries:
   - name: bounty-item-brain
@@ -38,6 +38,9 @@
 - type: cargoBounty
   id: BountyBread
   reward: 2000
+  giftType: GFChip_stack
+  giftAmount: 1
+  giftText: чип Гефест
   description: bounty-description-bread
   entries:
   - name: bounty-item-bread
@@ -75,6 +78,9 @@
 - type: cargoBounty
   id: BountyCarp
   reward: 12500
+  giftType: VitzChip_stack
+  giftAmount: 1
+  giftText: чип Витезстви
   description: bounty-description-carp
   idPrefix: CC
   entries:
@@ -103,6 +109,9 @@
 - type: cargoBounty
   id: BountyCorn
   reward: 10000
+  giftType: GFChip_stack
+  giftAmount: 1
+  giftText: чип Гефест
   description: bounty-description-corn
   entries:
   - name: bounty-item-corn
@@ -174,7 +183,10 @@
 
 - type: cargoBounty
   id: BountyGalaxyThistle
-  reward: 12000
+  reward: 10000
+  giftType: GDChip_stack
+  giftAmount: 1
+  giftText: чип ГфсДеф
   description: bounty-description-galaxythistle
   entries:
   - name: bounty-item-galaxythistle
@@ -307,8 +319,8 @@
   id: BountyPercussion
   reward: 15000
   giftType: NTChip_stack
-  giftAmount: 2
-  giftText: 2 чипа НТ
+  giftAmount: 1
+  giftText: чип НТ
   description: bounty-description-percussion
   entries:
   - name: bounty-item-percussion
@@ -346,6 +358,9 @@
 - type: cargoBounty
   id: BountyRadio
   reward: 6500
+  giftType: SbChip_stack
+  giftAmount: 1
+  giftText: чип Саибасан
   description: bounty-description-radio
   entries:
   - name: bounty-item-radio
@@ -416,6 +431,9 @@
 - type: cargoBounty
   id: BountyTechDisk
   reward: 25000
+  giftType: NTChip_stack
+  giftAmount: 1
+  giftText: чип НТ
   description: bounty-description-tech-disk
   idPrefix: SS13-
   entries:
@@ -428,9 +446,9 @@
 - type: cargoBounty
   id: BountyToolbox
   reward: 8000
-  giftType: NTChip_stack
+  giftType: NEChip_stack
   giftAmount: 1
-  giftText: 1 чип НТ
+  giftText: чип Накамура Инжениринг
   description: bounty-description-toolbox
   idPrefix: CC
   entries:
@@ -453,7 +471,10 @@
 
 - type: cargoBounty
   id: BountyAnomalyCore
-  reward: 10000
+  reward: 8000
+  giftType: NTChip_stack
+  giftAmount: 1
+  giftText: чип НТ
   description: bounty-description-anomaly-core
   entries:
   - name: bounty-item-anomaly-core
@@ -465,6 +486,9 @@
 - type: cargoBounty
   id: BountyBorgModule
   reward: 3500
+  giftType: KMLGChip_stack
+  giftAmount: 1
+  giftText: чип Космологистики
   description: bounty-description-borg-module
   entries:
   - name: bounty-item-borg-module
@@ -475,7 +499,7 @@
 
 - type: cargoBounty
   id: BountyArtifactFragment
-  reward: 32500
+  reward: 20000
   giftType: NTChip_stack
   giftAmount: 1
   giftText: 1 чип НТ
@@ -702,9 +726,9 @@
 - type: cargoBounty
   id: BountyMedkitBox
   reward: 2300
-  giftType: NTChip_stack
+  giftType: GDChip_stack
   giftAmount: 1
-  giftText: 1 чип НТ
+  giftText: чип ГасДеф
   description: bounty-description-medkit-box
   entries:
   - name: bounty-item-medkit-box
@@ -782,9 +806,6 @@
 - type: cargoBounty
   id: BountyTeethSharkminnow
   reward: 1500
-  giftType: NTChip_stack
-  giftAmount: 1
-  giftText: 1 чип НТ
   description: bounty-description-tooth-sharkminnow
   entries:
   - name: bounty-item-tooth-sharkminnow

@@ -19,6 +19,7 @@
     - id: RubberStampQm
     - id: AstroNavCartridge
     - id: PrinterDocFlatpack # Corvax-Printer
+    - id: WristwatchQm
 
 - type: entity
   id: LockerQuarterMasterFilled
@@ -142,6 +143,7 @@
     - id: ClothingEyesHudCommand
     - id: ClothingOuterCoatHOP # Corvax-Resprite
     - id: PrinterDocFlatpack # Corvax-Printer
+    - id: WristwatchHop
 
 - type: entity
   id: LockerHeadOfPersonnelFilled
@@ -170,6 +172,7 @@
     - id: RCD
     - id: RCDAmmo
     - id: RubberStampCE
+    - id: WristwatchSe
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -228,6 +231,7 @@
     - id: MedkitFilled
     - id: RubberStampCMO
     - id: MedTekCartridge
+    - id: WristwatchSmo
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -279,6 +283,7 @@
     - id: ProtolatheMachineCircuitboard
     - id: ResearchComputerCircuitboard
     - id: RubberStampRd
+    - id: WristwatchRd
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable
@@ -341,6 +346,8 @@
       prob: 0.5
     - id: ClothingOuterCoatHoSGreatcoat # Corvax-Resprite
     - id: BookBusido # Corvax-Books
+    - id: WristwatchHos
+    - id: DrinkHosFlask
 
 # Hardsuit table, used for suit storage as well
 - type: entityTable

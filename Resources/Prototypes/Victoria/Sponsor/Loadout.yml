@@ -1,0 +1,744 @@
+#-----------------------------------------------------------умпорский---------------------
+#---------------------------------------------сервис-----------------------
+- type: loadout
+  id: UmpornKnife
+  effects:
+  - !type:SponsorLoadoutEffect
+  storage:
+    back:
+    - UmpornKnife
+
+- type: loadout
+  id: UmporSpade
+  effects:
+  - !type:SponsorLoadoutEffect
+  storage:
+    back:
+    - UmporSpade
+
+- type: loadout
+  id: UmporHatchet
+  effects:
+  - !type:SponsorLoadoutEffect
+  storage:
+    back:
+    - UmporHatchet
+
+- type: loadout
+  id: UmporCapP
+  effects:
+  - !type:SponsorLoadoutEffect
+  equipment:
+    head: UmporCapP
+
+- type: loadoutGroup
+  id: GroupUmporLoadoutCapP
+  name: loadout-group-umpor
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - UmporCapP
+
+- type: loadoutGroup
+  id: GroupUmporLoadoutChef
+  name: loadout-group-umpor
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - UmporCapP
+  - UmpornKnife
+  
+- type: loadoutGroup
+  id: GroupUmporLoadoutBotan
+  name: loadout-group-umpor
+  minLimit: 0
+  maxLimit: 3
+  loadouts:
+  - UmporCapP
+  - UmporHatchet
+  - UmporSpade
+#---------------------------------------------карго-----------------------
+- type: loadout
+  id: UmporHealthAnalyzerUnpowered
+  effects:
+  - !type:SponsorLoadoutEffect
+  storage:
+    back:
+    - UmporHealthAnalyzerUnpowered
+    
+- type: loadoutGroup
+  id: GroupUmporLoadoutSalv
+  name: loadout-group-umpor
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - UmporHealthAnalyzerUnpowered
+  - UmpornKnife
+#---------------------------------------------инж-----------------------    
+- type: loadout
+  id: UmporRCD
+  effects:
+  - !type:SponsorLoadoutEffect
+  equipment:
+    pocket1: UmporRCD
+    
+- type: loadoutGroup
+  id: GroupUmporLoadoutEng
+  name: loadout-group-umpor
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - UmporBeret
+  - UmporRCD
+#---------------------------------------------мед-----------------------     
+- type: loadout
+  id: UmporBeret
+  effects:
+  - !type:SponsorLoadoutEffect
+  equipment:
+    head: UmporBeret
+    
+- type: loadout
+  id: UmporeBeltMed
+  effects:
+  - !type:SponsorLoadoutEffect
+  equipment:
+    belt: UmporeBeltMed
+
+- type: loadoutGroup
+  id: GroupUmporLoadoutMed
+  name: loadout-group-umpor
+  minLimit: 0
+  maxLimit: 3
+  loadouts:
+  - UmporHealthAnalyzerUnpowered
+  - UmporBeret
+  - UmporeBeltMed
+#---------------------------------------------СБ-----------------------     
+- type: loadout
+  id: UmporCap
+  effects:
+  - !type:SponsorLoadoutEffect
+  equipment:
+    head: UmporCap
+
+- type: loadoutGroup
+  id: GroupUmporLoadoutKnife
+  name: loadout-group-umpor
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - UmpornKnife
+    
+- type: loadoutGroup
+  id: GroupUmporLoadoutSec
+  name: loadout-group-umpor
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - UmporCap
+  - UmpornKnife
+  
+- type: loadoutGroup
+  id: GroupUmporLoadoutCap
+  name: loadout-group-umpor
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - UmporCap
+#-----------------------------------------------------------советский---------------------
+
+
+
+
+
+
+
+
+
+
+
+#-----------------------------------------------------------снк---------------------
+#---------------------------------------------сервис-----------------------
+- type: loadout
+  id: KMLGCapP
+  effects:
+  - !type:SponsorLoadoutEffect
+  equipment:
+    head: KMLGCapP
+    
+- type: loadout
+  id: KMLGBandana
+  effects:
+  - !type:SponsorLoadoutEffect
+  equipment:
+    head: KMLGBandana
+    
+- type: loadout
+  id: KMLGEpolets10
+  effects:
+  - !type:SponsorLoadoutEffect
+  equipment:
+    neck: KMLGEpolets10
+    
+- type: loadout
+  id: KMLGEpolets20
+  effects:
+  - !type:SponsorLoadoutEffect
+  equipment:
+    neck: KMLGEpolets20
+    
+- type: loadout
+  id: KMLGEpolets30
+  effects:
+  - !type:SponsorLoadoutEffect
+  equipment:
+    neck: KMLGEpolets30
+    
+- type: loadout
+  id: KMLGCoat
+  effects:
+  - !type:SponsorLoadoutEffect
+  equipment:
+    outerClothing: KMLGCoat
+    
+- type: loadout
+  id: KMLGUniformServise
+  effects:
+  - !type:SponsorLoadoutEffect
+  equipment:
+    jumpsuit: KMLGUniformServise
+    
+- type: loadoutGroup
+  id: GroupKMLGLoadoutEpolets
+  name: loadout-group-snk-epolets
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - KMLGEpolets10
+  - KMLGEpolets20
+  - KMLGEpolets30
+  
+- type: loadoutGroup
+  id: GroupKMLGLoadoutCapServ
+  name: loadout-group-snk
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - KMLGCapP
+  - KMLGBandana
+  
+- type: loadoutGroup
+  id: GroupKMLGLoadoutCoat
+  name: loadout-group-snk
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - KMLGCoat
+  
+- type: loadoutGroup
+  id: GroupKMLGLoadoutUniformServise
+  name: loadout-group-snk
+  maxLimit: 1
+  loadouts:
+  - KMLGUniformServise
+#---------------------------------------------карго-----------------------
+- type: loadout
+  id: KMLGCepka
+  effects:
+  - !type:SponsorLoadoutEffect
+  equipment:
+    head: KMLGCepka
+    
+- type: loadout
+  id: SNKShapkaStd
+  effects:
+  - !type:SponsorLoadoutEffect
+  equipment:
+    head: SNKShapkaStd
+    
+- type: loadout
+  id: SNKShapkaLes
+  effects:
+  - !type:SponsorLoadoutEffect
+  equipment:
+    head: SNKShapkaLes
+    
+- type: loadout
+  id: SNKShapkaZim
+  effects:
+  - !type:SponsorLoadoutEffect
+  equipment:
+    head: SNKShapkaZim
+    
+- type: loadout
+  id: SNKCloakLes
+  effects:
+  - !type:SponsorLoadoutEffect
+  equipment:
+    neck: SNKCloakLes
+    
+- type: loadout
+  id: SNKCloakPes
+  effects:
+  - !type:SponsorLoadoutEffect
+  equipment:
+    neck: SNKCloakPes
+    
+- type: loadout
+  id: SNKCloakZim
+  effects:
+  - !type:SponsorLoadoutEffect
+  equipment:
+    neck: SNKCloakZim
+    
+- type: loadoutGroup
+  id: GroupSNKLoadoutShapka
+  name: loadout-group-snk-shapka
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - SNKShapkaStd
+  - SNKShapkaLes
+  - SNKShapkaZim
+  
+- type: loadoutGroup
+  id: GroupSNKLoadoutCloak
+  name: loadout-group-snk-cloak
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - SNKCloakLes
+  - SNKCloakPes
+  - SNKCloakZim
+  
+- type: loadoutGroup
+  id: GroupKMLGLoadoutCepka
+  name: loadout-group-snk
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - KMLGCepka
+  - KMLGCoat
+#---------------------------------------------инж-----------------------
+- type: loadout
+  id: KMLGUniformRepairman
+  effects:
+  - !type:SponsorLoadoutEffect
+  equipment:
+    jumpsuit: KMLGUniformRepairman
+    
+- type: loadout
+  id: KMLGBelt
+  effects:
+  - !type:SponsorLoadoutEffect
+  equipment:
+    belt: KMLGBelt
+    
+- type: loadoutGroup
+  id: GroupSNKLoadoutTech
+  name: loadout-group-snk
+  minLimit: 0
+  maxLimit: 3
+  loadouts:
+  - KMLGUniformRepairman
+  - KMLGBelt
+  - KMLGCoat
+  
+- type: loadoutGroup
+  id: GroupSNKLoadoutEng
+  name: loadout-group-snk
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - KMLGBelt
+  - KMLGCoat
+  
+- type: loadoutGroup
+  id: GroupSNKLoadoutAtmos
+  name: loadout-group-snk
+  minLimit: 0
+  maxLimit: 3
+  loadouts:
+  - KMLGBelt
+  - KMLGCoat
+  - Hooligan
+#---------------------------------------------мед-----------------------
+- type: loadout
+  id: KMLGBeret
+  effects:
+  - !type:SponsorLoadoutEffect
+  equipment:
+    head: KMLGBeret
+    
+- type: loadoutGroup
+  id: GroupKMLGLoadoutMed
+  name: loadout-group-snk
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - KMLGBeret
+  - KMLGCoat
+#-----------------------------------------------------------имперец---------------------
+#---------------------------------------------сервис-----------------------
+- type: loadout
+  id: MirtnKnife
+  effects:
+  - !type:SponsorLoadoutEffect
+  storage:
+    back:
+    - MirtnKnife
+
+- type: loadout
+  id: MirtMaskGas
+  effects:
+  - !type:SponsorLoadoutEffect
+  storage:
+    back:
+    - MirtMaskGas 
+
+- type: loadout
+  id: MirtCloakOfInk
+  effects:
+  - !type:SponsorLoadoutEffect
+  equipment:
+    neck: MirtCloakOfInk 
+    
+- type: loadout
+  id: MirtHelmetInk
+  effects:
+  - !type:SponsorLoadoutEffect
+  equipment:
+    head: MirtHelmetInk
+
+- type: loadoutGroup
+  id: GroupMirtLoadoutServ
+  name: loadout-group-mirt
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - MirtnKnife
+  - MirtMaskGas  
+  
+- type: loadoutGroup
+  id: GroupMirtLoadoutMonk
+  name: loadout-group-mirt
+  minLimit: 0
+  maxLimit: 4
+  loadouts:
+  - MirtnKnife
+  - MirtMaskGas
+  - MirtCloakOfInk
+  - MirtHelmetInk
+#---------------------------------------------карго-----------------------
+- type: loadout
+  id: MirtGlassesRaz
+  effects:
+  - !type:SponsorLoadoutEffect
+  equipment:
+    eyes: MirtGlassesRaz
+
+- type: loadoutGroup
+  id: GroupMirtLoadoutCarg
+  name: loadout-group-mirt
+  minLimit: 0
+  maxLimit: 3
+  loadouts:
+  - MirtnKnife
+  - MirtMaskGas
+  - MirtGlassesRaz  
+#---------------------------------------------инж-----------------------  
+- type: loadout
+  id: MirtCloakSP
+  effects:
+  - !type:SponsorLoadoutEffect
+  equipment:
+    neck: MirtCloakSP
+    
+- type: loadoutGroup
+  id: GroupMirtLoadoutEng
+  name: loadout-group-mirt
+  minLimit: 0
+  maxLimit: 3
+  loadouts:
+  - MirtnKnife
+  - MirtMaskGas
+  - MirtCloakSP
+#---------------------------------------------команд----------------------- 
+- type: loadout
+  id: MirtnSword
+  effects:
+  - !type:SponsorLoadoutEffect
+  equipment:
+    belt: MirtnSword
+
+- type: loadoutGroup
+  id: GroupMirtLoadoutCap
+  name: loadout-group-mirt
+  minLimit: 0
+  maxLimit: 3
+  loadouts:
+  - MirtnKnife
+  - MirtMaskGas 
+  - MirtnSword
+#-----------------------------------------------------------ражулит---------------------
+#---------------------------------------------сервис-----------------------
+- type: loadout
+  id: CDCUniformImam
+  effects:
+  - !type:SponsorLoadoutEffect
+  equipment:
+    jumpsuit: CDCUniformImam
+    
+- type: loadout
+  id: CDCTurban
+  effects:
+  - !type:SponsorLoadoutEffect
+  equipment:
+    head: CDCTurban
+    
+- type: loadout
+  id: CDCFez
+  effects:
+  - !type:SponsorLoadoutEffect
+  equipment:
+    head: CDCFez
+    
+- type: loadout
+  id: Quran
+  effects:
+  - !type:SponsorLoadoutEffect
+  storage:
+    back:
+    - Quran
+
+- type: loadoutGroup
+  id: GroupCDCLoadoutCapil
+  name: loadout-group-congl
+  minLimit: 0
+  maxLimit: 3
+  loadouts:
+  - CDCUniformImam
+  - CDCTurban
+  - Quran
+  
+- type: loadoutGroup
+  id: GroupCDCLoadoutServ
+  name: loadout-group-congl
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - CDCFez
+#---------------------------------------------карго-----------------------
+- type: loadout
+  id: CDCCepka
+  effects:
+  - !type:SponsorLoadoutEffect
+  equipment:
+    head: CDCCepka
+    
+- type: loadout
+  id: CDCBeltTech
+  effects:
+  - !type:SponsorLoadoutEffect
+  equipment:
+    belt: CDCBeltTech
+
+- type: loadoutGroup
+  id: GroupCDCLoadoutCargo
+  name: loadout-group-congl
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - CDCBeltTech
+  - CDCCepka  
+#---------------------------------------------сб-----------------------
+- type: loadout
+  id: CDCBuckler
+  effects:
+  - !type:SponsorLoadoutEffect
+  storage:
+    back:
+    - CDCBuckler
+
+- type: loadout
+  id: CDCCap
+  effects:
+  - !type:SponsorLoadoutEffect
+  equipment:
+    head: CDCCap
+    
+- type: loadout
+  id: CDCGloves
+  effects:
+  - !type:SponsorLoadoutEffect
+  equipment:
+    gloves: CDCGloves
+
+- type: loadoutGroup
+  id: GroupCDCLoadoutSec
+  name: loadout-group-congl
+  minLimit: 0
+  maxLimit: 3
+  loadouts:
+  - CDCCap
+  - CDCGloves 
+  - CDCBuckler
+#---------------------------------------------рнд-----------------------
+- type: loadout
+  id: CDCGlovesTech
+  effects:
+  - !type:SponsorLoadoutEffect
+  equipment:
+    gloves: CDCGlovesTech
+
+- type: loadoutGroup
+  id: GroupCDCLoadoutRnD
+  name: loadout-group-congl
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - CDCFez
+  - CDCGlovesTech 
+#---------------------------------------------ком-----------------------
+- type: loadout
+  id: CDCBeltOffi
+  effects:
+  - !type:SponsorLoadoutEffect
+  equipment:
+    belt: CDCBeltOffi
+
+- type: loadoutGroup
+  id: GroupCDCLoadoutCom
+  name: loadout-group-congl-com
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - CDCCap
+  - CDCBeltOffi
+#-----------------------------------------------------------ноократ---------------------
+#---------------------------------------------инж-----------------------
+- type: loadoutGroup
+  id: GroupNoocLoadoutEng
+  name: loadout-group-nooc
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - LaserPointer
+#---------------------------------------------сб-----------------------
+- type: loadout
+  id: NoocPistol
+  effects:
+  - !type:SponsorLoadoutEffect
+  storage:
+    back:
+    - NoocPistol
+    
+- type: loadout
+  id: WeaponPistolMk58
+  storage:
+    back:
+    - WeaponPistolMk58
+    
+- type: loadoutGroup
+  id: GroupNoocLoadoutSecWeapon
+  name: loadout-group-nooc-w
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - NoocPistol
+  - WeaponPistolMk58
+  
+- type: loadout
+  id: NoocPowerCellTwo
+  effects:
+  - !type:SponsorLoadoutEffect
+  storage:
+    back:
+    - NoocPowerCellTwo
+    
+- type: loadout
+  id: MagazinePistol
+  storage:
+    back:
+    - MagazinePistol
+
+- type: loadoutGroup
+  id: GroupNoocLoadoutSecAmmo
+  name: loadout-group-nooc-a
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - NoocPowerCellTwo
+  - NoocPowerCellTwo
+  - MagazinePistol
+  - MagazinePistol
+#---------------------------------------------рнд-----------------------
+- type: loadout
+  id: NoocHardsuitField
+  effects:
+  - !type:SponsorLoadoutEffect
+  equipment:
+    outerClothing: NoocHardsuitField
+    
+- type: loadoutGroup
+  id: GroupNoocLoadoutRnD
+  name: loadout-group-nooc
+  minLimit: 0
+  maxLimit: 1
+  loadouts:
+  - NoocHardsuitField
+#---------------------------------------------команд-----------------------
+- type: loadout
+  id: NoocCap
+  effects:
+  - !type:SponsorLoadoutEffect
+  equipment:
+    head: NoocCap
+    
+- type: loadout
+  id: NoocCloak
+  effects:
+  - !type:SponsorLoadoutEffect
+  equipment:
+    neck:  NoocCloak
+
+- type: loadoutGroup
+  id: GroupNoocLoadoutCom
+  name: loadout-group-nooc
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - NoocCap
+  - NoocCloak  
+  
+- type: loadoutGroup
+  id: GroupNoocLoadoutComEng
+  name: loadout-group-nooc
+  minLimit: 0
+  maxLimit: 2
+  loadouts:
+  - NoocCap
+  - NoocCloak 
+  
+- type: loadoutGroup
+  id: GroupNoocLoadoutComRnd
+  name: loadout-group-nooc
+  minLimit: 0
+  maxLimit: 3
+  loadouts:
+  - NoocCap
+  - NoocCloak 
+  - NoocHardsuitField
+#-----------------------------------------------------------опз---------------------
+
+
+
+
+
+
+
+
+
+
+

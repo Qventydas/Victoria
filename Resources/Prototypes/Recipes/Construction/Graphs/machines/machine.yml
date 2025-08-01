@@ -124,7 +124,7 @@
               
         - to: machineCosm
           steps:
-            - tool: Screwing
+            - tool: Welding
               doAfter: 2
             - material: Steel
               amount: 5

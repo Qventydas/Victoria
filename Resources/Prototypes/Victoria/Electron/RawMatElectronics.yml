@@ -53,8 +53,8 @@
   result: СeramicsCrystall1
   completetime: 2
   materials:
-    RawIron: 500
-    RawQuartz: 500
+    RawIron: 250
+    RawQuartz: 250
 #--------------------------------------Плазкерам------------------------------------------
 #------------------Сам-------------------------
 - type: entity
@@ -107,17 +107,17 @@
   result: PlazСeramicsCrystall1
   completetime: 2
   materials:
-    RawIron: 500
-    RawQuartz: 500
-    RawPlasma: 500
+    RawIron: 250
+    RawQuartz: 250
+    RawPlasma: 250
     
 - type: latheRecipe
   id: RecipePlazСeramicsMaterial_2
   result: PlazСeramicsCrystall1
   completetime: 3
   materials:
-    СeramicsMaterial: 500
-    Plasma: 500
+    СeramicsMaterial: 250
+    Plasma: 250
 #--------------------------------------Кремнекерам------------------------------------------
 #------------------Сам-------------------------
 - type: entity
@@ -169,16 +169,16 @@
   result: SiСeramicsCrystall1
   completetime: 2
   materials:
-    RawIron: 500
-    RawQuartz: 1000
+    RawIron: 250
+    RawQuartz: 500
     
 - type: latheRecipe
   id: RecipeSiСeramicsMaterial_2
   result: SiСeramicsCrystall1
   completetime: 3
   materials:
-    СeramicsMaterial: 500
-    SiMaterial: 1000
+    СeramicsMaterial: 250
+    SiMaterial: 500
 #--------------------------------------Углеродная смола------------------------------------------
 #------------------Сам-------------------------
 - type: entity
@@ -245,7 +245,7 @@
   parent: CrystalOreBase
   id: PolymerPitch
   name: полимерная смола
-  description: Пока ещё твёрдая, но в нужно аппаратуре станет жидкой, пропитывающей, скрепляющей и изолирующей.
+  description: Пока ещё твёрдая, но в нужной аппаратуре станет жидкой, пропитывающей, скрепляющей и изолирующей.
   suffix: Электроника, Full
   components:
   - type: Stack
@@ -291,8 +291,8 @@
   result: PolymerPitch1
   completetime: 2
   materials:
-    CarbonPitchMaterial: 500
-    Plastic: 500
+    CarbonPitchMaterial: 750
+    Plastic: 250
 #--------------------------------------Стеклотекстолит------------------------------------------
 #------------------Сам-------------------------
 - type: entity
@@ -344,9 +344,9 @@
   result: Fiberglass1
   completetime: 2
   materials:
-    Cloth: 300
-    PolymerPitchMaterial: 300
-    Glass: 300
+    Cloth: 150
+    PolymerPitchMaterial: 150
+    Glass: 150
 #--------------------------------------Гетинакс------------------------------------------
 #------------------Сам-------------------------
 - type: entity
@@ -399,8 +399,8 @@
   result: Gethinax1
   completetime: 2
   materials:
-    Paper: 500
-    CarbonPitchMaterial: 500
+    Paper: 250
+    CarbonPitchMaterial: 250
 #--------------------------------------Кремнеплаз------------------------------------------
 #------------------Сам-------------------------
 - type: entity
@@ -452,5 +452,5 @@
   result: SiPlazCrystall1
   completetime: 3
   materials:
-    Plasma: 500
-    SiMaterial: 500
+    Plasma: 250
+    SiMaterial: 250

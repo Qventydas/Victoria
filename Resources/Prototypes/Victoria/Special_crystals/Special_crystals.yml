@@ -168,8 +168,8 @@
 - type: entity
   parent: CrystalOreBase
   id: SpaceCosmCrystall
-  name: кристалл космеция
-  description: Белёсые и высокоэнергетические. Порядком дорогие и важные.
+  name: космециевый кристалл
+  description: Белёсый и высокоэнергетический. Порядком дорогой и важный.
   suffix: Особые кристаллы, Full
   components:
   - type: Stack
@@ -279,7 +279,7 @@
   id: CreateSapphireCrystall
   impact: Low
   quantized: true
-  conserveEnergy: false
+  minTemp: 660
   reactants:
     Aluminium:
       amount: 10
@@ -332,7 +332,7 @@
   parent: CrystalOreBase
   id: SiCrystall
   name: булька кремния
-  description: Дешёвый, простой, удобный! Это кремний. Это электроника.
+  description: Булька, полученная путем медленного вытягивания из расплава. Используется в производстве электроники.
   suffix: Особые кристаллы, Full
   components:
   - type: Stack
@@ -462,8 +462,7 @@
 - type: entity
   id: TransmutatorMachineCircuitboard
   parent: BaseMachineCircuitboard
-  name: плата трансмутатора
-  description: Электронная плата, необходимая для работы трансмутатора
+  name: трансмутатор (машинная плата)
   components:
     - type: MachineBoard
       prototype: Transmutator
@@ -479,7 +478,7 @@
   id: Transmutator
   parent: BaseLatheLube
   name: трансмутатор
-  description: Сложное научное оборудование для преобразования кристаллов
+  description: Сложное научное оборудование для преобразования кристаллов.
   components:
   - type: Sprite
     sprite: Victoria/Special_crystals/transmutator.rsi
