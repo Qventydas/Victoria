@@ -1069,6 +1069,7 @@
     - id: HoundCorpseCrate
     sound:
       path: /Audio/Effects/unwrap.ogg
+#Набор улучшения протокинетика
 #Гаррота
 - type: entity
   parent: [ BaseItem, BaseMajorContraband ]
@@ -1167,56 +1168,7 @@
   - type: Tag
     tags:
       - HoundHeavyPistolMagazine
-#К лёгкому, абстракт и обычный
-- type: Tag
-  id: HoundLightPistolMagazine
-
-- type: entity
-  id: BaseMagazineLightPistolHound
-  name: магазин для "Бигль" (.25 безгильзовые)"
-  suffix: Хаунд
-  parent: BaseMagazineCaselessRifle
-  abstract: true
-  components:
-  - type: Tag
-    tags:
-      - HoundLightPistolMagazine
-  - type: BallisticAmmoProvider
-    whitelist:
-      tags:
-        - CartridgeCaselessRifle
-    proto: CartridgeCaselessRifle
-    capacity: 10
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: Victoria/Hound/Weapons/Ammunition/light_pistol_magazine.rsi
-    layers:
-    - state: base
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
-  - type: MagazineVisuals
-    magState: mag
-    steps: 6
-    zeroVisible: false
-  - type: Appearance
-- type: entity
-  id: MagazineLightPistolHound
-  name: магазин для "Бигль" (.25 безгильзовые)"
-  suffix: Хаунд
-  parent: BaseMagazineLightPistolHound
-  components:
-  - type: BallisticAmmoProvider
-    proto: CartridgeCaselessRifle
-  - type: Sprite
-    layers:
-    - state: base
-      map: ["enum.GunVisualLayers.Base"]
 #К ПП, абстракт и обычный
-- type: Tag
-  id: MagazineLightRifleMakhno
-  
 - type: Tag
   id: HoundMakhnoRifleMagazine
 
@@ -1229,7 +1181,7 @@
   components:
   - type: Tag
     tags:
-      - MagazineLightRifleMakhno
+      - HoundMakhnoRifleMagazine
   - type: BallisticAmmoProvider
     mayTransfer: true
     whitelist:
@@ -1447,7 +1399,7 @@
   suffix: Хаунд
   parent: [ BaseWeaponPistol, BaseRestrictedContraband ]
   id: HoundLightPistol
-  description: Довольно компактный и скорострельный пистолет с встроенным глушителем. Использует патроны .25 безгильзовые
+  description: Довольно компактный и скорострельный пистолет с встроенным глушителем. Использует патроны .25 безгильзовые. Хорошо стреляет очередями.
   components:
   - type: Sprite
     sprite: Victoria/Hound/Weapons/light_pistol.rsi 
@@ -1461,11 +1413,18 @@
   - type: ChamberMagazineAmmoProvider
     boltClosed: null
   - type: Gun
-    fireRate: 6
+    fireRate: 5
+    minAngle: 4
+    maxAngle: 20
+    angleDecay: 9
+    angleIncrease: 5
+    shotsPerBurst: 2
+    burstCooldown: 0.3
+    burstFireRate: 16
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/silenced.ogg
       params:
-        volume: -10
+        volume: -5
     selectedMode: FullAuto
     availableModes:
     - SemiAuto
@@ -1475,13 +1434,13 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineLightPistolHound
+        startingItem: MagazinePistolCaselessRifle
         insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
         priority: 2
         whitelist:
           tags:
-            - HoundLightPistolMagazine
+            - MagazinePistolCaselessRifle
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
@@ -2139,9 +2098,9 @@
   components:
   - type: StorageFill
     contents:
-      - id: MagazineLightPistolHound
-      - id: MagazineLightPistolHound
-      - id: MagazineLightPistolHound
+      - id: MagazinePistolCaselessRifle
+      - id: MagazinePistolCaselessRifle
+      - id: MagazinePistolCaselessRifle
       - id: HoundLightPistol
       - id: ClothingMaskGas
       - id: FoodTinMRE
@@ -2987,10 +2946,10 @@
   - HoundUplinkAmmo
 
 - type: listing
-  id: MagazineLightPistolHound
-  name: Магазин к пистолету "Бигль"
-  description: 14 патронов к "Биглю"
-  productEntity: MagazineLightPistolHound
+  id: HoundMagazinePistolCaselessRifle
+  name: Магазин .25 безгильзовые
+  description: 10 патронов к "Биглю" или другим похожим пистолетам.
+  productEntity: MagazinePistolCaselessRifle
   cost:
     HNDChip_currency: 2
   categories:
@@ -3575,7 +3534,24 @@
     whitelist:
     - Chef
     - ServiceWorker
-#HoundPseudoMedkitFilled
+#Набор улучшения протокинетика
+- type: listing
+  id: HoundProtoKineticAcceleratorUpgradeKit
+  name: Набор улучшения протокинетического ускорителя
+  description: Небольшой модуль, позволяющий перевести часть структурного урона снаряда протокинетика в тупой. (С 25 до 40). Ну и название длинное...
+  discountCategory: rareDiscounts
+  discountDownTo:
+    HNDChip_currency: 5
+  productEntity: WeaponProtoKineticAcceleratorUpgradeKit
+  cost:
+    HNDChip_currency: 6
+  categories:
+  - HoundUplinkJob
+  conditions:
+  - !type:BuyerJobCondition
+    whitelist:
+    - SalvageSpecialist
+#Псевдо-аптечка с псевдо-лекарствами
 - type: listing
   id: HoundPseudoMedkitFilled
   name: Лже-лекарства

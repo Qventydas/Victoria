@@ -1,7 +1,7 @@
 [game]
 fallbackpreset = "extended"
 lobbyenabled = true
-role_timers = false
+role_timers = true
 contraband_examine = false
 
 [ic]
