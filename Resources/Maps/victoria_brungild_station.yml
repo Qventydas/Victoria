@@ -51,7 +51,6 @@ entities:
     - type: Broadphase
     - type: OccluderTree
     - type: LoadedMap
-    - type: NavMap
     - type: BecomesStation
       id: VictoriaBrungild
     - type: FTLDestination
@@ -60,7 +59,6 @@ entities:
     - type: BecomesStation
       id: VictoriaBrungild
     - type: FTLDestination
-    - type: NavMap
     - type: MetaData
       name: '"Станция Брунгильда"'
     - type: Transform
@@ -22137,6 +22135,11 @@ entities:
     - type: Transform
       pos: 36.5,-42.5
       parent: 2
+  - uid: 12665
+    components:
+    - type: Transform
+      pos: 30.5,-53.5
+      parent: 2
 - proto: CableMVStack
   entities:
   - uid: 3361
@@ -27579,6 +27582,13 @@ entities:
     - type: Transform
       pos: 0.3056879,-56.087116
       parent: 2
+- proto: ClothingMaskBlushingMime
+  entities:
+  - uid: 5478
+    components:
+    - type: Transform
+      pos: -32.36732,-14.780096
+      parent: 2
 - proto: ClothingMaskBreath
   entities:
   - uid: 2059
@@ -27613,13 +27623,6 @@ entities:
     components:
     - type: Transform
       pos: -32.33607,-14.326971
-      parent: 2
-- proto: ClothingMaskSexyMime
-  entities:
-  - uid: 5478
-    components:
-    - type: Transform
-      pos: -32.36732,-14.780096
       parent: 2
 - proto: ClothingShoesBootsMag
   entities:
@@ -49472,30 +49475,6 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#FF0000FF'
-  - uid: 8671
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -18.5,-57.5
-      parent: 2
-    - type: AtmosPipeColor
-      color: '#FF0000FF'
-  - uid: 8672
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -17.5,-57.5
-      parent: 2
-    - type: AtmosPipeColor
-      color: '#FF0000FF'
-  - uid: 8673
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -16.5,-57.5
-      parent: 2
-    - type: AtmosPipeColor
-      color: '#FF0000FF'
   - uid: 8674
     components:
     - type: Transform
@@ -52372,6 +52351,21 @@ entities:
       parent: 2
     - type: AtmosPipeColor
       color: '#0000FFFF'
+  - uid: 8671
+    components:
+    - type: Transform
+      pos: -18.5,-57.5
+      parent: 2
+  - uid: 8672
+    components:
+    - type: Transform
+      pos: -16.5,-57.5
+      parent: 2
+  - uid: 8673
+    components:
+    - type: Transform
+      pos: -17.5,-57.5
+      parent: 2
   - uid: 8678
     components:
     - type: Transform
@@ -52527,6 +52521,24 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -5.5,-56.5
+      parent: 2
+  - uid: 12628
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -18.5,-58.5
+      parent: 2
+  - uid: 12634
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -17.5,-58.5
+      parent: 2
+  - uid: 12635
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -16.5,-58.5
       parent: 2
 - proto: GasPressurePump
   entities:
@@ -61861,6 +61873,23 @@ entities:
     - type: Transform
       pos: 39.5,-57.5
       parent: 2
+- proto: PortableScrubber
+  entities:
+  - uid: 12636
+    components:
+    - type: Transform
+      pos: -18.5,-58.5
+      parent: 2
+  - uid: 12637
+    components:
+    - type: Transform
+      pos: -17.5,-58.5
+      parent: 2
+  - uid: 12638
+    components:
+    - type: Transform
+      pos: -16.5,-58.5
+      parent: 2
 - proto: PosterContrabandClown
   entities:
   - uid: 5468
@@ -69598,6 +69627,23 @@ entities:
     - type: Transform
       pos: -30.616161,-36.401028
       parent: 2
+- proto: SpaceHeaterAnchored
+  entities:
+  - uid: 12631
+    components:
+    - type: Transform
+      pos: -1.5,-58.5
+      parent: 2
+  - uid: 12632
+    components:
+    - type: Transform
+      pos: -2.5,-58.5
+      parent: 2
+  - uid: 12633
+    components:
+    - type: Transform
+      pos: -1.5,-57.5
+      parent: 2
 - proto: SpawnMobCorgi
   entities:
   - uid: 2556
@@ -69962,6 +70008,18 @@ entities:
     components:
     - type: Transform
       pos: -6.5,-4.5
+      parent: 2
+- proto: StasisBed
+  entities:
+  - uid: 12629
+    components:
+    - type: Transform
+      pos: 14.5,-13.5
+      parent: 2
+  - uid: 12630
+    components:
+    - type: Transform
+      pos: 15.5,-13.5
       parent: 2
 - proto: StationAiUploadComputer
   entities:
@@ -70518,6 +70576,289 @@ entities:
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraGeneral
+  - uid: 12639
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -41.5,-43.5
+      parent: 2
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraGeneral
+      nameSet: True
+      id: Эвакуация
+  - uid: 12640
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -27.5,-43.5
+      parent: 2
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraGeneral
+      nameSet: True
+      id: Коридор Юго-Запад
+  - uid: 12641
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -17.5,-43.5
+      parent: 2
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraGeneral
+      nameSet: True
+      id: Перекрёсток у Бара
+  - uid: 12642
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -16.5,-54.5
+      parent: 2
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraGeneral
+      nameSet: True
+      id: Коридор Юг Бара и Атмоса
+  - uid: 12643
+    components:
+    - type: Transform
+      pos: -7.5,-45.5
+      parent: 2
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraGeneral
+      nameSet: True
+      id: Перекрёсток Юго-Запад
+  - uid: 12644
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 1.5,-43.5
+      parent: 2
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraGeneral
+      nameSet: True
+      id: Коридор Юг Библиотека -Инженерка
+  - uid: 12645
+    components:
+    - type: Transform
+      pos: 10.5,-45.5
+      parent: 2
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraGeneral
+      nameSet: True
+      id: Перекрёсток Юго-Восток
+  - uid: 12646
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 20.5,-43.5
+      parent: 2
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraGeneral
+      nameSet: True
+      id: Перекрёсток у Столовой
+  - uid: 12647
+    components:
+    - type: Transform
+      pos: 20.5,-58.5
+      parent: 2
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraGeneral
+      nameSet: True
+      id: Коридо Юг Гидропоника-Столовая
+  - uid: 12648
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 30.5,-43.5
+      parent: 2
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraGeneral
+      nameSet: True
+      id: Коридор Юго-Восток
+  - uid: 12649
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 42.5,-43.5
+      parent: 2
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraGeneral
+      nameSet: True
+      id: Прибытие
+  - uid: 12650
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 9.5,-36.5
+      parent: 2
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraGeneral
+      nameSet: True
+      id: Коридор Центр-РНД
+  - uid: 12651
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -6.5,-36.5
+      parent: 2
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraGeneral
+      nameSet: True
+      id: Коридор Центр-Карго
+  - uid: 12652
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -1.5,-28.5
+      parent: 2
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraGeneral
+      nameSet: True
+      id: Коридор Центр ГП
+  - uid: 12653
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -16.5,-28.5
+      parent: 2
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraGeneral
+      nameSet: True
+      id: Коридор Запад Карго
+  - uid: 12654
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -20.5,-18.5
+      parent: 2
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraGeneral
+      nameSet: True
+      id: Перекрёсток Запад
+  - uid: 12655
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -36.5,-17.5
+      parent: 2
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraGeneral
+      nameSet: True
+      id: Смотровая площадка Запад
+  - uid: 12656
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -22.5,-8.5
+      parent: 2
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraGeneral
+      nameSet: True
+      id: Коридор Запад Дормы-СБ
+  - uid: 12657
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -24.5,2.5
+      parent: 2
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraGeneral
+      nameSet: True
+      id: Дополнительный стыковочный док
+  - uid: 12658
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 17.5,-28.5
+      parent: 2
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraGeneral
+      nameSet: True
+      id: Коридор Восток РНД
+  - uid: 12659
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 23.5,-18.5
+      parent: 2
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraGeneral
+      nameSet: True
+      id: Перекрёсток Восток
+  - uid: 12660
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 40.5,-19.5
+      parent: 2
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraGeneral
+      nameSet: True
+      id: Смотровая площадка Восток
+  - uid: 12661
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 23.5,-6.5
+      parent: 2
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraGeneral
+      nameSet: True
+      id: Коридор Восток Церковь-Медбей
+  - uid: 12662
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 24.5,2.5
+      parent: 2
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraGeneral
+      nameSet: True
+      id: Смотровая площадка Северо-Восток
+  - uid: 12663
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -0.5,-20.5
+      parent: 2
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraGeneral
+      nameSet: True
+      id: Главный коридор Низ
+  - uid: 12664
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 3.5,-9.5
+      parent: 2
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraGeneral
+      nameSet: True
+      id: Главный коридор Верх
 - proto: SurveillanceCameraMedical
   entities:
   - uid: 1703
