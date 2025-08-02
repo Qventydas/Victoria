@@ -1331,16 +1331,46 @@
 - type: entity
   name: Сборщик поставок
   suffix: Оборона, Миртан, Малый
-  parent: [ProviderDefChip, PresetStoreRespawnsMap1Mirt]
+  parent: [BaseItem, PresetStoreRespawnsMap1Mirt]
   id: ProviderDefSuppliesMap1Mirt
   description: Небольшое устройсво, получающее чипы поставок и пополнение.
+  components:
+    - type: Item
+      size: Small
+    - type: Sprite
+      sprite: Victoria/DefenseMode/provider_defchip.rsi
+      state: icon
+    - type: UserInterface
+      interfaces:
+        enum.StoreUiKey.Key:
+          type: StoreBoundUserInterface
+    - type: ActivatableUI
+      key: enum.StoreUiKey.Key
+    - type: Store
+      balance: 
+        DefChip_currency: 0
 #------------------------------------------------Конгломератский-------------------------------------------
 - type: entity
   name: Сборщик поставок
   suffix: Оборона, Конгломерат, Малый
-  parent: [ProviderDefChip, PresetStoreRespawnsMap1CDC]
+  parent: [BaseItem, PresetStoreRespawnsMap1CDC]
   id: ProviderDefSuppliesMap1CDC
   description: Небольшое устройсво, получающее чипы поставок и пополнение.
+  components:
+    - type: Item
+      size: Small
+    - type: Sprite
+      sprite: Victoria/DefenseMode/provider_defchip.rsi
+      state: icon
+    - type: UserInterface
+      interfaces:
+        enum.StoreUiKey.Key:
+          type: StoreBoundUserInterface
+    - type: ActivatableUI
+      key: enum.StoreUiKey.Key
+    - type: Store
+      balance: 
+        DefChip_currency: 0
 #------------------------------------------------Советский-------------------------------------------
 
 #------------------------------------------------Корпоративный-------------------------------------------
