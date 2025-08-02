@@ -1,0 +1,101 @@
+#----------------------------------------знамя--------------------------------
+- type: entity
+  name: Спавнер знамени
+  id: SpawnBannerDef
+  parent: MarkerBase
+  suffix: Оборона
+  components:
+  - type: Sprite
+    layers:
+    - state: green
+    - state: banner_umpor_std
+      sprite: Victoria/Umpor/umpor_banner.rsi
+  - type: StateChoiceSpawner
+    umpor: UmporBannerStd
+    mirt: MirtBannerStd
+    cdc: CDCBannerStd
+    nt: MirtBannerStd
+    ussp: CDCBannerStd
+#----------------------------------------Сборщик чипов--------------------------------    
+- type: entity
+  name: Спавнер сборщика поставок
+  id: SpawnProviderDefSuppliesMap1
+  parent: MarkerBase
+  suffix: Оборона
+  components:
+  - type: Sprite
+    sprite: Victoria/DefenseMode/provider_defchip.rsi
+    state: icon
+  - type: StateChoiceSpawner
+    umpor: ProviderDefSuppliesMap1Umpor
+    mirt: ProviderDefSuppliesMap1Mirt
+    cdc: ProviderDefSuppliesMap1CDC
+    nt: ProviderDefSuppliesMap1Mirt
+    ussp: ProviderDefSuppliesMap1CDC
+#----------------------------------------Консоль поставок--------------------------------
+- type: entity
+  name: Спавнер консоли армейских поставок
+  id: SpawnComputerCargoDef
+  parent: MarkerBase
+  suffix: Оборона
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/computers.rsi
+    state: computer
+  - type: StateChoiceSpawner
+    umpor: ComputerCargoDefUmpor
+    mirt: ComputerCargoDefMirt
+    cdc: ComputerCargoDefCDC
+    nt: ComputerCargoDefMirt
+    ussp: ComputerCargoDefCDC
+#----------------------------------------шлюз--------------------------------
+- type: entity
+  name: Спавнер шлюза
+  id: SpawnAirlockLocked
+  parent: MarkerBase
+  suffix: Оборона
+  components:
+  - type: Sprite
+    sprite: Victoria/Umpor/umpor_airlock.rsi
+    state: closed
+  - type: StateChoiceSpawner
+    umpor: UmporAirlockLocked
+    mirt: MirtAirlockLocked
+    cdc: CDCAirlockLocked
+    nt: MirtAirlockLocked
+    ussp: CDCAirlockLocked
+#----------------------------------------стеклянный щлюз--------------------------------
+- type: entity
+  name: Спавнер стеклянного шлюза
+  id: SpawnAirlockLockedGlass
+  parent: MarkerBase
+  suffix: Оборона
+  components:
+  - type: Sprite
+    sprite: Victoria/Umpor/umpor_airlock_glass.rsi
+    state: closed
+  - type: StateChoiceSpawner
+    umpor: UmporAirlockLockedGlass
+    mirt: MirtAirlockLocked
+    cdc: CDCAirlockLockedGlass
+    nt: MirtAirlockLocked
+    ussp: CDCAirlockLockedGlass
+#----------------------------------------Оборонный фабрикатор--------------------------------
+- type: entity
+  name: Спавнер оборонного фабрикатора
+  id: SpawnDefTechFab
+  parent: MarkerBase
+  suffix: Оборона
+  components:
+  - type: Sprite
+    sprite: Victoria/DefenseMode/techfab.rsi
+    layers:
+    - state: icon
+      map: ["enum.LatheVisualLayers.IsRunning"]
+    - state: cdc
+  - type: StateChoiceSpawner
+    umpor: DefUmporTechFab
+    mirt: DefMirtTechFab
+    cdc: DefCDCTechFab
+    nt: DefMirtTechFab
+    ussp: DefCDCTechFab
