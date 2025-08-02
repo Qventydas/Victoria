@@ -135,47 +135,6 @@
         Piercing: 0.9
         Heat: 0.8
   - type: ShowJobIcons
-#Броник
-- type: entity
-  parent: ClothingOuterBaseMedium
-  id: HoundArmorLight
-  name: Лёгкий бронежилет Хаунд
-  suffix: Хаунд
-  description: Лёгкий бронежилет корпорации Хаунд. Его используют или сопровождающие бойцов пилоты или совсем зелёные опера. По всем параметрам средний.
-  components:
-  - type: Sprite
-    sprite: Victoria/Hound/Armor/hnd_armor_light.rsi
-  - type: Clothing
-    sprite: Victoria/Hound/Armor/hnd_armor_light.rsi
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.7
-        Slash: 0.7
-        Piercing: 0.6 
-        Heat: 0.65
-        Caustic: 0.6
-  - type: ExplosionResistance
-    damageCoefficient: 0.85
-#Каска
-- type: entity
-  parent: ClothingHeadHelmetBasic
-  id: HoundHelmetLight
-  name: каска Хаунд
-  suffix: Хаунд
-  description: Простенькая каска. Используется небогатыми операми и рабочими.
-  components:
-  - type: Sprite
-    sprite: Victoria/Hound/Armor/hnd_helmet_light.rsi
-  - type: Clothing
-    sprite: Victoria/Hound/Armor/hnd_helmet_light.rsi
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.85
-        Slash: 0.85
-        Piercing: 0.85
-        Heat: 0.85
 #Пальто
 - type: entity
   parent: ClothingOuterBaseMedium
@@ -744,7 +703,7 @@
   name: Боевая кувалда
   parent: Sledgehammer
   id: HoundHammer
-  description: Крупная кувалда с титановой ручкой. Устоять на ногах после такой дуры будет нелегко.
+  description: Крупная кувалда с титановой ручкой. Устоять на ногах после удара такой дуры будет нелегко.
   components:
   - type: Sprite
     sprite: Victoria/Hound/Weapons/hammer.rsi
@@ -813,6 +772,178 @@
     state: icon
   - type: Bruteforcer
     sound: /Audio/Victoria/bruteforce_sound.ogg
+  - type: HiddenDescription
+    entries:
+    - label: hidden-desc-bruteforcer-hound
+      whitelistMind:
+        mindRoles:
+        - HoundRole
+    - label: hidden-desc-bruteforcer-syndicate
+      whitelistMind:
+        mindRoles:
+        - TraitorRole
+        - NukeopsRole
+    - label: hidden-desc-bruteforcer-research
+      jobRequired:
+        - ResearchAssistant
+        - ResearchDirector
+        - Scientist
+        - SciTeacher
+        - Borg
+#Специя с бритвином
+- type: entity
+  parent: BaseFoodCondimentPacket
+  id: HoundSpice
+  name: острая приправа
+  description: Пакетик с ОЧЕНЬ острой приправой. Берегите язык! И остальной ЖКТ.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: Razorium
+          Quantity: 10
+  - type: Icon
+    state: packet-pepper
+  - type: Appearance
+  - type: SolutionContainerVisuals
+    maxFillLevels: 2
+    fillBaseName: packet-solid-
+#Бронебойный ножик
+- type: entity
+  name: кухонный нож
+  parent: KitchenKnife
+  id: HoundKitchenKnife
+  description: Универсальный поварской нож изготовленный Asters Merchant Guild. Гарантированно будет оставаться острым долгие годы.
+  components:
+  - type: MeleeWeapon
+    resistanceBypass: true
+    attackRate: 2
+  - type: HiddenDescription
+    entries:
+    - label: hidden-desc-houndknife-hound
+      whitelistMind:
+        mindRoles:
+        - HoundRole
+    - label: hidden-desc-houndknife-syndicate
+      whitelistMind:
+        mindRoles:
+        - TraitorRole
+        - NukeopsRole
+    - label: hidden-desc-houndknife-chef
+      jobRequired:
+        - Chef
+#200%-ый спирт
+- type: entity
+  parent: [DrinkBottleVisualsAll, DrinkBottleGlassBaseFull]
+  id: HoundAlcohol200
+  name: бутыль
+  description: Не вызывающая доверия бутылка без этикеток и знаков. С горлышка до тошноты сильно разит спиртом.
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      drink:
+        reagents:
+        - ReagentId: SuperEthanol
+          Quantity: 100
+  - type: Sprite
+    sprite: Victoria/Hound/Misc/superethanol_bottle.rsi
+  - type: Sealable
+#Лже-аптечка и лже-медикаменты
+- type: entity
+  id: HoundPseudoMedkitFilled
+  name: аптечка первой помощи
+  description: Это экстренная аптечка для серьёзных бо-бо.
+  suffix: лже-лекарства
+  parent: Medkit
+  components:
+  - type: StorageFill
+    contents:
+      - id: HoundPseudoBrutepack
+      - id: HoundPseudoOintment
+      - id: HoundPseudoGauze
+- type: entity
+  name: мазь
+  description: Используется для лечения этих неприятных ожогов. Менее эффективна при кислотных ожогах.
+  parent: Ointment
+  id: HoundPseudoOintment
+  suffix: лже-мазь
+  components:
+  - type: Healing
+    damage:
+      types:
+        Heat: 5
+        Caustic: 10
+  - type: HiddenDescription
+    entries:
+    - label: hidden-desc-pseudo-ointment-medical
+      jobRequired:
+        - Chemist
+        - Paramedic
+        - MedicalDoctor
+        - MedicalIntern
+        - ChiefMedicalOfficer
+        - MedTeacher
+    - label: hidden-desc-pseudo-ointment-hound
+      whitelistMind:
+        mindRoles:
+        - HoundRole
+- type: entity
+  name: набор для ушибов
+  description: Терапевтический набор гелей и пластырей, предназначенных для лечения ушибов.
+  parent: Brutepack
+  id: HoundPseudoBrutepack
+  suffix: Лже-набор от ушибов
+  components:
+  - type: Healing
+    damageContainers:
+      - Biological
+    damage:
+      groups:
+        Brute: 15 # 5 for each type in the group
+  - type: HiddenDescription
+    entries:
+    - label: hidden-desc-pseudo-brutepack-medical
+      jobRequired:
+        - Chemist
+        - Paramedic
+        - MedicalDoctor
+        - MedicalIntern
+        - ChiefMedicalOfficer
+        - MedTeacher
+    - label: hidden-desc-pseudo-brutepack-hound
+      whitelistMind:
+        mindRoles:
+        - HoundRole
+- type: entity
+  name: марлевый бинт
+  description: Несколько стерильных марлевых полосок для оборачивания кровоточащих культей.
+  parent: Gauze
+  id: HoundPseudoGauze
+  suffix: Лже-бинт
+  components:
+  - type: Healing
+    damageContainers:
+      - Biological
+    damage:
+      types:
+        Slash: 5
+        Piercing: 5
+    bloodlossModifier: 15
+  - type: HiddenDescription
+    entries:
+    - label: hidden-desc-pseudo-gauze-medical
+      jobRequired:
+        - Chemist
+        - Paramedic
+        - MedicalDoctor
+        - MedicalIntern
+        - ChiefMedicalOfficer
+        - MedTeacher
+    - label: hidden-desc-pseudo-gauze-hound
+      whitelistMind:
+        mindRoles:
+        - HoundRole
 #Псевдо-баллон
 - type: entity
   id: HoundPseudoOxygenTankFilled
@@ -884,6 +1015,35 @@
     - id: HoundCorpseCrate
     sound:
       path: /Audio/Effects/unwrap.ogg
+#Набор улучшения протокинетика
+#Гаррота
+- type: entity
+  parent: [ BaseItem, BaseMajorContraband ]
+  id: HoundGarrote
+  name: стекловолоконная гаррота
+  suffix: Хаунд
+  description: Длинный синтетический шнур с ручками на конце. Выглядит жутко...
+  components:
+  - type: Item
+    size: Normal
+    shape:
+    - 0,0,2,1
+  - type: MultiHandedItem
+  - type: Icon
+    sprite: Victoria/Hound/Equipment/hnd_garrote.rsi
+    state: base
+  - type: Sprite
+    sprite: Victoria/Hound/Equipment/hnd_garrote.rsi
+    state: base
+  - type: Garotte
+    speedModifier: 1.3
+    duration: 4
+    damage:
+      types:
+        Blunt: 0.5
+        Asphyxiation: 12.5
+    setSound: /Audio/Items/bow_pull.ogg
+    chokeSound: /Audio/Effects/Gasp/gasp_male1.ogg
 #---------------------------------------Пущьки!-/
 #Патроны...сука
 #К тяж пистолету, абстрактный и остальные
@@ -954,56 +1114,7 @@
   - type: Tag
     tags:
       - HoundHeavyPistolMagazine
-#К лёгкому, абстракт и обычный
-- type: Tag
-  id: HoundLightPistolMagazine
-
-- type: entity
-  id: BaseMagazineLightPistolHound
-  name: магазин для "Бигль" (.25 безгильзовые)"
-  suffix: Хаунд
-  parent: BaseMagazineCaselessRifle
-  abstract: true
-  components:
-  - type: Tag
-    tags:
-      - HoundLightPistolMagazine
-  - type: BallisticAmmoProvider
-    whitelist:
-      tags:
-        - CartridgeCaselessRifle
-    proto: CartridgeCaselessRifle
-    capacity: 10
-  - type: Item
-    size: Small
-  - type: Sprite
-    sprite: Victoria/Hound/Weapons/Ammunition/light_pistol_magazine.rsi
-    layers:
-    - state: base
-      map: ["enum.GunVisualLayers.Base"]
-    - state: mag-1
-      map: ["enum.GunVisualLayers.Mag"]
-  - type: MagazineVisuals
-    magState: mag
-    steps: 6
-    zeroVisible: false
-  - type: Appearance
-- type: entity
-  id: MagazineLightPistolHound
-  name: магазин для "Бигль" (.25 безгильзовые)"
-  suffix: Хаунд
-  parent: BaseMagazineLightPistolHound
-  components:
-  - type: BallisticAmmoProvider
-    proto: CartridgeCaselessRifle
-  - type: Sprite
-    layers:
-    - state: base
-      map: ["enum.GunVisualLayers.Base"]
 #К ПП, абстракт и обычный
-- type: Tag
-  id: MagazineLightRifleMakhno
-  
 - type: Tag
   id: HoundMakhnoRifleMagazine
 
@@ -1016,7 +1127,7 @@
   components:
   - type: Tag
     tags:
-      - MagazineLightRifleMakhno
+      - HoundMakhnoRifleMagazine
   - type: BallisticAmmoProvider
     mayTransfer: true
     whitelist:
@@ -1234,7 +1345,7 @@
   suffix: Хаунд
   parent: [ BaseWeaponPistol, BaseRestrictedContraband ]
   id: HoundLightPistol
-  description: Довольно компактный и скорострельный пистолет с встроенным глушителем. Использует патроны .25 безгильзовые
+  description: Довольно компактный и скорострельный пистолет с встроенным глушителем. Использует патроны .25 безгильзовые. Хорошо стреляет очередями.
   components:
   - type: Sprite
     sprite: Victoria/Hound/Weapons/light_pistol.rsi 
@@ -1248,11 +1359,18 @@
   - type: ChamberMagazineAmmoProvider
     boltClosed: null
   - type: Gun
-    fireRate: 6
+    fireRate: 5
+    minAngle: 4
+    maxAngle: 20
+    angleDecay: 9
+    angleIncrease: 5
+    shotsPerBurst: 2
+    burstCooldown: 0.3
+    burstFireRate: 16
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/silenced.ogg
       params:
-        volume: -10
+        volume: -5
     selectedMode: FullAuto
     availableModes:
     - SemiAuto
@@ -1262,13 +1380,13 @@
     slots:
       gun_magazine:
         name: Magazine
-        startingItem: MagazineLightPistolHound
+        startingItem: MagazinePistolCaselessRifle
         insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
         ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
         priority: 2
         whitelist:
           tags:
-            - HoundLightPistolMagazine
+            - MagazinePistolCaselessRifle
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber
@@ -1420,10 +1538,10 @@
       map: ["enum.GunVisualLayers.Mag"]
   - type: Gun
     fireRate: 10
-    minAngle: 6
-    maxAngle: 20
+    minAngle: 15
+    maxAngle: 33
     angleDecay: 20
-    angleIncrease: 1
+    angleIncrease: 3
     selectedMode: FullAuto
     availableModes:
     - SemiAuto
@@ -1447,8 +1565,8 @@
           tags:
             - CartridgeLightRifle
   - type: GunWieldBonus
-    minAngle: -5
-    maxAngle: -5
+    minAngle: -11
+    maxAngle: -11
   - type: MagazineVisuals
     magState: mag
     steps: 4
@@ -1940,9 +2058,9 @@
   components:
   - type: StorageFill
     contents:
-      - id: MagazineLightPistolHound
-      - id: MagazineLightPistolHound
-      - id: MagazineLightPistolHound
+      - id: MagazinePistolCaselessRifle
+      - id: MagazinePistolCaselessRifle
+      - id: MagazinePistolCaselessRifle
       - id: HoundLightPistol
       - id: ClothingMaskGas
       - id: FoodTinMRE
@@ -2128,8 +2246,8 @@
     jumpsuit: HoundUniformOper
     back: HoundBackpackFilledNewbie
     shoes: HoundBoots
-    head: HoundHelmetLight
-    outerClothing: HoundArmorLight
+    head: ClothingHeadHelmetMerc
+    outerClothing: ClothingOuterVestWebMerc
     id: HoundPDAOp
     ears: HoundHeadset
     belt: HoundBeltFilled
@@ -2590,27 +2708,24 @@
   name: Мед.средства
   priority: 7
 - type: storeCategory
+  id: HoundUplinkJob
+  name: Работа
+  priority: 8
+- type: storeCategory
   id: HoundUplinkMisc
   name: Безделушки
-  priority: 8 
+  priority: 9
 #-----------------листинг покупок------------
 #------категория броня----------
 #---бронь---
 - type: listing
-  id: HoundHelmetLight
-  name: Лёгкий шлем
-  description: Обыкновенная каска.
-  productEntity: HoundHelmetLight
-  cost:
+  id: HoundUplinkClothingOuterVestWeb
+  name: uplink-clothing-outer-vest-web-name
+  description: uplink-clothing-outer-vest-web-desc
+  productEntity: ClothingOuterVestWeb
+  discountCategory: usualDiscounts
+  discountDownTo:
     HNDChip_currency: 1
-  categories:
-  - HoundUplinkArmor
-
-- type: listing
-  id: HoundArmorLight
-  name: Лёгкий бронежилет
-  description: Обыкновенный бронежилет. Возьмите, если не хватает на что-то получше.
-  productEntity: HoundArmorLight
   cost:
     HNDChip_currency: 3
   categories:
@@ -2659,7 +2774,7 @@
   description: Униформа, изолированные перчатки, удобные ботинки, а также фирменные кепка и анекдот! Не забудьте избавиться от ненужных вещиц и коробки.
   productEntity: HoundBoxFilledClothes
   cost:
-    HNDChip_currency: 3
+    HNDChip_currency: 1.5
   categories:
   - HoundUplinkArmor
 #------категория вооружение----------
@@ -2669,7 +2784,7 @@
   description: Довольно крупный и очень мощный пистолет Хаунд. Магазин малюсенький- Не промахнитесь! Для штурмовых заданий и любителей покороче и пожёстче. Использует .45 магнум.
   productEntity: HoundHeavyPistol
   cost:
-    HNDChip_currency: 5
+    HNDChip_currency: 4
   categories:
   - HoundUplinkWeaponry
 
@@ -2706,7 +2821,7 @@
 - type: listing
   id: HoundLightPistol
   name: Пистолет "Бигль"
-  description: Крайне скорострельный и тихий пистолет для секретных миссий или тех, кто любит подольше и поплавнее. Использует .35 авто.
+  description: Крайне скорострельный и тихий, но не очень точный, пистолет для секретных миссий или тех, кто любит подольше и поплавнее. Использует .35 авто.
   productEntity: HoundLightPistol
   cost:
     HNDChip_currency: 6
@@ -2784,10 +2899,10 @@
   - HoundUplinkAmmo
 
 - type: listing
-  id: MagazineLightPistolHound
-  name: Магазин к пистолету "Бигль"
-  description: 14 патронов к "Биглю"
-  productEntity: MagazineLightPistolHound
+  id: HoundMagazinePistolCaselessRifle
+  name: Магазин .25 безгильзовые
+  description: 10 патронов к "Биглю" или другим похожим пистолетам.
+  productEntity: MagazinePistolCaselessRifle
   cost:
     HNDChip_currency: 2
   categories:
@@ -2903,6 +3018,16 @@
     HNDChip_currency: 3
   categories:
   - HoundUplinkElectronic
+#Зажигалка-вспышка
+- type: listing
+  id: HoundFlashLighter
+  name: Зажигалка-вспышка.
+  description: Обычная зажигалка с вмонтированной внутрь вспышкой. Теперь жертва не улизнёт.
+  productEntity: HoundFlashLighter
+  cost:
+    HNDChip_currency: 2
+  categories:
+  - HoundUplinkElectronic
 #------категория специалистам----------
 #---вещички---
 #Печать
@@ -2925,14 +3050,14 @@
     HNDChip_currency: 3
   categories:
   - HoundUplinkSpec
-#Зажигалка-вспышка
+#гаррота
 - type: listing
-  id: HoundFlashLighter
-  name: Зажигалка-вспышка.
-  description: Обычная зажигалка с вмонтированной внутрь вспышкой. Теперь жертва не улизнёт.
-  productEntity: HoundFlashLighter
+  id: HoundGarrote
+  name: Стекловолоконная удавка
+  description: Первоклассная игрушка для тихого устранения целей. С удавкой на шее цель не сможет ни сбежать, ни завопить о помощи. Не забывайте о том, что не-гуманоидов, дион и слаймолюдов придушить не получится.
+  productEntity: HoundGarrote
   cost:
-    HNDChip_currency: 2
+    HNDChip_currency: 4
   categories:
   - HoundUplinkSpec
 #-----------------------------------------------------------------------Наборы
@@ -3309,6 +3434,92 @@
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 3
+# Работка
+- type: listing
+  id: HoundSpice
+  name: Чертовски острая приправа
+  description: Небольшой пакетик с бритвином, который можно добавить в любую пищу. 
+  discountCategory: usualDiscounts
+  discountDownTo:
+    HNDChip_currency: 0.5
+  productEntity: HoundSpice
+  cost:
+    HNDChip_currency: 1
+  categories:
+  - HoundUplinkJob
+  conditions:
+  - !type:BuyerJobCondition
+    whitelist:
+    - Chef
+    - Botanist
+    - ServiceWorker
+    - Bartender
+#200% бухло
+- type: listing
+  id: HoundAlcohol200
+  name: 200%-ый алкоголь
+  description: Убойное бухло, пьянящее в 2 раза сильнее чистого спирта. На вкус походит на водку. Жертва врятри сможет ясно мыслить уже после стакана.
+  productEntity: HoundAlcohol200
+  cost:
+    HNDChip_currency: 1.5
+  categories:
+  - HoundUplinkJob
+  conditions:
+  - !type:BuyerJobCondition
+    whitelist:
+    - Bartender
+#Ножик-хуёжик
+- type: listing
+  id: HoundKitchenKnife
+  name: Чертовски острый нож
+  description: Лезвие, похожее на кухонный нож, но способное разить противника через любую броню. 
+  discountCategory: rareDiscounts
+  discountDownTo:
+    HNDChip_currency: 5
+  productEntity: HoundKitchenKnife
+  cost:
+    HNDChip_currency: 6
+  categories:
+  - HoundUplinkJob
+  conditions:
+  - !type:BuyerJobCondition
+    whitelist:
+    - Chef
+    - ServiceWorker
+#Набор улучшения протокинетика
+- type: listing
+  id: HoundProtoKineticAcceleratorUpgradeKit
+  name: Набор улучшения протокинетического ускорителя
+  description: Небольшой модуль, позволяющий перевести часть структурного урона снаряда протокинетика в тупой. (С 25 до 40). Ну и название длинное...
+  discountCategory: rareDiscounts
+  discountDownTo:
+    HNDChip_currency: 5
+  productEntity: WeaponProtoKineticAcceleratorUpgradeKit
+  cost:
+    HNDChip_currency: 6
+  categories:
+  - HoundUplinkJob
+  conditions:
+  - !type:BuyerJobCondition
+    whitelist:
+    - SalvageSpecialist
+#Псевдо-аптечка с псевдо-лекарствами
+- type: listing
+  id: HoundPseudoMedkitFilled
+  name: Лже-лекарства
+  description: Обычные медикаменты, но есть нюанс- они не лечат, а калечат, а бинт ещё и открывает кровотечение.
+  productEntity: HoundPseudoMedkitFilled
+  cost:
+    HNDChip_currency: 4
+  categories:
+  - HoundUplinkJob
+  conditions:
+  - !type:BuyerJobCondition
+    whitelist:
+    - Chemist
+    - Paramedic
+    - MedicalIntern
+    - MedicalDoctor
 # #-----------------пресет категорий в аплинке------------
 - type: entity
   id: StorePresetHoundUplink
@@ -3325,6 +3536,7 @@
     - HoundUplinkSpec
     - HoundUplinkBack
     - HoundUplinkMed
+    - HoundUplinkJob
     - HoundUplinkMisc
     currencyWhitelist:
     - HNDChip_currency
