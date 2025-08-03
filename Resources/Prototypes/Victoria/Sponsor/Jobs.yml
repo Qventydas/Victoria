@@ -22,6 +22,7 @@
   - Maintenance
   - Security
   - Brig
+  sponsorOnly: true
 #-----------------------------------лодауты-------------------------
 - type: loadout
   id: BrigmedicBackpack
@@ -775,6 +776,7 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
+  sponsorOnly: true
 #-----------------------------------спавн-поинт-------------------------
 - type: entity
   id: SpawnPointSSOfficer

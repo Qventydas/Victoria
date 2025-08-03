@@ -142,6 +142,7 @@
   - Salvage
   - External
   - Maintenance
+  sponsorOnly: true
 #-------------------------------------------Ведущий инженер----------------------------
 #-------------------------Комбез--------------
 - type: entity
@@ -283,6 +284,7 @@
   - Atmospherics
   - External
   - Maintenance
+  sponsorOnly: true
 #-------------------------------------------Инструктор----------------------------
 #-------------------------Комбез--------------
 - type: entity
@@ -433,6 +435,7 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
+  sponsorOnly: true
 #-------------------------------------------Доцент----------------------------
 #-------------------------Комбез--------------
 - type: entity
@@ -570,6 +573,7 @@
   - !type:AddComponentSpecial
     components:
       - type: PetrTarget
+  sponsorOnly: true
 #-------------------------------------------Мед. консультант----------------------------
 #-------------------------Комбез--------------
 - type: entity
@@ -695,6 +699,7 @@
   - Chemistry
   - External
   - Maintenance
+  sponsorOnly: true
 #-------------------------------------------Спавнеры ролям----------------------------
 #-------------------------Бригадир--------------
 - type: entity
@@ -779,3 +784,13 @@
   - type: ContainerFill
     containers:
       board: [ DoorElectronicsTeacherAccess ]  
+
+- type: sponsorGroup
+  id: LjeSponsorGroupTeachers
+  serverPriorityJoin: true
+  prototypes:
+  - CargoTeacher
+  - EngTeacher
+  - SecTeacher
+  - SciTeacher
+  - MedTeacher
