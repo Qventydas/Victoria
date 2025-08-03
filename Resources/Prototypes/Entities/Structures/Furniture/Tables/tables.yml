@@ -55,6 +55,11 @@
     graph: Table
     node: TableFrame
   - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      1000: Critical
+      2000: Dead
   - type: NpcFactionMember
     factions:
     - DefenseStructure
@@ -114,6 +119,11 @@
     graph: Table
     node: CounterWoodFrame
   - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      1000: Critical
+      2000: Dead
   - type: NpcFactionMember
     factions:
     - DefenseStructure
@@ -163,6 +173,11 @@
     graph: Table
     node: CounterMetalFrame
   - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      1000: Critical
+      2000: Dead
   - type: NpcFactionMember
     factions:
     - DefenseStructure
@@ -208,6 +223,11 @@
     graph: Table
     node: Table
   - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      1000: Critical
+      2000: Dead
   - type: NpcFactionMember
     factions:
     - DefenseStructure
