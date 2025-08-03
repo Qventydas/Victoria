@@ -86,6 +86,11 @@
   - type: RadiationBlocker
     resistance: 1
   - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      1000: Critical
+      2000: Dead
   - type: NpcFactionMember
     factions:
     - DefenseStructure
@@ -736,6 +741,11 @@
   - type: StaticPrice
     price: 150
   - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      1000: Critical
+      2000: Dead
   - type: NpcFactionMember
     factions:
     - DefenseStructure
@@ -903,6 +913,11 @@
     graph: Girder
     node: diagonalshuttleWall
   - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      1000: Critical
+      2000: Dead
   - type: NpcFactionMember
     factions:
     - DefenseStructure
@@ -968,6 +983,11 @@
   - type: Reflect
     reflectProb: 1
   - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      1000: Critical
+      2000: Dead
   - type: NpcFactionMember
     factions:
     - DefenseStructure
@@ -1017,6 +1037,11 @@
   - type: Reflect
     reflectProb: 1
   - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      1000: Critical
+      2000: Dead
   - type: NpcFactionMember
     factions:
     - DefenseStructure
@@ -1067,6 +1092,11 @@
     key: walls
     base: solid
   - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      1000: Critical
+      2000: Dead
   - type: NpcFactionMember
     factions:
     - DefenseStructure
@@ -1093,6 +1123,11 @@
     sprite: Structures/Walls/solid_diagonal.rsi
     state: state0
   - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      1000: Critical
+      2000: Dead
   - type: NpcFactionMember
     factions:
     - DefenseStructure
@@ -1115,6 +1150,11 @@
     key: walls
     base: solid
   - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      1000: Critical
+      2000: Dead
   - type: NpcFactionMember
     factions:
     - DefenseStructure
@@ -1199,6 +1239,11 @@
   - type: RadiationBlocker
     resistance: 0.2
   - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      1000: Critical
+      2000: Dead
   - type: NpcFactionMember
     factions:
     - DefenseStructure
@@ -1247,6 +1292,11 @@
     graph: WebStructures
     node: wall
   - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      1000: Critical
+      2000: Dead
   - type: NpcFactionMember
     factions:
     - DefenseStructure
@@ -1309,6 +1359,11 @@
   - type: RadiationBlocker
     resistance: 0.4
   - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      1000: Critical
+      2000: Dead
   - type: NpcFactionMember
     factions:
     - DefenseStructure
@@ -1337,6 +1392,11 @@
   - type: RadiationBlocker
     resistance: 0.4
   - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      1000: Critical
+      2000: Dead
   - type: NpcFactionMember
     factions:
     - DefenseStructure
