@@ -204,9 +204,6 @@
       - SheetPaper
       - LargeBeaker
       - Dropper
-      - SubstationMachineCircuitboard
-      - SMESMachineCircuitboard
-      - APCElectronics
       - SignalTimerElectronics
       - WallmountSubstationElectronics
       - CellRechargerCircuitboard
@@ -463,6 +460,9 @@
     - VacuumMachineMachineCircuitboard
     - LithographMachineCircuitboard
     - ClothLatheMachineCircuitboard
+    - SubstationMachineCircuitboard
+    - SMESMachineCircuitboard
+    - APCElectronics
     dynamicRecipes:
       - ReliableSubstationMachineCircuitboard
       - ReliableSMESMachineCircuitboard

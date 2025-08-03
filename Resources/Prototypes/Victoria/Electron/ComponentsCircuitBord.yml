@@ -52,9 +52,9 @@
   result: DigitalCircuit1
   completetime: 1
   materials:
-    CooperMaterial: 1500
-    SiMaterial: 1500
-    AluminiumMaterial: 2000
+    CooperMaterial: 150
+    SiMaterial: 150
+    AluminiumMaterial: 200
 #--------------------------------------Аналоговые------------------------------------------
 #------------------Сам-------------------------
 - type: entity
@@ -101,8 +101,8 @@
   result: AnalogCircuit1
   completetime: 1
   materials:
-    CooperMaterial: 2000
-    SiMaterial: 2000
+    CooperMaterial: 200
+    SiMaterial: 200
 #-------------------------------------Импульсные------------------------------------------
 #------------------Сам-------------------------
 - type: entity
@@ -149,9 +149,9 @@
   result: PulseCircuit1
   completetime: 1
   materials:
-    CooperMaterial: 1500
-    SiMaterial: 2000
-    AluminiumMaterial: 1500
+    CooperMaterial: 150
+    SiMaterial: 200
+    AluminiumMaterial: 150
 #--------------------------------------Силовые------------------------------------------
 #------------------Сам-------------------------
 - type: entity
@@ -198,8 +198,8 @@
   result: PowerCircuit1
   completetime: 1
   materials:
-    CooperMaterial: 2500
-    SapphireMaterial: 1500
+    CooperMaterial: 250
+    SapphireMaterial: 150
 #--------------------------------------Программируемые------------------------------------------
 #------------------Сам-------------------------
 - type: entity
@@ -246,9 +246,9 @@
   result: ProgrammableCircuit1
   completetime: 1
   materials:
-    CooperMaterial: 1500
-    SiMaterial: 2000
-    Gold: 250
+    CooperMaterial: 150
+    SiMaterial: 200
+    Gold: 25
 #--------------------------------------СВЧ------------------------------------------
 #------------------Сам-------------------------
 - type: entity
@@ -295,9 +295,9 @@
   result: MicrowaveCircuit1
   completetime: 1
   materials:
-    AluminiumMaterial: 2500
-    SiMaterial: 2000
-    Gold: 250
+    AluminiumMaterial: 250
+    SiMaterial: 200
+    Gold: 25
 #--------------------------------------Дискретные------------------------------------------
 #------------------Сам-------------------------
 - type: entity
@@ -344,8 +344,8 @@
   result: DiscreteCircuit1
   completetime: 1
   materials:
-    AluminiumMaterial: 2000
-    SiMaterial: 2500
+    AluminiumMaterial: 200
+    SiMaterial: 250
 #--------------------------------------Литограф----------------------------------------------
 - type: entity
   id: LithographMachineCircuitboard

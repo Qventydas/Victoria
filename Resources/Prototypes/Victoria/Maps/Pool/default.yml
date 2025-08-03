@@ -20,3 +20,9 @@
   - VictoriaPalada
   - VictoriaBrungild
   - VictoriaLotos
+
+- type: gameMapPool
+  id: VictoriaDefenseMapPool
+  maps:
+  # MidLowpop
+  - VictoriaDesertPlatform

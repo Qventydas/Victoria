@@ -1,6 +1,6 @@
 - type: gameMap
-  id: VictoriaLotos
-  mapName: 'Lotos Station'
+  id: VictoriaLotus
+  mapName: 'Lotus Station'
   mapPath: /Maps/victoria_lotos_station.yml
   minPlayers: 0
   maxPlayers: 30
