@@ -398,6 +398,22 @@
         amount: 0.2
 
 - type: reagent
+  id: SuperEthanol
+  name: reagent-name-super-ethanol
+  parent: BaseAlcohol
+  desc: reagent-desc-super-ethanol
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: vodka
+  color: "#d5d5d555"
+  metabolisms:
+    Drink:
+      effects:
+      - !type:SatiateThirst
+        factor: -2
+      - !type:AdjustReagent
+        reagent: Ethanol
+        amount: 1
+- type: reagent
   id: Whiskey
   name: reagent-name-whiskey
   parent: BaseAlcohol

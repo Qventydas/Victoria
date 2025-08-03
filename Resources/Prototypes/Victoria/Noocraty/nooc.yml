@@ -2573,6 +2573,7 @@
     sprite: Victoria/Noocraty/Equipment/nooc_pda.rsi
     layers:
     - map: [ "enum.PdaVisualLayers.Base" ]
+      state: "pda"
     - state: "light_overlay"
       map: [ "enum.PdaVisualLayers.Flashlight" ]
       shader: "unshaded"
@@ -2594,10 +2595,13 @@
   components:
     - type: Pda
       id: NoocIDCardVis
-      state: pda
     - type: Icon
       sprite: Victoria/Noocraty/Equipment/nooc_pda.rsi
-      state: pda
+    - type: Appearance
+      appearanceDataInit:
+       enum.PdaVisuals.PdaType:
+         !type:String
+         pda
 #------------------------------------КПК среднего класса----------
 - type: entity
   parent: NoocPDA
@@ -2608,10 +2612,13 @@
   components:
     - type: Pda
       id: NoocIDCardSr
-      state: pda
     - type: Icon
       sprite: Victoria/Noocraty/Equipment/nooc_pda.rsi
-      state: pda
+    - type: Appearance
+      appearanceDataInit:
+       enum.PdaVisuals.PdaType:
+         !type:String
+         pda
 #------------------------------------КПК низкого класса----------
 - type: entity
   parent: NoocPDA
@@ -2622,10 +2629,13 @@
   components:
     - type: Pda
       id: NoocIDCardNiz
-      state: pda
     - type: Icon
       sprite: Victoria/Noocraty/Equipment/nooc_pda.rsi
-      state: pda
+    - type: Appearance
+      appearanceDataInit:
+       enum.PdaVisuals.PdaType:
+         !type:String
+         pda
 #------------------------------------------связь----------------------------------------
 #-----------------------------канал----------------------------------------
 - type: radioChannel
