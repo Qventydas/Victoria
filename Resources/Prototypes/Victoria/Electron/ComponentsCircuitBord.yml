@@ -52,9 +52,9 @@
   result: DigitalCircuit1
   completetime: 1
   materials:
-    CooperMaterial: 300
-    SiMaterial: 300
-    AluminiumMaterial: 400
+    CooperMaterial: 400
+    SiMaterial: 400
+    AluminiumMaterial: 550
 #--------------------------------------Аналоговые------------------------------------------
 #------------------Сам-------------------------
 - type: entity
@@ -101,8 +101,8 @@
   result: AnalogCircuit1
   completetime: 1
   materials:
-    CooperMaterial: 400
-    SiMaterial: 400
+    CooperMaterial: 500
+    SiMaterial: 500
 #-------------------------------------Импульсные------------------------------------------
 #------------------Сам-------------------------
 - type: entity
@@ -198,8 +198,8 @@
   result: PowerCircuit1
   completetime: 1
   materials:
-    CooperMaterial: 500
-    SapphireMaterial: 300
+    CooperMaterial: 600
+    SapphireMaterial: 400
 #--------------------------------------Программируемые------------------------------------------
 #------------------Сам-------------------------
 - type: entity
@@ -246,8 +246,8 @@
   result: ProgrammableCircuit1
   completetime: 1
   materials:
-    CooperMaterial: 300
-    SiMaterial: 400
+    CooperMaterial: 400
+    SiMaterial: 500
     Gold: 50
 #--------------------------------------СВЧ------------------------------------------
 #------------------Сам-------------------------
@@ -295,8 +295,8 @@
   result: MicrowaveCircuit1
   completetime: 1
   materials:
-    AluminiumMaterial: 500
-    SiMaterial: 400
+    AluminiumMaterial: 600
+    SiMaterial: 500
     Gold: 50
 #--------------------------------------Дискретные------------------------------------------
 #------------------Сам-------------------------
@@ -344,8 +344,8 @@
   result: DiscreteCircuit1
   completetime: 1
   materials:
-    AluminiumMaterial: 400
-    SiMaterial: 500
+    AluminiumMaterial: 500
+    SiMaterial: 600
 #--------------------------------------Литограф----------------------------------------------
 - type: entity
   id: LithographMachineCircuitboard
