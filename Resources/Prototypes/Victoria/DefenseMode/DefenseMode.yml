@@ -782,7 +782,7 @@
   components:
   - type: PhysicalComposition
     materialComposition:
-      DefChipGearCommande: 1
+      DefChipGearCommander: 1
   - type: Stack
     stackType: DefChipGearCommander
     count: 1
@@ -823,7 +823,7 @@
   components:
   - type: PhysicalComposition
     materialComposition:
-      DefChipGearCommande: 1
+      DefChipGearCommander: 1
   - type: Stack
     stackType: DefChipGearOffi
     count: 1
@@ -864,7 +864,7 @@
   components:
   - type: PhysicalComposition
     materialComposition:
-      DefChipGearCommande: 1
+      DefChipGearCommander: 1
   - type: Stack
     stackType: DefChipGearOffiDop
     count: 1
@@ -905,7 +905,7 @@
   components:
   - type: PhysicalComposition
     materialComposition:
-      DefChipGearCommande: 1
+      DefChipGearCommander: 1
   - type: Stack
     stackType: DefChipGearSpc
     count: 1
@@ -946,7 +946,7 @@
   components:
   - type: PhysicalComposition
     materialComposition:
-      DefChipGearCommande: 1
+      DefChipGearCommander: 1
   - type: Stack
     stackType: DefChipGearSpcDop
     count: 1
@@ -987,7 +987,7 @@
   components:
   - type: PhysicalComposition
     materialComposition:
-      DefChipGearCommande: 1
+      DefChipGearCommander: 1
   - type: Stack
     stackType: DefChipGearEnge
     count: 1
@@ -1028,7 +1028,7 @@
   components:
   - type: PhysicalComposition
     materialComposition:
-      DefChipGearCommande: 1
+      DefChipGearCommander: 1
   - type: Stack
     stackType: DefChipGearMed
     count: 1
@@ -1069,7 +1069,7 @@
   components:
   - type: PhysicalComposition
     materialComposition:
-      DefChipGearCommande: 1
+      DefChipGearCommander: 1
   - type: Stack
     stackType: DefChipGearLogi
     count: 1
@@ -1109,7 +1109,7 @@
   components:
   - type: PhysicalComposition
     materialComposition:
-      DefChipGearCommande: 1
+      DefChipGearCommander: 1
   - type: Stack
     stackType: DefChipGearSolder
     count: 1
@@ -1149,7 +1149,7 @@
   components:
   - type: PhysicalComposition
     materialComposition:
-      DefChipGearCommande: 1
+      DefChipGearCommander: 1
   - type: Stack
     stackType: DefChipGearSolderDop
     count: 1
