@@ -623,8 +623,8 @@
     
 - type: department
   id: Defense
-  name: departament-defense
-  description: departament-defense-desc
+  name: Departament-defense
+  description: Departament-defense-desc
   color: "#334E6D"
   roles:
   - DefComander
