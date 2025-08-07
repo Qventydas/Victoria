@@ -121,6 +121,8 @@
     sprite: Victoria/DefenseMode/Start_Clothes/uniform.rsi
   - type: Clothing
     sprite: Victoria/DefenseMode/Start_Clothes/uniform.rsi
+  - type: TimedDespawn
+    lifetime: 300
 #-------------------сапоги---------- 
 - type: entity
   parent: ClothingShoesMilitaryBase
@@ -133,6 +135,8 @@
     sprite: Victoria/DefenseMode/Start_Clothes/boots.rsi
   - type: Clothing
     sprite: Victoria/DefenseMode/Start_Clothes/boots.rsi
+  - type: TimedDespawn
+    lifetime: 300
 #-------------------плащ----------
 - type: entity
   parent: ClothingNeckBase
@@ -143,6 +147,8 @@
   components:
   - type: Sprite
     sprite: Victoria/DefenseMode/Start_Clothes/cloak.rsi
+  - type: TimedDespawn
+    lifetime: 300
 #-----------------шлем---------- 
 - type: entity
   parent: ClothingHeadBase
@@ -155,6 +161,8 @@
     sprite: Victoria/DefenseMode/Start_Clothes/helmet.rsi
   - type: Clothing
     sprite: Victoria/DefenseMode/Start_Clothes/helmet.rsi
+  - type: TimedDespawn
+    lifetime: 300
 #-----------------беретка---------- 
 - type: entity
   parent: ClothingHeadBase
@@ -170,6 +178,8 @@
   - type: Tag
     tags:
     - ClothMade
+  - type: TimedDespawn
+    lifetime: 300
 #----------------фуражка---------- 
 - type: entity
   parent: ClothingHeadBase
@@ -184,7 +194,9 @@
     sprite: Victoria/DefenseMode/Start_Clothes/cap.rsi
   - type: Tag
     tags:
-    - ClothMade   
+    - ClothMade 
+  - type: TimedDespawn
+    lifetime: 300    
 #-----------------пилотка----------     
 - type: entity
   parent: ClothingHeadBase
@@ -199,7 +211,9 @@
     sprite: Victoria/DefenseMode/Start_Clothes/cap_p.rsi
   - type: Tag
     tags:
-    - ClothMade    
+    - ClothMade
+  - type: TimedDespawn
+    lifetime: 300    
 #-----------------------------------гиры-------------------------
 - type: startingGear
   id: DefComanderGear
@@ -593,6 +607,7 @@
     # - BaseStationArrivals
     - BaseStationGateway
     - BaseStationEvacuation
+    - BaseStationNanotrasen
   categories: [ HideSpawnMenu ]
   components:
     - type: Transform

@@ -2,14 +2,14 @@
   id: VictoriaDesertPlatform
   mapName: 'Desert Platform'
   mapPath: /Maps/map_def_1.yml
-  minPlayers: 2
+  minPlayers: 0
   maxPlayers: 15
   stations:
     VictoriaDesertPlatform:
       stationProto: StandardDefenseMap
       components:
         - type: StationNameSetup
-          mapNameTemplate: '{0} Пластформа в пустыне {1}'
+          mapNameTemplate: 'Платформа в пустыне'
         - type: StationEmergencyShuttle
           emergencyShuttlePath: /Maps/Shuttles/shuttle_def_emergency.yml
         - type: StationJobs
