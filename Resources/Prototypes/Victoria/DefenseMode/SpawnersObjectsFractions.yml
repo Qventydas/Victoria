@@ -130,7 +130,7 @@
   suffix: Оборона
   components:
   - type: Sprite
-    sprite: Victoria\DefenseMode\vending_machine.rsi
+    sprite: Victoria/DefenseMode/vending_machine.rsi
     layers:
     - state: off
       map: ["enum.LatheVisualLayers.IsRunning"]
