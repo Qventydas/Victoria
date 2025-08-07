@@ -168,7 +168,8 @@
   parent: NTChip
   id: DefChip
   name: чип поставок  
-  description: Не-е-е! Это не из чьей-то головы! Это чип, подтверждающий лояльность корпорации Vitezstvi и гарант некоторых привилегий со стороны всегалактически известного Штаба Операций.
+  description: Система электронного подтверждения для получения определённого количества поставок со стороны Штаба Фронта.
+  suffix: Оборона
   components:
   - type: PhysicalComposition
     materialComposition:
@@ -236,7 +237,7 @@
 - type: material
   id: DefChip_material
   name: чип поставок 
-  stackEntity: SpaceCash
+  stackEntity: DefChip
   icon: { sprite: /Textures/Victoria/Corp_chips/chips.rsi, state: def_chip }
   price: 5
 

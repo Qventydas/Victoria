@@ -99,3 +99,60 @@
     cdc: DefCDCTechFab
     nt: DefMirtTechFab
     ussp: DefCDCTechFab
+#----------------------------------------Бумага--------------------------------
+- type: entity
+  name: Спавнер приказа об обороне
+  id: SpawnPaperMapDesrtPlatform
+  parent: MarkerBase
+  suffix: Оборона, Пустынная платформа
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/bureaucracy.rsi
+    layers:
+    - state: paper
+    - state: paper_words
+      map: ["enum.PaperVisualLayers.Writing"]
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+  - type: StateChoiceSpawner
+    umpor: UmporPaperMapDesrtPlatform
+    mirt: MirtPaperMapDesrtPlatform
+    cdc: CDCPaperMapDesrtPlatform
+    nt: MirtPaperMapDesrtPlatform
+    ussp: CDCPaperMapDesrtPlatform
+#----------------------------------------Автомат со снарягой--------------------------------
+- type: entity
+  name: Спавнер машины поставки снаряжения
+  id: SpawnVendingMachineDefGear
+  parent: MarkerBase
+  suffix: Оборона
+  components:
+  - type: Sprite
+    sprite: Victoria/DefenseMode/vending_machine.rsi
+    layers:
+    - state: off
+      map: ["enum.LatheVisualLayers.IsRunning"]
+  - type: StateChoiceSpawner
+    umpor: VendingMachineDefGearUmpor
+    mirt: VendingMachineDefGearMirt
+    cdc: VendingMachineDefGearCDC
+    nt: VendingMachineDefGearMirt
+    ussp: VendingMachineDefGearCDC
+#----------------------------------------Автомат со снарягой---------------------
+- type: entity
+  name: Спавнер пояса с инструментами
+  id: SpawnBeltEngFilled
+  parent: MarkerBase
+  suffix: Оборона
+  components:
+  - type: Sprite
+    sprite: Clothing/Belt/utility.rsi
+    state: icon
+  - type: StateChoiceSpawner
+    umpor: UmporBeltEngFilled
+    mirt: MirtBeltEngFilled
+    cdc: CDCBeltTechFilled
+    nt: MirtBeltEngFilled
+    ussp: CDCBeltTechFilled
