@@ -880,6 +880,5 @@
     sprite: Victoria/DefenseMode/glasses_icon.rsi
   - type: ShowJobIcons
   - type: EyeProtection
-    protectionTime: 3
   - type: IdentityBlocker
     coverage: EYES

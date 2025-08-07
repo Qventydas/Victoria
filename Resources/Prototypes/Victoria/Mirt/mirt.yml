@@ -1049,6 +1049,23 @@
       - id: MirtnKnife
       - id: MirtProviderFlare
       - id: MirtMedpack
+
+- type: entity
+  id: MirtBeltEngFilled
+  parent: MirtBelt
+  suffix: Заполненный, Инженерный, Миртан
+  components:
+  - type: StorageFill
+    contents:
+      - id: Crowbar
+      - id: Wrench
+      - id: Screwdriver
+      - id: Wirecutter
+      - id: Welder
+      - id: Multitool 
+      - id: MirtnKnife
+      - id: MirtProviderFlare
+      - id: MirtMedpack
       
 - type: entity
   id: MirtBeltOffiFilled

@@ -6,6 +6,7 @@ departament-defense = Силы обороны
 departament-defense-desc = Защищайте Флаг-Маяк и не дайте врагам преодалеть ваши линии обороны.
 
 Def-Shop = Армейское снабжение
+Def-Shop-Gear = Начальная экипировка
 
 spent-lightbomb-name = сгоревшая световая шашка
 spent-lightbomb-desc = Похоже, эта световая шашка выгорела. Теперь это бесполезный мусор.

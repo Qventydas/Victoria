@@ -108,56 +108,179 @@
   
 - type: playTimeTracker
   id: JobDefSolderDop
+#-----------------------------------стартовая одёжа для гиров-------------------------  
+#-------------------униформа-----
+- type: entity
+  parent: ClothingUniformSkirtBase
+  id: DefStartGearUniformSoldier
+  name: форма мертвеца
+  suffix: Оборона
+  description: Вы умрёте. Или уже умерли. Не важно есть это на самомо деле, было или будет. Итогда для всех живых один.
+  components:
+  - type: Sprite
+    sprite: Victoria/DefenseMode/Start_Clothes/uniform.rsi
+  - type: Clothing
+    sprite: Victoria/DefenseMode/Start_Clothes/uniform.rsi
+#-------------------сапоги---------- 
+- type: entity
+  parent: ClothingShoesMilitaryBase
+  id: DefStartGearBoots
+  name: сапоги мертвеца
+  suffix: Оборона
+  description: Вы умрёте. Или уже умерли. Не важно есть это на самомо деле, было или будет. Итогда для всех живых один.
+  components:
+  - type: Sprite
+    sprite: Victoria/DefenseMode/Start_Clothes/boots.rsi
+  - type: Clothing
+    sprite: Victoria/DefenseMode/Start_Clothes/boots.rsi
+#-------------------плащ----------
+- type: entity
+  parent: ClothingNeckBase
+  id: DefStartGearCloakOf
+  name: плащ мертвеца
+  suffix: Оборона
+  description: Вы умрёте. Или уже умерли. Не важно есть это на самомо деле, было или будет. Итогда для всех живых один.
+  components:
+  - type: Sprite
+    sprite: Victoria/DefenseMode/Start_Clothes/cloak.rsi
+#-----------------шлем---------- 
+- type: entity
+  parent: ClothingHeadBase
+  id: DefStartGearHelmet
+  name: шлем мертвеца
+  suffix: Оборона
+  description: Вы умрёте. Или уже умерли. Не важно есть это на самомо деле, было или будет. Итогда для всех живых один.
+  components:
+  - type: Sprite
+    sprite: Victoria/DefenseMode/Start_Clothes/helmet.rsi
+  - type: Clothing
+    sprite: Victoria/DefenseMode/Start_Clothes/helmet.rsi
+#-----------------беретка---------- 
+- type: entity
+  parent: ClothingHeadBase
+  id: DefStartGearBeret
+  name: берет мертвеца
+  suffix: Оборона
+  description: Вы умрёте. Или уже умерли. Не важно есть это на самомо деле, было или будет. Итогда для всех живых один.
+  components:
+  - type: Sprite
+    sprite: Victoria/DefenseMode/Start_Clothes/beret.rsi
+  - type: Clothing
+    sprite: Victoria/DefenseMode/Start_Clothes/beret.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+#----------------фуражка---------- 
+- type: entity
+  parent: ClothingHeadBase
+  id: DefStartGearCap
+  name: фуражка мертвеца
+  suffix: Оборона
+  description: Вы умрёте. Или уже умерли. Не важно есть это на самомо деле, было или будет. Итогда для всех живых один.
+  components:
+  - type: Sprite
+    sprite: Victoria/DefenseMode/Start_Clothes/cap.rsi
+  - type: Clothing
+    sprite: Victoria/DefenseMode/Start_Clothes/cap.rsi
+  - type: Tag
+    tags:
+    - ClothMade   
+#-----------------пилотка----------     
+- type: entity
+  parent: ClothingHeadBase
+  id: DefStartGearCapP
+  name: пилотка мертвеца
+  suffix: Оборона
+  description: Вы умрёте. Или уже умерли. Не важно есть это на самомо деле, было или будет. Итогда для всех живых один.
+  components:
+  - type: Sprite
+    sprite: Victoria/DefenseMode/Start_Clothes/cap_p.rsi
+  - type: Clothing
+    sprite: Victoria/DefenseMode/Start_Clothes/cap_p.rsi
+  - type: Tag
+    tags:
+    - ClothMade    
 #-----------------------------------гиры-------------------------
 - type: startingGear
   id: DefComanderGear
   equipment:
-    shoes: SSBoots
+    jumpsuit: DefStartGearUniformSoldier
+    shoes: DefStartGearBoots
+    head: DefStartGearCap
+    neck: DefStartGearCloakOf
+    pocket1: DefChipGearCommander
 
 - type: startingGear
   id: DefOfficerGear
   equipment:
-    shoes: SSBoots
+    jumpsuit: DefStartGearUniformSoldier
+    shoes: DefStartGearBoots
+    head: DefStartGearCap
+    pocket1: DefChipGearOffi
 
 - type: startingGear
   id: DefOfficerDopGear
   equipment:
-    shoes: SSBoots
+    jumpsuit: DefStartGearUniformSoldier
+    shoes: DefStartGearBoots
+    head: DefStartGearCap
+    pocket1: DefChipGearOffiDop
 
 - type: startingGear
   id: DefEngenerGear
   equipment:
-    shoes: SSBoots
+    jumpsuit: DefStartGearUniformSoldier
+    shoes: DefStartGearBoots
+    head: DefStartGearCapP
+    pocket1: DefChipGearEnge
     
 - type: startingGear
   id: DefMedicGear
   equipment:
-    shoes: SSBoots
+    jumpsuit: DefStartGearUniformSoldier
+    shoes: DefStartGearBoots
+    head: DefStartGearBeret
+    pocket1: DefChipGearMed
 
 - type: startingGear
   id: DefCargoGear
   equipment:
-    shoes: SSBoots
+    jumpsuit: DefStartGearUniformSoldier
+    shoes: DefStartGearBoots
+    head: DefStartGearCapP
+    pocket1: DefChipGearLogi
 
 - type: startingGear
   id: DefSpecialistGear
   equipment:
-    shoes: SSBoots
+    jumpsuit: DefStartGearUniformSoldier
+    shoes: DefStartGearBoots
+    head: DefStartGearHelmet
+    pocket1: DefChipGearSpc
 
 - type: startingGear
   id: DefSpecialistDopGear
   equipment:
-    shoes: SSBoots
+    jumpsuit: DefStartGearUniformSoldier
+    shoes: DefStartGearBoots
+    head: DefStartGearBeret
+    pocket1: DefChipGearSpcDop
     
 - type: startingGear
   id: DefSolderGear
   equipment:
-    shoes: SSBoots
+    jumpsuit: DefStartGearUniformSoldier
+    shoes: DefStartGearBoots
+    head: DefStartGearHelmet
+    pocket1: DefChipGearSolder
 
 - type: startingGear
   id: DefSolderDopGear
   equipment:
-    shoes: SSBoots
+    jumpsuit: DefStartGearUniformSoldier
+    shoes: DefStartGearBoots
+    head: DefStartGearHelmet
+    pocket1: DefChipGearSolderDop
 #-----------------------------------роли-------------------------
 - type: job
   id: DefComander
@@ -481,14 +604,14 @@
   components:
   - type: DefenseRule
   - type: GameRule
-    minPlayers: 5
+    minPlayers: 0
 #Пресет
 - type: gamePreset
   id: Defense
   alias:
     - defense
   name: Оборона
-  description: Толпы ксеноморфов прут в атаку! Берите пушки и защищайтесь!
+  description: Волны врагов прут в атаку! Берите пушки и защищайтесь!
   supportedMaps: VictoriaDefenseMapPool
   showInVote: false
   rules:
@@ -497,35 +620,36 @@
     - BasicStationEventScheduler
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
-# - type: department
-  # id: Defense
-  # name: departament-defense
-  # description: departament-defense-desc
-  # color: "#334E6D"
-  # roles:
-  # - DefComander
-  # - DefOfficer
-  # - DefOfficerDop
-  # - DefEngener
-  # - DefMedic
-  # - DefCargo
-  # - DefSpecialist
-  # - DefSpecialistDop
-  # - DefSolder
-  # - DefSolderDop
+    
+- type: department
+  id: Defense
+  name: departament-defense
+  description: departament-defense-desc
+  color: "#334E6D"
+  roles:
+  - DefComander
+  - DefOfficer
+  - DefOfficerDop
+  - DefEngener
+  - DefMedic
+  - DefCargo
+  - DefSpecialist
+  - DefSpecialistDop
+  - DefSolder
+  - DefSolderDop
 #---------------------------------Объяснение замеса карты---------------------
 #---------------------------Умпорское------------------------
 - type: entity
   id: UmporPaperMapDesrtPlatform
   name: Приказ об обороне
-  suffix: Умпорский, Оборона, Пустынная Платформа
+  suffix: Оборона, Оборона, Пустынная Платформа
   parent: Paper
   components:
   - type: Paper
     content: |
       [color=#9d9d9d]░░░░░░░█████░░░██[/color]
       [color=#9d9d9d]█████░░░░█░░░███░[/color]      [head=3]Бланк документа[/head]
-      [color=#9d9d9d]░░░░█████░█████░░[/color]               [head=3]UMPH[/head]
+      [color=#9d9d9d]░░░░█████░█████░░[/color]               [head=3]UMPR[/head]
       [color=#9d9d9d]████░░░░█░████░░░[/color]
       [color=#9d9d9d]░░░█████░█░░░░░░░[/color]
       =============================================
@@ -646,3 +770,954 @@
 #---------------------------Советское------------------------
 
 #---------------------------Корпоративное------------------------
+
+#--------------------------------------------------Стартовые чипы-------------------------
+#---------------------------Командор---------------------------
+- type: entity
+  parent: NTChip
+  id: DefChipGearCommander
+  name: чип экипировки командора 
+  description: Кодирующее устройство, открывающее доступ к необходимой экипировке.
+  suffix: Оборона
+  components:
+  - type: PhysicalComposition
+    materialComposition:
+      DefChipGearCommande: 1
+  - type: Stack
+    stackType: DefChipGearCommander
+    count: 1
+  - type: Sprite
+    sprite: Victoria/Corp_chips/chips.rsi
+    state: def_gear_chip
+  - type: Currency
+    price:
+      DefChipGearCommander: 1
+      
+- type: material
+  id: DefChipGearCommander
+  name: чип поставок 
+  stackEntity: DefChipGearCommander
+  icon: { sprite: /Textures/Victoria/Corp_chips/chips.rsi, state: def_gear_chip }
+  price: 0
+
+- type: stack
+  id: DefChipGearCommander
+  name: чип поставок  
+  icon: { sprite: /Textures/Victoria/Corp_chips/chips.rsi, state: def_gear_chip }
+  spawn: DefChipGearCommander
+  maxCount: 1
+  
+- type: currency
+  id: DefChipGearCommander
+  displayName: чип поставок 
+  cash:
+    1: DefChipGearCommander
+  canWithdraw: true 
+#---------------------------Офицер---------------------------
+- type: entity
+  parent: NTChip
+  id: DefChipGearOffi
+  name: чип экипировки командора 
+  description: Кодирующее устройство, открывающее доступ к необходимой экипировке.
+  suffix: Оборона
+  components:
+  - type: PhysicalComposition
+    materialComposition:
+      DefChipGearCommande: 1
+  - type: Stack
+    stackType: DefChipGearOffi
+    count: 1
+  - type: Sprite
+    sprite: Victoria/Corp_chips/chips.rsi
+    state: def_gear_chip
+  - type: Currency
+    price:
+      DefChipGearOffi: 1
+      
+- type: material
+  id: DefChipGearOffi
+  name: чип поставок 
+  stackEntity: DefChipGearOffi
+  icon: { sprite: /Textures/Victoria/Corp_chips/chips.rsi, state: def_gear_chip }
+  price: 0
+
+- type: stack
+  id: DefChipGearOffi
+  name: чип поставок  
+  icon: { sprite: /Textures/Victoria/Corp_chips/chips.rsi, state: def_gear_chip }
+  spawn: DefChipGearOffi
+  maxCount: 1
+  
+- type: currency
+  id: DefChipGearOffi
+  displayName: чип поставок 
+  cash:
+    1: DefChipGearOffi
+  canWithdraw: true 
+#---------------------------Офицер доп---------------------------
+- type: entity
+  parent: NTChip
+  id: DefChipGearOffiDop
+  name: чип экипировки командора 
+  description: Кодирующее устройство, открывающее доступ к необходимой экипировке.
+  suffix: Оборона
+  components:
+  - type: PhysicalComposition
+    materialComposition:
+      DefChipGearCommande: 1
+  - type: Stack
+    stackType: DefChipGearOffiDop
+    count: 1
+  - type: Sprite
+    sprite: Victoria/Corp_chips/chips.rsi
+    state: def_gear_chip
+  - type: Currency
+    price:
+      DefChipGearOffiDop: 1
+      
+- type: material
+  id: DefChipGearOffiDop
+  name: чип поставок 
+  stackEntity: DefChipGearOffiDop
+  icon: { sprite: /Textures/Victoria/Corp_chips/chips.rsi, state: def_gear_chip }
+  price: 0
+
+- type: stack
+  id: DefChipGearOffiDop
+  name: чип поставок  
+  icon: { sprite: /Textures/Victoria/Corp_chips/chips.rsi, state: def_gear_chip }
+  spawn: DefChipGearOffiDop
+  maxCount: 1
+  
+- type: currency
+  id: DefChipGearOffiDop
+  displayName: чип поставок 
+  cash:
+    1: DefChipGearOffiDop
+  canWithdraw: true 
+#---------------------------Спец---------------------------
+- type: entity
+  parent: NTChip
+  id: DefChipGearSpc
+  name: чип экипировки командора 
+  description: Кодирующее устройство, открывающее доступ к необходимой экипировке.
+  suffix: Оборона
+  components:
+  - type: PhysicalComposition
+    materialComposition:
+      DefChipGearCommande: 1
+  - type: Stack
+    stackType: DefChipGearSpc
+    count: 1
+  - type: Sprite
+    sprite: Victoria/Corp_chips/chips.rsi
+    state: def_gear_chip
+  - type: Currency
+    price:
+      DefChipGearSpc: 1
+      
+- type: material
+  id: DefChipGearSpc
+  name: чип поставок 
+  stackEntity: DefChipGearSpc
+  icon: { sprite: /Textures/Victoria/Corp_chips/chips.rsi, state: def_gear_chip }
+  price: 0
+
+- type: stack
+  id: DefChipGearSpc
+  name: чип поставок  
+  icon: { sprite: /Textures/Victoria/Corp_chips/chips.rsi, state: def_gear_chip }
+  spawn: DefChipGearSpc
+  maxCount: 1
+  
+- type: currency
+  id: DefChipGearSpc
+  displayName: чип поставок 
+  cash:
+    1: DefChipGearSpc
+  canWithdraw: true 
+#---------------------------Спец доп---------------------------
+- type: entity
+  parent: NTChip
+  id: DefChipGearSpcDop
+  name: чип экипировки командора 
+  description: Кодирующее устройство, открывающее доступ к необходимой экипировке.
+  suffix: Оборона
+  components:
+  - type: PhysicalComposition
+    materialComposition:
+      DefChipGearCommande: 1
+  - type: Stack
+    stackType: DefChipGearSpcDop
+    count: 1
+  - type: Sprite
+    sprite: Victoria/Corp_chips/chips.rsi
+    state: def_gear_chip
+  - type: Currency
+    price:
+      DefChipGearSpcDop: 1
+      
+- type: material
+  id: DefChipGearSpcDop
+  name: чип поставок 
+  stackEntity: DefChipGearSpcDop
+  icon: { sprite: /Textures/Victoria/Corp_chips/chips.rsi, state: def_gear_chip }
+  price: 0
+
+- type: stack
+  id: DefChipGearSpcDop
+  name: чип поставок  
+  icon: { sprite: /Textures/Victoria/Corp_chips/chips.rsi, state: def_gear_chip }
+  spawn: DefChipGearSpcDop
+  maxCount: 1
+  
+- type: currency
+  id: DefChipGearSpcDop
+  displayName: чип поставок 
+  cash:
+    1: DefChipGearSpcDop
+  canWithdraw: true 
+#---------------------------Инж---------------------------
+- type: entity
+  parent: NTChip
+  id: DefChipGearEnge
+  name: чип экипировки командора 
+  description: Кодирующее устройство, открывающее доступ к необходимой экипировке.
+  suffix: Оборона
+  components:
+  - type: PhysicalComposition
+    materialComposition:
+      DefChipGearCommande: 1
+  - type: Stack
+    stackType: DefChipGearEnge
+    count: 1
+  - type: Sprite
+    sprite: Victoria/Corp_chips/chips.rsi
+    state: def_gear_chip
+  - type: Currency
+    price:
+      DefChipGearEnge: 1
+      
+- type: material
+  id: DefChipGearEnge
+  name: чип поставок 
+  stackEntity: DefChipGearEnge
+  icon: { sprite: /Textures/Victoria/Corp_chips/chips.rsi, state: def_gear_chip }
+  price: 0
+
+- type: stack
+  id: DefChipGearEnge
+  name: чип поставок  
+  icon: { sprite: /Textures/Victoria/Corp_chips/chips.rsi, state: def_gear_chip }
+  spawn: DefChipGearEnge
+  maxCount: 1
+  
+- type: currency
+  id: DefChipGearEnge
+  displayName: чип поставок 
+  cash:
+    1: DefChipGearEnge
+  canWithdraw: true 
+#---------------------------Медик---------------------------
+- type: entity
+  parent: NTChip
+  id: DefChipGearMed
+  name: чип экипировки командора 
+  description: Кодирующее устройство, открывающее доступ к необходимой экипировке.
+  suffix: Оборона
+  components:
+  - type: PhysicalComposition
+    materialComposition:
+      DefChipGearCommande: 1
+  - type: Stack
+    stackType: DefChipGearMed
+    count: 1
+  - type: Sprite
+    sprite: Victoria/Corp_chips/chips.rsi
+    state: def_gear_chip
+  - type: Currency
+    price:
+      DefChipGearMed: 1
+      
+- type: material
+  id: DefChipGearMed
+  name: чип поставок 
+  stackEntity: DefChipGearMed
+  icon: { sprite: /Textures/Victoria/Corp_chips/chips.rsi, state: def_gear_chip }
+  price: 0
+
+- type: stack
+  id: DefChipGearMed
+  name: чип поставок  
+  icon: { sprite: /Textures/Victoria/Corp_chips/chips.rsi, state: def_gear_chip }
+  spawn: DefChipGearMed
+  maxCount: 1
+  
+- type: currency
+  id: DefChipGearMed
+  displayName: чип поставок 
+  cash:
+    1: DefChipGearMed
+  canWithdraw: true 
+#---------------------------Снабженец---------------------------
+- type: entity
+  parent: NTChip
+  id: DefChipGearLogi
+  name: чип экипировки командора 
+  description: Кодирующее устройство, открывающее доступ к необходимой экипировке.
+  suffix: Оборона
+  components:
+  - type: PhysicalComposition
+    materialComposition:
+      DefChipGearCommande: 1
+  - type: Stack
+    stackType: DefChipGearLogi
+    count: 1
+  - type: Sprite
+    sprite: Victoria/Corp_chips/chips.rsi
+    state: def_gear_chip
+  - type: Currency
+    price:
+      DefChipGearLogi: 1
+      
+- type: material
+  id: DefChipGearLogi
+  name: чип поставок 
+  stackEntity: DefChipGearLogi
+  icon: { sprite: /Textures/Victoria/Corp_chips/chips.rsi, state: def_gear_chip }
+  price: 0
+
+- type: stack
+  id: DefChipGearLogi
+  name: чип поставок  
+  icon: { sprite: /Textures/Victoria/Corp_chips/chips.rsi, state: def_gear_chip }
+  spawn: DefChipGearLogi
+  maxCount: 1
+  
+- type: currency
+  id: DefChipGearLogi
+  displayName: чип поставок 
+  cash:
+    1: DefChipGearLogi
+  canWithdraw: true 
+#---------------------------Солдат---------------------------
+- type: entity
+  parent: NTChip
+  id: DefChipGearSolder
+  name: чип экипировки командора 
+  description: Кодирующее устройство, открывающее доступ к необходимой экипировке.
+  components:
+  - type: PhysicalComposition
+    materialComposition:
+      DefChipGearCommande: 1
+  - type: Stack
+    stackType: DefChipGearSolder
+    count: 1
+  - type: Sprite
+    sprite: Victoria/Corp_chips/chips.rsi
+    state: def_gear_chip
+  - type: Currency
+    price:
+      DefChipGearSolder: 1
+      
+- type: material
+  id: DefChipGearSolder
+  name: чип поставок 
+  stackEntity: DefChipGearSolder
+  icon: { sprite: /Textures/Victoria/Corp_chips/chips.rsi, state: def_gear_chip }
+  price: 0
+
+- type: stack
+  id: DefChipGearSolder
+  name: чип поставок  
+  icon: { sprite: /Textures/Victoria/Corp_chips/chips.rsi, state: def_gear_chip }
+  spawn: DefChipGearSolder
+  maxCount: 1
+  
+- type: currency
+  id: DefChipGearSolder
+  displayName: чип поставок 
+  cash:
+    1: DefChipGearSolder
+  canWithdraw: true 
+#---------------------------Солдат доп---------------------------
+- type: entity
+  parent: NTChip
+  id: DefChipGearSolderDop
+  name: чип экипировки командора 
+  description: Кодирующее устройство, открывающее доступ к необходимой экипировке.
+  components:
+  - type: PhysicalComposition
+    materialComposition:
+      DefChipGearCommande: 1
+  - type: Stack
+    stackType: DefChipGearSolderDop
+    count: 1
+  - type: Sprite
+    sprite: Victoria/Corp_chips/chips.rsi
+    state: def_gear_chip
+  - type: Currency
+    price:
+      DefChipGearSolderDop: 1
+      
+- type: material
+  id: DefChipGearSolderDop
+  name: чип поставок 
+  stackEntity: DefChipGearSolderDop
+  icon: { sprite: /Textures/Victoria/Corp_chips/chips.rsi, state: def_gear_chip }
+  price: 0
+
+- type: stack
+  id: DefChipGearSolderDop
+  name: чип поставок  
+  icon: { sprite: /Textures/Victoria/Corp_chips/chips.rsi, state: def_gear_chip }
+  spawn: DefChipGearSolderDop
+  maxCount: 1
+  
+- type: currency
+  id: DefChipGearSolderDop
+  displayName: чип поставок 
+  cash:
+    1: DefChipGearSolderDop
+  canWithdraw: true 
+#--------------------------------------------------Автоматы с одёжей-------------------------  
+#---------------------------Паки снаряги---------------------------
+#--------------------Умпор------------
+#------------Магаз------------
+- type: storeCategory
+  id: DefShopGearUmporOfi
+  name: Командиры
+  priority: 0
+
+- type: storeCategory
+  id: DefShopGearUmporSold
+  name: Бойцы
+  priority: 1
+
+- type: storeCategory
+  id: DefShopGearUmporWork
+  name: Служащие
+  priority: 2
+  
+- type: entity
+  id: StorePresetDefShopGearUmpor
+  abstract: true
+  components:
+  - type: Store
+    name: Def-Shop-Gear
+    categories:
+    - DefShopGearUmporOfi
+    - DefShopGearUmporSold
+    - DefShopGearUmporWork
+    currencyWhitelist:
+    - DefChipGearCommander
+    - DefChipGearOffi
+    - DefChipGearOffiDop
+    - DefChipGearSpc
+    - DefChipGearSpcDop
+    - DefChipGearSolder
+    - DefChipGearSolderDop
+    - DefChipGearEnge
+    - DefChipGearMed
+    - DefChipGearLogi
+    balance:
+      DefChipGearCommander: 0
+      DefChipGearOffi: 0
+      DefChipGearOffiDop: 0
+      DefChipGearSpc: 0
+      DefChipGearSpcDop: 0
+      DefChipGearSolder: 0
+      DefChipGearSolderDop: 0
+      DefChipGearEnge: 0
+      DefChipGearMed: 0
+      DefChipGearLogi: 0
+#------------Листинги---------     
+- type: listing
+  id: ToolboxGearDefUmporCom
+  name: Набор умпорского командора
+  description: Одежда и базовое снаряжение командора Умпорской Федерации.
+  productEntity: ToolboxGearDefUmporCom
+  cost:
+    DefChipGearCommander: 1
+  categories:
+  - DefShopGearUmporOfi
+  
+- type: listing
+  id: ToolboxGearDefUmporOfi
+  name: Набор умпорского офицера
+  description: Одежда и базовое снаряжение офицера Умпорской Федерации.
+  productEntity: ToolboxGearDefUmporOfi
+  cost:
+    DefChipGearOffi: 1
+  categories:
+  - DefShopGearUmporOfi
+  
+- type: listing
+  id: ToolboxGearDefUmporOfiD
+  name: Набор умпорского офицера доп.отряда
+  description: Одежда и базовое снаряжение офицера доп.отряда Умпорской Федерации.
+  productEntity: ToolboxGearDefUmporOfiD
+  cost:
+    DefChipGearOffiDop: 1
+  categories:
+  - DefShopGearUmporOfi
+  
+- type: listing
+  id: ToolboxGearDefUmporSPC
+  name: Набор умпорского специалиста
+  description: Одежда и базовое снаряжение специалиста Умпорской Федерации.
+  productEntity: ToolboxGearDefUmporSPC
+  cost:
+    DefChipGearSpc: 1
+  categories:
+  - DefShopGearUmporSold
+  
+- type: listing
+  id: ToolboxGearDefUmporSPCD
+  name: Набор умпорского специалиста доп.отряда
+  description: Одежда и базовое снаряжение специалиста доп.отряда Умпорской Федерации.
+  productEntity: ToolboxGearDefUmporSPCD
+  cost:
+    DefChipGearSpcDop: 1
+  categories:
+  - DefShopGearUmporSold
+  
+- type: listing
+  id: ToolboxGearDefUmporSol
+  name: Набор умпорского солдата
+  description: Одежда и базовое снаряжение солдата Умпорской Федерации.
+  productEntity: ToolboxGearDefUmporSol
+  cost:
+    DefChipGearSolder: 1
+  categories:
+  - DefShopGearUmporSold
+  
+- type: listing
+  id: ToolboxGearDefUmporSolD
+  name: Набор умпорского солдата доп.отряда
+  description: Одежда и базовое снаряжение солдата доп.отряда Умпорской Федерации.
+  productEntity: ToolboxGearDefUmporSolD
+  cost:
+    DefChipGearSolderDop: 1
+  categories:
+  - DefShopGearUmporSold
+
+- type: listing
+  id: ToolboxGearDefUmporEng
+  name: Набор умпорского инженера
+  description: Одежда и базовое снаряжение инженера Умпорской Федерации.
+  productEntity: ToolboxGearDefUmporEng
+  cost:
+    DefChipGearEnge: 1
+  categories:
+  - DefShopGearUmporWork
+  
+- type: listing
+  id: ToolboxGearDefUmporMed
+  name: Набор умпорского медика
+  description: Одежда и базовое снаряжение медика Умпорской Федерации.
+  productEntity: ToolboxGearDefUmporMed
+  cost:
+    DefChipGearMed: 1
+  categories:
+  - DefShopGearUmporWork
+
+- type: listing
+  id: ToolboxGearDefUmporLog
+  name: Набор умпорского снабженца
+  description: Одежда и базовое снаряжение снабженца Умпорской Федерации.
+  productEntity: ToolboxGearDefUmporLog
+  cost:
+    DefChipGearLogi: 1
+  categories:
+  - DefShopGearUmporWork
+#--------------------Миртан------------
+#------------Магаз------------
+- type: storeCategory
+  id: DefShopGearMirtOfi
+  name: Командиры
+  priority: 0
+
+- type: storeCategory
+  id: DefShopGearMirtSold
+  name: Бойцы
+  priority: 1
+
+- type: storeCategory
+  id: DefShopGearMirtWork
+  name: Служащие
+  priority: 2
+  
+- type: entity
+  id: StorePresetDefShopGearMirt
+  abstract: true
+  components:
+  - type: Store
+    name: Def-Shop-Gear
+    categories:
+    - DefShopGearMirtOfi
+    - DefShopGearMirtSold
+    - DefShopGearMirtWork
+    currencyWhitelist:
+    - DefChipGearCommander
+    - DefChipGearOffi
+    - DefChipGearOffiDop
+    - DefChipGearSpc
+    - DefChipGearSpcDop
+    - DefChipGearSolder
+    - DefChipGearSolderDop
+    - DefChipGearEnge
+    - DefChipGearMed
+    - DefChipGearLogi
+    balance:
+      DefChipGearCommander: 0
+      DefChipGearOffi: 0
+      DefChipGearOffiDop: 0
+      DefChipGearSpc: 0
+      DefChipGearSpcDop: 0
+      DefChipGearSolder: 0
+      DefChipGearSolderDop: 0
+      DefChipGearEnge: 0
+      DefChipGearMed: 0
+      DefChipGearLogi: 0
+#------------Листинги---------
+- type: listing
+  id: ToolboxGearDefMirtCom
+  name: Набор миртанского командора
+  description: Одежда и базовое снаряжение командора Империи Миртана.
+  productEntity: ToolboxGearDefMirtCom
+  cost:
+    DefChipGearCommander: 1
+  categories:
+  - DefShopGearMirtOfi
+  
+- type: listing
+  id: ToolboxGearDefMirtOfi
+  name: Набор миртанского офицера
+  description: Одежда и базовое снаряжение офицера Империи Миртана.
+  productEntity: ToolboxGearDefMirtOfi
+  cost:
+    DefChipGearOffi: 1
+  categories:
+  - DefShopGearMirtOfi
+  
+- type: listing
+  id: ToolboxGearDefMirtOfiD
+  name: Набор миртанского офицера доп.отряда
+  description: Одежда и базовое снаряжение офицера доп.отряда Империи Миртана.
+  productEntity: ToolboxGearDefMirtOfiD
+  cost:
+    DefChipGearOffiDop: 1
+  categories:
+  - DefShopGearMirtOfi
+  
+- type: listing
+  id: ToolboxGearDefMirtSPC
+  name: Набор миртанского специалиста
+  description: Одежда и базовое снаряжение специалиста Империи Миртана.
+  productEntity: ToolboxGearDefMirtSPC
+  cost:
+    DefChipGearSpc: 1
+  categories:
+  - DefShopGearMirtSold
+  
+- type: listing
+  id: ToolboxGearDefMirtSPCD
+  name: Набор миртанского специалиста доп.отряда
+  description: Одежда и базовое снаряжение специалиста доп.отряда Империи Миртана.
+  productEntity: ToolboxGearDefMirtSPCD
+  cost:
+    DefChipGearSpcDop: 1
+  categories:
+  - DefShopGearMirtSold
+  
+- type: listing
+  id: ToolboxGearDefMirtSol
+  name: Набор миртанского солдата
+  description: Одежда и базовое снаряжение солдата Империи Миртана.
+  productEntity: ToolboxGearDefMirtSol
+  cost:
+    DefChipGearSolder: 1
+  categories:
+  - DefShopGearMirtSold
+  
+- type: listing
+  id: ToolboxGearDefMirtSolD
+  name: Набор миртанского солдата доп.отряда
+  description: Одежда и базовое снаряжение солдата доп.отряда Империи Миртана.
+  productEntity: ToolboxGearDefMirtSolD
+  cost:
+    DefChipGearSolderDop: 1
+  categories:
+  - DefShopGearMirtSold
+
+- type: listing
+  id: ToolboxGearDefMirtEng
+  name: Набор миртанского инженера
+  description: Одежда и базовое снаряжение инженера Империи Миртана.
+  productEntity: ToolboxGearDefMirtEng
+  cost:
+    DefChipGearEnge: 1
+  categories:
+  - DefShopGearMirtWork
+  
+- type: listing
+  id: ToolboxGearDefMirtMed
+  name: Набор миртанского медика
+  description: Одежда и базовое снаряжение медика Империи Миртана.
+  productEntity: ToolboxGearDefMirtMed
+  cost:
+    DefChipGearMed: 1
+  categories:
+  - DefShopGearMirtWork
+
+- type: listing
+  id: ToolboxGearDefMirtLog
+  name: Набор миртанского снабженца
+  description: Одежда и базовое снаряжение снабженца Империи Миртана.
+  productEntity: ToolboxGearDefMirtLog
+  cost:
+    DefChipGearLogi: 1
+  categories:
+  - DefShopGearMirtWork
+#--------------------Конгломерат------------
+#------------Магаз------------
+- type: storeCategory
+  id: DefShopGearCDCOfi
+  name: Командиры
+  priority: 0
+
+- type: storeCategory
+  id: DefShopGearCDCSold
+  name: Бойцы
+  priority: 1
+
+- type: storeCategory
+  id: DefShopGearCDCWork
+  name: Служащие
+  priority: 2
+  
+- type: entity
+  id: StorePresetDefShopGearCDC
+  abstract: true
+  components:
+  - type: Store
+    name: Def-Shop-Gear
+    categories:
+    - DefShopGearCDCOfi
+    - DefShopGearCDCSold
+    - DefShopGearCDCWork
+    currencyWhitelist:
+    - DefChipGearCommander
+    - DefChipGearOffi
+    - DefChipGearOffiDop
+    - DefChipGearSpc
+    - DefChipGearSpcDop
+    - DefChipGearSolder
+    - DefChipGearSolderDop
+    - DefChipGearEnge
+    - DefChipGearMed
+    - DefChipGearLogi
+    balance:
+      DefChipGearCommander: 0
+      DefChipGearOffi: 0
+      DefChipGearOffiDop: 0
+      DefChipGearSpc: 0
+      DefChipGearSpcDop: 0
+      DefChipGearSolder: 0
+      DefChipGearSolderDop: 0
+      DefChipGearEnge: 0
+      DefChipGearMed: 0
+      DefChipGearLogi: 0
+#------------Листинги---------
+- type: listing
+  id: ToolboxGearDefCDCCom
+  name: Набор командора конгломерата
+  description: Одежда и базовое снаряжение командора Халифатского Божественного Конгломерата.
+  productEntity: ToolboxGearDefCDCCom
+  cost:
+    DefChipGearCommander: 1
+  categories:
+  - DefShopGearCDCOfi
+  
+- type: listing
+  id: ToolboxGearDefCDCOfi
+  name: Набор офицера конгломерата
+  description: Одежда и базовое снаряжение офицера Халифатского Божественного Конгломерата.
+  productEntity: ToolboxGearDefCDCOfi
+  cost:
+    DefChipGearOffi: 1
+  categories:
+  - DefShopGearCDCOfi
+  
+- type: listing
+  id: ToolboxGearDefCDCOfiD
+  name: Набор офицера доп.отряда конгломерата
+  description: Одежда и базовое снаряжение офицера доп.отряда Халифатского Божественного Конгломерата.
+  productEntity: ToolboxGearDefCDCOfiD
+  cost:
+    DefChipGearOffiDop: 1
+  categories:
+  - DefShopGearCDCOfi
+  
+- type: listing
+  id: ToolboxGearDefCDCSPC
+  name: Набор специалиста конгломерата
+  description: Одежда и базовое снаряжение специалиста Халифатского Божественного Конгломерата.
+  productEntity: ToolboxGearDefCDCSPC
+  cost:
+    DefChipGearSpc: 1
+  categories:
+  - DefShopGearCDCSold
+  
+- type: listing
+  id: ToolboxGearDefCDCSPCD
+  name: Набор специалиста доп.отряда конгломерата
+  description: Одежда и базовое снаряжение специалиста доп.отряда Халифатского Божественного Конгломерата.
+  productEntity: ToolboxGearDefCDCSPCD
+  cost:
+    DefChipGearSpcDop: 1
+  categories:
+  - DefShopGearCDCSold
+  
+- type: listing
+  id: ToolboxGearDefCDCSol
+  name: Набор солдата конгломерата
+  description: Одежда и базовое снаряжение солдата Халифатского Божественного Конгломерата.
+  productEntity: ToolboxGearDefCDCSol
+  cost:
+    DefChipGearSolder: 1
+  categories:
+  - DefShopGearCDCSold
+  
+- type: listing
+  id: ToolboxGearDefCDCSolD
+  name: Набор солдата доп.отряда конгломерата
+  description: Одежда и базовое снаряжение солдата доп.отряда Халифатского Божественного Конгломерата.
+  productEntity: ToolboxGearDefCDCSolD
+  cost:
+    DefChipGearSolderDop: 1
+  categories:
+  - DefShopGearCDCSold
+
+- type: listing
+  id: ToolboxGearDefCDCEng
+  name: Набор инженера конгломерата
+  description: Одежда и базовое снаряжение инженера Халифатского Божественного Конгломерата.
+  productEntity: ToolboxGearDefCDCEng
+  cost:
+    DefChipGearEnge: 1
+  categories:
+  - DefShopGearCDCWork
+  
+- type: listing
+  id: ToolboxGearDefCDCMed
+  name: Набор медика конгломерата
+  description: Одежда и базовое снаряжение медика Халифатского Божественного Конгломерата.
+  productEntity: ToolboxGearDefCDCMed
+  cost:
+    DefChipGearMed: 1
+  categories:
+  - DefShopGearCDCWork
+
+- type: listing
+  id: ToolboxGearDefCDCLog
+  name: Набор снабженца конгломерата
+  description: Одежда и базовое снаряжение снабженца Халифатского Божественного Конгломерата.
+  productEntity: ToolboxGearDefCDCLog
+  cost:
+    DefChipGearLogi: 1
+  categories:
+  - DefShopGearCDCWork
+#--------------------Корпорации------------
+#------------Магаз------------
+
+#------------Листинги---------
+
+#--------------------СССП------------
+#------------Магаз------------
+
+#------------Листинги---------
+
+#---------------------------------Автоматы---------------------------
+#---------------------------Умпор---------------------------
+- type: entity
+  parent: [BaseComputerAiAccess, StorePresetDefShopGearUmpor]
+  id: VendingMachineDefGearUmpor
+  name: Машина поставки снаряжения
+  description: Автомат для выдачи базового армейского снаряжения и вооружения для вновьприбывших солдат гарнизона.
+  components:
+  - type: Sprite
+    sprite: Victoria/DefenseMode/vending_machine.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: ump
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: UserInterface
+    interfaces:
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
+  - type: Anchorable
+    flags: Anchorable
+#---------------------------Миртан---------------------------
+- type: entity
+  parent: [BaseComputerAiAccess, StorePresetDefShopGearMirt]
+  id: VendingMachineDefGearMirt
+  name: Машина поставки снаряжения
+  description: Автомат для выдачи базового армейского снаряжения и вооружения для вновьприбывших солдат гарнизона.
+  components:
+  - type: Sprite
+    sprite: Victoria/DefenseMode/vending_machine.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: mirt
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: UserInterface
+    interfaces:
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
+  - type: Anchorable
+    flags: Anchorable
+#---------------------------Конгломерат---------------------------
+- type: entity
+  parent: [BaseComputerAiAccess, StorePresetDefShopGearCDC]
+  id: VendingMachineDefGearCDC
+  name: Машина поставки снаряжения
+  description: Автомат для выдачи базового армейского снаряжения и вооружения для вновьприбывших солдат гарнизона.
+  components:
+  - type: Sprite
+    sprite: Victoria/DefenseMode/vending_machine.rsi
+    layers:
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.Base"]
+    - state: "off"
+      map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+      shader: unshaded
+    - state: cdc
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+  - type: UserInterface
+    interfaces:
+      enum.StoreUiKey.Key:
+        type: StoreBoundUserInterface
+  - type: ActivatableUI
+    key: enum.StoreUiKey.Key
+  - type: Anchorable
+    flags: Anchorable
+#---------------------------Корпорации---------------------------
+
+#---------------------------Советы---------------------------
