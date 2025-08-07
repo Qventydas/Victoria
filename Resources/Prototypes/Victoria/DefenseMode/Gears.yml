@@ -903,7 +903,7 @@
   description: Одежда и базовое снаряжение медика Империи Миртана.
   sprite:
     sprite: Objects/Specific/Medical/medical.rsi
-    state: icon
+    state: regenerative-mesh
   content:
   - MirtUniformMed
   - MirtBackpackMFilled

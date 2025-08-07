@@ -1591,10 +1591,10 @@
   - DefShopGearCDCSold
   
 - type: listing
-  id: ToolboxGearDefCDCSolD
+  id: ToolboxGearDefCDCDSol
   name: Набор солдата доп.отряда конгломерата
   description: Одежда и базовое снаряжение солдата доп.отряда Халифатского Божественного Конгломерата.
-  productEntity: ToolboxGearDefCDCSolD
+  productEntity: ToolboxGearDefCDCDSol
   cost:
     DefChipGearSolderDop: 1
   categories:
