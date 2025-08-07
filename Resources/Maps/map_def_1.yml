@@ -2132,6 +2132,7 @@ entities:
       pos: 0.5,0.5
       parent: 2
     - type: DefenseSettings
+      startNodes: 3
 - proto: BaseComputerAiAccess
   entities:
   - uid: 3229
@@ -5016,56 +5017,6 @@ entities:
     - type: Transform
       pos: 5.375838,15.405035
       parent: 2
-- proto: CargoPalletBuy
-  entities:
-  - uid: 3233
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 1.5,35.5
-      parent: 2
-  - uid: 3234
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 1.5,34.5
-      parent: 2
-  - uid: 3235
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 4.5,35.5
-      parent: 2
-  - uid: 3236
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 4.5,34.5
-      parent: 2
-  - uid: 3241
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 4.5,30.5
-      parent: 2
-  - uid: 3242
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 3.5,30.5
-      parent: 2
-  - uid: 3243
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 2.5,30.5
-      parent: 2
-  - uid: 3244
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 1.5,30.5
-      parent: 2
 - proto: Carpet
   entities:
   - uid: 2978
@@ -5330,6 +5281,30 @@ entities:
       parent: 2
 - proto: Chair
   entities:
+  - uid: 3233
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 1.5,35.5
+      parent: 2
+  - uid: 3234
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 1.5,34.5
+      parent: 2
+  - uid: 3235
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 4.5,35.5
+      parent: 2
+  - uid: 3236
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 4.5,34.5
+      parent: 2
   - uid: 3245
     components:
     - type: Transform
@@ -5692,6 +5667,13 @@ entities:
     components:
     - type: Transform
       pos: 18.54483,-2.3047256
+      parent: 2
+- proto: EngineeringIDCard
+  entities:
+  - uid: 4491
+    components:
+    - type: Transform
+      pos: 5.6610203,13.4310875
       parent: 2
 - proto: FenceMetalCorner
   entities:
@@ -8443,6 +8425,13 @@ entities:
     - type: Transform
       pos: 19.5,-12.5
       parent: 2
+- proto: MedicalIDCard
+  entities:
+  - uid: 4490
+    components:
+    - type: Transform
+      pos: 23.316708,-6.3917913
+      parent: 2
 - proto: MedkitBruteFilled
   entities:
   - uid: 4370
@@ -10906,6 +10895,26 @@ entities:
     components:
     - type: Transform
       pos: 18.5,-19.5
+      parent: 2
+  - uid: 3241
+    components:
+    - type: Transform
+      pos: 1.5,30.5
+      parent: 2
+  - uid: 3242
+    components:
+    - type: Transform
+      pos: 2.5,30.5
+      parent: 2
+  - uid: 3243
+    components:
+    - type: Transform
+      pos: 3.5,30.5
+      parent: 2
+  - uid: 3244
+    components:
+    - type: Transform
+      pos: 4.5,30.5
       parent: 2
   - uid: 3365
     components:
@@ -21729,6 +21738,13 @@ entities:
       rot: 3.141592653589793 rad
       pos: 8.5,-15.5
       parent: 2
+- proto: WeldingFuelTankFull
+  entities:
+  - uid: 4489
+    components:
+    - type: Transform
+      pos: 8.5,10.5
+      parent: 2
 - proto: WindoorSecure
   entities:
   - uid: 2456
@@ -22859,6 +22875,13 @@ entities:
     - type: Transform
       pos: 89.88838,4.570902
       parent: 2
+- proto: XenoEggAlfaMap1B1
+  entities:
+  - uid: 4355
+    components:
+    - type: Transform
+      pos: 87.482216,1.4456313
+      parent: 2
 - proto: XenoEggAlfaMap1B2
   entities:
   - uid: 4426
@@ -22868,11 +22891,6 @@ entities:
       parent: 2
 - proto: XenoEggAlfaMap1Be1
   entities:
-  - uid: 4355
-    components:
-    - type: Transform
-      pos: 87.5171,1.5593959
-      parent: 2
   - uid: 4428
     components:
     - type: Transform

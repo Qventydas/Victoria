@@ -191,6 +191,22 @@
     - tasks:
         - !type:HTNCompoundTask
           task: IdleCompound
+          
+- type: htnCompound
+  id: XenoCompoundDefRanged
+  branches:
+    - tasks:
+        - !type:HTNCompoundTask
+          task: InnateRangedCombatCompound
+    - tasks:
+        - !type:HTNCompoundTask
+          task: MeleeCombatCompound
+    - tasks:
+        - !type:HTNCompoundTask
+          task: FollowCompound
+    - tasks:
+        - !type:HTNCompoundTask
+          task: IdleCompound
 #------------------------------------------Сами боты------------------------------
 - type: entity
   name: Бурильщик
@@ -851,7 +867,7 @@
   - type: DefenseEnemy
   - type: HTN
     rootTask:
-      task: XenoCompoundDef
+      task: XenoCompoundDefRanged
     blackboard:
       NavClimb: !type:Bool
         true

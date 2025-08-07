@@ -5,8 +5,9 @@ using Content.Server.Defense;
 using Content.Shared.Database;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Mobs;
-using Robust.Shared.Timing;
 using Content.Shared.Destructible;
+using Content.Shared.RandomChangeTime;
+using Robust.Shared.Timing;
 
 namespace Content.Server.GameTicking.Rules;
 
@@ -88,6 +89,8 @@ public sealed class DefenseRuleSystem : GameRuleSystem<DefenseRuleComponent>
             _enemyKilled += 1;
             if (comp.Boss)
                 _end = true;
+            if (TryComp<RandomChangeTimeComponent>(uid, out var _))
+                RemComp<RandomChangeTimeComponent>(uid);
         }
     }
     private string DetermineOutcomes()
