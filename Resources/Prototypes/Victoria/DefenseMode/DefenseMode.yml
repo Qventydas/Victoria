@@ -636,22 +636,22 @@
     - SpaceTrafficControlEventScheduler
     - BasicRoundstartVariation
     
-- type: department
-  id: Defense
-  name: Departament-defense
-  description: Departament-defense-desc
-  color: "#334E6D"
-  roles:
-  - DefComander
-  - DefOfficer
-  - DefOfficerDop
-  - DefEngener
-  - DefMedic
-  - DefCargo
-  - DefSpecialist
-  - DefSpecialistDop
-  - DefSolder
-  - DefSolderDop
+# - type: department
+  # id: Defense
+  # name: department-Defense
+  # description: Departament-defense-desc
+  # color: "#334E6D"
+  # roles:
+  # - DefComander
+  # - DefOfficer
+  # - DefOfficerDop
+  # - DefEngener
+  # - DefMedic
+  # - DefCargo
+  # - DefSpecialist
+  # - DefSpecialistDop
+  # - DefSolder
+  # - DefSolderDop
 #---------------------------------Объяснение замеса карты---------------------
 #---------------------------Умпорское------------------------
 - type: entity

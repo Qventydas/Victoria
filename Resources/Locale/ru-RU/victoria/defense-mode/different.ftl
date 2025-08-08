@@ -3,7 +3,7 @@ job-def-supervisors-commander = Командору
 job-def-supervisors-officer = Офицерам
 job-def-supervisors-dop-officer = Офицеру доп.отряда
 
-Departament-defense = Силы обороны
+department-Defense = Силы обороны
 Departament-defense-desc = Защищайте Флаг-Маяк и не дайте врагам преодалеть ваши линии обороны.
 
 Def-Shop = Армейское снабжение
