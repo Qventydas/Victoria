@@ -913,3 +913,13 @@
   parent: BaseRecipeFiberglass_4
   id: ClothLatheMachineCircuitboard
   result: ClothLatheMachineCircuitboard
+
+- type: latheRecipe
+  parent: BaseRecipeSiPlaz_2
+  id: IndustrialVacuumMachineMachineCircuitboard
+  result: IndustrialVacuumMachineMachineCircuitboard
+
+- type: latheRecipe
+  parent: BaseRecipeSiPlaz_2
+  id: IndustrialLithographMachineCircuitboard
+  result: IndustrialLithographMachineCircuitboard
