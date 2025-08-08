@@ -22924,6 +22924,13 @@ entities:
     - type: Transform
       pos: 90.569275,-5.6011453
       parent: 2
+- proto: XenoEggAlfaMap1Pr2
+  entities:
+  - uid: 4492
+    components:
+    - type: Transform
+      pos: 88.53075,6.477097
+      parent: 2
 - proto: XenoEggAlfaMap1Ru1
   entities:
   - uid: 4429
