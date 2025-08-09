@@ -945,7 +945,7 @@
               doAfter: 3
               
 - type: construction
-  name: stumble
+  name: wire stumble
   id: Stumble
   graph: Stumble
   startNode: start
