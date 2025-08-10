@@ -1174,7 +1174,7 @@
     stepOn: true
   - type: ProjectileGrenade
     fillPrototype: PelletClusterLethal
-    maxGrenadesCount: 30
+    capacity: 30
     grenadeType: enum.GrenadeType.Shoot
   - type: ContainerContainer
     containers:

@@ -91152,21 +91152,21 @@ entities:
     - type: Transform
       pos: 82.5,19.5
       parent: 2
-- proto: FloraTree05
+- proto: FloraTree
   entities:
   - uid: 8035
     components:
     - type: Transform
       pos: 76.18449,48.718914
       parent: 2
-- proto: FloraTreeSnow03
+- proto: FloraTreeSnow
   entities:
   - uid: 8037
     components:
     - type: Transform
       pos: 76.48694,46.088165
       parent: 2
-- proto: FloraTreeSnow05
+- proto: FloraTreeSnow
   entities:
   - uid: 8038
     components:
@@ -120426,7 +120426,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 3.2590637,74.77338
       parent: 16527
-- proto: LightTree01
+- proto: LightTree
   entities:
   - uid: 13501
     components:
