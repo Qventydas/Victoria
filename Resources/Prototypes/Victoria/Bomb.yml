@@ -1175,7 +1175,6 @@
   - type: ProjectileGrenade
     fillPrototype: PelletClusterLethal
     capacity: 30
-    grenadeType: enum.GrenadeType.Shoot
   - type: ContainerContainer
     containers:
       cluster-payload: !type:Container
