@@ -1,4 +1,10 @@
 #----------------------------------------------------Оборонные фабрикаторы---------------------------------------
+#-------------------------------Общие рецепты-------------------------
+- type: latheRecipe
+  id: DefFoodBowlBig
+  result: FoodBowlBig
+  materials:
+    Steel: 10
 #-----------------------------------------Умпорский----------------------------------------
 #-------------------------------Рецепты-------------------------
 #-------------------Патроны-------------    
@@ -135,6 +141,7 @@
       - DefUmporBoxLightRifle
       - DefUmporBoxPistol
       - DefUmporBoxShotgan
+      - DefFoodBowlBig
   - type: MaterialStorage
     whitelist:
       tags:
@@ -357,6 +364,7 @@
       - DefNoocPowerCellFive
       - DefNoocPowerCellCold
       - NoocCellRechargerCircuitboard
+      - DefFoodBowlBig
   - type: MaterialStorage
     whitelist:
       tags:
@@ -685,6 +693,7 @@
       - DefCDCBoxCartridgePlasmaDefoc
       - DefCDCBoxCartridgePlasmaHotDefoc
       - DefCDCBoxCartridgePlasmaLigDefoc
+      - DefFoodBowlBig
   - type: MaterialStorage
     whitelist:
       tags:
