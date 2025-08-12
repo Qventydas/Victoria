@@ -1973,7 +1973,7 @@
   id: CrateBoxExGrenade
   name: Ящик гранат
   description: Позволит быстро отбиться от всякой шоблы, что прогрызает сюда дорогу.
-  productEntity: CrateEngineeringAMEJar
+  productEntity: CrateBoxExGrenade
   cost:
     DefChip_currency: 3
   categories:

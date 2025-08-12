@@ -320,6 +320,14 @@
   canBeAntag: false
   accessGroups:
   - AllAccess
+  # special:
+  # - !type:AddComponentSpecial
+    # components:
+      # - type: DefSolder
+      # - type: MarineOrders
+      # - type: Skills
+        # skills:
+          # DefBanner: 1
   
 - type: job
   id: DefOfficer
@@ -342,6 +350,10 @@
   canBeAntag: false
   accessGroups:
   - AllAccess
+  # special:
+  # - !type:AddComponentSpecial
+    # components:
+      # - type: DefSolder
   
 - type: job
   id: DefOfficerDop
@@ -358,6 +370,10 @@
   canBeAntag: false
   accessGroups:
   - AllAccess
+  # special:
+  # - !type:AddComponentSpecial
+    # components:
+      # - type: DefSolder
   
 - type: job
   id: DefEngener
@@ -374,6 +390,10 @@
   canBeAntag: false
   accessGroups:
   - AllAccess
+  # special:
+  # - !type:AddComponentSpecial
+    # components:
+      # - type: DefSolder
   
 - type: job
   id: DefMedic
@@ -390,6 +410,10 @@
   canBeAntag: false
   accessGroups:
   - AllAccess
+  # special:
+  # - !type:AddComponentSpecial
+    # components:
+      # - type: DefSolder
   
 - type: job
   id: DefCargo
@@ -406,6 +430,10 @@
   canBeAntag: false
   accessGroups:
   - AllAccess
+  # special:
+  # - !type:AddComponentSpecial
+    # components:
+      # - type: DefSolder
   
 - type: job
   id: DefSpecialist
@@ -422,6 +450,10 @@
   canBeAntag: false
   accessGroups:
   - AllAccess
+  # special:
+  # - !type:AddComponentSpecial
+    # components:
+      # - type: DefSolder
   
 - type: job
   id: DefSpecialistDop
@@ -438,6 +470,10 @@
   canBeAntag: false
   accessGroups:
   - AllAccess
+  # special:
+  # - !type:AddComponentSpecial
+    # components:
+      # - type: DefSolder
   
 - type: job
   id: DefSolder
@@ -450,6 +486,10 @@
   canBeAntag: false
   accessGroups:
   - AllAccess
+  # special:
+  # - !type:AddComponentSpecial
+    # components:
+      # - type: DefSolder
   
 - type: job
   id: DefSolderDop
@@ -466,6 +506,10 @@
   canBeAntag: false
   accessGroups:
   - AllAccess
+  # special:
+  # - !type:AddComponentSpecial
+    # components:
+      # - type: DefSolder
 #-----------------------------------спавн-поинты-------------------------
 - type: entity
   id: SpawnPointDefComander
