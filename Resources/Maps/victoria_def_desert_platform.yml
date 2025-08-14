@@ -2509,10 +2509,12 @@ entities:
     - type: Transform
       pos: 24.781273,-2.8189726
       parent: 2
-  - uid: 2501
+- proto: BoxVial
+  entities:
+  - uid: 537
     components:
     - type: Transform
-      pos: 24.265648,-2.8189726
+      pos: 24.262047,-2.8053193
       parent: 2
 - proto: Bucket
   entities:
@@ -5652,17 +5654,17 @@ entities:
       text: Первая линия
 - proto: DefibrillatorCabinetFilled
   entities:
-  - uid: 537
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 21.5,-9.5
-      parent: 2
   - uid: 538
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 20.5,-6.5
+      parent: 2
+  - uid: 2501
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 21.5,-9.5
       parent: 2
 - proto: EmergencyRollerBed
   entities:
@@ -5680,13 +5682,6 @@ entities:
     components:
     - type: Transform
       pos: 18.54483,-2.3047256
-      parent: 2
-- proto: EngineeringIDCard
-  entities:
-  - uid: 4491
-    components:
-    - type: Transform
-      pos: 5.6610203,13.4310875
       parent: 2
 - proto: FenceMetalCorner
   entities:
@@ -8449,13 +8444,6 @@ entities:
     components:
     - type: Transform
       pos: 19.5,-12.5
-      parent: 2
-- proto: MedicalIDCard
-  entities:
-  - uid: 4490
-    components:
-    - type: Transform
-      pos: 23.316708,-6.3917913
       parent: 2
 - proto: MedkitBruteFilled
   entities:
