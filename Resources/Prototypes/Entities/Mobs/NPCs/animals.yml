@@ -2403,7 +2403,7 @@
   components:
   - type: NpcFactionMember
     factions:
-      - Xeno
+    - Xeno
   - type: InputMover
   - type: MobMover
   - type: HTN
@@ -2414,6 +2414,8 @@
     name: ghost-role-information-giant-spider-name
     description: ghost-role-information-giant-spider-description
     rules: ghost-role-information-giant-spider-rules
+    mindRoles:
+    - MindRoleGhostRoleTeamAntagonist
     raffle:
       settings: short
   - type: GhostTakeoverAvailable
@@ -2456,10 +2458,15 @@
         Piercing: 6
 
 - type: entity
-  parent:
-  - MobGiantSpider
-  - MobSpiderAngryBase
+  parent: [MobGiantSpider, MobSpiderAngryBase]
   id: MobGiantSpiderAngry
+  components:
+  - type: NpcFactionMember
+    factions:
+    - Xeno
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
 
 - type: entity
   name: clown spider
