@@ -133,3 +133,35 @@
     cdc: CDCBeltTechFilled
     nt: MirtBeltEngFilled
     ussp: CDCBeltTechFilled
+#----------------------------------------Сервер связи---------------------
+- type: entity
+  name: Спавнер сервера связи
+  id: SpawnTelecomServer
+  parent: MarkerBase
+  suffix: Оборона
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/telecomms.rsi
+    state: icon
+  - type: StateChoiceSpawner
+    umpor: DefTelecomServerFilledUmpor
+    mirt: DefTelecomServerFilledMirt
+    cdc: DefTelecomServerFilledCDC
+    nt: DefTelecomServerFilledMirt
+    ussp: DefTelecomServerFilledCDC
+#----------------------------------------Портфаб---------------------
+- type: entity
+  name: Спавнер портфаба
+  id: SpawnClothLathe
+  parent: MarkerBase
+  suffix: Оборона
+  components:
+  - type: Sprite
+    sprite: Victoria/Cloth/clothlathe.rsi
+    state: icon
+  - type: StateChoiceSpawner
+    umpor: DefClothLatheUmpor
+    mirt: efClothLatheMirt
+    cdc: DefClothLatheCDC
+    nt: efClothLatheMirt
+    ussp: DefClothLatheCDC

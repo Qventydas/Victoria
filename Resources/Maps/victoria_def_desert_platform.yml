@@ -2509,6 +2509,11 @@ entities:
     - type: Transform
       pos: 24.781273,-2.8189726
       parent: 2
+  - uid: 4490
+    components:
+    - type: Transform
+      pos: 23.608805,-6.3276997
+      parent: 2
 - proto: BoxVial
   entities:
   - uid: 537
@@ -10776,6 +10781,44 @@ entities:
     components:
     - type: Transform
       pos: 22.5,7.5
+      parent: 2
+- proto: SpawnerCrutchObjectiveAlfaFour
+  entities:
+  - uid: 4491
+    components:
+    - type: Transform
+      pos: 59.5,0.5
+      parent: 2
+- proto: SpawnerCrutchObjectiveAlfaOne
+  entities:
+  - uid: 4497
+    components:
+    - type: Transform
+      pos: 7.5,-8.5
+      parent: 2
+  - uid: 4498
+    components:
+    - type: Transform
+      pos: 7.5,0.5
+      parent: 2
+  - uid: 4499
+    components:
+    - type: Transform
+      pos: 7.5,7.5
+      parent: 2
+- proto: SpawnerCrutchObjectiveAlfaThree
+  entities:
+  - uid: 4495
+    components:
+    - type: Transform
+      pos: 35.5,0.5
+      parent: 2
+- proto: SpawnerCrutchObjectiveAlfaTwo
+  entities:
+  - uid: 4496
+    components:
+    - type: Transform
+      pos: 15.5,0.5
       parent: 2
 - proto: SpawnPaperMapDesrtPlatform
   entities:
@@ -22913,6 +22956,11 @@ entities:
     components:
     - type: Transform
       pos: 87.53272,-0.5499791
+      parent: 2
+  - uid: 4500
+    components:
+    - type: Transform
+      pos: 82.59659,13.366501
       parent: 2
 - proto: XenoEggAlfaMap1Pl1
   entities:
