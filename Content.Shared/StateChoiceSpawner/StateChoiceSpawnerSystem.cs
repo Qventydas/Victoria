@@ -13,7 +13,6 @@ public sealed class StateChoiceSpawnerSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
 
     private string? _currentState;
-    public string? GetCurrentState() => _currentState;
 
     public override void Initialize()
     {
