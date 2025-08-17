@@ -686,7 +686,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 30
+        Piercing: 35
 #------------------------------------автомат----------         
 - type: entity
   id: UmporBulletLightRifle
@@ -1769,7 +1769,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 12
+        Piercing: 15
         
 - type: entity
   id: UmporPelletShotgunSpread
@@ -1778,7 +1778,7 @@
   components:
   - type: ProjectileSpread
     proto: UmporPelletShotgun
-    count: 6
+    count: 7
     spread: 15        
 #-----------------------картридж----------------------
 - type: Tag
@@ -3377,3 +3377,49 @@
   - type: Sprite
     sprite: Victoria/Umpor/umpor_banner.rsi
     state: banner_umpor_std 
+#------------------------------------------куртка---------------------------------
+- type: entity
+  parent: ClothingOuterWinterCoat
+  id: UmporCoat
+  name: Тёплая армейская куртка
+  suffix: Умпорский
+  description: Тёплая куртка, которую обожают в армии, когда приходится вести дела на замёрзших планетах.
+  components:
+  - type: Sprite
+    sprite: Victoria/Umpor/Equipment/umpor_coat.rsi
+  - type: Clothing
+    sprite: Victoria/Umpor/Equipment/umpor_coat.rsi
+  - type: ToggleableClothing
+    clothingPrototype: UmporCoatHood
+    slot: head
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
+      storagebase: !type:Container
+        ents: []
+  - type: Armor 
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Cold: 0.7
+#-----------------------------------------капюшон куртки-------------------------------
+- type: entity
+  parent: ClothingHeadHatHoodWinterDefault
+  id: UmporCoatHood
+  name: Капюшон армейской куртки
+  suffix: Умпорский
+  description: Закрывает голову от холода и стужи.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Victoria/Umpor/Equipment/umpor_coat_hood.rsi
+  - type: Clothing
+    sprite: Victoria/Umpor/Equipment/umpor_coat_hood.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Cold: 0.85
+  - type: TemperatureProtection
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.1

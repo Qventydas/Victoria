@@ -510,23 +510,6 @@
   - DefСartridgeСonverter
 
 - type: thiefBackpackSet
-  id: SetMirtNoocSniperRifle
-  name: Набор Снайпера (лазерная винтовка)
-  description: Включает в себя лазерную винтовку "Господин", 3 батареи, лёгкий жилет, прицел, отвёртку и нож.
-  sprite:
-    sprite: Victoria/Snipe/mirt_nooc_laser_rifle.rsi
-    state: icon
-  content:
-  - MirtNoocRifle
-  - NoocPowerCellOne
-  - NoocPowerCellOne
-  - NoocPowerCellOne
-  - MirtArmorGr
-  - MirtnKnife
-  - OpticalSight
-  - Screwdriver
-
-- type: thiefBackpackSet
   id: SetMirtLMG
   name: Набор Пулемётчика (блюспейс пулемёт)
   description: Включает в себя блюспейс пулемёт "Молот", 2 цинка, бронекомплект и нож.
@@ -537,20 +520,6 @@
   - MirtLMG
   - MirtMagazineLMG
   - MirtMagazineLMG
-  - MirtArmorMiddle
-  - MirtnKnife
-
-- type: thiefBackpackSet
-  id: SetMirtNoocMG
-  name: Набор Пулемётчика (скорострельный лазер)
-  description: Включает в себя скорострельный лазер "Подавитель", 2 батареи разной ёмкости, бронекомплект и нож.
-  sprite:
-    sprite: Victoria/Mirt/Weapon/mirt_nooc_laser_mg.rsi
-    state: icon
-  content:
-  - MirtNoocMG
-  - NoocPowerCellFour
-  - NoocPowerCellFive
   - MirtArmorMiddle
   - MirtnKnife
 
@@ -592,6 +561,20 @@
   - MirtBootsSteel
   - MirtGlovesStrong
 
+- type: thiefBackpackSet
+  id: SetMirtLaser
+  name: Набор Поджигателя
+  description: Включает в себя пожарный лазер "Месяц", 2 батареи, бронекомплект и нож.
+  sprite:
+    sprite: Victoria/Mirt/Weapon/mirt_laser.rsi
+    state: icon
+  content:
+  - MirtLaser
+  - MirtPowerCell
+  - MirtPowerCell
+  - MirtArmorMiddle
+  - MirtnKnife
+
 - type: entity
   id: ToolboxMirtSPC
   name: Набор вооружения миртанийского специалиста
@@ -606,9 +589,7 @@
     maxSelectedSets: 1
     possibleSets:
     - SetMirtSniperRifle
-    - SetMirtNoocSniperRifle
     - SetMirtLMG
-    - SetMirtNoocMG
     - SetMirtRaz
     - SetMirtDefender
   - type: ActivatableUI
@@ -619,16 +600,33 @@
         type: ThiefBackpackBoundUserInterface 
 #-----------------------------------------Доп.Специалист---------------------
 - type: thiefBackpackSet
-  id: SetMirtLaser
-  name: Набор Поджигателя
-  description: Включает в себя пожарный лазер "Месяц", 2 батареи, бронекомплект и нож.
+  id: SetMirtNoocSniperRifle
+  name: Набор Снайпера (лазерная винтовка)
+  description: Включает в себя лазерную винтовку "Господин", 3 батареи, лёгкий жилет, прицел, отвёртку и нож.
   sprite:
-    sprite: Victoria/Mirt/Weapon/mirt_laser.rsi
+    sprite: Victoria/Snipe/mirt_nooc_laser_rifle.rsi
     state: icon
   content:
-  - MirtLaser
-  - MirtPowerCell
-  - MirtPowerCell
+  - MirtNoocRifle
+  - NoocPowerCellOne
+  - NoocPowerCellOne
+  - NoocPowerCellOne
+  - MirtArmorGr
+  - MirtnKnife
+  - OpticalSight
+  - Screwdriver
+  
+- type: thiefBackpackSet
+  id: SetMirtNoocMG
+  name: Набор Пулемётчика (скорострельный лазер)
+  description: Включает в себя скорострельный лазер "Подавитель", 2 батареи разной ёмкости, бронекомплект и нож.
+  sprite:
+    sprite: Victoria/Mirt/Weapon/mirt_nooc_laser_mg.rsi
+    state: icon
+  content:
+  - MirtNoocMG
+  - NoocPowerCellFour
+  - NoocPowerCellFive
   - MirtArmorMiddle
   - MirtnKnife
 
@@ -661,7 +659,6 @@
     - SetMirtNoocSniperRifle
     - SetMirtLMG
     - SetMirtNoocMG
-    - SetMirtRaz
     - SetMirtDefender
     - SetMirtLaser
     - SetMirtGran

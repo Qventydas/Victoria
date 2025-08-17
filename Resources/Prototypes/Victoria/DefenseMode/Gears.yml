@@ -416,7 +416,7 @@
     back: UmporBackpackFilled
     shoes: UmporBoots
     head: UmporHelmet
-    id: UmporPDASolder
+    id: DefPDASolderDopUmpor
     ears: UmporHeadset
     belt: UmporeBeltAssaultFilled
     gloves: UmporGlovesFingerless
@@ -457,7 +457,7 @@
   - UmporBackpackFilled
   - UmporBoots
   - UmporHelmet
-  - UmporPDASolder
+  - DefPDASolderDopUmpor
   - UmporHeadset
   - UmporeBeltAssaultFilled
   - UmporGlovesFingerless
@@ -1166,6 +1166,7 @@
     gloves: MirtGlovesFingerless
     eyes: DefGlass
     pocket1: FlashlightLantern
+    pocket2: HandheldHealthAnalyzerUnpowered
 
 - type: entity
   parent: MirtIDCardSolder
@@ -1193,6 +1194,7 @@
   - MirtGlovesFingerless
   - DefGlass
   - FlashlightLantern
+  - HandheldHealthAnalyzerUnpowered
   
 - type: entity
   id: ToolboxGearDefMirtMed
@@ -1787,6 +1789,7 @@
     gloves: CDCGloves
     eyes: DefGlass
     pocket1: FlashlightLantern
+    pocket2: HandheldHealthAnalyzerUnpowered
   storage:
     belt:
     - Ointment
@@ -1831,6 +1834,7 @@
   - Gauze
   - Gauze 
   - FlashlightLantern
+  - HandheldHealthAnalyzerUnpowered
   
 - type: entity
   id: ToolboxGearDefCDCMed

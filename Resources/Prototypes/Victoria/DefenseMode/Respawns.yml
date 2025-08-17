@@ -507,12 +507,6 @@
   - type: ConditionalSpawner
     prototypes:
     - CDCBorg
-  - type: GhostRole
-    allowMovement: true
-    allowSpeech: true
-    makeSentient: true
-    name: Борг "Завет" Конгломерата
-    description: Халифатский Божественный Конгломерат не готов отправлять слишком большое количество солдат в бой. На замену приходят борги. Будьте преданы своей стране, народу и Аллаху! Слушайтесь командира, защищайте свои земли и несите смерть всем врагам!
 #-------------------------------------Инженер-----------------
 - type: randomHumanoidSettings
   id: DefHumanoidSettingsCDCEng

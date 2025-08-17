@@ -796,7 +796,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 70
+        Piercing: 75
         
 - type: entity
   id: MirtSniperBulletHeavy
@@ -808,7 +808,7 @@
   - type: Projectile
     damage:
       types:
-        Piercing: 80
+        Piercing: 85
   - type: Sprite
     sprite: Victoria/Mirt/Weapon/mirt_projectiles.rsi
     layers:
@@ -1032,3 +1032,28 @@
         - CDCCartridgePlasmaRif
         - CDCCartridgePlasmaHotRif
         - CDCCartridgePlasmaLigRif
+#--------------------------------------------------Тёплое пальто-----------------
+#-------------------------------------Умпорский-------------------
+- type: latheRecipe
+  id: RecipeUmporCoat
+  materials:
+    GoatWoolCleanMaterial: 700
+    ElastaneClothMaterial: 500
+  result: UmporCoat
+#-------------------------------------Миртан-------------------
+- type: latheRecipe
+  id: RecipeMirtCoat
+  materials:
+    GoatWoolCleanMaterial: 700
+    ElastaneClothMaterial: 500
+  result: MirtCoat
+#-------------------------------------Конгломерат-------------------
+- type: latheRecipe
+  id: RecipeCDCCoat
+  materials:
+    GoatWoolCleanMaterial: 700
+    ElastaneClothMaterial: 500
+  result: CDCCoat
+#-------------------------------------Корпораты-------------------
+
+#-------------------------------------СССП-------------------
