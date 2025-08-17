@@ -61,7 +61,7 @@
   parent: DigitalCircuit
   id: AnalogCircuit
   name: аналоговый компонент
-  description: Как дедушка электроники - всё понимает плавно, но если перегрузить – возмущается и косит
+  description: Как дедушка электроники - всё понимает плавно, но если перегрузить – возмущается и косит.
   suffix: Электроника, Full
   components:
   - type: Stack
