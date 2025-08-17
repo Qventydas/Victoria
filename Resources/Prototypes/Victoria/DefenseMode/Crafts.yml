@@ -1049,7 +1049,7 @@
   result: MirtCoat
 #-------------------------------------Конгломерат-------------------
 - type: latheRecipe
-  id: RecipeDCCoat
+  id: RecipeCDCCoat
   materials:
     GoatWoolCleanMaterial: 700
     ElastaneClothMaterial: 500

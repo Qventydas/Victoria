@@ -325,6 +325,7 @@
     journeyGroup: Alpha
     ignoreGroups: true
     priority: 4
+  - type: RandomChangeTime
     time: 1800
     prob: 1
     entity: SpawnerCrutchObjectiveAlfaFour

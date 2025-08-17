@@ -161,7 +161,7 @@
     state: icon
   - type: StateChoiceSpawner
     umpor: DefClothLatheUmpor
-    mirt: efClothLatheMirt
+    mirt: DefClothLatheMirt
     cdc: DefClothLatheCDC
-    nt: efClothLatheMirt
+    nt: DefClothLatheMirt
     ussp: DefClothLatheCDC
