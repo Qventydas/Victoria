@@ -1481,7 +1481,6 @@
     back: CDCBackpackFilled
     shoes: CDCBoots
     head: CDCHelmetSld
-    outerClothing: CDCArmorMiddle
     id: DefIDCardSpecialistCDC
     belt: CDCBeltSold
     gloves: CDCGloves
@@ -1513,7 +1512,6 @@
   - CDCBackpackFilled
   - CDCBoots
   - CDCHelmetSld
-  - CDCArmorMiddle
   - DefIDCardSpecialistCDC
   - CDCBeltSold
   - CDCGloves
