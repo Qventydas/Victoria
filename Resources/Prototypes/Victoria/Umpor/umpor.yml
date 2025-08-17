@@ -88,9 +88,9 @@
 - type: entity
   parent: ClothingBackpack
   id: UmporBackpack
-  name: name-of-UmporBackpack
+  name: умпорский армейский рюкзак
   suffix: Умпорский
-  description: description-of-UmporBackpack
+  description: Стандартный армейский рюкзак Умпорской Федерации с полевым одеялом
   components:
   - type: Sprite
     sprite: Victoria/Umpor/Equipment/umpor_back.rsi

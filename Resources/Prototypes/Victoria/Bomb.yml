@@ -795,10 +795,10 @@
   - type: DamageContacts
     damage:
       types:
-        Piercing: 8
+        Piercing: 6
   - type: SpeedModifierContacts
-    walkSpeedModifier: 0.15
-    sprintSpeedModifier: 0.15
+    walkSpeedModifier: 0.25
+    sprintSpeedModifier: 0.25
   - type: MobState
   - type: NpcFactionMember
     factions:
@@ -895,12 +895,12 @@
   - type: DamageContacts
     damage:
       types:
-        Piercing: 4
+        Piercing: 3
   - type: StaminaDamageOnCollide
     damage: 20
   - type: SpeedModifierContacts
-    walkSpeedModifier: 0.5
-    sprintSpeedModifier: 0.5
+    walkSpeedModifier: 0.6
+    sprintSpeedModifier: 0.6
   - type: StepTrigger
     intersectRatio: 0.2
   - type: TriggerOnStepTrigger
@@ -912,7 +912,7 @@
   - type: DamageUserOnTrigger
     damage:
       types:
-        Piercing: 5
+        Piercing: 4
 #-------------------------------сборка------------------------------------
 - type: constructionGraph
   id: Stumble
@@ -926,7 +926,7 @@
               southRotation: true
           steps:
             - material: Wire
-              amount: 3
+              amount: 4
               doAfter: 2
 
     - node: Stumble
