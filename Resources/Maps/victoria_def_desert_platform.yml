@@ -2030,6 +2030,11 @@ entities:
       parent: 2
 - proto: AdminSubstation
   entities:
+  - uid: 2231
+    components:
+    - type: Transform
+      pos: 5.5,10.5
+      parent: 2
   - uid: 2633
     components:
     - type: Transform
@@ -2504,10 +2509,17 @@ entities:
     - type: Transform
       pos: 24.781273,-2.8189726
       parent: 2
-  - uid: 2501
+  - uid: 4490
     components:
     - type: Transform
-      pos: 24.265648,-2.8189726
+      pos: 23.608805,-6.3276997
+      parent: 2
+- proto: BoxVial
+  entities:
+  - uid: 537
+    components:
+    - type: Transform
+      pos: 24.262047,-2.8053193
       parent: 2
 - proto: Bucket
   entities:
@@ -5471,13 +5483,13 @@ entities:
     - type: Transform
       pos: 22.394243,-12.396423
       parent: 2
-- proto: ClothLathe
+- proto: ComputerComms
   entities:
-  - uid: 2243
+  - uid: 2278
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 24.5,7.5
+      rot: 1.5707963267948966 rad
+      pos: 5.5,3.5
       parent: 2
 - proto: ComputerCrewMonitoring
   entities:
@@ -5639,17 +5651,17 @@ entities:
       text: Первая линия
 - proto: DefibrillatorCabinetFilled
   entities:
-  - uid: 537
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 21.5,-9.5
-      parent: 2
   - uid: 538
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 20.5,-6.5
+      parent: 2
+  - uid: 2501
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 21.5,-9.5
       parent: 2
 - proto: EmergencyRollerBed
   entities:
@@ -5667,13 +5679,6 @@ entities:
     components:
     - type: Transform
       pos: 18.54483,-2.3047256
-      parent: 2
-- proto: EngineeringIDCard
-  entities:
-  - uid: 4491
-    components:
-    - type: Transform
-      pos: 5.6610203,13.4310875
       parent: 2
 - proto: FenceMetalCorner
   entities:
@@ -8112,6 +8117,18 @@ entities:
     - type: Transform
       pos: 16.506323,-5.382315
       parent: 2
+- proto: HydroponicsToolClippers
+  entities:
+  - uid: 2229
+    components:
+    - type: Transform
+      pos: 17.520807,6.3320518
+      parent: 2
+  - uid: 2230
+    components:
+    - type: Transform
+      pos: 17.473932,7.3008018
+      parent: 2
 - proto: HydroponicsToolHatchet
   entities:
   - uid: 2272
@@ -8148,22 +8165,27 @@ entities:
     - type: Transform
       pos: 17.52039,6.4942555
       parent: 2
-- proto: HydroponicsTrayEmpty
+- proto: hydroponicsTray
   entities:
+  - uid: 1882
+    components:
+    - type: Transform
+      pos: 24.5,10.5
+      parent: 2
   - uid: 2218
     components:
     - type: Transform
-      pos: 17.5,10.5
+      pos: 24.5,8.5
       parent: 2
   - uid: 2219
     components:
     - type: Transform
-      pos: 18.5,10.5
+      pos: 23.5,8.5
       parent: 2
   - uid: 2220
     components:
     - type: Transform
-      pos: 19.5,10.5
+      pos: 23.5,10.5
       parent: 2
   - uid: 2223
     components:
@@ -8173,42 +8195,37 @@ entities:
   - uid: 2224
     components:
     - type: Transform
-      pos: 23.5,10.5
+      pos: 17.5,8.5
       parent: 2
   - uid: 2225
     components:
     - type: Transform
-      pos: 24.5,10.5
+      pos: 18.5,8.5
       parent: 2
   - uid: 2226
     components:
     - type: Transform
-      pos: 24.5,8.5
+      pos: 19.5,8.5
       parent: 2
   - uid: 2227
     components:
     - type: Transform
-      pos: 23.5,8.5
+      pos: 19.5,10.5
       parent: 2
   - uid: 2228
     components:
     - type: Transform
       pos: 22.5,8.5
       parent: 2
-  - uid: 2229
+  - uid: 2521
     components:
     - type: Transform
-      pos: 19.5,8.5
+      pos: 18.5,10.5
       parent: 2
-  - uid: 2230
+  - uid: 2525
     components:
     - type: Transform
-      pos: 18.5,8.5
-      parent: 2
-  - uid: 2231
-    components:
-    - type: Transform
-      pos: 17.5,8.5
+      pos: 17.5,10.5
       parent: 2
 - proto: Jukebox
   entities:
@@ -8424,13 +8441,6 @@ entities:
     components:
     - type: Transform
       pos: 19.5,-12.5
-      parent: 2
-- proto: MedicalIDCard
-  entities:
-  - uid: 4490
-    components:
-    - type: Transform
-      pos: 23.316708,-6.3917913
       parent: 2
 - proto: MedkitBruteFilled
   entities:
@@ -10226,6 +10236,13 @@ entities:
     - type: Transform
       pos: 26.5,-1.5
       parent: 2
+- proto: SandHandful
+  entities:
+  - uid: 2279
+    components:
+    - type: Transform
+      pos: 19.606981,12.480998
+      parent: 2
 - proto: SeedExtractor
   entities:
   - uid: 2271
@@ -10347,6 +10364,12 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 11.197732,3.9016697
+      parent: 2
+  - uid: 4494
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 11.159245,4.440475
       parent: 2
 - proto: ShuttleWindow
   entities:
@@ -10736,6 +10759,13 @@ entities:
     - type: Transform
       pos: 5.5,15.5
       parent: 2
+- proto: SpawnClothLathe
+  entities:
+  - uid: 2340
+    components:
+    - type: Transform
+      pos: 24.5,7.5
+      parent: 2
 - proto: SpawnComputerCargoDef
   entities:
   - uid: 3589
@@ -10750,6 +10780,44 @@ entities:
     components:
     - type: Transform
       pos: 22.5,7.5
+      parent: 2
+- proto: SpawnerCrutchObjectiveAlfaFour
+  entities:
+  - uid: 4491
+    components:
+    - type: Transform
+      pos: 59.5,0.5
+      parent: 2
+- proto: SpawnerCrutchObjectiveAlfaOne
+  entities:
+  - uid: 4497
+    components:
+    - type: Transform
+      pos: 7.5,-8.5
+      parent: 2
+  - uid: 4498
+    components:
+    - type: Transform
+      pos: 7.5,0.5
+      parent: 2
+  - uid: 4499
+    components:
+    - type: Transform
+      pos: 7.5,7.5
+      parent: 2
+- proto: SpawnerCrutchObjectiveAlfaThree
+  entities:
+  - uid: 4495
+    components:
+    - type: Transform
+      pos: 35.5,0.5
+      parent: 2
+- proto: SpawnerCrutchObjectiveAlfaTwo
+  entities:
+  - uid: 4496
+    components:
+    - type: Transform
+      pos: 15.5,0.5
       parent: 2
 - proto: SpawnPaperMapDesrtPlatform
   entities:
@@ -10878,6 +10946,13 @@ entities:
     components:
     - type: Transform
       pos: 7.5,1.5
+      parent: 2
+- proto: SpawnTelecomServer
+  entities:
+  - uid: 2243
+    components:
+    - type: Transform
+      pos: 7.5,-3.5
       parent: 2
 - proto: SpawnVendingMachineDefGear
   entities:
@@ -11220,11 +11295,6 @@ entities:
     components:
     - type: Transform
       pos: 35.5,7.5
-      parent: 2
-  - uid: 1882
-    components:
-    - type: Transform
-      pos: 5.5,10.5
       parent: 2
 - proto: SurveillanceCameraGeneral
   entities:
@@ -11575,11 +11645,6 @@ entities:
     - type: Transform
       pos: 5.5,-2.5
       parent: 2
-  - uid: 2521
-    components:
-    - type: Transform
-      pos: 5.5,3.5
-      parent: 2
   - uid: 2522
     components:
     - type: Transform
@@ -11661,13 +11726,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 57.5,6.5
-      parent: 2
-- proto: TelecomServer
-  entities:
-  - uid: 2340
-    components:
-    - type: Transform
-      pos: 7.5,-3.5
       parent: 2
 - proto: Thruster
   entities:
@@ -21706,11 +21764,6 @@ entities:
     - type: Transform
       pos: 5.5,-2.5
       parent: 2
-  - uid: 2525
-    components:
-    - type: Transform
-      pos: 5.5,3.5
-      parent: 2
   - uid: 2526
     components:
     - type: Transform
@@ -21737,6 +21790,11 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 8.5,-15.5
+      parent: 2
+  - uid: 4493
+    components:
+    - type: Transform
+      pos: 5.5,4.5
       parent: 2
 - proto: WeldingFuelTankFull
   entities:
@@ -21919,18 +21977,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 4.5,29.5
-      parent: 2
-- proto: Wirecutter
-  entities:
-  - uid: 2278
-    components:
-    - type: Transform
-      pos: 17.536015,6.2911305
-      parent: 2
-  - uid: 2279
-    components:
-    - type: Transform
-      pos: 17.48914,7.3380055
       parent: 2
 - proto: Wirefence
   entities:
@@ -22909,6 +22955,11 @@ entities:
     components:
     - type: Transform
       pos: 87.53272,-0.5499791
+      parent: 2
+  - uid: 4500
+    components:
+    - type: Transform
+      pos: 82.59659,13.366501
       parent: 2
 - proto: XenoEggAlfaMap1Pl1
   entities:

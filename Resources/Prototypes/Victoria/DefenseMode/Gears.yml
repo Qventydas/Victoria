@@ -8,13 +8,32 @@
     shoes: UmporBoots
     head: UmporCap
     outerClothing: UmporArmorBasic
-    id: UmporPDAOfficer
+    id: DefPDAComanderUmpor
     ears: UmporHeadset
     belt: UmporeBeltAssault
     neck: UmporCloakOf
     eyes: DefGlass
     pocket1: FlashlightLantern
     pocket2: UmporRubberStamp
+
+- type: entity
+  parent: UmporIDCardOfficer
+  id: DefIDCardComanderUmpor
+  name: ID-карта командора
+  suffix: Оборона, Умпорский
+  components:
+  - type: PresetIdCard
+    job: DefComander
+    name: командор
+
+- type: entity
+  parent: UmporPDAOfficer
+  id: DefPDAComanderUmpor
+  name: КПК умпорского командира
+  suffix: Оборона,Умпорский
+  components:
+    - type: Pda
+      id: DefIDCardComanderUmpor
 
 - type: thiefBackpackSet
   id: SetGearDefUmporCom
@@ -29,7 +48,7 @@
   - UmporBoots
   - UmporCap
   - UmporArmorBasic
-  - UmporPDAOfficer
+  - DefPDAComanderUmpor
   - UmporHeadset
   - UmporeBeltAssault
   - UmporCloakOf
@@ -66,11 +85,30 @@
     shoes: UmporBoots
     head: UmporCap
     outerClothing: UmporArmorBasic
-    id: UmporPDAOfficer
+    id: DefPDAOfficerUmpor
     ears: UmporHeadset
     eyes: DefGlass
     belt: UmporeBeltAssault
     pocket1: FlashlightLantern
+
+- type: entity
+  parent: UmporIDCardOfficer
+  id: DefIDCardOfficerUmpor
+  name: ID-карта офицера
+  suffix: Оборона, Умпорский
+  components:
+  - type: PresetIdCard
+    job: DefOfficer
+    name: офицер
+
+- type: entity
+  parent: UmporPDAOfficer
+  id: DefPDAOfficerUmpor
+  name: КПК умпорского офицера
+  suffix: Оборона,Умпорский
+  components:
+    - type: Pda
+      id: DefIDCardOfficerUmpor
     
 - type: thiefBackpackSet
   id: SetGearDefUmporOfi
@@ -85,7 +123,7 @@
   - UmporBoots
   - UmporCap
   - UmporArmorBasic
-  - UmporPDAOfficer
+  - DefPDAOfficerUmpor
   - UmporHeadset
   - DefGlass
   - UmporeBeltAssault
@@ -111,11 +149,30 @@
     shoes: UmporBoots
     head: UmporHelmet
     outerClothing: UmporArmorMiddle
-    id: UmporPDAOfficer
+    id: DefPDAOfficerDopUmpor
     ears: UmporHeadset
     belt: UmporeBeltAssaultFilled
     eyes: DefGlass
     pocket1: FlashlightLantern
+
+- type: entity
+  parent: UmporIDCardOfficer
+  id: DefIDCardOfficerDopUmpor
+  name: ID-карта офицера
+  suffix: Оборона, Умпорский
+  components:
+  - type: PresetIdCard
+    job: DefOfficerDop
+    name: офицер
+
+- type: entity
+  parent: UmporPDAOfficer
+  id: DefPDAOfficerDopUmpor
+  name: КПК умпорского офицера
+  suffix: Оборона,Умпорский
+  components:
+    - type: Pda
+      id: DefIDCardOfficerDopUmpor
     
 - type: thiefBackpackSet
   id: SetGearDefUmporOfiD
@@ -130,7 +187,7 @@
   - UmporBoots
   - UmporHelmet
   - UmporArmorMiddle
-  - UmporPDAOfficer
+  - DefPDAOfficerDopUmpor
   - UmporHeadset
   - DefGlass
   - UmporeBeltAssaultFilled
@@ -155,7 +212,7 @@
     back: UmporBackpackFilled
     shoes: UmporBoots
     head: UmporHelmet
-    id: UmporPDASolder
+    id: DefPDASPCUmpor
     ears: UmporHeadset
     belt: UmporeBeltAssault
     gloves: UmporGlovesFingerless
@@ -164,6 +221,25 @@
   storage:
     back:
     - ToolboxUmporSPC
+
+- type: entity
+  parent: UmporIDCardSolder
+  id: DefIDCardSPCUmpor
+  name: ID-карта специалиста
+  suffix: Оборона, Умпорский
+  components:
+  - type: PresetIdCard
+    job: DefSpecialist
+    name: специалист
+
+- type: entity
+  parent: UmporPDASolder
+  id: DefPDASPCUmpor
+  name: КПК умпорского специалиста
+  suffix: Оборона,Умпорский
+  components:
+    - type: Pda
+      id: DefIDCardSPCUmpor
     
 - type: thiefBackpackSet
   id: SetGearDefUmporSPC
@@ -177,7 +253,7 @@
   - UmporBackpackFilled
   - UmporBoots
   - UmporHelmet
-  - UmporPDASolder
+  - DefPDASPCUmpor
   - UmporHeadset
   - UmporeBeltAssault
   - UmporGlovesFingerless
@@ -204,7 +280,7 @@
     back: UmporBackpackFilled
     shoes: UmporBoots
     head: UmporHelmet
-    id: UmporPDASolder
+    id: DefPDASPCDopUmpor
     ears: UmporHeadset
     belt: UmporeBeltAssaultFilled
     gloves: UmporGlovesFingerless
@@ -213,6 +289,25 @@
   storage:
     back:
     - ToolboxUmporDSPC
+
+- type: entity
+  parent: UmporIDCardSolder
+  id: DefIDCardSPCDopUmpor
+  name: ID-карта специалиста
+  suffix: Оборона, Умпорский
+  components:
+  - type: PresetIdCard
+    job: DefSpecialistDop
+    name: специалист
+
+- type: entity
+  parent: UmporPDASolder
+  id: DefPDASPCDopUmpor
+  name: КПК умпорского специалиста
+  suffix: Оборона, Умпорский
+  components:
+    - type: Pda
+      id: DefIDCardSPCDopUmpor
     
 - type: thiefBackpackSet
   id: SetGearDefUmporSPCD
@@ -226,7 +321,7 @@
   - UmporBackpackFilled
   - UmporBoots
   - UmporHelmet
-  - UmporPDASolder
+  - DefPDASPCDopUmpor
   - UmporHeadset
   - UmporeBeltAssaultFilled
   - UmporGlovesFingerless
@@ -253,7 +348,7 @@
     back: UmporBackpackFilled
     shoes: UmporBoots
     head: UmporHelmet
-    id: UmporPDASolder
+    id: DefPDASolderUmpor
     ears: UmporHeadset
     belt: UmporeBeltAssault
     gloves: UmporGlovesFingerless
@@ -262,6 +357,25 @@
   storage:
     back:
     - ToolboxUmporSol
+
+- type: entity
+  parent: UmporIDCardSolder
+  id: DefIDCardSolderUmpor
+  name: ID-карта солдата
+  suffix: Оборона, Умпорский
+  components:
+  - type: PresetIdCard
+    job: DefSolder
+    name: солдат
+
+- type: entity
+  parent: UmporPDASolder
+  id: DefPDASolderUmpor
+  name: КПК умпорского солдата
+  suffix: Оборона, Умпорский
+  components:
+    - type: Pda
+      id: DefIDCardSolderUmpor
     
 - type: thiefBackpackSet
   id: SetGearDefUmporSol
@@ -275,7 +389,7 @@
   - UmporBackpackFilled
   - UmporBoots
   - UmporHelmet
-  - UmporPDASolder
+  - DefPDASolderUmpor
   - UmporHeadset
   - UmporeBeltAssault
   - UmporGlovesFingerless
@@ -302,7 +416,7 @@
     back: UmporBackpackFilled
     shoes: UmporBoots
     head: UmporHelmet
-    id: UmporPDASolder
+    id: DefPDASolderDopUmpor
     ears: UmporHeadset
     belt: UmporeBeltAssaultFilled
     gloves: UmporGlovesFingerless
@@ -311,6 +425,25 @@
   storage:
     back:
     - ToolboxUmporSol
+
+- type: entity
+  parent: UmporIDCardSolder
+  id: DefIDCardSolderDopUmpor
+  name: ID-карта солдата
+  suffix: Оборона, Умпорский
+  components:
+  - type: PresetIdCard
+    job: DefSolderDop
+    name: солдат
+
+- type: entity
+  parent: UmporPDASolder
+  id: DefPDASolderDopUmpor
+  name: КПК умпорского солдата
+  suffix: Оборона, Умпорский
+  components:
+    - type: Pda
+      id: DefIDCardSolderDopUmpor
     
 - type: thiefBackpackSet
   id: SetGearDefUmporSolD
@@ -324,7 +457,7 @@
   - UmporBackpackFilled
   - UmporBoots
   - UmporHelmet
-  - UmporPDASolder
+  - DefPDASolderDopUmpor
   - UmporHeadset
   - UmporeBeltAssaultFilled
   - UmporGlovesFingerless
@@ -352,12 +485,31 @@
     shoes: UmporBoots
     head: UmporBeret
     outerClothing: UmporArmorMiddle
-    id: UmporPDAEngener
+    id: DefPDAEngenerUmpor
     ears: UmporHeadset
     belt: UmporBeltEngFilled
     gloves: UmporInsulativeGloves
     eyes: DefGlass
     pocket1: FlashlightLantern
+
+- type: entity
+  parent: UmporIDCardEngener
+  id: DefIDCardEngenerUmpor
+  name: ID-карта инженера
+  suffix: Оборона, Умпорский
+  components:
+  - type: PresetIdCard
+    job: DefEngener
+    name: инженер
+
+- type: entity
+  parent: UmporPDAEngener
+  id: DefPDAEngenerUmpor
+  name: КПК умпорского инженера
+  suffix: Оборона, Умпорский
+  components:
+    - type: Pda
+      id: DefIDCardEngenerUmpor
     
 - type: thiefBackpackSet
   id: SetGearDefUmporEng
@@ -372,7 +524,7 @@
   - UmporBoots
   - UmporBeret
   - UmporArmorMiddle
-  - UmporPDAEngener
+  - DefPDAEngenerUmpor
   - UmporHeadset
   - UmporBeltEngFilled
   - UmporInsulativeGloves
@@ -398,12 +550,31 @@
     back: UmporBackpackFilled
     shoes: UmporBoots
     head: UmporBeret
-    id: UmporPDAMedic
+    id: DefPDAMedicUmpor
     ears: UmporHeadset
     belt: UmporeBeltMedFilled
     gloves: UmporGlovesFingerless
     eyes: DefGlass
     pocket1: FlashlightLantern
+
+- type: entity
+  parent: UmporIDCardMedic
+  id: DefIDCardMedicUmpor
+  name: ID-карта медика
+  suffix: Оборона, Умпорский
+  components:
+  - type: PresetIdCard
+    job: DefMedic
+    name: медик
+
+- type: entity
+  parent: UmporPDAMedic
+  id: DefPDAMedicUmpor
+  name: КПК умпорского медика
+  suffix: Оборона, Умпорский
+  components:
+    - type: Pda
+      id: DefIDCardMedicUmpor
 
 - type: thiefBackpackSet
   id: SetGearDefUmporMed
@@ -417,7 +588,7 @@
   - UmporBackpackFilled
   - UmporBoots
   - UmporBeret
-  - UmporPDAMedic
+  - DefPDAMedicUmpor
   - UmporHeadset
   - UmporeBeltMedFilled
   - UmporGlovesFingerless
@@ -443,13 +614,32 @@
     back: UmporBackpackFilled
     shoes: UmporBoots
     head: UmporCapP
-    id: UmporPDALogist
+    id: DefPDALogistUmpor
     ears: UmporHeadset
     belt: UmporBeltEng
     gloves: UmporGlovesFingerless
     eyes: DefGlass
     pocket1: FlashlightLantern
     pocket2: DefChip
+
+- type: entity
+  parent: UmporIDCardLogist
+  id: DefIDCardLogistUmpor
+  name: ID-карта логиста
+  suffix: Оборона, Умпорский
+  components:
+  - type: PresetIdCard
+    job: DefCargo
+    name: логист
+
+- type: entity
+  parent: UmporPDALogist
+  id: DefPDALogistUmpor
+  name: КПК умпорского логиста
+  suffix: Оборона, Умпорский
+  components:
+    - type: Pda
+      id: DefIDCardLogistUmpor
 
 - type: thiefBackpackSet
   id: SetGearDefUmporLog
@@ -463,7 +653,7 @@
   - UmporBackpackFilled
   - UmporBoots
   - UmporCapP
-  - UmporPDALogist
+  - DefPDALogistUmpor
   - UmporHeadset
   - UmporBeltEng
   - UmporGlovesFingerless
@@ -491,7 +681,7 @@
     back: MirtBackpackSFilled
     shoes: MirtBootsSteel
     head: MirtHelmetArm
-    id: MirtIDCardSolder
+    id: DefIDCardComanderMirt
     belt: MirtBelt
     gloves: MirtGlovesFingerless
     neck: MirtCloakOfCom
@@ -501,6 +691,16 @@
   storage:
     back:
     - ToolboxMirtCom
+
+- type: entity
+  parent: MirtIDCardOfficer
+  id: DefIDCardComanderMirt
+  name: Чип миртанского офицера
+  suffix: Оборона, Миртан
+  components:
+  - type: PresetIdCard
+    job: DefComander
+    name: командор
     
 - type: thiefBackpackSet
   id: SetGearDefMirtCom
@@ -514,7 +714,7 @@
   - MirtBackpackSFilled
   - MirtBootsSteel
   - MirtHelmetArm
-  - MirtIDCardSolder
+  - DefIDCardComanderMirt
   - MirtBelt
   - MirtGlovesFingerless
   - MirtCloakOfCom
@@ -551,7 +751,7 @@
     back: MirtBackpackSFilled
     shoes: MirtBootsSteel
     head: MirtHelmetArm
-    id: MirtIDCardSolder
+    id: DefIDCardOfficerMirt
     belt: MirtBelt
     gloves: MirtGlovesStrong
     eyes: DefGlass
@@ -560,6 +760,16 @@
   storage:
     back:
     - ToolboxMirtOfi
+
+- type: entity
+  parent: MirtIDCardOfficer
+  id: DefIDCardOfficerMirt
+  name: Чип миртанского офицера
+  suffix: Оборона, Миртан
+  components:
+  - type: PresetIdCard
+    job: DefOfficer
+    name: офицер
     
 - type: thiefBackpackSet
   id: SetGearDefMirtOfi
@@ -573,7 +783,7 @@
   - MirtBackpackSFilled
   - MirtBootsSteel
   - MirtHelmetArm
-  - MirtIDCardSolder
+  - DefIDCardOfficerMirt
   - MirtBelt
   - MirtGlovesStrong
   - MirtCloakOf
@@ -600,7 +810,7 @@
     back: MirtBackpackSFilled
     shoes: MirtBoots
     head: MirtHelmetInk
-    id: MirtIDCardSolder
+    id: DefIDCardOfficerDopMirt
     belt: MirtBelt
     gloves: MirtGlovesStrong
     eyes: DefGlass
@@ -610,6 +820,16 @@
   storage:
     back:
     - ToolboxMirtDOfi
+
+- type: entity
+  parent: MirtIDCardLogist
+  id: DefIDCardOfficerDopMirt
+  name: Чип миртанского старшего инквизитора
+  suffix: Оборона, Миртан
+  components:
+  - type: PresetIdCard
+    job: DefOfficerDop
+    name: старший инквизитор
     
 - type: thiefBackpackSet
   id: SetGearDefMirtOfiD
@@ -623,7 +843,7 @@
   - MirtBackpackSFilled
   - MirtBootsSteel
   - MirtHelmetInk
-  - MirtIDCardSolder
+  - DefIDCardOfficerDopMirt
   - MirtBelt
   - MirtGlovesStrong
   - MirtCloakOfInk
@@ -650,7 +870,7 @@
     back: MirtBackpackLFilled
     shoes: MirtBootsSteel
     head: MirtHelmetArm
-    id: MirtIDCardSolder
+    id: DefIDCardSpecialistMirt
     belt: MirtBelt
     gloves: MirtGlovesFingerless
     eyes: DefGlass
@@ -660,6 +880,16 @@
   storage:
     back:
     - ToolboxMirtSPC
+
+- type: entity
+  parent: MirtIDCardSolder
+  id: DefIDCardSpecialistMirt
+  name: Чип миртанского специалиста
+  suffix: Оборона, Миртан
+  components:
+  - type: PresetIdCard
+    job: DefSpecialist
+    name: специалист
     
 - type: thiefBackpackSet
   id: SetGearDefMirtSPC
@@ -673,7 +903,7 @@
   - MirtBackpackLFilled
   - MirtBootsSteel
   - MirtHelmetArm
-  - MirtIDCardSolder
+  - DefIDCardSpecialistMirt
   - MirtBelt
   - MirtGlovesFingerless
   - DefGlass
@@ -701,7 +931,7 @@
     back: MirtBackpackLFilled
     shoes: MirtBootsSteel
     head: MirtHelmetInk
-    id: MirtIDCardSolder
+    id: DefIDCardSpecialistDopMirt
     belt: MirtBelt
     gloves: MirtGlovesFingerless
     eyes: DefGlass
@@ -711,6 +941,16 @@
   storage:
     back:
     - ToolboxMirtDSPC
+
+- type: entity
+  parent: MirtIDCardEngener
+  id: DefIDCardSpecialistDopMirt
+  name: Чип миртанского специалиста инквизиции
+  suffix: Оборона, Миртан
+  components:
+  - type: PresetIdCard
+    job: DefSpecialistDop
+    name: инквизитор-специалист
     
 - type: thiefBackpackSet
   id: SetGearDefMirtSPCD
@@ -724,7 +964,7 @@
   - MirtBackpackLFilled
   - MirtBootsSteel
   - MirtHelmetArm
-  - MirtIDCardSolder
+  - DefIDCardSpecialistDopMirt
   - MirtBelt
   - MirtGlovesFingerless
   - DefGlass
@@ -752,7 +992,7 @@
     back: MirtBackpackMFilled
     shoes: MirtBootsSteel
     head: MirtHelmetArm
-    id: MirtIDCardSolder
+    id: DefIDCardSolderMirt
     belt: MirtBelt
     gloves: MirtGlovesFingerless
     eyes: DefGlass
@@ -760,6 +1000,16 @@
   storage:
     back:
     - ToolboxMirtSol
+
+- type: entity
+  parent: MirtIDCardSolder
+  id: DefIDCardSolderMirt
+  name: Чип миртанского солдата
+  suffix: Оборона, Миртан
+  components:
+  - type: PresetIdCard
+    job: DefSolder
+    name: солдат
     
 - type: thiefBackpackSet
   id: SetGearDefMirtSol
@@ -773,7 +1023,7 @@
   - MirtBackpackMFilled
   - MirtBootsSteel
   - MirtHelmetArm
-  - MirtIDCardSolder
+  - DefIDCardSolderMirt
   - MirtBelt
   - MirtGlovesFingerless
   - DefGlass
@@ -799,7 +1049,7 @@
     back: MirtBackpackMFilled
     shoes: MirtBoots
     head: MirtHelmetInk
-    id: MirtIDCardSolder
+    id: DefIDCardSolderDopMirt
     belt: MirtBelt
     gloves: MirtGlovesFingerless
     eyes: DefGlass
@@ -808,6 +1058,16 @@
   storage:
     back:
     - ToolboxMirtDSol
+
+- type: entity
+  parent: MirtIDCardEngener
+  id: DefIDCardSolderDopMirt
+  name: Чип миртанского инквизиции
+  suffix: Оборона, Миртан
+  components:
+  - type: PresetIdCard
+    job: DefSolderDop
+    name: инквизитор
     
 - type: thiefBackpackSet
   id: SetGearDefMirtSolD
@@ -821,7 +1081,7 @@
   - MirtBackpackMFilled
   - MirtBoots
   - MirtHelmetInk
-  - MirtIDCardSolder
+  - DefIDCardSolderDopMirt
   - MirtBelt
   - MirtGlovesFingerless
   - DefGlass
@@ -848,11 +1108,21 @@
     shoes: MirtBoots
     head: MirtHelmetGr
     outerClothing: MirtArmorGr
-    id: MirtIDCardSolder
+    id: DefIDCardEngenerMirt
     belt: MirtBelt
     gloves: MirtGlovesFingerless
     eyes: DefGlass
     pocket1: FlashlightLantern
+
+- type: entity
+  parent: MirtIDCardSolder
+  id: DefIDCardEngenerMirt
+  name: Чип миртанского инженера
+  suffix: Оборона, Миртан
+  components:
+  - type: PresetIdCard
+    job: DefEngener
+    name: инженер
     
 - type: thiefBackpackSet
   id: SetGearDefMirtEng
@@ -867,7 +1137,7 @@
   - MirtBoots
   - MirtHelmetGr
   - MirtArmorGr
-  - MirtIDCardSolder
+  - DefIDCardEngenerMirt
   - MirtBelt
   - MirtGlovesFingerless
   - DefGlass
@@ -891,11 +1161,22 @@
     jumpsuit: MirtUniformMed
     back: MirtBackpackMFilled
     shoes: MirtBoots
-    id: MirtIDCardSolder
+    id: DefIDCardMedicMirt
     belt: MirtBelt
     gloves: MirtGlovesFingerless
     eyes: DefGlass
     pocket1: FlashlightLantern
+    pocket2: HandheldHealthAnalyzerUnpowered
+
+- type: entity
+  parent: MirtIDCardSolder
+  id: DefIDCardMedicMirt
+  name: Чип миртанского медика
+  suffix: Оборона, Миртан
+  components:
+  - type: PresetIdCard
+    job: DefMedic
+    name: медик
     
 - type: thiefBackpackSet
   id: SetGearDefMirtMed
@@ -908,11 +1189,12 @@
   - MirtUniformMed
   - MirtBackpackMFilled
   - MirtBoots
-  - MirtIDCardSolder
+  - DefIDCardMedicMirt
   - MirtBelt
   - MirtGlovesFingerless
   - DefGlass
   - FlashlightLantern
+  - HandheldHealthAnalyzerUnpowered
   
 - type: entity
   id: ToolboxGearDefMirtMed
@@ -934,12 +1216,22 @@
     shoes: MirtBoots
     head: MirtHelmetGr
     outerClothing: MirtArmorGr
-    id: MirtIDCardSolder
+    id: DefIDCardCargoMirt
     belt: MirtBelt
     gloves: MirtGlovesFingerless
     eyes: DefGlass
     pocket1: FlashlightLantern
     pocket2: DefChip
+
+- type: entity
+  parent: MirtIDCardSolder
+  id: DefIDCardCargoMirt
+  name: Чип миртанского снабженец
+  suffix: Оборона, Миртан
+  components:
+  - type: PresetIdCard
+    job: DefCargo
+    name: снабженец
     
 - type: thiefBackpackSet
   id: SetGearDefMirtLog
@@ -954,7 +1246,7 @@
   - MirtBoots
   - MirtHelmetGr
   - MirtArmorGr
-  - MirtIDCardSolder
+  - DefIDCardCargoMirt
   - MirtBelt
   - MirtGlovesFingerless
   - DefGlass
@@ -982,7 +1274,7 @@
     shoes: CDCBoots
     head: CDCCap
     outerClothing: CDCArmorLight
-    id: CDCPDAOfficer
+    id: DefPDAComanderCDC
     ears: CDCHeadset
     belt: CDCBeltOffiFilled
     gloves: CDCGloves
@@ -990,6 +1282,24 @@
     neck: CDCCloakOf
     pocket1: FlashlightLantern
     pocket2: CDCRubberStamp
+
+- type: entity
+  parent: CDCIDCardOfficer
+  id: DefIDCardComanderCDC
+  name: Чип командора Конгломерата
+  suffix: Оборона, Конгломерат
+  components:
+  - type: PresetIdCard
+    job: DefComander
+    name: командор
+    
+- type: entity
+  parent: CDCPDAOfficer
+  id: DefPDAComanderCDC
+  suffix: Оборона, Конгломерат
+  components:
+    - type: Pda
+      id: DefIDCardComanderCDC
     
 - type: thiefBackpackSet
   id: SetGearDefCDCCom
@@ -1004,7 +1314,7 @@
   - CDCBoots
   - CDCCap
   - CDCArmorLight
-  - CDCPDAOfficer
+  - DefPDAComanderCDC
   - CDCHeadset
   - CDCBeltOffiFilled
   - CDCGloves
@@ -1042,12 +1352,30 @@
     shoes: CDCBoots
     head: CDCHelmetOffi
     outerClothing: CDCArmorMiddle
-    id: CDCPDAOfficer
+    id: DefPDAOfficerCDC
     ears: CDCHeadset
     belt: CDCBeltOffiFilled
     gloves: CDCGloves
     eyes: DefGlass
     pocket1: FlashlightLantern
+
+- type: entity
+  parent: CDCIDCardOfficer
+  id: DefIDCardOfficerCDC
+  name: Чип офицера Конгломерата
+  suffix: Оборона, Конгломерат
+  components:
+  - type: PresetIdCard
+    job: DefOfficer
+    name: офицер
+    
+- type: entity
+  parent: CDCPDAOfficer
+  id: DefPDAOfficerCDC
+  suffix: Оборона, Конгломерат
+  components:
+    - type: Pda
+      id: DefIDCardOfficerCDC
     
 - type: thiefBackpackSet
   id: SetGearDefCDCOfi
@@ -1062,7 +1390,7 @@
   - CDCBoots
   - CDCHelmetOffi
   - CDCArmorMiddle
-  - CDCPDAOfficer
+  - DefPDAOfficerCDC
   - CDCHeadset
   - CDCBeltOffiFilled
   - CDCGloves
@@ -1089,12 +1417,30 @@
     shoes: CDCBoots
     head: CDCCap
     outerClothing: CDCHardsuitArm
-    id: CDCPDAOfficer
+    id: DefPDAOfficerDopCDC
     ears: CDCHeadset
     belt: CDCBeltOffiFilled
     gloves: CDCGloves
     eyes: DefGlass
     pocket1: FlashlightLantern
+
+- type: entity
+  parent: CDCIDCardOfficer
+  id: DefIDCardOfficerDopCDC
+  name: Чип офицера Конгломерата
+  suffix: Оборона, Конгломерат
+  components:
+  - type: PresetIdCard
+    job: DefOfficerDop
+    name: офицер
+    
+- type: entity
+  parent: CDCPDAOfficer
+  id: DefPDAOfficerDopCDC
+  suffix: Оборона, Конгломерат
+  components:
+    - type: Pda
+      id: DefIDCardOfficerDopCDC
     
 - type: thiefBackpackSet
   id: SetGearDefCDCOfiD
@@ -1109,7 +1455,7 @@
   - CDCBoots
   - CDCCap
   - CDCHardsuitArm
-  - CDCPDAOfficer
+  - DefPDAOfficerDopCDC
   - CDCHeadset
   - CDCBeltOffiFilled
   - CDCGloves
@@ -1135,8 +1481,7 @@
     back: CDCBackpackFilled
     shoes: CDCBoots
     head: CDCHelmetSld
-    outerClothing: CDCArmorMiddle
-    id: CDCIDCardSolder
+    id: DefIDCardSpecialistCDC
     belt: CDCBeltSold
     gloves: CDCGloves
     eyes: DefGlass
@@ -1144,6 +1489,16 @@
   storage:
     back:
     - ToolboxCDCSPC
+
+- type: entity
+  parent: CDCIDCardSolder
+  id: DefIDCardSpecialistCDC
+  name: Чип специалиста Конгломерата
+  suffix: Оборона, Конгломерат
+  components:
+  - type: PresetIdCard
+    job: DefSpecialist
+    name: специалист
     
 - type: thiefBackpackSet
   id: SetGearDefCDCSPC
@@ -1157,8 +1512,7 @@
   - CDCBackpackFilled
   - CDCBoots
   - CDCHelmetSld
-  - CDCArmorMiddle
-  - CDCIDCardSolder
+  - DefIDCardSpecialistCDC
   - CDCBeltSold
   - CDCGloves
   - DefGlass
@@ -1186,7 +1540,7 @@
     shoes: CDCBoots
     head: CDCHelmetSld
     outerClothing: CDCHardsuitArm
-    id: CDCIDCardSolder
+    id: DefIDCardSpecialistDopCDC
     belt: CDCBeltSold
     gloves: CDCGlovesTech
     eyes: DefGlass
@@ -1194,6 +1548,16 @@
   storage:
     back:
     - ToolboxCDCDSPC
+
+- type: entity
+  parent: CDCIDCardSolder
+  id: DefIDCardSpecialistDopCDC
+  name: Чип специалиста Конгломерата
+  suffix: Оборона, Конгломерат
+  components:
+  - type: PresetIdCard
+    job: DefSpecialistDop
+    name: специалист
     
 - type: thiefBackpackSet
   id: SetGearDefCDCSPCD
@@ -1208,7 +1572,7 @@
   - CDCBoots
   - CDCHelmetSld
   - CDCHardsuitArm
-  - CDCIDCardSolder
+  - DefIDCardSpecialistDopCDC
   - CDCBeltSold
   - CDCGlovesTech
   - DefGlass
@@ -1235,7 +1599,7 @@
     back: CDCBackpackFilled
     shoes: CDCBoots
     head: CDCHelmetSld
-    id: CDCIDCardSolder
+    id: DefIDCardSolderCDC
     belt: CDCBeltSold
     gloves: CDCGloves
     eyes: DefGlass
@@ -1243,7 +1607,17 @@
   storage:
     back:
     - ToolboxCDCSol
-    
+
+- type: entity
+  parent: CDCIDCardSolder
+  id: DefIDCardSolderCDC
+  name: Чип солдата Конгломерата
+  suffix: Оборона, Конгломерат
+  components:
+  - type: PresetIdCard
+    job: DefSolder
+    name: солдат
+   
 - type: thiefBackpackSet
   id: SetGearDefCDCSol
   name: Набор солдата конгломерата
@@ -1256,7 +1630,7 @@
   - CDCBackpackFilled
   - CDCBoots
   - CDCHelmetSld
-  - CDCIDCardSolder
+  - DefIDCardSolderCDC
   - CDCBeltSold
   - CDCGloves
   - DefGlass
@@ -1282,7 +1656,7 @@
     back: CDCBackpackFilled
     shoes: CDCBoots
     head: CDCHelmetSld
-    id: CDCIDCardSolder
+    id: DefIDCardSolderDopCDC
     belt: CDCBeltSold
     gloves: CDCGloves
     eyes: DefGlass
@@ -1290,6 +1664,16 @@
   storage:
     back:
     - ToolboxCDCSol
+
+- type: entity
+  parent: CDCIDCardSolder
+  id: DefIDCardSolderDopCDC
+  name: Чип солдата Конгломерата
+  suffix: Оборона, Конгломерат
+  components:
+  - type: PresetIdCard
+    job: DefSolderDop
+    name: солдат
     
 - type: thiefBackpackSet
   id: SetGearDefCDCDSol
@@ -1303,7 +1687,7 @@
   - CDCBackpackFilled
   - CDCBoots
   - CDCHelmetSld
-  - CDCIDCardSolder
+  - DefIDCardSolderDopCDC
   - CDCBeltSold
   - CDCGloves
   - DefGlass
@@ -1329,7 +1713,7 @@
     back: CDCBackpackFilled
     shoes: CDCBoots
     head: CDCCepka
-    id: CDCIDCardEngener
+    id: DefIDCardEngenerCDC
     ears: CDCHeadset
     belt: CDCBeltTech
     gloves: CDCGlovesTech
@@ -1342,6 +1726,16 @@
     - Screwdriver
     - Wirecutter
     - Welder 
+
+- type: entity
+  parent: CDCIDCardEngener
+  id: DefIDCardEngenerCDC
+  name: Чип инженера Конгломерата
+  suffix: Оборона, Конгломерат
+  components:
+  - type: PresetIdCard
+    job: DefEngener
+    name: инженер
     
 - type: thiefBackpackSet
   id: SetGearDefCDCEng
@@ -1355,7 +1749,7 @@
   - CDCBackpackFilled
   - CDCBoots
   - CDCCepka
-  - CDCIDCardEngener
+  - DefIDCardEngenerCDC
   - CDCHeadset
   - CDCBeltTech
   - CDCGlovesTech
@@ -1387,12 +1781,13 @@
     shoes: CDCBoots
     head: CDCFez
     outerClothing: CDCArmorLight
-    id: CDCIDCardEngener
+    id: DefIDCardMedicCDC
     ears: CDCHeadset
     belt: CDCBeltTech
     gloves: CDCGloves
     eyes: DefGlass
     pocket1: FlashlightLantern
+    pocket2: HandheldHealthAnalyzerUnpowered
   storage:
     belt:
     - Ointment
@@ -1401,6 +1796,16 @@
     - Bloodpack
     - Gauze
     - Gauze
+
+- type: entity
+  parent: CDCIDCardSolder
+  id: DefIDCardMedicCDC
+  name: Чип медика Конгломерата
+  suffix: Оборона, Конгломерат
+  components:
+  - type: PresetIdCard
+    job: DefMedic
+    name: медик
     
 - type: thiefBackpackSet
   id: SetGearDefCDCMed
@@ -1415,7 +1820,7 @@
   - CDCBoots
   - CDCFez
   - CDCArmorLight
-  - CDCIDCardEngener
+  - DefIDCardMedicCDC
   - CDCHeadset
   - CDCBeltTech
   - CDCGloves
@@ -1427,6 +1832,7 @@
   - Gauze
   - Gauze 
   - FlashlightLantern
+  - HandheldHealthAnalyzerUnpowered
   
 - type: entity
   id: ToolboxGearDefCDCMed
@@ -1448,13 +1854,23 @@
     shoes: CDCBoots
     head: CDCCepka
     outerClothing: CDCHardsuitTech
-    id: CDCIDCardEngener
+    id: DefIDCardCargoCDC
     ears: CDCHeadset
     belt: CDCBeltTech
     gloves: CDCGlovesTech
     eyes: DefGlass
     pocket1: FlashlightLantern
     pocket2: DefChip
+
+- type: entity
+  parent: CDCIDCardSolder
+  id: DefIDCardCargoCDC
+  name: Чип снабженца Конгломерата
+  suffix: Оборона, Конгломерат
+  components:
+  - type: PresetIdCard
+    job: DefCargo
+    name: снабженец
     
 - type: thiefBackpackSet
   id: SetGearDefCDCLog
@@ -1469,7 +1885,7 @@
   - CDCBoots
   - CDCCepka
   - CDCHardsuitTech
-  - CDCIDCardEngener
+  - DefIDCardCargoCDC
   - CDCHeadset
   - CDCBeltTech
   - CDCGlovesTech

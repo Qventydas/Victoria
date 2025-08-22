@@ -1,9 +1,9 @@
 - type: gameMap
   id: VictoriaDesertPlatform
   mapName: 'Desert Platform'
-  mapPath: /Maps/map_def_1.yml
+  mapPath: /Maps/victoria_def_desert_platform.yml
   minPlayers: 0
-  maxPlayers: 15
+  maxPlayers: 20
   stations:
     VictoriaDesertPlatform:
       stationProto: StandardDefenseMap

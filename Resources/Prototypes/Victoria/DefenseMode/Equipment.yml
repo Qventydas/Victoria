@@ -510,23 +510,6 @@
   - DefСartridgeСonverter
 
 - type: thiefBackpackSet
-  id: SetMirtNoocSniperRifle
-  name: Набор Снайпера (лазерная винтовка)
-  description: Включает в себя лазерную винтовку "Господин", 3 батареи, лёгкий жилет, прицел, отвёртку и нож.
-  sprite:
-    sprite: Victoria/Snipe/mirt_nooc_laser_rifle.rsi
-    state: icon
-  content:
-  - MirtNoocRifle
-  - NoocPowerCellOne
-  - NoocPowerCellOne
-  - NoocPowerCellOne
-  - MirtArmorGr
-  - MirtnKnife
-  - OpticalSight
-  - Screwdriver
-
-- type: thiefBackpackSet
   id: SetMirtLMG
   name: Набор Пулемётчика (блюспейс пулемёт)
   description: Включает в себя блюспейс пулемёт "Молот", 2 цинка, бронекомплект и нож.
@@ -537,20 +520,6 @@
   - MirtLMG
   - MirtMagazineLMG
   - MirtMagazineLMG
-  - MirtArmorMiddle
-  - MirtnKnife
-
-- type: thiefBackpackSet
-  id: SetMirtNoocMG
-  name: Набор Пулемётчика (скорострельный лазер)
-  description: Включает в себя скорострельный лазер "Подавитель", 2 батареи разной ёмкости, бронекомплект и нож.
-  sprite:
-    sprite: Victoria/Mirt/Weapon/mirt_nooc_laser_mg.rsi
-    state: icon
-  content:
-  - MirtNoocMG
-  - NoocPowerCellFour
-  - NoocPowerCellFive
   - MirtArmorMiddle
   - MirtnKnife
 
@@ -592,6 +561,20 @@
   - MirtBootsSteel
   - MirtGlovesStrong
 
+- type: thiefBackpackSet
+  id: SetMirtLaser
+  name: Набор Поджигателя
+  description: Включает в себя пожарный лазер "Месяц", 2 батареи, бронекомплект и нож.
+  sprite:
+    sprite: Victoria/Mirt/Weapon/mirt_laser.rsi
+    state: icon
+  content:
+  - MirtLaser
+  - MirtPowerCell
+  - MirtPowerCell
+  - MirtArmorMiddle
+  - MirtnKnife
+
 - type: entity
   id: ToolboxMirtSPC
   name: Набор вооружения миртанийского специалиста
@@ -606,9 +589,7 @@
     maxSelectedSets: 1
     possibleSets:
     - SetMirtSniperRifle
-    - SetMirtNoocSniperRifle
     - SetMirtLMG
-    - SetMirtNoocMG
     - SetMirtRaz
     - SetMirtDefender
   - type: ActivatableUI
@@ -619,16 +600,33 @@
         type: ThiefBackpackBoundUserInterface 
 #-----------------------------------------Доп.Специалист---------------------
 - type: thiefBackpackSet
-  id: SetMirtLaser
-  name: Набор Поджигателя
-  description: Включает в себя пожарный лазер "Месяц", 2 батареи, бронекомплект и нож.
+  id: SetMirtNoocSniperRifle
+  name: Набор Снайпера (лазерная винтовка)
+  description: Включает в себя лазерную винтовку "Господин", 3 батареи, лёгкий жилет, прицел, отвёртку и нож.
   sprite:
-    sprite: Victoria/Mirt/Weapon/mirt_laser.rsi
+    sprite: Victoria/Snipe/mirt_nooc_laser_rifle.rsi
     state: icon
   content:
-  - MirtLaser
-  - MirtPowerCell
-  - MirtPowerCell
+  - MirtNoocRifle
+  - NoocPowerCellOne
+  - NoocPowerCellOne
+  - NoocPowerCellOne
+  - MirtArmorGr
+  - MirtnKnife
+  - OpticalSight
+  - Screwdriver
+  
+- type: thiefBackpackSet
+  id: SetMirtNoocMG
+  name: Набор Пулемётчика (скорострельный лазер)
+  description: Включает в себя скорострельный лазер "Подавитель", 2 батареи разной ёмкости, бронекомплект и нож.
+  sprite:
+    sprite: Victoria/Mirt/Weapon/mirt_nooc_laser_mg.rsi
+    state: icon
+  content:
+  - MirtNoocMG
+  - NoocPowerCellFour
+  - NoocPowerCellFive
   - MirtArmorMiddle
   - MirtnKnife
 
@@ -661,7 +659,6 @@
     - SetMirtNoocSniperRifle
     - SetMirtLMG
     - SetMirtNoocMG
-    - SetMirtRaz
     - SetMirtDefender
     - SetMirtLaser
     - SetMirtGran
@@ -864,8 +861,10 @@
         type: ThiefBackpackBoundUserInterface
 #------------------------------------------------------Советские----------------------
 
-#------------------------------------------------------Корпоративные----------------------
+#------------------------------------------------------Корпоративные-------------------
 
+
+#------------------------------------------------------Всякие--------------------------
 #-------------------------------------------------------------------очки с иконками----------------------
 - type: entity
   parent: ClothingEyesBase
@@ -882,3 +881,122 @@
   - type: EyeProtection
   - type: IdentityBlocker
     coverage: EYES
+#-------------------------------------------------------------------знамёна----------------------
+# - type: entity
+  # id: ActionDefSolderMove
+  # parent: ActionMarineBase
+  # name: Двигай-двигай!
+  # description: Ускоряет передвижение соседних бойцов.
+  # components:
+  # - type: InstantAction
+    # itemIconStyle: NoItem
+    # icon:
+      # sprite: Victoria/DefenseMode/orders.rsi
+      # state: move
+    # event: !type:MoveActionEvent
+    
+# - type: entity
+  # parent: ActionMarineBase
+  # id: ActionDefSolderHold
+  # name: Держаться крепче!
+  # description: Увеличивает защиту соседних бойцов.
+  # components:
+  # - type: InstantAction
+    # itemIconStyle: NoItem
+    # icon:
+      # sprite: Victoria/DefenseMode/orders.rsi
+      # state: hold
+    # event: !type:HoldActionEvent
+    
+# - type: entity
+  # parent: ActionMarineBase
+  # id: ActionDefSolderFocus
+  # name: Цельсь! Огонь!
+  # description: Улучшает точность соседних бойцов.
+  # components:
+  # - type: InstantAction
+    # itemIconStyle: NoItem
+    # icon:
+      # sprite: Victoria/DefenseMode/orders.rsi
+      # state: focus
+    # event: !type:FocusActionEvent
+
+# - type: entity
+  # abstract: true
+  # id: DefSkillBase
+  # components:
+  # - type: SkillDefinition
+    
+# - type: entity
+  # parent: DefSkillBase
+  # id: DefBanner
+  # name: DefBanner
+#-----------------------------------------------------Умпорское----------------------
+- type: Tag
+  id: DefBanner
+
+- type: entity
+  name: Умпорское полковое знамя
+  suffix: Оборона, Умпорский
+  parent: CaptainSabre
+  id: DefBannerUmpor
+  description: "Во славу Федерации и нет большего блага, чем честный труд!"
+  components:
+  - type: Tag
+    tags:
+    - DefBanner
+  - type: Sprite
+    sprite: Victoria/DefenseMode/umpor_banner.rsi
+    state: icon
+  - type: Item
+    sprite: Victoria/DefenseMode/umpor_banner.rsi
+  - type: MeleeWeapon
+    attackRate: 0.5
+    damage:
+      types:
+        Piercing: 5
+  # - type: Skills
+    # skills:
+      # DefBanner: 1
+  # - type: MarineOrders
+#-----------------------------------------------------Миртанийское----------------------
+- type: entity
+  name: Миртанийское знамя векселяции
+  suffix: Оборона, Миртан
+  parent: CaptainSabre
+  id: DefBannerMirtan
+  description: "Славься вечный Бог-Император и наша Империя!"
+  components:
+  - type: Tag
+    tags:
+    - DefBanner
+  - type: Sprite
+    sprite: Victoria/DefenseMode/mirt_banner.rsi
+    state: icon
+  - type: Item
+    sprite: Victoria/DefenseMode/mirt_banner.rsi
+  - type: MeleeWeapon
+    attackRate: 0.5
+    damage:
+      types:
+        Piercing: 5
+  # - type: Skills
+    # skills:
+      # DefBanner: 1
+  # - type: MarineOrders
+#-----------------------------------------------------Коран----------------------
+- type: entity
+  name: Коран
+  suffix: Оборона, Конгломерат
+  description: "Нет Бога кроме Аллаха, а Муххамад его первый пророк!"
+  parent: Quran
+  id: DefQuran
+  components:
+  - type: Tag
+    tags:
+    - DefBanner
+  # - type: Skills
+    # skills:
+      # DefBanner: 1
+  # - type: MarineOrders
+#-------------------------------------------------------------------турели----------------------

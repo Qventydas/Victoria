@@ -1554,7 +1554,11 @@
   - type: StaticPrice
     price: 750
   - type: AltFireMelee
+    attackType: Heavy
   - type: MeleeWeapon
+    wideAnimationRotation: -90
+    angle: 0
+    animation: WeaponArcThrust
     attackRate: 1
     damage:
       types:
@@ -1617,7 +1621,11 @@
   - type: StaticPrice
     price: 750
   - type: AltFireMelee
+    attackType: Heavy
   - type: MeleeWeapon
+    wideAnimationRotation: -90
+    angle: 0
+    animation: WeaponArcThrust
     attackRate: 1
     damage:
       types:
@@ -1682,7 +1690,11 @@
   - type: StaticPrice
     price: 750
   - type: AltFireMelee
+    attackType: Heavy
   - type: MeleeWeapon
+    wideAnimationRotation: -90
+    angle: 0
+    animation: WeaponArcThrust
     attackRate: 1
     damage:
       types:
@@ -1748,7 +1760,11 @@
   - type: StaticPrice
     price: 750
   - type: AltFireMelee
+    attackType: Heavy
   - type: MeleeWeapon
+    wideAnimationRotation: -90
+    angle: 0
+    animation: WeaponArcThrust
     attackRate: 1
     damage:
       types:
@@ -1871,7 +1887,11 @@
   - type: StaticPrice
     price: 750
   - type: AltFireMelee
+    attackType: Heavy
   - type: MeleeWeapon
+    wideAnimationRotation: -90
+    angle: 0
+    animation: WeaponArcThrust
     attackRate: 1
     damage:
       types:
@@ -2090,7 +2110,11 @@
   - type: StaticPrice
     price: 500
   - type: AltFireMelee
+    attackType: Heavy
   - type: MeleeWeapon
+    wideAnimationRotation: -135
+    angle: 0
+    animation: WeaponArcThrust
     attackRate: 1
     damage:
       types:
@@ -2168,7 +2192,11 @@
   - type: StaticPrice
     price: 500
   - type: AltFireMelee
+    attackType: Heavy
   - type: MeleeWeapon
+    wideAnimationRotation: -90
+    angle: 0
+    animation: WeaponArcThrust
     attackRate: 1
     damage:
       types:
@@ -2242,7 +2270,11 @@
   - type: StaticPrice
     price: 250
   - type: AltFireMelee
+    attackType: Heavy
   - type: MeleeWeapon
+    wideAnimationRotation: -90
+    angle: 0
+    animation: WeaponArcThrust
     attackRate: 1
     damage:
       types:
@@ -2315,7 +2347,11 @@
   - type: StaticPrice
     price: 750
   - type: AltFireMelee
+    attackType: Heavy
   - type: MeleeWeapon
+    wideAnimationRotation: -90
+    angle: 0
+    animation: WeaponArcThrust
     attackRate: 1
     damage:
       types:
@@ -2387,7 +2423,11 @@
   - type: StaticPrice
     price: 500    
   - type: AltFireMelee
+    attackType: Heavy
   - type: MeleeWeapon
+    wideAnimationRotation: -90
+    angle: 0
+    animation: WeaponArcThrust
     attackRate: 1
     damage:
       types:
@@ -4061,3 +4101,51 @@
   - type: NpcFactionMember
     factions:
     - DefenseStructure
+#------------------------------------------куртка---------------------------------
+- type: entity
+  parent: ClothingOuterWinterCoat
+  id: MirtCoat
+  name: Тёплое пальто
+  suffix: Миртан
+  description: Тёплое пальто, которого обожают в армии, когда приходится вести дела на замёрзших планетах.
+  components:
+  - type: Sprite
+    sprite: Victoria/Mirt/Equipment/mirt_coat.rsi
+  - type: Clothing
+    sprite: Victoria/Mirt/Equipment/mirt_coat.rsi
+  - type: ToggleableClothing
+    clothingPrototype: MirtCoatHood
+    slot: head
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:ContainerSlot {}
+      storagebase: !type:Container
+        ents: []
+  - type: Armor 
+    modifiers:
+      coefficients:
+        Blunt: 0.9
+        Cold: 0.7
+        Caustic: 0.95
+        Poison: 0.95
+#-----------------------------------------капюшон куртки-------------------------------
+- type: entity
+  parent: ClothingHeadHatHoodWinterDefault
+  id: MirtCoatHood
+  name: Капюшон тёплого пальто
+  suffix: Миртан
+  description: Закрывает голову от холода и стужи.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Victoria/Mirt/Equipment/mirt_coat_hood.rsi
+  - type: Clothing
+    sprite: Victoria/Mirt/Equipment/mirt_coat_hood.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.95
+        Cold: 0.85
+  - type: TemperatureProtection
+    heatingCoefficient: 1.1
+    coolingCoefficient: 0.1
